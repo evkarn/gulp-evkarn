@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="ru" class="light-theme">
+
+@@include('parts/head.html', {
+	"title":"Главная",
+	"description":"Главная",
+	"keywords":"Главная",
+	"ogimage":"home-ogimage.jpg",
+})
+
+	<body>
+@@include('parts/header.html')
+
+		<main class="page__home">
+			<span>
+				<img width="300px" src="@img/perun.jpg" alt="">
+
+				<span>Проверка шрифтов</span>
+			</span>
+		</main>
+
+@@include('parts/footer.html')
+
+<!-- @@include('_libs/micromodal/micromodal.html') -->
+
+		<script src="js/app.min.js"></script>
+	</body>
+
+</html>

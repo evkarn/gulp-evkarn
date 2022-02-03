@@ -1,0 +1,50 @@
+// Кнопка возврата на верх
+$c-bg: #9ea1a3
+$c-bg-hover: $accent
+$c-bg-active-darken: darken($c-bg-hover, 10%)
+$c-bg-active-lighten: lighten($c-bg-hover, 10%)
+
+$c-arrow: #000
+$c-arrow-hover: #fff
+
+$opacity: .6
+$opacity-hover: 1
+
+$width-height: 2.875rem
+
+$right-active: 1.25rem
+
+$border: none
+$border-r: 100%
+
+.btn-to-top
+	display: flex
+	align-items: center
+	justify-content: center
+	font-size: 22px
+	text-align: center
+	padding-bottom: 5px
+	position: fixed
+	bottom: 100px
+	right: -120px
+	width: $width-height
+	height: $width-height
+	border: $border
+	border-radius: $border-r
+	cursor: pointer
+	background-color: $c-bg
+	color: $c-arrow
+	opacity: $opacity
+	z-index: 15
+	transition: all .3s ease
+	@media ( any-hover: hover )
+		&:hover
+			opacity: $opacity-hover
+			background-color: $c-bg-hover
+			color: $c-arrow-hover
+	&:active
+		background-color: $c-bg-active-darken
+
+	&.active
+		right: $right-active
+// END. Кнопка возврата на верх

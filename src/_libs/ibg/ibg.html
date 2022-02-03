@@ -1,0 +1,49 @@
+<!-- ПРИМЕНЕНИЕ КЛАССА "IBG" -->
+
+<style>
+.ibg{
+	background-position: center;
+	background-size: cover;
+	background-repeat: no-repeat;
+	position: relative;
+}
+
+.ibg img{
+	position: absolute;
+	width: 0;
+	height: 0;
+	top: 0;
+	left: 0;
+	opacity: 0;
+	visibility: hidden;
+}
+</style>
+
+
+
+<!-- ЧИСТЫЙ JS -->
+<script>
+function ibg(){
+	let ibg=document.querySelectorAll(".ibg");
+	for (var i = 0; i < ibg.length; i++) {
+		if(ibg[i].querySelector('img')){
+			ibg[i].style.backgroundImage = 'url('+ibg[i].querySelector('img').getAttribute('src')+')';
+		}
+	}
+}
+
+ibg();
+</script>
+
+
+<!-- JQUERY -->
+<script>
+function ibg(){
+	$.each($('.ibg'), function(index, val) {
+		if($(this).find('img').length>0){
+			$(this).css('background-image','url("'+$(this).find('img').attr('src')+'")');
+		}
+	});
+}
+ibg();
+</script>
