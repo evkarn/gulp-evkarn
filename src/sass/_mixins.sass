@@ -106,14 +106,14 @@ $widthDesign: 1600
 		bottom: 0
 		left: 0
 		opacity: $opacity
-		background: $color
+		background-color: $color
 		@content
 // END. OVERLAY
 
 
 // TRANSITION
 @mixin tr($transit-time)
-	transition: all $transit-time ease-in-out
+	transition: all $transit-time ease
 
 @mixin tr-custom($sense, $transit-time)
 	transition: $sense $transit-time ease
