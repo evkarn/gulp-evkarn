@@ -1,13 +1,6 @@
-@import colors
+@import global-vars
 	
 @import mixins
-
-// Import style grid bootstrap
-@import 'node_modules/bootstrap/scss/bootstrap-reboot.scss' // Bootstrap Reboot collection
-@import 'node_modules/bootstrap/scss/mixins/_breakpoints.scss' // Bootstrap Breakpoints mixin
-@import 'node_modules/bootstrap/scss/bootstrap-grid.scss' // Optional Bootstrap Grid
-// End. Import style grid
-
 
 // BREAKPOINTS BOOTSTRAP-5
 // +media-breakpoint-up(xxl) — min-width
@@ -23,11 +16,13 @@
 // +media-breakpoint-down(xs)
 // +media-breakpoint-down(sm)
 // +media-breakpoint-down(md)
+// +media-breakpoint-down(lg)
 // +media-breakpoint-down(xl)
 // +media-breakpoint-down(xxl)
 
 // +media-breakpoint-up(xxl)
 // +media-breakpoint-up(xl)
+// +media-breakpoint-up(lg)
 // +media-breakpoint-up(md)
 // +media-breakpoint-up(sm)
 // +media-breakpoint-up(xs)
@@ -45,7 +40,7 @@
 	color: #666
 
 ::selection
-	background-color: $accent
+	background-color: $c-accent
 	color: #fff
 
 input, textarea
@@ -57,7 +52,6 @@ input, textarea
 
 ul, ol
 	list-style: none
-	margin: 0
 
 button, a
 	display: inline-block
@@ -70,19 +64,12 @@ a
 header, section, footer, .s__section
 	position: relative
 
-h1, h2, h3, h4, h5, h6, ul, label, p, a
-	margin: 0
-	padding: 0
-
 h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6
-	font-family: $fftitle
+	+ff-title
 
 h1, .h1
 	line-height: 1.3
-	color: $titlemain
 	letter-spacing: 3px
-	&__second
-		color: $titleminor
 
 .ibg
 	background-position: center center
@@ -104,14 +91,14 @@ h1, .h1
 	width: 100%
 	height: auto
 
-.fullWidth, .full-width, .fwidth, .f-width, .fullw, .full-w
+.fullWidth, .full-width, .fWidth, .f-width, .fullW, .full-w
 	width: 100%
 
 .resp-img, .resp-image
 	position: relative
 	overflow: hidden
 	padding: 0 0 62% 0
-	.img-resp, .imgResp, .img__resp
+	img
 		position: absolute
 		width: 100%
 		height: 100%
@@ -126,13 +113,13 @@ h1, .h1
 	visibility: hidden
 	font-size: 0
 	line-height: 0
-	width: 1px
-	height: 1px
+	width: 0
+	height: 0
 	position: absolute
-	top: 0
-	left: 0
+	top: -110%
+	left: -110%
 
-.dis-none, .d-none, .d-n
+.dis-none, .d-none, .d-n, .disNone, .dNone
 	display: none
 
 // Grid container
@@ -150,19 +137,16 @@ h1, .h1
 html, body
 	height: 100%
 
-.body__wrapper
+.page
 	display: flex
 	flex-direction: column
-
-.body__page
-	min-height: 100%
-	flex: 1 1 auto
-
-body
-	font-family: $fftext
-	font-size: 1rem
+	+ff-text
+	font-size: $fz
 	line-height: $lh
 	min-width: $minWidth
 	position: relative
 	overflow-x: hidden
-	color: $textmain
+
+.page__main
+	min-height: 100%
+	flex: 1 1 auto

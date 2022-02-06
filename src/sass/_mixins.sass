@@ -1,3 +1,12 @@
+// Fonts
+$fz: 1rem
+$lh: 1.5
+@mixin ff-title()
+	font-family: 'Roboto-font-custom', sans-serif
+@mixin ff-text()
+	font-family: 'Roboto-font-custom', sans-serif
+
+
 // GRID SYSTEM
 $grid-gutter-width: 30px
 $gutter: $grid-gutter-width
@@ -11,17 +20,21 @@ $widthDesign: 1600
 
 
 // RESPONSIVE VALUE (FONT SIZE, INDENTS: MARGIN, PADDING...)
-@mixin ad-val($propName, $startSize, $minSize)
+@mixin ad-val($propName, $startSize, $minSize, $type)
 	$addSize: $startSize - $minSize
-	#{$propName}: calc(#{$minSize + px} + #{$addSize} * ((100vw - #{$minWidth}) / #{$widthDesign - 320}))
-// END. RESPONSIVE VALUE (FONT SIZE, INDENTS: MARGIN, PADDING...)
-
-// RESPONSIVE VALUE (FONT SIZE, INDENTS: MARGIN, PADDING...)
-// @mixin ad-val($propName, $startSize, $minSize)
-// 	$addSize: $startSize - $minSize
-// 	#{$propName}: calc(#{$minSize + px} + #{$addSize} * ((100vw - #{$minWidth}) / #{$widthDesign - 320}))
-// 	@media ( min-width: #{$widthDesign + px} )
-// 		#{$propName}: #{$startSize + px}
+	@if $type==1
+		// Срабатывает только, если значение ширины меньше заданного контейнера
+		#{$propName}: $startSize + px
+		@media ( max-width: #{$widthDesign + px} )
+			#{$propName}: calc(#{$minSize + px} + #{$addSize} * ((100vw - #{$minWidth}) / #{$widthDesign - 320}))
+	@else if type==2
+		// Срабатывает только, если значение ширины больше заданного контейнера
+		#{$propName}: $startSize + px
+		@media ( min-width: #{$widthDesign + px} )
+			#{$propName}: calc(#{$minSize + px} + #{$addSize} * ((100vw - #{$minWidth}) / #{$widthDesign - 320}))
+	@else
+		// Срабатывает всегда на любых разрешениях
+		#{$propName}: calc(#{$minSize + px} + #{$addSize} * ((100vw - #{$minWidth}) / #{$widthDesign - 320}))
 // END. RESPONSIVE VALUE (FONT SIZE, INDENTS: MARGIN, PADDING...)
 
 

@@ -3,6 +3,18 @@
 // --- Конец. Подключение проверки webp, добавление класса webp или no-webp для тега html
 
 
+// --- Подключение функций для header
+	// Основные функции header и nav
+	// import { headerMain } from '../_libs/header/header-main.js';
+
+	// Прокрутка до элемента при клике
+	// import { scrollToElement } from '../_libs/header/scroll-to-element-on-click.js';
+
+// Добавление класса active ссылке в меню, если докрутили до блока на который она ссылается
+	// import { activeNavLinkOnScroll } from '../_libs/header/active-nav-link-on-scroll.js';
+// --- Конец. Добавление класса active ссылке в меню, если докрутили до блока на который она ссылается
+
+
 // --- Подключение функции img — перемещение инлайновой картинки в фон
 	// import * as ibg from '../_libs/ibg/ibg-js.js';
 // --- Конец. Подключение функции img — перемещение инлайновой картинки в фон
@@ -60,6 +72,18 @@ document.addEventListener('DOMContentLoaded', () => {
 	// --- Инициализация проверки поддержки webp, добавление класса webp или no-webp для тега html
 		webpFind();
 	// --- Конец. Инициализация проверки webp, добавление класса webp или no-webp для тега html
+
+
+	// --- Инициализация функций для header
+		// Основные функции header и nav
+		// headerMain();
+
+		// Прокрутка до элемента при клике
+		// scrollToElement();
+
+		// Добавление класса active ссылке в меню, если докрутили до блока на который она ссылается
+		// activeNavLinkOnScroll();
+	// --- Конец. Инициализация функций для header
 
 
 	// --- Инициализация функции img — перемещение инлайновой картинки в фон
@@ -148,7 +172,4 @@ document.addEventListener('DOMContentLoaded', () => {
 
 		// adSpoilers(500);
 	// --- Конец. Инициализация адаптивных спойлеров
-
-
-	console.log('Совершен клик по кнопке')
 });

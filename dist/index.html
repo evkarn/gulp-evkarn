@@ -58,19 +58,76 @@
 	</head>
 
 	<body>
-		<header>
-			
-		</header>
+		<div class="page page-home">
+			<header class="header">
+				<div class="header__body">
+					<div class="header__container container">
+						<div class="row">
+							<div class="col-12">
+								<div class="header__inner">
+									<a href="#" class="logo">
+										<img class="header__logo logo" src="img/logo.svg" alt="Название компании">
+									</a>
+				
+									<nav class="header__nav nav" data-nav>
+										<button class="nav-btn-close" data-btn-close aria-label="Закрыть меню" aria-expanded="false">Х</button>
 
-		<main class="page page-home">
-			<span>
-				<img width="300px" src="img/perun.jpg" alt="">
+										<ul class="nav__list">
+											<li class="nav__item">
+												<a href="#" class="nav__link" data-goto=".section--one">
+													Пункт 1
+												</a>
+											</li>
+	
+											<li class="nav__item">
+												<a href="#" class="nav__link" data-goto=".section--two">
+													Пункт 2
+												</a>
+											</li>
+	
+											<li class="nav__item">
+												<a href="#" class="nav__link" data-goto=".section--three">
+													Пункт 3
+												</a>
+											</li>
+										</ul>
+									</nav>
+	
+									<button class="header__burger burger" data-burger aria-label="Открыть меню" aria-expanded="false">
+										<span class="burger__line"></span>
+									</button>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</header>
 
-				<span>Проверка шрифтов</span>
-			</span>
-		</main>
+			<main class="page__main main">
+				<span>
+					<img width="300px" src="img/perun.jpg" alt="">
+	
+					<span>Проверка шрифтов</span>
+				</span>
 
-		<footer></footer>
+				<section class="section section--one" data-section=".section--one">
+					Первая секция
+				</section>
+
+				<section class="section section--two" data-section=".section--two">
+					Вторая секция
+				</section>
+
+				<section class="section section--three" data-section=".section--three">
+					Третья секция
+				</section>
+			</main>
+	
+			<footer>
+				
+			</footer>
+		</div>
+
 
 
 

@@ -1,8 +1,16 @@
-// Базовые стили
-@import config
-	
 // Подключение шрифтов
 @import 'fonts'
+
+// Импорт стилей сетки bootstrap
+@import 'node_modules/bootstrap/scss/bootstrap-reboot.scss' // Bootstrap Reboot collection
+@import 'node_modules/bootstrap/scss/mixins/_breakpoints.scss' // Bootstrap Breakpoints mixin
+@import 'node_modules/bootstrap/scss/bootstrap-grid.scss' // Optional Bootstrap Grid
+
+// Базовые стили
+@import config
+
+// Стили для header
+@import header
 
 // Кнопка возврата на верх
 // @import '../_libs/btn-to-top/btn-to-top'
@@ -19,6 +27,9 @@
 // Tippy.js (тултипы)
 // @import './node_modules/tippy.js/dist/tippy.css'
 
+// Стили для ibg (инлайновую картинку на фон)
+// @import '../_libs/ibg/ibg'
+
 body
 	background-color: green
 
@@ -29,6 +40,21 @@ body
 	font-size: 45px
 	font-weight: 400
 	font-style: italic
+
+	.main
+		min-height: 5500px
+
+	section
+		min-height: 500px
+
+	.section--one
+		background-color: #72eba8
+
+	.section--two
+		background-color: #72b5eb
+
+	.section--three
+		background-color: #ebd572
 
 @media ( max-width: 768px )
 	span

@@ -9,17 +9,34 @@
 })
 
 	<body>
-@@include('parts/header.html')
+		<div class="page page-home">
+@@include('parts/header/header.html', {
+	"alt": "Название компании"
+})
 
-		<main class="page__home">
-			<span>
-				<img width="300px" src="@img/perun.jpg" alt="">
+			<main class="page__main main">
+				<span>
+					<img width="300px" src="@img/perun.jpg" alt="">
+	
+					<span>Проверка шрифтов</span>
+				</span>
 
-				<span>Проверка шрифтов</span>
-			</span>
-		</main>
+				<section class="section section--one" data-section=".section--one">
+					Первая секция
+				</section>
 
-@@include('parts/footer.html')
+				<section class="section section--two" data-section=".section--two">
+					Вторая секция
+				</section>
+
+				<section class="section section--three" data-section=".section--three">
+					Третья секция
+				</section>
+			</main>
+	
+@@include('parts/footer/footer.html')
+		</div>
+
 
 <!-- @@include('_libs/micromodal/micromodal.html') -->
 
