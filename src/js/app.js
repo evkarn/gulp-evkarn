@@ -6,18 +6,32 @@
 // --- Подключение функций для header
 	// Основные функции header и nav
 	// import { headerMain } from '../_libs/header/header-main.js';
-
-	// Прокрутка до элемента при клике
-	// import { scrollToElement } from '../_libs/header/scroll-to-element-on-click.js';
-
-// Добавление класса active ссылке в меню, если докрутили до блока на который она ссылается
-	// import { activeNavLinkOnScroll } from '../_libs/header/active-nav-link-on-scroll.js';
 // --- Конец. Добавление класса active ссылке в меню, если докрутили до блока на который она ссылается
 
 
 // --- Подключение функции img — перемещение инлайновой картинки в фон
 	// import * as ibg from '../_libs/ibg/ibg-js.js';
 // --- Конец. Подключение функции img — перемещение инлайновой картинки в фон
+
+
+// --- Подключение lazy-load
+	// lazy load images
+	// import { lazyLoadImages as llImages } from '../_libs/lazy-load/lazy-load-images.js';
+
+	// lazy load google map
+	// import { lazyLoadGoogleMap as llGoogleMap } from '../_libs/lazy-load/lazy-load-map-google.js';
+
+	// lazy load yandex map
+	// import { lazyLoadYandexMap as llYandexMap } from '../_libs/lazy-load/lazy-load-map-yandex.js';
+
+	// lazy load block "display:none" to "display: block"
+	// import { lazyLoadElement as llElement } from '../_libs/lazy-load/lazy-load-block.js';
+// --- Конец. Подключение lazy-load
+
+
+// --- Подключение функции рейтинга
+	// import { ratingMain } from '../_libs/rating/rating-js.js';
+// --- Конец. Подключение функции рейтинга
 
 
 // --- Подключение маски для input формы
@@ -36,23 +50,23 @@
 
 
 // --- Подключение отображения прогресса прокрутки в виде полоски
-	// import * as readProgressLine from '../_libs/read-progress-line/read-progress-line.js';
+	// import { readProgressLine } from '../_libs/read-progress-line/read-progress-line.js';
 // --- Конец. Подключение отображения прогресса прокрутки в виде полоски
 
 
 // --- Подключение отображения прогресса прокрутки в виде окружности
-	// import * as readProgressCircle from '../_libs/read-progress-circle/read-progress-circle.js';
+	// import { readProgressCircle } from '../_libs/read-progress-circle/read-progress-circle.js';
 // --- Конец. Подключение отображения прогресса прокрутки в виде окружности
-
-
-// --- Подключение модальных окон
-	// import MicroModal from 'micromodal';
-// --- Конец. Подключение модальных окон
 
 
 // --- Подключение кнопки возврата на верх
 	// import * as btnToTop from '../_libs/btn-to-top/btn-to-top.js';
 // --- Конец. Подключение кнопки возврата на верх
+
+
+// --- Подключение модальных окон
+	// import MicroModal from 'micromodal';
+// --- Конец. Подключение модальных окон
 
 
 // --- Подключение адаптивных спойлеров
@@ -77,18 +91,32 @@ document.addEventListener('DOMContentLoaded', () => {
 	// --- Инициализация функций для header
 		// Основные функции header и nav
 		// headerMain();
-
-		// Прокрутка до элемента при клике
-		// scrollToElement();
-
-		// Добавление класса active ссылке в меню, если докрутили до блока на который она ссылается
-		// activeNavLinkOnScroll();
 	// --- Конец. Инициализация функций для header
 
 
 	// --- Инициализация функции img — перемещение инлайновой картинки в фон
 		// ibg();
 	// --- Конец. Инициализация функции img — перемещение инлайновой картинки в фон
+
+
+	// --- Инициализация lazy-load
+		// lazy load images
+		// llImages();
+
+		// lazy load google map
+		// llGoogleMap();
+
+		// lazy load yandex map
+		// llYandexMap();
+
+		// lazy load block
+		// llElement();
+	// --- Конец. Инициализация lazy-load
+
+
+	// --- Инициализация функции рейтинга
+		// ratingMain();
+	// --- Конец. Инициализация функции рейтинга
 
 
 	// --- Инициализация маски для input формы
@@ -172,4 +200,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
 		// adSpoilers(500);
 	// --- Конец. Инициализация адаптивных спойлеров
+
+
+	// --- Инициализация компенсации высоты нижней и верхней панелей на смартфонах
+		// offsetPanel();
+	// --- Конец. Инициализация компенсации высоты нижней и верхней панелей на смартфонах
 });

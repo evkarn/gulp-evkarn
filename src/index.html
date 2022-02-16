@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="ru" class="light-theme">
 
-@@include('parts/head.html', {
+@@include('parts/head/head.html', {
 	"title":"Главная",
 	"description":"Главная",
 	"keywords":"Главная",
@@ -31,7 +31,27 @@
 
 				<section class="section section--three" data-section=".section--three">
 					Третья секция
-				</section>
+
+					<picture>
+						<source type="image/webp" srcset="images/.webp">
+						<source type="image/jpeg" srcset="images/.jpg">
+						<img src="images/.jpg" alt="" title="">
+					</picture>
+
+					<picture>
+						<source srcset="@img/.webp" type="image/webp" />
+					
+						<img src="@img/.jpg" alt=""/>
+					</picture>
+
+					<div class="page__image">
+						<img data-src="@img/" src="@img/image-replace.png" alt="">
+					</div>
+
+					<div class="page__image">
+						<img data-src="@img/image.jpg" data-srcset="@img/image.jpg-2x 2x" src="@img/image-replace.png" alt="">
+					</div>
+					
 			</main>
 	
 @@include('parts/footer/footer.html')

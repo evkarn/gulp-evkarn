@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+	<div class="page__image">
+		<img data-src="https://cdn.pixabay.com/photo/2021/09/12/20/05/waterfall-6619377_960_720.jpg" src="image-replace.png" alt="">
+	</div>
+
+
+
+	<div class="page__image">
+		<picture>
+			<source data-srcset="images/dist/simpleimage-1x.webp 1x, images/dist/simpleimage-2x.webp 2x" srcset="images/dist/image-replace.webp 1x, images/dist/image-replace.webp 2x" type="image/webp"/>
+		
+			<img data-src="images/dist/simpleimage-1x.jpg" data-srcset="images/dist/simpleimage-2x.jpg 2x" src="images/dist/image-replace.png" srcset="images/dist/image-replace.png 2x" loading="lazy" alt=""/>
+		</picture>
+		
+		<img data-src="images/dist/simpleimage-1x.jpg" data-srcset="images/dist/simpleimage-2x.jpg 2x" src="image-replace.png"  srcset="images/dist/image-replace.png 2x" alt="">
+	</div>
+
+
+
+	<div class="page__map lazy-load-map" data-map="Ссылка на карту, которая будет в iframe"></div>
+
+
+
+	<div class="block-wrapper lazy-block" data-lazy="lazy">
+		<div class="block-inner lazy-block__display">
+
+		</div>
+	</div>
+</body>
+</html>
