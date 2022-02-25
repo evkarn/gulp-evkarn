@@ -69,7 +69,7 @@
 										<img class="header__logo logo" src="img/logo.svg" alt="Название компании">
 									</a>
 				
-									<nav class="header__nav nav" data-nav>
+									<nav class="header__nav nav nav--scroll-link nav--active-link" data-nav>
 										<button class="nav-btn-close" data-btn-close aria-label="Закрыть меню" aria-expanded="false">Х</button>
 
 										<ul class="nav__list">
@@ -120,7 +120,27 @@
 
 				<section class="section section--three" data-section=".section--three">
 					Третья секция
-				</section>
+
+					<picture>
+						<source type="image/webp" srcset="images/.webp">
+						<source type="image/jpeg" srcset="images/.jpg">
+						<img src="images/.jpg" alt="" title="">
+					</picture>
+
+					<picture>
+						<source srcset="img/.webp" type="image/webp" />
+					
+						<img src="img/.jpg" alt=""/>
+					</picture>
+
+					<div class="page__image">
+						<img data-src="img/" src="img/image-replace.png" alt="">
+					</div>
+
+					<div class="page__image">
+						<img data-src="img/image.jpg" data-srcset="img/image.jpg-2x 2x" src="img/image-replace.png" alt="">
+					</div>
+					
 			</main>
 	
 			<footer>

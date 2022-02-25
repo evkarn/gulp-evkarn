@@ -30,7 +30,8 @@ export const path = {
 		js: `${srcFolder}/js/**/*.js`, 	// Смотрим за скриптами
 		img: `${srcFolder}/img/**/*.{jpg,jpeg,png,svg,gif,ico,webp,heic,heif}`, // Смотрим за картинками
 		sass: `${srcFolder}/sass/**/*.sass`, 	// Смотрим за стилями
-		html: `${srcFolder}/**/*.html`,				// Смотрим за изменениями в html
+		sassLibs: `${srcFolder}/_libs/**/*.sass`, // Смотрим за стилями
+		html: `${srcFolder}/**/*.html`,	// Смотрим за изменениями в html
 		files: `${srcFolder}/files/**/*.*`, 	// Смотрим за изменениями в файлах
 	},
 

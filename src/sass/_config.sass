@@ -1,7 +1,3 @@
-@import global-vars
-	
-@import mixins
-
 // BREAKPOINTS BOOTSTRAP-5
 // +media-breakpoint-up(xxl) — min-width
 // +media-breakpoint-down(xxl) — max-width
@@ -137,15 +133,18 @@ h1, .h1
 html, body
 	height: 100%
 
-.page
-	display: flex
-	flex-direction: column
+body
 	+ff-text
 	font-size: $fz
+	font-weight: 400
 	line-height: $lh
 	min-width: $minWidth
 	position: relative
 	overflow-x: hidden
+
+.page
+	display: flex
+	flex-direction: column
 
 .page__main
 	min-height: 100%
