@@ -24,7 +24,7 @@ export function headerMain() {
 	const burger = document?.querySelector('[data-burger]');
 
 	// Помещаем nav-btn-close в переменную
-	const navBtnClose = document?.querySelector('[data-btn-close]');
+	const navBtnClose = document?.querySelector('[data-nav-close]');
 
 	let disableScroll = function () {
 		let pagePosition = window.scrollY;

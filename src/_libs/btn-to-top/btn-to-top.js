@@ -16,6 +16,6 @@ export function btnReturnTop(speedReturnTop, scrollTop) {
 	window.addEventListener('scroll', btnTopActive);
 
 	btnTop.addEventListener('click', function() {
-		window.scrollTo(0, speedReturnTop);
-	})
+		window.scrollTo(0,0);
+	});
 }

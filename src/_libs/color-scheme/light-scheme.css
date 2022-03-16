@@ -1,0 +1,55 @@
+/* LIGHT SCHEME STYLE */
+:root {
+	--c-dark: #0c1a01;
+	--c-light: #ececec;
+
+	--body-bg: #ececec;
+
+	--header-color: #ececec;
+	--header-bg: #1a3604;
+
+	--social-btn-bg: #ececec;
+	--social-btn-color: #1a3604;
+
+	--nav-bg: #1a3604;
+	--nav-color: #ececec;
+	--nav-btn-close-color: #ececec;
+	--nav-btn-close-color-hover: #b6d383;
+	--nav-link-color-hover: #b6d383;
+	--nav-spoiler-border: #b6d383;
+
+	--search-bg: #1a3604;
+	--search-border: #b6d383;
+	--search-curet-color: #b6d383;
+	--search-color: #b6d383;
+	--search-input-bg: #2a520b;
+
+	--burger-search-hover: #b6d383;
+	--burger-search-text: #ececec;
+
+	--section-title-color: #0c1a01;
+	--section-description-color: #0c1a01;
+	--section-button-bg: #db2e1c;
+	--section-button-fill-color: #ececec;
+	--section-button-stroke-color: #0c1a01;
+	--section-button-stroke-color-hover: #ececec;
+	--section-button-border: #db2e1c;
+	--section-button-bg-hover: #eb1e08;
+	--section-button-box-shadow: #eb1e08;
+
+	--article-bg: #1a3604;
+	--article-info-color: #ececec;
+	--article-title-link-hover: #b6d383;
+}
+/* END. LIGHT SCHEME STYLE */
+
+
+.scheme-switcher__radio {
+	filter: invert(0);
+}
+.scheme-switcher__radio:checked {
+	filter: invert(1);
+}
+.scheme-switcher__status {
+	filter: invert(0);
+}
