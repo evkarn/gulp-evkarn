@@ -1,6 +1,8 @@
-import fileInclude from 'gulp-file-include'; // Добавление в файлы строк
-import webpHtmlNosvg from 'gulp-webp-html-nosvg'; // Обработка webp
-import versionNumber from 'gulp-version-number'; // Проверка версий файлов
+ // Добавление в файлы строк
+import fileInclude from 'gulp-file-include';
+
+// Проверка версий файлов
+import versionNumber from 'gulp-version-number';
 
 export const html = () => {
 	// Находим все .html в папке исходников
@@ -16,15 +18,10 @@ export const html = () => {
 
 	.pipe(fileInclude())
 
+	// Заменяем @img на img/
 	.pipe(app.plugins.replace(/@img\//g, 'img/'))
 
-	// Если режим продакшена, то переделываем картинки в webp
-	.pipe(app.plugins.if(
-		app.isBuild,
-		webpHtmlNosvg()
-	))
-
-	// Если режим продакшена, то добавляем атрибует версии для стилей и скриптов
+	// Если режим продакшена, то добавляем атрибут версии для стилей и скриптов
 	.pipe(app.plugins.if(
 		app.isBuild,
 		versionNumber({
@@ -43,6 +40,9 @@ export const html = () => {
 		})
 	))
 
+	// Выгружаем файлы в папку готовой вёрстки
 	.pipe(app.gulp.dest(app.path.build.html))
+
+	// Перезагружаем страницу
 	.pipe(app.plugins.browsersync.stream());
 };

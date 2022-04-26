@@ -1,38 +1,54 @@
 // Плагин для получения пути к проекту
 import * as nodePath from 'path';
 
-const rootFolder = nodePath.basename(nodePath.resolve()); // Путь к папке проекта
+// Путь к папке проекта
+const rootFolder = nodePath.basename(nodePath.resolve());
 
-const buildFolder = `./dist`; // Путь к папке с результатом для выгрузки
-const srcFolder = `./src`; // Путь к папке с рабочими файлами
+// Путь к папке с результатом для выгрузки
+const buildFolder = `./dist`;
+
+// Путь к папке с рабочими файлами
+const srcFolder = `./src`;
 
 export const path = {
 	build: {
-		js: `${buildFolder}/js/`, // Путь к папке js
-		img: `${buildFolder}/img/`, // Путь к папке изображений
-		css: `${buildFolder}/css/`, // Путь к папке стилей
-		fonts: `${buildFolder}/fonts/`, // Путь к папке шрифтов
-		html: `${buildFolder}/`, // Путь к папке в которую нужзно скопировать файлы
-		files: `${buildFolder}/files/`, // Путь к папке в которую нужзно скопировать файлы
+		js: `${buildFolder}/js/`,
+		img: `${buildFolder}/img/`,
+		css: `${buildFolder}/css/`,
+		fonts: `${buildFolder}/fonts/`,
+		html: `${buildFolder}/`,
+		favFiles: `${buildFolder}/`,
+		favFolder: `${buildFolder}/favicon/`,
+		files: `${buildFolder}/files/`,
 	},
 
+	// Пути к файлам с исходниками
 	src: {
-		js: `${srcFolder}/js/app.js`, // Путь к папке с js
-		img: `${srcFolder}/img/**/*.{jpg,jpeg,png,gif,webp,heic,heif}`, // Путь к папке с растровыми изображениями в исходниках
-		svg: `${srcFolder}/img/**/*.svg`, // Путь к папке с svg в исходниках
-		sass: `${srcFolder}/sass/style-main.sass`, // Путь к папке стилей в исходниках
-		html: `${srcFolder}/*.html`, // Путь к папке с html файлами в исходниках
-		files: `${srcFolder}/files/**/*.*`, // Путь к папке для копирования файлов в исходниках
-		svgSprite: `${srcFolder}/svg-sprite/*.svg`, // Путь к папке для копирования файлов в исходниках
+		js: `${srcFolder}/js/app.js`,
+
+		img: `${srcFolder}/img/**/*.{jpg,jpeg,png,gif,webp,heic,heif,raw,avif}`,
+		imgSrc: `${srcFolder}/img/`,
+		imgWebp: `${srcFolder}/img/**/*.{jpg,jpeg,png}`,
+		img: `${srcFolder}/img/**/*.{jpg,jpeg,png,gif,webp,heic,heif,raw,avif}`,
+		imgMin: `${srcFolder}/img/**/*.{jpg,jpeg,png,gif,webp,heic,heif,raw,avif}`,
+		imgSVG: `${srcFolder}/img/**/*.svg`,
+
+		sass: `${srcFolder}/sass/style-main.sass`,
+		html: `${srcFolder}/*.html`,
+		favFiles: `${srcFolder}/*.{ico,png,svg}`,
+		favFolder: `${srcFolder}/favicon/*.*`,
+		favicon: `${srcFolder}/*.{ico,svg}`,
+		files: `${srcFolder}/files/**/*.*`,
+		svgSprite: `${srcFolder}/svg-sprite/*.svg`,
 	},
 
+	// Отслеживание изменений в файлах
 	watch: {
-		js: `${srcFolder}/js/**/*.js`, 	// Смотрим за скриптами
-		img: `${srcFolder}/img/**/*.{jpg,jpeg,png,svg,gif,ico,webp,heic,heif}`, // Смотрим за картинками
-		sass: `${srcFolder}/sass/**/*.sass`, 	// Смотрим за стилями
-		sassLibs: `${srcFolder}/_libs/**/*.sass`, // Смотрим за стилями
-		html: `${srcFolder}/**/*.html`,	// Смотрим за изменениями в html
-		files: `${srcFolder}/files/**/*.*`, 	// Смотрим за изменениями в файлах
+		js: `${srcFolder}/js/**/*.js`,
+		img: `${srcFolder}/img/**/*.{jpg,jpeg,png,svg,gif,ico,webp,heic,heif,raw,avif}`, 
+		sass: `${srcFolder}/sass/**/*.sass`,
+		html: `${srcFolder}/**/*.html`,
+		files: `${srcFolder}/files/**/*.*`,
 	},
 
 	clean: buildFolder,
