@@ -1,4 +1,4 @@
- // Добавление в файлы строк
+// Добавление в файлы строк
 import fileInclude from 'gulp-file-include';
 
 // Проверка версий файлов
@@ -18,8 +18,11 @@ export const html = () => {
 
 	.pipe(fileInclude())
 
-	// Заменяем @img на img/
-	.pipe(app.plugins.replace(/@img\//g, 'img/'))
+	// Заменяем @img на assets/images/dist
+	.pipe(app.plugins.replace(/@img\//g, 'assets/images/dist/'))
+
+	// Заменяем @js на assets/js
+	.pipe(app.plugins.replace(/@js\//g, 'assets/js/'))
 
 	// Если режим продакшена, то добавляем атрибут версии для стилей и скриптов
 	.pipe(app.plugins.if(

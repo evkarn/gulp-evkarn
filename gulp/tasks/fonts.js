@@ -1,9 +1,10 @@
 import fs from 'fs';
+
 import ttf2woff2 from 'gulp-ttf2woff2';
 
 export const ttfToWoff = () => {
 	// Ищем файлы шрифтов .ttf
-	return app.gulp.src(`${app.path.srcFolder}/fonts/*.ttf`, {})
+	return app.gulp.src(`${app.path.src.fonts}`, {})
 
 	// Выдаём сообщение об ошибке, если она есть
 	.pipe(app.plugins.plumber(
@@ -22,7 +23,7 @@ export const ttfToWoff = () => {
 
 export const fontsStyle = () => {
 	// Файл стилей подключения шрифтов
-	let fileFonts = `${app.path.srcFolder}/sass/_fonts.sass`;
+	let fileFonts = `${app.path.src.fontsStyle}`;
 
 	// Проверяем существуют ли файлы шрифтов
 	fs.readdir(app.path.build.fonts, function (err, fontsFiles) {
@@ -30,7 +31,7 @@ export const fontsStyle = () => {
 			// Проверяем существует ли файл стилей для подключения шрифтов
 			if (!fs.existsSync(fileFonts)) {
 
-				// Если вайла нет, создаём его
+				// Если файла нет, создаём его
 				fs.writeFile(fileFonts, '', cb);
 
 				let newFileOnly;
@@ -82,14 +83,14 @@ export const fontsStyle = () => {
 
 						// Формирование кода подключения шрифта
 						fs.appendFile(fileFonts,
-							`@font-face \n\tfont-family: ${fontName}-font-custom\n\t${fontDisplay}\n\tfont-weight: ${fontWeight}\n\tfont-style: ${fontStyle}\n\tsrc: url("../fonts/${fontFileName}.woff2") ${fontFormat}\n\r\n`, cb);
+							`@font-face \n\tfont-family: ${fontName}-custom\n\t${fontDisplay}\n\tfont-weight: ${fontWeight}\n\tfont-style: ${fontStyle}\n\tsrc: url("../fonts/${fontFileName}.woff2") ${fontFormat}\n\r\n`, cb);
 							
 						newFileOnly = fontFileName;
 					}
 				}
 			} else {
 				// Если файл есть, выводим сообщение
-				console.log("Файл sass/_fonts.sass уже существует. Для обновления файла нужно его удалить!");
+				console.log("Файл assets/styles/_fonts.sass уже существует. Для обновления файла нужно его удалить!");
 			}
 		}
 	});

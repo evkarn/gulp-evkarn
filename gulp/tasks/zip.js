@@ -1,5 +1,8 @@
-import del from "del"; // Удаление файлов
-import zipPlugin from "gulp-zip"; // Создание архива
+// Удаление файлов
+import del from "del";
+
+// Создание архива
+import zipPlugin from "gulp-zip";
 
 
 export const zip = () => {

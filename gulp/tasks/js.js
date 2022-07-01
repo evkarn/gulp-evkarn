@@ -12,6 +12,9 @@ export const js = () => {
 		})
 	))
 
+	// Заменяем @img на assets/images/dist
+	.pipe(app.plugins.replace(/@utils\//g, '../../_utils'))
+
 	// Обработка файлов js
 	.pipe(webpack({
 		mode: app.isBuild ? 'production' : 'development',

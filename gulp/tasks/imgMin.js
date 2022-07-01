@@ -2,9 +2,9 @@
 import imagemin from 'gulp-imagemin';
 
 export const imgMin = () => {
+	return app.gulp.src(app.path.src.imgMin)
 
 	// Выводим сообщение об ошибке, если она возникнет
-	return app.gulp.src(app.path.src.imgMin)
 		.pipe(app.plugins.plumber(
 			app.plugins.notify.onError({
 				title: "IMAGES-MINIMIZE",

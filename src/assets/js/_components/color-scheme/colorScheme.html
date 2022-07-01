@@ -1,0 +1,43 @@
+<head>
+	<!-- Styles -->
+	<meta name="color-scheme" content="light dark" />
+
+	<script>
+		if (matchMedia('(prefers-color-scheme: dark)').media === 'not all') {
+			document.documentElement.style.display = 'none';
+			document.head.insertAdjacentHTML(
+				'beforeend',
+				'<link rel="stylesheet" href="files/themes/light-theme.css" onload="document.documentElement.style.display=\'\'">'
+			)
+		}
+	</script>
+
+	<link rel="stylesheet" href="css/style-main.min.css">
+
+	<link rel="stylesheet" href="assets/css-special/global-vars.css">
+
+	<link rel="stylesheet" href="files/schemes/colorSchemeLight.css" media="(prefers-color-scheme: light)">
+	
+	<link rel="stylesheet" href="files/schemes/colorSchemeDark.css" media="(prefers-color-scheme: dark)">
+	<!-- /Styles -->
+</head>
+	
+<div class="nav__scheme scheme">
+	<div class="scheme__title">
+		Цветовая схема
+	</div>
+
+	<fieldset class="nav__scheme-switcher scheme-switcher">
+		<legend class="scheme-switcher__legend">
+			Цветовая схема
+		</legend>
+
+		<input class="scheme-switcher__radio scheme-switcher__radio--light" type="radio" name="color-scheme" value="light" aria-label="Светлая">
+		
+		<input class="scheme-switcher__radio scheme-switcher__radio--auto" type="radio" name="color-scheme" value="auto" aria-label="Системная" checked>
+
+		<input class="scheme-switcher__radio scheme-switcher__radio--dark" type="radio" name="color-scheme" value="dark" aria-label="Тёмная">
+
+		<div class="scheme-switcher__status"></div>
+	</fieldset>
+</div>

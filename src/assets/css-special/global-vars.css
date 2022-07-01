@@ -1,0 +1,18 @@
+/* COLOR-VARS */
+:root {
+	--c-accent: #ffa500;
+
+	--c-black: #000;
+	--c-white: #fff;
+	
+	--c-dark: #333;
+	--c-light: #f4f4f4;
+	
+	--c-title-light: #fff;
+	--c-title-dark: #333;
+	
+	--c-text-light: #fff;
+	--c-text-dark: #333;
+}
+
+/* END. COLOR-VARS */

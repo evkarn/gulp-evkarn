@@ -2,9 +2,9 @@
 import svgoMin from 'gulp-svgo';
 
 export const imgSVG = () => {
+	return app.gulp.src(app.path.src.imgSVG)
 
 	// Выводим сообщение об ошибке, если она возникнет
-	return app.gulp.src(app.path.src.imgSVG)
 		.pipe(app.plugins.plumber(
 			app.plugins.notify.onError({
 				title: "IMAGES-SVG",

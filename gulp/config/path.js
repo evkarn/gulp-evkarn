@@ -12,48 +12,84 @@ const srcFolder = `./src`;
 
 export const path = {
 	build: {
-		js: `${buildFolder}/js/`,
-		img: `${buildFolder}/img/`,
-		css: `${buildFolder}/css/`,
-		fonts: `${buildFolder}/fonts/`,
+		allFiles: `${buildFolder}/**/*.*`,
+
+		css: `${buildFolder}/assets/css/`,
+
+		configFiles: `${buildFolder}/`,
+
+		faviconImages: `${buildFolder}/`,
+
+		files: `${buildFolder}/assets/files/`,
+
+		fonts: `${buildFolder}/assets/fonts/`,
+
 		html: `${buildFolder}/`,
-		favFiles: `${buildFolder}/`,
-		favFolder: `${buildFolder}/favicon/`,
-		files: `${buildFolder}/files/`,
+
+		img: `${buildFolder}/assets/images/dist/`,
+
+		js: `${buildFolder}/assets/js/`,
+
+		specialCSS: `${buildFolder}/assets/css-special/`,
 	},
 
 	// Пути к файлам с исходниками
 	src: {
-		js: `${srcFolder}/js/app.js`,
+		configFiles: `${srcFolder}/*.{htaccess,txt,xml}`,
 
-		img: `${srcFolder}/img/**/*.{jpg,jpeg,png,gif,webp,heic,heif,raw,avif}`,
-		imgSrc: `${srcFolder}/img/`,
-		imgWebp: `${srcFolder}/img/**/*.{jpg,jpeg,png}`,
-		img: `${srcFolder}/img/**/*.{jpg,jpeg,png,gif,webp,heic,heif,raw,avif}`,
-		imgMin: `${srcFolder}/img/**/*.{jpg,jpeg,png,gif,webp,heic,heif,raw,avif}`,
-		imgSVG: `${srcFolder}/img/**/*.svg`,
+		faviconImages: `${srcFolder}/*.{ico,png,svg}`,
 
-		sass: `${srcFolder}/sass/style-main.sass`,
+		files: `${srcFolder}/assets/files/**/*.*`,
+
+		fonts: `${srcFolder}/assets/fonts/*.ttf`,
+
+		fontsStyle: `${srcFolder}/assets/styles/_fonts.sass`,
+
 		html: `${srcFolder}/*.html`,
-		favFiles: `${srcFolder}/*.{ico,png,svg}`,
-		favFolder: `${srcFolder}/favicon/*.*`,
-		favicon: `${srcFolder}/*.{ico,svg}`,
-		files: `${srcFolder}/files/**/*.*`,
-		svgSprite: `${srcFolder}/svg-sprite/*.svg`,
+
+		js: `${srcFolder}/assets/js/app.js`,
+
+		img: `${srcFolder}/assets/images/_src/**/*.{jpg,jpeg,png,gif,webp,heic,heif,raw,avif}`,
+
+		imgSrc: `${srcFolder}/assets/images/_src/`,
+
+		imgAvif: `${srcFolder}/assets/images/_src/**/*.{jpg,jpeg,png}`,
+
+		imgMin: `${srcFolder}/assets/images/_src/**/*.{jpg,jpeg,png,gif,webp,heic,heif,raw,avif}`,
+
+		imgWebp: `${srcFolder}/assets/images/_src/**/*.{jpg,jpeg,png}`,
+
+		imgSVG: `${srcFolder}/assets/images/_src/**/*.svg`,
+
+		sass: `${srcFolder}/assets/styles/style-main.sass`,
+
+		svgSprite: `${srcFolder}/assets/svg-sprite/*.svg`,
+
+		specialCSS: `${srcFolder}/assets/css-special/**/*.*`,
 	},
 
 	// Отслеживание изменений в файлах
 	watch: {
-		js: `${srcFolder}/js/**/*.js`,
-		img: `${srcFolder}/img/**/*.{jpg,jpeg,png,svg,gif,ico,webp,heic,heif,raw,avif}`, 
-		sass: `${srcFolder}/sass/**/*.sass`,
+		js: `${srcFolder}/assets/js/**/*.js`,
+
+		img: `${srcFolder}/assets/images/**/*.{jpg,jpeg,png,svg,gif,ico,webp,heic,heif,raw,avif}`,
+
+		sass: `${srcFolder}/assets/styles/**/*.sass`,
+
 		html: `${srcFolder}/**/*.html`,
-		files: `${srcFolder}/files/**/*.*`,
+
+		files: `${srcFolder}/assets/files/**/*.*`,
+
+		specialCSS: `${srcFolder}/assets/css-special/**/*.*`,
 	},
 
 	clean: buildFolder,
+
 	buildFolder: buildFolder,
+
 	srcFolder: srcFolder,
+
 	rootFolder: rootFolder,
+
 	ftp: `test-gulp`
 };

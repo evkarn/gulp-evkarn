@@ -1,0 +1,17 @@
+// Responsive value (font size, indents: margin, padding...)
+@mixin ad-val($propName, $startSize, $minSize, $type)
+	$addSize: $startSize - $minSize
+	@if $type==1
+		// Срабатывает только, если значение ширины меньше заданного контейнера
+		#{$propName}: $startSize + px
+		@media ( max-width: #{$design-width + px} )
+			#{$propName}: calc(#{$minSize + px} + #{$addSize} * ((100vw - #{$screen-min-width}) / #{$design-width - 320}))
+	@else if type==2
+		// Срабатывает только, если значение ширины больше заданного контейнера
+		#{$propName}: $startSize + px
+		@media ( min-width: #{$design-width + px} )
+			#{$propName}: calc(#{$minSize + px} + #{$addSize} * ((100vw - #{$screen-min-width}) / #{$design-width - 320}))
+	@else
+		// Срабатывает всегда на любых разрешениях
+		#{$propName}: calc(#{$minSize + px} + #{$addSize} * ((100vw - #{$screen-min-width}) / #{$design-width - 320}))
+// END. Responsive value (font size, indents: margin, padding...)

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   height="120"
+   width="120"
+   xml:space="preserve"
+   viewBox="0 0 120 120"
+   y="0px"
+   x="0px"
+   id="Capa_1"
+   version="1.1"><metadata
+   id="metadata23"><rdf:RDF><cc:Work
+       rdf:about=""><dc:format>image/svg+xml</dc:format><dc:type
+         rdf:resource="http://purl.org/dc/dcmitype/StillImage" /><dc:title></dc:title></cc:Work></rdf:RDF></metadata><defs
+   id="defs21" />
+<style
+   id="style2"
+   type="text/css">
+	.st0{fill:#002E66;}
+	.st1{fill:#FFFFFF;}
+</style>
+
+<g
+   transform="matrix(3,0,0,3,-11.797144,-91.274367)"
+   id="g16">
+	<path
+   id="path6"
+   d="m 23.932381,30.424789 v 0 c 11,0 20,9 20,20 v 0 c 0,11 -9,20 -20,20 v 0 c -11,0 -19.9999996,-9 -19.9999996,-20 v 0 c 0,-11 8.9999996,-20 19.9999996,-20 z"
+   class="st1" />
+	
+<g
+   transform="matrix(1.5125592,0,0,1.5220784,6.2659246,-79.453224)"
+   style="font-style:normal;font-variant:normal;font-weight:900;font-stretch:normal;font-size:13.3333px;line-height:1.25;font-family:roboto;-inkscape-font-specification:'roboto Heavy';fill:#002e66;fill-opacity:1;stroke-width:0.333333"
+   id="text850"
+   aria-label="&lt;/&gt;"><path
+     id="path852"
+     style="font-style:normal;font-variant:normal;font-weight:900;font-stretch:normal;font-family:roboto;-inkscape-font-specification:'roboto Heavy';fill:#002e66;fill-opacity:1;stroke-width:0.333333"
+     d="m 5.0587675,85.697222 3.561189,1.197914 v 1.998693 L 2.8647627,86.550085 v -1.731767 l 5.7551938,-2.343744 v 1.992183 z" /><path
+     id="path854"
+     style="font-style:normal;font-variant:normal;font-weight:900;font-stretch:normal;font-family:roboto;-inkscape-font-specification:'roboto Heavy';fill:#002e66;fill-opacity:1;stroke-width:0.333333"
+     d="M 10.729326,90.475856 H 9.1733405 L 12.409009,80.182913 h 1.562496 z" /><path
+     id="path856"
+     style="font-style:normal;font-variant:normal;font-weight:900;font-stretch:normal;font-family:roboto;-inkscape-font-specification:'roboto Heavy';fill:#002e66;fill-opacity:1;stroke-width:0.333333"
+     d="m 18.313943,85.677691 -3.541658,-1.204424 v -1.992182 l 5.722642,2.343744 v 1.731766 l -5.722642,2.343744 v -1.992182 z" /></g></g>
+</svg>

@@ -1,0 +1,83 @@
+// SELECT-SMOOTH
+// @import 'select-smooth'
+// END. SELECT-SMOOTH
+[data-selects]
+	[data-select-wrapper]
+		display: flex
+		flex-direction: column
+		max-width: 170px
+		margin: 0
+		border: none
+		float: none !important
+		&:not(:last-child)
+			margin-bottom: rem(16)
+
+	[data-select-title]
+		display: flex
+		align-items: center
+		justify-content: space-between
+		padding: 0.5rem 1rem
+		border: 1px solid $c-accent
+		border-radius: 5px
+		background-color: $c-accent
+		color: $c-white
+		position: relative
+		margin-bottom: 2px
+		cursor: pointer
+		font-size: rem(16)
+		font-weight: 700
+		transition: all .3s ease
+		&:hover
+			background-color: darken($c-accent, 10%)
+			border-color: darken($c-accent, 10%)
+		&:active
+			background-color: darken($c-accent, 15%)
+			border-color: darken($c-accent, 15%)
+		&:after
+			content: "▼"
+			display: flex
+			align-items: center
+			justify-custom-select: center
+			line-height: 1
+			font-size: rem(13)
+			transition: transform .3s ease-in-out
+			margin-left: rem(20)
+
+	[data-select-title].active
+		background-color: transparent
+		color: $c-accent
+		&:hover
+			background-color: darken($c-accent, 10%)
+			border-color: darken($c-accent, 10%)
+			color: $c-white
+		&:active
+			background-color: darken($c-accent, 15%)
+			border-color: darken($c-accent, 15%)
+			color: $c-white
+		&:after
+			transform: rotate(180deg)
+
+	[data-select-options]
+		list-style-type: none
+		margin: 0.3rem 0 0
+		border: 1px solid $c-accent
+		border-radius: 5px
+		display: flex
+		flex-direction: column
+		justify-content: center
+		align-items: center
+
+	[data-select-option]
+		cursor: default
+		display: flex
+		flex-direction: column
+		align-items: center
+		justify-content: center
+		padding: 0.5rem 1rem
+		flex: 1 1 100%
+		max-width: 100%
+		width: 100%
+		transition: color .3s ease, background-color .3s ease
+		&:hover
+			background-color: $c-accent
+			color: $c-light

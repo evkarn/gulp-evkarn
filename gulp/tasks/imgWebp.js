@@ -2,9 +2,9 @@
 import webp from 'gulp-webp';
 
 export const imgWebp = () => {
+	return app.gulp.src(app.path.src.imgWebp)
 
 	// Выводим сообщение об ошибке, если она возникнет
-	return app.gulp.src(app.path.src.imgWebp)
 		.pipe(app.plugins.plumber(
 			app.plugins.notify.onError({
 				title: "IMAGES-WEBP",

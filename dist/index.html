@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="ru" class="light-theme">
+<html lang="ru">
 
 	<head itemscope itemtype="http://schema.org/WPHeader">
 		<meta charset="utf-8">
@@ -18,30 +18,39 @@
 
 		<!-- Template Basic Images Start -->
 		<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+
+		<link rel="icon" type="image/x-icon" href="favicon.ico">
+
 		<link rel="icon" type="image/svg+xml" sizes="120x120" href="favicon.svg">
-		<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
-		<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
-		<link rel="manifest" href="site.webmanifest">
-		<link rel="mask-icon" href="safari-pinned-tab.svg" color="#5bbad5">
+
+		<link rel="icon" type="image/png" sizes="32x32" href="assets/files/favicon/favicon-32x32.png">
+
+		<link rel="icon" type="image/png" sizes="16x16" href="assets/files/favicon/favicon-16x16.png">
+
+		<link rel="manifest" href="assets/files/favicon/site.webmanifest">
+
+		<link rel="mask-icon" href="assets/files/favicon/safari-pinned-tab.svg" color="#5bbad5">
+
 		<meta name="msapplication-TileColor" content="#2b5797">
-		<meta name="theme-color" content="#ffd576">
+		
+		<meta name="theme-color" content="#ffffff">
 		<!-- /Template Basic Images End -->
 
 		<!--[if lt IE 9]>
-		<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js?_v=20220413195059"></script>
+		<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
 
-		<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js?_v=20220413195059"></script>
+		<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 
-		<script src="//html5shiv.googlecode.com/svn/trunk/html5.js?_v=20220413195059"></script>
+		<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
 		<![endif]-->
 
 		<!--Open Graph-->
 		<meta property="og:site_name" content="Главная" />
-		<meta property="og:url" content="raduga.loc" />
+		<meta property="og:url" content="evkarn.ru" />
 		<meta property="og:type" content="website" />
 		<meta property="og:title" content="Главная" />
 		<meta property="og:description" content="Главная" />
-		<meta property="og:image" content="img/ogimage/home-ogimage.jpg" />
+		<meta property="og:image" content="assets/images/dist/ogimage/home-ogimage.jpg" />
 		<meta property="og:image:type" content="image/jpeg" />
 		<meta property="og:image:width" content="600px" />
 		<meta property="og:image:height" content="314px" />
@@ -51,19 +60,24 @@
 		<!-- Schema-org -->
 		<meta itemprop="name" content="Главная" />
 		<meta itemprop="description" content="Главная" />
-		<meta itemprop="image" content="img/ogimage/home-ogimage.jpg" />
+		<meta itemprop="image" content="assets/images/dist/ogimage/home-ogimage.jpg" />
 		<!-- /Schema-org -->
 
 		<!-- Fonts preload -->
-		<link rel="preload" href="fonts/Akrobat-Black.woff2" as="font" type="font/woff2" crossorigin>
-		<link rel="preload" href="fonts/Akrobat-Regular.woff2" as="font" type="font/woff2" crossorigin>
+		<link rel="preload" href="assets/fonts/Roboto-Regular.woff2" as="font" type="font/woff2" crossorigin>
 		<!-- /Fonts preload -->
 
-		<link rel="stylesheet" href="css/style-main.min.css?_v=20220413195059">
+		<!-- Styles -->
+		<link rel="stylesheet" href="assets/css-special/normalize.css">
+
+		<link rel="stylesheet" href="assets/css-special/global-vars.css">
+
+		<link rel="stylesheet" href="assets/css/style-main.min.css">
+		<!-- /Styles -->
 	</head>
 
-	<body>
-		<div class="page page-home">
+<body>
+	<div class="page page-home">
 			<header class="header">
 				<div class="header__body">
 					<div class="header__container container">
@@ -71,11 +85,11 @@
 							<div class="col-12">
 								<div class="header__inner">
 									<a href="#" class="logo">
-										<img class="header__logo logo" src="img/logo.svg" alt="Название компании">
+										<img class="header__logo logo" src="assets/images/dist/logo.svg" alt="Название компании">
 									</a>
 				
 									<nav class="header__nav nav nav--scroll-link nav--active-link" data-nav>
-										<button class="nav-btn-close" data-btn-close aria-label="Закрыть меню" aria-expanded="false">Х</button>
+										<button class="nav__btn-close" data-nav-close aria-label="Закрыть меню" aria-expanded="false">Х</button>
 
 										<ul class="nav__list">
 											<li class="nav__item">
@@ -108,54 +122,130 @@
 				</div>
 			</header>
 
-			<main class="page__main main">
-				<span>
-					<picture><source srcset="img/perun.webp" type="image/webp"><img width="300px" src="img/perun.jpg" alt=""></picture>
-	
-					<span>Проверка шрифтов</span>
-				</span>
+		<main class="page__main main">
+			<section class="section section--one" data-section=".section--one">
+				<div class="section__row row">
+					<div class="row__column">
+						<div class="tabs">
+							<ul class="tabs__list">
+								<li class="tabs__item">
+									<button class="tabs__btn tabs__btn--active" data-tabs-path="main">
+										Главная
+									</button>
+								</li>
 
-				<section class="section section--one" data-section=".section--one">
-					Первая секция
-				</section>
+								<li class="tabs__item">
+									<button class="tabs__btn" data-tabs-path="archive">
+										Архив
+									</button>
+								</li>
 
-				<section class="section section--two" data-section=".section--two">
-					Вторая секция
-				</section>
+								<li class="tabs__item">
+									<button class="tabs__btn" data-tabs-path="settings">
+										Настройки
+									</button>
+								</li>
+							</ul>
 
-				<section class="section section--three" data-section=".section--three">
-					Третья секция
+							<div class="tabs__content tabs__content--active" data-tabs-target="main">
+								<div class="content">
+									<h2 class="content__title">Добро пожаловать!</h2>
 
-					<picture>
-						<source type="image/webp" srcset="images/.webp">
-						<source type="image/jpeg" srcset="images/.jpg">
-						<img src="images/.jpg" alt="" title="">
-					</picture>
+									<p class="content__descr">Здесь находится архив все совершенных вами заказов!</p>
 
-					<picture>
-						<source srcset="img/.webp" type="image/webp" />
-					
-						<img src="img/.jpg" alt=""/>
-					</picture>
+									<ul class="content__list">
+										<li class="content__item">
+											<a href="#" class="content__link" style="background-image: url('./img/1.png');">
+												<span class="content__text">Заказ 1</span>
+											</a>
+										</li>
 
-					<div class="page__image">
-						<picture><source data-srcset="img/image-replace.webp" type="image/webp"><img data-src="img/" src="img/image-replace.png" alt=""></picture>
+										<li class="content__item">
+											<a href="#" class="content__link" style="background-image: url('./img/2.png');">
+												<span class="content__text">Заказ 2</span>
+											</a>
+										</li>
+
+										<li class="content__item">
+											<a href="#" class="content__link" style="background-image: url('./img/3.png');">
+												<span class="content__text">Заказ 3</span>
+											</a>
+										</li>
+									</ul>
+								</div>
+							</div>
+
+							<div class="tabs__content" data-tabs-target="archive">
+								<div class="content">
+									<h2 class="content__title">Добро пожаловать!2</h2>
+									<p class="content__descr">Здесь находятся все ваши активные заказы.</p>
+									<ul class="content__list">
+										<li class="content__item">
+											<a href="#" class="content__link" style="background-image: url('./img/1.png');">
+												<span class="content__text">Занятия йогой</span>
+											</a>
+										</li>
+										<li class="content__item">
+											<a href="#" class="content__link" style="background-image: url('./img/2.png');">
+												<span class="content__text">Кардио</span>
+											</a>
+										</li>
+										<li class="content__item">
+											<a href="#" class="content__link" style="background-image: url('./img/3.png');">
+												<span class="content__text">Силовые тренировки</span>
+											</a>
+										</li>
+									</ul>
+								</div>
+							</div>
+							<div class="tabs__content" data-tabs-target="settings">
+								<div class="content">
+									<h2 class="content__title">Добро пожаловать!3</h2>
+									<p class="content__descr">Здесь находятся все ваши активные заказы.</p>
+									<ul class="content__list">
+										<li class="content__item">
+											<a href="#" class="content__link" style="background-image: url('./img/1.png');">
+												<span class="content__text">Занятия йогой</span>
+											</a>
+										</li>
+										<li class="content__item">
+											<a href="#" class="content__link" style="background-image: url('./img/2.png');">
+												<span class="content__text">Кардио</span>
+											</a>
+										</li>
+										<li class="content__item">
+											<a href="#" class="content__link" style="background-image: url('./img/3.png');">
+												<span class="content__text">Силовые тренировки</span>
+											</a>
+										</li>
+									</ul>
+								</div>
+							</div>
+							<button class="tabs__arrow tabs__arrow--prev" aria-label="Назад">
+								<svg width="21" height="12" viewBox="0 0 21 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<path
+										d="M0.46967 6.53033C0.176777 6.23744 0.176777 5.76256 0.46967 5.46967L5.24264 0.696699C5.53553 0.403806 6.01041 0.403806 6.3033 0.696699C6.59619 0.989592 6.59619 1.46447 6.3033 1.75736L2.06066 6L6.3033 10.2426C6.59619 10.5355 6.59619 11.0104 6.3033 11.3033C6.01041 11.5962 5.53553 11.5962 5.24264 11.3033L0.46967 6.53033ZM21 6.75H1V5.25H21V6.75Z" />
+								</svg>
+							</button>
+							<button class="tabs__arrow tabs__arrow--next" aria-label="Вперед">
+								<svg width="21" height="12" viewBox="0 0 21 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<path
+										d="M20.5303 6.53033C20.8232 6.23744 20.8232 5.76256 20.5303 5.46967L15.7574 0.696699C15.4645 0.403806 14.9896 0.403806 14.6967 0.696699C14.4038 0.989592 14.4038 1.46447 14.6967 1.75736L18.9393 6L14.6967 10.2426C14.4038 10.5355 14.4038 11.0104 14.6967 11.3033C14.9896 11.5962 15.4645 11.5962 15.7574 11.3033L20.5303 6.53033ZM0 6.75H20V5.25H0V6.75Z" />
+								</svg>
+							</button>
+						</div>
 					</div>
+				</div>
+			</section>
 
-					<div class="page__image">
-						<picture><source data-srcset="img/image-replace.webp" type="image/webp"><img data-src="img/image.jpg" data-srcset="img/image.jpg-2x 2x" src="img/image-replace.png" alt=""></picture>
-					</div>
-					
-			</main>
-	
+		</main>
+
 			<footer>
 				
 			</footer>
-		</div>
+	</div>
 
-
-
-
-		<script src="js/app.min.js?_v=20220413195059"></script>
+		<script src="assets/js/app.min.js"></script>
 	</body>
+
 </html>

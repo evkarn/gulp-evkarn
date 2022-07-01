@@ -1,5 +1,7 @@
 import { configFTP } from '../config/ftp.js';
+
 import vinylFTP from 'vinyl-ftp';
+
 import util from 'gulp-util';
 
 export const ftp = () => {
@@ -8,15 +10,15 @@ export const ftp = () => {
 	const ftpConnect = vinylFTP.create(configFTP);
 
 	// Находим все файлы в папке проекта
-	return app.gulp.src(`${app.path.buildFolder}/**/*.*`, {})
+	return app.gulp.src(`${app.path.build.allFiles}`, {})
 
 		// Выдаём сообщение об ошибке, если она есть
 		.pipe(app.plugins.plumber(
 			app.plugins.notify.onError({
-				title: "FTp",
+				title: "FTP",
 				message: "Error: <%= error.message %>"
 			})
 		))
 
-		.pipe(ftpConnect.dest(`/${app.path.ftp}/${app.path.rootFolder}`));
+		.pipe(ftpConnect.dest(`/${app.path.ftp}`));
 };

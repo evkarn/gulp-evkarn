@@ -1,10 +1,23 @@
-import dartSass from 'sass'; // Обработка препроцессора SASS
-import gulpSass from 'gulp-sass'; // Обработка препроцессора SASS
-import rename from 'gulp-rename'; // Переименовывание файлов
-import cleanCss from 'gulp-clean-css'; // Сжатие CSS файла
-import webpcss from 'gulp-webpcss'; // Вывод Webp изображений
-import autoprefixer from 'gulp-autoprefixer'; // Добавление вендерных префексов для кроссбраузерности
-import groupCssMediaQueries from 'gulp-group-css-media-queries'; // Группировка медиа запросов
+// Обработка препроцессора SASS
+import dartSass from 'sass';
+
+// Обработка препроцессора SASS
+import gulpSass from 'gulp-sass';
+
+// Переименовывание файлов
+import rename from 'gulp-rename';
+
+// Сжатие CSS файла
+import cleanCss from 'gulp-clean-css';
+
+// Вывод Webp изображений
+import webpcss from 'gulp-webpcss';
+
+// Добавление вендерных префиксов для кросс-браузерной поддержки
+import autoprefixer from 'gulp-autoprefixer';
+
+// Группировка медиа запросов
+import groupCssMediaQueries from 'gulp-group-css-media-queries'; 
 
 const sass = gulpSass(dartSass);
 
@@ -21,14 +34,14 @@ export const sassStyle = () => {
 	))
 
 	// Преобразование специальной вставки в адрес
-	.pipe(app.plugins.replace(/@img\//g, '../img/'))
+	.pipe(app.plugins.replace(/@img\//g, '../images/dist'))
 
 	// Обработка препроцессора SASS
 	.pipe(sass({
 		outputStyle: 'expanded'
 	}))
 
-	// Если в режиме продакшена Группировка медиазапросов
+	// Если в режиме продакшена группировка медиа-запросов
 	.pipe(app.plugins.if(
 		app.isBuild,
 		groupCssMediaQueries()
