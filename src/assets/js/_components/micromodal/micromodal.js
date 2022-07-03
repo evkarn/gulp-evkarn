@@ -1,5 +1,6 @@
 // LINK
-// import MicroModal from 'micromodal';
+// https://micromodal.vercel.app/
+// https://github.com/Ghosh/micromodal
 // END. LINK
 
 

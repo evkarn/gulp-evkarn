@@ -1,6 +1,6 @@
-// SELECT-SMOOTH
-// @import 'select-smooth'
-// END. SELECT-SMOOTH
+// SELECT-DISPLAY-NONE
+// @import './_components/customSelectDisplayNone'
+// END. SELECT-DISPLAY-NONE
 [data-selects]
 	[data-select-wrapper]
 		display: flex
@@ -40,10 +40,10 @@
 			justify-custom-select: center
 			line-height: 1
 			font-size: rem(13)
-			transition: transform .3s ease-in-out
+			transition: transform .2s ease-in-out
 			margin-left: rem(20)
 
-	[data-select-title].active
+	[data-select-title].custom-select__title--active
 		background-color: transparent
 		color: $c-accent
 		&:hover
@@ -62,10 +62,13 @@
 		margin: 0.3rem 0 0
 		border: 1px solid $c-accent
 		border-radius: 5px
-		display: flex
-		flex-direction: column
-		justify-content: center
-		align-items: center
+		display: none
+
+		&.custom-select__options--active
+			display: flex
+			flex-direction: column
+			justify-content: center
+			align-items: center
 
 	[data-select-option]
 		cursor: default

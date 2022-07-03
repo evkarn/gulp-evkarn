@@ -4,29 +4,31 @@ export {buttonToTop} from "./button-to-top/buttonToTop.js";
 
 export {colorScheme} from "./color-scheme/colorScheme.js";
 
-export {digitalCounters} from "./digital-counters/digital-counters.js";
+export {customTabs} from "./tabs-custom/customTabs.js";
 
-export {headerMain} from "./header/header.js";
+export {digitalCounters} from "./digital-counters/digitalCounters.js";
 
-export {imageInBackground} from "./image-in-background/image-in-background.js";
+export {headerMain} from "./header/headerMain.js";
 
-export {lazyLoadElement} from "./lazy-load/lazy-load-element.js";
+export {imageInBackground} from "./image-in-background/imageInBackground.js";
 
-export {lazyLoadImages} from "./lazy-load/lazy-load-images.js";
+export {lazyLoadElement} from "./lazy-load/lazyLoadElement.js";
 
-export {lazyLoadGoogleMap} from "./lazy-load/lazy-load-map-google.js";
+export {lazyLoadImages} from "./lazy-load/lazyLoadImages.js";
 
-export {lazyLoadYandexMap} from "./lazy-load/lazy-load-map-yandex.js";
+export {lazyLoadGoogleMap} from "./lazy-load/lazyLoadGoogleMap.js";
 
-export {offsetBottomPanelPhone} from "./offset-bottom-panel-phone/offset-bottom-panel-phone.js";
+export {lazyLoadYandexMap} from "./lazy-load/lazyLoadYandexMap.js";
+
+export {offsetBottomPanelPhone} from "./offset-bottom-panel-phone/offsetBottomPanelPhone.js";
 
 export {quiz} from "./quiz/quiz.js";
 
 export {ratingJS} from "./rating/ratingJS.js";
 
-export {readProgressCircle} from "./read-progress-circle/read-progress-circle.js";
+export {readProgressCircle} from "./read-progress-circle/readProgressCircle.js";
 
-export {readProgressLine} from "./read-progress-line/read-progress-line.js";
+export {readProgressLine} from "./read-progress-line/readProgressLine.js";
 
 export {customSelectDisplayNone} from "./select-display-none/customSelectDisplayNone.js";
 

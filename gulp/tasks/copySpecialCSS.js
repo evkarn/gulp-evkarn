@@ -1,8 +1,8 @@
 export const copySpecialCSS = () => {
-	return app.gulp.src(app.path.src.specialCSS)
-	
-	.pipe(app.gulp.dest(app.path.build.specialCSS))
+	return app.gulp.src(app.path.src.cssSpecial)
 
-	// Перезагружаем страницу
-	.pipe(app.plugins.browsersync.stream());
+		.pipe(app.gulp.dest(app.path.build.cssSpecial))
+
+		// Перезагружаем страницу
+		.pipe(app.plugins.browsersync.stream());
 };

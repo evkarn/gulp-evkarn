@@ -47,6 +47,8 @@ import { imgWebp } from './gulp/tasks/imgWebp.js';
 
 import { js } from './gulp/tasks/js.js';
 
+import { copySpecialJS } from './gulp/tasks/copySpecialJS.js';
+
 import { reset } from './gulp/tasks/reset.js';
 
 import { sassStyle } from './gulp/tasks/sass.js';
@@ -62,7 +64,9 @@ import { zip } from './gulp/tasks/zip.js';
 
 // Наблюдение за изменениями в файлах
 function watcher() {
-	gulp.watch(path.watch.specialCSS, copySpecialCSS);
+	gulp.watch(path.watch.cssSpecial, copySpecialCSS);
+
+	gulp.watch(path.watch.jsSpecial, copySpecialJS);
 
 	gulp.watch(path.watch.files, copyFiles);
 

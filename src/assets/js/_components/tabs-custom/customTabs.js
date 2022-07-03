@@ -1,4 +1,13 @@
-const customTabs = () => {
+// IMPORT CUSTOM-TABS
+	// import { customTabs } from './src/_utils/select-smooth/index.js';
+// END. IMPORT CUSTOM-TABS
+
+
+	// INIT CUSTOM-TABS
+		// customTabs();
+	// END. INIT CUSTOM-TABS
+
+export const customTabs = () => {
 	const tabs = document.querySelector('.tabs');
 	const tabsBtn = document.querySelectorAll('.tabs__btn');
 	const tabsContent = document.querySelectorAll('.tabs__content');

@@ -1,6 +1,6 @@
-// IMPORT WEBP-FIND
-import {webpFind} from './_utils/index.js';
-// IMPORT WEBP-FIND
+// IMPORT
+import { webpFind } from './_components/index.js';
+// END. IMPORT
 
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -10,9 +10,4 @@ document.addEventListener('DOMContentLoaded', () => {
 	// INIT WEBP-FIND
 		webpFind();
 	// END. INIT WEBP-FIND
-
-
-
-
-
 });

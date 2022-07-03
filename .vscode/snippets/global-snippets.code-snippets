@@ -1,0 +1,388 @@
+{
+	// Place your GLOBAL snippets here. Each snippet is defined under a snippet name and has a scope, prefix, body and 
+	// description. Add comma separated ids of the languages where the snippet is applicable in the scope field. If scope 
+	// is left empty or omitted, the snippet gets applied to all languages. The prefix is what is 
+	// used to trigger the snippet and the body will be expanded and inserted. Possible variables are: 
+	// $1, $2 for tab stops, $0 for the final cursor position, and ${1:label}, ${2:another} for placeholders. 
+	// Placeholders with the same ids are connected.
+	// Example:
+	// "Print to console": {
+	// 	"scope": "javascript,typescript",
+	// 	"prefix": "log",
+	// 	"body": [
+	// 		"console.log('$1');",
+	// 		"$2"
+	// 	],
+	// 	"description": "Log output to console"
+	// }
+
+	"Article block": {
+		"prefix": "artb",
+		"scope": "html, php",
+		"body": [
+			"<article class=\"page__article article\" itemscope=\"itemscope\" itemtype=\"http://schema.org/NewsArticle\">",
+			"\t<div class=\"article__author hidden\">",
+			"\t\t<span>Автор:</span>",
+			"",
+			"\t\t<span itemprop=\"author\">Евгений Карнаухов</span>",
+			"\t</div>",
+			"",
+			"\t<header class=\"article__header\" aria-hidden=\"true\">",
+			"\t\t<a class=\"article__image-wrap\" href=\"$1\" itemprop=\"url\">",
+			"\t\t\t<img class=\"article__image\" src=\"@img/$2-1x.$3\" srcset=\"@img/$2-2x.$3 2x\" alt=\"$4\" itemprop=\"image\">",
+			"\t\t</a>",
+			"\t</header>",
+			"",
+			"\t<div class=\"article__content\">",
+			"\t\t<div class=\"article__meta\">",
+			"\t\t\t<time datetime=\"$5 27-02-2022\" itemprop=\"datePublished\">",
+			"\t\t\t\t$6 27 февраля 2022 года, 09:00",
+			"\t\t\t</time>",
+			"\t\t</div>",
+			"",
+			"\t\t<h3 class=\"article__title\" itemprop=\"headline\">",
+			"\t\t\t<a href=\"$1\" itemprop=\"url\">",
+			"\t\t\t\t<span itemprop=\"name\">",
+			"\t\t\t\t\t$7",
+			"\t\t\t\t</span>",
+			"\t\t\t</a>",
+			"\t\t</h3>",
+			"",
+			"\t\t<div class=\"article__description\">",
+			"\t\t\t<div>",
+			"\t\t\t\t<p>",
+			"\t\t\t\t\t$8",
+			"\t\t\t\t</p>",
+			"\t\t\t</div>",
+			"\t\t</div>",
+			"\t</div>",
+			"",
+			"\t<footer class=\"article__footer\">",
+			"\t\t<a class=\"article__button\" href=\"$1\">",
+			"\t\t\t<span>Читать далее</span>",
+			"\t\t</a>",
+			"\t</footer>",
+			"</article>"
+		],
+		"description": "Article block"
+	},
+
+	"Article link": {
+		"prefix": "artl",
+		"scope": "html, php",
+		"body": [
+			"<article class=\"page__article article\" itemscope=\"itemscope\" itemtype=\"http://schema.org/NewsArticle\">",
+			"\t<a href=\"$1\" itemprop=\"url\">",
+			"\t\t<div class=\"article__author hidden\">",
+			"\t\t\t<span>Автор:</span>",
+			"",
+			"\t\t\t<span itemprop=\"author\">Евгений Карнаухов</span>",
+			"\t\t</div>",
+			"",
+			"\t\t<header class=\"article__header\" aria-hidden=\"true\">",
+			"\t\t\t<div class=\"article__image-wrap\">",
+			"\t\t\t\t<img class=\"article__image\" src=\"@img/$2-1x.$3\" srcset=\"@img/$2-2x.$3 2x\" alt=\"$4\" itemprop=\"image\">",
+			"\t\t\t</div>",
+			"\t\t</header>",
+			"",
+			"\t\t<div class=\"article__content\">",
+			"\t\t\t<div class=\"article__meta\">",
+			"\t\t\t\t<time datetime=\"$5 27-02-2022\" itemprop=\"datePublished\">",
+			"\t\t\t\t\t$6 27 февраля 2022 года, 09:00",
+			"\t\t\t\t</time>",
+			"\t\t\t</div>",
+			"",
+			"\t\t\t<h3 class=\"article__title\" itemprop=\"headline\">",
+			"\t\t\t\t<div>",
+			"\t\t\t\t\t<span itemprop=\"name\">",
+			"\t\t\t\t\t\t$7",
+			"\t\t\t\t\t</span>",
+			"\t\t\t\t</div>",
+			"\t\t\t</h3>",
+			"",
+			"\t\t\t<div class=\"article__description\">",
+			"\t\t\t\t<div>",
+			"\t\t\t\t\t<p>",
+			"\t\t\t\t\t\t$8",
+			"\t\t\t\t\t</p>",
+			"\t\t\t\t</div>",
+			"\t\t\t</div>",
+			"\t\t</div>",
+			"",
+			"\t\t<footer class=\"article__footer\">",
+			"\t\t\t<div class=\"article__button\">",
+			"\t\t\t\t<span>Читать далее</span>",
+			"\t\t\t</div>",
+			"\t\t</footer>",
+			"\t</a>",
+			"</article>"
+		],
+		"description": "Article link"
+	},
+
+	"Fonts preload": {
+		"prefix": "fpr",
+		"scope": "html, php",
+		"body": [
+			"<link rel=\"preload\" href=\"$1\" as=\"font\" type=\"font/$2woff2\" crossorigin>",
+		],
+		"description": "Fonts preload"
+	},
+
+	"Picture tag retina": {
+		"prefix": "picr",
+		"scope": "html, php",
+		"body": [
+			"<picture>",
+			"\t<source srcset=\"@img/$1.webp\" type=\"image/webp\" />",
+			"",
+			"\t<img src=\"@img/$2.jpg\" alt=\"$3\"/>",
+			"</picture>",
+		],
+		"description": "Picture tag retina"
+	},
+
+	"Lazy load picture retina": {
+		"prefix": "llpicr",
+		"scope": "html, php",
+		"body": [
+			"<picture>",
+			"\t<source srcset=\"@img/$1.webp\" type=\"image/webp\" />",
+			"",
+			"\t<img src=\"@img/$2.jpg\" alt=\"$3\"/>",
+			"</picture>",
+		],
+		"description": "Lazy load picture retina"
+	},
+
+	"Lazy load image retina": {
+		"prefix": "llir",
+		"scope": "html, php",
+		"body": [
+			"<div class=\"page__image\">",
+			"\t<img data-src=\"@img/$1\" src=\"@img/image-replace.png\" alt=\"$2\">",
+			"</div>"
+		],
+		"description": "Lazy load image retina"
+	},
+
+	"Lazy load image": {
+		"prefix": "lli",
+		"scope": "html, php",
+		"body": [
+			"<div class=\"page__image\">",
+			"\t<img data-src=\"@img/$1.jpg\" data-srcset=\"@img/$1-2x.jpg 2x\" src=\"@img/image-replace.png\" alt=\"$2\">",
+			"</div>"
+		],
+		"description": "Lazy load image"
+	},
+
+	"Console log": {
+		"prefix": "javascript, typescript",
+		"scope": "html, php",
+		"body": [
+			"console.log('$1');",
+		],
+		"description": "Console log"
+	},
+
+	"Swiper HTML Layout": {
+		"prefix": "swr",
+		"scope": "html, php",
+		"body": [
+			"<div class=\"$1 swiper\">",
+			"\t<div class=\"swiper-wrapper\">",
+			"\t\t<div class=\"swiper-slide\">Slide 1</div>",
+			"\t</div>",
+			"",
+			"\t<div class=\"swiper-pagination\"></div>",
+			"",
+			"\t<div class=\"swiper-button-prev\"></div>",
+			"\t<div class=\"swiper-button-next\"></div>",
+			"",
+			"\t<div class=\"swiper-scrollbar\"></div>",
+			"</div>"
+		],
+		"description": "Swiper HTML Layout"
+	},
+
+	"Section bootstrap": {
+		"prefix": "secbs",
+		"scope": "html, php",
+		"body": [
+			"<div class=\"section $1\">",
+			"\t<div class=\"container $2__container\">",
+			"\t\t<div class=\"row\">",
+			"\t\t\t<div class=\"col-$3\">",
+			"\t\t\t\t$4",
+			"\t\t\t</div>",
+			"\t\t</div>",
+			"\t</div>",
+			"</div>"
+		],
+		"description": "Section bootstrap"
+	},
+
+
+	"Media hover": {
+		"prefix": "hah",
+		"scope": "css, sass, scss, less",
+		"body": [
+			"@media ( any-hover: hover )",
+			"\t&:hover",
+			"\t\t$1",
+		],
+		"description": "Media hover"
+	},
+
+
+	"Display flex center": {
+		"prefix": "dfc",
+		"scope": "css, sass, scss, less",
+		"body": [
+			"display: flex",
+			"align-items: center",
+			"justify-content: center",
+		],
+		"description": "Display flex center"
+	},
+
+
+	"Position absolute centering": {
+		"prefix": "abc",
+		"scope": "css, sass, scss, less",
+		"body": [
+			"position: absolute",
+			"top: 50%",
+			"left: 50%",
+			"transform: translate(-50%, -50%)",
+		],
+		"description": "Position absolute centering"
+	},
+
+
+	"Hide element": {
+		"prefix": "hid",
+		"scope": "css, sass, scss, less",
+		"body": [
+			"position: absolute",
+			"top: -110%",
+			"left: -110%",
+			"pointer-events: none",
+			"visibility: hidden",
+			"font-size: 0",
+			"line-height: 0",
+			"width: 0",
+			"height: 0",
+		],
+		"description": "Hide element"
+	},
+
+
+	"Position absolute centering top": {
+		"prefix": "abct",
+		"scope": "css, sass, scss, less",
+		"body": [
+			"position: absolute",
+			"top: 50%",
+			"transform: translateY(-50%)",
+		],
+		"description": "Position absolute centering top"
+	},
+
+
+	// Margin
+	"Margin all": {
+		"prefix": "ma",
+		"scope": "css, sass, scss, less",
+		"body": [
+			"margin: $1 $2 $3 $4"
+		],
+		"description": "Margin all"
+	},
+
+	"Margin top": {
+		"prefix": "mt",
+		"scope": "css, sass, scss, less",
+		"body": [
+			"margin: $1 0 0 0"
+		],
+		"description": "Margin top"
+	},
+
+	"Margin right": {
+		"prefix": "mr",
+		"scope": "css, sass, scss, less",
+		"body": [
+			"margin: 0 $1 0 0"
+		],
+		"description": "Margin right"
+	},
+
+	"Margin bottom": {
+		"prefix": "mb",
+		"scope": "css, sass, scss, less",
+		"body": [
+			"margin: 0 0 $1 0"
+		],
+		"description": "Margin bottom"
+	},
+
+	"Margin left": {
+		"prefix": "ml",
+		"scope": "css, sass, scss, less",
+		"body": [
+			"margin: 0 0 0 $1"
+		],
+		"description": "Margin left"
+	},
+	// End. Margin
+
+
+	// Padding
+	"Padding all": {
+		"prefix": "pa",
+		"scope": "css, sass, scss, less",
+		"body": [
+			"padding: $1 $2 $3 $4"
+		],
+		"description": "Padding all"
+	},
+
+	"Padding top": {
+		"prefix": "pt",
+		"scope": "css, sass, scss, less",
+		"body": [
+			"padding-top: $1 0 0 0"
+		],
+		"description": "Padding top"
+	},
+
+	"Padding right": {
+		"prefix": "pr",
+		"scope": "css, sass, scss, less",
+		"body": [
+			"padding-right: 0 $1 0 0"
+		],
+		"description": "Padding right"
+	},
+
+	"Padding bottom": {
+		"prefix": "pb",
+		"scope": "css, sass, scss, less",
+		"body": [
+			"padding-bottom: 0 0 $1 0"
+		],
+		"description": "Padding bottom"
+	},
+
+	"Padding left": {
+		"prefix": "pl",
+		"scope": "css, sass, scss, less",
+		"body": [
+			"padding-left: 0 0 0 $1"
+		],
+		"description": "Padding left"
+	}
+	// End. Padding
+}
