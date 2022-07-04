@@ -7,6 +7,12 @@ document.addEventListener('DOMContentLoaded', () => {
 	"use strict";
 
 
+
+
+
+
+
+
 	// INIT WEBP-FIND
 		webpFind();
 	// END. INIT WEBP-FIND

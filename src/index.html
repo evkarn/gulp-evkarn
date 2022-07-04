@@ -8,26 +8,20 @@
 "url":"evkarn.ru",
 })
 
-	<body>
-		<div class="page page-home">
-@@include('_includes/header/header.html', {
-	"alt": "Название компании"
-})
+<body>
+	<div class="page page-home">
+		@@include('_includes/header/header.html', {
+		"alt": "Название компании"
+		})
 
-			<main class="page__main main">
-				<section class="section section--one" data-section=".section--one">
-					<div class="section__row row">
-						<div class="row__column">
+		<main class="page__main main">
 
-						</div>
-					</div>
-				</section>
+		</main>
 
-			</main>
+		@@include('_includes/footer/footer.html')
+	</div>
 
-@@include('_includes/footer/footer.html')
-		</div>
-		
-@@include('_includes/footer/end-page.html')
-	</body>
+	@@include('_includes/footer/end-page.html')
+</body>
+
 </html>

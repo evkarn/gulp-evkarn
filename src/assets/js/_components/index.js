@@ -22,6 +22,8 @@ export {lazyLoadYandexMap} from "./lazy-load/lazyLoadYandexMap.js";
 
 export {offsetBottomPanelPhone} from "./offset-bottom-panel-phone/offsetBottomPanelPhone.js";
 
+export {portfolioTabs} from "./portfolio-tabs/portfolioTabs.js";
+
 export {quiz} from "./quiz/quiz.js";
 
 export {ratingJS} from "./rating/ratingJS.js";
