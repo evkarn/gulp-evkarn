@@ -8,6 +8,8 @@
 	// END. INIT IMAGE-IN-BACKGROUND
 
 export function imageInBackground(){
+	'use strict';
+
 	// Получаем элементы с атрибутом data-image-in-background
 	let ibg = document.querySelectorAll("[data-image-in-background]");
 

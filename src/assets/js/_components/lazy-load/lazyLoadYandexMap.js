@@ -8,6 +8,8 @@
 	// END. INIT LAZY-LOAD-MAP-YANDEX
 
 export function lazyLoadYandexMap() {
+	'use strict';
+
 	// Находим в html блок с классом "load-map" и помещаю в переменную
 	const loadMapBlock = document?.querySelector('.lazy-load-map');
 

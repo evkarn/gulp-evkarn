@@ -1,4 +1,6 @@
 export function activeNavLinkOnScroll() {
+	'use strict';
+	
 	// Помещаем все ссылки меню с атрибутом data-section в переменную
 	const navLinksGoto = document.querySelectorAll('[data-goto]');
 

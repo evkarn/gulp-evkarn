@@ -10,10 +10,14 @@
 			500 - количество пикселей от верха доя появления кнопки
 		*/
 
-		// buttonToTop(700, 500);
+		// if (document.querySelector('[data-button-to-top]')) {
+		// 	buttonToTop(700, 500);
+		// }
 	// END. INIT BUTTON-RETURN-TOP
 
 export function buttonToTop(speedReturnTop, scrollTop) {
+	'use strict';
+	
 	// Получаем кнопку в переменную
 	const buttonTop = document?.querySelector('[data-button-to-top]');
 
@@ -28,6 +32,7 @@ export function buttonToTop(speedReturnTop, scrollTop) {
 			buttonTop.classList.remove('button-to-top__active');
 		}
 	}
+
 	window.addEventListener('scroll', buttonTopActive);
 
 	if (buttonTop) {

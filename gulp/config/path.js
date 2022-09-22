@@ -30,12 +30,14 @@ export const path = {
 
 		img: `${buildFolder}/assets/images/dist/`,
 
+		spriteIcons: `${buildFolder}/assets/sprite-icons/`,
+
 		js: `${buildFolder}/assets/js/`,
 
 		jsSpecial: `${buildFolder}/assets/js-special/`,
 	},
 
-	// Пути к файлам с исходниками
+	// Пути к исходникам файлов
 	src: {
 		configFiles: `${srcFolder}/*.{htaccess,txt,xml}`,
 
@@ -67,7 +69,7 @@ export const path = {
 
 		imgSVG: `${srcFolder}/assets/images/_src/**/*.svg`,
 
-		sass: `${srcFolder}/assets/styles/style-main.sass`,
+		sass: `${srcFolder}/assets/styles/**.sass`,
 
 		svgSprite: `${srcFolder}/assets/svg-sprite/*.svg`,
 	},

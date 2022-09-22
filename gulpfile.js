@@ -29,6 +29,8 @@ import { copyFiles } from './gulp/tasks/copy-files.js';
 
 import { copySpecialCSS } from './gulp/tasks/copySpecialCSS.js';
 
+import { copySpecialJS } from './gulp/tasks/copySpecialJS.js';
+
 import { ttfToWoff, fontsStyle } from './gulp/tasks/fonts.js';
 
 import { ftp } from './gulp/tasks/ftp.js';
@@ -46,8 +48,6 @@ import { imgSVG } from './gulp/tasks/imgSVG.js';
 import { imgWebp } from './gulp/tasks/imgWebp.js';
 
 import { js } from './gulp/tasks/js.js';
-
-import { copySpecialJS } from './gulp/tasks/copySpecialJS.js';
 
 import { reset } from './gulp/tasks/reset.js';
 

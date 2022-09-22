@@ -17,6 +17,8 @@
 	// END. INIT SELECT-SMOOTH
 
 export function customSelectSmooth(durationSpeed) {
+	'use strict';
+
 	// Собираем все элементы с атрибутом "data-selects"
 	const selectsArray = document?.querySelectorAll('[data-selects]');
 
@@ -127,8 +129,6 @@ export function customSelectSmooth(durationSpeed) {
 			// Подмена текста в заголовке select при клике на data-select-option
 			if (target.closest('[data-select-option]')) {
 				const targetElText = target.innerText;
-
-				console.log(targetElText);
 
 				const targetDataSelectWrapper = target.closest('[data-select-wrapper]');
 

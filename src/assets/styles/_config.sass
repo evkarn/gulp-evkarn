@@ -1,15 +1,18 @@
 html
 	box-sizing: border-box
 
-html, body
+html,
+body
 	height: 100%
 
 *,
-*:before,
-*:after
+*::before,
+*::after
 	box-sizing: inherit
 
-header, section, footer
+header,
+section,
+footer
 	position: relative
 
 ::placeholder
@@ -55,7 +58,7 @@ ul, ol
 h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6
 	padding: 0
 	margin: 0
-	+ff-title
+	font-family: $ff-title
 
 h1, .h1
 	line-height: 1.3
@@ -69,6 +72,9 @@ h1, .h1
 
 .fullWidth, .full-width, .fWidth, .f-width, .fullW, .full-w
 	width: 100%
+
+.textBold, .tBold, .text-bold, .t-bold
+	font-weight: 700
 
 .resp-img, .resp-image
 	position: relative
@@ -92,8 +98,9 @@ h1, .h1
 	width: 0
 	height: 0
 	position: absolute
-	top: -110%
-	left: -110%
+	top: -1100%
+	left: -1100%
+	opacity: 0
 
 .dis-none, .d-none, .d-n, .disNone, .dNone
 	display: none
@@ -111,13 +118,13 @@ h1, .h1
 	// padding: 0 rem(calc($gutter / 2))
 
 body
-	+ff-text
+	font-family: $ff-body
 	font-size: $fz
 	font-weight: 400
 	line-height: $lh
 	min-width: $screen-min-width
 	position: relative
-	overflow: hidden // если используете на сайте position: sticky - уберите эту настройку
+	overflow-x: hidden // если используете на сайте position: sticky - уберите эту настройку
 
 .page
 	display: flex
@@ -126,3 +133,6 @@ body
 .page__main
 	min-height: 100%
 	flex: 1 1 auto
+
+.section
+	min-width: 0

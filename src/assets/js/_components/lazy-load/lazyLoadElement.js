@@ -8,6 +8,8 @@
 	// END. INIT LAZY-LOAD-ELEMENT
 
 export function lazyLoadElement() {
+	'use strict';
+	
 	// Переменная для позиций всех блоков
 	let lazyBlocksPositions = [];
 

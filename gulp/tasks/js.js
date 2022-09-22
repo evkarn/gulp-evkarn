@@ -1,4 +1,8 @@
-import webpack from 'webpack-stream'; // Обработка файлов js
+// Добавление в файлы строк
+import fileInclude from 'gulp-file-include';
+
+// Обработка файлов js
+import webpack from 'webpack-stream'; 
 
 export const js = () => {
 	// Находим js файлы в папке исходников
@@ -11,9 +15,6 @@ export const js = () => {
 			message: "Error: <%= error.message %>"
 		})
 	))
-
-	// Заменяем @img на assets/images/dist
-	.pipe(app.plugins.replace(/@utils\//g, '../../_utils'))
 
 	// Обработка файлов js
 	.pipe(webpack({

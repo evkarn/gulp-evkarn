@@ -8,6 +8,8 @@
 	// END. INIT HEADER
 
 export function headerMain() {
+	'use strict';
+	
 	// Помещаем body в переменную
 	const body = document.body;
 
@@ -53,28 +55,28 @@ export function headerMain() {
 	// Создаём переменную и записываем в неё высоту header
 	document.querySelector(':root').style.setProperty('--header-height', `${headerHeight}px`);
 
-	burger?.addEventListener('click', () => {
-		burger?.classList.add('burger--active');
-		nav?.classList.add('nav--visible');
+	burger.addEventListener('click', () => {
+		burger.classList.add('burger--active');
+		nav.classList.add('nav--visible');
 		disableScroll();
 	});
 	
-	navBtnClose?.addEventListener('click', () => {
-		burger?.classList.remove('burger--active');
-		nav?.classList.remove('nav--visible');
+	navBtnClose.addEventListener('click', () => {
+		burger.classList.remove('burger--active');
+		nav.classList.remove('nav--visible');
 		enableScroll();
 	});
 
-	navLinks?.forEach(el => {
+	navLinks.forEach(el => {
 		el.addEventListener('click', () => {
-			burger?.classList.remove('burger--active');
-			nav?.classList.remove('nav--visible');
+			burger.classList.remove('burger--active');
+			nav.classList.remove('nav--visible');
 			enableScroll();
 		});
 	});
 
 	// Прокрутка до блока по клику на ссылку
-	if (nav.classList.contains('nav--scroll-link')) {
+	if (document.querySelector('[data-scroll-links]')) {
 		if(navLinksGoto.length > 0) {
 			// Проходимся по всем ссылкам и отслеживаем клик по ним, при клике выполняем функцию onMenuLinkClick
 			navLinksGoto.forEach(menuLink => {
@@ -109,7 +111,7 @@ export function headerMain() {
 	}
 
 	// Добавление ссылке класса active при докрутке до конкретного блока
-	if (nav.classList.contains('nav--active-link')) {
+	if (document.querySelector('[data-active-link]')) {
 		window.addEventListener('scroll', () => {
 			// Помещаем в переменную расстояние на которое прокрутили экран
 			let scrollDistance = window.pageYOffset; 

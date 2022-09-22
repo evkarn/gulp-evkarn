@@ -1,4 +1,6 @@
 export function webpFind() {
+	'use strict';
+
 	// Проверка поддержки webp
 	function testWebp(callback) {
 		let webP = new Image();

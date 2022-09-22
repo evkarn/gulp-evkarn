@@ -8,6 +8,8 @@
 	// END. INIT RATING-JS
 
 export function ratingJS() {
+	'use strict';
+	
 	const ratings = document.querySelectorAll('.rating');
 
 	if (ratings.length > 0) {

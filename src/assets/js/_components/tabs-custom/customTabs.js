@@ -8,18 +8,27 @@
 	// END. INIT CUSTOM-TABS
 
 export const customTabs = () => {
+	'use strict';
+
 	const tabs = document.querySelector('.tabs');
-	const tabsBtn = document.querySelectorAll('.tabs__btn');
+
+	const tabsButtons = document.querySelectorAll('.tabs__btn');
+
 	const tabsContent = document.querySelectorAll('.tabs__content');
 
-	console.log('Tabs active');
-
-	if (tabs) {
+	if ( tabs ) {
 		tabs.addEventListener('click', (e) => {
-			if (e.target.classList.contains('tabs__btn')) {
+			if ( e.target.classList.contains('tabs__btn') ) {
 				const tabsPath = e.target.dataset.tabsPath;
-				tabsBtn.forEach(el => {el.classList.remove('tabs__btn--active')});
-				document.querySelector(`[data-tabs-path="${tabsPath}"]`).classList.add('tabs__btn--active');
+
+				tabsButtons.forEach(el => {
+					el.classList.remove( 'tabs__btn--active' );
+				});
+
+				const tabsButtonsDataPath = document.querySelector( `[data-tabs-path="${tabsPath}"]` );
+
+				tabsButtonsDataPath.classList.add('tabs__btn--active');
+
 				tabsHandler(tabsPath);
 			}
 
@@ -30,7 +39,7 @@ export const customTabs = () => {
 
 				if (previousParent) {
 					let prevActive = previousParent.querySelector('.tabs__btn')
-					tabsBtn.forEach(el => {el.classList.remove('tabs__btn--active')});
+					tabsButtons.forEach(el => {el.classList.remove('tabs__btn--active')});
 					prevActive.classList.add('tabs__btn--active');
 
 					let path = prevActive.dataset.tabsPath;
@@ -45,7 +54,7 @@ export const customTabs = () => {
 
 				if (nextParent) {
 					let nextActive = nextParent.querySelector('.tabs__btn');
-					tabsBtn.forEach(el => {el.classList.remove('tabs__btn--active')});
+					tabsButtons.forEach(el => {el.classList.remove('tabs__btn--active')});
 					nextActive.classList.add('tabs__btn--active');
 
 					let path = nextActive.dataset.tabsPath;
@@ -55,8 +64,13 @@ export const customTabs = () => {
 		});
 	}
 
-	const tabsHandler = (path) => {
-		tabsContent.forEach(el => {el.classList.remove('tabs__content--active')});
-		document.querySelector(`[data-tabs-target="${path}"]`).classList.add('tabs__content--active');
+	const tabsHandler = ( path ) => {
+		tabsContent.forEach(el => {
+			el.classList.remove('tabs__content--active');
+		});
+
+		const dataTabsTarget = document.querySelector(`[data-tabs-target="${path}"]`);
+
+		dataTabsTarget.classList.add('tabs__content--active');
 	};
 };

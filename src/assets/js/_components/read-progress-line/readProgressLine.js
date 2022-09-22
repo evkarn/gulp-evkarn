@@ -8,6 +8,8 @@
 	// END. INIT READ-PROGRESS-line
 
 export function readProgressLine() {
+	'use strict';
+
 	// Добавляем в body блок для линии прогресса прокрутки
 	let lineAppend = document.createElement('div');
   lineAppend.className = 'progress-line';

@@ -8,6 +8,8 @@
 	// END. INIT PORTFOLIO-TABS
 
 export const portfolioTabs = function() {
+	'use strict';
+	
 	const portfolioTabsNav = document.querySelector('.portfolio-tabs-nav');
 
 	const portfolioTabsBtns = document.querySelectorAll('.portfolio-tabs-nav__btn');

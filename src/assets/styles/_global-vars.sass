@@ -1,8 +1,24 @@
 // Color variable
-$c-accent: darken(orange, 10%)
+\:root
+	--c-accent: #7db3c2
 
-$c-black: #000
-$c-white: #fff
+	--c-darken: #000
+	--c-lighten: #fff
+
+	--c-dark: #333
+	--c-light: #f4f4f4
+
+	--c-title-light: #fff
+	--c-title-dark: #333
+
+	--c-text-light: #fff
+	--c-text-dark: #333
+
+
+$c-accent: #7db3c2
+
+$c-darken: #000
+$c-lighten: #fff
 
 $c-dark: #333
 $c-light: #f4f4f4
@@ -18,6 +34,26 @@ $c-text-dark: #333
 // Fonts
 $fz: 16px
 $lh: 1.5
+
+$font-name-all: 'Akrobat-custom'
+
+$font-name-title: 'Akrobat-custom'
+
+$font-name-text: 'Akrobat-custom'
+
+$font-name-body: 'Akrobat-custom'
+
+$font-sans-serif: sans-serif
+
+$font-serif: serif
+
+$ff-all: $font-name-all, $font-sans-serif
+
+$ff-title: $font-name-all, $font-sans-serif
+
+$ff-text: $font-name-all, $font-sans-serif
+
+$ff-body: $font-name-all, $font-sans-serif
 // End. Fonts
 
 
@@ -31,8 +67,8 @@ $gutter: $grid-gutter-width
 $screen-min-width: 320px
 $screen-max-width: 1920px
 $content-width: 1254px
-$container-offset: rem(15)
-$container-width: calc($content-width + (var(--container-offset) * 2))
+$container-offset: 0.9375rem
+$container-width: calc($content-width + ($container-offset * 2))
 $design-width: 1600
 // End. Greed system
 

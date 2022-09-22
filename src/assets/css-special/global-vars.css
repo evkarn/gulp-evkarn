@@ -1,18 +1,20 @@
-/* COLOR-VARS */
 :root {
-	--c-accent: #ffa500;
+	--c-accent: #d93737;
+
+	--c-dark: #0c1a01;
+	--c-light: #ececec;
 
 	--c-black: #000;
 	--c-white: #fff;
-	
-	--c-dark: #333;
-	--c-light: #f4f4f4;
-	
-	--c-title-light: #fff;
-	--c-title-dark: #333;
-	
-	--c-text-light: #fff;
-	--c-text-dark: #333;
-}
 
-/* END. COLOR-VARS */
+	--c-mine-shaft: #333;
+
+	--c-pine-tree: #1a3604;
+	--c-san-felix: #204405;
+	--c-holly: #02190d;
+	--c-deco: #b6d383;
+	--c-salem: #07834f;
+	--c-golden-grass: #dba61c;
+	--c-green-house: #2a520b;
+	--c-limeade: #3a8400;
+}

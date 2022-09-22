@@ -8,6 +8,8 @@
 	// END. INIT COLOR-SCHEME
 
 export function colorScheme() {
+	'use strict';
+	
 	const lightStyles = document.querySelectorAll('link[rel=stylesheet][media*=prefers-color-scheme][media*=light]');
 
 	const darkStyles = document.querySelectorAll('link[rel=stylesheet][media*=prefers-color-scheme][media*=dark]');

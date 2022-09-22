@@ -14,6 +14,8 @@
 
 
 export function digitalCounters(timeDuration) {
+	'use strict';
+	
 	// Initialization counters
 	function digitalCountersInit(digitalCountersItems) {
 		let digitalCounters = digitalCountersItems ? digitalCountersItems : document.querySelectorAll('[data-digital-counter]');

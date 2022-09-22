@@ -8,6 +8,8 @@
 	// END. INIT LAZY-LOAD-IMAGES
 
 export function lazyLoadImages() {
+	'use strict';
+
 	//Находим в html все картинки с атрибутами "data-src", "data-srcset"
 	const lazyImages = document.querySelectorAll('img[data-src],source[data-srcset]'); 
 

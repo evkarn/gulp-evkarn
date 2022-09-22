@@ -47,23 +47,23 @@ export const fontsStyle = () => {
 
 						let fontWeight = fontFileName.split('-')[1] ? fontFileName.split('-')[1] : fontFileName;
 
-						if(fontWeight.toLowerCase() === 'thin') {
+						if (fontWeight.toLowerCase() === 'thin') {
 							fontWeight = 100;
 						} else if (fontWeight.toLowerCase() === 'extralight') {
 							fontWeight = 200;
-						} else if (fontWeight.toLowerCase() === 'light') {
+						} else if (fontWeight.toLowerCase() === 'light' || fontWeight.toLowerCase() === 'book' || fontWeight.toLowerCase() === 'demi') {
 							fontWeight = 300;
-						} else if (fontWeight.toLowerCase() === 'regular') {
+						} else if (fontWeight.toLowerCase() === 'regular' || fontWeight.toLowerCase() === 'normal') {
 							fontWeight = 400;
 						} else if (fontWeight.toLowerCase() === 'medium') {
 							fontWeight = 500;
-						} else if (fontWeight.toLowerCase() === 'semibold') {
+						} else if (fontWeight.toLowerCase() === 'semibold' || fontWeight.toLowerCase() === 'demibold') {
 							fontWeight = 600;
 						} else if (fontWeight.toLowerCase() === 'bold') {
 							fontWeight = 700;
 						} else if (fontWeight.toLowerCase() === 'extrabold' || fontWeight.toLowerCase() === 'heavy') {
 							fontWeight = 800;
-						} else if (fontWeight.toLowerCase() === 'black') {
+						} else if (fontWeight.toLowerCase() === 'black' || fontWeight.toLowerCase() === 'ultrablack' || fontWeight.toLowerCase() === 'fat') {
 							fontWeight = 900;
 						} else {
 							fontWeight = 400;

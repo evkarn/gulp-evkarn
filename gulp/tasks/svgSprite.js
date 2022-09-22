@@ -12,7 +12,7 @@ export const svgSpriteIcons = () => {
 	.pipe(svgSprite({
 		mode: {
 			stack: {
-				sprite: `../svg-sprite/svg-sprite.svg`,
+				sprite: `../sprite-icons.svg`,
 				
 				// Создать страницу с перечнем иконок
 				example: true
@@ -20,5 +20,5 @@ export const svgSpriteIcons = () => {
 		},
 	}))
 	
-	.pipe(app.gulp.dest(`${app.path.build.img}`));
+	.pipe(app.gulp.dest(`${app.path.build.spriteIcons}`));
 };

@@ -42,3 +42,16 @@
 			// 	debugMode: false
 		// });
 	// END. INIT MICROMODAL
+
+
+	// Создаем одноименные функции методов. прописываем поведение и передаем в micromodal
+	function onShow(modal) {
+    console.info(`${modal.id} is shown`);
+  }
+  function onClose(modal) {
+    console.info(`${modal.id} is hidden`);
+  }
+  MicroModal.init({
+    onShow: onShow
+    onClose: onClose
+  });

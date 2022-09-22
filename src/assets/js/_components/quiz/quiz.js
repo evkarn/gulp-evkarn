@@ -8,6 +8,8 @@
 	// END. INIT QUIZ
 
 export function quiz() {
+	'use strict';
+	
 	const progressLine = document?.querySelector('[data-progress-line]');
 
 	const progressItems = document?.querySelectorAll('[data-progress-item]');

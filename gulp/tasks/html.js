@@ -4,6 +4,9 @@ import fileInclude from 'gulp-file-include';
 // Проверка версий файлов
 import versionNumber from 'gulp-version-number';
 
+// Замена img на picture с webp компонентом
+import webpHtmlNoSVG from 'gulp-webp-html-nosvg';
+
 export const html = () => {
 	// Находим все .html в папке исходников
 	return app.gulp.src(app.path.src.html)
@@ -16,13 +19,17 @@ export const html = () => {
 		})
 	))
 
+	// Вставляем заданные @include
 	.pipe(fileInclude())
 
 	// Заменяем @img на assets/images/dist
 	.pipe(app.plugins.replace(/@img\//g, 'assets/images/dist/'))
 
-	// Заменяем @js на assets/js
-	.pipe(app.plugins.replace(/@js\//g, 'assets/js/'))
+	// Если режим продакшена, то заменяем img на picture с webp компонентом
+	.pipe(app.plugins.if(
+		app.isBuild,
+		webpHtmlNoSVG()
+	))
 
 	// Если режим продакшена, то добавляем атрибут версии для стилей и скриптов
 	.pipe(app.plugins.if(

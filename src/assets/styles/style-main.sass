@@ -1,10 +1,26 @@
+// МОДУЛЬ MATH ДЛЯ SASS
+@use 'sass:math'
+// END. МОДУЛЬ MATH ДЛЯ SASS
+
+// FONTS
+@import './fonts'
+// END. FONTS
+
+
+// BOOTSTRAP-GRID
+@import 'node_modules/bootstrap/scss/bootstrap-reboot.scss' // Bootstrap Reboot collection
+
+@import 'node_modules/bootstrap/scss/bootstrap-grid.scss' // Optional Bootstrap Grid
+// END. BOOTSTRAP-GRID
+
+
 // GLOBAL-VARS
 @import './global-vars'
 // END. GLOBAL-VARS
 
 
 // MIXINS
-@import './mixins'
+@import './_mixins/mixins'
 // END. MIXINS
 
 
@@ -13,22 +29,232 @@
 // END. CONFIG
 
 
-// FONTS
-@import 'fonts'
-
-
-// VENDOR
-@import 'vendor'
-// END. VENDOR
-
-
-// BOOTSTRAP-GRID
-@import 'node_modules/bootstrap/scss/bootstrap-reboot.scss' // Bootstrap Reboot collection
-@import 'node_modules/bootstrap/scss/mixins/_breakpoints.scss' // Bootstrap Breakpoints mixin
-@import 'node_modules/bootstrap/scss/bootstrap-grid.scss' // Optional Bootstrap Grid
-// END. BOOTSTRAP-GRID
-
-
 // COMPONENTS
-@import 'components'
+@import './_components/components'
 // END. COMPONENTS
+
+
+// НАШИ РАБОТЫ - ПОРТФОЛИО
+\:root
+	--c-accent: #7db3c2
+
+	--c-darken: #000
+	--c-lighten: #fff
+
+	--c-dark: #333
+	--c-light: #f4f4f4
+
+$c-darken: #000
+$c-lighten: #fff
+
+$c-dark: #333
+$c-light: #f4f4f4
+
+.insta-projects
+	margin-top: 200px
+
+.insta-projects__wrapper
+	text-align: center
+
+
+
+// Сетка для превью работ
+.insta-projects__list
+	display: grid
+	grid-template-columns: repeat(12, 1fr)
+	grid-template-rows: auto
+	padding: 0
+	margin: 0
+
+.insta-projects__item
+	display: flex
+	flex-direction: column
+	align-items: center
+	justify-content: center
+	position: relative
+	grid-column: span 4
+	overflow: hidden
+	font-size: 14px
+	cursor: pointer
+	&:hover
+		.insta-projects-item__overlay
+			opacity: 1
+			transform: translateY(0)
+	@media ( max-width: 768px )
+		grid-column: 6 span
+	@media ( max-width: 460px )
+		grid-column: 12 span
+
+.insta-projects__item--active
+	.insta-projects-item__overlay
+		opacity: 1
+		transform: translateY(0)
+
+.insta-projects__item:nth-child(n + 7)
+	display: none
+
+.insta-projects__item.is-visible
+	display: flex
+
+.insta-projects-item__preview
+	display: block
+	max-width: 100%
+	width: 100%
+	height: auto
+	object-fit: cover
+	margin: 0 auto
+
+.insta-projects-item__overlay
+	position: absolute
+	z-index: 3
+	width: 100%
+	height: 100%
+	border: none
+	top: 0
+	right: 0
+	bottom: 0
+	left: 0
+	padding: 10px
+	display: flex
+	flex-direction: column
+	align-items: center
+	justify-content: center
+	text-align: center
+	color: $c-light
+	background-color: rgba($c-darken, .7)
+	opacity: 0
+	transform: translateY(100%)
+	transition: opacity .3s ease, transform .3s ease
+
+.insta-projects-overlay__description
+	padding: 0 10px
+
+.insta-projects-overlay__notes
+	display: flex
+	flex-direction: column
+	margin: 16px auto 0 auto
+	color: var(--c-accent)
+	position: relative
+	&:after
+		content: ''
+		position: relative
+		bottom: 0
+		left: 0
+		display: block
+		width: 0
+		height: 1px
+		background-color: var(--c-accent)
+		opacity: 0
+		transition: width .3s ease, opacity .2s ease
+	&:hover
+		&:after
+			opacity: 1
+			width: 100%
+
+
+// Кнопка — Показать ещё
+.projects__show-more
+	display: flex
+	align-items: center
+	justify-content: center
+	margin: 30px auto 0
+	padding: 16px 32px
+	font-size: 16px
+	font-weight: 700
+	letter-spacing: 0.01em
+	border: 2px solid var(--c-accent)
+	border-radius: 5px
+	background-color: transparent
+	text-transform: uppercase
+	color: var(--c-darken)
+	transition: background-color .4s ease
+	@media ( any-hover: hover )
+		&:hover
+			background-color: var(--c-accent)
+
+
+// Контент в модально окне
+.insta-projects-content
+	--c-projects-content-bg: #fff
+
+	display: none
+	max-width: 100%
+	width: 100%
+	min-height: 320px
+	overflow: hidden
+	position: relative
+	background-color: var(--c-projects-content-bg)
+
+.insta-projects-content--active
+	display: block
+
+.insta-projects-slider__list
+	margin: 0 auto
+	padding: 0
+
+.insta-projects-slider__item
+	max-width: 100%
+	width: 100%
+	min-height: 640px
+	position: relative
+	background-color: rgba($c-darken, .8)
+	@media ( max-height: 640px )
+		min-height: 320px
+	@media ( max-width: 640px )
+		min-height: 540px
+	@media ( max-width: 576px )
+		min-height: 440px
+	@media ( max-width: 460px )
+		min-height: 380px
+	@media ( max-width: 390px )
+		min-height: 320px
+
+.insta-projects-slider__image
+	position: absolute
+	max-width: 100%
+	width: 100%
+	height: 100%
+	top: 0
+	right: 0
+	bottom: 0
+	left: 0
+	object-fit: contain
+
+.insta-projects-slider__button
+	--c-svg-inner: #f4f4f4
+	font-size: 14px
+	display: flex
+	align-items: center
+	justify-content: center
+
+	&:after
+		display: none
+
+	svg
+		width: 25px
+		height: 40px
+		fill: var(--c-svg-inner)
+		@media ( max-width: 576px )
+			width: 20px
+			height: 32px
+
+.insta-projects-content__info
+	padding: 16px
+
+	ul
+		list-style-type: disc
+
+	ol
+		list-style-type: decimal
+
+	ul, ol
+		padding-left: 20px
+		li
+			&:not(:last-child)
+				margin-bottom: 5px
+
+.insta-projects-content-info__title
+	display: inline-block
+	font-weight: 700
+	margin-bottom: 10px
+// КОНЕЦ. НАШИ РАБОТЫ - ПОРТФОЛИО

@@ -8,6 +8,8 @@
 	// END. INIT READ-PROGRESS-CIRCLE
 
 export function readProgressCircle() {
+	'use strict';
+
 	// Добавляем в body блок для линии прогресса прокрутки
 	let circleAppend = document.createElement('div');
 	circleAppend.className = 'circle-block';

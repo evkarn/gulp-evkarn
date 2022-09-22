@@ -8,6 +8,8 @@
 	// END. INIT OFFSET-BOTTOM-PANEL-PHONE
 
 export function offsetBottomPanelPhone() {
+	'use strict';
+
 	const changeHeight = () => {
 		let vh = window.innerHeight * 0.01;
 

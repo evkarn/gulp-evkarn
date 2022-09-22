@@ -8,14 +8,10 @@
 	// END. INIT SELECT-DISPLAY-NONE
 
 export function customSelectDisplayNone() {
+	'use strict';
+
 	// Собираем все элементы с атрибутом "data-selects"
 	const selectsArray = document?.querySelectorAll('[data-selects]');
-
-	const customSelectItems = document?.querySelectorAll('[data-select-wrapper]');
-
-	const customSelectOptions = document?.querySelectorAll('[data-select-options]');
-
-	const customSelectsWrappersTitle = document?.querySelectorAll('[data-select-title]');
 
 
 	// Проверяем есть ли они
