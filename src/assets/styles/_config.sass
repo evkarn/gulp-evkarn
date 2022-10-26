@@ -88,19 +88,41 @@ h1, .h1
 		left: 0
 		object-fit: cover
 
-.hidden
-	pointer-events: none
-	visibility: hidden
-	font-size: 0
-	line-height: 0
-	width: 0
-	height: 0
+.visually-hidden
 	position: absolute
-	top: -1100%
-	left: -1100%
-	opacity: 0
+  width: 1px
+  height: 1px
+  margin: -1px
+  border: 0
+  padding: 0
+  white-space: nowrap
+  clip-path: inset(100%)
+  clip: rect(0 0 0 0)
+  overflow: hidden
 
-.dis-none, .d-none, .d-n, .disNone, .dNone
+.full-hidden
+	font-size: 0
+	pointer-events: none
+	position: absolute
+	left: -1000px
+	right: -1000px
+	visibility: hidden
+	opacity: 0
+  width: 1px
+  height: 1px
+  margin: -1px
+  border: 0
+  padding: 0
+  white-space: nowrap
+  clip-path: inset(100%)
+  clip: rect(0 0 0 0)
+  overflow: hidden
+
+
+.hidden
+	display: none
+
+.dis-none, .d-none, .d-n, .dn, .disNone, .dNone, .display-none
 	display: none
 
 .container-fluid
