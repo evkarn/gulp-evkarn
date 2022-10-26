@@ -1,0 +1,46 @@
+$c-switch: #c3c5c9
+$c-switch-hover: #abaeb5
+$c-switch-active:#3366ff
+$c-switch-fake-after: #fff
+$tr-duration: .3s
+
+.input-switch
+	position: absolute
+	width: 1px
+	height: 1px
+	top: -1000px
+	left: -1000px
+	font-size: 0
+
+.input-switch:checked ~
+	.switch-fake
+		background-color: $c-switch-active
+		&:after
+			left: 24px
+
+.switch-fake
+	position: relative
+	display: flex
+	align-items: center
+	width: 52px
+	height: 28px
+	border: none
+	background-color: $c-switch
+	cursor: pointer
+	border-radius: 28px
+	transition: background-color $tr-duration ease
+	&:hover, &:focus
+		background-color: $c-switch-hover
+		color: $c-switch-hover
+	&:after
+		content: ""
+		position: absolute
+		top: 3px
+		left: 0
+		display: block
+		width: 22px
+		height: 22px
+		background-color: #fff
+		margin: 0 3px
+		border-radius: 50%
+		transition: left $tr-duration ease

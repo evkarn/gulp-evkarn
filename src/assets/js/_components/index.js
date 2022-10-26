@@ -26,6 +26,8 @@ export {lazyLoadYandexMap} from "./lazy-load/lazyLoadYandexMap.js";
 
 export {linkScrollToElement} from "./link-scroll-to-element/linkScrollToElement.js";
 
+export {modalEvkarnInit} from "./modal-evkarn/modalEvkarn.js";
+
 export {offsetBottomPanelPhone} from "./offset-bottom-panel-phone/offsetBottomPanelPhone.js";
 
 export {portfolioTabs} from "./portfolio-tabs/portfolioTabs.js";

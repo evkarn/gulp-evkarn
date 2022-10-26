@@ -38,12 +38,10 @@ export function customSelectDisplayNone() {
 				});
 			});
 		}
-	
 		selectWork();
 		// Конец. Раскрытие и закрытие селекта
 
 
-		// Обработка различных событий
 		document.addEventListener("click", function (e) {
 			const target = e.target;
 
@@ -99,6 +97,5 @@ export function customSelectDisplayNone() {
 			}
 			// Конец. Закрытие select при клике на data-select-option
 		});
-		// Конец. Обработка различных событий
 	}
 }

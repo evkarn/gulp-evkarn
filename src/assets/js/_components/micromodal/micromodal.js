@@ -50,6 +50,12 @@
   }
   function onClose(modal) {
     console.info(`${modal.id} is hidden`);
+
+		var instaProjectsItems = document.querySelectorAll( '.insta-projects__item' );
+
+		instaProjectsItems.forEach(el => {
+			el.classList.remove( 'insta-projects__item--active' );
+		});
   }
   MicroModal.init({
     onShow: onShow

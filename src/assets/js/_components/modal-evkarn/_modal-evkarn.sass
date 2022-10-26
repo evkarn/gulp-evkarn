@@ -1,0 +1,106 @@
+.modal
+	box-sizing: border-box
+	*, *::before, *::after
+		box-sizing: inherit
+
+.modals__overlay
+	position: fixed
+	z-index: 1000
+	left: 0
+	top: 0
+	right: 0
+	bottom: 0
+	background-color: rgba(0, 0, 0, 0.5)
+	display: flex
+	align-items: center
+	justify-content: center
+	height: 100vh
+	width: 100%
+	opacity: 0
+	visibility: hidden
+	transition: all 0.3s ease-in-out
+
+.modals__overlay--visible
+	opacity: 1
+	visibility: visible
+	transition: all 0.3s ease-in-out
+
+.modal
+	display: none
+	max-width: 432px
+	width: 100%
+	height: auto
+	margin: 15px
+	padding: 25px
+	border-radius: 6px
+	background-color: #fff
+
+.modal--visible
+	display: flex
+	flex-direction: column
+
+.modal__header
+	display: flex
+	align-items: center
+	justify-content: space-between
+	margin-bottom: 16px
+
+.modal__title
+	margin-right: 16px
+
+.modal__close
+	display: flex
+	align-items: center
+	justify-content: center
+	flex-basis: 24px
+	width: 24px
+	height: 24px
+	cursor: pointer
+	transition: opacity .3s ease-in-out
+	&:hover, &:focus
+		opacity: .7
+	svg, img
+		height: 14px
+		width: auto
+	svg
+		fill: #7d8392
+
+.modal__main
+	display: flex
+	flex-direction: column
+
+.modal-main__content
+	display: flex
+	flex-direction: column
+	max-height: 100%
+	overflow-y: auto
+
+.modal-main__title
+	font-family: $ff-r
+	font-style: normal
+	font-weight: 400
+	font-size: 15px
+	line-height: 1.2
+	margin-bottom: 12px
+	color: #7d8392
+
+.modal-main__input, .modal-main__select
+	width: 100%
+	padding: 12px 10px
+	box-sizing: border-box
+	margin-bottom: 16px
+	font-size: 15px
+	border: 1px solid #d5d7db
+	border-radius: 6px
+
+.modal-main__button
+	margin-left: auto
+
+.body--stop-scroll
+	position: relative
+	overflow: hidden
+	height: 100vh
+	position: fixed
+	left: 0
+	top: 0
+	width: 100%

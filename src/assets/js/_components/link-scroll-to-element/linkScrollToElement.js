@@ -15,8 +15,6 @@ export function linkScrollToElement() {
 	// Помещаем все ссылки меню с атрибутом data-goto в переменную
 	const linksScroll = document.querySelectorAll('[data-nav-page]');
 
-
-
 	if(linksScroll.length > 0) {
 		// Проходимся по всем ссылкам и отслеживаем клик по ним, при клике выполняем функцию onScrollLinkClick
 		linksScroll.forEach(link => {

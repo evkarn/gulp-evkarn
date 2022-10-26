@@ -37,43 +37,62 @@ export function headerMain() {
 	// Помещаем nav-btn-close в переменную
 	const navBtnClose = document?.querySelector('[data-nav-close]');
 
+
 	let disableScroll = function () {
 		let pagePosition = window.scrollY;
+
 		document.body.classList.add('stop-scroll');
+
 		document.body.dataset.position = pagePosition;
+
 		document.body.style.top = -pagePosition + 'px';
-	}
+	};
+
 
 	let enableScroll = function () {
 		let pagePosition = parseInt(document.body.dataset.position, 10);
+
 		document.body.style.top = 'auto';
+
 		document.body.classList.remove('stop-scroll');
+
 		window.scroll({ top: pagePosition, left: 0 });
+
 		document.body.removeAttribute('data-position');
-	}
+	};
+
 
 	// Создаём переменную и записываем в неё высоту header
 	document.querySelector(':root').style.setProperty('--header-height', `${headerHeight}px`);
 
 	burger.addEventListener('click', () => {
 		burger.classList.add('burger--active');
+
 		nav.classList.add('nav--visible');
+
 		disableScroll();
 	});
+
 	
 	navBtnClose.addEventListener('click', () => {
 		burger.classList.remove('burger--active');
+
 		nav.classList.remove('nav--visible');
+
 		enableScroll();
 	});
+
 
 	navLinks.forEach(el => {
 		el.addEventListener('click', () => {
 			burger.classList.remove('burger--active');
+
 			nav.classList.remove('nav--visible');
+
 			enableScroll();
 		});
 	});
+
 
 	// Прокрутка до блока по клику на ссылку
 	if (document.querySelector('[data-scroll-links]')) {
@@ -96,11 +115,11 @@ export function headerMain() {
 
 					// Рассчитываем положение этого элемента на странице минус высоту header
 					const gotoBlockValue = gotoBlock.getBoundingClientRect().top + pageYOffset - headerHeight;
-					;
 
 					// Прокручиваем страницу до этого элемента
 					window.scrollTo({
 						top: gotoBlockValue,
+
 						behavior: "smooth"
 					});
 
@@ -109,6 +128,7 @@ export function headerMain() {
 			}
 		}
 	}
+	
 
 	// Добавление ссылке класса active при докрутке до конкретного блока
 	if (document.querySelector('[data-active-link]')) {

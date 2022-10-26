@@ -85,7 +85,7 @@ const fonts = gulp.series(ttfToWoff, fontsStyle);
 
 
 // Основные задачи
-const mainTasks = gulp.series(fonts, imgWebp, gulp.parallel(copyFiles, copySpecialCSS, html, copyConfigFiles, copyFaviconImages, sassStyle, js, img, imgSVG), imgMin);
+const mainTasks = gulp.series(fonts, imgWebp, gulp.parallel(copyFiles, copySpecialCSS, html, copyConfigFiles, copyFaviconImages, sassStyle, js, copySpecialJS, img, imgSVG), imgMin);
 
 
 // Построение сценариев выполнения задач
