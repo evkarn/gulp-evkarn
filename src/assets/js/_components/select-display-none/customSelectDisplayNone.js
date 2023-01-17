@@ -28,12 +28,21 @@ export function customSelectDisplayNone() {
 				selectsBlock.addEventListener('click', (e) => {
 					const targetText = e.target.innerText;
 
-					if (e.target.dataset.selectTitle) {
-						const targetDataSelectTitle = e.target.dataset.selectTitle;
+					let target = e.target;
 
-						document.querySelector(`[data-select-title="${targetDataSelectTitle}"]`).classList.toggle('custom-select__title--active');
+					if (e.target.closest('[data-select-title]')) {
+						const targetDataSelectTitle = e.target.closest('[data-select-title]').dataset.selectTitle;
 
-						e.target.nextElementSibling.classList.toggle('custom-select__options--active');
+						const targetParent = document.querySelector(`[data-select-title="${targetDataSelectTitle}"]`);
+
+						targetParent.classList.toggle('custom-select__title--active');
+
+						const buttonHeight = targetParent.offsetHeight;
+
+						document.querySelector(':root').style.setProperty('--button-height', `${buttonHeight}px`);
+
+
+						e.target.closest('[data-select-title]').nextElementSibling.classList.toggle('custom-select__options--active');
 					}
 				});
 			});

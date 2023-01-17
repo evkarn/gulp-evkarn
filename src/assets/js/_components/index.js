@@ -10,9 +10,17 @@ export {customSelectDisplayNone} from "./select-display-none/customSelectDisplay
 
 export {customSelectSmooth} from "./select-smooth/customSelectSmooth.js";
 
+export {disableScroll} from "./general-events/disable-scroll.js";
+
+export {documentClick} from "./general-events/document-click.js";
+
+export {enableScroll} from "./general-events/enable-scroll.js";
+
+export {keydownEsc} from "./general-events/keydown-27-esc.js";
+
 export {digitalCounters} from "./digital-counters/digitalCounters.js";
 
-export {headerMain} from "./header/headerMain.js";
+export {header} from "./header/header.js";
 
 export {imageInBackground} from "./image-in-background/imageInBackground.js";
 

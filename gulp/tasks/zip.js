@@ -1,5 +1,5 @@
 // Удаление файлов
-import del from "del";
+import {deleteAsync} from "del";
 
 // Создание архива
 import zipPlugin from "gulp-zip";
@@ -7,7 +7,7 @@ import zipPlugin from "gulp-zip";
 
 export const zip = () => {
 	// Удаляем архив, если он уже есть
-	del(`./${app.path.rootFolder}.zip`);
+	deleteAsync(`./${app.path.rootFolder}.zip`);
 	
 	// Находим все файлы в папке проекта
 	return app.gulp.src(`${app.path.buildFolder}/**/*.*`, {})

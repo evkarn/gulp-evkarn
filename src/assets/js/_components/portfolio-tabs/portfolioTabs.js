@@ -20,7 +20,7 @@ export const portfolioTabs = function() {
 
 	const loadMore = document.querySelector('.portfolio-more');
 
-	const maxItems = 9;
+	const maxItems = 6;
 
 	if (portfolioTabsNav) {
 

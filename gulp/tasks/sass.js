@@ -17,7 +17,7 @@ import webpcss from 'gulp-webpcss';
 import autoprefixer from 'gulp-autoprefixer';
 
 // Группировка медиа запросов
-import groupCssMediaQueries from 'gulp-group-css-media-queries'; 
+import groupCssMediaQueries from 'gulp-group-css-media-queries';
 
 const sass = gulpSass(dartSass);
 

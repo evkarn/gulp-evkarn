@@ -83,14 +83,14 @@ export const fontsStyle = () => {
 
 						// Формирование кода подключения шрифта
 						fs.appendFile(fileFonts,
-							`@font-face \n\tfont-family: ${fontName}-custom\n\t${fontDisplay}\n\tfont-weight: ${fontWeight}\n\tfont-style: ${fontStyle}\n\tsrc: url("../fonts/${fontFileName}.woff2") ${fontFormat}\n\r\n`, cb);
+							`@font-face \n\tfont-family: ${fontName}-font\n\t${fontDisplay}\n\tfont-weight: ${fontWeight}\n\tfont-style: ${fontStyle}\n\tsrc: url("../fonts/${fontFileName}.woff2") ${fontFormat}\n\r\n`, cb);
 							
 						newFileOnly = fontFileName;
 					}
 				}
 			} else {
 				// Если файл есть, выводим сообщение
-				console.log("Файл assets/styles/_fonts.sass уже существует. Для обновления файла нужно его удалить!");
+				console.log("Файл assets/styles/_fonts/fonts.sass уже существует. Для обновления файла нужно его удалить!");
 			}
 		}
 	});

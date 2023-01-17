@@ -1,5 +1,5 @@
 {
-  "name": "gulp-2022-evkarn",
+  "name": "gulp-evkarn",
   "version": "1.0.0",
   "description": "",
   "main": "gulpfile.js",
@@ -12,7 +12,7 @@
     "deployF": "gulp deployFTP --build",
     "deployS": "gulp deploySSH --build"
   },
-  "author": "Evkarn.ru",
+  "author": "evkarn.ru",
   "license": "ISC",
   "devDependencies": {
     "@popperjs/core": "latest",
@@ -44,21 +44,24 @@
     "gulp-webp-html-nosvg": "latest",
     "gulp-webpcss": "latest",
     "gulp-zip": "latest",
+    "hystmodal": "latest",
     "ilyabirman-likely": "latest",
     "inputmask": "latest",
+    "jquery": "latest",
     "jshint": "latest",
     "just-validate": "latest",
     "micromodal": "latest",
     "nouislider": "latest",
+    "postcss": "latest",
+    "postcss-sort-media-queries": "latest",
+    "prettier": "latest",
     "sass": "latest",
     "simplebar": "latest",
     "swiper": "latest",
+    "tailwind": "latest",
     "vinyl-ftp": "latest",
     "webp-converter": "2.2.3",
     "webpack": "latest",
     "webpack-stream": "latest"
-  },
-  "dependencies": {
-    "jquery": "^3.6.0"
   }
 }

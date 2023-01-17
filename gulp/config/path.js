@@ -49,7 +49,7 @@ export const path = {
 
 		fonts: `${srcFolder}/assets/fonts/*.ttf`,
 
-		fontsStyle: `${srcFolder}/assets/styles/_fonts.sass`,
+		fontsStyle: `${srcFolder}/assets/styles/_fonts/fonts.sass`,
 
 		html: `${srcFolder}/*.html`,
 

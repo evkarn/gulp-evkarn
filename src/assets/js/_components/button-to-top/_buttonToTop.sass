@@ -20,11 +20,13 @@ $border: none
 $border-r: 100%
 
 .button-to-top
-	display: none
+	display: flex
+	align-items: center
+	justify-content: center
 	font-size: 22px
 	text-align: center
 	padding-bottom: 5px
-	position: fixed
+	position: absolute
 	bottom: 100px
 	right: -120px
 	width: $width-height
@@ -46,7 +48,5 @@ $border-r: 100%
 		background-color: $c-bg-active-darken
 
 	&.button-to-top__active
-		display: flex
-		align-items: center
-		justify-content: center
+
 		right: $right-active
