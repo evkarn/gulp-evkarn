@@ -33,7 +33,6 @@ img
 	height: auto
 	object-fit: cover
 
-
 p, a, button
 	margin: 0
 	padding: 0
@@ -53,14 +52,15 @@ ul, ol
 	padding: 0
 	margin: 0
 
-h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6
+h1, .h1,
+h2, .h2,
+h3, .h3,
+h4, .h4,
+h5, .h5,
+h6, .h6
 	padding: 0
 	margin: 0
 	font-family: $ff-title
-
-h1, .h1
-	line-height: 1.3
-	letter-spacing: 3px
 
 .img-resp, .image-resp
 	display: block
@@ -74,10 +74,11 @@ h1, .h1
 .textBold, .tBold, .text-bold, .t-bold
 	font-weight: 700
 
-.resp-img, .resp-image
+.inner-img-resp, .inner-img-responsive, .inner-image-resp, .inner-image-responsive
 	position: relative
 	overflow: hidden
 	padding: 0 0 62% 0
+
 	img
 		position: absolute
 		width: 100%
@@ -109,15 +110,15 @@ h1, .h1
 	right: -1000px
 	visibility: hidden
 	opacity: 0
-  width: 1px
-  height: 1px
-  margin: -1px
-  border: 0
-  padding: 0
-  white-space: nowrap
-  clip-path: inset(100%)
-  clip: rect(0 0 0 0)
-  overflow: hidden
+	width: 1px
+	height: 1px
+	margin: -1px
+	border: 0
+	padding: 0
+	white-space: nowrap
+	clip-path: inset(100%)
+	clip: rect(0 0 0 0)
+	overflow: hidden
 
 .dis-none, .d-none, .d-n, .dn, .disNone, .dNone, .display-none
 	display: none

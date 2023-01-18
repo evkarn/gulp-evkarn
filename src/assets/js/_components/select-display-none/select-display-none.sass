@@ -1,0 +1,112 @@
+[data-selects]
+	[data-select-body]
+		display: flex
+		flex-direction: column
+		max-width: 100%
+		margin: 0
+
+		position: relative
+
+		border: none
+		&:not(:last-child)
+			margin-bottom: rem(16)
+
+	[data-select-title]
+		display: flex
+		align-items: center
+		justify-content: space-between
+		min-width: 94px
+		padding: 10px
+
+		font-family: $ff-r
+		font-style: normal
+		font-weight: 400
+		font-size: 15px
+		line-height: 1.2
+
+		position: relative
+
+		border: 1px solid #d5d7db
+		border-radius: 6px
+		background-color: #fff
+		color: #31343a
+
+		cursor: pointer
+
+		transition: all .3s ease, margin-bottom .3s ease
+
+		svg
+			fill: #c2c6d2
+
+			transition: fill .3s ease-in-out
+
+	.custom-select__title--active
+		svg
+			fill: #727887
+
+	.custom-select__text
+		text-align: left
+		text-transform: capitalize
+
+	.custom-select__arrow
+		margin-left: 18px
+
+	[data-select-options]
+		display: flex
+		flex-direction: column
+		justify-content: flex-start
+		align-items: center
+		width: 100%
+		margin: 0 auto
+		z-index: 3
+		max-height: 111px
+		overflow-y: auto
+
+		position: absolute
+		top: calc(var(--button-height) + 4px)
+		left: 0
+
+		border: none
+		border-radius: 6px
+		background-color: #fff
+		box-shadow: 0px 3px 16px rgba(0, 0, 0, 0.15)
+		list-style-type: none
+
+		opacity: 0
+		transform: scale(0)
+		pointer-events: none
+		visibility: hidden
+
+		transition: opacity .3s ease, transform .3s ease
+
+	[data-select-options].active
+		opacity: 1
+		transform: scale(1)
+		pointer-events: auto
+		visibility: visible
+
+	[data-select-option]
+		display: flex
+		flex-direction: column
+		align-items: flex-start
+		justify-content: center
+		padding: 10px
+		flex: 1 1 100%
+		max-width: 100%
+		width: 100%
+		margin: 0 auto
+		min-height: 37px
+
+		font-family: $ff-r
+		font-style: normal
+		font-weight: 400
+		font-size: 14px
+		line-height: 1.2
+
+		cursor: pointer
+		color: #000
+
+		transition: color .3s ease, background-color .3s ease
+
+		&:hover
+			background-color: #f1f4f9
