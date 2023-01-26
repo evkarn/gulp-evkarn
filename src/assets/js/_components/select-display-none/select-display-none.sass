@@ -1,4 +1,10 @@
 [data-selects]
+	display: flex
+	align-items: flex-start
+	justify-content: space-between
+	flex-wrap: wrap
+	gap: rem(8)
+
 	[data-select-body]
 		display: flex
 		flex-direction: column
@@ -8,41 +14,50 @@
 		position: relative
 
 		border: none
-		&:not(:last-child)
-			margin-bottom: rem(16)
 
 	[data-select-title]
 		display: flex
 		align-items: center
 		justify-content: space-between
-		min-width: 94px
-		padding: 10px
+		gap: rem(12)
+		min-width: 216px
 
-		font-family: $ff-r
-		font-style: normal
-		font-weight: 400
-		font-size: 15px
-		line-height: 1.2
+		padding: rem(16) rem(12)
+
+		line-height: 1
 
 		position: relative
 
-		border: 1px solid #d5d7db
-		border-radius: 6px
-		background-color: #fff
-		color: #31343a
-
+		border: none
+		border-radius: var(--border-radius)
+		background-color: var(--c-white)
+		color: var(--c-gray)
 		cursor: pointer
 
 		transition: all .3s ease, margin-bottom .3s ease
 
-		svg
-			fill: #c2c6d2
+		> *
+			pointer-events: none
 
-			transition: fill .3s ease-in-out
+		&.active
+			border-radius: var(--border-radius) var(--border-radius) 0 0
 
-	.custom-select__title--active
-		svg
-			fill: #727887
+			.select__icon
+				transform: rotate(180deg)
+				
+		&.is-active-title
+			.select__text
+				color: var(--c-dark)
+
+	.select__icon
+		font-size: rem(8)
+
+		color: var(--c-light)
+
+		transition: transform .3s ease
+
+	.select__text
+		color: var(--c-gray)
 
 	.custom-select__text
 		text-align: left
@@ -57,56 +72,53 @@
 		justify-content: flex-start
 		align-items: center
 		width: 100%
+		max-height: 288px
+
 		margin: 0 auto
-		z-index: 3
-		max-height: 111px
-		overflow-y: auto
 
 		position: absolute
-		top: calc(var(--button-height) + 4px)
+		top: calc(var(--select-button-height))
 		left: 0
+		z-index: 3
 
 		border: none
-		border-radius: 6px
-		background-color: #fff
-		box-shadow: 0px 3px 16px rgba(0, 0, 0, 0.15)
+		border-radius: 0 0 var(--border-radius) var(--border-radius)
+		background-color: var(--c-white)
 		list-style-type: none
-
+		overflow-y: auto
 		opacity: 0
-		transform: scale(0)
+		
 		pointer-events: none
 		visibility: hidden
+
+		transform: scale(0)
 
 		transition: opacity .3s ease, transform .3s ease
 
 	[data-select-options].active
 		opacity: 1
-		transform: scale(1)
+
 		pointer-events: auto
 		visibility: visible
+
+		transform: scale(1)
 
 	[data-select-option]
 		display: flex
 		flex-direction: column
 		align-items: flex-start
 		justify-content: center
-		padding: 10px
+		padding: rem(12) rem(16)
 		flex: 1 1 100%
 		max-width: 100%
 		width: 100%
 		margin: 0 auto
-		min-height: 37px
-
-		font-family: $ff-r
-		font-style: normal
-		font-weight: 400
-		font-size: 14px
-		line-height: 1.2
+		min-height: 48px
 
 		cursor: pointer
 		color: #000
 
 		transition: color .3s ease, background-color .3s ease
 
-		&:hover
-			background-color: #f1f4f9
+	[data-select-button]
+		line-height: 1.2

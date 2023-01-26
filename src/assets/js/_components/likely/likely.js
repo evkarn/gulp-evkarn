@@ -11,5 +11,3 @@
 	// INIT LIKELY
 		// likely.initiate();
 	// END. INIT LIKELY
-
-

@@ -2,12 +2,12 @@ export function selectDisplayNone() {
 	'use strict';
 
 	// Собираем все элементы с атрибутом "data-selects"
-	const selectsArray = document?.querySelectorAll('[data-selects]');
+	const selects = document?.querySelectorAll('[data-selects]');
 
 	// Проверяем есть ли они
-	if (selectsArray.length > 0) {
+	if (selects.length > 0) {
 		// Получение селектов
-		const selectsElement = Array.from(selectsArray).filter(function (item, index, self) {
+		const selectsElement = Array.from(selects).filter(function (item, index, self) {
 			return !item.dataset.selects.split(',')[0];
 		});
 
@@ -15,7 +15,7 @@ export function selectDisplayNone() {
 			const target = e.target;
 
 			// Подмена текста в заголовке select при клике на select-option
-			if (target.closest('[data-select-button]')) {
+			if (target.closest('[data-option-inner-button]')) {
 				const targetText = target.innerText;
 
 				const targetBody = target.closest('[data-select-body]');
@@ -74,13 +74,14 @@ export function selectDisplayNone() {
 
 	// Раскрытие и закрытие селекта
 	function selectWork() {
-		if (selectsArray.length > 0) {
-			const selectsElement = Array.from(selectsArray).filter(function (item, index, self) {
+		if (selects.length > 0) {
+			const selectsElement = Array.from(selects).filter(function (item, index, self) {
 				return !item.dataset.selects.split(',')[0];
 			});
 
 			selectsElement.forEach((selectsBlock) => {
 				selectsBlock.addEventListener('click', (e) => {
+					
 					if (e.target.closest('[data-select-title]')) {
 						e.target.classList.toggle('active');
 

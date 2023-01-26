@@ -1,60 +1,51 @@
 <!DOCTYPE html>
-<html
-	lang="@@lang"
-	itemscope="itemscope"
-	xmlns="http://www.w3.org/1999/xhtml"
-	itemtype="http://schema.org/WebPage"
->
-	@@include('_includes/head/head.html', { "lang":"ru", "title":"Главная", "description":"Главная",
-	"keywords":"Главная", "locale":"ru_RU", "ogimage":"home-ogimage.jpg", })
+<html lang="@@lang" itemscope="itemscope" xmlns="http://www.w3.org/1999/xhtml" itemtype="http://schema.org/WebPage">
+@@include('_includes/head/head.html', { "lang":"ru", "title":"Главная", "description":"Главная",
+"keywords":"Главная", "locale":"ru_RU", "ogimage":"home-ogimage.jpg", })
 
-	<body>
-		<div class="page page-home">
-			<!-- @@include('_includes/header/header.html', {
-"alt": "Название компании"
-}) -->
+<body>
+	<div class="page page-home">
+		<!-- @@include('_includes/header/header.html', {
+	"alt": "Название компании"
+	}) -->
 
-			<main class="main">
-				<div class="stepper">
-					<label class="stepper__field">
-						<input type="text" value="1" maxlength="3" class="stepper__input" />
-						<span class="stepper__text">шт</span>
-					</label>
+		<main class="main">
+			<div class="stepper">
+				<label class="stepper__field">
+					<input type="text" value="1" maxlength="3" class="stepper__input" />
+					<span class="stepper__text">шт</span>
+				</label>
 
-					<div class="stepper__btns">
-						<button class="stepper__btn stepper__btn--up" aria-label="Увеличить количество">
-							<svg xmlns="http://www.w3.org/2000/svg" width="8" height="5" viewBox="0 0 8 5">
+				<div class="stepper__btns">
+					<button class="stepper__btn stepper__btn--up" aria-label="Увеличить количество">
+						<svg xmlns="http://www.w3.org/2000/svg" width="8" height="5" viewBox="0 0 8 5">
+							<g>
 								<g>
-									<g>
-										<path
-											d="M3.904-.035L-.003 3.151 1.02 5.03l2.988-2.387 2.988 2.387 1.022-1.88-3.89-3.186z"
-										></path>
-									</g>
+									<path d="M3.904-.035L-.003 3.151 1.02 5.03l2.988-2.387 2.988 2.387 1.022-1.88-3.89-3.186z"></path>
 								</g>
-							</svg>
-						</button>
+							</g>
+						</svg>
+					</button>
 
-						<button
-							class="stepper__btn stepper__btn--down stepper__btn--disabled"
-							aria-label="Уменьшить количество"
-						>
-							<svg xmlns="http://www.w3.org/2000/svg" width="8" height="5" viewBox="0 0 8 5">
+					<button class="stepper__btn stepper__btn--down stepper__btn--disabled" aria-label="Уменьшить количество">
+						<svg xmlns="http://www.w3.org/2000/svg" width="8" height="5" viewBox="0 0 8 5">
+							<g>
 								<g>
-									<g>
-										<path
-											d="M3.904 5.003L-.003 1.818 1.02-.062l2.988 2.386L6.995-.063l1.022 1.88-3.89 3.186z"
-										></path>
-									</g>
+									<path d="M3.904 5.003L-.003 1.818 1.02-.062l2.988 2.386L6.995-.063l1.022 1.88-3.89 3.186z"></path>
 								</g>
-							</svg>
-						</button>
-					</div>
+							</g>
+						</svg>
+					</button>
 				</div>
-			</main>
+			</div>
 
-			@@include('_includes/footer/footer.html')
-		</div>
+			<input type="text">
+		</main>
 
-		@@include('_includes/site/end-page.html')
-	</body>
+		@@include('_includes/footer/footer.html')
+	</div>
+
+	@@include('_includes/scripts/index-scripts.html')
+</body>
+
 </html>
