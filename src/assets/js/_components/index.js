@@ -2,13 +2,17 @@ export { colorScheme } from './color-scheme/color-scheme-function.js';
 
 export { digitalCounters } from './digital-counters/digital-counters-function.js';
 
+export { dynamicAdapt } from './dynamic-adapt/dynamic-adapt-func.js';
+
+export { filter } from './filter/filter-func.js';
+
 export { header } from './header/header-function.js';
 
 export { imageInBackground } from './image-in-background/image-In-background-func.js';
 
 export { inputMask } from './input-mask/input-mask-func.js.js';
 
-export { inputShowHidePassword } from './input-password-show-hide/input-password-show-hide-func.js';
+export { inputPasswordShowHide } from './input-password-show-hide/input-password-show-hide-func.js';
 
 export { lazyLoadElement, lazyLoadGoogleMap, lazyLoadImages, lazyLoadYandexMap } from './lazy-load/lazy-load-element-func.js';
 
@@ -32,25 +36,28 @@ export { readProgressLine } from './read-progress-line/read-progress-line-func.j
 
 export { returnToTop } from './return-to-top/return-to-top-func.js';
 
-export { searchFieldGoogle } from './searchFieldGoogle/searchFieldGoogle.js'; // Остановился здесь
+export { searchFieldGoogle } from './search-field-google/search-field-google-func.js';
 
+export { selectDisplayNone } from './select-display-none/select-display-none-func.js';
 
+export { showMore } from './show-more/show-more-func.js';
 
-export { spoilers } from './spoilers/spoilers-function.js';
+export { simpleBarFunction } from './simple-bar/simple-bar-func.js';
 
+export { sorting } from './sorting/sorting-func.js';
 
+export { spoilers } from './spoilers/spoilers-func.js';
 
-export { customTabs } from './tabs-custom/customTabs.js';
+export { stepper } from './stepper/stepper-func.js';
 
-export { customSelectDisplayNone } from './select-display-none/customSelectDisplayNone.js';
+export { stepperSum } from './stepper/stepper-sum-func.js';
 
+export { swiperFunction } from './swiper/swiper-func.js';
 
-export { linkScrollToElement } from './link-scroll-to-element/linkScrollToElement.js';
+export { tabs } from './tabs/tabs-func.js';
 
+export { timerCountdown } from './timer-countdown/timer-countdown-func.js';
 
+export { validationForm } from './validation-forms/validation-forms-func.js';
 
-
-
-export { showHidePassword } from './input-password-show-hide/input-password-show-hide-func.js';
-
-export { webpFind } from './webp-find/webpFind.js';
+export { webpFind } from './webp-find/webp-find-func.js';
