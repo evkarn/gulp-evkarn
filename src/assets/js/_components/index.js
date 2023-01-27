@@ -4,17 +4,23 @@ export { digitalCounters } from './digital-counters/digital-counters-function.js
 
 export { dynamicAdapt } from './dynamic-adapt/dynamic-adapt-func.js';
 
-export { filter } from './filter/filter-func.js';
+export { filters } from './filters/filters-func.js';
 
 export { header } from './header/header-function.js';
 
 export { imageInBackground } from './image-in-background/image-In-background-func.js';
 
-export { inputMask } from './input-mask/input-mask-func.js.js';
+export { inputMask } from './input-mask/input-mask-func.js';
 
 export { inputPasswordShowHide } from './input-password-show-hide/input-password-show-hide-func.js';
 
-export { lazyLoadElement, lazyLoadGoogleMap, lazyLoadImages, lazyLoadYandexMap } from './lazy-load/lazy-load-element-func.js';
+export { lazyLoadElement } from './lazy-load/lazy-load-element-func.js';
+
+export { lazyLoadGoogleMap } from './lazy-load/lazy-load-google-map-func.js';
+
+export { lazyLoadImages } from './lazy-load/lazy-load-images-func.js';
+
+export { lazyLoadYandexMap } from './lazy-load/lazy-load-yandex-map-func.js';
 
 export { micromodal } from './micromodal/micromodal-func.js';
 
