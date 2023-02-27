@@ -5,6 +5,10 @@ export const searchFieldGoogle = function () {
 
 	const searchField = document?.querySelector('[data-search-field-google]');
 
+	const headerHeight = document.querySelector('header').offsetHeight;
+
+	document.documentElement.style.setProperty('--header-height', `${headerHeight}px`);
+
 	if (searchButton && searchField) {
 		searchButton.addEventListener('click', function () {
 			searchField.classList.toggle('search-field-google--active');

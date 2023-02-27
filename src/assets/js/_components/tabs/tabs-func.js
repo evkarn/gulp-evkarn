@@ -1,17 +1,17 @@
 export const tabs = () => {
 	'use strict';
 
-	const tabsParents = document?.querySelector('[data-tabs-parent]');
+	const tabsParents = document?.querySelectorAll('[data-tabs-parent]');
 
 	if (tabsParents.length > 0) {
 		tabsParents.forEach(el => {
 			el.addEventListener('click', e => {
+				const parent = e.target.closest('[data-tabs-parent]');
+
+				const tabsButtons = parent?.querySelectorAll('[data-tabs-path]');
+
 				if (e.target.closest('[data-tabs-path]')) {
 					const tabsPath = e.target.closest('[data-tabs-path]').dataset.tabsPath;
-
-					const parent = e.target.closest('[data-tabs-parent]');
-
-					const tabsButtons = parent?.querySelectorAll('[data-tabs-path]');
 
 					tabsButtons.forEach(el => {
 						el.classList.remove('tabs__btn--active');
@@ -23,9 +23,52 @@ export const tabs = () => {
 
 					tabsHandler(tabsPath, parent);
 				}
+
+				if (e.target.closest('[data-tabs-button-prev]')) {
+					let activeBtn = parent?.querySelector('.tabs__btn--active');
+
+					let activeParent = activeBtn.closest('[data-tabs-button-item]');
+
+					let previousParent = activeParent.previousElementSibling;
+
+					if (previousParent) {
+						let prevActive = previousParent.querySelector('[data-tabs-path]');
+
+						tabsButtons.forEach(el => {
+							el.classList.remove('tabs__btn--active');
+						});
+
+						prevActive.classList.add('tabs__btn--active');
+
+						let path = prevActive.dataset.tabsPath;
+
+						tabsHandler(path, parent);
+					}
+				}
+
+				if (e.target.closest('[data-tabs-button-next]')) {
+					let activeBtn = parent?.querySelector('.tabs__btn--active');
+
+					let activeParent = activeBtn.closest('[data-tabs-button-item]');
+
+					let nextParent = activeParent.nextElementSibling;
+
+					if (nextParent) {
+						let nextActive = nextParent.querySelector('[data-tabs-path]');
+
+						tabsButtons.forEach(el => {
+							el.classList.remove('tabs__btn--active');
+						});
+
+						nextActive.classList.add('tabs__btn--active');
+
+						let path = nextActive.dataset.tabsPath;
+
+						tabsHandler(path, parent);
+					}
+				}
 			});
 		});
-
 	}
 
 	const tabsHandler = (path, parent) => {

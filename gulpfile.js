@@ -27,8 +27,6 @@ import { copyFaviconImages } from './gulp/tasks/copy-favicon-images.js';
 
 import { copyFiles } from './gulp/tasks/copy-files.js';
 
-import { copySpecialCSS } from './gulp/tasks/copySpecialCSS.js';
-
 import { copySpecialJS } from './gulp/tasks/copySpecialJS.js';
 
 import { ttfToWoff, fontsStyle } from './gulp/tasks/fonts.js';
@@ -64,8 +62,6 @@ import { zip } from './gulp/tasks/zip.js';
 
 // Наблюдение за изменениями в файлах
 function watcher() {
-	gulp.watch(path.watch.cssSpecial, copySpecialCSS);
-
 	gulp.watch(path.watch.jsSpecial, copySpecialJS);
 
 	gulp.watch(path.watch.files, copyFiles);
@@ -85,7 +81,7 @@ const fonts = gulp.series(ttfToWoff, fontsStyle);
 
 
 // Основные задачи
-const mainTasks = gulp.series(fonts, imgWebp, gulp.parallel(copyFiles, copySpecialCSS, html, copyConfigFiles, copyFaviconImages, sassStyle, js, copySpecialJS, img, imgSVG), imgMin);
+const mainTasks = gulp.series(fonts, imgAvif, imgWebp, gulp.parallel(copyFiles, html, copyConfigFiles, copyFaviconImages, sassStyle, js, copySpecialJS, img, imgSVG), imgMin);
 
 
 // Построение сценариев выполнения задач

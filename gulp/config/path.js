@@ -16,8 +16,6 @@ export const path = {
 
 		css: `${buildFolder}/assets/css/`,
 
-		cssSpecial: `${buildFolder}/assets/css-special/`,
-
 		configFiles: `${buildFolder}/`,
 
 		faviconImages: `${buildFolder}/`,
@@ -41,8 +39,6 @@ export const path = {
 	src: {
 		configFiles: `${srcFolder}/*.{htaccess,txt,xml}`,
 
-		cssSpecial: `${srcFolder}/assets/css-special/**/*.css`,
-
 		faviconImages: `${srcFolder}/*.{ico,png,svg}`,
 
 		files: `${srcFolder}/assets/files/**/*.*`,
@@ -53,7 +49,7 @@ export const path = {
 
 		html: `${srcFolder}/*.html`,
 
-		js: `${srcFolder}/assets/js/app.js`,
+		js: `${srcFolder}/assets/js/*.js`,
 
 		jsSpecial: `${srcFolder}/assets/js-special/**/*.js`,
 
@@ -76,19 +72,17 @@ export const path = {
 
 	// Отслеживание изменений в файлах
 	watch: {
+		files: `${srcFolder}/assets/files/**/*.*`,
+
+		html: `${srcFolder}/**/*.html`,
+
+		img: `${srcFolder}/assets/images/**/*.{jpg,jpeg,png,svg,gif,ico,webp,heic,heif,raw,avif}`,
+
 		js: `${srcFolder}/assets/js/**/*.js`,
 
 		jsSpecial: `${srcFolder}/assets/js-special/**/*.js`,
 
-		img: `${srcFolder}/assets/images/**/*.{jpg,jpeg,png,svg,gif,ico,webp,heic,heif,raw,avif}`,
-
 		sass: `${srcFolder}/assets/styles/**/*.sass`,
-
-		html: `${srcFolder}/**/*.html`,
-
-		files: `${srcFolder}/assets/files/**/*.*`,
-
-		cssSpecial: `${srcFolder}/assets/css-special/**/*.*`,
 	},
 
 	clean: buildFolder,

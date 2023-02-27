@@ -2,7 +2,7 @@
 import fileInclude from 'gulp-file-include';
 
 // Обработка файлов js
-import webpack from 'webpack-stream'; 
+import webpack from 'webpack-stream';
 
 export const js = () => {
 	// Находим js файлы в папке исходников
@@ -19,8 +19,13 @@ export const js = () => {
 	// Обработка файлов js
 	.pipe(webpack({
 		mode: app.isBuild ? 'production' : 'development',
+
+		entry: {
+			app: './src/assets/js/app.js',
+		},
+
 		output: {
-			filename: 'app.min.js',
+			filename: '[name].min.js',
 		}
 	}))
 

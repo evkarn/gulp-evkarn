@@ -1,7 +1,7 @@
-import { webpFind } from './_components/index.js';
+import { tabs } from './_components/index.js';
 
 document.addEventListener('DOMContentLoaded', () => {
 	// INIT WEBP-FIND
-		webpFind();
+		tabs();
 	// END. INIT WEBP-FIND
 });

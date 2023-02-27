@@ -4,17 +4,8 @@ import dartSass from 'sass';
 // Обработка препроцессора SASS
 import gulpSass from 'gulp-sass';
 
-// Переименовывание файлов
-import rename from 'gulp-rename';
-
-// Сжатие CSS файла
-import cleanCss from 'gulp-clean-css';
-
 // Вывод Webp изображений
 import webpcss from 'gulp-webpcss';
-
-// Добавление вендерных префиксов для кросс-браузерной поддержки
-import autoprefixer from 'gulp-autoprefixer';
 
 // Группировка медиа запросов
 import groupCssMediaQueries from 'gulp-group-css-media-queries';
@@ -38,7 +29,7 @@ export const sassStyle = () => {
 
 	// Обработка препроцессора SASS
 	.pipe(sass({
-		outputStyle: 'expanded'
+		outputStyle: 'compressed'
 	}))
 
 	// Если в режиме продакшена группировка медиа-запросов
@@ -59,7 +50,7 @@ export const sassStyle = () => {
 	// Если в режиме продакшена автоматическая простановка вендерных префиксов
 	.pipe(app.plugins.if(
 		app.isBuild,
-		autoprefixer({
+		app.plugins.autoprefixer({
 			grid: true,
 			overrideBrowsersList: ["last 5 versions"],
 			cascade: true
@@ -75,11 +66,11 @@ export const sassStyle = () => {
 	// Если в режиме продакшена сжимаем файл стилей
 	.pipe(app.plugins.if(
 		app.isBuild,
-		cleanCss()
+		app.plugins.cleanCss()
 	))
 
 	// Переименовываем итоговый файл стилей
-	.pipe(rename({
+	.pipe(app.plugins.rename({
 		extname: '.min.css'
 	}))
 

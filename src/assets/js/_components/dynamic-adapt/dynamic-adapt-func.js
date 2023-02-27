@@ -6,17 +6,17 @@
  * @property {string} breakpoint
  * @property {string} order
  * @property {number} index
- */
+*/
 
 /**
  * @typedef {Object} dMediaQuery
  * @property {string} query
  * @property {number} breakpoint
- */
+*/
 
 /**
  * @param {'min' | 'max'} type
- */
+*/
 export function dynamicAdapt(type = 'max') {
 	const className = '_dynamic_adapt_';
 	const attrName = 'data-da';

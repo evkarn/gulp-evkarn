@@ -6,7 +6,7 @@ export { dynamicAdapt } from './dynamic-adapt/dynamic-adapt-func.js';
 
 export { filters } from './filters/filters-func.js';
 
-export { header } from './header/header-function.js';
+export { header } from './header/header-func.js';
 
 export { imageInBackground } from './image-in-background/image-In-background-func.js';
 
@@ -19,6 +19,8 @@ export { lazyLoadElement } from './lazy-load/lazy-load-element-func.js';
 export { lazyLoadGoogleMap } from './lazy-load/lazy-load-google-map-func.js';
 
 export { lazyLoadImages } from './lazy-load/lazy-load-images-func.js';
+
+export { linkScrollToElement } from './link-scroll-to-element/link-scroll-to-element-func.js';
 
 export { lazyLoadYandexMap } from './lazy-load/lazy-load-yandex-map-func.js';
 
@@ -61,6 +63,8 @@ export { stepperSum } from './stepper/stepper-sum-func.js';
 export { swiperFunction } from './swiper/swiper-func.js';
 
 export { tabs } from './tabs/tabs-func.js';
+
+export { tabsInner } from './tabs/tabs-inner-func.js';
 
 export { timerCountdown } from './timer-countdown/timer-countdown-func.js';
 

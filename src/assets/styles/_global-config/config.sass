@@ -1,11 +1,15 @@
 html
 	box-sizing: border-box
 
-html,
-body
+html, body
 	height: 100%
 
-*, *::before, *::after
+body
+	min-height: 100vh
+
+*,
+*::before,
+*::after
 	box-sizing: inherit
 
 header,
@@ -13,43 +17,29 @@ section,
 footer
 	position: relative
 
-::placeholder
-	color: #666
-
-::selection
-	background-color: $c-accent
-	color: #fff
-
-input, textarea
-	outline: none
-	&:focus:required:invalid
-		border-color: red
-	&:required:valid
-		border-color: green
-
-img
-	max-width: 100%
-	width: 100%
-	height: auto
-	object-fit: cover
-
-p, a, button
-	margin: 0
-	padding: 0
-
-a
-	text-decoration: none
-	color: inherit
-	cursor: pointer
-
-button
-	border: none
-	background: transparent
-	cursor: pointer
-
-ul, ol
-	list-style: none
-	padding: 0
+body,
+p,
+a,
+button,
+h1,
+.h1,
+h2,
+.h2,
+h3,
+.h3,
+h4,
+.h4,
+h5,
+.h5,
+h6,
+.h6,
+ul[class],
+ol[class],
+figure,
+figcaption,
+blockqoute,
+dl,
+dd
 	margin: 0
 
 h1, .h1,
@@ -58,20 +48,74 @@ h3, .h3,
 h4, .h4,
 h5, .h5,
 h6, .h6
-	padding: 0
-	margin: 0
 	font-family: $ff-title
 
-.img-resp, .image-resp
+	padding: 0
+	margin: 0
+
+ul[class],
+ol[class]
+	padding: 0
+
+ul[class]
+	list-style: none
+
+img
 	display: block
 	max-width: 100%
-	width: 100%
-	height: auto
+
+a
+	text-decoration: none
+
+button, a
+	color: inherit
+	cursor: pointer
+
+button
+	border: none
+	background-color: transparent
+
+input,
+button,
+textarea,
+select
+	font: inherit
+
+::placeholder
+	color: #666
+
+::selection
+	background-color: $c-accent
+	color: #fff
+
+input,
+textarea
+	outline: none
+
+	&:focus:required:invalid
+		border-color: red
+
+	&:required:valid
+		border-color: green
+
+body
+	font-family: $ff-body
+	font-style: normal
+	font-size: $fz
+	font-weight: 400
+	line-height: $lh
+
+	min-width: $screen-min-width
+
+	position: relative
+
+	color: #333
+	overflow-x: hidden
 
 .fullWidth, .full-width, .fWidth, .f-width, .fullW, .full-w
 	width: 100%
 
-.textBold, .tBold, .text-bold, .t-bold
+.textBold, .tBold, .text-bold, .t-bold, .bold
 	font-weight: 700
 
 .inner-img-resp, .inner-img-responsive, .inner-image-resp, .inner-image-responsive
@@ -120,30 +164,36 @@ h6, .h6
 	clip: rect(0 0 0 0)
 	overflow: hidden
 
-.dis-none, .d-none, .d-n, .dn, .disNone, .dNone, .display-none
+.dis-none, .d-none, .d-n, .dn, .disNone, .dNone, .display-none, .none
 	display: none
 
 .container-fluid
 	max-width: 100%
 	width: 100%
 	margin: 0 auto
-	// padding: 0 rem(calc($gutter / 2))
+	padding: 0 $container-offset
+
+	@media ( max-width: em(768) )
+		padding: 0 calc($container-width / 2)
 
 .container
 	max-width: $container-width
+	+calc-size(max-width, 1540, 2310, 2464.96, 3840, px)
 	width: 100%
 	margin: 0 auto
-	// padding: 0 rem(calc($gutter / 2))
+	padding: 0 $container-offset
 
-body
-	font-family: $ff-body
-	font-style: normal
-	font-size: $fz
-	font-weight: 400
-	line-height: $lh
-	min-width: $screen-min-width
-	position: relative
-	overflow-x: hidden // если используете на сайте position: sticky - уберите эту настройку
+	@media ( max-width: em(768) )
+		padding: 0 calc($container-width / 2)
+
+.stop-scroll
+	position: fixed
+	top: var(--top-position)
+	left: 0
+	height: 100vh
+	width: 100vw
+	padding-right: var(--scroll-width)
+	overflow: hidden
 
 .page
 	display: flex
