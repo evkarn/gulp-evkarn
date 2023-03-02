@@ -1,103 +1,3 @@
-html
-	box-sizing: border-box
-
-html, body
-	height: 100%
-
-body
-	min-height: 100vh
-
-*,
-*::before,
-*::after
-	box-sizing: inherit
-
-header,
-section,
-footer
-	position: relative
-
-body,
-p,
-a,
-button,
-h1,
-.h1,
-h2,
-.h2,
-h3,
-.h3,
-h4,
-.h4,
-h5,
-.h5,
-h6,
-.h6,
-ul[class],
-ol[class],
-figure,
-figcaption,
-blockqoute,
-dl,
-dd
-	margin: 0
-
-h1, .h1,
-h2, .h2,
-h3, .h3,
-h4, .h4,
-h5, .h5,
-h6, .h6
-	font-family: $ff-title
-
-	padding: 0
-	margin: 0
-
-ul[class],
-ol[class]
-	padding: 0
-
-ul[class]
-	list-style: none
-
-img
-	display: block
-	max-width: 100%
-
-a
-	text-decoration: none
-
-button, a
-	color: inherit
-	cursor: pointer
-
-button
-	border: none
-	background-color: transparent
-
-input,
-button,
-textarea,
-select
-	font: inherit
-
-::placeholder
-	color: #666
-
-::selection
-	background-color: $c-accent
-	color: #fff
-
-input,
-textarea
-	outline: none
-
-	&:focus:required:invalid
-		border-color: red
-
-	&:required:valid
-		border-color: green
-
 body
 	font-family: $ff-body
 	font-style: normal
@@ -110,35 +10,81 @@ body
 	position: relative
 
 	color: #333
+	background-color: var(--c-body-bg)
 	overflow-x: hidden
 
-.fullWidth, .full-width, .fWidth, .f-width, .fullW, .full-w
+h1,
+.h1,
+h2,
+.h2,
+h3,
+.h3,
+h4,
+.h4,
+h5,
+.h5,
+h6,
+.h6
+	font-family: $ff-title
+
+::placeholder
+	color: #666
+
+::selection
+	background-color: $c-accent
+	color: #fff
+
+input,
+textarea
+	&:focus:required:invalid
+		border-color: red
+
+	&:required:valid
+		border-color: green
+
+.fullWidth,
+.full-width,
+.fWidth,
+.f-width,
+.fullW,
+.full-w
 	width: 100%
 
-.textBold, .tBold, .text-bold, .t-bold, .bold
+.textBold,
+.tBold,
+.text-bold,
+.t-bold,
+.bold
 	font-weight: 700
 
-.inner-img-resp, .inner-img-responsive, .inner-image-resp, .inner-image-responsive
+.inner-img-resp,
+.inner-img-responsive,
+.inner-image-resp,
+.inner-image-responsive
 	position: relative
 	overflow: hidden
 	padding: 0 0 62% 0
 
 	img
 		position: absolute
-		width: 100%
-		height: 100%
 		top: 0
 		right: 0
 		bottom: 0
 		left: 0
+
+		width: 100%
+		height: 100%
+
 		object-fit: cover
 
 .visually-hidden
-	position: absolute
 	width: 1px
 	height: 1px
+
 	padding: 0
 	margin: -1px
+
+	position: absolute
 	white-space: nowrap
 	overflow: hidden
 
@@ -147,44 +93,57 @@ body
 	clip: rect(0 0 0 0)
 
 .full-hidden
+	width: 1px
+	height: 1px
+
+	margin: -1px
+	padding: 0
+
 	font-size: 0
-	pointer-events: none
+
 	position: absolute
 	left: -1000px
 	right: -1000px
-	visibility: hidden
-	opacity: 0
-	width: 1px
-	height: 1px
-	margin: -1px
+
 	border: 0
-	padding: 0
-	white-space: nowrap
 	clip-path: inset(100%)
 	clip: rect(0 0 0 0)
+	opacity: 0
+	pointer-events: none
+	visibility: hidden
+	white-space: nowrap
 	overflow: hidden
 
-.dis-none, .d-none, .d-n, .dn, .disNone, .dNone, .display-none, .none
+.dis-none,
+.d-none,
+.d-n,
+.dn,
+.disNone,
+.dNone,
+.display-none,
+.none
 	display: none
 
 .container-fluid
 	max-width: 100%
 	width: 100%
+
 	margin: 0 auto
 	padding: 0 $container-offset
 
 	@media ( max-width: em(768) )
-		padding: 0 calc($container-width / 2)
+		padding: 0 calc($container-offset / 2)
 
 .container
 	max-width: $container-width
 	+calc-size(max-width, 1540, 2310, 2464.96, 3840, px)
 	width: 100%
+
 	margin: 0 auto
 	padding: 0 $container-offset
 
 	@media ( max-width: em(768) )
-		padding: 0 calc($container-width / 2)
+		padding: 0 calc($container-offset / 2)
 
 .stop-scroll
 	position: fixed
@@ -193,6 +152,7 @@ body
 	height: 100vh
 	width: 100vw
 	padding-right: var(--scroll-width)
+
 	overflow: hidden
 
 .page

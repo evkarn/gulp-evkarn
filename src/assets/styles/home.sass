@@ -2,6 +2,9 @@
 @use 'sass:math'
 // END. МОДУЛЬ MATH ДЛЯ SASS
 
+// Vars
+@import './_global-config/vars'
+// End. Vars
 
 // FONTS
 @import './_fonts/fonts'
@@ -9,21 +12,19 @@
 @import './_fonts/icons-font'
 // END. FONTS
 
-
 // MIXINS
 @import './_mixins/all-mixins'
 // END. MIXINS
 
-
 // GLOBAL
-@import './_global-config/vars'
-
-@import './_global-config/normalize'
+@import './_global-config/reset'
 
 @import './_global-config/config'
 // END. GLOBAL
 
-
 // COMPONENTS
-@import './_components/main-components'
+@import './_components/home-components'
 // END. COMPONENTS
+
+body
+	color: #fff

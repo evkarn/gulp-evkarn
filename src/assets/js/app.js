@@ -1,7 +1,7 @@
-import { tabs } from './_components/index.js';
+import { tabs, spoilers } from './_components/index.js';
 
 document.addEventListener('DOMContentLoaded', () => {
 	// INIT WEBP-FIND
-		tabs();
+	spoilers(500);
 	// END. INIT WEBP-FIND
 });

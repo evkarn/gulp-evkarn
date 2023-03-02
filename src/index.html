@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="@@lang" itemscope="itemscope" xmlns="http://www.w3.org/1999/xhtml" itemtype="http://schema.org/WebPage">
 @@include('_includes/head/head.html', { "lang":"ru", "title":"Главная", "description":"Главная",
-"keywords":"Главная", "locale":"ru_RU", "ogimage":"home-ogimage.jpg", })
+"keywords":"Главная", "locale":"ru_RU", "ogimage":"home-ogimage", "css":"home" })
 
 <body>
 	<div class="page page-home">
@@ -11,6 +11,55 @@
 
 		<main class="main">
 
+			<div class="spoilers-wrapper spoilers">
+				<div class="spoilers__list" data-spoilers>
+					<div class="spoilers__item spoiler" data-spoiler>
+						<div>
+							<button class="spoiler__title active" data-spoiler-title tabindex="-1" type="button">
+								Обычный спойлер № 1
+							</button>
+						</div>
+
+						<div class="spoiler__content" data-spoiler-content>
+							Далеко-далеко за словесными горами в стране гласных и согласных живут рыбные тексты. Свой вскоре семантика страну своего пор рот над запятых ее?
+						</div>
+					</div>
+					
+					<div class="spoilers__item spoiler" data-spoiler>
+						<button class="spoiler__title" data-spoiler-title tabindex="-1" type="button">
+							Обычный спойлер № 2
+						</button>
+			
+						<div class="spoiler__content" data-spoiler-content>
+							Далеко-далеко за словесными горами в стране гласных и согласных живут рыбные тексты. Свой вскоре семантика страну своего пор рот над запятых ее?
+						</div>
+					</div>
+				</div>
+
+				<div class="spoilers__list" data-spoilers>
+					<div class="spoilers__item spoiler" data-spoiler>
+						<div>
+							<button class="spoiler__title active" data-spoiler-title tabindex="-1" type="button">
+								Обычный спойлер № 3
+							</button>
+						</div>
+
+						<div class="spoiler__content" data-spoiler-content>
+							Далеко-далеко за словесными горами в стране гласных и согласных живут рыбные тексты. Свой вскоре семантика страну своего пор рот над запятых ее?
+						</div>
+					</div>
+					
+					<div class="spoilers__item spoiler" data-spoiler>
+						<button class="spoiler__title" data-spoiler-title tabindex="-1" type="button">
+							Обычный спойлер № 4
+						</button>
+			
+						<div class="spoiler__content" data-spoiler-content>
+							Далеко-далеко за словесными горами в стране гласных и согласных живут рыбные тексты. Свой вскоре семантика страну своего пор рот над запятых ее?
+						</div>
+					</div>
+				</div>
+			</div>
 
 		</main>
 

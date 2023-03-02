@@ -1,10 +1,24 @@
-.scheme-switcher 
-	position: relative
-	padding: 2px
-	display: inline-grid
+.scheme
+	display: flex
+	flex-direction: column
+	align-items: center
+
+.scheme-switcher
+	display: grid
 	grid-template-columns: 1fr 1fr 1fr
 	grid-template-rows: 1fr
+
+	max-width: 100px
+	width: 100%
+
+	padding: 2px
+
+	position: relative
+
 	border: none
+
+	@media ( min-width: em(2736.96) )
+		max-width: 200px
 
 .scheme-switcher__legend 
 	position: absolute
@@ -13,15 +27,30 @@
 
 .scheme-switcher__radio
 	appearance: none
-	margin: 0
+
 	width: 32px
 	height: 32px
+
+	margin: 0
+
 	background-position: center
 	background-repeat: no-repeat
-	background-size: 24px
+	background-size: 26px
+
 	transition: filter .1s ease-in
+
+	@media ( min-width: em(2736.96) )
+		width: 64px
+		height: 64px
+
+		background-size: 52px
+
+	&:hover
+		cursor: pointer
+
 	&:focus
 		outline: none
+
 	&:focus-visible ~ .scheme-switcher__status 
 		box-shadow: 0 0 0 2px black
 
@@ -34,21 +63,26 @@
 .scheme-switcher__radio--dark 
 	background-image: url(../images/dist/scheme-dark-moon.svg)
 
-.scheme-switcher__status 
+.scheme-switcher__status
 	position: absolute
 	top: 0
 	right: 0
 	bottom: 0
 	left: 0
 	z-index: -1
+
 	box-shadow: 0 0 0 2px rgb(0 0 0 / 0.2)
-	border-radius: 18px
+	border-radius: 100px
 	background-color: rgb(255 255 255 / 0.5)
 	background-repeat: no-repeat
 	background-image: url(../images/dist/scheme-status.svg)
 	background-size: 32px
 	background-position: center
+
 	transition: background-position 0.1s ease-in
+
+	@media ( min-width: em(2736.96) )
+		background-size: 64px
 
 .scheme-switcher__radio
 	&:focus-visible ~ .scheme-switcher__status 

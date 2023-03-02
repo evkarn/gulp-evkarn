@@ -7,9 +7,9 @@
 		Если нужно включить/выключить работу спойлеров на разных размерах экранов пишем параметры ширины и типа брейкпоинта.
 
 		Например:
-			data-spoilers="992,max" — спойлеры будут работать только на экранах меньше или равно 992px 
+			data-spoilers="992,max" — спойлеры будут работать только на экранах меньше или равно 992px
 
-			data-spoilers="768,min" — спойлеры будут работать только на экранах больше или равно 768px 
+			data-spoilers="768,min" — спойлеры будут работать только на экранах больше или равно 768px
 
 			Если нужно чтобы в блоке открывался только один спойлер добавляем родителю атрибут data-one-spoiler
 
@@ -122,7 +122,7 @@ export function spoilers(durationSpeed) {
 
 	// Работа с контентом
 	function initSpoilerBody(spoilersBlock, hideSpoilerBody = true) {
-		const spoilerTitles = spoilersBlock.querySelectorAll('[data-spoiler]');
+		const spoilerTitles = spoilersBlock.querySelectorAll('[data-spoiler-title]');
 
 		if (spoilerTitles.length > 0) {
 			spoilerTitles.forEach((spoilerTitle) => {
@@ -130,12 +130,20 @@ export function spoilers(durationSpeed) {
 					spoilerTitle.removeAttribute('tabindex');
 
 					if (!spoilerTitle.classList.contains('active')) {
-						spoilerTitle.nextElementSibling.hidden = true;
+						const spoilerTitleParent = spoilerTitle.closest('[data-spoiler]');
+
+						const targetContent = spoilerTitleParent.querySelector('[data-spoiler-content]');
+
+						targetContent.hidden = true;
 					}
 				} else {
 					spoilerTitle.setAttribute('tabindex', '-1');
 
-					spoilerTitle.nextElementSibling.hidden = false;
+					const spoilerTitleParent = spoilerTitle.closest('[data-spoiler]');
+
+					const targetContent = spoilerTitleParent.querySelector('[data-spoiler-content]');
+
+					targetContent.hidden = false;
 				}
 			});
 		}
@@ -144,8 +152,8 @@ export function spoilers(durationSpeed) {
 	function setSpoilerAction(e) {
 		const el = e.target;
 
-		if (el.hasAttribute('data-spoiler') || el.closest('[data-spoiler]')) {
-			const spoilerTitle = el.hasAttribute('data-spoiler') ? el : el.closest('[data-spoiler]');
+		if (el.hasAttribute('data-spoiler-title') || el.closest('[data-spoiler-title]')) {
+			const spoilerTitle = el.hasAttribute('data-spoiler-title') ? el : el.closest('[data-spoiler-title]');
 
 			const spoilersBlock = spoilerTitle.closest('[data-spoilers]');
 
@@ -158,19 +166,27 @@ export function spoilers(durationSpeed) {
 
 				spoilerTitle.classList.toggle('active');
 
-				slideToggle(spoilerTitle.nextElementSibling, durationSpeed);
+				const spoilerTitleParent = spoilerTitle.closest('[data-spoiler]');
+
+				const targetContent = spoilerTitleParent.querySelector('[data-spoiler-content]');
+
+				slideToggle(targetContent, durationSpeed);
 			}
 			e.preventDefault();
 		}
 	}
 
 	function hideSpoilersBody(spoilersBlock) {
-		const spoilerActiveTitle = spoilersBlock.querySelector('[data-spoiler].active');
+		const spoilerActiveTitle = spoilersBlock.querySelector('[data-spoiler-title].active');
+
+		const activeTitleParent = spoilerActiveTitle.closest('[data-spoiler]');
+
+		const targetContent = activeTitleParent.querySelector('[data-spoiler-content]');
 
 		if (spoilerActiveTitle) {
 			spoilerActiveTitle.classList.remove('active');
 
-			slideUp(spoilerActiveTitle.nextElementSibling, durationSpeed);
+			slideUp(targetContent, durationSpeed);
 		}
 	}
 

@@ -72,7 +72,9 @@ function watcher() {
 
 	gulp.watch(path.watch.js, js);
 
-	gulp.watch(path.watch.img, gulp.parallel(img, imgSVG));
+	gulp.watch(path.watch.img, gulp.parallel(img));
+
+	gulp.watch(path.watch.imgSvg, gulp.parallel(imgSVG));
 }
 
 

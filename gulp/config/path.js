@@ -76,7 +76,9 @@ export const path = {
 
 		html: `${srcFolder}/**/*.html`,
 
-		img: `${srcFolder}/assets/images/**/*.{jpg,jpeg,png,svg,gif,ico,webp,heic,heif,raw,avif}`,
+		img: `${srcFolder}/assets/images/_src/*.{jpg,jpeg,png,svg,gif,ico,webp,heic,heif,raw,avif}`,
+
+		imgSvg: `${srcFolder}/assets/images/_src/**/*.svg`,
 
 		js: `${srcFolder}/assets/js/**/*.js`,
 
