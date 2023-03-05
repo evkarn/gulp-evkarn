@@ -127,23 +127,23 @@ textarea
 .container-fluid
 	max-width: 100%
 	width: 100%
+	height: 100%
 
 	margin: 0 auto
 	padding: 0 $container-offset
 
 	@media ( max-width: em(768) )
-		padding: 0 calc($container-offset / 2)
+		padding: 0 rem(12)
 
 .container
 	max-width: $container-width
 	+calc-size(max-width, 1540, 2310, 2464.96, 3840, px)
 	width: 100%
-
 	margin: 0 auto
 	padding: 0 $container-offset
 
 	@media ( max-width: em(768) )
-		padding: 0 calc($container-offset / 2)
+		padding: 0 rem(12)
 
 .stop-scroll
 	position: fixed
@@ -165,3 +165,23 @@ textarea
 
 .section
 	min-width: 0
+
+.video
+	position: relative
+	padding-bottom: 56.25% // 946/1682
+
+	max-width: 100%
+	width: 100%
+	height: auto
+
+	iframe
+		width: 100%
+		height: 100%
+
+		position: absolute
+		top: 0
+		right: 0
+		bottom: 0
+		left: 0
+
+		object-fit: cover
