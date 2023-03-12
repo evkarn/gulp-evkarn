@@ -130,20 +130,24 @@ export function spoilers(durationSpeed) {
 					spoilerTitle.removeAttribute('tabindex');
 
 					if (!spoilerTitle.classList.contains('active')) {
-						const spoilerTitleParent = spoilerTitle.closest('[data-spoiler]');
+						const spoilerTitleParent = spoilerTitle?.closest('[data-spoiler]');
 
-						const targetContent = spoilerTitleParent.querySelector('[data-spoiler-content]');
+						if (spoilerTitleParent) {
+							const targetContent = spoilerTitleParent.querySelector('[data-spoiler-content]');
 
-						targetContent.hidden = true;
+							targetContent.hidden = true;
+						}
 					}
 				} else {
 					spoilerTitle.setAttribute('tabindex', '-1');
 
-					const spoilerTitleParent = spoilerTitle.closest('[data-spoiler]');
+					const spoilerTitleParent = spoilerTitle?.closest('[data-spoiler]');
 
-					const targetContent = spoilerTitleParent.querySelector('[data-spoiler-content]');
+					if (spoilerTitleParent) {
+						const targetContent = spoilerTitleParent.querySelector('[data-spoiler-content]');
 
-					targetContent.hidden = false;
+						targetContent.hidden = false;
+					}
 				}
 			});
 		}

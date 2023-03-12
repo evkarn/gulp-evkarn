@@ -41,7 +41,7 @@ import { imgAvif } from './gulp/tasks/imgAvif.js';
 
 import { imgMin } from './gulp/tasks/imgMin.js';
 
-import { imgSVG } from './gulp/tasks/imgSVG.js';
+import { imgSvg } from './gulp/tasks/imgSvg.js';
 
 import { imgWebp } from './gulp/tasks/imgWebp.js';
 
@@ -74,7 +74,9 @@ function watcher() {
 
 	gulp.watch(path.watch.img, gulp.parallel(img));
 
-	gulp.watch(path.watch.imgSvg, gulp.parallel(imgSVG));
+	gulp.watch(path.watch.imgSvg, gulp.parallel(imgSvg));
+
+	gulp.watch(path.watch.svgSprite, gulp.parallel(svgSpriteIcons));
 }
 
 
@@ -83,7 +85,7 @@ const fonts = gulp.series(ttfToWoff, fontsStyle);
 
 
 // Основные задачи
-const mainTasks = gulp.series(fonts, imgAvif, imgWebp, gulp.parallel(copyFiles, html, copyConfigFiles, copyFaviconImages, sassStyle, js, copySpecialJS, img, imgSVG), imgMin);
+const mainTasks = gulp.series(fonts, imgAvif, imgWebp, gulp.parallel(copyFiles, html, copyConfigFiles, copyFaviconImages, sassStyle, js, copySpecialJS, img, imgSvg, svgSpriteIcons), imgMin);
 
 
 // Построение сценариев выполнения задач
@@ -91,11 +93,11 @@ const dev = gulp.series(reset, mainTasks, gulp.parallel(watcher, server));
 
 const build = gulp.series(reset, mainTasks);
 
-const deployZip = gulp.series(reset, mainTasks, zip);
+const deployZip = gulp.series(reset, zip);
 
-const deployFTP = gulp.series(reset, mainTasks, ftp);
+const deployFTP = gulp.series(reset, ftp);
 
-const deploySSH = gulp.series(reset, mainTasks, ssh);
+const deploySSH = gulp.series(reset, ssh);
 
 
 // Экспорт сценариев

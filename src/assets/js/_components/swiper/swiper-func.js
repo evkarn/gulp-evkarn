@@ -1,25 +1,43 @@
-import Swiper, { Navigation, Pagination } from 'swiper';
+import Swiper, { Navigation } from 'swiper';
 
-export const swiperFunction = () => {
+export const swipersFunction = () => {
 	'use strict';
 
-	const swiperEl = document?.querySelector('.el__slider');
+	const swiperElOne = document?.querySelector('.portfolio-slider');
 
-	if (swiperEl) {
-		const swiper = new Swiper('swiperEl', {
+	if (swiperElOne) {
+		const swiperPortfolio = new Swiper('.portfolio-slider', {
+			modules: [Navigation],
+
 			navigation: {
 				nextEl: '.swiper-button-next',
 				prevEl: '.swiper-button-prev'
 			},
 
-			pagination: {
-				el: '.swiper-pagination',
-				type: 'bullets'
-			},
+			slidesPerView: '4',
 
-			scrollbar: {
-				el: '.swiper-scrollbar',
-				draggable: true
+			spaceBetween: 24,
+
+			breakpoints: {
+				// when window width is >= 320px
+				320: {
+					slidesPerView: 1,
+					spaceBetween: 0
+				},
+				544: {
+					slidesPerView: 2,
+					spaceBetween: 20
+				},
+				// when window width is >= 480px
+				900: {
+					slidesPerView: 3,
+					spaceBetween: 24
+				},
+				// when window width is >= 640px
+				1200: {
+					slidesPerView: 4,
+					spaceBetween: 24
+				}
 			}
 		});
 	}

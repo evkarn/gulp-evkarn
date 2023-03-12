@@ -1,13 +1,13 @@
 <!DOCTYPE html>
-<html lang="@@lang" itemscope="itemscope" xmlns="http://www.w3.org/1999/xhtml" itemtype="http://schema.org/WebPage">
+<html lang="ru" itemscope="itemscope" xmlns="http://www.w3.org/1999/xhtml" itemtype="http://schema.org/WebPage">
 @@include('_includes/head/head.html', { "lang":"ru", "title":"Главная", "description":"Главная",
 "keywords":"Главная", "locale":"ru_RU", "ogimage":"home-ogimage", "css":"home" })
 
 <body>
 	<div class="page page-home">
-		<!-- @@include('_includes/header/header.html', {
+		@@include('_includes/header/header.html', {
 	"alt": "Название компании"
-	}) -->
+	})
 
 		<main class="main">
 
@@ -58,6 +58,14 @@
 							Далеко-далеко за словесными горами в стране гласных и согласных живут рыбные тексты. Свой вскоре семантика страну своего пор рот над запятых ее?
 						</div>
 					</div>
+
+					<picture>
+						<source srcset="assets/images/dist/.webp" type="image/webp">
+					
+						<source srcset="assets/images/dist/.avif" type="image/avif">
+					
+						<img class="" src="assets/images/dist/image-1.jpg" width="" height="" alt="" loading="lazy" itemprop="image">
+					</picture>
 				</div>
 			</div>
 

@@ -28,7 +28,7 @@ export const path = {
 
 		img: `${buildFolder}/assets/images/dist/`,
 
-		spriteIcons: `${buildFolder}/assets/sprite-icons/`,
+		spriteIcons: `${buildFolder}/assets/svg-sprite-icons/`,
 
 		js: `${buildFolder}/assets/js/`,
 
@@ -63,7 +63,7 @@ export const path = {
 
 		imgWebp: `${srcFolder}/assets/images/_src/**/*.{jpg,jpeg,png}`,
 
-		imgSVG: `${srcFolder}/assets/images/_src/**/*.svg`,
+		imgSvg: `${srcFolder}/assets/images/_src/**/*.svg`,
 
 		sass: `${srcFolder}/assets/styles/**.sass`,
 
@@ -85,6 +85,8 @@ export const path = {
 		jsSpecial: `${srcFolder}/assets/js-special/**/*.js`,
 
 		sass: `${srcFolder}/assets/styles/**/*.sass`,
+
+		svgSprite: `${srcFolder}/assets/svg-sprite/*.svg`,
 	},
 
 	clean: buildFolder,

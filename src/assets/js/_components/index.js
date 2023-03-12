@@ -8,7 +8,7 @@ export { filters } from './filters/filters-func.js';
 
 export { header } from './header/header-func.js';
 
-export { imageInBackground } from './image-in-background/image-In-background-func.js';
+export { imageInBg } from './image-in-bg/image-In-bg-func.js';
 
 export { inputMask } from './input-mask/input-mask-func.js';
 
@@ -60,7 +60,7 @@ export { stepper } from './stepper/stepper-func.js';
 
 export { stepperSum } from './stepper/stepper-sum-func.js';
 
-export { swiperFunction } from './swiper/swiper-func.js';
+export { swipersFunction } from './swiper/swiper-func.js';
 
 export { tabs } from './tabs/tabs-func.js';
 
@@ -68,6 +68,6 @@ export { tabsInner } from './tabs/tabs-inner-func.js';
 
 export { timerCountdown } from './timer-countdown/timer-countdown-func.js';
 
-export { validationForm } from './validation-forms/validation-forms-func.js';
+export { validationForms } from './validation-forms/validation-forms-func.js';
 
 export { webpFind } from './webp-find/webp-find-func.js';

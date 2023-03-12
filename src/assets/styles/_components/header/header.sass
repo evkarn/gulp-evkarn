@@ -1,0 +1,257 @@
+$breakpoint: 768
+.header
+	width: 100%
+
+	padding: rem(15) 0
+	+calc-size(padding-top, 15, 30, 1920.96, 3840, rem)
+	+calc-size(padding-bottom, 15, 30, 1920.96, 3840, rem)
+
+	position: absolute
+	top: 0
+	left: 0
+	z-index: 5
+
+	background-color: var(--c-header-one)
+	color: var(--c-header-two)
+
+	&:before
+		content: ""
+
+		display: block
+
+		width: 100%
+		height: 100%
+
+		position: absolute
+		top: 0
+		bottom: 0
+		left: 0
+		right: 0
+
+		background-color: var(--c-header-one)
+
+	@media ( min-width: em(3840.96) )
+		padding: rem(30) 0
+
+	.header__inner
+		display: flex
+		align-items: center
+		justify-content: space-between
+
+	.logo
+		z-index: 6
+
+	.logo__image
+		max-width: rem(166)
+		width: 100%
+		height: auto
+		+calc-size(max-width, 166, 332, 1920.96, 3840, rem)
+
+		@media ( min-width: em(3840.96) )
+			max-width: rem(332)
+
+	.nav
+		@media ( max-width: em($breakpoint) )
+			position: fixed
+			top: 0
+			right: 0
+			z-index: 4
+
+			width: 100%
+			height: 100%
+
+			padding: var(--header-height) rem(30) rem(30)
+			+calc-size(padding-right, 30, 60, 1920.96, 3840, rem)
+			+calc-size(padding-left, 30, 60, 1920.96, 3840, rem)
+			+calc-size(padding-bottom, 30, 60, 1920.96, 3840, rem)
+
+			background-color: var(--c-header-one)
+			overflow-y: auto
+
+			transform: translateX(400%)
+
+			transition: transform 0.5s ease-in-out
+
+			@media ( min-width: em(3840.96) )
+				padding: var(--header-height) rem(60) rem(60)
+
+	.nav.nav--visible
+		transform: translateX(0)
+
+	.nav__btn-close
+		display: none
+
+		@media ( max-width: em($breakpoint) )
+			display: flex
+			align-items: center
+			justify-content: center
+
+			width: rem(30)
+			height: rem(30)
+
+			font-weight: 700
+			font-size: rem(30)
+			line-height: rem(30)
+
+			border: 2px dashed transparent
+			color: var(--c-nav-btn-close-one)
+
+			transition: all .3s ease
+
+			&:focus
+				color: var(--c-nav-btn-close-two)
+
+			&:focus-visible
+				outline: none
+				border-color: var(--c-nav-btn-close-two)
+
+			&:active
+				border-color: transparent
+				color: var(--c-nav-btn-close-three)
+
+	.nav__list
+		display: flex
+		align-items: center
+		gap: rem(30)
+		+calc-size(gap, 30, 60, 1920.96, 3840, px)
+
+		@media ( max-width: em($breakpoint) )
+			flex-direction: column
+
+			font-size: rem(20)
+			font-weight: 700
+
+			padding-top: rem(30)
+			+calc-size(padding-top, 30, 60, 1920.96, 3840, rem)
+
+		@media ( min-width: em(3840.96) )
+			gap: rem(60)
+
+			padding-top: rem(60)
+
+	.nav__link
+		border: 2px dashed transparent
+		color: var(--c-nav-link-one)
+
+		transition: all .3s ease
+
+		@media ( any-hover: hover )
+			&:hover
+				color: var(--c-nav-link-two)
+
+		&:focus
+			color: var(--c-nav-link-two)
+
+		&:focus-visible
+			outline: none
+			border-color: var(--c-nav-link-two)
+
+		&:active
+			border-color: transparent
+			color: var(--c-nav-link-three)
+
+
+	// Burger style
+	.burger
+		display: none
+
+		width: rem(30)
+		height: rem(30)
+		+calc-size(width, 30, 60, 1920.96, 3840, rem)
+		+calc-size(height, 30, 60, 1920.96, 3840, rem)
+
+		position: relative
+
+		background-color: transparent
+		border: 2px dashed transparent
+
+		&:before, &:after
+			content: ""
+
+			position: absolute
+			left: 0
+
+			width: 100%
+			height: rem(2)
+
+			background-color: var(--c-burger-one)
+
+			transition: all 0.3s ease
+
+		&:before
+			top: rem(4)
+			+calc-size(top, 4, 8, 1920.96, 3840, rem)
+
+		&:after
+			bottom: rem(4)
+			+calc-size(bottom, 4, 8, 1920.96, 3840, rem)
+		
+		&:focus
+			&:before, &:after
+				background-color: var(--c-burger-two)
+
+			.burger__line
+				background-color: var(--c-burger-two)
+		
+		&:focus-visible
+			outline: none
+			border-color: var(--c-burger-two)
+
+			&:before, &:after
+				background-color: var(--c-burger-two)
+
+			.burger__line
+				background-color: var(--c-burger-two)
+		
+		&:active
+			border-color: transparent
+
+			&:before, &:after
+				background-color: var(--c-burger-three)
+
+			.burger__line
+				background-color: var(--c-burger-three)
+
+		@media ( max-width: em($breakpoint) )
+			display: flex
+			align-items: center
+			justify-content: center
+
+			z-index: 6
+
+		@media ( min-width: em(3840.96) )
+			width: rem(60)
+			height: rem(44)
+
+		> *
+			pointer-events: none
+
+	.burger--active
+		&:before
+			top: 50%
+
+			transform: rotate(45deg)
+
+		&:after
+			bottom: auto
+			top: 50%
+
+			transform: rotate(-45deg)
+
+		.burger__line
+			opacity: 0
+
+	.burger__line
+		position: absolute
+		left: 0
+		top: 50%
+
+		width: 100%
+		height: rem(2)
+
+		background-color: var(--c-burger-one)
+
+		transform: translateY(-50%)
+
+		transition: all .3s ease
+

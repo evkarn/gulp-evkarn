@@ -1,8 +1,5 @@
-// Оптимизация файлов .svg
-import svgoMin from 'gulp-svgo';
-
-export const imgSVG = () => {
-	return app.gulp.src(app.path.src.imgSVG)
+export const imgSvg = () => {
+	return app.gulp.src(app.path.src.imgSvg)
 
 	// Выводим сообщение об ошибке, если она возникнет
 		.pipe(app.plugins.plumber(
@@ -16,7 +13,7 @@ export const imgSVG = () => {
 		.pipe(app.plugins.newer(app.path.build.img))
 
 		// Оптимизируем файлы
-		.pipe(svgoMin())
+		.pipe(app.plugins.svgoMin())
 
 		// Копируем svg в папку проекта
 		.pipe(app.gulp.dest(app.path.build.img))
