@@ -42,7 +42,7 @@ export { readProgressCircle } from './read-progress-circle/read-progress-circle-
 
 export { readProgressLine } from './read-progress-line/read-progress-line-func.js';
 
-export { returnToTop } from './return-to-top/return-to-top-func.js';
+export { returnToTopButton } from './return-to-top-button/return-to-top-button-func.js';
 
 export { searchFieldGoogle } from './search-field-google/search-field-google-func.js';
 

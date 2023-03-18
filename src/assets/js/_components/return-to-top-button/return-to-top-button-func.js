@@ -1,4 +1,4 @@
-export function returnToTop(offsetViewButton) {
+export function returnToTopButton(offsetViewButton) {
 	'use strict';
 
 	// Получаем кнопку в переменную
