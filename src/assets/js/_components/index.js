@@ -1,3 +1,5 @@
+export { aosInit } from './aos/aos-func.js';
+
 export { colorScheme } from './color-scheme/color-scheme-function.js';
 
 export { digitalCounters } from './digital-counters/digital-counters-function.js';
