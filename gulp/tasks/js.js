@@ -26,7 +26,9 @@ export const js = () => {
 
 		output: {
 			filename: '[name].min.js',
-		}
+		},
+
+		devtool: 'source-map'
 	}))
 
 	// Выгрузка файл в папку проекта

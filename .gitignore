@@ -11,8 +11,13 @@ package-lock.json
 
 # production
 /build
-/dist
+
+
+# Ignoring directories
+# Both the directory itself and its contents will be ignored.
 /_site
+/dist
+
 
 # misc
 .DS_Store

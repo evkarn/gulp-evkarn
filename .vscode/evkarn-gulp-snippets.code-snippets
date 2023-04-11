@@ -1,0 +1,4176 @@
+{
+	// Place your GLOBAL snippets here. Each snippet is defined under a snippet name and has a scope, prefix, body and
+	// description. Add comma separated ids of the languages where the snippet is applicable in the scope field. If scope
+	// is left empty or omitted, the snippet gets applied to all languages. The prefix is what is
+	// used to trigger the snippet and the body will be expanded and inserted. Possible variables are:
+	// $1, $2 for tab stops, $0 for the final cursor position, and ${1:label}, ${2:another} for placeholders.
+	// Placeholders with the same ids are connected.
+	// Example:
+	// "Print to console": {
+	// 	"scope": "javascript,typescript",
+	// 	"prefix": "log",
+	// 	"body": [
+	// 		"console.log('$1');",
+	// 		"$2"
+	// 	],
+	// 	"description": "Log output to console"
+	// }
+
+	"Article block": {
+		"prefix": "artb",
+		"scope": "html, php",
+		"body": [
+			"<article class=\"section-main__article article\" itemscope=\"itemscope\" itemtype=\"http://schema.org/Article\">",
+			"\t<div class=\"article__author hidden\" itemprop=\"author\" itemscope=\"\" itemtype=\"http://schema.org/Person\">",
+			"",
+			"\t\t<link itemprop=\"sameAs\" href=\"//intellektfinance.ru/\" />",
+			"",
+			"\t\t<a href=\"//intellektfinance.ru/o-proekte.html\">",
+			"\t\t\t<span itemprop=\"name\">Евгений Карнаухов</span>",
+			"\t\t</a>",
+			"\t</div>",
+			"",
+			"\t<header class=\"article__header\" aria-hidden=\"true\">",
+			"\t\t<a class=\"article__image-wrap\" href=\"$1\" itemprop=\"url\">",
+			"\t\t\t<img class=\"article__image\" src=\"@img/$2-1x.$3\" srcset=\"@img/$2-2x.$3 2x\" alt=\"$4\" itemprop=\"image\" loading=\"lazy\">",
+			"\t\t</a>",
+			"\t</header>",
+			"",
+			"\t<div class=\"article__main\">",
+			"\t\t<div class=\"article__meta meta\">",
+			"\t\t\t<div class=\"meta-date date\">",
+			"\t\t\t\t<span class=\"date__icon icon-clock\"></span>",
+			"",
+			"\t\t\t\t<time datetime=\"$5 27-02-2022\" itemprop=\"datePublished\">",
+			"\t\t\t\t\t$6 27 февраля 2022 года, 09:00",
+			"\t\t\t\t</time>",
+			"\t\t\t</div>",
+			"",
+			"\t\t\t<div class=\"meta-category category\">",
+			"\t\t\t\t<span class=\"category__icon icon-category\"></span>",
+			"",
+			"\t\t\t\t<a class=\"category__link\" href=\"\"",
+			"\t\t\t\t\t$6",
+			"\t\t\t\t</a>",
+			"\t\t\t</div>",
+			"\t\t</div>",
+			"",
+			"\t\t<h3 class=\"article__title\" itemprop=\"headline\">",
+			"\t\t\t<a href=\"$1\" itemprop=\"url\">",
+			"\t\t\t\t<span itemprop=\"name\">",
+			"\t\t\t\t\t$7",
+			"\t\t\t\t</span>",
+			"\t\t\t</a>",
+			"\t\t</h3>",
+			"",
+			"\t\t<div class=\"article__description\">",
+			"\t\t\t<div>",
+			"\t\t\t\t<p>",
+			"\t\t\t\t\t$8",
+			"\t\t\t\t</p>",
+			"\t\t\t</div>",
+			"\t\t</div>",
+			"\t</div>",
+			"",
+			"\t<footer class=\"article__footer\">",
+			"\t\t<a class=\"article__button\" href=\"$1\">",
+			"\t\t\t<span>Читать далее</span>",
+			"\t\t</a>",
+			"\t</footer>",
+			"</article>"
+		],
+		"description": "Article block"
+	},
+
+	"Article block jekyll": {
+		"prefix": "artbj",
+		"scope": "html, php",
+		"body": [
+			"<article class=\"section-main__article article\" itemscope=\"itemscope\" itemtype=\"http://schema.org/Article\">",
+			"\t<div class=\"article__author hidden\" itemprop=\"author\" itemscope=\"\" itemtype=\"http://schema.org/Person\">",
+			"",
+			"\t\t<link itemprop=\"sameAs\" href=\"{{ site.url }}\" />",
+			"",
+			"\t\t<a href=\"{{ site.authorAboutLink }}\">",
+			"\t\t\t<span itemprop=\"name\">{{ site.author }}</span>",
+			"\t\t</a>",
+			"\t</div>",
+			"",
+			"\t<header class=\"article__header\" aria-hidden=\"true\">",
+			"\t\t<a class=\"article__image-wrap\" href=\"{{ post.url }}\" itemprop=\"url\">",
+			"\t\t\t<img class=\"article__image\" src=\"assets/imagess/dist/blog/{{ post.imageThumbHome }}\" alt=\"{{ post.introBgImageAlt }}\" itemprop=\"image\" loading=\"lazy\">",
+			"\t\t</a>",
+			"\t</header>",
+			"",
+			"\t<div class=\"article__main\">",
+			"\t\t<div class=\"article__meta meta\">",
+			"\t\t\t<div class=\"meta-date date\">",
+			"\t\t\t\t<span class=\"article__icon icon-clock\"></span>",
+			"",
+			"\t\t\t\t<time datetime=\"{{ post.date | date: '%Y' }}-{{ post.date | date: '%m' }}-{{ post.date | date: '%d' }}\" itemprop=\"datePublished\">",
+			"\t\t\t\t\t{{ post.date | date: '%d' }}.{{ post.date | date: '%m' }}.{{ post.date | date: '%Y' }} года",
+			"\t\t\t\t</time>",
+			"\t\t\t</div>",
+			"",
+			"\t\t\t<div class=\"meta-category category\">",
+			"\t\t\t\t<span class=\"category__icon icon-category\"></span>",
+			"",
+			"\t\t\t\t<a class=\"category__link\" href=\"blog/{{ post.category }}/\"",
+			"\t\t\t\t\t{{ post.categoryName }}",
+			"\t\t\t\t</a>",
+			"\t\t\t</div>",
+			"\t\t</div>",
+			"",
+			"\t\t<h3 class=\"article__title\" itemprop=\"headline\">",
+			"\t\t\t<a href=\"{{ post.url }}\" itemprop=\"url\">",
+			"\t\t\t\t<span itemprop=\"name\">",
+			"\t\t\t\t\t{{ post.title }}",
+			"\t\t\t\t</span>",
+			"\t\t\t</a>",
+			"\t\t</h3>",
+			"",
+			"\t\t<div class=\"article__description\">",
+			"\t\t\t<div>",
+			"\t\t\t\t<p>",
+			"\t\t\t\t\t{{ post.description }}",
+			"\t\t\t\t</p>",
+			"\t\t\t</div>",
+			"\t\t</div>",
+			"\t</div>",
+			"",
+			"\t<footer class=\"article__footer\">",
+			"\t\t<a class=\"article__button\" href=\"{{ post.url }}\">",
+			"\t\t\t<span>{{ site.readMoreButtonText }}</span>",
+			"\t\t</a>",
+			"\t</footer>",
+			"</article>"
+		],
+		"description": "Article block jekyll"
+	},
+
+	"Article link": {
+		"prefix": "artl",
+		"scope": "html, php",
+		"body": [
+			"<article class=\"page__article article\" itemscope=\"itemscope\" itemtype=\"http://schema.org/NewsArticle\">",
+			"\t<a href=\"$1\" itemprop=\"url\">",
+			"\t\t<div class=\"article__author hidden\">",
+			"\t\t\t<span>Автор:</span>",
+			"",
+			"\t\t\t<span itemprop=\"author\">Евгений Карнаухов</span>",
+			"\t\t</div>",
+			"",
+			"\t\t<header class=\"article__header\" aria-hidden=\"true\">",
+			"\t\t\t<div class=\"article__image-wrap\">",
+			"\t\t\t\t<img class=\"article__image\" src=\"@img/$2-1x.$3\" srcset=\"@img/$2-2x.$3 2x\" alt=\"$4\" itemprop=\"image\" loading=\"lazy\">",
+			"\t\t\t</div>",
+			"\t\t</header>",
+			"",
+			"\t\t<div class=\"article__content\">",
+			"\t\t\t<div class=\"article__meta\">",
+			"\t\t\t\t<time datetime=\"$5 27-02-2022\" itemprop=\"datePublished\">",
+			"\t\t\t\t\t$6 27 февраля 2022 года, 09:00",
+			"\t\t\t\t</time>",
+			"\t\t\t</div>",
+			"",
+			"\t\t\t<h3 class=\"article__title\" itemprop=\"headline\">",
+			"\t\t\t\t<span itemprop=\"name\">",
+			"\t\t\t\t\t$7",
+			"\t\t\t\t</span>",
+			"\t\t\t</h3>",
+			"",
+			"\t\t\t<div class=\"article__description\">",
+			"\t\t\t\t<div>",
+			"\t\t\t\t\t<p>",
+			"\t\t\t\t\t\t$8",
+			"\t\t\t\t\t</p>",
+			"\t\t\t\t</div>",
+			"\t\t\t</div>",
+			"\t\t</div>",
+			"",
+			"\t\t<footer class=\"article__footer\">",
+			"\t\t\t<div class=\"article__button\">",
+			"\t\t\t\t<span>Читать далее</span>",
+			"\t\t\t</div>",
+			"\t\t</footer>",
+			"\t</a>",
+			"</article>"
+		],
+		"description": "Article link"
+	},
+
+	"Fonts preload": {
+		"prefix": "fpr",
+		"scope": "html, php",
+		"body": [
+			"<link rel=\"preload\" href=\"$1\" as=\"font\" type=\"font/woff2\" crossorigin>"
+		],
+		"description": "Fonts preload"
+	},
+
+	"Section": {
+		"prefix": "sec",
+		"scope": "html, php",
+		"body": [
+			"<section class=\"section $1\">",
+			"\t<div class=\"container $1__container\">",
+			"\t\t$2",
+			"\t</div>",
+			"</section>"
+		],
+		"description": "Section"
+	},
+
+	// Images and Picture
+	"Picture tag with .webp": {
+		"prefix": "picw",
+		"scope": "html, php",
+		"body": [
+			"<picture>",
+			"\t<source srcset=\"assets/images/dist/$2.webp\" type=\"image/webp\">",
+			"",
+			"\t<img class=\"$1\" src=\"assets/images/dist/$2.$3\" width=\"$4\" height=\"$5\" alt=\"$6\" loading=\"lazy\">",
+			"</picture>"
+		],
+		"description": "Picture tag with .webp"
+	},
+
+	"Image with src": {
+		"prefix": "img",
+		"scope": "html, php",
+		"body": [
+			"<img class=\"$1\" src=\"assets/images/dist/$2.$3\" width=\"$4\" height=\"$5\" alt=\"$6\" loading=\"lazy\">"
+		],
+		"description": "Image with src"
+	},
+
+	"SVG sprite icon": {
+		"prefix": "spr",
+		"scope": "html, php",
+		"body": [
+			"<svg>",
+			"\t<use xlink:href=\"/assets/svg-sprite-icons/sprite.svg#$1\"></use>",
+			"</svg>"
+		],
+		"description": "SVG sprite icon"
+	},
+
+	"SVG sprite icon with title": {
+		"prefix": "sprt",
+		"scope": "html, php",
+		"body": [
+			"<svg role=\"img\" aria-labelledby=\"$2\">",
+			"\t<title id=\"$2\">$3</title>",
+			"",
+			"\t<use xlink:href=\"/assets/svg-sprite-icons/sprite.svg#$1\"></use>",
+			"</svg>"
+		],
+		"description": "SVG sprite icon with title"
+	},
+
+	"SVG sprite icon hidden": {
+		"prefix": "sprh",
+		"scope": "html, php",
+		"body": [
+			"<svg aria-hidden=\"true\">",
+			"\t<use xlink:href=\"/assets/svg-sprite-icons/sprite.svg#$1\"></use>",
+			"</svg>"
+		],
+		"description": "SVG sprite icon hidden"
+	},
+
+	"Picture tag with .avif + .webp": {
+		"prefix": "picaw",
+		"scope": "html, php",
+		"body": [
+			"<picture>",
+			"\t<source srcset=\"assets/images/dist/$2.webp\" type=\"image/webp\">",
+			"",
+			"\t<source srcset=\"assets/images/dist/$2.avif\" type=\"image/avif\">",
+			"",
+			"\t<img class=\"$1\" src=\"assets/images/dist/$2.$3\" width=\"$4\" height=\"$5\" alt=\"$6\" loading=\"lazy\">",
+			"</picture>"
+		],
+		"description": "Picture tag with .avif + .webp"
+	},
+	// End. Images and Picture
+
+	"Aspect-ratio image": {
+		"prefix": "ar",
+		"body": ["aspect-ratio: $1 / $2"],
+		"description": "Aspect-ratio image"
+	},
+
+	"Image responsive": {
+		"prefix": "imgr",
+		"body": [
+			"display: block",
+			"max-width: 100%",
+			"width: 100%",
+			"height: auto"
+		],
+		"description": "Image responsive"
+	},
+
+	"Inner image responsive": {
+		"prefix": "inimgr",
+		"body": [
+			"position: relative",
+			"overflow: hidden",
+			"padding-bottom: calc($1 / $2)",
+			"",
+			"\timg",
+			"\t\tposition: absolute",
+			"\t\twidth: 100%",
+			"\t\theight: 100%",
+			"\t\ttop: 0",
+			"\t\tright: 0",
+			"\t\tbottom: 0",
+			"\t\tleft: 0",
+			"\t\tobject-fit: cover"
+		],
+		"description": "Inner image responsive"
+	},
+
+	"Swiper HTML Layout": {
+		"prefix": "swr",
+		"scope": "html, php",
+		"body": [
+			"<div class=\"$1 swiper\">",
+			"\t<div class=\"swiper-wrapper\">",
+			"\t\t<div class=\"swiper-slide\">Slide 1</div>",
+			"\t</div>",
+			"",
+			"\t<div class=\"swiper-pagination\"></div>",
+			"",
+			"\t<div class=\"swiper-button-prev\"></div>",
+			"\t<div class=\"swiper-button-next\"></div>",
+			"",
+			"\t<div class=\"swiper-scrollbar\"></div>",
+			"</div>"
+		],
+		"description": "Swiper HTML Layout"
+	},
+
+	"Section bootstrap": {
+		"prefix": "secbs",
+		"scope": "html, php",
+		"body": [
+			"<div class=\"section $1\">",
+			"\t<div class=\"container $1__container\">",
+			"\t\t<div class=\"row $1__row\">",
+			"\t\t\t<div class=\"col-$2\">",
+			"\t\t\t\t$3",
+			"\t\t\t</div>",
+			"\t\t</div>",
+			"\t</div>",
+			"</div>"
+		],
+		"description": "Section bootstrap"
+	},
+
+	"Image in background": {
+		"prefix": "ibg",
+		"scope": "html, php",
+		"body": [
+			"<div class=\"$1\" data-image-in-background>",
+			"\t<img src=\"@img/$2\" alt=\"Alt\">",
+			"</div>"
+		],
+		"description": "Image in background"
+	},
+
+	"Video html tag": {
+		"prefix": "vid",
+		"scope": "html, php",
+		"body": [
+			"<video class=\"video__player\" src=\"assets/videos/$1.mp4\" poster=\"assets/images/dist/posters/$2.svg\" preload=\"metadata\" loop=\"\" muted=\"\" autoplay=\"\" playsinline=\"\" controls=\"\">",
+			"\tИзвините, ваш браузер не поддерживает встроенные видео, но не волнуйтесь, вы можете <a href=\"assets/videos/$1.mp4\">скачать его</a> и&nbsp;посмотреть в&nbsp;своем любимом видеоплеере!",
+			"</video>"
+		],
+		"description": "Video html tag"
+	},
+
+	"Video html tag jekyll": {
+		"prefix": "vidj",
+		"scope": "html, php",
+		"body": [
+			"<video class=\"video__player\" src=\"assets/videos/{{ page.video }}.mp4\" poster=\"assets/images/dist/posters/{{ page.video }}.svg\" preload=\"metadata\" loop=\"\" muted=\"\" autoplay=\"\" playsinline=\"\" controls=\"\">",
+			"\tИзвините, ваш браузер не поддерживает встроенные видео, но не волнуйтесь, вы можете <a href=\"assets/videos/{{ post.video }}.mp4\">скачать его</a> и&nbsp;посмотреть в&nbsp;своем любимом видеоплеере!",
+			"</video>"
+		],
+		"description": "Video html tag jekyll"
+	},
+
+	"Video block iframe": {
+		"prefix": "vidif",
+		"scope": "css, sass, scss, less",
+		"body": [
+			"position: relative",
+			"padding-bottom: 56.25%",
+			"",
+			"max-width: 100%",
+			"width: 100%",
+			"height: auto",
+			"",
+			"iframe",
+			"\twidth: 100%",
+			"\theight: 100%",
+			"",
+			"\tposition: absolute",
+			"\ttop: 0",
+			"\tright: 0",
+			"\tbottom: 0",
+			"\tleft: 0",
+			"",
+			"\tobject-fit: cover"
+		],
+		"description": "Video block iframe"
+	},
+
+	"Border-radius var": {
+		"prefix": "bdrv",
+		"scope": "css, sass, scss, less",
+		"body": ["border-radius: $1border-radius"],
+		"description": "Border-radius var"
+	},
+
+	"Border-radius calc * 2": {
+		"prefix": "bdr*",
+		"scope": "css, sass, scss, less",
+		"body": ["border-radius: calc($1border-radius * 2)"],
+		"description": "Border-radius calc * 2"
+	},
+
+	"Width rem": {
+		"prefix": "wrem",
+		"scope": "css, sass, scss, less",
+		"body": ["width: rem($1)"],
+		"description": "Width rem"
+	},
+
+	"Height rem": {
+		"prefix": "hrem",
+		"scope": "css, sass, scss, less",
+		"body": ["height: rem($1)"],
+		"description": "Height rem"
+	},
+
+	"Fill var()": {
+		"prefix": "fvar",
+		"scope": "css, sass, scss, less",
+		"body": ["fill: var($1)"],
+		"description": "Fill var()"
+	},
+
+	"State element": {
+		"prefix": "state",
+		"scope": "css, sass, scss, less",
+		"body": [
+			"@media ( any-hover: hover )",
+			"&:focus",
+			"\t$2",
+			"",
+			"&:focus-visible",
+			"\t$3",
+			"",
+			"\t&:hover",
+			"\t\t$1",
+			"",
+			"&:active",
+			"\t$4"
+		],
+		"description": "State element"
+	},
+
+	"State link": {
+		"prefix": "st-link",
+		"scope": "css, sass, scss, less",
+		"body": [
+			"@media ( any-hover: hover )",
+			"&:focus",
+			"\t$2",
+			"",
+			"&:focus-visible",
+			"\t$3",
+			"",
+			"\t&:hover",
+			"\t\t$1",
+			"",
+			"&:active",
+			"\t$4",
+			"",
+			"&:visited",
+			"\t$5"
+		],
+		"description": "State link"
+	},
+
+	// Overflow
+	"overflow: hidden": {
+		"prefix": "ofh",
+		"scope": "css, sass, scss, less",
+		"body": ["overflow: hidden"],
+		"description": "overflow: hidden"
+	},
+
+	"overflow: visible": {
+		"prefix": "ofv",
+		"scope": "css, sass, scss, less",
+		"body": ["overflow: visible"],
+		"description": "overflow: visible"
+	},
+
+	"overflow-x: hidden": {
+		"prefix": "ofxh",
+		"scope": "css, sass, scss, less",
+		"body": ["overflow-x: hidden"],
+		"description": "overflow-x: hidden"
+	},
+
+	"overflow-y: hidden": {
+		"prefix": "ofyh",
+		"scope": "css, sass, scss, less",
+		"body": ["overflow-y: hidden"],
+		"description": "overflow-y: hidden"
+	},
+
+	"overflow-x: visible": {
+		"prefix": "ofxv",
+		"scope": "css, sass, scss, less",
+		"body": ["overflow-x: visible"],
+		"description": "overflow-x: visible"
+	},
+
+	"overflow-y: visible": {
+		"prefix": "ofyv",
+		"scope": "css, sass, scss, less",
+		"body": ["overflow-y: visible"],
+		"description": "overflow-y: visible"
+	},
+	// End.Overflow
+
+	// Object-fit
+	"object-fit: cover": {
+		"prefix": "obfcov",
+		"scope": "css, sass, scss, less",
+		"body": ["object-fit: cover"],
+		"description": "object-fit: cover"
+	},
+
+	"object-fit: contain": {
+		"prefix": "obfcon",
+		"scope": "css, sass, scss, less",
+		"body": ["object-fit: contain"],
+		"description": "object-fit: contain"
+	},
+	// End. Object-fit
+
+	// Calc size
+	"Calc size": {
+		"prefix": "cs",
+		"scope": "css, sass, scss, less",
+		"body": ["+calc-size($1, $2, $3, 1920.96, 3840, rem)"],
+		"description": "Calc size"
+	},
+
+	"Calc size px": {
+		"prefix": "cspx",
+		"scope": "css, sass, scss, less",
+		"body": ["+calc-size($1, $2, $3, 1920.96, 3840, px)"],
+		"description": "Calc size px"
+	},
+
+	"Calc size font-size": {
+		"prefix": "csfz",
+		"scope": "css, sass, scss, less",
+		"body": ["+calc-size(font-size, $1, $2, 1920.96, 3840, rem)"],
+		"description": "Calc size font-size"
+	},
+
+	"Calc size font-size px": {
+		"prefix": "csfzpx",
+		"scope": "css, sass, scss, less",
+		"body": ["+calc-size(font-size, $1, $2, 1920.96, 3840, px)"],
+		"description": "Calc size font-size px"
+	},
+
+	"Calc size padding": {
+		"prefix": "csp",
+		"scope": "css, sass, scss, less",
+		"body": ["+calc-size(padding, $1, $2, 1920.96, 3840, rem)"],
+		"description": "Calc size padding"
+	},
+
+	"Calc size padding px": {
+		"prefix": "csppx",
+		"scope": "css, sass, scss, less",
+		"body": ["+calc-size(padding, $1, $2, 1920.96, 3840, px)"],
+		"description": "Calc size padding px"
+	},
+
+	"Calc size padding-top": {
+		"prefix": "cspt",
+		"scope": "css, sass, scss, less",
+		"body": ["+calc-size(padding-top, $1, $2, 1920.96, 3840, rem)"],
+		"description": "Calc size padding-top"
+	},
+
+	"Calc size padding-top px": {
+		"prefix": "csptpx",
+		"scope": "css, sass, scss, less",
+		"body": ["+calc-size(padding-top, $1, $2, 1920.96, 3840, px)"],
+		"description": "Calc size padding-top px"
+	},
+
+	"Calc size padding-bottom": {
+		"prefix": "cspb",
+		"scope": "css, sass, scss, less",
+		"body": ["+calc-size(padding-bottom, $1, $2, 1920.96, 3840, rem)"],
+		"description": "Calc size padding-bottom"
+	},
+
+	"Calc size padding-bottom px": {
+		"prefix": "cspbpx",
+		"scope": "css, sass, scss, less",
+		"body": ["+calc-size(padding-bottom, $1, $2, 1920.96, 3840, px)"],
+		"description": "Calc size padding-bottom px"
+	},
+
+	"Calc size padding-right": {
+		"prefix": "cspr",
+		"scope": "css, sass, scss, less",
+		"body": ["+calc-size(padding-right, $1, $2, 1920.96, 3840, rem)"],
+		"description": "Calc size padding-right"
+	},
+
+	"Calc size padding-right px": {
+		"prefix": "csprpx",
+		"scope": "css, sass, scss, less",
+		"body": ["+calc-size(padding-right, $1, $2, 1920.96, 3840, px)"],
+		"description": "Calc size padding-right px"
+	},
+
+	"Calc size padding-left": {
+		"prefix": "cspl",
+		"scope": "css, sass, scss, less",
+		"body": ["+calc-size(padding-left, $1, $2, 1920.96, 3840, rem)"],
+		"description": "Calc size padding-left"
+	},
+
+	"Calc size padding-left px": {
+		"prefix": "csplpx",
+		"scope": "css, sass, scss, less",
+		"body": ["+calc-size(padding-left, $1, $2, 1920.96, 3840, px)"],
+		"description": "Calc size padding-left px"
+	},
+
+	"Calc size margin": {
+		"prefix": "csm",
+		"scope": "css, sass, scss, less",
+		"body": ["+calc-size(margin, $1, $2, 1920.96, 3840, rem)"],
+		"description": "Calc size margin"
+	},
+
+	"Calc size margin px": {
+		"prefix": "csmpx",
+		"scope": "css, sass, scss, less",
+		"body": ["+calc-size(margin, $1, $2, 1920.96, 3840, px)"],
+		"description": "Calc size margin px"
+	},
+
+	"Calc size margin-top": {
+		"prefix": "csmt",
+		"scope": "css, sass, scss, less",
+		"body": ["+calc-size(margin-top, $1, $2, 1920.96, 3840, rem)"],
+		"description": "Calc size margin-top"
+	},
+
+	"Calc size margin-top px": {
+		"prefix": "csmtpx",
+		"scope": "css, sass, scss, less",
+		"body": ["+calc-size(margin-top, $1, $2, 1920.96, 3840, px)"],
+		"description": "Calc size margin-top px"
+	},
+
+	"Calc size margin-bottom": {
+		"prefix": "csmb",
+		"scope": "css, sass, scss, less",
+		"body": ["+calc-size(margin-bottom, $1, $2, 1920.96, 3840, rem)"],
+		"description": "Calc size margin-bottom"
+	},
+
+	"Calc size margin-bottom px": {
+		"prefix": "csmbpx",
+		"scope": "css, sass, scss, less",
+		"body": ["+calc-size(margin-bottom, $1, $2, 1920.96, 3840, px)"],
+		"description": "Calc size margin-bottom px"
+	},
+
+	"Calc size margin-right": {
+		"prefix": "csmr",
+		"scope": "css, sass, scss, less",
+		"body": ["+calc-size(margin-right, $1, $2, 1920.96, 3840, rem)"],
+		"description": "Calc size margin-right"
+	},
+
+	"Calc size margin-right px": {
+		"prefix": "csmrpx",
+		"scope": "css, sass, scss, less",
+		"body": ["+calc-size(margin-right, $1, $2, 1920.96, 3840, px)"],
+		"description": "Calc size margin-right px"
+	},
+
+	"Calc size margin-left": {
+		"prefix": "csml",
+		"scope": "css, sass, scss, less",
+		"body": ["+calc-size(margin-left, $1, $2, 1920.96, 3840, rem)"],
+		"description": "Calc size margin-left"
+	},
+
+	"Calc size margin-left px": {
+		"prefix": "csmlpx",
+		"scope": "css, sass, scss, less",
+		"body": ["+calc-size(margin-left, $1, $2, 1920.96, 3840, px)"],
+		"description": "Calc size margin-left px"
+	},
+
+	"Calc size max-width": {
+		"prefix": "csmaw",
+		"scope": "css, sass, scss, less",
+		"body": ["+calc-size(max-width, $1, $2, 1920.96, 3840, rem)"],
+		"description": "Calc size max-width"
+	},
+
+	"Calc size max-width px": {
+		"prefix": "csmawpx",
+		"scope": "css, sass, scss, less",
+		"body": ["+calc-size(max-width, $1, $2, 1920.96, 3840, px)"],
+		"description": "Calc size max-width px"
+	},
+
+	"Calc size min-width": {
+		"prefix": "csmiw",
+		"scope": "css, sass, scss, less",
+		"body": ["+calc-size(min-width, $1, $2, 1920.96, 3840, rem)"],
+		"description": "Calc size min-width"
+	},
+
+	"Calc size min-width px": {
+		"prefix": "csmiwpx",
+		"scope": "css, sass, scss, less",
+		"body": ["+calc-size(min-width, $1, $2, 1920.96, 3840, px)"],
+		"description": "Calc size min-width px"
+	},
+
+	"Calc size min-height": {
+		"prefix": "csmih",
+		"scope": "css, sass, scss, less",
+		"body": ["+calc-size(min-height, $1, $2, 1920.96, 3840, rem)"],
+		"description": "Calc size min-height"
+	},
+
+	"Calc size min-height px": {
+		"prefix": "csmihpx",
+		"scope": "css, sass, scss, less",
+		"body": ["+calc-size(min-height, $1, $2, 1920.96, 3840, px)"],
+		"description": "Calc size min-height px"
+	},
+
+	"Calc size max-height": {
+		"prefix": "csmah",
+		"scope": "css, sass, scss, less",
+		"body": ["+calc-size(max-height, $1, $2, 1920.96, 3840, rem)"],
+		"description": "Calc size max-height"
+	},
+
+	"Calc size max-height px": {
+		"prefix": "csmahpx",
+		"scope": "css, sass, scss, less",
+		"body": ["+calc-size(max-height, $1, $2, 1920.96, 3840, px)"],
+		"description": "Calc size max-height px"
+	},
+
+	"Calc size width": {
+		"prefix": "csw",
+		"scope": "css, sass, scss, less",
+		"body": ["+calc-size(width, $1, $2, 1920.96, 3840, rem)"],
+		"description": "Calc size width"
+	},
+
+	"Calc size width px": {
+		"prefix": "cswpx",
+		"scope": "css, sass, scss, less",
+		"body": ["+calc-size(width, $1, $2, 1920.96, 3840, px)"],
+		"description": "Calc size width px"
+	},
+
+	"Calc size height": {
+		"prefix": "csh",
+		"scope": "css, sass, scss, less",
+		"body": ["+calc-size(height, $1, $2, 1920.96, 3840, rem)"],
+		"description": "Calc size width"
+	},
+
+	"Calc size height px": {
+		"prefix": "cshpx",
+		"scope": "css, sass, scss, less",
+		"body": ["+calc-size(height, $1, $2, 1920.96, 3840, px)"],
+		"description": "Calc size height px"
+	},
+
+	"Calc size gap": {
+		"prefix": "csg",
+		"scope": "css, sass, scss, less",
+		"body": ["+calc-size(gap, $1, $2, 1920.96, 3840, rem)"],
+		"description": "Calc size gap"
+	},
+
+	"Calc size grid-gap": {
+		"prefix": "csgg",
+		"scope": "css, sass, scss, less",
+		"body": ["+calc-size(grid-gap, $1, $2, 1920.96, 3840, rem)"],
+		"description": "Calc size grid-gap"
+	},
+
+	"Calc size column-gap": {
+		"prefix": "cscg",
+		"scope": "css, sass, scss, less",
+		"body": ["+calc-size(column-gap, $1, $2, 1920.96, 3840, rem)"],
+		"description": "Calc size column-gap"
+	},
+
+	"Calc size row-gap": {
+		"prefix": "csrg",
+		"scope": "css, sass, scss, less",
+		"body": ["+calc-size(row-gap, $1, $2, 1920.96, 3840, rem)"],
+		"description": "Calc size row-gap"
+	},
+
+	"Calc size border-radius": {
+		"prefix": "csbr",
+		"scope": "css, sass, scss, less",
+		"body": ["+calc-size(border-radius, $1, $2, 1920.96, 3840, rem)"],
+		"description": "Calc size border-radius"
+	},
+
+	"Calc size border-radius px": {
+		"prefix": "csbrpx",
+		"scope": "css, sass, scss, less",
+		"body": ["+calc-size(border-radius, $1, $2, 1920.96, 3840, rem)"],
+		"description": "Calc size border-radius px"
+	},
+
+	"Calc size gap px": {
+		"prefix": "csgpx",
+		"scope": "css, sass, scss, less",
+		"body": ["+calc-size(gap, $1, $2, 1920.96, 3840, px)"],
+		"description": "Calc size gap px"
+	},
+
+	"Calc size column-gap px": {
+		"prefix": "cscgpx",
+		"scope": "css, sass, scss, less",
+		"body": ["+calc-size(column-gap, $1, $2, 1920.96, 3840, px)"],
+		"description": "Calc size column-gap px"
+	},
+
+	"Calc size row-gap px": {
+		"prefix": "csrgpx",
+		"scope": "css, sass, scss, less",
+		"body": ["+calc-size(row-gap, $1, $2, 1920.96, 3840, px)"],
+		"description": "Calc size row-gap px"
+	},
+	// End. Adaptive-value
+
+	// Gap
+	"gap: rem()": {
+		"prefix": "gp",
+		"scope": "css, sass, scss, less",
+		"body": ["gap: rem($1)"],
+		"description": "gap: rem()"
+	},
+
+	"row-gap: rem()": {
+		"prefix": "rgp",
+		"scope": "css, sass, scss, less",
+		"body": ["row-gap: rem($1)"],
+		"description": "row-gap: rem()"
+	},
+
+	"column-gap: rem()": {
+		"prefix": "cgp",
+		"scope": "css, sass, scss, less",
+		"body": ["column-gap: rem($1)"],
+		"description": "column-gap: rem()"
+	},
+
+	"grid-gap: rem()": {
+		"prefix": "ggp",
+		"scope": "css, sass, scss, less",
+		"body": ["grid-gap: rem($1)"],
+		"description": "grid-gap: rem()"
+	},
+
+	"grid-row-gap: rem()": {
+		"prefix": "grg",
+		"scope": "css, sass, scss, less",
+		"body": ["grid-row-gap: rem($1)"],
+		"description": "grid-row-gap: rem()"
+	},
+
+	"grid-column-gap: rem()": {
+		"prefix": "gcg",
+		"scope": "css, sass, scss, less",
+		"body": ["grid-column-gap: rem($1)"],
+		"description": "grid-column-gap: rem()"
+	},
+	// End. Gap
+
+	// Grid
+	"gird-template-columns: repeat()": {
+		"prefix": "gtcr",
+		"scope": "css, sass, scss, less",
+		"body": ["gird-template-columns: repeat($1, $2)"],
+		"description": "gird-template-columns: repeat()"
+	},
+
+	"grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));": {
+		"prefix": "gtcfit",
+		"scope": "css, sass, scss, less",
+		"body": ["grid-template-columns: repeat(auto-fit, minmax(100px, 1fr))"],
+		"description": "grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));"
+	},
+
+	"grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));": {
+		"prefix": "gtcfill",
+		"scope": "css, sass, scss, less",
+		"body": ["grid-template-columns: repeat(auto-fill, minmax(100px, 1fr))"],
+		"description": "grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));"
+	},
+	// End. Grid
+
+	// Clip
+	"clip-path: none": {
+		"prefix": "cpn",
+		"scope": "css, sass, scss, less",
+		"body": ["clip-path: none"],
+		"description": "clip-path: none"
+	},
+
+	"clip: auto": {
+		"prefix": "cla",
+		"scope": "css, sass, scss, less",
+		"body": ["clip: auto"],
+		"description": "clip: auto"
+	},
+	// End. Clip
+
+	// Position
+	"position: static": {
+		"prefix": "posst",
+		"scope": "css, sass, scss, less",
+		"body": ["position: static"],
+		"description": "position: static"
+	},
+	// End. Position
+
+	"image-responsive-position-absolute": {
+		"prefix": "img-resp",
+		"scope": "css, sass, scss, less",
+		"body": [
+			"position: absolute",
+			"top: 0",
+			"right: 0",
+			"bottom: 0",
+			"left: 0",
+			"\t",
+			"width: 100%",
+			"height: 100%",
+			"\t",
+			"object-fit: cover"
+		],
+		"description": "image-responsive-position-absolute"
+	},
+
+	// White space
+	"white-space: normal": {
+		"prefix": "wsn",
+		"scope": "css, sass, scss, less",
+		"body": ["white-space: normal"],
+		"description": "white-space: normal"
+	},
+
+	"white-space: nowrap": {
+		"prefix": "wsnw",
+		"scope": "css, sass, scss, less",
+		"body": ["white-space: nowrap"],
+		"description": "white-space: nowrap"
+	},
+	// End. White space
+
+	// Color
+	"color: var()": {
+		"prefix": "clv",
+		"scope": "css, sass, scss, less",
+		"body": ["color: var($1)"],
+		"description": "color: var()"
+	},
+
+	"color: var(--c-accent)": {
+		"prefix": "clva",
+		"scope": "css, sass, scss, less",
+		"body": ["color: var(--c-accent)"],
+		"description": "color: var(--c-accent)"
+	},
+
+	"color: var(--c-lighten)": {
+		"prefix": "clvl",
+		"scope": "css, sass, scss, less",
+		"body": ["color: var(--c-lighten)"],
+		"description": "color: var(--c-lighten)"
+	},
+	// End. Color
+
+	// Background
+	"Background inline style": {
+		"prefix": "bgin",
+		"scope": "html, php",
+		"body": [
+			"style=\"background-color: $1; background-image: url('@img/$2'); background-repeat: no-repeat; background-position: center center; background-size: cover;\""
+		],
+		"description": "Background inline style"
+	},
+
+	"background-color: var()": {
+		"prefix": "bgcv",
+		"scope": "css, sass, scss, less",
+		"body": ["background-color: var($1)"],
+		"description": "background-color: var()"
+	},
+
+	"background-color: var(--c-accent)": {
+		"prefix": "bgcva",
+		"scope": "css, sass, scss, less",
+		"body": ["background-color: var(--c-accent)"],
+		"description": "background-color: var(--c-accent)"
+	},
+
+	"background-color: transparent": {
+		"prefix": "bgctr",
+		"scope": "css, sass, scss, less",
+		"body": ["background-color: transparent"],
+		"description": "background-color: transparent"
+	},
+
+	"border-color: transparent": {
+		"prefix": "bct",
+		"scope": "css, sass, scss, less",
+		"body": ["border-color: transparent"],
+		"description": "border-color: transparent"
+	},
+
+	"position: fixed width:100%": {
+		"prefix": "posfwf",
+		"scope": "css, sass, scss, less",
+		"body": [
+			"position: fixed",
+			"top: 0",
+			"right: 0",
+			"bottom: 0",
+			"left: 0",
+			"",
+			"width: 100%",
+			"height: 100%",
+			"",
+			"object-fit: cover"
+		],
+		"description": "position: fixed width:100%"
+	},
+
+	"position: absolute width:100%": {
+		"prefix": "posawf",
+		"scope": "css, sass, scss, less",
+		"body": [
+			"position: absolute",
+			"top: 0",
+			"right: 0",
+			"bottom: 0",
+			"left: 0",
+			"",
+			"width: 100%",
+			"height: 100%",
+			"",
+			"object-fit: cover"
+		],
+		"description": "position: absolute width:100%"
+	},
+
+	// Transform
+	"Transform-translate-y": {
+		"prefix": "tfty",
+		"scope": "css, sass, scss, less",
+		"body": ["transform: translateY($1)"],
+		"description": "Transform-translate-y"
+	},
+
+	"Transform-translate-x": {
+		"prefix": "tftx",
+		"scope": "css, sass, scss, less",
+		"body": ["transform: translateX($1)"],
+		"description": "Transform-translate-x"
+	},
+
+	"Transform-translate-3d": {
+		"prefix": "tft3d",
+		"scope": "css, sass, scss, less",
+		"body": ["transform: translate3d($1, $2, $3)"],
+		"description": "Transform-translate-3d"
+	},
+
+	"transform: rotate($1deg)": {
+		"prefix": "tfrot",
+		"scope": "css, sass, scss, less",
+		"body": ["transform: rotate($1deg)"],
+		"description": "transform: rotate($1deg)"
+	},
+
+	"transform: scale(0)": {
+		"prefix": "tfsc0",
+		"scope": "css, sass, scss, less",
+		"body": ["transform: scale(0)"],
+		"description": "transform: scale(0)"
+	},
+
+	"transform: scale(1)": {
+		"prefix": "tfsc1",
+		"scope": "css, sass, scss, less",
+		"body": ["transform: scale(1)"],
+		"description": "transform: scale(1)"
+	},
+	// End. Transform
+
+	// Flex
+	"Display flex center": {
+		"prefix": "dfc",
+		"scope": "css, sass, scss, less",
+		"body": ["display: flex", "align-items: center", "justify-content: center"],
+		"description": "Display flex center"
+	},
+
+	"Flex: 1 1 auto": {
+		"prefix": "f11a",
+		"scope": "css, sass, scss, less",
+		"body": ["flex-shrink: 1", "flex-grow: 1", "flex-basis: auto"],
+		"description": "Flex: 1 1 auto"
+	},
+	// End. Flex
+
+	"Position absolute centering": {
+		"prefix": "abc",
+		"scope": "css, sass, scss, less",
+		"body": [
+			"position: absolute",
+			"top: 50%",
+			"left: 50%",
+			"transform: translate(-50%, -50%)"
+		],
+		"description": "Position absolute centering"
+	},
+
+	"Hide element": {
+		"prefix": "hid",
+		"scope": "css, sass, scss, less",
+		"body": [
+			"position: absolute",
+			"top: -110%",
+			"left: -110%",
+			"pointer-events: none",
+			"visibility: hidden",
+			"font-size: 0",
+			"line-height: 0",
+			"width: 0",
+			"height: 0"
+		],
+		"description": "Hide element"
+	},
+
+	"Position absolute centering top": {
+		"prefix": "abct",
+		"scope": "css, sass, scss, less",
+		"body": ["position: absolute", "top: 50%", "transform: translateY(-50%)"],
+		"description": "Position absolute centering top"
+	},
+
+	"Font size rem": {
+		"prefix": "fzr",
+		"scope": "css, sass, scss, less",
+		"body": ["font-size: rem($1)"],
+		"description": "Font size rem"
+	},
+
+	"Font size em": {
+		"prefix": "fze",
+		"scope": "css, sass, scss, less",
+		"body": ["font-size: em($1)", "$2"],
+		"description": "Font size em"
+	},
+
+	"color: var": {
+		"prefix": "cv",
+		"scope": "css, sass, scss, less",
+		"body": ["color: var($1)"],
+		"description": "color: var"
+	},
+
+	// Размеры
+	"height: rem": {
+		"prefix": "hrm",
+		"scope": "css, sass, scss, less",
+		"body": ["height: rem($1)"],
+		"description": "height: rem"
+	},
+	// Конец. Размеры
+
+	// Margin
+	"Margin all": {
+		"prefix": "ma",
+		"scope": "css, sass, scss, less",
+		"body": ["margin: $1 $2 $3 $4"],
+		"description": "Margin all"
+	},
+
+	"Margin all rem": {
+		"prefix": "mar",
+		"scope": "css, sass, scss, less",
+		"body": ["margin: rem($1) rem($2) rem($3) rem($4)"],
+		"description": "Margin all rem"
+	},
+
+	"Margin-top: rem": {
+		"prefix": "mtr",
+		"scope": "css, sass, scss, less",
+		"body": ["margin-top: rem($1)"],
+		"description": "Margin-top: rem"
+	},
+
+	"Margin-right: rem": {
+		"prefix": "mrr",
+		"scope": "css, sass, scss, less",
+		"body": ["margin-right: rem($1)"],
+		"description": "Margin-right: rem"
+	},
+
+	"Margin-bottom: rem": {
+		"prefix": "mbr",
+		"scope": "css, sass, scss, less",
+		"body": ["margin-bottom: rem($1)"],
+		"description": "Margin-bottom: rem"
+	},
+
+	"Margin-left: rem": {
+		"prefix": "mlr",
+		"scope": "css, sass, scss, less",
+		"body": ["margin-left: rem($1)"],
+		"description": "Margin-left: rem"
+	},
+	// End. Margin
+
+	// Padding
+	"Padding all": {
+		"prefix": "pa",
+		"scope": "css, sass, scss, less",
+		"body": ["padding: $1 $2 $3 $4"],
+		"description": "Padding all"
+	},
+
+	"Padding rem": {
+		"prefix": "padr",
+		"scope": "css, sass, scss, less",
+		"body": ["padding: rem($1)"],
+		"description": "Padding rem"
+	},
+
+	"Padding all: rem": {
+		"prefix": "par",
+		"scope": "css, sass, scss, less",
+		"body": ["padding: rem($1) rem($2) rem($3) rem($4)"],
+		"description": "Padding all: rem"
+	},
+
+	"padding-top: rem": {
+		"prefix": "ptr",
+		"scope": "css, sass, scss, less",
+		"body": ["padding-top: rem($1)"],
+		"description": "padding-top: rem"
+	},
+
+	"padding-right: rem": {
+		"prefix": "prr",
+		"scope": "css, sass, scss, less",
+		"body": ["padding-right: rem($1)"],
+		"description": "padding-right: rem"
+	},
+
+	"padding-bottom: rem": {
+		"prefix": "pbr",
+		"scope": "css, sass, scss, less",
+		"body": ["padding-bottom: rem($1)"],
+		"description": "padding-bottom: rem"
+	},
+
+	"padding-left: rem": {
+		"prefix": "plr",
+		"scope": "css, sass, scss, less",
+		"body": ["padding-left: rem($1)"],
+		"description": "padding-left: rem"
+	},
+	// End. Padding
+
+	"Link rel nofollow": {
+		"prefix": "relno",
+		"scope": "html, php",
+		"body": [
+			"<a class=\"$1\" href=\"$2\" rel=\"nofollow\" target=\"_blank\">$3</a>"
+		],
+		"description": "Link rel nofollow"
+	},
+
+	// Media
+	"Media Screen max-width": {
+		"prefix": "@mmax",
+		"scope": "css, sass, scss, less",
+		"body": ["@media ( max-width: em($1) )", "\t$2"],
+		"description": "Media Screen max-width"
+	},
+
+	"Media Screen min-width": {
+		"prefix": "@mmin",
+		"scope": "css, sass, scss, less",
+		"body": ["@media ( min-width: em($1) )", "\t$2"],
+		"description": "Media Screen min-width"
+	},
+
+	"Media Screen max-width px": {
+		"prefix": "@mmaxpx",
+		"scope": "css, sass, scss, less",
+		"body": ["@media ( max-width: $1px )", "\t$2"],
+		"description": "Media Screen max-width"
+	},
+
+	"Media Screen min-width px": {
+		"prefix": "@mminpx",
+		"scope": "css, sass, scss, less",
+		"body": ["@media ( min-width: $1px )", "\t$2"],
+		"description": "Media Screen min-width"
+	},
+
+	"Media any-hover": {
+		"prefix": "hah",
+		"scope": "css, sass, scss, less",
+		"body": ["@media ( any-hover: hover )", "\t&:hover", "\t\t$1"],
+		"description": "Media any-hover"
+	},
+	// End. Media
+
+	// Media max-width em
+	"Media Screen max-width-3824": {
+		"prefix": "@max3824",
+		"scope": "css, sass, scss, less",
+		"body": ["@media ( max-width: em(3824) )", "\t$1"],
+		"description": "Media Screen max-width-3824"
+	},
+
+	"Media Screen max-width-3552": {
+		"prefix": "@max3552",
+		"scope": "css, sass, scss, less",
+		"body": ["@media ( max-width: em(3552) )", "\t$1"],
+		"description": "Media Screen max-width-3552"
+	},
+
+	"Media Screen max-width-3280": {
+		"prefix": "@max3280",
+		"scope": "css, sass, scss, less",
+		"body": ["@media ( max-width: em(3280) )", "\t$1"],
+		"description": "Media Screen max-width-3280"
+	},
+
+	"Media Screen max-width-3008": {
+		"prefix": "@max3008",
+		"scope": "css, sass, scss, less",
+		"body": ["@media ( max-width: em(3008) )", "\t$1"],
+		"description": "Media Screen max-width-3008"
+	},
+
+	"Media Screen max-width-2736": {
+		"prefix": "@max2736",
+		"scope": "css, sass, scss, less",
+		"body": ["@media ( max-width: em(2736) )", "\t$1"],
+		"description": "Media Screen max-width-2736"
+	},
+
+	"Media Screen max-width-2464": {
+		"prefix": "@max2464",
+		"scope": "css, sass, scss, less",
+		"body": ["@media ( max-width: em(2464) )", "\t$1"],
+		"description": "Media Screen max-width-2464"
+	},
+
+	"Media Screen max-width-2192": {
+		"prefix": "@max2192",
+		"scope": "css, sass, scss, less",
+		"body": ["@media ( max-width: em(2192) )", "\t$1"],
+		"description": "Media Screen max-width-2192"
+	},
+
+	"Media Screen max-width-1920": {
+		"prefix": "@max1920",
+		"scope": "css, sass, scss, less",
+		"body": ["@media ( max-width: em(1920) )", "\t$1"],
+		"description": "Media Screen max-width-1920"
+	},
+
+	"Media Screen max-width-1600": {
+		"prefix": "@max1600",
+		"scope": "css, sass, scss, less",
+		"body": ["@media ( max-width: em(1600) )", "\t$1"],
+		"description": "Media Screen max-width-1600"
+	},
+
+	"Media Screen max-width-1584": {
+		"prefix": "@max1584",
+		"scope": "css, sass, scss, less",
+		"body": ["@media ( max-width: em(1584) )", "\t$1"],
+		"description": "Media Screen max-width-1584"
+	},
+
+	"Media Screen max-width-1568": {
+		"prefix": "@max1568",
+		"scope": "css, sass, scss, less",
+		"body": ["@media ( max-width: em(1568) )", "\t$1"],
+		"description": "Media Screen max-width-1568"
+	},
+
+	"Media Screen max-width-1552": {
+		"prefix": "@max1552",
+		"scope": "css, sass, scss, less",
+		"body": ["@media ( max-width: em(1552) )", "\t$1"],
+		"description": "Media Screen max-width-1552"
+	},
+
+	"Media Screen max-width-1536": {
+		"prefix": "@max1536",
+		"scope": "css, sass, scss, less",
+		"body": ["@media ( max-width: em(1536) )", "\t$1"],
+		"description": "Media Screen max-width-1536"
+	},
+
+	"Media Screen max-width-1520": {
+		"prefix": "@max1520",
+		"scope": "css, sass, scss, less",
+		"body": ["@media ( max-width: em(1520) )", "\t$1"],
+		"description": "Media Screen max-width-1520"
+	},
+
+	"Media Screen max-width-1504": {
+		"prefix": "@max1504",
+		"scope": "css, sass, scss, less",
+		"body": ["@media ( max-width: em(1504) )", "\t$1"],
+		"description": "Media Screen max-width-1504"
+	},
+
+	"Media Screen max-width-1488": {
+		"prefix": "@max1488",
+		"scope": "css, sass, scss, less",
+		"body": ["@media ( max-width: em(1488) )", "\t$1"],
+		"description": "Media Screen max-width-1488"
+	},
+
+	"Media Screen max-width-1472": {
+		"prefix": "@max1472",
+		"scope": "css, sass, scss, less",
+		"body": ["@media ( max-width: em(1472) )", "\t$1"],
+		"description": "Media Screen max-width-1472"
+	},
+
+	"Media Screen max-width-1456": {
+		"prefix": "@max1456",
+		"scope": "css, sass, scss, less",
+		"body": ["@media ( max-width: em(1456) )", "\t$1"],
+		"description": "Media Screen max-width-1456"
+	},
+
+	"Media Screen max-width-1440": {
+		"prefix": "@max1440",
+		"scope": "css, sass, scss, less",
+		"body": ["@media ( max-width: em(1440) )", "\t$1"],
+		"description": "Media Screen max-width-1440"
+	},
+
+	"Media Screen max-width-1424": {
+		"prefix": "@max1424",
+		"scope": "css, sass, scss, less",
+		"body": ["@media ( max-width: em(1424) )", "\t$1"],
+		"description": "Media Screen max-width-1424"
+	},
+
+	"Media Screen max-width-1400": {
+		"prefix": "@max1408",
+		"scope": "css, sass, scss, less",
+		"body": ["@media ( max-width: em(1408) )", "\t$1"],
+		"description": "Media Screen max-width-1408"
+	},
+
+	"Media Screen max-width-1392": {
+		"prefix": "@max1392",
+		"scope": "css, sass, scss, less",
+		"body": ["@media ( max-width: em(1392) )", "\t$1"],
+		"description": "Media Screen max-width-1392"
+	},
+
+	"Media Screen max-width-1376": {
+		"prefix": "@max1376",
+		"scope": "css, sass, scss, less",
+		"body": ["@media ( max-width: em(1376) )", "\t$1"],
+		"description": "Media Screen max-width-1376"
+	},
+
+	"Media Screen max-width-1360": {
+		"prefix": "@max1360",
+		"scope": "css, sass, scss, less",
+		"body": ["@media ( max-width: em(1360) )", "\t$1"],
+		"description": "Media Screen max-width-1360"
+	},
+
+	"Media Screen max-width-1344": {
+		"prefix": "@max1344",
+		"scope": "css, sass, scss, less",
+		"body": ["@media ( max-width: em(1344) )", "\t$1"],
+		"description": "Media Screen max-width-1344"
+	},
+
+	"Media Screen max-width-1328": {
+		"prefix": "@max1328",
+		"scope": "css, sass, scss, less",
+		"body": ["@media ( max-width: em(1328) )", "\t$1"],
+		"description": "Media Screen max-width-1328"
+	},
+
+	"Media Screen max-width-1312": {
+		"prefix": "@max1312",
+		"scope": "css, sass, scss, less",
+		"body": ["@media ( max-width: em(1312) )", "\t$1"],
+		"description": "Media Screen max-width-1312"
+	},
+
+	"Media Screen max-width-1296": {
+		"prefix": "@max1296",
+		"scope": "css, sass, scss, less",
+		"body": ["@media ( max-width: em(1296) )", "\t$1"],
+		"description": "Media Screen max-width-1296"
+	},
+
+	"Media Screen max-width-1280": {
+		"prefix": "@max1280",
+		"scope": "css, sass, scss, less",
+		"body": ["@media ( max-width: em(1280) )", "\t$1"],
+		"description": "Media Screen max-width-1280"
+	},
+
+	"Media Screen max-width-1264": {
+		"prefix": "@max1264",
+		"scope": "css, sass, scss, less",
+		"body": ["@media ( max-width: em(1264) )", "\t$1"],
+		"description": "Media Screen max-width-1264"
+	},
+
+	"Media Screen max-width-1248": {
+		"prefix": "@max1248",
+		"scope": "css, sass, scss, less",
+		"body": ["@media ( max-width: em(1248) )", "\t$1"],
+		"description": "Media Screen max-width-1248"
+	},
+
+	"Media Screen max-width-1232": {
+		"prefix": "@max1232",
+		"scope": "css, sass, scss, less",
+		"body": ["@media ( max-width: em(1232) )", "\t$1"],
+		"description": "Media Screen max-width-1232"
+	},
+
+	"Media Screen max-width-1216": {
+		"prefix": "@max1216",
+		"scope": "css, sass, scss, less",
+		"body": ["@media ( max-width: em(1216) )", "\t$1"],
+		"description": "Media Screen max-width-1216"
+	},
+
+	"Media Screen max-width-1200": {
+		"prefix": "@max1200",
+		"scope": "css, sass, scss, less",
+		"body": ["@media ( max-width: em(1200) )", "\t$1"],
+		"description": "Media Screen max-width-1200"
+	},
+
+	"Media Screen max-width-1184": {
+		"prefix": "@max1184",
+		"scope": "css, sass, scss, less",
+		"body": ["@media ( max-width: em(1184) )", "\t$1"],
+		"description": "Media Screen max-width-1184"
+	},
+
+	"Media Screen max-width-1168": {
+		"prefix": "@max1168",
+		"scope": "css, sass, scss, less",
+		"body": ["@media ( max-width: em(1168) )", "\t$1"],
+		"description": "Media Screen max-width-1168"
+	},
+
+	"Media Screen max-width-1152": {
+		"prefix": "@max1152",
+		"scope": "css, sass, scss, less",
+		"body": ["@media ( max-width: em(1152) )", "\t$1"],
+		"description": "Media Screen max-width-1152"
+	},
+
+	"Media Screen max-width-1136": {
+		"prefix": "@max1136",
+		"scope": "css, sass, scss, less",
+		"body": ["@media ( max-width: em(1136) )", "\t$1"],
+		"description": "Media Screen max-width-1136"
+	},
+
+	"Media Screen max-width-1120": {
+		"prefix": "@max1120",
+		"scope": "css, sass, scss, less",
+		"body": ["@media ( max-width: em(1120) )", "\t$1"],
+		"description": "Media Screen max-width-1120"
+	},
+
+	"Media Screen max-width-1104": {
+		"prefix": "@max1104",
+		"scope": "css, sass, scss, less",
+		"body": ["@media ( max-width: em(1104) )", "\t$1"],
+		"description": "Media Screen max-width-1104"
+	},
+
+	"Media Screen max-width-1088": {
+		"prefix": "@max1088",
+		"scope": "css, sass, scss, less",
+		"body": ["@media ( max-width: em(1088) )", "\t$1"],
+		"description": "Media Screen max-width-1088"
+	},
+
+	"Media Screen max-width-1072": {
+		"prefix": "@max1072",
+		"scope": "css, sass, scss, less",
+		"body": ["@media ( max-width: em(1072) )", "\t$1"],
+		"description": "Media Screen max-width-1072"
+	},
+
+	"Media Screen max-width-1056": {
+		"prefix": "@max1056",
+		"scope": "css, sass, scss, less",
+		"body": ["@media ( max-width: em(1056) )", "\t$1"],
+		"description": "Media Screen max-width-1056"
+	},
+
+	"Media Screen max-width-1040": {
+		"prefix": "@max1040",
+		"scope": "css, sass, scss, less",
+		"body": ["@media ( max-width: em(1040) )", "\t$1"],
+		"description": "Media Screen max-width-1040"
+	},
+
+	"Media Screen max-width-1024": {
+		"prefix": "@max1024",
+		"scope": "css, sass, scss, less",
+		"body": ["@media ( max-width: em(1024) )", "\t$1"],
+		"description": "Media Screen max-width-1024"
+	},
+
+	"Media Screen max-width-1008": {
+		"prefix": "@max1008",
+		"scope": "css, sass, scss, less",
+		"body": ["@media ( max-width: em(1008) )", "\t$1"],
+		"description": "Media Screen max-width-1008"
+	},
+
+	"Media Screen max-width-992": {
+		"prefix": "@max992",
+		"scope": "css, sass, scss, less",
+		"body": ["@media ( max-width: em(992) )", "\t$1"],
+		"description": "Media Screen max-width-992"
+	},
+
+	"Media Screen max-width-976": {
+		"prefix": "@max976",
+		"scope": "css, sass, scss, less",
+		"body": ["@media ( max-width: em(976) )", "\t$1"],
+		"description": "Media Screen max-width-976"
+	},
+
+	"Media Screen max-width-960": {
+		"prefix": "@max960",
+		"scope": "css, sass, scss, less",
+		"body": ["@media ( max-width: em(960) )", "\t$1"],
+		"description": "Media Screen max-width-960"
+	},
+
+	"Media Screen max-width-944": {
+		"prefix": "@max944",
+		"scope": "css, sass, scss, less",
+		"body": ["@media ( max-width: em(944) )", "\t$1"],
+		"description": "Media Screen max-width-944"
+	},
+
+	"Media Screen max-width-928": {
+		"prefix": "@max928",
+		"scope": "css, sass, scss, less",
+		"body": ["@media ( max-width: em(928) )", "\t$1"],
+		"description": "Media Screen max-width-928"
+	},
+
+	"Media Screen max-width-912": {
+		"prefix": "@max912",
+		"scope": "css, sass, scss, less",
+		"body": ["@media ( max-width: em(912) )", "\t$1"],
+		"description": "Media Screen max-width-912"
+	},
+
+	"Media Screen max-width-896": {
+		"prefix": "@max896",
+		"scope": "css, sass, scss, less",
+		"body": ["@media ( max-width: em(896) )", "\t$1"],
+		"description": "Media Screen max-width-896"
+	},
+
+	"Media Screen max-width-880": {
+		"prefix": "@max880",
+		"scope": "css, sass, scss, less",
+		"body": ["@media ( max-width: em(880) )", "\t$1"],
+		"description": "Media Screen max-width-880"
+	},
+
+	"Media Screen max-width-864": {
+		"prefix": "@max864",
+		"scope": "css, sass, scss, less",
+		"body": ["@media ( max-width: em(864) )", "\t$1"],
+		"description": "Media Screen max-width-864"
+	},
+
+	"Media Screen max-width-848": {
+		"prefix": "@max848",
+		"scope": "css, sass, scss, less",
+		"body": ["@media ( max-width: em(848) )", "\t$1"],
+		"description": "Media Screen max-width-848"
+	},
+
+	"Media Screen max-width-832": {
+		"prefix": "@max832",
+		"scope": "css, sass, scss, less",
+		"body": ["@media ( max-width: em(832) )", "\t$1"],
+		"description": "Media Screen max-width-832"
+	},
+
+	"Media Screen max-width-816": {
+		"prefix": "@max816",
+		"scope": "css, sass, scss, less",
+		"body": ["@media ( max-width: em(816) )", "\t$1"],
+		"description": "Media Screen max-width-816"
+	},
+
+	"Media Screen max-width-800": {
+		"prefix": "@max800",
+		"scope": "css, sass, scss, less",
+		"body": ["@media ( max-width: em(800) )", "\t$1"],
+		"description": "Media Screen max-width-800"
+	},
+
+	"Media Screen max-width-784": {
+		"prefix": "@max784",
+		"scope": "css, sass, scss, less",
+		"body": ["@media ( max-width: em(784) )", "\t$1"],
+		"description": "Media Screen max-width-784"
+	},
+
+	"Media Screen max-width-768": {
+		"prefix": "@max768",
+		"scope": "css, sass, scss, less",
+		"body": ["@media ( max-width: em(768) )", "\t$1"],
+		"description": "Media Screen max-width-768"
+	},
+
+	"Media Screen max-width-752": {
+		"prefix": "@max752",
+		"scope": "css, sass, scss, less",
+		"body": ["@media ( max-width: em(752) )", "\t$1"],
+		"description": "Media Screen max-width-752"
+	},
+
+	"Media Screen max-width-736": {
+		"prefix": "@max736",
+		"scope": "css, sass, scss, less",
+		"body": ["@media ( max-width: em(736) )", "\t$1"],
+		"description": "Media Screen max-width-736"
+	},
+
+	"Media Screen max-width-720": {
+		"prefix": "@max720",
+		"scope": "css, sass, scss, less",
+		"body": ["@media ( max-width: em(720) )", "\t$1"],
+		"description": "Media Screen max-width-720"
+	},
+
+	"Media Screen max-width-704": {
+		"prefix": "@max704",
+		"scope": "css, sass, scss, less",
+		"body": ["@media ( max-width: em(704) )", "\t$1"],
+		"description": "Media Screen max-width-704"
+	},
+
+	"Media Screen max-width-688": {
+		"prefix": "@max688",
+		"scope": "css, sass, scss, less",
+		"body": ["@media ( max-width: em(688) )", "\t$1"],
+		"description": "Media Screen max-width-688"
+	},
+
+	"Media Screen max-width-672": {
+		"prefix": "@max672",
+		"scope": "css, sass, scss, less",
+		"body": ["@media ( max-width: em(672) )", "\t$1"],
+		"description": "Media Screen max-width-672"
+	},
+
+	"Media Screen max-width-656": {
+		"prefix": "@max656",
+		"scope": "css, sass, scss, less",
+		"body": ["@media ( max-width: em(656) )", "\t$1"],
+		"description": "Media Screen max-width-656"
+	},
+
+	"Media Screen max-width-640": {
+		"prefix": "@max640",
+		"scope": "css, sass, scss, less",
+		"body": ["@media ( max-width: em(640) )", "\t$1"],
+		"description": "Media Screen max-width-640"
+	},
+
+	"Media Screen max-width-624": {
+		"prefix": "@max624",
+		"scope": "css, sass, scss, less",
+		"body": ["@media ( max-width: em(624) )", "\t$1"],
+		"description": "Media Screen max-width-624"
+	},
+
+	"Media Screen max-width-608": {
+		"prefix": "@max608",
+		"scope": "css, sass, scss, less",
+		"body": ["@media ( max-width: em(608) )", "\t$1"],
+		"description": "Media Screen max-width-608"
+	},
+
+	"Media Screen max-width-592": {
+		"prefix": "@max592",
+		"scope": "css, sass, scss, less",
+		"body": ["@media ( max-width: em(592) )", "\t$1"],
+		"description": "Media Screen max-width-592"
+	},
+
+	"Media Screen max-width-576": {
+		"prefix": "@max576",
+		"scope": "css, sass, scss, less",
+		"body": ["@media ( max-width: em(576) )", "\t$1"],
+		"description": "Media Screen max-width-576"
+	},
+
+	"Media Screen max-width-560": {
+		"prefix": "@max560",
+		"scope": "css, sass, scss, less",
+		"body": ["@media ( max-width: em(560) )", "\t$1"],
+		"description": "Media Screen max-width-560"
+	},
+
+	"Media Screen max-width-544": {
+		"prefix": "@max544",
+		"scope": "css, sass, scss, less",
+		"body": ["@media ( max-width: em(544) )", "\t$1"],
+		"description": "Media Screen max-width-544"
+	},
+
+	"Media Screen max-width-528": {
+		"prefix": "@max528",
+		"scope": "css, sass, scss, less",
+		"body": ["@media ( max-width: em(528) )", "\t$1"],
+		"description": "Media Screen max-width-528"
+	},
+
+	"Media Screen max-width-512": {
+		"prefix": "@max512",
+		"scope": "css, sass, scss, less",
+		"body": ["@media ( max-width: em(512) )", "\t$1"],
+		"description": "Media Screen max-width-512"
+	},
+
+	"Media Screen max-width-496": {
+		"prefix": "@max496",
+		"scope": "css, sass, scss, less",
+		"body": ["@media ( max-width: em(496) )", "\t$1"],
+		"description": "Media Screen max-width-496"
+	},
+
+	"Media Screen max-width-480": {
+		"prefix": "@max480",
+		"scope": "css, sass, scss, less",
+		"body": ["@media ( max-width: em(480) )", "\t$1"],
+		"description": "Media Screen max-width-480"
+	},
+
+	"Media Screen max-width-464": {
+		"prefix": "@max464",
+		"scope": "css, sass, scss, less",
+		"body": ["@media ( max-width: em(464) )", "\t$1"],
+		"description": "Media Screen max-width-464"
+	},
+
+	"Media Screen max-width-448": {
+		"prefix": "@max448",
+		"scope": "css, sass, scss, less",
+		"body": ["@media ( max-width: em(448) )", "\t$1"],
+		"description": "Media Screen max-width-448"
+	},
+
+	"Media Screen max-width-432": {
+		"prefix": "@max432",
+		"scope": "css, sass, scss, less",
+		"body": ["@media ( max-width: em(432) )", "\t$1"],
+		"description": "Media Screen max-width-432"
+	},
+
+	"Media Screen max-width-416": {
+		"prefix": "@max416",
+		"scope": "css, sass, scss, less",
+		"body": ["@media ( max-width: em(416) )", "\t$1"],
+		"description": "Media Screen max-width-416"
+	},
+
+	"Media Screen max-width-400": {
+		"prefix": "@max400",
+		"scope": "css, sass, scss, less",
+		"body": ["@media ( max-width: em(400) )", "\t$1"],
+		"description": "Media Screen max-width-400"
+	},
+
+	"Media Screen max-width-384": {
+		"prefix": "@max384",
+		"scope": "css, sass, scss, less",
+		"body": ["@media ( max-width: em(384) )", "\t$1"],
+		"description": "Media Screen max-width-384"
+	},
+
+	"Media Screen max-width-368": {
+		"prefix": "@max368",
+		"scope": "css, sass, scss, less",
+		"body": ["@media ( max-width: em(368) )", "\t$1"],
+		"description": "Media Screen max-width-368"
+	},
+
+	"Media Screen max-width-352": {
+		"prefix": "@max352",
+		"scope": "css, sass, scss, less",
+		"body": ["@media ( max-width: em(352) )", "\t$1"],
+		"description": "Media Screen max-width-352"
+	},
+	// End. Media max-width em
+
+	// Media min-width em
+	"Media Screen min-width-3840": {
+		"prefix": "@min3840",
+		"scope": "css, sass, scss, less",
+		"body": ["@media ( min-width: em(3840.96) )", "\t$1"],
+		"description": "Media Screen min-width-3840"
+	},
+
+	"Media Screen min-width-3824": {
+		"prefix": "@min3824",
+		"scope": "css, sass, scss, less",
+		"body": ["@media ( min-width: em(3824.96) )", "\t$1"],
+		"description": "Media Screen min-width-3824"
+	},
+
+	"Media Screen min-width-3552": {
+		"prefix": "@min3552",
+		"scope": "css, sass, scss, less",
+		"body": ["@media ( min-width: em(3552.96) )", "\t$1"],
+		"description": "Media Screen min-width-3552"
+	},
+
+	"Media Screen min-width-3280": {
+		"prefix": "@min3280",
+		"scope": "css, sass, scss, less",
+		"body": ["@media ( min-width: em(3280.96) )", "\t$1"],
+		"description": "Media Screen min-width-3280"
+	},
+
+	"Media Screen min-width-3008": {
+		"prefix": "@min3008",
+		"scope": "css, sass, scss, less",
+		"body": ["@media ( min-width: em(3008.96) )", "\t$1"],
+		"description": "Media Screen min-width-3008"
+	},
+
+	"Media Screen min-width-2880": {
+		"prefix": "@min2880",
+		"scope": "css, sass, scss, less",
+		"body": ["@media ( min-width: em(2880.96) )", "\t$1"],
+		"description": "Media Screen min-width-2880"
+	},
+
+	"Media Screen min-width-2736": {
+		"prefix": "@min2736",
+		"scope": "css, sass, scss, less",
+		"body": ["@media ( min-width: em(2736.96) )", "\t$1"],
+		"description": "Media Screen min-width-2736"
+	},
+
+	"Media Screen min-width-2464": {
+		"prefix": "@min2464",
+		"scope": "css, sass, scss, less",
+		"body": ["@media ( min-width: em(2464.96) )", "\t$1"],
+		"description": "Media Screen min-width-2464"
+	},
+
+	"Media Screen min-width-2192": {
+		"prefix": "@min2192",
+		"scope": "css, sass, scss, less",
+		"body": ["@media ( min-width: em(2192.96) )", "\t$1"],
+		"description": "Media Screen min-width-2192"
+	},
+
+	"Media Screen min-width-1984": {
+		"prefix": "@min1984",
+		"scope": "css, sass, scss, less",
+		"body": ["@media ( min-width: em(1984.96) )", "\t$1"],
+		"description": "Media Screen min-width-1984"
+	},
+
+	"Media Screen min-width-1968": {
+		"prefix": "@min1968",
+		"scope": "css, sass, scss, less",
+		"body": ["@media ( min-width: em(1968.96) )", "\t$1"],
+		"description": "Media Screen min-width-1968"
+	},
+
+	"Media Screen min-width-1952": {
+		"prefix": "@min1952",
+		"scope": "css, sass, scss, less",
+		"body": ["@media ( min-width: em(1952.96) )", "\t$1"],
+		"description": "Media Screen min-width-1952"
+	},
+
+	"Media Screen min-width-1936": {
+		"prefix": "@min1936",
+		"scope": "css, sass, scss, less",
+		"body": ["@media ( min-width: em(1936.96) )", "\t$1"],
+		"description": "Media Screen min-width-1936"
+	},
+
+	"Media Screen min-width-1920": {
+		"prefix": "@min1920",
+		"scope": "css, sass, scss, less",
+		"body": ["@media ( min-width: em(1920.96) )", "\t$1"],
+		"description": "Media Screen min-width-1920"
+	},
+
+	"Media Screen min-width-1600": {
+		"prefix": "@min1600",
+		"scope": "css, sass, scss, less",
+		"body": ["@media ( min-width: em(1600.96) )", "\t$1"],
+		"description": "Media Screen min-width-1600"
+	},
+
+	"Media Screen min-width-1584": {
+		"prefix": "@min1584",
+		"scope": "css, sass, scss, less",
+		"body": ["@media ( min-width: em(1584.96) )", "\t$1"],
+		"description": "Media Screen min-width-1584"
+	},
+
+	"Media Screen min-width-1568": {
+		"prefix": "@min1568",
+		"scope": "css, sass, scss, less",
+		"body": ["@media ( min-width: em(1568.96) )", "\t$1"],
+		"description": "Media Screen min-width-1568"
+	},
+
+	"Media Screen min-width-1552": {
+		"prefix": "@min1552",
+		"scope": "css, sass, scss, less",
+		"body": ["@media ( min-width: em(1552.96) )", "\t$1"],
+		"description": "Media Screen min-width-1552"
+	},
+
+	"Media Screen min-width-1536": {
+		"prefix": "@min1536",
+		"scope": "css, sass, scss, less",
+		"body": ["@media ( min-width: em(1536.96) )", "\t$1"],
+		"description": "Media Screen min-width-1536"
+	},
+
+	"Media Screen min-width-1520": {
+		"prefix": "@min1520",
+		"scope": "css, sass, scss, less",
+		"body": ["@media ( min-width: em(1520.96) )", "\t$1"],
+		"description": "Media Screen min-width-1520"
+	},
+
+	"Media Screen min-width-1504": {
+		"prefix": "@min1504",
+		"scope": "css, sass, scss, less",
+		"body": ["@media ( min-width: em(1504.96) )", "\t$1"],
+		"description": "Media Screen min-width-1504"
+	},
+
+	"Media Screen min-width-1488": {
+		"prefix": "@min1488",
+		"scope": "css, sass, scss, less",
+		"body": ["@media ( min-width: em(1488.96) )", "\t$1"],
+		"description": "Media Screen min-width-1488"
+	},
+
+	"Media Screen min-width-1472": {
+		"prefix": "@min1472",
+		"scope": "css, sass, scss, less",
+		"body": ["@media ( min-width: em(1472.96) )", "\t$1"],
+		"description": "Media Screen min-width-1472"
+	},
+
+	"Media Screen min-width-1456": {
+		"prefix": "@min1456",
+		"scope": "css, sass, scss, less",
+		"body": ["@media ( min-width: em(1456.96) )", "\t$1"],
+		"description": "Media Screen min-width-1456"
+	},
+
+	"Media Screen min-width-1440": {
+		"prefix": "@min1440",
+		"scope": "css, sass, scss, less",
+		"body": ["@media ( min-width: em(1440.96) )", "\t$1"],
+		"description": "Media Screen min-width-1440"
+	},
+
+	"Media Screen min-width-1424": {
+		"prefix": "@min1424",
+		"scope": "css, sass, scss, less",
+		"body": ["@media ( min-width: em(1424.96) )", "\t$1"],
+		"description": "Media Screen min-width-1424"
+	},
+
+	"Media Screen min-width-1400": {
+		"prefix": "@min1408",
+		"scope": "css, sass, scss, less",
+		"body": ["@media ( min-width: em(1408.96) )", "\t$1"],
+		"description": "Media Screen min-width-1408"
+	},
+
+	"Media Screen min-width-1392": {
+		"prefix": "@min1392",
+		"scope": "css, sass, scss, less",
+		"body": ["@media ( min-width: em(1392.96) )", "\t$1"],
+		"description": "Media Screen min-width-1392"
+	},
+
+	"Media Screen min-width-1376": {
+		"prefix": "@min1376",
+		"scope": "css, sass, scss, less",
+		"body": ["@media ( min-width: em(1376.96) )", "\t$1"],
+		"description": "Media Screen min-width-1376"
+	},
+
+	"Media Screen min-width-1360": {
+		"prefix": "@min1360",
+		"scope": "css, sass, scss, less",
+		"body": ["@media ( min-width: em(1360.96) )", "\t$1"],
+		"description": "Media Screen min-width-1360"
+	},
+
+	"Media Screen min-width-1344": {
+		"prefix": "@min1344",
+		"scope": "css, sass, scss, less",
+		"body": ["@media ( min-width: em(1344.96) )", "\t$1"],
+		"description": "Media Screen min-width-1344"
+	},
+
+	"Media Screen min-width-1328": {
+		"prefix": "@min1328",
+		"scope": "css, sass, scss, less",
+		"body": ["@media ( min-width: em(1328.96) )", "\t$1"],
+		"description": "Media Screen min-width-1328"
+	},
+
+	"Media Screen min-width-1312": {
+		"prefix": "@min1312",
+		"scope": "css, sass, scss, less",
+		"body": ["@media ( min-width: em(1312.96) )", "\t$1"],
+		"description": "Media Screen min-width-1312"
+	},
+
+	"Media Screen min-width-1296": {
+		"prefix": "@min1296",
+		"scope": "css, sass, scss, less",
+		"body": ["@media ( min-width: em(1296.96) )", "\t$1"],
+		"description": "Media Screen min-width-1296"
+	},
+
+	"Media Screen min-width-1280": {
+		"prefix": "@min1280",
+		"scope": "css, sass, scss, less",
+		"body": ["@media ( min-width: em(1280.96) )", "\t$1"],
+		"description": "Media Screen min-width-1280"
+	},
+
+	"Media Screen min-width-1264": {
+		"prefix": "@min1264",
+		"scope": "css, sass, scss, less",
+		"body": ["@media ( min-width: em(1264.96) )", "\t$1"],
+		"description": "Media Screen min-width-1264"
+	},
+
+	"Media Screen min-width-1248": {
+		"prefix": "@min1248",
+		"scope": "css, sass, scss, less",
+		"body": ["@media ( min-width: em(1248.96) )", "\t$1"],
+		"description": "Media Screen min-width-1248"
+	},
+
+	"Media Screen min-width-1232": {
+		"prefix": "@min1232",
+		"scope": "css, sass, scss, less",
+		"body": ["@media ( min-width: em(1232.96) )", "\t$1"],
+		"description": "Media Screen min-width-1232"
+	},
+
+	"Media Screen min-width-1216": {
+		"prefix": "@min1216",
+		"scope": "css, sass, scss, less",
+		"body": ["@media ( min-width: em(1216.96) )", "\t$1"],
+		"description": "Media Screen min-width-1216"
+	},
+
+	"Media Screen min-width-1200": {
+		"prefix": "@min1200",
+		"scope": "css, sass, scss, less",
+		"body": ["@media ( min-width: em(1200.96) )", "\t$1"],
+		"description": "Media Screen min-width-1200"
+	},
+
+	"Media Screen min-width-1184": {
+		"prefix": "@min1184",
+		"scope": "css, sass, scss, less",
+		"body": ["@media ( min-width: em(1184.96) )", "\t$1"],
+		"description": "Media Screen min-width-1184"
+	},
+
+	"Media Screen min-width-1168": {
+		"prefix": "@min1168",
+		"scope": "css, sass, scss, less",
+		"body": ["@media ( min-width: em(1168.96) )", "\t$1"],
+		"description": "Media Screen min-width-1168"
+	},
+
+	"Media Screen min-width-1152": {
+		"prefix": "@min1152",
+		"scope": "css, sass, scss, less",
+		"body": ["@media ( min-width: em(1152.96) )", "\t$1"],
+		"description": "Media Screen min-width-1152"
+	},
+
+	"Media Screen min-width-1136": {
+		"prefix": "@min1136",
+		"scope": "css, sass, scss, less",
+		"body": ["@media ( min-width: em(1136.96) )", "\t$1"],
+		"description": "Media Screen min-width-1136"
+	},
+
+	"Media Screen min-width-1120": {
+		"prefix": "@min1120",
+		"scope": "css, sass, scss, less",
+		"body": ["@media ( min-width: em(1120.96) )", "\t$1"],
+		"description": "Media Screen min-width-1120"
+	},
+
+	"Media Screen min-width-1104": {
+		"prefix": "@min1104",
+		"scope": "css, sass, scss, less",
+		"body": ["@media ( min-width: em(1104.96) )", "\t$1"],
+		"description": "Media Screen min-width-1104"
+	},
+
+	"Media Screen min-width-1088": {
+		"prefix": "@min1088",
+		"scope": "css, sass, scss, less",
+		"body": ["@media ( min-width: em(1088.96) )", "\t$1"],
+		"description": "Media Screen min-width-1088"
+	},
+
+	"Media Screen min-width-1072": {
+		"prefix": "@min1072",
+		"scope": "css, sass, scss, less",
+		"body": ["@media ( min-width: em(1072.96) )", "\t$1"],
+		"description": "Media Screen min-width-1072"
+	},
+
+	"Media Screen min-width-1056": {
+		"prefix": "@min1056",
+		"scope": "css, sass, scss, less",
+		"body": ["@media ( min-width: em(1056.96) )", "\t$1"],
+		"description": "Media Screen min-width-1056"
+	},
+
+	"Media Screen min-width-1040": {
+		"prefix": "@min1040",
+		"scope": "css, sass, scss, less",
+		"body": ["@media ( min-width: em(1040.96) )", "\t$1"],
+		"description": "Media Screen min-width-1040"
+	},
+
+	"Media Screen min-width-1024": {
+		"prefix": "@min1024",
+		"scope": "css, sass, scss, less",
+		"body": ["@media ( min-width: em(1024.96) )", "\t$1"],
+		"description": "Media Screen min-width-1024"
+	},
+
+	"Media Screen min-width-1008": {
+		"prefix": "@min1008",
+		"scope": "css, sass, scss, less",
+		"body": ["@media ( min-width: em(1008.96) )", "\t$1"],
+		"description": "Media Screen min-width-1008"
+	},
+
+	"Media Screen min-width-992": {
+		"prefix": "@min992",
+		"scope": "css, sass, scss, less",
+		"body": ["@media ( min-width: em(992.96) )", "\t$1"],
+		"description": "Media Screen min-width-992"
+	},
+
+	"Media Screen min-width-976": {
+		"prefix": "@min976",
+		"scope": "css, sass, scss, less",
+		"body": ["@media ( min-width: em(976.96) )", "\t$1"],
+		"description": "Media Screen min-width-976"
+	},
+
+	"Media Screen min-width-960": {
+		"prefix": "@min960",
+		"scope": "css, sass, scss, less",
+		"body": ["@media ( min-width: em(960.96) )", "\t$1"],
+		"description": "Media Screen min-width-960"
+	},
+
+	"Media Screen min-width-944": {
+		"prefix": "@min944",
+		"scope": "css, sass, scss, less",
+		"body": ["@media ( min-width: em(944.96) )", "\t$1"],
+		"description": "Media Screen min-width-944"
+	},
+
+	"Media Screen min-width-928": {
+		"prefix": "@min928",
+		"scope": "css, sass, scss, less",
+		"body": ["@media ( min-width: em(928.96) )", "\t$1"],
+		"description": "Media Screen min-width-928"
+	},
+
+	"Media Screen min-width-912": {
+		"prefix": "@min912",
+		"scope": "css, sass, scss, less",
+		"body": ["@media ( min-width: em(912.96) )", "\t$1"],
+		"description": "Media Screen min-width-912"
+	},
+
+	"Media Screen min-width-896": {
+		"prefix": "@min896",
+		"scope": "css, sass, scss, less",
+		"body": ["@media ( min-width: em(896.96) )", "\t$1"],
+		"description": "Media Screen min-width-896"
+	},
+
+	"Media Screen min-width-880": {
+		"prefix": "@min880",
+		"scope": "css, sass, scss, less",
+		"body": ["@media ( min-width: em(880.96) )", "\t$1"],
+		"description": "Media Screen min-width-880"
+	},
+
+	"Media Screen min-width-864": {
+		"prefix": "@min864",
+		"scope": "css, sass, scss, less",
+		"body": ["@media ( min-width: em(864.96) )", "\t$1"],
+		"description": "Media Screen min-width-864"
+	},
+
+	"Media Screen min-width-848": {
+		"prefix": "@min848",
+		"scope": "css, sass, scss, less",
+		"body": ["@media ( min-width: em(848.96) )", "\t$1"],
+		"description": "Media Screen min-width-848"
+	},
+
+	"Media Screen min-width-832": {
+		"prefix": "@min832",
+		"scope": "css, sass, scss, less",
+		"body": ["@media ( min-width: em(832.96) )", "\t$1"],
+		"description": "Media Screen min-width-832"
+	},
+
+	"Media Screen min-width-816": {
+		"prefix": "@min816",
+		"scope": "css, sass, scss, less",
+		"body": ["@media ( min-width: em(816.96) )", "\t$1"],
+		"description": "Media Screen min-width-816"
+	},
+
+	"Media Screen min-width-800": {
+		"prefix": "@min800",
+		"scope": "css, sass, scss, less",
+		"body": ["@media ( min-width: em(800.96) )", "\t$1"],
+		"description": "Media Screen min-width-800"
+	},
+
+	"Media Screen min-width-784": {
+		"prefix": "@min784",
+		"scope": "css, sass, scss, less",
+		"body": ["@media ( min-width: em(784.96) )", "\t$1"],
+		"description": "Media Screen min-width-784"
+	},
+
+	"Media Screen min-width-768": {
+		"prefix": "@min768",
+		"scope": "css, sass, scss, less",
+		"body": ["@media ( min-width: em(768.96) )", "\t$1"],
+		"description": "Media Screen min-width-768"
+	},
+
+	"Media Screen min-width-752": {
+		"prefix": "@min752",
+		"scope": "css, sass, scss, less",
+		"body": ["@media ( min-width: em(752.96) )", "\t$1"],
+		"description": "Media Screen min-width-752"
+	},
+
+	"Media Screen min-width-736": {
+		"prefix": "@min736",
+		"scope": "css, sass, scss, less",
+		"body": ["@media ( min-width: em(736.96) )", "\t$1"],
+		"description": "Media Screen min-width-736"
+	},
+
+	"Media Screen min-width-720": {
+		"prefix": "@min720",
+		"scope": "css, sass, scss, less",
+		"body": ["@media ( min-width: em(720.96) )", "\t$1"],
+		"description": "Media Screen min-width-720"
+	},
+
+	"Media Screen min-width-704": {
+		"prefix": "@min704",
+		"scope": "css, sass, scss, less",
+		"body": ["@media ( min-width: em(704.96) )", "\t$1"],
+		"description": "Media Screen min-width-704"
+	},
+
+	"Media Screen min-width-688": {
+		"prefix": "@min688",
+		"scope": "css, sass, scss, less",
+		"body": ["@media ( min-width: em(688.96) )", "\t$1"],
+		"description": "Media Screen min-width-688"
+	},
+
+	"Media Screen min-width-672": {
+		"prefix": "@min672",
+		"scope": "css, sass, scss, less",
+		"body": ["@media ( min-width: em(672.96) )", "\t$1"],
+		"description": "Media Screen min-width-672"
+	},
+
+	"Media Screen min-width-656": {
+		"prefix": "@min656",
+		"scope": "css, sass, scss, less",
+		"body": ["@media ( min-width: em(656.96) )", "\t$1"],
+		"description": "Media Screen min-width-656"
+	},
+
+	"Media Screen min-width-640": {
+		"prefix": "@min640",
+		"scope": "css, sass, scss, less",
+		"body": ["@media ( min-width: em(640.96) )", "\t$1"],
+		"description": "Media Screen min-width-640"
+	},
+
+	"Media Screen min-width-624": {
+		"prefix": "@min624",
+		"scope": "css, sass, scss, less",
+		"body": ["@media ( min-width: em(624.96) )", "\t$1"],
+		"description": "Media Screen min-width-624"
+	},
+
+	"Media Screen min-width-608": {
+		"prefix": "@min608",
+		"scope": "css, sass, scss, less",
+		"body": ["@media ( min-width: em(608.96) )", "\t$1"],
+		"description": "Media Screen min-width-608"
+	},
+
+	"Media Screen min-width-592": {
+		"prefix": "@min592",
+		"scope": "css, sass, scss, less",
+		"body": ["@media ( min-width: em(592.96) )", "\t$1"],
+		"description": "Media Screen min-width-592"
+	},
+
+	"Media Screen min-width-576": {
+		"prefix": "@min576",
+		"scope": "css, sass, scss, less",
+		"body": ["@media ( min-width: em(576.96) )", "\t$1"],
+		"description": "Media Screen min-width-576"
+	},
+
+	"Media Screen min-width-560": {
+		"prefix": "@min560",
+		"scope": "css, sass, scss, less",
+		"body": ["@media ( min-width: em(560.96) )", "\t$1"],
+		"description": "Media Screen min-width-560"
+	},
+
+	"Media Screen min-width-544": {
+		"prefix": "@min544",
+		"scope": "css, sass, scss, less",
+		"body": ["@media ( min-width: em(544.96) )", "\t$1"],
+		"description": "Media Screen min-width-544"
+	},
+
+	"Media Screen min-width-528": {
+		"prefix": "@min528",
+		"scope": "css, sass, scss, less",
+		"body": ["@media ( min-width: em(528.96) )", "\t$1"],
+		"description": "Media Screen min-width-528"
+	},
+
+	"Media Screen min-width-512": {
+		"prefix": "@min512",
+		"scope": "css, sass, scss, less",
+		"body": ["@media ( min-width: em(512.96) )", "\t$1"],
+		"description": "Media Screen min-width-512"
+	},
+
+	"Media Screen min-width-496": {
+		"prefix": "@min496",
+		"scope": "css, sass, scss, less",
+		"body": ["@media ( min-width: em(496.96) )", "\t$1"],
+		"description": "Media Screen min-width-496"
+	},
+
+	"Media Screen min-width-480": {
+		"prefix": "@min480",
+		"scope": "css, sass, scss, less",
+		"body": ["@media ( min-width: em(480.96) )", "\t$1"],
+		"description": "Media Screen min-width-480"
+	},
+
+	"Media Screen min-width-464": {
+		"prefix": "@min464",
+		"scope": "css, sass, scss, less",
+		"body": ["@media ( min-width: em(464.96) )", "\t$1"],
+		"description": "Media Screen min-width-464"
+	},
+
+	"Media Screen min-width-448": {
+		"prefix": "@min448",
+		"scope": "css, sass, scss, less",
+		"body": ["@media ( min-width: em(448.96) )", "\t$1"],
+		"description": "Media Screen min-width-448"
+	},
+
+	"Media Screen min-width-432": {
+		"prefix": "@min432",
+		"scope": "css, sass, scss, less",
+		"body": ["@media ( min-width: em(432.96) )", "\t$1"],
+		"description": "Media Screen min-width-432"
+	},
+
+	"Media Screen min-width-416": {
+		"prefix": "@min416",
+		"scope": "css, sass, scss, less",
+		"body": ["@media ( min-width: em(416.96) )", "\t$1"],
+		"description": "Media Screen min-width-416"
+	},
+
+	"Media Screen min-width-400": {
+		"prefix": "@min400",
+		"scope": "css, sass, scss, less",
+		"body": ["@media ( min-width: em(400.96) )", "\t$1"],
+		"description": "Media Screen min-width-400"
+	},
+
+	"Media Screen min-width-384": {
+		"prefix": "@min384",
+		"scope": "css, sass, scss, less",
+		"body": ["@media ( min-width: em(384.96) )", "\t$1"],
+		"description": "Media Screen min-width-384"
+	},
+
+	"Media Screen min-width-368": {
+		"prefix": "@min368",
+		"scope": "css, sass, scss, less",
+		"body": ["@media ( min-width: em(368.96) )", "\t$1"],
+		"description": "Media Screen min-width-368"
+	},
+
+	"Media Screen min-width-352": {
+		"prefix": "@min352",
+		"scope": "css, sass, scss, less",
+		"body": ["@media ( min-width: em(352.96) )", "\t$1"],
+		"description": "Media Screen min-width-352"
+	},
+
+	"Media Screen max-width-1600px": {
+		"prefix": "@max1600px ",
+		"scope": "css, sass, scss, less",
+		"body": ["@media ( max-width: 1600px )", "\t$1"],
+		"description": "Media Screen max-width-1600px"
+	},
+
+	"Media Screen max-width-1584px": {
+		"prefix": "@max1584px",
+		"scope": "css, sass, scss, less",
+		"body": ["@media ( max-width: 1584px )", "\t$1"],
+		"description": "Media Screen max-width-1584px"
+	},
+
+	"Media Screen max-width-1568px": {
+		"prefix": "@max1568px",
+		"scope": "css, sass, scss, less",
+		"body": ["@media ( max-width: 1568px )", "\t$1"],
+		"description": "Media Screen max-width-1568px"
+	},
+
+	"Media Screen max-width-1552px": {
+		"prefix": "@max1552px",
+		"scope": "css, sass, scss, less",
+		"body": ["@media ( max-width: 1552px )", "\t$1"],
+		"description": "Media Screen max-width-1552px"
+	},
+
+	"Media Screen max-width-1536px": {
+		"prefix": "@max1536px",
+		"scope": "css, sass, scss, less",
+		"body": ["@media ( max-width: 1536px )", "\t$1"],
+		"description": "Media Screen max-width-1536px"
+	},
+
+	"Media Screen max-width-1520px": {
+		"prefix": "@max1520px",
+		"scope": "css, sass, scss, less",
+		"body": ["@media ( max-width: 1520px )", "\t$1"],
+		"description": "Media Screen max-width-1520px"
+	},
+
+	"Media Screen max-width-1504px": {
+		"prefix": "@max1504px",
+		"scope": "css, sass, scss, less",
+		"body": ["@media ( max-width: 1504px )", "\t$1"],
+		"description": "Media Screen max-width-1504px"
+	},
+
+	"Media Screen max-width-1488px": {
+		"prefix": "@max1488px",
+		"scope": "css, sass, scss, less",
+		"body": ["@media ( max-width: 1488px )", "\t$1"],
+		"description": "Media Screen max-width-1488px"
+	},
+
+	"Media Screen max-width-1472px": {
+		"prefix": "@max1472px",
+		"scope": "css, sass, scss, less",
+		"body": ["@media ( max-width: 1472px )", "\t$1"],
+		"description": "Media Screen max-width-1472px"
+	},
+
+	"Media Screen max-width-1456px": {
+		"prefix": "@max1456px",
+		"scope": "css, sass, scss, less",
+		"body": ["@media ( max-width: 1456px )", "\t$1"],
+		"description": "Media Screen max-width-1456px"
+	},
+
+	"Media Screen max-width-1440px": {
+		"prefix": "@max1440px",
+		"scope": "css, sass, scss, less",
+		"body": ["@media ( max-width: 1440px )", "\t$1"],
+		"description": "Media Screen max-width-1440px"
+	},
+
+	"Media Screen max-width-1424px": {
+		"prefix": "@max1424px",
+		"scope": "css, sass, scss, less",
+		"body": ["@media ( max-width: 1424px )", "\t$1"],
+		"description": "Media Screen max-width-1424px"
+	},
+
+	"Media Screen max-width-1400px": {
+		"prefix": "@max1408px",
+		"scope": "css, sass, scss, less",
+		"body": ["@media ( max-width: 1408px )", "\t$1"],
+		"description": "Media Screen max-width-1408px"
+	},
+
+	"Media Screen max-width-1392px": {
+		"prefix": "@max1392px",
+		"scope": "css, sass, scss, less",
+		"body": ["@media ( max-width: 1392px )", "\t$1"],
+		"description": "Media Screen max-width-1392px"
+	},
+
+	"Media Screen max-width-1376px": {
+		"prefix": "@max1376px",
+		"scope": "css, sass, scss, less",
+		"body": ["@media ( max-width: 1376px )", "\t$1"],
+		"description": "Media Screen max-width-1376px"
+	},
+
+	"Media Screen max-width-1360px": {
+		"prefix": "@max1360px",
+		"scope": "css, sass, scss, less",
+		"body": ["@media ( max-width: 1360px )", "\t$1"],
+		"description": "Media Screen max-width-1360px"
+	},
+
+	"Media Screen max-width-1344px": {
+		"prefix": "@max1344px",
+		"scope": "css, sass, scss, less",
+		"body": ["@media ( max-width: 1344px )", "\t$1"],
+		"description": "Media Screen max-width-1344px"
+	},
+
+	"Media Screen max-width-1328px": {
+		"prefix": "@max1328px",
+		"scope": "css, sass, scss, less",
+		"body": ["@media ( max-width: 1328px )", "\t$1"],
+		"description": "Media Screen max-width-1328px"
+	},
+
+	"Media Screen max-width-1312px": {
+		"prefix": "@max1312px",
+		"scope": "css, sass, scss, less",
+		"body": ["@media ( max-width: 1312px )", "\t$1"],
+		"description": "Media Screen max-width-1312px"
+	},
+
+	"Media Screen max-width-1296px": {
+		"prefix": "@max1296px",
+		"scope": "css, sass, scss, less",
+		"body": ["@media ( max-width: 1296px )", "\t$1"],
+		"description": "Media Screen max-width-1296px"
+	},
+
+	"Media Screen max-width-1280px": {
+		"prefix": "@max1280px",
+		"scope": "css, sass, scss, less",
+		"body": ["@media ( max-width: 1280px )", "\t$1"],
+		"description": "Media Screen max-width-1280px"
+	},
+
+	"Media Screen max-width-1264px": {
+		"prefix": "@max1264px",
+		"scope": "css, sass, scss, less",
+		"body": ["@media ( max-width: 1264px )", "\t$1"],
+		"description": "Media Screen max-width-1264px"
+	},
+
+	"Media Screen max-width-1248px": {
+		"prefix": "@max1248px",
+		"scope": "css, sass, scss, less",
+		"body": ["@media ( max-width: 1248px )", "\t$1"],
+		"description": "Media Screen max-width-1248px"
+	},
+
+	"Media Screen max-width-1232px": {
+		"prefix": "@max1232px",
+		"scope": "css, sass, scss, less",
+		"body": ["@media ( max-width: 1232px )", "\t$1"],
+		"description": "Media Screen max-width-1232px"
+	},
+
+	"Media Screen max-width-1216px": {
+		"prefix": "@max1216px",
+		"scope": "css, sass, scss, less",
+		"body": ["@media ( max-width: 1216px )", "\t$1"],
+		"description": "Media Screen max-width-1216px"
+	},
+
+	"Media Screen max-width-1200px": {
+		"prefix": "@max1200px",
+		"scope": "css, sass, scss, less",
+		"body": ["@media ( max-width: 1200px )", "\t$1"],
+		"description": "Media Screen max-width-1200px"
+	},
+
+	"Media Screen max-width-1184px": {
+		"prefix": "@max1184px",
+		"scope": "css, sass, scss, less",
+		"body": ["@media ( max-width: 1184px )", "\t$1"],
+		"description": "Media Screen max-width-1184px"
+	},
+
+	"Media Screen max-width-1168px": {
+		"prefix": "@max1168px",
+		"scope": "css, sass, scss, less",
+		"body": ["@media ( max-width: 1168px )", "\t$1"],
+		"description": "Media Screen max-width-1168px"
+	},
+
+	"Media Screen max-width-1152px": {
+		"prefix": "@max1152px",
+		"scope": "css, sass, scss, less",
+		"body": ["@media ( max-width: 1152px )", "\t$1"],
+		"description": "Media Screen max-width-1152px"
+	},
+
+	"Media Screen max-width-1136px": {
+		"prefix": "@max1136px",
+		"scope": "css, sass, scss, less",
+		"body": ["@media ( max-width: 1136px )", "\t$1"],
+		"description": "Media Screen max-width-1136px"
+	},
+
+	"Media Screen max-width-1120px": {
+		"prefix": "@max1120px",
+		"scope": "css, sass, scss, less",
+		"body": ["@media ( max-width: 1120px )", "\t$1"],
+		"description": "Media Screen max-width-1120px"
+	},
+
+	"Media Screen max-width-1104px": {
+		"prefix": "@max1104px",
+		"scope": "css, sass, scss, less",
+		"body": ["@media ( max-width: 1104px )", "\t$1"],
+		"description": "Media Screen max-width-1104px"
+	},
+
+	"Media Screen max-width-1088px": {
+		"prefix": "@max1088px",
+		"scope": "css, sass, scss, less",
+		"body": ["@media ( max-width: 1088px )", "\t$1"],
+		"description": "Media Screen max-width-1088px"
+	},
+
+	"Media Screen max-width-1072px": {
+		"prefix": "@max1072px",
+		"scope": "css, sass, scss, less",
+		"body": ["@media ( max-width: 1072px )", "\t$1"],
+		"description": "Media Screen max-width-1072px"
+	},
+
+	"Media Screen max-width-1056px": {
+		"prefix": "@max1056px",
+		"scope": "css, sass, scss, less",
+		"body": ["@media ( max-width: 1056px )", "\t$1"],
+		"description": "Media Screen max-width-1056px"
+	},
+
+	"Media Screen max-width-1040px": {
+		"prefix": "@max1040px",
+		"scope": "css, sass, scss, less",
+		"body": ["@media ( max-width: 1040px )", "\t$1"],
+		"description": "Media Screen max-width-1040px"
+	},
+
+	"Media Screen max-width-1024px": {
+		"prefix": "@max1024px",
+		"scope": "css, sass, scss, less",
+		"body": ["@media ( max-width: 1024px )", "\t$1"],
+		"description": "Media Screen max-width-1024px"
+	},
+
+	"Media Screen max-width-1008px": {
+		"prefix": "@max1008px",
+		"scope": "css, sass, scss, less",
+		"body": ["@media ( max-width: 1008px )", "\t$1"],
+		"description": "Media Screen max-width-1008px"
+	},
+
+	"Media Screen max-width-992px": {
+		"prefix": "@max992px",
+		"scope": "css, sass, scss, less",
+		"body": ["@media ( max-width: 992px )", "\t$1"],
+		"description": "Media Screen max-width-992px"
+	},
+
+	"Media Screen max-width-976px": {
+		"prefix": "@max976px",
+		"scope": "css, sass, scss, less",
+		"body": ["@media ( max-width: 976px )", "\t$1"],
+		"description": "Media Screen max-width-976px"
+	},
+
+	"Media Screen max-width-960px": {
+		"prefix": "@max960px",
+		"scope": "css, sass, scss, less",
+		"body": ["@media ( max-width: 960px )", "\t$1"],
+		"description": "Media Screen max-width-960px"
+	},
+
+	"Media Screen max-width-944px": {
+		"prefix": "@max944px",
+		"scope": "css, sass, scss, less",
+		"body": ["@media ( max-width: 944px )", "\t$1"],
+		"description": "Media Screen max-width-944px"
+	},
+
+	"Media Screen max-width-928px": {
+		"prefix": "@max928px",
+		"scope": "css, sass, scss, less",
+		"body": ["@media ( max-width: 928px )", "\t$1"],
+		"description": "Media Screen max-width-928px"
+	},
+
+	"Media Screen max-width-912px": {
+		"prefix": "@max912px",
+		"scope": "css, sass, scss, less",
+		"body": ["@media ( max-width: 912px )", "\t$1"],
+		"description": "Media Screen max-width-912px"
+	},
+
+	"Media Screen max-width-896px": {
+		"prefix": "@max896px",
+		"scope": "css, sass, scss, less",
+		"body": ["@media ( max-width: 896px )", "\t$1"],
+		"description": "Media Screen max-width-896px"
+	},
+
+	"Media Screen max-width-880px": {
+		"prefix": "@max880px",
+		"scope": "css, sass, scss, less",
+		"body": ["@media ( max-width: 880px )", "\t$1"],
+		"description": "Media Screen max-width-880px"
+	},
+
+	"Media Screen max-width-864px": {
+		"prefix": "@max864px",
+		"scope": "css, sass, scss, less",
+		"body": ["@media ( max-width: 864px )", "\t$1"],
+		"description": "Media Screen max-width-864px"
+	},
+
+	"Media Screen max-width-848px": {
+		"prefix": "@max848px",
+		"scope": "css, sass, scss, less",
+		"body": ["@media ( max-width: 848px )", "\t$1"],
+		"description": "Media Screen max-width-848px"
+	},
+
+	"Media Screen max-width-832px": {
+		"prefix": "@max832px",
+		"scope": "css, sass, scss, less",
+		"body": ["@media ( max-width: 832px )", "\t$1"],
+		"description": "Media Screen max-width-832px"
+	},
+
+	"Media Screen max-width-816px": {
+		"prefix": "@max816px",
+		"scope": "css, sass, scss, less",
+		"body": ["@media ( max-width: 816px )", "\t$1"],
+		"description": "Media Screen max-width-816px"
+	},
+
+	"Media Screen max-width-800px": {
+		"prefix": "@max800px",
+		"scope": "css, sass, scss, less",
+		"body": ["@media ( max-width: 800px )", "\t$1"],
+		"description": "Media Screen max-width-800px"
+	},
+
+	"Media Screen max-width-784px": {
+		"prefix": "@max784px",
+		"scope": "css, sass, scss, less",
+		"body": ["@media ( max-width: 784px )", "\t$1"],
+		"description": "Media Screen max-width-784px"
+	},
+
+	"Media Screen max-width-768px": {
+		"prefix": "@max768px",
+		"scope": "css, sass, scss, less",
+		"body": ["@media ( max-width: 768px )", "\t$1"],
+		"description": "Media Screen max-width-768px"
+	},
+
+	"Media Screen max-width-752px": {
+		"prefix": "@max752px",
+		"scope": "css, sass, scss, less",
+		"body": ["@media ( max-width: 752px )", "\t$1"],
+		"description": "Media Screen max-width-752px"
+	},
+
+	"Media Screen max-width-736px": {
+		"prefix": "@max736px",
+		"scope": "css, sass, scss, less",
+		"body": ["@media ( max-width: 736px )", "\t$1"],
+		"description": "Media Screen max-width-736px"
+	},
+
+	"Media Screen max-width-720px": {
+		"prefix": "@max720px",
+		"scope": "css, sass, scss, less",
+		"body": ["@media ( max-width: 720px )", "\t$1"],
+		"description": "Media Screen max-width-720px"
+	},
+
+	"Media Screen max-width-704px": {
+		"prefix": "@max704px",
+		"scope": "css, sass, scss, less",
+		"body": ["@media ( max-width: 704px )", "\t$1"],
+		"description": "Media Screen max-width-704px"
+	},
+
+	"Media Screen max-width-688px": {
+		"prefix": "@max688px",
+		"scope": "css, sass, scss, less",
+		"body": ["@media ( max-width: 688px )", "\t$1"],
+		"description": "Media Screen max-width-688px"
+	},
+
+	"Media Screen max-width-672px": {
+		"prefix": "@max672px",
+		"scope": "css, sass, scss, less",
+		"body": ["@media ( max-width: 672px )", "\t$1"],
+		"description": "Media Screen max-width-672px"
+	},
+
+	"Media Screen max-width-656px": {
+		"prefix": "@max656px",
+		"scope": "css, sass, scss, less",
+		"body": ["@media ( max-width: 656px )", "\t$1"],
+		"description": "Media Screen max-width-656px"
+	},
+
+	"Media Screen max-width-640px": {
+		"prefix": "@max640px",
+		"scope": "css, sass, scss, less",
+		"body": ["@media ( max-width: 640px )", "\t$1"],
+		"description": "Media Screen max-width-640px"
+	},
+
+	"Media Screen max-width-624px": {
+		"prefix": "@max624px",
+		"scope": "css, sass, scss, less",
+		"body": ["@media ( max-width: 624px )", "\t$1"],
+		"description": "Media Screen max-width-624px"
+	},
+
+	"Media Screen max-width-608px": {
+		"prefix": "@max608px",
+		"scope": "css, sass, scss, less",
+		"body": ["@media ( max-width: 608px )", "\t$1"],
+		"description": "Media Screen max-width-608px"
+	},
+
+	"Media Screen max-width-592px": {
+		"prefix": "@max592px",
+		"scope": "css, sass, scss, less",
+		"body": ["@media ( max-width: 592px )", "\t$1"],
+		"description": "Media Screen max-width-592px"
+	},
+
+	"Media Screen max-width-576px": {
+		"prefix": "@max576px",
+		"scope": "css, sass, scss, less",
+		"body": ["@media ( max-width: 576px )", "\t$1"],
+		"description": "Media Screen max-width-576px"
+	},
+
+	"Media Screen max-width-560px": {
+		"prefix": "@max560px",
+		"scope": "css, sass, scss, less",
+		"body": ["@media ( max-width: 560px )", "\t$1"],
+		"description": "Media Screen max-width-560px"
+	},
+
+	"Media Screen max-width-544px": {
+		"prefix": "@max544px",
+		"scope": "css, sass, scss, less",
+		"body": ["@media ( max-width: 544px )", "\t$1"],
+		"description": "Media Screen max-width-544px"
+	},
+
+	"Media Screen max-width-528px": {
+		"prefix": "@max528px",
+		"scope": "css, sass, scss, less",
+		"body": ["@media ( max-width: 528px )", "\t$1"],
+		"description": "Media Screen max-width-528px"
+	},
+
+	"Media Screen max-width-512px": {
+		"prefix": "@max512px",
+		"scope": "css, sass, scss, less",
+		"body": ["@media ( max-width: 512px )", "\t$1"],
+		"description": "Media Screen max-width-512px"
+	},
+
+	"Media Screen max-width-496px": {
+		"prefix": "@max496px",
+		"scope": "css, sass, scss, less",
+		"body": ["@media ( max-width: 496px )", "\t$1"],
+		"description": "Media Screen max-width-496px"
+	},
+
+	"Media Screen max-width-480px": {
+		"prefix": "@max480px",
+		"scope": "css, sass, scss, less",
+		"body": ["@media ( max-width: 480px )", "\t$1"],
+		"description": "Media Screen max-width-480px"
+	},
+
+	"Media Screen max-width-464px": {
+		"prefix": "@max464px",
+		"scope": "css, sass, scss, less",
+		"body": ["@media ( max-width: 464px )", "\t$1"],
+		"description": "Media Screen max-width-464px"
+	},
+
+	"Media Screen max-width-448px": {
+		"prefix": "@max448px",
+		"scope": "css, sass, scss, less",
+		"body": ["@media ( max-width: 448px )", "\t$1"],
+		"description": "Media Screen max-width-448px"
+	},
+
+	"Media Screen max-width-432px": {
+		"prefix": "@max432px",
+		"scope": "css, sass, scss, less",
+		"body": ["@media ( max-width: 432px )", "\t$1"],
+		"description": "Media Screen max-width-432px"
+	},
+
+	"Media Screen max-width-416px": {
+		"prefix": "@max416px",
+		"scope": "css, sass, scss, less",
+		"body": ["@media ( max-width: 416px )", "\t$1"],
+		"description": "Media Screen max-width-416px"
+	},
+
+	"Media Screen max-width-400px": {
+		"prefix": "@max400px",
+		"scope": "css, sass, scss, less",
+		"body": ["@media ( max-width: 400px )", "\t$1"],
+		"description": "Media Screen max-width-400px"
+	},
+
+	"Media Screen max-width-384px": {
+		"prefix": "@max384px",
+		"scope": "css, sass, scss, less",
+		"body": ["@media ( max-width: 384px )", "\t$1"],
+		"description": "Media Screen max-width-384px"
+	},
+
+	"Media Screen max-width-368px": {
+		"prefix": "@max368px",
+		"scope": "css, sass, scss, less",
+		"body": ["@media ( max-width: 368px )", "\t$1"],
+		"description": "Media Screen max-width-368px"
+	},
+
+	"Media Screen max-width-352px": {
+		"prefix": "@max352px",
+		"scope": "css, sass, scss, less",
+		"body": ["@media ( max-width: 352px )", "\t$1"],
+		"description": "Media Screen max-width-352px"
+	},
+
+	"Media Screen (px) min-width-1600": {
+		"prefix": "@min1600px",
+		"scope": "css, sass, scss, less",
+		"body": ["@media ( min-width: 1600.96px )", "\t$1"],
+		"description": "Media Screen (px) min-width-1600"
+	},
+
+	"Media Screen (px) min-width-1584": {
+		"prefix": "@min1584px",
+		"scope": "css, sass, scss, less",
+		"body": ["@media ( min-width: 1584.96px )", "\t$1"],
+		"description": "Media Screen (px) min-width-1584"
+	},
+
+	"Media Screen (px) min-width-1568": {
+		"prefix": "@min1568px",
+		"scope": "css, sass, scss, less",
+		"body": ["@media ( min-width: 1568.96px )", "\t$1"],
+		"description": "Media Screen (px) min-width-1568"
+	},
+
+	"Media Screen (px) min-width-1552": {
+		"prefix": "@min1552px",
+		"scope": "css, sass, scss, less",
+		"body": ["@media ( min-width: 1552.96px )", "\t$1"],
+		"description": "Media Screen (px) min-width-1552"
+	},
+
+	"Media Screen (px) min-width-1536": {
+		"prefix": "@min1536px",
+		"scope": "css, sass, scss, less",
+		"body": ["@media ( min-width: 1536.96px )", "\t$1"],
+		"description": "Media Screen (px) min-width-1536"
+	},
+
+	"Media Screen (px) min-width-1520": {
+		"prefix": "@min1520px",
+		"scope": "css, sass, scss, less",
+		"body": ["@media ( min-width: 1520.96px )", "\t$1"],
+		"description": "Media Screen (px) min-width-1520"
+	},
+
+	"Media Screen (px) min-width-1504": {
+		"prefix": "@min1504px",
+		"scope": "css, sass, scss, less",
+		"body": ["@media ( min-width: 1504.96px )", "\t$1"],
+		"description": "Media Screen (px) min-width-1504"
+	},
+
+	"Media Screen (px) min-width-1488": {
+		"prefix": "@min1488px",
+		"scope": "css, sass, scss, less",
+		"body": ["@media ( min-width: 1488.96px )", "\t$1"],
+		"description": "Media Screen (px) min-width-1488"
+	},
+
+	"Media Screen (px) min-width-1472": {
+		"prefix": "@min1472px",
+		"scope": "css, sass, scss, less",
+		"body": ["@media ( min-width: 1472.96px )", "\t$1"],
+		"description": "Media Screen (px) min-width-1472"
+	},
+
+	"Media Screen (px) min-width-1456": {
+		"prefix": "@min1456px",
+		"scope": "css, sass, scss, less",
+		"body": ["@media ( min-width: 1456.96px )", "\t$1"],
+		"description": "Media Screen (px) min-width-1456"
+	},
+
+	"Media Screen (px) min-width-1440": {
+		"prefix": "@min1440px",
+		"scope": "css, sass, scss, less",
+		"body": ["@media ( min-width: 1440.96px )", "\t$1"],
+		"description": "Media Screen (px) min-width-1440"
+	},
+
+	"Media Screen (px) min-width-1424": {
+		"prefix": "@min1424px",
+		"scope": "css, sass, scss, less",
+		"body": ["@media ( min-width: 1424.96px )", "\t$1"],
+		"description": "Media Screen (px) min-width-1424"
+	},
+
+	"Media Screen (px) min-width-1400": {
+		"prefix": "@min1408px",
+		"scope": "css, sass, scss, less",
+		"body": ["@media ( min-width: 1408.96px )", "\t$1"],
+		"description": "Media Screen (px) min-width-1408"
+	},
+
+	"Media Screen (px) min-width-1392": {
+		"prefix": "@min1392px",
+		"scope": "css, sass, scss, less",
+		"body": ["@media ( min-width: 1392.96px )", "\t$1"],
+		"description": "Media Screen (px) min-width-1392"
+	},
+
+	"Media Screen (px) min-width-1376": {
+		"prefix": "@min1376px",
+		"scope": "css, sass, scss, less",
+		"body": ["@media ( min-width: 1376.96px )", "\t$1"],
+		"description": "Media Screen (px) min-width-1376"
+	},
+
+	"Media Screen (px) min-width-1360": {
+		"prefix": "@min1360px",
+		"scope": "css, sass, scss, less",
+		"body": ["@media ( min-width: 1360.96px )", "\t$1"],
+		"description": "Media Screen (px) min-width-1360"
+	},
+
+	"Media Screen (px) min-width-1344": {
+		"prefix": "@min1344px",
+		"scope": "css, sass, scss, less",
+		"body": ["@media ( min-width: 1344.96px )", "\t$1"],
+		"description": "Media Screen (px) min-width-1344"
+	},
+
+	"Media Screen (px) min-width-1328": {
+		"prefix": "@min1328px",
+		"scope": "css, sass, scss, less",
+		"body": ["@media ( min-width: 1328.96px )", "\t$1"],
+		"description": "Media Screen (px) min-width-1328"
+	},
+
+	"Media Screen (px) min-width-1312": {
+		"prefix": "@min1312px",
+		"scope": "css, sass, scss, less",
+		"body": ["@media ( min-width: 1312.96px )", "\t$1"],
+		"description": "Media Screen (px) min-width-1312"
+	},
+
+	"Media Screen (px) min-width-1296": {
+		"prefix": "@min1296px",
+		"scope": "css, sass, scss, less",
+		"body": ["@media ( min-width: 1296.96px )", "\t$1"],
+		"description": "Media Screen (px) min-width-1296"
+	},
+
+	"Media Screen (px) min-width-1280": {
+		"prefix": "@min1280px",
+		"scope": "css, sass, scss, less",
+		"body": ["@media ( min-width: 1280.96px )", "\t$1"],
+		"description": "Media Screen (px) min-width-1280"
+	},
+
+	"Media Screen (px) min-width-1264": {
+		"prefix": "@min1264px",
+		"scope": "css, sass, scss, less",
+		"body": ["@media ( min-width: 1264.96px )", "\t$1"],
+		"description": "Media Screen (px) min-width-1264"
+	},
+
+	"Media Screen (px) min-width-1248": {
+		"prefix": "@min1248px",
+		"scope": "css, sass, scss, less",
+		"body": ["@media ( min-width: 1248.96px )", "\t$1"],
+		"description": "Media Screen (px) min-width-1248"
+	},
+
+	"Media Screen (px) min-width-1232": {
+		"prefix": "@min1232px",
+		"scope": "css, sass, scss, less",
+		"body": ["@media ( min-width: 1232.96px )", "\t$1"],
+		"description": "Media Screen (px) min-width-1232"
+	},
+
+	"Media Screen (px) min-width-1216": {
+		"prefix": "@min1216px",
+		"scope": "css, sass, scss, less",
+		"body": ["@media ( min-width: 1216.96px )", "\t$1"],
+		"description": "Media Screen (px) min-width-1216"
+	},
+
+	"Media Screen (px) min-width-1200": {
+		"prefix": "@min1200px",
+		"scope": "css, sass, scss, less",
+		"body": ["@media ( min-width: 1200.96px )", "\t$1"],
+		"description": "Media Screen (px) min-width-1200"
+	},
+
+	"Media Screen (px) min-width-1184": {
+		"prefix": "@min1184px",
+		"scope": "css, sass, scss, less",
+		"body": ["@media ( min-width: 1184.96px )", "\t$1"],
+		"description": "Media Screen (px) min-width-1184"
+	},
+
+	"Media Screen (px) min-width-1168": {
+		"prefix": "@min1168px",
+		"scope": "css, sass, scss, less",
+		"body": ["@media ( min-width: 1168.96px )", "\t$1"],
+		"description": "Media Screen (px) min-width-1168"
+	},
+
+	"Media Screen (px) min-width-1152": {
+		"prefix": "@min1152px",
+		"scope": "css, sass, scss, less",
+		"body": ["@media ( min-width: 1152.96px )", "\t$1"],
+		"description": "Media Screen (px) min-width-1152"
+	},
+
+	"Media Screen (px) min-width-1136": {
+		"prefix": "@min1136px",
+		"scope": "css, sass, scss, less",
+		"body": ["@media ( min-width: 1136.96px )", "\t$1"],
+		"description": "Media Screen (px) min-width-1136"
+	},
+
+	"Media Screen (px) min-width-1120": {
+		"prefix": "@min1120px",
+		"scope": "css, sass, scss, less",
+		"body": ["@media ( min-width: 1120.96px )", "\t$1"],
+		"description": "Media Screen (px) min-width-1120"
+	},
+
+	"Media Screen (px) min-width-1104": {
+		"prefix": "@min1104px",
+		"scope": "css, sass, scss, less",
+		"body": ["@media ( min-width: 1104.96px )", "\t$1"],
+		"description": "Media Screen (px) min-width-1104"
+	},
+
+	"Media Screen (px) min-width-1088": {
+		"prefix": "@min1088px",
+		"scope": "css, sass, scss, less",
+		"body": ["@media ( min-width: 1088.96px )", "\t$1"],
+		"description": "Media Screen (px) min-width-1088"
+	},
+
+	"Media Screen (px) min-width-1072": {
+		"prefix": "@min1072px",
+		"scope": "css, sass, scss, less",
+		"body": ["@media ( min-width: 1072.96px )", "\t$1"],
+		"description": "Media Screen (px) min-width-1072"
+	},
+
+	"Media Screen (px) min-width-1056": {
+		"prefix": "@min1056px",
+		"scope": "css, sass, scss, less",
+		"body": ["@media ( min-width: 1056.96px )", "\t$1"],
+		"description": "Media Screen (px) min-width-1056"
+	},
+
+	"Media Screen (px) min-width-1040": {
+		"prefix": "@min1040px",
+		"scope": "css, sass, scss, less",
+		"body": ["@media ( min-width: 1040.96px )", "\t$1"],
+		"description": "Media Screen (px) min-width-1040"
+	},
+
+	"Media Screen (px) min-width-1024": {
+		"prefix": "@min1024px",
+		"scope": "css, sass, scss, less",
+		"body": ["@media ( min-width: 1024.96px )", "\t$1"],
+		"description": "Media Screen (px) min-width-1024"
+	},
+
+	"Media Screen (px) min-width-1008": {
+		"prefix": "@min1008px",
+		"scope": "css, sass, scss, less",
+		"body": ["@media ( min-width: 1008.96px )", "\t$1"],
+		"description": "Media Screen (px) min-width-1008"
+	},
+
+	"Media Screen (px) min-width-992": {
+		"prefix": "@min992px",
+		"scope": "css, sass, scss, less",
+		"body": ["@media ( min-width: 992.96px )", "\t$1"],
+		"description": "Media Screen (px) min-width-992"
+	},
+
+	"Media Screen (px) min-width-976": {
+		"prefix": "@min976px",
+		"scope": "css, sass, scss, less",
+		"body": ["@media ( min-width: 976.96px )", "\t$1"],
+		"description": "Media Screen (px) min-width-976"
+	},
+
+	"Media Screen (px) min-width-960": {
+		"prefix": "@min960px",
+		"scope": "css, sass, scss, less",
+		"body": ["@media ( min-width: 960.96px )", "\t$1"],
+		"description": "Media Screen (px) min-width-960"
+	},
+
+	"Media Screen (px) min-width-944": {
+		"prefix": "@min944px",
+		"scope": "css, sass, scss, less",
+		"body": ["@media ( min-width: 944.96px )", "\t$1"],
+		"description": "Media Screen (px) min-width-944"
+	},
+
+	"Media Screen (px) min-width-928": {
+		"prefix": "@min928px",
+		"scope": "css, sass, scss, less",
+		"body": ["@media ( min-width: 928.96px )", "\t$1"],
+		"description": "Media Screen (px) min-width-928"
+	},
+
+	"Media Screen (px) min-width-912": {
+		"prefix": "@min912px",
+		"scope": "css, sass, scss, less",
+		"body": ["@media ( min-width: 912.96px )", "\t$1"],
+		"description": "Media Screen (px) min-width-912"
+	},
+
+	"Media Screen (px) min-width-896": {
+		"prefix": "@min896px",
+		"scope": "css, sass, scss, less",
+		"body": ["@media ( min-width: 896.96px )", "\t$1"],
+		"description": "Media Screen (px) min-width-896"
+	},
+
+	"Media Screen (px) min-width-880": {
+		"prefix": "@min880px",
+		"scope": "css, sass, scss, less",
+		"body": ["@media ( min-width: 880.96px )", "\t$1"],
+		"description": "Media Screen (px) min-width-880"
+	},
+
+	"Media Screen (px) min-width-864": {
+		"prefix": "@min864px",
+		"scope": "css, sass, scss, less",
+		"body": ["@media ( min-width: 864.96px )", "\t$1"],
+		"description": "Media Screen (px) min-width-864"
+	},
+
+	"Media Screen (px) min-width-848": {
+		"prefix": "@min848px",
+		"scope": "css, sass, scss, less",
+		"body": ["@media ( min-width: 848.96px )", "\t$1"],
+		"description": "Media Screen (px) min-width-848"
+	},
+
+	"Media Screen (px) min-width-832": {
+		"prefix": "@min832px",
+		"scope": "css, sass, scss, less",
+		"body": ["@media ( min-width: 832.96px )", "\t$1"],
+		"description": "Media Screen (px) min-width-832"
+	},
+
+	"Media Screen (px) min-width-816": {
+		"prefix": "@min816px",
+		"scope": "css, sass, scss, less",
+		"body": ["@media ( min-width: 816.96px )", "\t$1"],
+		"description": "Media Screen (px) min-width-816"
+	},
+
+	"Media Screen (px) min-width-800": {
+		"prefix": "@min800px",
+		"scope": "css, sass, scss, less",
+		"body": ["@media ( min-width: 800.96px )", "\t$1"],
+		"description": "Media Screen (px) min-width-800"
+	},
+
+	"Media Screen (px) min-width-784": {
+		"prefix": "@min784px",
+		"scope": "css, sass, scss, less",
+		"body": ["@media ( min-width: 784.96px )", "\t$1"],
+		"description": "Media Screen (px) min-width-784"
+	},
+
+	"Media Screen (px) min-width-768": {
+		"prefix": "@min768px",
+		"scope": "css, sass, scss, less",
+		"body": ["@media ( min-width: 768.96px )", "\t$1"],
+		"description": "Media Screen (px) min-width-768"
+	},
+
+	"Media Screen (px) min-width-752": {
+		"prefix": "@min752px",
+		"scope": "css, sass, scss, less",
+		"body": ["@media ( min-width: 752.96px )", "\t$1"],
+		"description": "Media Screen (px) min-width-752"
+	},
+
+	"Media Screen (px) min-width-736": {
+		"prefix": "@min736px",
+		"scope": "css, sass, scss, less",
+		"body": ["@media ( min-width: 736.96px )", "\t$1"],
+		"description": "Media Screen (px) min-width-736"
+	},
+
+	"Media Screen (px) min-width-720": {
+		"prefix": "@min720px",
+		"scope": "css, sass, scss, less",
+		"body": ["@media ( min-width: 720.96px )", "\t$1"],
+		"description": "Media Screen (px) min-width-720"
+	},
+
+	"Media Screen (px) min-width-704": {
+		"prefix": "@min704px",
+		"scope": "css, sass, scss, less",
+		"body": ["@media ( min-width: 704.96px )", "\t$1"],
+		"description": "Media Screen (px) min-width-704"
+	},
+
+	"Media Screen (px) min-width-688": {
+		"prefix": "@min688px",
+		"scope": "css, sass, scss, less",
+		"body": ["@media ( min-width: 688.96px )", "\t$1"],
+		"description": "Media Screen (px) min-width-688"
+	},
+
+	"Media Screen (px) min-width-672": {
+		"prefix": "@min672px",
+		"scope": "css, sass, scss, less",
+		"body": ["@media ( min-width: 672.96px )", "\t$1"],
+		"description": "Media Screen (px) min-width-672"
+	},
+
+	"Media Screen (px) min-width-656": {
+		"prefix": "@min656px",
+		"scope": "css, sass, scss, less",
+		"body": ["@media ( min-width: 656.96px )", "\t$1"],
+		"description": "Media Screen (px) min-width-656"
+	},
+
+	"Media Screen (px) min-width-640": {
+		"prefix": "@min640px",
+		"scope": "css, sass, scss, less",
+		"body": ["@media ( min-width: 640.96px )", "\t$1"],
+		"description": "Media Screen (px) min-width-640"
+	},
+
+	"Media Screen (px) min-width-624": {
+		"prefix": "@min624px",
+		"scope": "css, sass, scss, less",
+		"body": ["@media ( min-width: 624.96px )", "\t$1"],
+		"description": "Media Screen (px) min-width-624"
+	},
+
+	"Media Screen (px) min-width-608": {
+		"prefix": "@min608px",
+		"scope": "css, sass, scss, less",
+		"body": ["@media ( min-width: 608.96px )", "\t$1"],
+		"description": "Media Screen (px) min-width-608"
+	},
+
+	"Media Screen (px) min-width-592": {
+		"prefix": "@min592px",
+		"scope": "css, sass, scss, less",
+		"body": ["@media ( min-width: 592.96px )", "\t$1"],
+		"description": "Media Screen (px) min-width-592"
+	},
+
+	"Media Screen (px) min-width-576": {
+		"prefix": "@min576px",
+		"scope": "css, sass, scss, less",
+		"body": ["@media ( min-width: 576.96px )", "\t$1"],
+		"description": "Media Screen (px) min-width-576"
+	},
+
+	"Media Screen (px) min-width-560": {
+		"prefix": "@min560px",
+		"scope": "css, sass, scss, less",
+		"body": ["@media ( min-width: 560.96px )", "\t$1"],
+		"description": "Media Screen (px) min-width-560"
+	},
+
+	"Media Screen (px) min-width-544": {
+		"prefix": "@min544px",
+		"scope": "css, sass, scss, less",
+		"body": ["@media ( min-width: 544.96px )", "\t$1"],
+		"description": "Media Screen (px) min-width-544"
+	},
+
+	"Media Screen (px) min-width-528": {
+		"prefix": "@min528px",
+		"scope": "css, sass, scss, less",
+		"body": ["@media ( min-width: 528.96px )", "\t$1"],
+		"description": "Media Screen (px) min-width-528"
+	},
+
+	"Media Screen (px) min-width-512": {
+		"prefix": "@min512px",
+		"scope": "css, sass, scss, less",
+		"body": ["@media ( min-width: 512.96px )", "\t$1"],
+		"description": "Media Screen (px) min-width-512"
+	},
+
+	"Media Screen (px) min-width-496": {
+		"prefix": "@min496px",
+		"scope": "css, sass, scss, less",
+		"body": ["@media ( min-width: 496.96px )", "\t$1"],
+		"description": "Media Screen (px) min-width-496"
+	},
+
+	"Media Screen (px) min-width-480": {
+		"prefix": "@min480px",
+		"scope": "css, sass, scss, less",
+		"body": ["@media ( min-width: 480.96px )", "\t$1"],
+		"description": "Media Screen (px) min-width-480"
+	},
+
+	"Media Screen (px) min-width-464": {
+		"prefix": "@min464px",
+		"scope": "css, sass, scss, less",
+		"body": ["@media ( min-width: 464.96px )", "\t$1"],
+		"description": "Media Screen (px) min-width-464"
+	},
+
+	"Media Screen (px) min-width-448": {
+		"prefix": "@min448px",
+		"scope": "css, sass, scss, less",
+		"body": ["@media ( min-width: 448.96px )", "\t$1"],
+		"description": "Media Screen (px) min-width-448"
+	},
+
+	"Media Screen (px) min-width-432": {
+		"prefix": "@min432px",
+		"scope": "css, sass, scss, less",
+		"body": ["@media ( min-width: 432.96px )", "\t$1"],
+		"description": "Media Screen (px) min-width-432"
+	},
+
+	"Media Screen (px) min-width-416": {
+		"prefix": "@min416px",
+		"scope": "css, sass, scss, less",
+		"body": ["@media ( min-width: 416.96px )", "\t$1"],
+		"description": "Media Screen (px) min-width-416"
+	},
+
+	"Media Screen (px) min-width-400": {
+		"prefix": "@min400px",
+		"scope": "css, sass, scss, less",
+		"body": ["@media ( min-width: 400.96px )", "\t$1"],
+		"description": "Media Screen (px) min-width-400"
+	},
+
+	"Media Screen (px) min-width-384": {
+		"prefix": "@min384px ",
+		"scope": "css, sass, scss, less",
+		"body": ["@media ( min-width: 384.96px )", "\t$1"],
+		"description": "Media Screen (px) min-width-384"
+	},
+
+	"Media Screen (px) min-width-368": {
+		"prefix": "@min368px",
+		"scope": "css, sass, scss, less",
+		"body": ["@media ( min-width: 368.96px )", "\t$1"],
+		"description": "Media Screen (px) min-width-368"
+	},
+
+	"Media Screen (px) min-width-352": {
+		"prefix": "@min352px ",
+		"scope": "css, sass, scss, less",
+		"body": ["@media ( min-width: 352.96px )", "\t$1"],
+		"description": "Media Screen (px) min-width-352"
+	},
+	// End. Media
+
+	// Conditions
+	"Hover": {
+		"prefix": "hov",
+		"scope": "css, sass, scss, less",
+		"body": ["&:hover", "\t$1"],
+		"description": "Hover"
+	},
+
+	"Focus": {
+		"prefix": "foc",
+		"scope": "css, sass, scss, less",
+		"body": ["&:focus", "\t$1"],
+		"description": "Focus"
+	},
+
+	"Hover + Focus": {
+		"prefix": "hf",
+		"scope": "css, sass, scss, less",
+		"body": ["&:hover, &:focus", "\t$1"],
+		"description": "Hover + Focus"
+	},
+
+	"Focus + Active": {
+		"prefix": "fa",
+		"scope": "css, sass, scss, less",
+		"body": ["&:focus, &:active", "\t$1"],
+		"description": "Focus + Active"
+	},
+
+	"Active + Focus": {
+		"prefix": "af",
+		"scope": "css, sass, scss, less",
+		"body": ["&:active, &:focus", "\t$1"],
+		"description": "Active + Focus"
+	},
+
+	"Active": {
+		"prefix": "act",
+		"scope": "css, sass, scss, less",
+		"body": ["&:active", "\t$1"],
+		"description": "Active"
+	},
+	// End. Conditions
+
+	// Pseudo-elements
+	"After": {
+		"prefix": "aft",
+		"scope": "css, sass, scss, less",
+		"body": ["&:after", "\tcontent: ''", "\t$1"],
+		"description": "After"
+	},
+
+	"After without content": {
+		"prefix": "&aft",
+		"scope": "css, sass, scss, less",
+		"body": ["&:after", "\t$1"],
+		"description": "After without content"
+	},
+
+	"$:before, &:after": {
+		"prefix": "befaft",
+		"scope": "css, sass, scss, less",
+		"body": ["&:before, &:after", "\tcontent: ''", "\t$1"],
+		"description": "$:before, &:after"
+	},
+
+	"Before": {
+		"prefix": "bef",
+		"scope": "css, sass, scss, less",
+		"body": ["&:before", "\tcontent: ''", "\t$1"],
+		"description": "Before"
+	},
+
+	"Before without content": {
+		"prefix": "&bef",
+		"scope": "css, sass, scss, less",
+		"body": ["&:before", "\t$1"],
+		"description": "Before without content"
+	},
+	// End. Pseudo-elements
+
+	// Child
+	"&:not(:last-child)": {
+		"prefix": "nlch",
+		"scope": "css, sass, scss, less",
+		"body": ["&:not(:last-child)", "\t$1"],
+		"description": "&:not(:last-child)"
+	},
+
+	"&:not(:first-child)": {
+		"prefix": "nfch",
+		"scope": "css, sass, scss, less",
+		"body": ["&:not(:first-child)", "\t$1"],
+		"description": "&:not(:first-child)"
+	},
+
+	"&:last-child": {
+		"prefix": "lch",
+		"scope": "css, sass, scss, less",
+		"body": ["&:last-child", "\t$1"],
+		"description": "&:last-child"
+	},
+
+	"&:first-child": {
+		"prefix": "fch",
+		"scope": "css, sass, scss, less",
+		"body": ["&:first-child", "\t$1"],
+		"description": "&:first-child"
+	},
+
+	"&:nth-child()": {
+		"prefix": "nthch",
+		"scope": "css, sass, scss, less",
+		"body": ["&:nth-child($1)", "\t$2"],
+		"description": "&:nth-child()"
+	},
+	// End. Child
+
+	// Pointer-events
+	"Pointer-events: none": {
+		"prefix": "pen",
+		"scope": "css, sass, scss, less",
+		"body": ["pointer-events: none"],
+		"description": "Pointer-events: none"
+	},
+
+	"Pointer-events: auto": {
+		"prefix": "pea",
+		"scope": "css, sass, scss, less",
+		"body": ["pointer-events: auto"],
+		"description": "Pointer-events: auto"
+	},
+	// Pointer-events
+
+	// Overlay
+	"Overlay": {
+		"prefix": "over",
+		"scope": "css, sass, scss, less",
+		"body": [
+			"&:after",
+			"\tcontent: ''",
+			"\tdisplay: block",
+			"\theight: 100%",
+			"\twidth: 100%",
+			"\tposition: absolute",
+			"\ttop: 0",
+			"\tright: 0",
+			"\tbottom: 0",
+			"\tleft: 0",
+			"\topacity: $1",
+			"\tbackground-color: $2"
+		],
+		"description": "Overlay"
+	},
+	// End. Overlay
+
+	// Transition
+	"Transition": {
+		"prefix": "trs",
+		"scope": "css, sass, scss, less",
+		"body": ["transition: $1 .3s ease"],
+		"description": "Transition"
+	},
+
+	"transition: color .3s ease": {
+		"prefix": "trsc",
+		"scope": "css, sass, scss, less",
+		"body": ["transition: color .3s ease"],
+		"description": "transition: color .3s ease"
+	},
+
+	"transition: fill .3s ease": {
+		"prefix": "trsf",
+		"scope": "css, sass, scss, less",
+		"body": ["transition: fill .3s ease"],
+		"description": "transition: fill .3s ease"
+	},
+
+	"transition: opacity .3s ease": {
+		"prefix": "trsop",
+		"scope": "css, sass, scss, less",
+		"body": ["transition: opacity .3s ease"],
+		"description": "transition: opacity .3s ease"
+	},
+
+	"transition: background-color .3s ease": {
+		"prefix": "trsbg",
+		"scope": "css, sass, scss, less",
+		"body": ["transition: background-color .3s ease"],
+		"description": "transition: background-color .3s ease"
+	},
+
+	"transition: color .3s ease, background-color .3s ease": {
+		"prefix": "trscbg",
+		"scope": "css, sass, scss, less",
+		"body": ["transition: color .3s ease, background-color .3s ease"],
+		"description": "transition: color .3s ease, background-color .3s ease"
+	},
+
+	"transition: transform .3s ease": {
+		"prefix": "trstf",
+		"scope": "css, sass, scss, less",
+		"body": ["transition: transform .3s ease"],
+		"description": "transition: transform .3s ease"
+	},
+	// End. Transition
+
+	// Rub symbol
+	"Rub symbol": {
+		"prefix": "rub",
+		"scope": "css, sass, scss, less",
+		"body": ["&::after", "\tcontent: '₽'"],
+		"description": "Rub symbol"
+	},
+
+	"Rub text": {
+		"prefix": "rubt",
+		"scope": "css, sass, scss, less",
+		"body": ["&::after", "\tcontent: 'руб.'"],
+		"description": "Rub text"
+	},
+	// End. Rub symbol
+
+	// Font-size
+	"Font-size rem": {
+		"prefix": "fzr",
+		"scope": "css, sass, scss, less",
+		"body": ["font-size: rem($1)"],
+		"description": "Font-size rem"
+	},
+
+	"Font-size em": {
+		"prefix": "fze",
+		"scope": "css, sass, scss, less",
+		"body": ["font-size: em($1)"],
+		"description": "Font-size em"
+	},
+	// End. Font-size
+
+	// JavaScript
+	"Console log": {
+		"prefix": "clg",
+		"scope": "javascript, typescript",
+		"body": ["console.log( $1 );"],
+		"description": "Console log"
+	},
+
+	"export function()": {
+		"prefix": "exfunc",
+		"scope": "javascript, typescript",
+		"body": ["export function $1() {", "\t'use strict';", "\t", "\t$2", "}"],
+		"description": "export function()"
+	},
+
+	"export var nameFunction = () => {}": {
+		"prefix": "exvfunc",
+		"scope": "javascript, typescript",
+		"body": ["export $1 = () => {", "\t'use strict';", "\t", "\t$2", "}"],
+		"description": "export var nameFunction = () => {}"
+	},
+
+	"export const () => {}": {
+		"prefix": "excfunc",
+		"scope": "javascript, typescript",
+		"body": [
+			"export const $1 = () => {",
+			"\t'use strict';",
+			"\t",
+			"\t$2",
+			"};"
+		],
+		"description": "export const () => {}"
+	},
+
+	"const () => {}": {
+		"prefix": "cfunc",
+		"scope": "javascript, typescript",
+		"body": ["const $1 = (e) => {", "\t'use strict';", "\t", "\t$2", "};"],
+		"description": "const () => {}"
+	},
+
+	"var () => {}": {
+		"prefix": "vfunc",
+		"scope": "javascript, typescript",
+		"body": ["var $1 = () => {", "\t'use strict';", "\t", "\t$2", "};"],
+		"description": "var () => {}"
+	},
+
+	"function $1() {}": {
+		"prefix": "func",
+		"scope": "javascript, typescript",
+		"body": ["function $1() {", "\t'use strict';", "\t", "\t$2", "};"],
+		"description": "function $1() {}"
+	},
+
+	"var = document.querySelector('')": {
+		"prefix": "varqs",
+		"scope": "javascript, typescript",
+		"body": ["var $1 = document?.querySelector('$2');"],
+		"description": "var = document.querySelector('')"
+	},
+
+	"const = document.querySelector('')": {
+		"prefix": "constqs",
+		"scope": "javascript, typescript",
+		"body": ["const $1 = document?.querySelector('$2');"],
+		"description": "const  = document.querySelector('')"
+	},
+
+	"let = document.querySelector('')": {
+		"prefix": "letqs",
+		"scope": "javascript, typescript",
+		"body": ["let $1 = document?.querySelector('$2');"],
+		"description": "let = document.querySelector('')"
+	},
+
+	"var $1 = document?.querySelector( '$2' )": {
+		"prefix": "vartrel",
+		"scope": "javascript, typescript",
+		"body": ["var $1 = evTarget.querySelector( '$2' );"],
+		"description": "var $1 = evTarget.querySelector( '$2' )"
+	},
+
+	"const $1 = document?.querySelector( '$2' )": {
+		"prefix": "consttrel",
+		"scope": "javascript, typescript",
+		"body": ["const $1 = e.target.querySelector( '$2' );"],
+		"description": "const $1 = evTarget.querySelector( '$2' )"
+	},
+
+	"let $1 = document?.querySelector( '$2' )": {
+		"prefix": "lettrel",
+		"scope": "javascript, typescript",
+		"body": ["let $1 = evTarget.querySelector( '$2' );"],
+		"description": "let $1 = evTarget.querySelector( '$2' )"
+	},
+
+	"var = document.querySelectorAll('')": {
+		"prefix": "varqsa",
+		"scope": "javascript, typescript",
+		"body": ["var $1 = document?.querySelectorAll('$2');"],
+		"description": "var = document.querySelectorAll('')"
+	},
+
+	"const = document.querySelectorAll('')": {
+		"prefix": "constqsa",
+		"scope": "javascript, typescript",
+		"body": ["const $1 = document?.querySelectorAll('$2');"],
+		"description": "const = document.querySelectorAll('')"
+	},
+
+	"let = document.querySelectorAll('')": {
+		"prefix": "letqsa",
+		"scope": "javascript, typescript",
+		"body": ["let $1 = document?.querySelectorAll('$2');"],
+		"description": "let = document.querySelectorAll('')"
+	},
+
+	"if () {}": {
+		"prefix": "if",
+		"scope": "javascript, typescript",
+		"body": ["if ( $1 ) {", "\t$2", "}"],
+		"description": "if () {}"
+	},
+
+	"forEach": {
+		"prefix": "fech",
+		"scope": "javascript, typescript",
+		"body": ["$1.forEach($2 => {", "\t$2.$3", "});"],
+		"description": "forEach"
+	},
+
+	"for": {
+		"prefix": "for",
+		"scope": "javascript, typescript",
+		"body": ["for (let i = 0; i < 3; i++) {", "\t$2", "}"],
+		"description": "for"
+	},
+
+	"Array.from($1)": {
+		"prefix": "arr",
+		"scope": "javascript, typescript",
+		"body": ["Array.from($1);"],
+		"description": "Array.from($1)"
+	},
+
+	"addEventListener('$1', (e) => {});": {
+		"prefix": "ael",
+		"scope": "javascript, typescript",
+		"body": ["addEventListener('$1', (e) => {", "\t$2", "});"],
+		"description": "addEventListener('$1', (e) => {});"
+	},
+
+	"var evTarget = event.target;": {
+		"prefix": "varevtr",
+		"scope": "javascript, typescript",
+		"body": ["var evTarget = event.target;"],
+		"description": "var evTarget = event.target;"
+	},
+
+	"let evTarget = event.target;": {
+		"prefix": "letevtr",
+		"scope": "javascript, typescript",
+		"body": ["let evTarget = event.target;"],
+		"description": "let evTarget = event.target;"
+	},
+
+	"const evTarget = event.target;": {
+		"prefix": "constevtr",
+		"scope": "javascript, typescript",
+		"body": ["const evTarget = event.target;"],
+		"description": "const evTarget = event.target;"
+	},
+
+	"import": {
+		"prefix": "imp",
+		"scope": "javascript, typescript",
+		"body": ["import {$1} from './$2/$3.js';"],
+		"description": "import"
+	},
+	// JavaScript
+
+	// Markdown
+	"Description link category": {
+		"prefix": "catlink",
+		"scope": "html, php",
+		"body": ["<a href=\"blog/finansovaya-gramotnost/\"></a>"],
+		"description": "Description link category"
+	}
+	// End. Markdown
+}
