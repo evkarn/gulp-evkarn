@@ -70,8 +70,15 @@ $gutter: $gutter-number+px
 // Greed system
 $screen-min-width: 320px
 $screen-max-width: 1920px
-$content-width: 1254px
-$container-offset: 0.9375rem
-$container-width: calc($content-width + ($container-offset * 2))
-$design-width: 1600
+
+$design-width: 1440
+$content-width: 1376
+$content-width-px: $content-width+px
+
+$container-offset: 12
+$container-offset-px: $container-offset+px
+
+$container-width: calc($content-width-px + ($container-offset-px * 2))
+$container-calc-width: $content-width+($container-offset*2)
+$container-calc-width-x2: $cont-calc-width*2
 // End. Greed system

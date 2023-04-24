@@ -1,20 +1,25 @@
-// Read-progress-line
-// @import './_components/readProgressLine'
-// End. Read-progress-line
 .progress-line
+	width: 100%
+	height: rem(4)
+	+calc-size(height, 4, 8, 1920.96, 3840, rem)
+
 	position: fixed
 	left: 0
 	top: 0
-	width: 100%
-	height: 5px
 	z-index: 1000
+
 	background: transparent
 	background-color: transparent
 
+	@media ( min-width: em(3840.96) )
+		height: rem(8)
+
 .progress-line__item
+	width: 0
+	height: 100%
+
 	position: absolute
 	left: 0
 	top: 0
-	width: 0
-	height: 100%
-	background-color: $accent
+	
+	background-color: $c-accent

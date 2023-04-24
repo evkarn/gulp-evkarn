@@ -139,20 +139,14 @@ textarea[class]
 	height: 100%
 
 	margin: 0 auto
-	padding: 0 $container-offset
-
-	@media ( max-width: em(768) )
-		padding: 0 rem(12)
+	padding: 0 $container-offset-px
 
 .container
 	max-width: $container-width
-	+calc-size(max-width, 1540, 2310, 2464.96, 3840, px)
+	+calc-size(max-width, $container-calc-width, $container-calc-width-x2, 1920.96, 3840, px)
 	width: 100%
 	margin: 0 auto
-	padding: 0 $container-offset
-
-	@media ( max-width: em(768) )
-		padding: 0 rem(12)
+	padding: 0 $container-offset-px
 
 .stop-scroll
 	position: fixed

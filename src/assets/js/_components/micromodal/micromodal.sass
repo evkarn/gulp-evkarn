@@ -1,5 +1,7 @@
 .modal
 	display: none
+
+	position: relative
 	z-index: 5
 
 .modal.is-open
@@ -17,13 +19,23 @@
 	align-items: center
 
 .modal__container
-	background-color: #fff
-	padding: 30px
-	max-width: 500px
+	max-width: rem(500)
+	padding: rem(30)
+	+calc-size(padding, 30, 60, 1920.96, 3840, rem)
+	+calc-size(max-width, 500, 1000, 1920.96, 3840, rem)
 	max-height: 100vh
+
+	background-color: #fff
 	border-radius: 4px
-	overflow-y: auto
+	+calc-size(border-radius, 4px, 8px, 1920.96, 3840, px)
+
 	box-sizing: border-box
+	overflow-y: auto
+	
+	@media ( min-width: em(3840.96) )
+		max-width: rem(1000)
+		padding: rem(60)
+		border-radius: 8px
 
 .modal__header
 	display: flex
