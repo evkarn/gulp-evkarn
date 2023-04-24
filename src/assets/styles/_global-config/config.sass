@@ -1,7 +1,8 @@
 .body
 	font-family: $ff-body
 	font-style: normal
-	font-size: $fz
+	font-size: $fz-text+px
+	+calc-size(font-size, $fz-text, $fz-text-x2, 1920.96, 3840, rem)
 	font-weight: 400
 	line-height: $lh
 
@@ -10,8 +11,11 @@
 	position: relative
 
 	background-color: var(--c-body-bg)
-	color: #333
+	color: var(--c-text)
 	overflow-x: hidden
+
+	@media ( min-width: em(3840.96) )
+		font-size: $fz-text-x2+px
 
 .h1,
 .h2,
@@ -141,12 +145,22 @@ textarea[class]
 	margin: 0 auto
 	padding: 0 $container-offset-px
 
+	@media ( min-width: em(3840.96) )
+		padding: 0 $container-offset-x2+px
+
 .container
 	max-width: $container-width
 	+calc-size(max-width, $container-calc-width, $container-calc-width-x2, 1920.96, 3840, px)
 	width: 100%
+
 	margin: 0 auto
 	padding: 0 $container-offset-px
+	+calc-size(padding, $container-offset, $container-offset-x2, 1920.96, 3840, rem)
+
+	@media ( min-width: em(3840.96) )
+		max-width: $container-calc-width-x2+px
+
+		padding: 0 $container-offset-x2+px
 
 .stop-scroll
 	position: fixed

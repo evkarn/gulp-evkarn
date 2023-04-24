@@ -2,6 +2,10 @@
 \:root
 	--c-accent: #e8b217
 
+	--c-body-bg: #fff
+
+	--c-text: #333
+
 	--c-darken: #000
 	--c-lighten: #fff
 
@@ -46,6 +50,7 @@ $index: calc(1vh + 1vw)
 
 // Fonts
 $fz-text: 16
+$fz-text-x2: 16*2
 $fz: $fz-text+px
 $lh: 1.5
 
@@ -63,22 +68,20 @@ $ff-body: $font-name-body
 // End. Fonts
 
 // Grid gutter
-$gutter-number: 30
+$gutter-number: 20
 $gutter: $gutter-number+px
 // End. Grid gutter
 
 // Greed system
 $screen-min-width: 320px
 $screen-max-width: 1920px
-
 $design-width: 1440
 $content-width: 1376
 $content-width-px: $content-width+px
-
 $container-offset: 12
+$container-offset-x2: $container-offset*2
 $container-offset-px: $container-offset+px
-
 $container-width: calc($content-width-px + ($container-offset-px * 2))
 $container-calc-width: $content-width+($container-offset*2)
-$container-calc-width-x2: $cont-calc-width*2
+$container-calc-width-x2: $container-calc-width*2
 // End. Greed system
