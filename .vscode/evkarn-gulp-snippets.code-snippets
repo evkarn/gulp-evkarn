@@ -293,6 +293,21 @@
 		],
 		"description": "Picture tag with .avif + .webp"
 	},
+
+	"Picture tag with .avif + .webp + x2": {
+		"prefix": "picawx2",
+		"scope": "html, php",
+		"body": [
+			"<picture>",
+			"\t<source srcset=\"assets/images/dist/$2.webp, assets/images/dist/$2.webp 2x\" type=\"image/webp\">",
+			"",
+			"\t<source srcset=\"assets/images/dist/$2.avif, assets/images/dist/$2.avif 2x\" type=\"image/avif\">",
+			"",
+			"\t<img class=\"$1\" src=\"assets/images/dist/$2.$3\" srcset=\"assets/images/dist/$2.$3 2x\" width=\"$4\" height=\"$5\" alt=\"$6\" loading=\"lazy\">",
+			"</picture>"
+		],
+		"description": "Picture tag with .avif + .webp + x2"
+	},
 	// End. Images and Picture
 
 	"Aspect-ratio image": {
