@@ -1,459 +1,489 @@
-// Likely
-// @import './_components/likely'
-// End. Likely
 .likely
-  opacity: 0
-  transition: opacity 0.1s ease-in
+	opacity: 0
+	transition: opacity 0.1s ease-in
 
 .likely *
-  visibility: hidden
+	visibility: hidden
 
 .likely_visible
-  opacity: 1
+	opacity: 1
 
 .likely_visible *
-  visibility: inherit
+	visibility: inherit
 
 .likely
-  font-size: 0 !important
-  font-weight: 400
-  font-family: Helvetica Neue, Arial, sans-serif
-  text-indent: 0 !important
-  -webkit-font-smoothing: antialiased
-  -moz-osx-font-smoothing: grayscale
+	font-size: 0 !important
+	font-weight: 400
+	font-family: Helvetica Neue, Arial, sans-serif
+	text-indent: 0 !important
+	-webkit-font-smoothing: antialiased
+	-moz-osx-font-smoothing: grayscale
 
 .likely,
 .likely *
-  display: inline-block
+	display: inline-block
 
 .likely__widget
-  position: relative
-  white-space: nowrap
+	position: relative
+	white-space: nowrap
 
 .likely__button,
 .likely__counter
-  text-decoration: none
-  text-rendering: optimizeLegibility
-  margin: 0
-  outline: 0
+	text-decoration: none
+	text-rendering: optimizeLegibility
+	margin: 0
+	outline: 0
 
 .likely__button
-  position: relative
-  cursor: pointer
-  user-select: none
+	position: relative
+	cursor: pointer
+	user-select: none
 
 .likely__counter
-  display: none
-  position: relative
+	display: none
+	position: relative
 
 .likely_ready .likely__counter
-  display: inline-block
+	display: inline-block
 
 .likely_ready .likely__counter_empty
-  display: none
+	display: none
 
 .likely__button,
 .likely__counter,
 .likely__icon,
 .likely__widget
-  vertical-align: top
+	vertical-align: top
 
 .likely__widget
-  transition: background 0.33s ease-out, color 0.33s ease-out, fill 0.33s ease-out
+	transition: background 0.33s ease-out, color 0.33s ease-out, fill 0.33s ease-out
 
 .likely__widget:active,
 .likely__widget:focus,
 .likely__widget:hover
-  transition: none
-  cursor: pointer
+	transition: none
+	cursor: pointer
 
 @media (hover: none)
-  .likely__widget:active,
-  .likely__widget:focus,
-  .likely__widget:hover
-    transition: background 0.33s ease-out, color 0.33s ease-out, fill 0.33s ease-out
-    cursor: unset
+	.likely__widget:active,
+	.likely__widget:focus,
+	.likely__widget:hover
+		transition: background 0.33s ease-out, color 0.33s ease-out, fill 0.33s ease-out
+		cursor: unset
 
 .likely__icon
-  position: relative
-  text-align: left
+	position: relative
+	text-align: left
 
 .likely svg
-  position: absolute
+	position: absolute
 
 .likely__button,
 .likely__counter
-  line-height: inherit
-  cursor: inherit
+	line-height: inherit
+	cursor: inherit
 
 .likely__button:empty
-  display: none
+	display: none
 
 .likely__counter
-  text-align: center
+	text-align: center
 
 .likely .likely__widget
-  color: #000
-  background: hsla(0, 0%, 91%, 0.8)
+	color: #000
+	background: hsla(0, 0%, 91%, 0.8)
 
 .likely .likely__counter
-  background-size: 1px 1px
-  background-repeat: repeat-y
-  background-image: linear-gradient(90deg, rgba(0, 0, 0, 0.2) 0, transparent 0.5px, transparent)
+	background-size: 1px 1px
+	background-repeat: repeat-y
+	background-image: linear-gradient(90deg, rgba(0, 0, 0, 0.2) 0, transparent 0.5px, transparent)
 
 .likely-light .likely__widget
-  color: #fff
-  fill: #fff
-  background: hsla(0, 0%, 93%, 0.16)
-  text-shadow: rgba(0, 0, 0, 0.2) 0 0 0.33em
+	color: #fff
+	fill: #fff
+	background: hsla(0, 0%, 93%, 0.16)
+	text-shadow: rgba(0, 0, 0, 0.2) 0 0 0.33em
 
 .likely-light .likely__counter
-  background-image: linear-gradient(90deg, hsla(0, 0%, 100%, 0.4) 0, hsla(0, 0%, 100%, 0) 0.5px, hsla(0, 0%, 100%, 0))
+	background-image: linear-gradient(90deg, hsla(0, 0%, 100%, 0.4) 0, hsla(0, 0%, 100%, 0) 0.5px, hsla(0, 0%, 100%, 0))
 
 .likely__widget_facebook
-  fill: #1877f2
+	fill: #1877f2
 
 .likely__widget_facebook:active,
 .likely__widget_facebook:focus,
 .likely__widget_facebook:hover
-  background: rgba(197, 221, 251, 0.8)
+	background: rgba(197, 221, 251, 0.8)
 
 @media (hover: none)
-  .likely__widget_facebook:active,
-  .likely__widget_facebook:focus,
-  .likely__widget_facebook:hover
-    background: hsla(0, 0%, 91%, 0.8)
+	.likely__widget_facebook:active,
+	.likely__widget_facebook:focus,
+	.likely__widget_facebook:hover
+		background: hsla(0, 0%, 91%, 0.8)
 
 .likely-light .likely__widget_facebook:active,
 .likely-light .likely__widget_facebook:focus,
 .likely-light .likely__widget_facebook:hover
-  text-shadow: #1877f2 0 0 0.25em
-  background: rgba(24, 119, 242, 0.7)
+	text-shadow: #1877f2 0 0 0.25em
+	background: rgba(24, 119, 242, 0.7)
 
 @media (hover: none)
-  .likely-light .likely__widget_facebook:active,
-  .likely-light .likely__widget_facebook:focus,
-  .likely-light .likely__widget_facebook:hover
-    text-shadow: rgba(0, 0, 0, 0.2) 0 0 0.33em
-    background: hsla(0, 0%, 93%, 0.16)
+	.likely-light .likely__widget_facebook:active,
+	.likely-light .likely__widget_facebook:focus,
+	.likely-light .likely__widget_facebook:hover
+		text-shadow: rgba(0, 0, 0, 0.2) 0 0 0.33em
+		background: hsla(0, 0%, 93%, 0.16)
 
 .likely__widget_linkedin
-  fill: #0a66c2
+	fill: #0a66c2
 
 .likely__widget_linkedin:active,
 .likely__widget_linkedin:focus,
 .likely__widget_linkedin:hover
-  background: rgba(193, 216, 239, 0.8)
+	background: rgba(193, 216, 239, 0.8)
 
 @media (hover: none)
-  .likely__widget_linkedin:active,
-  .likely__widget_linkedin:focus,
-  .likely__widget_linkedin:hover
-    background: hsla(0, 0%, 91%, 0.8)
+	.likely__widget_linkedin:active,
+	.likely__widget_linkedin:focus,
+	.likely__widget_linkedin:hover
+		background: hsla(0, 0%, 91%, 0.8)
 
 .likely-light .likely__widget_linkedin:active,
 .likely-light .likely__widget_linkedin:focus,
 .likely-light .likely__widget_linkedin:hover
-  text-shadow: #0a66c2 0 0 0.25em
-  background: rgba(10, 102, 194, 0.7)
+	text-shadow: #0a66c2 0 0 0.25em
+	background: rgba(10, 102, 194, 0.7)
 
 @media (hover: none)
-  .likely-light .likely__widget_linkedin:active,
-  .likely-light .likely__widget_linkedin:focus,
-  .likely-light .likely__widget_linkedin:hover
-    text-shadow: rgba(0, 0, 0, 0.2) 0 0 0.33em
-    background: hsla(0, 0%, 93%, 0.16)
+	.likely-light .likely__widget_linkedin:active,
+	.likely-light .likely__widget_linkedin:focus,
+	.likely-light .likely__widget_linkedin:hover
+		text-shadow: rgba(0, 0, 0, 0.2) 0 0 0.33em
+		background: hsla(0, 0%, 93%, 0.16)
 
 .likely__widget_odnoklassniki
-  fill: #ee8208
+	fill: #ee8208
 
 .likely__widget_odnoklassniki:active,
 .likely__widget_odnoklassniki:focus,
 .likely__widget_odnoklassniki:hover
-  background: hsla(32, 85%, 87%, 0.8)
+	background: hsla(32, 85%, 87%, 0.8)
 
 @media (hover: none)
-  .likely__widget_odnoklassniki:active,
-  .likely__widget_odnoklassniki:focus,
-  .likely__widget_odnoklassniki:hover
-    background: hsla(0, 0%, 91%, 0.8)
+	.likely__widget_odnoklassniki:active,
+	.likely__widget_odnoklassniki:focus,
+	.likely__widget_odnoklassniki:hover
+		background: hsla(0, 0%, 91%, 0.8)
 
 .likely-light .likely__widget_odnoklassniki:active,
 .likely-light .likely__widget_odnoklassniki:focus,
 .likely-light .likely__widget_odnoklassniki:hover
-  text-shadow: #ee8208 0 0 0.25em
-  background: rgba(238, 130, 8, 0.7)
+	text-shadow: #ee8208 0 0 0.25em
+	background: rgba(238, 130, 8, 0.7)
 
 @media (hover: none)
-  .likely-light .likely__widget_odnoklassniki:active,
-  .likely-light .likely__widget_odnoklassniki:focus,
-  .likely-light .likely__widget_odnoklassniki:hover
-    text-shadow: rgba(0, 0, 0, 0.2) 0 0 0.33em
-    background: hsla(0, 0%, 93%, 0.16)
+	.likely-light .likely__widget_odnoklassniki:active,
+	.likely-light .likely__widget_odnoklassniki:focus,
+	.likely-light .likely__widget_odnoklassniki:hover
+		text-shadow: rgba(0, 0, 0, 0.2) 0 0 0.33em
+		background: hsla(0, 0%, 93%, 0.16)
 
 .likely__widget_pinterest
-  fill: #e60019
+	fill: #e60019
 
 .likely__widget_pinterest:active,
 .likely__widget_pinterest:focus,
 .likely__widget_pinterest:hover
-  background: rgba(248, 191, 197, 0.8)
+	background: rgba(248, 191, 197, 0.8)
 
 @media (hover: none)
-  .likely__widget_pinterest:active,
-  .likely__widget_pinterest:focus,
-  .likely__widget_pinterest:hover
-    background: hsla(0, 0%, 91%, 0.8)
+	.likely__widget_pinterest:active,
+	.likely__widget_pinterest:focus,
+	.likely__widget_pinterest:hover
+		background: hsla(0, 0%, 91%, 0.8)
 
 .likely-light .likely__widget_pinterest:active,
 .likely-light .likely__widget_pinterest:focus,
 .likely-light .likely__widget_pinterest:hover
-  text-shadow: #e60019 0 0 0.25em
-  background: rgba(230, 0, 25, 0.7)
+	text-shadow: #e60019 0 0 0.25em
+	background: rgba(230, 0, 25, 0.7)
 
 @media (hover: none)
-  .likely-light .likely__widget_pinterest:active,
-  .likely-light .likely__widget_pinterest:focus,
-  .likely-light .likely__widget_pinterest:hover
-    text-shadow: rgba(0, 0, 0, 0.2) 0 0 0.33em
-    background: hsla(0, 0%, 93%, 0.16)
+	.likely-light .likely__widget_pinterest:active,
+	.likely-light .likely__widget_pinterest:focus,
+	.likely-light .likely__widget_pinterest:hover
+		text-shadow: rgba(0, 0, 0, 0.2) 0 0 0.33em
+		background: hsla(0, 0%, 93%, 0.16)
 
 .likely__widget_reddit
-  fill: #ff4501
+	fill: #ff4501
 
 .likely__widget_reddit:active,
 .likely__widget_reddit:focus,
 .likely__widget_reddit:hover
-  background: rgba(255, 208, 191, 0.8)
+	background: rgba(255, 208, 191, 0.8)
 
 @media (hover: none)
-  .likely__widget_reddit:active,
-  .likely__widget_reddit:focus,
-  .likely__widget_reddit:hover
-    background: hsla(0, 0%, 91%, 0.8)
+	.likely__widget_reddit:active,
+	.likely__widget_reddit:focus,
+	.likely__widget_reddit:hover
+		background: hsla(0, 0%, 91%, 0.8)
 
 .likely-light .likely__widget_reddit:active,
 .likely-light .likely__widget_reddit:focus,
 .likely-light .likely__widget_reddit:hover
-  text-shadow: #ff4501 0 0 0.25em
-  background: rgba(255, 69, 1, 0.7)
+	text-shadow: #ff4501 0 0 0.25em
+	background: rgba(255, 69, 1, 0.7)
 
 @media (hover: none)
-  .likely-light .likely__widget_reddit:active,
-  .likely-light .likely__widget_reddit:focus,
-  .likely-light .likely__widget_reddit:hover
-    text-shadow: rgba(0, 0, 0, 0.2) 0 0 0.33em
-    background: hsla(0, 0%, 93%, 0.16)
+	.likely-light .likely__widget_reddit:active,
+	.likely-light .likely__widget_reddit:focus,
+	.likely-light .likely__widget_reddit:hover
+		text-shadow: rgba(0, 0, 0, 0.2) 0 0 0.33em
+		background: hsla(0, 0%, 93%, 0.16)
 
 .likely__widget_telegram
-  fill: #35a3dc
+	fill: #35a3dc
 
 .likely__widget_telegram:active,
 .likely__widget_telegram:focus,
 .likely__widget_telegram:hover
-  background: rgba(204, 232, 246, 0.8)
+	background: rgba(204, 232, 246, 0.8)
 
 @media (hover: none)
-  .likely__widget_telegram:active,
-  .likely__widget_telegram:focus,
-  .likely__widget_telegram:hover
-    background: hsla(0, 0%, 91%, 0.8)
+	.likely__widget_telegram:active,
+	.likely__widget_telegram:focus,
+	.likely__widget_telegram:hover
+		background: hsla(0, 0%, 91%, 0.8)
 
 .likely-light .likely__widget_telegram:active,
 .likely-light .likely__widget_telegram:focus,
 .likely-light .likely__widget_telegram:hover
-  text-shadow: #35a3dc 0 0 0.25em
-  background: rgba(53, 163, 220, 0.7)
+	text-shadow: #35a3dc 0 0 0.25em
+	background: rgba(53, 163, 220, 0.7)
 
 @media (hover: none)
-  .likely-light .likely__widget_telegram:active,
-  .likely-light .likely__widget_telegram:focus,
-  .likely-light .likely__widget_telegram:hover
-    text-shadow: rgba(0, 0, 0, 0.2) 0 0 0.33em
-    background: hsla(0, 0%, 93%, 0.16)
+	.likely-light .likely__widget_telegram:active,
+	.likely-light .likely__widget_telegram:focus,
+	.likely-light .likely__widget_telegram:hover
+		text-shadow: rgba(0, 0, 0, 0.2) 0 0 0.33em
+		background: hsla(0, 0%, 93%, 0.16)
 
 .likely__widget_twitter
-  fill: #1da1f2
+	fill: #1da1f2
 
 .likely__widget_twitter:active,
 .likely__widget_twitter:focus,
 .likely__widget_twitter:hover
-  background: rgba(198, 231, 251, 0.8)
+	background: rgba(198, 231, 251, 0.8)
 
 @media (hover: none)
-  .likely__widget_twitter:active,
-  .likely__widget_twitter:focus,
-  .likely__widget_twitter:hover
-    background: hsla(0, 0%, 91%, 0.8)
+	.likely__widget_twitter:active,
+	.likely__widget_twitter:focus,
+	.likely__widget_twitter:hover
+		background: hsla(0, 0%, 91%, 0.8)
 
 .likely-light .likely__widget_twitter:active,
 .likely-light .likely__widget_twitter:focus,
 .likely-light .likely__widget_twitter:hover
-  text-shadow: #1da1f2 0 0 0.25em
-  background: rgba(29, 161, 242, 0.7)
+	text-shadow: #1da1f2 0 0 0.25em
+	background: rgba(29, 161, 242, 0.7)
 
 @media (hover: none)
-  .likely-light .likely__widget_twitter:active,
-  .likely-light .likely__widget_twitter:focus,
-  .likely-light .likely__widget_twitter:hover
-    text-shadow: rgba(0, 0, 0, 0.2) 0 0 0.33em
-    background: hsla(0, 0%, 93%, 0.16)
+	.likely-light .likely__widget_twitter:active,
+	.likely-light .likely__widget_twitter:focus,
+	.likely-light .likely__widget_twitter:hover
+		text-shadow: rgba(0, 0, 0, 0.2) 0 0 0.33em
+		background: hsla(0, 0%, 93%, 0.16)
 
 .likely__widget_viber
-  fill: #7360f2
+	fill: #7360f2
 
 .likely__widget_viber:active,
 .likely__widget_viber:focus,
 .likely__widget_viber:hover
-  background: rgba(220, 215, 251, 0.8)
+	background: rgba(220, 215, 251, 0.8)
 
 @media (hover: none)
-  .likely__widget_viber:active,
-  .likely__widget_viber:focus,
-  .likely__widget_viber:hover
-    background: hsla(0, 0%, 91%, 0.8)
+	.likely__widget_viber:active,
+	.likely__widget_viber:focus,
+	.likely__widget_viber:hover
+		background: hsla(0, 0%, 91%, 0.8)
 
 .likely-light .likely__widget_viber:active,
 .likely-light .likely__widget_viber:focus,
 .likely-light .likely__widget_viber:hover
-  text-shadow: #7360f2 0 0 0.25em
-  background: rgba(115, 96, 242, 0.7)
+	text-shadow: #7360f2 0 0 0.25em
+	background: rgba(115, 96, 242, 0.7)
 
 @media (hover: none)
-  .likely-light .likely__widget_viber:active,
-  .likely-light .likely__widget_viber:focus,
-  .likely-light .likely__widget_viber:hover
-    text-shadow: rgba(0, 0, 0, 0.2) 0 0 0.33em
-    background: hsla(0, 0%, 93%, 0.16)
+	.likely-light .likely__widget_viber:active,
+	.likely-light .likely__widget_viber:focus,
+	.likely-light .likely__widget_viber:hover
+		text-shadow: rgba(0, 0, 0, 0.2) 0 0 0.33em
+		background: hsla(0, 0%, 93%, 0.16)
 
 .likely__widget_vkontakte
-  fill: #4680c2
+	fill: #4680c2
 
 .likely__widget_vkontakte:active,
 .likely__widget_vkontakte:focus,
 .likely__widget_vkontakte:hover
-  background: rgba(208, 223, 239, 0.8)
+	background: rgba(208, 223, 239, 0.8)
 
 @media (hover: none)
-  .likely__widget_vkontakte:active,
-  .likely__widget_vkontakte:focus,
-  .likely__widget_vkontakte:hover
-    background: hsla(0, 0%, 91%, 0.8)
+	.likely__widget_vkontakte:active,
+	.likely__widget_vkontakte:focus,
+	.likely__widget_vkontakte:hover
+		background: hsla(0, 0%, 91%, 0.8)
 
 .likely-light .likely__widget_vkontakte:active,
 .likely-light .likely__widget_vkontakte:focus,
 .likely-light .likely__widget_vkontakte:hover
-  text-shadow: #4680c2 0 0 0.25em
-  background: rgba(70, 128, 194, 0.7)
+	text-shadow: #4680c2 0 0 0.25em
+	background: rgba(70, 128, 194, 0.7)
 
 @media (hover: none)
-  .likely-light .likely__widget_vkontakte:active,
-  .likely-light .likely__widget_vkontakte:focus,
-  .likely-light .likely__widget_vkontakte:hover
-    text-shadow: rgba(0, 0, 0, 0.2) 0 0 0.33em
-    background: hsla(0, 0%, 93%, 0.16)
+	.likely-light .likely__widget_vkontakte:active,
+	.likely-light .likely__widget_vkontakte:focus,
+	.likely-light .likely__widget_vkontakte:hover
+		text-shadow: rgba(0, 0, 0, 0.2) 0 0 0.33em
+		background: hsla(0, 0%, 93%, 0.16)
 
 .likely__widget_whatsapp
-  fill: #25d366
+	fill: #25d366
 
 .likely__widget_whatsapp:active,
 .likely__widget_whatsapp:focus,
 .likely__widget_whatsapp:hover
-  background: rgba(200, 244, 216, 0.8)
+	background: rgba(200, 244, 216, 0.8)
 
 @media (hover: none)
-  .likely__widget_whatsapp:active,
-  .likely__widget_whatsapp:focus,
-  .likely__widget_whatsapp:hover
-    background: hsla(0, 0%, 91%, 0.8)
+	.likely__widget_whatsapp:active,
+	.likely__widget_whatsapp:focus,
+	.likely__widget_whatsapp:hover
+		background: hsla(0, 0%, 91%, 0.8)
 
 .likely-light .likely__widget_whatsapp:active,
 .likely-light .likely__widget_whatsapp:focus,
 .likely-light .likely__widget_whatsapp:hover
-  text-shadow: #25d366 0 0 0.25em
-  background: rgba(37, 211, 102, 0.7)
+	text-shadow: #25d366 0 0 0.25em
+	background: rgba(37, 211, 102, 0.7)
 
 @media (hover: none)
-  .likely-light .likely__widget_whatsapp:active,
-  .likely-light .likely__widget_whatsapp:focus,
-  .likely-light .likely__widget_whatsapp:hover
-    text-shadow: rgba(0, 0, 0, 0.2) 0 0 0.33em
-    background: hsla(0, 0%, 93%, 0.16)
+	.likely-light .likely__widget_whatsapp:active,
+	.likely-light .likely__widget_whatsapp:focus,
+	.likely-light .likely__widget_whatsapp:hover
+		text-shadow: rgba(0, 0, 0, 0.2) 0 0 0.33em
+		background: hsla(0, 0%, 93%, 0.16)
 
 .likely
-  margin: 0 -5px -10px
+	margin: 0 -5px -10px
 
 .likely .likely__widget
-  line-height: 20px
-  font-size: 14px
-  border-radius: 3px
-  height: 22px
-  margin: 0 5px 10px
+	line-height: 20px
+	font-size: 14px
+	border-radius: 3px
+	height: 22px
+	margin: 0 5px 10px
 
 .likely .likely__icon
-  width: 22px
-  height: 22px
+	width: 22px
+	height: 22px
 
 .likely .likely__button
-  padding: 1px 4px 1px 0
+	padding: 1px 4px 1px 0
 
 .likely .likely__counter
-  padding: 1px 4px
+	padding: 1px 4px
 
 .likely svg
-  left: 3px
-  top: 3px
-  width: 16px
-  height: 16px
+	left: 3px
+	top: 3px
+	width: 16px
+	height: 16px
 
 .likely-big
-  margin: 0 -6px -12px
+	margin: 0 -6px -12px
 
 .likely-big .likely__widget
-  line-height: 28px
-  font-size: 18px
-  border-radius: 4px
-  height: 32px
-  margin: 0 6px 12px
+	line-height: 28px
+	font-size: 18px
+	border-radius: 4px
+	height: 32px
+	margin: 0 6px 12px
 
 .likely-big .likely__icon
-  width: 32px
-  height: 32px
+	width: 32px
+	height: 32px
 
 .likely-big .likely__button
-  padding: 2px 6px 2px 0
+	padding: 2px 6px 2px 0
 
 .likely-big .likely__counter
-  padding: 2px 6px
+	padding: 2px 6px
 
 .likely-big svg
-  left: 4px
-  top: 4px
-  width: 24px
-  height: 24px
+	left: 4px
+	top: 4px
+	width: 24px
+	height: 24px
 
 .likely-small
-  margin: 0 -4px -8px
+	margin: 0 -4px -8px
 
 .likely-small .likely__widget
-  line-height: 14px
-  font-size: 12px
-  border-radius: 2px
-  height: 18px
-  margin: 0 4px 8px
+	line-height: 14px
+	font-size: 12px
+	border-radius: 2px
+	height: 18px
+	margin: 0 4px 8px
 
 .likely-small .likely__icon
-  width: 18px
-  height: 18px
+	width: 18px
+	height: 18px
 
 .likely-small .likely__button
-  padding: 2px 3px 2px 0
+	padding: 2px 3px 2px 0
 
 .likely-small .likely__counter
-  padding: 2px 3px
+	padding: 2px 3px
 
 .likely-small svg
-  left: 3px
-  top: 3px
-  width: 12px
-  height: 12px
+	left: 3px
+	top: 3px
+	width: 12px
+	height: 12px
+
+.likely
+	display: flex
+	flex-wrap: wrap
+
+	.likely__widget
+		+calc-size(width, 32, 64, 1920.96, 3840, rem)
+		+calc-size(height, 32, 64, 1920.96, 3840, rem)
+
+		@media ( min-width: em(3840.96) )
+			width: 64px
+			height: 64px
+
+	.likely__icon
+		+calc-size(width, 32, 64, 1920.96, 3840, rem)
+		+calc-size(height, 32, 64, 1920.96, 3840, rem)
+
+		@media ( min-width: em(3840.96) )
+			width: 64px
+			height: 64px
+
+		svg
+			+calc-size(width, 24, 48, 1920.96, 3840, rem)
+			+calc-size(height, 24, 48, 1920.96, 3840, rem)
+
+			top: 50%
+			left: 50%
+
+			transform: translate(-50%, -50%)
+
+			@media ( min-width: em(3840.96) )
+				width: 48px
+				height: 48px

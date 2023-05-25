@@ -2,9 +2,7 @@
 import avif from 'gulp-avif';
 
 export const imgAvif = () => {
-	return app.gulp.src(app.path.src.imgAvif)
-
-		// Вывод сообщения об ошибке, если появляется ошибка
+	return app.gulp.src(app.path.src.imgAvifWebp)
 		.pipe(app.plugins.plumber(
 			app.plugins.notify.onError({
 				title: "IMAGES-AVIF",
@@ -12,24 +10,17 @@ export const imgAvif = () => {
 			})
 		))
 
-		// Если режим продакшена проверяем версии изображений
-		.pipe(app.plugins.if(
-			app.isBuild,
+		.pipe(
 			app.plugins.newer(app.path.build.img)
-		))
+		)
 
-		// Если режим продакшена создаём изображение в формате .avif
-		.pipe(app.plugins.if(
-			app.isBuild,
-			avif()
-		))
+		.pipe(
+			avif({ quality: 80 })
+		)
 
-		// Если режим продакшена выгружаем созданные изображения в папку с изображениями
-		.pipe(app.plugins.if(
-			app.isBuild,
-			app.gulp.dest(app.path.src.imgSrc)
-		))
+		.pipe(
+			app.gulp.dest(app.path.build.img)
+		)
 
-		// Перезагружаем сайт
 		.pipe(app.plugins.browsersync.stream());
 };

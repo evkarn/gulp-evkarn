@@ -57,13 +57,9 @@ export const path = {
 
 		imgSrc: `${srcFolder}/assets/images/_src/`,
 
-		imgAvif: `${srcFolder}/assets/images/_src/**/*.{jpg,jpeg,png}`,
+		imgAvifWebp: `${srcFolder}/assets/images/_src/**/*.{jpg,jpeg,png}`,
 
-		imgMin: `${srcFolder}/assets/images/_src/**/*.{jpg,jpeg,png,gif,webp,heic,heif,raw,avif}`,
-
-		imgWebp: `${srcFolder}/assets/images/_src/**/*.{jpg,jpeg,png}`,
-
-		imgSvg: `${srcFolder}/assets/images/_src/**/*.svg`,
+		imgMin: `${srcFolder}/assets/images/_src/**/*.*`,
 
 		sass: `${srcFolder}/assets/styles/**.sass`,
 
@@ -76,9 +72,9 @@ export const path = {
 
 		html: `${srcFolder}/**/*.html`,
 
-		img: `${srcFolder}/assets/images/_src/*.{jpg,jpeg,png,svg,gif,ico,webp,heic,heif,raw,avif}`,
+		img: `${srcFolder}/assets/images/_src/*.*`,
 
-		imgSvg: `${srcFolder}/assets/images/_src/**/*.svg`,
+		imgWebpAvif: [`${srcFolder}/assets/images/_src/**/*.*`, `!${srcFolder}/assets/images/_src/**/*.svg`],
 
 		js: `${srcFolder}/assets/js/**/*.js`,
 

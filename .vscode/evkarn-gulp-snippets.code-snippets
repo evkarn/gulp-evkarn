@@ -222,19 +222,6 @@
 	},
 
 	// Images and Picture
-	"Picture tag with .webp": {
-		"prefix": "picw",
-		"scope": "html, php",
-		"body": [
-			"<picture>",
-			"\t<source srcset=\"assets/images/dist/$2.webp\" type=\"image/webp\">",
-			"",
-			"\t<img class=\"$1\" src=\"assets/images/dist/$2.$3\" width=\"$4\" height=\"$5\" alt=\"$6\" loading=\"lazy\">",
-			"</picture>"
-		],
-		"description": "Picture tag with .webp"
-	},
-
 	"Image with src": {
 		"prefix": "img",
 		"scope": "html, php",
@@ -279,6 +266,19 @@
 		"description": "SVG sprite icon hidden"
 	},
 
+	"Picture tag with .webp": {
+		"prefix": "picw",
+		"scope": "html, php",
+		"body": [
+			"<picture>",
+			"\t<source srcset=\"assets/images/dist/$2.webp\" type=\"image/webp\">",
+			"",
+			"\t<img class=\"$1\" src=\"assets/images/dist/$2.$3\" width=\"$4\" height=\"$5\" alt=\"$6\" loading=\"lazy\">",
+			"</picture>"
+		],
+		"description": "Picture tag with .webp"
+	},
+
 	"Picture tag with .avif + .webp": {
 		"prefix": "picaw",
 		"scope": "html, php",
@@ -294,19 +294,28 @@
 		"description": "Picture tag with .avif + .webp"
 	},
 
-	"Picture tag with .avif + .webp + x2": {
-		"prefix": "picawx2",
+	"Picture tag with .avif + .webp 2x": {
+		"prefix": "picaw2x",
 		"scope": "html, php",
 		"body": [
 			"<picture>",
-			"\t<source srcset=\"assets/images/dist/$2.webp, assets/images/dist/$2.webp 2x\" type=\"image/webp\">",
+			"\t<source srcset=\"assets/images/dist/$2.webp, assets/images/dist/$2-2x.webp 2x\" type=\"image/webp\">",
 			"",
-			"\t<source srcset=\"assets/images/dist/$2.avif, assets/images/dist/$2.avif 2x\" type=\"image/avif\">",
+			"\t<source srcset=\"assets/images/dist/$2.avif, assets/images/dist/$2-2x.avif 2x\" type=\"image/avif\">",
 			"",
-			"\t<img class=\"$1\" src=\"assets/images/dist/$2.$3\" srcset=\"assets/images/dist/$2.$3 2x\" width=\"$4\" height=\"$5\" alt=\"$6\" loading=\"lazy\">",
+			"\t<img class=\"$1\" src=\"assets/images/dist/$2.$3\" srcset=\"assets/images/dist/$2-2x.$3 2x\" width=\"$4\" height=\"$5\" alt=\"$6\" loading=\"lazy\">",
 			"</picture>"
 		],
-		"description": "Picture tag with .avif + .webp + x2"
+		"description": "Picture tag with .avif + .webp 2x"
+	},
+
+	"Image blog svg": {
+		"prefix": "imgsvg",
+		"scope": "html, php",
+		"body": [
+			"<img class=\"info-block__image\" itemprop=\"image\" src=\"assets/images/dist/blog/{{ page.imageFolder }}/$1.svg\" width=\"826\" height=\"465\" alt=\"$2\" loading=\"lazy\">"
+		],
+		"description": "Image blog svg"
 	},
 	// End. Images and Picture
 
@@ -444,17 +453,26 @@
 	},
 
 	"Border-radius var": {
-		"prefix": "bdrv",
-		"scope": "css, sass, scss, less",
-		"body": ["border-radius: $1border-radius"],
+		"prefix": "bradv",
+		"body": [
+			"border-radius: var(--border-radius)",
+			"",
+			"@media ( min-width: em(2880.96) )",
+			"\tborder-radius: calc(var(--border-radius) * 2)"
+		],
 		"description": "Border-radius var"
 	},
 
-	"Border-radius calc * 2": {
-		"prefix": "bdr*",
-		"scope": "css, sass, scss, less",
-		"body": ["border-radius: calc($1border-radius * 2)"],
-		"description": "Border-radius calc * 2"
+	"Border-radius": {
+		"prefix": "brad",
+		"body": [
+			"border-radius: $1",
+			"+calc-size(border-radius, $1, $2, 1920.96, 3840, px)",
+			"",
+			"@media ( min-width: em(3840.96) )",
+			"\tborder-radius: $2"
+		],
+		"description": "Border-radius"
 	},
 
 	"Width rem": {
@@ -482,15 +500,14 @@
 		"prefix": "state",
 		"scope": "css, sass, scss, less",
 		"body": [
-			"@media ( any-hover: hover )",
+			"&:hover",
+			"\t$1",
+			"",
 			"&:focus",
 			"\t$2",
 			"",
 			"&:focus-visible",
 			"\t$3",
-			"",
-			"\t&:hover",
-			"\t\t$1",
 			"",
 			"&:active",
 			"\t$4"
@@ -502,15 +519,14 @@
 		"prefix": "st-link",
 		"scope": "css, sass, scss, less",
 		"body": [
-			"@media ( any-hover: hover )",
+			"&:hover",
+			"\t$1",
+			"",
 			"&:focus",
 			"\t$2",
 			"",
 			"&:focus-visible",
 			"\t$3",
-			"",
-			"\t&:hover",
-			"\t\t$1",
 			"",
 			"&:active",
 			"\t$4",
@@ -846,6 +862,20 @@
 		"scope": "css, sass, scss, less",
 		"body": ["+calc-size(grid-gap, $1, $2, 1920.96, 3840, rem)"],
 		"description": "Calc size grid-gap"
+	},
+
+	"Calc size grid-row-gap": {
+		"prefix": "csgrg",
+		"scope": "css, sass, scss, less",
+		"body": ["+calc-size(grid-row-gap, $1, $2, 1920.96, 3840, rem)"],
+		"description": "Calc size grid-row-gap"
+	},
+
+	"Calc size grid-column-gap": {
+		"prefix": "csgcg",
+		"scope": "css, sass, scss, less",
+		"body": ["+calc-size(grid-column-gap, $1, $2, 1920.96, 3840, rem)"],
+		"description": "Calc size grid-column-gap"
 	},
 
 	"Calc size column-gap": {

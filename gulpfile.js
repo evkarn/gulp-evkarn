@@ -33,13 +33,9 @@ import { ftp } from './gulp/tasks/ftp.js';
 
 import { html } from './gulp/tasks/html.js';
 
-import { img } from './gulp/tasks/img.js';
-
 import { imgAvif } from './gulp/tasks/imgAvif.js';
 
 import { imgMin } from './gulp/tasks/imgMin.js';
-
-import { imgSvg } from './gulp/tasks/imgSvg.js';
 
 import { imgWebp } from './gulp/tasks/imgWebp.js';
 
@@ -68,9 +64,7 @@ function watcher() {
 
 	gulp.watch(path.watch.js, js);
 
-	gulp.watch(path.watch.img, gulp.parallel(img));
-
-	gulp.watch(path.watch.imgSvg, gulp.parallel(imgSvg));
+	gulp.watch(path.watch.img, gulp.parallel(imgAvif, imgWebp, imgMin));
 
 	gulp.watch(path.watch.svgSprite, gulp.parallel(svgSpriteIcons));
 }
@@ -81,7 +75,7 @@ const fonts = gulp.series(ttfToWoff, fontsStyle);
 
 
 // Основные задачи
-const mainTasks = gulp.series(fonts, imgAvif, imgWebp, gulp.parallel(copyFiles, html, copyConfigFiles, copyFaviconImages, sassStyle, js, img, imgSvg, svgSpriteIcons), imgMin);
+const mainTasks = gulp.series(fonts, imgAvif, imgWebp, gulp.parallel(copyFiles, html, copyConfigFiles, copyFaviconImages, sassStyle, js, imgAvif, imgWebp, imgMin, svgSpriteIcons));
 
 
 // Построение сценариев выполнения задач
