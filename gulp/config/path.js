@@ -72,9 +72,7 @@ export const path = {
 
 		html: `${srcFolder}/**/*.html`,
 
-		img: `${srcFolder}/assets/images/_src/*.*`,
-
-		imgWebpAvif: [`${srcFolder}/assets/images/_src/**/*.*`, `!${srcFolder}/assets/images/_src/**/*.svg`],
+		img: `${srcFolder}/assets/images/_src/**/*.*`,
 
 		js: `${srcFolder}/assets/js/**/*.js`,
 

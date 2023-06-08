@@ -288,7 +288,7 @@
 			"",
 			"\t<source srcset=\"assets/images/dist/$2.avif\" type=\"image/avif\">",
 			"",
-			"\t<img class=\"$1\" src=\"assets/images/dist/$2.$3\" width=\"$4\" height=\"$5\" alt=\"$6\" loading=\"lazy\">",
+			"\t<img class=\"$1\" src=\"assets/images/dist/$2.jpg\" width=\"$3\" height=\"$4\" alt=\"$6\" loading=\"lazy\">",
 			"</picture>"
 		],
 		"description": "Picture tag with .avif + .webp"
@@ -303,7 +303,7 @@
 			"",
 			"\t<source srcset=\"assets/images/dist/$2.avif, assets/images/dist/$2-2x.avif 2x\" type=\"image/avif\">",
 			"",
-			"\t<img class=\"$1\" src=\"assets/images/dist/$2.$3\" srcset=\"assets/images/dist/$2-2x.$3 2x\" width=\"$4\" height=\"$5\" alt=\"$6\" loading=\"lazy\">",
+			"\t<img class=\"$1\" src=\"assets/images/dist/$2.jpg\" srcset=\"assets/images/dist/$2-2x.jpg 2x\" width=\"$3\" height=\"$4\" alt=\"$5\" loading=\"lazy\">",
 			"</picture>"
 		],
 		"description": "Picture tag with .avif + .webp 2x"
@@ -1060,6 +1060,13 @@
 		"scope": "css, sass, scss, less",
 		"body": ["color: var($1)"],
 		"description": "color: var()"
+	},
+
+	"color: var(--c-text)": {
+		"prefix": "clvt",
+		"scope": "css, sass, scss, less",
+		"body": ["color: var(--c-text)"],
+		"description": "color: var(--c-text)"
 	},
 
 	"color: var(--c-accent)": {
