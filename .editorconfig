@@ -19,3 +19,9 @@ insert_final_newline = true
 
 [*.md]
 trim_trailing_whitespace = false
+
+[*.html]
+trim_trailing_whitespace = false
+
+[*.sass]
+trim_trailing_whitespace = false

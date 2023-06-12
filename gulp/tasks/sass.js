@@ -1,16 +1,13 @@
-// Обработка препроцессора SASS
-import dartSass from 'sass';
+import * as sass from 'sass';
 
-// Обработка препроцессора SASS
 import gulpSass from 'gulp-sass';
 
-// Вывод Webp изображений
 import webpcss from 'gulp-webpcss';
 
 // Группировка медиа запросов
 import groupCssMediaQueries from 'gulp-group-css-media-queries';
 
-const sass = gulpSass(dartSass);
+const sassUse = gulpSass(sass);
 
 export const sassStyle = () => {
 	// Находим файлы sass в папке исходников
@@ -27,18 +24,15 @@ export const sassStyle = () => {
 	// Преобразование специальной вставки в адрес
 	.pipe(app.plugins.replace(/@img\//g, '../images/dist'))
 
-	// Обработка препроцессора SASS
-	.pipe(sass({
+	.pipe(sassUse({
 		outputStyle: 'compressed'
 	}))
 
-	// Если в режиме продакшена группировка медиа-запросов
 	.pipe(app.plugins.if(
 		app.isBuild,
 		groupCssMediaQueries()
 	))
 
-	// Если в режиме продакшена Вывод Webp изображений
 	.pipe(app.plugins.if(
 		app.isBuild,
 		webpcss({
@@ -47,7 +41,6 @@ export const sassStyle = () => {
 		})
 	))
 
-	// Если в режиме продакшена автоматическая простановка вендерных префиксов
 	.pipe(app.plugins.if(
 		app.isBuild,
 		app.plugins.autoprefixer({

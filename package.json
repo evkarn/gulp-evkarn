@@ -7,7 +7,6 @@
   "scripts": {
     "d": "gulp",
     "b": "gulp build --build",
-    "sprite": "gulp svgSpriteIcons",
     "zip": "gulp deployZip --build",
     "deployF": "gulp deployFTP --build",
     "deployS": "gulp deploySSH --build"
@@ -15,6 +14,9 @@
   "author": "evkarn.ru",
   "license": "ISC",
   "devDependencies": {
+    "@babel/cli": "^7.22.5",
+    "@babel/core": "^7.22.5",
+    "@babel/preset-env": "^7.22.5",
     "@popperjs/core": "latest",
     "bootstrap": "latest",
     "browser-sync": "latest",
@@ -59,10 +61,6 @@
     "prettier": "latest",
     "sass": "latest",
     "simplebar": "latest",
-    "stylelint": "^15.7.0",
-    "stylelint-declaration-block-no-ignored-properties": "^2.7.0",
-    "stylelint-order": "^6.0.3",
-    "stylelint-scss": "^5.0.1",
     "swiper": "latest",
     "tailwind": "latest",
     "vinyl-ftp": "latest",
