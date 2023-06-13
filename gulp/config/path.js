@@ -45,7 +45,7 @@ export const path = {
 
 		fontsStyle: `${srcFolder}/assets/styles/_fonts/fonts.sass`,
 
-		html: `${srcFolder}/*.html`,
+		html: `${srcFolder}/*.{html,php,htm}`,
 
 		js: `${srcFolder}/assets/js/*.js`,
 

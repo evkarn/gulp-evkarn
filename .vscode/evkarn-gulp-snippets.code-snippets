@@ -949,6 +949,27 @@
 		"body": ["column-gap: rem($1)"],
 		"description": "column-gap: rem()"
 	},
+	
+	"gap: px": {
+		"prefix": "gppx",
+		"scope": "css, sass, scss, less",
+		"body": ["gap: $1px"],
+		"description": "gap: px"
+	},
+
+	"row-gap: px": {
+		"prefix": "rgppx",
+		"scope": "css, sass, scss, less",
+		"body": ["row-gap: $1px"],
+		"description": "row-gap: px"
+	},
+
+	"column-gap: px": {
+		"prefix": "cgppx",
+		"scope": "css, sass, scss, less",
+		"body": ["column-gap: $1px"],
+		"description": "column-gap: px"
+	},
 
 	"grid-gap: rem()": {
 		"prefix": "ggp",
