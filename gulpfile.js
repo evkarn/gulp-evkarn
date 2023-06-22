@@ -23,8 +23,6 @@ global.app = {
 // Импорт созданных задач из папки tasks
 import { copyConfigFiles } from './gulp/tasks/copy-config-files.js';
 
-import { copyFaviconImages } from './gulp/tasks/copy-favicon-images.js';
-
 import { copyFiles } from './gulp/tasks/copy-files.js';
 
 import { ttfToWoff, fontsStyle } from './gulp/tasks/fonts.js';
@@ -75,7 +73,7 @@ const fonts = gulp.series(ttfToWoff, fontsStyle);
 
 
 // Основные задачи
-const mainTasks = gulp.series(fonts, imgAvif, imgWebp, gulp.parallel(copyFiles, html, copyConfigFiles, copyFaviconImages, sassStyle, js, imgAvif, imgWebp, imgMin, svgSpriteIcons));
+const mainTasks = gulp.series(fonts, gulp.parallel(copyFiles, html, copyConfigFiles, sassStyle, js, imgAvif, imgWebp, imgMin, svgSpriteIcons));
 
 
 // Построение сценариев выполнения задач

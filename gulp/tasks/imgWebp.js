@@ -15,7 +15,7 @@ export const imgWebp = () => {
 		)
 
 		.pipe(
-			webp({ quality: 80 })
+			webp({ quality: 75 })
 		)
 
 		.pipe(

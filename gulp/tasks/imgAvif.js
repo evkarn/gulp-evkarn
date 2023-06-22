@@ -15,7 +15,7 @@ export const imgAvif = () => {
 		)
 
 		.pipe(
-			avif({ quality: 80 })
+			avif({ quality: 75 })
 		)
 
 		.pipe(
