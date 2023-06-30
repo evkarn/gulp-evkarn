@@ -1,15 +1,15 @@
 $breakpoint: 768
 .header
+	position: fixed
+	top: 0
+	left: 0
+	z-index: 5
+
 	width: 100%
 
 	padding: rem(15) 0
 	+calc-size(padding-top, 15, 30, 1920.96, 3840, rem)
 	+calc-size(padding-bottom, 15, 30, 1920.96, 3840, rem)
-
-	position: fixed
-	top: 0
-	left: 0
-	z-index: 5
 
 	background-color: var(--c-header-bg)
 	color: var(--c-header-text)
@@ -17,26 +17,27 @@ $breakpoint: 768
 	&:before
 		content: ""
 
-		display: block
-
-		width: 100%
-		height: 100%
-
 		position: absolute
 		top: 0
 		bottom: 0
 		left: 0
 		right: 0
 
+		display: block
+
+		width: 100%
+		height: 100%
+
 		background-color: var(--c-header-bg)
 
 	@media ( min-width: em(3840.96) )
 		padding: rem(30) 0
 
-	.header__inner
+	.header__container
 		display: flex
 		align-items: center
 		justify-content: space-between
+
 		padding: 10px 0
 		+calc-size(padding-top, 10, 20, 1920.96, 3840, px)
 		+calc-size(padding-bottom, 10, 20, 1920.96, 3840, px)
@@ -86,7 +87,7 @@ $breakpoint: 768
 
 	.nav.nav--visible
 		@media ( max-width: em($breakpoint) )
-			transform: translateX(0)
+			transform: unset
 
 	.nav__list
 		display: flex
@@ -101,7 +102,7 @@ $breakpoint: 768
 			font-weight: 700
 
 			padding-top: $gutter
-			+calc-size(padding-top, 30, 60, 1920.96, 3840, rem)
+			+calc-size(padding-top, $gutter, 60, 1920.96, 3840, rem)
 
 		@media ( min-width: em(3840.96) )
 			gap: 60px

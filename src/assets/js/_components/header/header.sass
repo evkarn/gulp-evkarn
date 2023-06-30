@@ -1,26 +1,21 @@
 $breakpoint: 768
 .header
+	position: fixed
+	top: 0
+	left: 0
+	z-index: 5
+
 	width: 100%
 
 	padding: rem(15) 0
 	+calc-size(padding-top, 15, 30, 1920.96, 3840, rem)
 	+calc-size(padding-bottom, 15, 30, 1920.96, 3840, rem)
 
-	position: absolute
-	top: 0
-	left: 0
-	z-index: 5
-
-	background-color: var(--c-header-one)
-	color: var(--c-header-two)
+	background-color: var(--c-header-bg)
+	color: var(--c-header-text)
 
 	&:before
 		content: ""
-
-		display: block
-
-		width: 100%
-		height: 100%
 
 		position: absolute
 		top: 0
@@ -28,15 +23,27 @@ $breakpoint: 768
 		left: 0
 		right: 0
 
-		background-color: var(--c-header-one)
+		display: block
+
+		width: 100%
+		height: 100%
+
+		background-color: var(--c-header-bg)
 
 	@media ( min-width: em(3840.96) )
 		padding: rem(30) 0
 
-	.header__inner
+	.header__container
 		display: flex
 		align-items: center
 		justify-content: space-between
+
+		padding: 10px 0
+		+calc-size(padding-top, 10, 20, 1920.96, 3840, px)
+		+calc-size(padding-bottom, 10, 20, 1920.96, 3840, px)
+
+		@media ( min-width: em(3840.96) )
+			adding: 20px 0
 
 	.logo
 		z-index: 6
@@ -60,59 +67,32 @@ $breakpoint: 768
 			width: 100%
 			height: 100%
 
-			padding: var(--header-height) rem(30) rem(30)
+			padding: var(--header-height) $gutter $gutter
 			+calc-size(padding-right, 30, 60, 1920.96, 3840, rem)
 			+calc-size(padding-left, 30, 60, 1920.96, 3840, rem)
 			+calc-size(padding-bottom, 30, 60, 1920.96, 3840, rem)
 
-			background-color: var(--c-header-one)
+			background-color: var(--c-header-bg)
 			overflow-y: auto
 
 			transform: translateX(400%)
 
 			transition: transform 0.5s ease-in-out
 
+			@media ( min-width: em(768.96) )
+				z-index: 5
+
 			@media ( min-width: em(3840.96) )
-				padding: var(--header-height) rem(60) rem(60)
+				padding: var(--header-height) 60px 60px
 
 	.nav.nav--visible
-		transform: translateX(0)
-
-	.nav__btn-close
-		display: none
-
 		@media ( max-width: em($breakpoint) )
-			display: flex
-			align-items: center
-			justify-content: center
-
-			width: rem(30)
-			height: rem(30)
-
-			font-weight: 700
-			font-size: rem(30)
-			line-height: rem(30)
-
-			border: 2px dashed transparent
-			color: var(--c-nav-btn-close-one)
-
-			transition: all .3s ease
-
-			&:focus
-				color: var(--c-nav-btn-close-two)
-
-			&:focus-visible
-				outline: none
-				border-color: var(--c-nav-btn-close-two)
-
-			&:active
-				border-color: transparent
-				color: var(--c-nav-btn-close-three)
+			transform: unset
 
 	.nav__list
 		display: flex
 		align-items: center
-		gap: rem(30)
+		gap: $gutter
 		+calc-size(gap, 30, 60, 1920.96, 3840, px)
 
 		@media ( max-width: em($breakpoint) )
@@ -121,44 +101,46 @@ $breakpoint: 768
 			font-size: rem(20)
 			font-weight: 700
 
-			padding-top: rem(30)
-			+calc-size(padding-top, 30, 60, 1920.96, 3840, rem)
+			padding-top: $gutter
+			+calc-size(padding-top, $gutter, 60, 1920.96, 3840, rem)
 
 		@media ( min-width: em(3840.96) )
-			gap: rem(60)
+			gap: 60px
 
-			padding-top: rem(60)
+			padding-top: 60px
 
 	.nav__link
 		border: 2px dashed transparent
-		color: var(--c-nav-link-one)
+		color: var(--c-nav-link)
 
 		transition: all .3s ease
 
-		@media ( any-hover: hover )
-			&:hover
-				color: var(--c-nav-link-two)
-
-		&:focus
-			color: var(--c-nav-link-two)
+		&:hover
+			color: var(--c-nav-link-hover-focus)
 
 		&:focus-visible
-			outline: none
-			border-color: var(--c-nav-link-two)
+			outline: 2px dashed var(--c-nav-link-hover-focus)
+			outline-offset: 2px
+
+			@media ( min-width: em(2880.96) )
+				outline: 4px dashed var(--c-nav-link-hover-focus)
+				outline-offset: 4px
 
 		&:active
-			border-color: transparent
-			color: var(--c-nav-link-three)
+			outline: none
+			color: var(--c-nav-link-active)
 
+	.header__contacts
+		display: flex
+		flex-direction: column
+		align-items: flex-end
 
 	// Burger style
 	.burger
 		display: none
 
-		width: rem(30)
-		height: rem(30)
-		+calc-size(width, 30, 60, 1920.96, 3840, rem)
-		+calc-size(height, 30, 60, 1920.96, 3840, rem)
+		width: $gutter
+		height: $gutter
 
 		position: relative
 
@@ -174,7 +156,7 @@ $breakpoint: 768
 			width: 100%
 			height: rem(2)
 
-			background-color: var(--c-burger-one)
+			background-color: var(--c-burger-line-color)
 
 			transition: all 0.3s ease
 
@@ -185,32 +167,25 @@ $breakpoint: 768
 		&:after
 			bottom: rem(4)
 			+calc-size(bottom, 4, 8, 1920.96, 3840, rem)
-		
-		&:focus
-			&:before, &:after
-				background-color: var(--c-burger-two)
 
-			.burger__line
-				background-color: var(--c-burger-two)
-		
 		&:focus-visible
 			outline: none
-			border-color: var(--c-burger-two)
+			border-color: var(--c-burger-hover-focus)
 
 			&:before, &:after
-				background-color: var(--c-burger-two)
+				background-color: var(--c-burger-hover-focus)
 
 			.burger__line
-				background-color: var(--c-burger-two)
-		
+				background-color: var(--c-burger-hover-focus)
+
 		&:active
 			border-color: transparent
 
 			&:before, &:after
-				background-color: var(--c-burger-three)
+				background-color: var(--c-burger-active)
 
 			.burger__line
-				background-color: var(--c-burger-three)
+				background-color: var(--c-burger-active)
 
 		@media ( max-width: em($breakpoint) )
 			display: flex
@@ -218,10 +193,6 @@ $breakpoint: 768
 			justify-content: center
 
 			z-index: 6
-
-		@media ( min-width: em(3840.96) )
-			width: rem(60)
-			height: rem(44)
 
 		> *
 			pointer-events: none
@@ -249,9 +220,8 @@ $breakpoint: 768
 		width: 100%
 		height: rem(2)
 
-		background-color: var(--c-burger-one)
+		background-color: var(--c-burger-line-color)
 
 		transform: translateY(-50%)
 
 		transition: all .3s ease
-

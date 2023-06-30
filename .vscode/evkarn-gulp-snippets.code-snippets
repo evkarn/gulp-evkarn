@@ -221,6 +221,33 @@
 		"description": "Section"
 	},
 
+	"Nav": {
+		"prefix": "nav",
+		"scope": "html, php",
+		"body": [
+			"<nav class=\"nav\">",
+			"\t<ul class=\"nav__list\">",
+			"\t\t<li>",
+			"\t\t\t<a class=\"nav__link\" href=\"#\">$1</a>",
+			"\t\t</li>",
+			"\t\t",
+			"\t\t<li>",
+			"\t\t\t<a class=\"nav__link\" href=\"#\">$1</a>",
+			"\t\t</li>",
+			"\t\t",
+			"\t\t<li>",
+			"\t\t\t<a class=\"nav__link\" href=\"#\">$1</a>",
+			"\t\t</li>",
+			"\t\t",
+			"\t\t<li>",
+			"\t\t\t<a class=\"nav__link\" href=\"#\">$1</a>",
+			"\t\t</li>",
+			"\t</ul>",
+			"</nav>"
+		],
+		"description": "Nav"
+	},
+
 	// Images and Picture
 	"Image with src": {
 		"prefix": "img",

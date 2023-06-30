@@ -4,25 +4,29 @@
 	align-items: center
 
 .scheme-switcher
+	position: relative
+
 	display: grid
 	grid-template-columns: 1fr 1fr 1fr
 	grid-template-rows: 1fr
 
 	max-width: 100px
+	+calc-size(max-width, 100, 200, 1920.96, 3840, px)
 	width: 100%
 
 	padding: 2px
-
-	position: relative
+	+calc-size(padding, 2, 4, 1920.96, 3840, px)
 
 	border: none
 
-	@media ( min-width: em(2736.96) )
+	@media ( min-width: em(3840.96) )
 		max-width: 200px
 
-.scheme-switcher__legend 
+.scheme-switcher__legend
 	position: absolute
+
 	opacity: 0
+
 	pointer-events: none
 
 .scheme-switcher__radio
@@ -30,16 +34,19 @@
 
 	width: 32px
 	height: 32px
+	+calc-size(width, 32, 64, 1920.96, 3840, px)
+	+calc-size(height, 32, 64, 1920.96, 3840, px)
 
 	margin: 0
 
 	background-position: center
 	background-repeat: no-repeat
 	background-size: 26px
+	+calc-size(background-size, 26, 52, 1920.96, 3840, px)
 
 	transition: filter .1s ease-in
 
-	@media ( min-width: em(2736.96) )
+	@media ( min-width: em(3840.96) )
 		width: 64px
 		height: 64px
 
@@ -51,16 +58,19 @@
 	&:focus
 		outline: none
 
-	&:focus-visible ~ .scheme-switcher__status 
+	&:focus-visible ~ .scheme-switcher__status
 		box-shadow: 0 0 0 2px black
 
-.scheme-switcher__radio--light 
+		@media ( min-width: em(2880.96) )
+			box-shadow: 0 0 0 4px black
+
+.scheme-switcher__radio--light
 	background-image: url(../images/dist/scheme-light-sun.svg)
 
-.scheme-switcher__radio--auto 
+.scheme-switcher__radio--auto
 	background-image: url(../images/dist/scheme-auto-on.svg)
 
-.scheme-switcher__radio--dark 
+.scheme-switcher__radio--dark
 	background-image: url(../images/dist/scheme-dark-moon.svg)
 
 .scheme-switcher__status
@@ -71,31 +81,46 @@
 	left: 0
 	z-index: -1
 
-	box-shadow: 0 0 0 2px rgb(0 0 0 / 0.2)
 	border-radius: 100px
-	background-color: rgb(255 255 255 / 0.5)
-	background-repeat: no-repeat
+	+calc-size(border-radius, 100, 200, 1920.96, 3840, px)
+	box-shadow: 0 0 0 2px rgb(0 0 0 / 0.2)
 	background-image: url(../images/dist/scheme-status.svg)
-	background-size: 32px
 	background-position: center
+	background-size: 32px
+	+calc-size(background-size, 32, 64, 1920.96, 3840, px)
+	background-repeat: no-repeat
+	background-color: rgb(255 255 255 / 0.5)
 
-	transition: background-position 0.1s ease-in
+	transition: background-position 0.2s ease-in
 
-	@media ( min-width: em(2736.96) )
+	@media ( min-width: em(2880.96) )
+		box-shadow: 0 0 0 4px rgb(0 0 0 / 0.2)
+
+	@media ( min-width: em(3840.96) )
+		border-radius: 200px
 		background-size: 64px
 
 .scheme-switcher__radio
-	&:focus-visible ~ .scheme-switcher__status 
+	&:focus-visible ~ .scheme-switcher__status
 		box-shadow: 0 0 0 2px black
 
+		@media ( min-width: em(2880.96) )
+			box-shadow: 0 0 0 4px black
+
 .scheme-switcher__radio--light
-	&:checked ~ .scheme-switcher__status 
+	&:checked ~ .scheme-switcher__status
 		background-position: left 2px center
 
+		@media ( min-width: em(2880.96) )
+			background-position: left 4px center
+
 .scheme-switcher__radio--auto
-	&:checked ~ .scheme-switcher__status 
+	&:checked ~ .scheme-switcher__status
 		background-position: center center
 
 .scheme-switcher__radio--dark
-	&:checked ~ .scheme-switcher__status 
+	&:checked ~ .scheme-switcher__status
 		background-position: right 2px center
+
+		@media ( min-width: em(2880.96) )
+			background-position: right 4px center
