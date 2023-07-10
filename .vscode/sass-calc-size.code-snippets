@@ -1,0 +1,330 @@
+{
+	"Calc size": {
+		"prefix": "cs",
+		"scope": "css, sass, scss, less",
+		"body": ["+calc-size($1, $2, $3, 1920.96, 3840, rem)"],
+		"description": "Calc size"
+	},
+
+	"Calc size px": {
+		"prefix": "cspx",
+		"scope": "css, sass, scss, less",
+		"body": ["+calc-size($1, $2, $3, 1920.96, 3840, px)"],
+		"description": "Calc size px"
+	},
+
+	"Calc size font-size": {
+		"prefix": "csfz",
+		"scope": "css, sass, scss, less",
+		"body": ["+calc-size(font-size, $1, $2, 1920.96, 3840, rem)"],
+		"description": "Calc size font-size"
+	},
+
+	"Calc size font-size px": {
+		"prefix": "csfzpx",
+		"scope": "css, sass, scss, less",
+		"body": ["+calc-size(font-size, $1, $2, 1920.96, 3840, px)"],
+		"description": "Calc size font-size px"
+	},
+
+	"Calc size padding": {
+		"prefix": "csp",
+		"scope": "css, sass, scss, less",
+		"body": ["+calc-size(padding, $1, $2, 1920.96, 3840, rem)"],
+		"description": "Calc size padding"
+	},
+
+	"Calc size padding px": {
+		"prefix": "csppx",
+		"scope": "css, sass, scss, less",
+		"body": ["+calc-size(padding, $1, $2, 1920.96, 3840, px)"],
+		"description": "Calc size padding px"
+	},
+
+	"Calc size padding-top": {
+		"prefix": "cspt",
+		"scope": "css, sass, scss, less",
+		"body": ["+calc-size(padding-top, $1, $2, 1920.96, 3840, rem)"],
+		"description": "Calc size padding-top"
+	},
+
+	"Calc size padding-top px": {
+		"prefix": "csptpx",
+		"scope": "css, sass, scss, less",
+		"body": ["+calc-size(padding-top, $1, $2, 1920.96, 3840, px)"],
+		"description": "Calc size padding-top px"
+	},
+
+	"Calc size padding-bottom": {
+		"prefix": "cspb",
+		"scope": "css, sass, scss, less",
+		"body": ["+calc-size(padding-bottom, $1, $2, 1920.96, 3840, rem)"],
+		"description": "Calc size padding-bottom"
+	},
+
+	"Calc size padding-bottom px": {
+		"prefix": "cspbpx",
+		"scope": "css, sass, scss, less",
+		"body": ["+calc-size(padding-bottom, $1, $2, 1920.96, 3840, px)"],
+		"description": "Calc size padding-bottom px"
+	},
+
+	"Calc size padding-right": {
+		"prefix": "cspr",
+		"scope": "css, sass, scss, less",
+		"body": ["+calc-size(padding-right, $1, $2, 1920.96, 3840, rem)"],
+		"description": "Calc size padding-right"
+	},
+
+	"Calc size padding-right px": {
+		"prefix": "csprpx",
+		"scope": "css, sass, scss, less",
+		"body": ["+calc-size(padding-right, $1, $2, 1920.96, 3840, px)"],
+		"description": "Calc size padding-right px"
+	},
+
+	"Calc size padding-left": {
+		"prefix": "cspl",
+		"scope": "css, sass, scss, less",
+		"body": ["+calc-size(padding-left, $1, $2, 1920.96, 3840, rem)"],
+		"description": "Calc size padding-left"
+	},
+
+	"Calc size padding-left px": {
+		"prefix": "csplpx",
+		"scope": "css, sass, scss, less",
+		"body": ["+calc-size(padding-left, $1, $2, 1920.96, 3840, px)"],
+		"description": "Calc size padding-left px"
+	},
+
+	"Calc size margin": {
+		"prefix": "csm",
+		"scope": "css, sass, scss, less",
+		"body": ["+calc-size(margin, $1, $2, 1920.96, 3840, rem)"],
+		"description": "Calc size margin"
+	},
+
+	"Calc size margin px": {
+		"prefix": "csmpx",
+		"scope": "css, sass, scss, less",
+		"body": ["+calc-size(margin, $1, $2, 1920.96, 3840, px)"],
+		"description": "Calc size margin px"
+	},
+
+	"Calc size margin-top": {
+		"prefix": "csmt",
+		"scope": "css, sass, scss, less",
+		"body": ["+calc-size(margin-top, $1, $2, 1920.96, 3840, rem)"],
+		"description": "Calc size margin-top"
+	},
+
+	"Calc size margin-top px": {
+		"prefix": "csmtpx",
+		"scope": "css, sass, scss, less",
+		"body": ["+calc-size(margin-top, $1, $2, 1920.96, 3840, px)"],
+		"description": "Calc size margin-top px"
+	},
+
+	"Calc size margin-bottom": {
+		"prefix": "csmb",
+		"scope": "css, sass, scss, less",
+		"body": ["+calc-size(margin-bottom, $1, $2, 1920.96, 3840, rem)"],
+		"description": "Calc size margin-bottom"
+	},
+
+	"Calc size margin-bottom px": {
+		"prefix": "csmbpx",
+		"scope": "css, sass, scss, less",
+		"body": ["+calc-size(margin-bottom, $1, $2, 1920.96, 3840, px)"],
+		"description": "Calc size margin-bottom px"
+	},
+
+	"Calc size margin-right": {
+		"prefix": "csmr",
+		"scope": "css, sass, scss, less",
+		"body": ["+calc-size(margin-right, $1, $2, 1920.96, 3840, rem)"],
+		"description": "Calc size margin-right"
+	},
+
+	"Calc size margin-right px": {
+		"prefix": "csmrpx",
+		"scope": "css, sass, scss, less",
+		"body": ["+calc-size(margin-right, $1, $2, 1920.96, 3840, px)"],
+		"description": "Calc size margin-right px"
+	},
+
+	"Calc size margin-left": {
+		"prefix": "csml",
+		"scope": "css, sass, scss, less",
+		"body": ["+calc-size(margin-left, $1, $2, 1920.96, 3840, rem)"],
+		"description": "Calc size margin-left"
+	},
+
+	"Calc size margin-left px": {
+		"prefix": "csmlpx",
+		"scope": "css, sass, scss, less",
+		"body": ["+calc-size(margin-left, $1, $2, 1920.96, 3840, px)"],
+		"description": "Calc size margin-left px"
+	},
+
+	"Calc size max-width": {
+		"prefix": "csmaw",
+		"scope": "css, sass, scss, less",
+		"body": ["+calc-size(max-width, $1, $2, 1920.96, 3840, rem)"],
+		"description": "Calc size max-width"
+	},
+
+	"Calc size max-width px": {
+		"prefix": "csmawpx",
+		"scope": "css, sass, scss, less",
+		"body": ["+calc-size(max-width, $1, $2, 1920.96, 3840, px)"],
+		"description": "Calc size max-width px"
+	},
+
+	"Calc size min-width": {
+		"prefix": "csmiw",
+		"scope": "css, sass, scss, less",
+		"body": ["+calc-size(min-width, $1, $2, 1920.96, 3840, rem)"],
+		"description": "Calc size min-width"
+	},
+
+	"Calc size min-width px": {
+		"prefix": "csmiwpx",
+		"scope": "css, sass, scss, less",
+		"body": ["+calc-size(min-width, $1, $2, 1920.96, 3840, px)"],
+		"description": "Calc size min-width px"
+	},
+
+	"Calc size min-height": {
+		"prefix": "csmih",
+		"scope": "css, sass, scss, less",
+		"body": ["+calc-size(min-height, $1, $2, 1920.96, 3840, rem)"],
+		"description": "Calc size min-height"
+	},
+
+	"Calc size min-height px": {
+		"prefix": "csmihpx",
+		"scope": "css, sass, scss, less",
+		"body": ["+calc-size(min-height, $1, $2, 1920.96, 3840, px)"],
+		"description": "Calc size min-height px"
+	},
+
+	"Calc size max-height": {
+		"prefix": "csmah",
+		"scope": "css, sass, scss, less",
+		"body": ["+calc-size(max-height, $1, $2, 1920.96, 3840, rem)"],
+		"description": "Calc size max-height"
+	},
+
+	"Calc size max-height px": {
+		"prefix": "csmahpx",
+		"scope": "css, sass, scss, less",
+		"body": ["+calc-size(max-height, $1, $2, 1920.96, 3840, px)"],
+		"description": "Calc size max-height px"
+	},
+
+	"Calc size width": {
+		"prefix": "csw",
+		"scope": "css, sass, scss, less",
+		"body": ["+calc-size(width, $1, $2, 1920.96, 3840, rem)"],
+		"description": "Calc size width"
+	},
+
+	"Calc size width px": {
+		"prefix": "cswpx",
+		"scope": "css, sass, scss, less",
+		"body": ["+calc-size(width, $1, $2, 1920.96, 3840, px)"],
+		"description": "Calc size width px"
+	},
+
+	"Calc size height": {
+		"prefix": "csh",
+		"scope": "css, sass, scss, less",
+		"body": ["+calc-size(height, $1, $2, 1920.96, 3840, rem)"],
+		"description": "Calc size width"
+	},
+
+	"Calc size height px": {
+		"prefix": "cshpx",
+		"scope": "css, sass, scss, less",
+		"body": ["+calc-size(height, $1, $2, 1920.96, 3840, px)"],
+		"description": "Calc size height px"
+	},
+
+	"Calc size gap": {
+		"prefix": "csg",
+		"scope": "css, sass, scss, less",
+		"body": ["+calc-size(gap, $1, $2, 1920.96, 3840, rem)"],
+		"description": "Calc size gap"
+	},
+
+	"Calc size grid-gap": {
+		"prefix": "csgg",
+		"scope": "css, sass, scss, less",
+		"body": ["+calc-size(grid-gap, $1, $2, 1920.96, 3840, rem)"],
+		"description": "Calc size grid-gap"
+	},
+
+	"Calc size grid-row-gap": {
+		"prefix": "csgrg",
+		"scope": "css, sass, scss, less",
+		"body": ["+calc-size(grid-row-gap, $1, $2, 1920.96, 3840, rem)"],
+		"description": "Calc size grid-row-gap"
+	},
+
+	"Calc size grid-column-gap": {
+		"prefix": "csgcg",
+		"scope": "css, sass, scss, less",
+		"body": ["+calc-size(grid-column-gap, $1, $2, 1920.96, 3840, rem)"],
+		"description": "Calc size grid-column-gap"
+	},
+
+	"Calc size column-gap": {
+		"prefix": "cscg",
+		"scope": "css, sass, scss, less",
+		"body": ["+calc-size(column-gap, $1, $2, 1920.96, 3840, rem)"],
+		"description": "Calc size column-gap"
+	},
+
+	"Calc size row-gap": {
+		"prefix": "csrg",
+		"scope": "css, sass, scss, less",
+		"body": ["+calc-size(row-gap, $1, $2, 1920.96, 3840, rem)"],
+		"description": "Calc size row-gap"
+	},
+
+	"Calc size border-radius": {
+		"prefix": "csbr",
+		"scope": "css, sass, scss, less",
+		"body": ["+calc-size(border-radius, $1, $2, 1920.96, 3840, rem)"],
+		"description": "Calc size border-radius"
+	},
+
+	"Calc size border-radius px": {
+		"prefix": "csbrpx",
+		"scope": "css, sass, scss, less",
+		"body": ["+calc-size(border-radius, $1, $2, 1920.96, 3840, rem)"],
+		"description": "Calc size border-radius px"
+	},
+
+	"Calc size gap px": {
+		"prefix": "csgpx",
+		"scope": "css, sass, scss, less",
+		"body": ["+calc-size(gap, $1, $2, 1920.96, 3840, px)"],
+		"description": "Calc size gap px"
+	},
+
+	"Calc size column-gap px": {
+		"prefix": "cscgpx",
+		"scope": "css, sass, scss, less",
+		"body": ["+calc-size(column-gap, $1, $2, 1920.96, 3840, px)"],
+		"description": "Calc size column-gap px"
+	},
+
+	"Calc size row-gap px": {
+		"prefix": "csrgpx",
+		"scope": "css, sass, scss, less",
+		"body": ["+calc-size(row-gap, $1, $2, 1920.96, 3840, px)"],
+		"description": "Calc size row-gap px"
+	},
+}

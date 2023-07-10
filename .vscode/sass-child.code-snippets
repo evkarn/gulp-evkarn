@@ -1,0 +1,36 @@
+{
+	"&:not(:last-child)": {
+		"prefix": "nlch",
+		"scope": "css, sass, scss, less",
+		"body": ["&:not(:last-child)", "\t$1"],
+		"description": "&:not(:last-child)"
+	},
+
+	"&:not(:first-child)": {
+		"prefix": "nfch",
+		"scope": "css, sass, scss, less",
+		"body": ["&:not(:first-child)", "\t$1"],
+		"description": "&:not(:first-child)"
+	},
+
+	"&:last-child": {
+		"prefix": "lch",
+		"scope": "css, sass, scss, less",
+		"body": ["&:last-child", "\t$1"],
+		"description": "&:last-child"
+	},
+
+	"&:first-child": {
+		"prefix": "fch",
+		"scope": "css, sass, scss, less",
+		"body": ["&:first-child", "\t$1"],
+		"description": "&:first-child"
+	},
+
+	"&:nth-child()": {
+		"prefix": "nthch",
+		"scope": "css, sass, scss, less",
+		"body": ["&:nth-child($1)", "\t$2"],
+		"description": "&:nth-child()"
+	},
+}

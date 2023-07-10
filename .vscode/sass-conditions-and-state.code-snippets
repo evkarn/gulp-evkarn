@@ -1,0 +1,83 @@
+{
+	"Hover": {
+		"prefix": "hov",
+		"scope": "css, sass, scss, less",
+		"body": ["&:hover", "\t$1"],
+		"description": "Hover"
+	},
+
+	"Focus": {
+		"prefix": "foc",
+		"scope": "css, sass, scss, less",
+		"body": ["&:focus", "\t$1"],
+		"description": "Focus"
+	},
+
+	"Hover + Focus": {
+		"prefix": "hf",
+		"scope": "css, sass, scss, less",
+		"body": ["&:hover, &:focus", "\t$1"],
+		"description": "Hover + Focus"
+	},
+
+	"Focus + Active": {
+		"prefix": "fa",
+		"scope": "css, sass, scss, less",
+		"body": ["&:focus, &:active", "\t$1"],
+		"description": "Focus + Active"
+	},
+
+	"Active + Focus": {
+		"prefix": "af",
+		"scope": "css, sass, scss, less",
+		"body": ["&:active, &:focus", "\t$1"],
+		"description": "Active + Focus"
+	},
+
+	"Active": {
+		"prefix": "act",
+		"scope": "css, sass, scss, less",
+		"body": ["&:active", "\t$1"],
+		"description": "Active"
+	},
+
+	"State element": {
+		"prefix": "state",
+		"scope": "css, sass, scss, less",
+		"body": [
+			"&:focus",
+			"\t$1",
+			"",
+			"&:focus-visible",
+			"\t$2",
+			"",
+			"&:hover",
+			"\t$3",
+			"",
+			"&:active",
+			"\t$4"
+		],
+		"description": "State element"
+	},
+
+	"State link": {
+		"prefix": "st-link",
+		"scope": "css, sass, scss, less",
+		"body": [
+			"&:visited",
+			"\t$1",
+			"",
+			"&:focus",
+			"\t$2",
+			"",
+			"&:focus-visible",
+			"\t$3",
+			"",
+			"&:hover",
+			"\t$4",
+			"&:active",
+			"\t$5"
+		],
+		"description": "State link"
+	},
+}

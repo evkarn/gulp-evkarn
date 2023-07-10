@@ -421,4 +421,117 @@
 	},
 	// End. Images and Picture
 
+
+	"Aspect-ratio image": {
+		"prefix": "ar",
+		"scope": "html, php",
+		"body": ["aspect-ratio: $1 / $2"],
+		"description": "Aspect-ratio image"
+	},
+
+	"Image responsive": {
+		"prefix": "imgr",
+		"scope": "html, php",
+		"body": [
+			"display: block",
+			"max-width: 100%",
+			"width: 100%",
+			"height: auto"
+		],
+		"description": "Image responsive"
+	},
+
+	"Inner image responsive": {
+		"prefix": "inimgr",
+		"scope": "html, php",
+		"body": [
+			"position: relative",
+			"overflow: hidden",
+			"padding-bottom: calc($1 / $2)",
+			"",
+			"\timg",
+			"\t\tposition: absolute",
+			"\t\twidth: 100%",
+			"\t\theight: 100%",
+			"\t\ttop: 0",
+			"\t\tright: 0",
+			"\t\tbottom: 0",
+			"\t\tleft: 0",
+			"\t\tobject-fit: cover"
+		],
+		"description": "Inner image responsive"
+	},
+
+	"Swiper HTML Layout": {
+		"prefix": "swr",
+		"scope": "html, php",
+		"body": [
+			"<div class=\"$1 swiper\">",
+			"\t<div class=\"swiper-wrapper\">",
+			"\t\t<div class=\"swiper-slide\">Slide 1</div>",
+			"\t</div>",
+			"",
+			"\t<div class=\"swiper-pagination\"></div>",
+			"",
+			"\t<div class=\"swiper-button-prev\"></div>",
+			"\t<div class=\"swiper-button-next\"></div>",
+			"",
+			"\t<div class=\"swiper-scrollbar\"></div>",
+			"</div>"
+		],
+		"description": "Swiper HTML Layout"
+	},
+
+	"Section bootstrap": {
+		"prefix": "secbs",
+		"scope": "html, php",
+		"body": [
+			"<div class=\"section $1\">",
+			"\t<div class=\"container $1__container\">",
+			"\t\t<div class=\"row $1__row\">",
+			"\t\t\t<div class=\"col-$2\">",
+			"\t\t\t\t$3",
+			"\t\t\t</div>",
+			"\t\t</div>",
+			"\t</div>",
+			"</div>"
+		],
+		"description": "Section bootstrap"
+	},
+
+	"Image in background": {
+		"prefix": "ibg",
+		"scope": "html, php",
+		"body": [
+			"<div class=\"$1\" data-image-in-background>",
+			"\t<img src=\"@img/$2\" alt=\"Alt\">",
+			"</div>"
+		],
+		"description": "Image in background"
+	},
+
+
+	// Video
+	"Video html tag": {
+		"prefix": "vid",
+		"scope": "html, php",
+		"body": [
+			"<video class=\"video__player\" src=\"assets/videos/$1.mp4\" poster=\"assets/images/dist/posters/$2.svg\" preload=\"metadata\" loop=\"\" muted=\"\" autoplay=\"\" playsinline=\"\" controls=\"\">",
+			"\tИзвините, ваш браузер не поддерживает встроенные видео, но не волнуйтесь, вы можете <a href=\"assets/videos/$1.mp4\">скачать его</a> и&nbsp;посмотреть в&nbsp;своем любимом видеоплеере!",
+			"</video>"
+		],
+		"description": "Video html tag"
+	},
+
+	"Video html tag jekyll": {
+		"prefix": "vidj",
+		"scope": "html, php",
+		"body": [
+			"<video class=\"video__player\" src=\"assets/videos/{{ page.video }}.mp4\" poster=\"assets/images/dist/posters/{{ page.video }}.svg\" preload=\"metadata\" loop=\"\" muted=\"\" autoplay=\"\" playsinline=\"\" controls=\"\">",
+			"\tИзвините, ваш браузер не поддерживает встроенные видео, но не волнуйтесь, вы можете <a href=\"assets/videos/{{ post.video }}.mp4\">скачать его</a> и&nbsp;посмотреть в&nbsp;своем любимом видеоплеере!",
+			"</video>"
+		],
+		"description": "Video html tag jekyll"
+	},
+	// End. Video
 }
