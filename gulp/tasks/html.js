@@ -7,6 +7,9 @@ import versionNumber from 'gulp-version-number';
 // Замена img на picture с webp компонентом
 import webpHtmlNoSVG from 'gulp-webp-html-nosvg';
 
+// Обработка текстов типографом
+import typograf from 'gulp-typograf';
+
 export const html = () => {
 	// Находим все .html в папке исходников
 	return app.gulp.src(app.path.src.html)
@@ -20,7 +23,14 @@ export const html = () => {
 	))
 
 	// Вставляем заданные @include
-	.pipe(fileInclude())
+	.pipe(fileInclude({
+		prefix: '@',
+		basepath: '@file'
+	}))
+
+	.pipe(typograf({
+		locale: ['ru', 'en-US']
+	}))
 
 	// Заменяем @img на assets/images/dist
 	.pipe(app.plugins.replace(/@img\//g, 'assets/images/dist/'))

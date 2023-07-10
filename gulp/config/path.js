@@ -28,11 +28,13 @@ export const path = {
 
 		img: `${buildFolder}/assets/images/dist/`,
 
-		spriteIcons: `${buildFolder}/assets/svg-sprite-icons/`,
+		ogImg: `${buildFolder}/assets/images/og-images/`,
+
+		pinterestImg: `${buildFolder}/assets/images/pinterest/`,
+
+		spriteIcons: `${buildFolder}/assets/images/dist/sprite/`,
 
 		js: `${buildFolder}/assets/js/`,
-
-		jsSpecial: `${buildFolder}/assets/js-special/`,
 	},
 
 	// Пути к исходникам файлов
@@ -49,19 +51,21 @@ export const path = {
 
 		js: `${srcFolder}/assets/js/*.js`,
 
-		jsSpecial: `${srcFolder}/assets/js-special/**/*.js`,
-
 		img: `${srcFolder}/assets/images/_src/**/*.{jpg,jpeg,png,gif,webp,heic,heif,raw,avif}`,
 
 		imgSrc: `${srcFolder}/assets/images/_src/`,
 
+		ogImg: `${srcFolder}/assets/images/og-images/*.*`,
+
+		pinterestImg: `${srcFolder}/assets/images/pinterest/*.*`,
+
 		imgAvifWebp: `${srcFolder}/assets/images/_src/**/*.{jpg,jpeg,png}`,
 
-		imgMin: `${srcFolder}/assets/images/_src/**/*.*`,
+		imgMin: [`${srcFolder}/assets/images/_src/**/*.*`, `!${srcFolder}/assets/images/_src/sprite/**/*.*`],
 
 		sass: `${srcFolder}/assets/styles/**.sass`,
 
-		svgSprite: `${srcFolder}/assets/svg-sprite/*.svg`,
+		svgSprite: `${srcFolder}/assets/images/_src/sprite/*.svg`,
 	},
 
 	// Отслеживание изменений в файлах
@@ -70,15 +74,17 @@ export const path = {
 
 		html: `${srcFolder}/**/*.html`,
 
-		img: `${srcFolder}/assets/images/_src/**/*.*`,
+		img: [`${srcFolder}/assets/images/_src/**/*.*`, `!${srcFolder}/assets/images/_src/sprite/*.*`],
+
+		ogImg: `${srcFolder}/assets/og-images/*.*`,
+
+		pinterestImg: `${srcFolder}/assets/images/pinterest/*.*`,
 
 		js: `${srcFolder}/assets/js/**/*.js`,
 
-		jsSpecial: `${srcFolder}/assets/js-special/**/*.js`,
-
 		sass: `${srcFolder}/assets/styles/**/*.sass`,
 
-		svgSprite: `${srcFolder}/assets/svg-sprite/*.svg`,
+		svgSprite: `${srcFolder}/assets/images/_src/sprite/*.svg`,
 	},
 
 	clean: buildFolder,

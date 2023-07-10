@@ -1,9 +1,5 @@
-import { header, spoilers } from './_components/index.js';
+import { spoilers } from './_components/spoilers/spoilers-func.js';
 
-document.addEventListener('DOMContentLoaded', () => {
-
-header();
-
-spoilers(500);
-
+document.addEventListener('DOMContentLoaded', (e) => {
+	spoilers(500);
 });

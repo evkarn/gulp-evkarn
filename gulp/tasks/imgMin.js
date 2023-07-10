@@ -1,6 +1,3 @@
-// Оптимизация изображений
-import imagemin from 'gulp-imagemin';
-
 export const imgMin = () => {
 	return app.gulp.src(app.path.src.imgMin)
 		.pipe(app.plugins.plumber(
@@ -15,7 +12,7 @@ export const imgMin = () => {
 		)
 
 		.pipe(
-			imagemin({
+			app.plugins.imagemin({
 				progressive: true,
 				svgoPlugins: [{ removeViewBox: false }],
 				interlaced: true,

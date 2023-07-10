@@ -1,0 +1,94 @@
+pre[class]
+	display: block
+	white-space-collapse: unset
+
+.hljs
+	display: block
+
+	padding:
+		left: 1em
+		right: 1em
+
+	overflow-x: auto
+
+	direction: ltr
+	text-align: left
+	white-space: pre
+	word-spacing: normal
+	word-break: normal
+	line-height: 1.5
+	tab-size: 2
+
+	hyphens: none
+
+	background-color: var(--hljs-bg)
+	border-radius: var(--border-radius)
+	color: var(--c-text)
+
+	@media ( min-width: em(2880.96) )
+		border-radius: calc(var(--border-radius) * 2)
+
+.hljs-comment,
+.hljs-quote
+	color: var(--hljs-comment-quote)
+
+.hljs-deletion,
+.hljs-name,
+.hljs-regexp,
+.hljs-selector-class,
+.hljs-selector-id,
+.hljs-tag,
+.hljs-template-variable,
+.hljs-variable
+	color: var(--hljs-name-tag)
+
+.hljs-built_in,
+.hljs-link,
+.hljs-literal,
+.hljs-meta,
+.hljs-number,
+.hljs-params,
+.hljs-type
+	color: var(--hljs-link-meta-type)
+
+.hljs-attribute
+	color: var(--hljs-attribute)
+
+.hljs-addition,
+.hljs-bullet,
+.hljs-string,
+.hljs-symbol
+	color: var(--hljs-addition-bullet-symbol-string)
+
+.hljs-section, .hljs-title
+	color: var(--hljs-section-title)
+
+.hljs-keyword, .hljs-selector-tag
+	color: var(--hljs-keyword-selector)
+
+.hljs-emphasis
+	font-style: italic
+
+.hljs-strong
+	font-weight: 700
+
+@media screen and (-ms-high-contrast: active)
+	.hljs-addition,
+	.hljs-attribute,
+	.hljs-built_in,
+	.hljs-bullet,
+	.hljs-comment,
+	.hljs-link,
+	.hljs-literal,
+	.hljs-meta,
+	.hljs-number,
+	.hljs-params,
+	.hljs-quote,
+	.hljs-string,
+	.hljs-symbol,
+	.hljs-type
+		color: highlight
+
+	.hljs-keyword,
+	.hljs-selector-tag
+		font-weight: 700

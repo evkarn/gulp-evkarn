@@ -4,19 +4,19 @@ export function returnToTopButton(offsetViewButton) {
 	// Получаем кнопку в переменную
 	const buttonTop = document?.querySelector('[data-button-to-top]');
 
-	if (buttonTop) {
-		function buttonTopActive() {
-			// Сколько нужно проскролить, чтобы появилась кнопка
-			const breakpoint = offsetViewButton;
+	function buttonTopActive() {
+		// Сколько нужно проскролить, чтобы появилась кнопка
+		const breakpoint = offsetViewButton;
 
-			// Если прокрутили на значение breakpoint, задаём кнопке указанный класс
-			if (window.pageYOffset >= breakpoint && buttonTop) {
-				buttonTop.classList.add('button-to-top__active');
-			} else {
-				buttonTop.classList.remove('button-to-top__active');
-			}
+		// Если прокрутили на значение breakpoint, задаём кнопке указанный класс
+		if (window.pageYOffset >= breakpoint) {
+			buttonTop.classList.add('button-to-top__active');
+		} else {
+			buttonTop.classList.remove('button-to-top__active');
 		}
+	}
 
+	if (buttonTop) {
 		window.addEventListener('scroll', buttonTopActive);
 
 		buttonTop.addEventListener('click', function () {

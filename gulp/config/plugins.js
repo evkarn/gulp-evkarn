@@ -10,6 +10,9 @@ import cleanCss from 'gulp-clean-css';
 // Условное ветвление
 import ifPlugin from "gulp-if";
 
+// Минимизация изображений
+import imagemin from 'gulp-imagemin';
+
 // Сообщения (подсказки)
 import notify from "gulp-notify";
 
@@ -35,6 +38,7 @@ export const plugins = {
 	browsersync: browsersync,
 	cleanCss: cleanCss,
 	if: ifPlugin,
+	imagemin: imagemin,
 	notify: notify,
 	newer: newer,
 	plumber: plumber,

@@ -85,7 +85,7 @@ $breakpoint: 768
 			@media ( min-width: em(3840.96) )
 				padding: var(--header-height) 60px 60px
 
-	.nav.nav--visible
+	.nav.nav--is-active
 		@media ( max-width: em($breakpoint) )
 			transform: unset
 
@@ -135,93 +135,93 @@ $breakpoint: 768
 		flex-direction: column
 		align-items: flex-end
 
-	// Burger style
-	.burger
-		display: none
+// Burger style
+.burger
+	display: none
 
-		width: $gutter
-		height: $gutter
+	width: $gutter
+	height: $gutter
 
-		position: relative
+	position: relative
 
-		background-color: transparent
-		border: 2px dashed transparent
+	background-color: transparent
+	border: 2px dashed transparent
 
-		&:before, &:after
-			content: ""
+	&:before, &:after
+		content: ""
 
-			position: absolute
-			left: 0
-
-			width: 100%
-			height: rem(2)
-
-			background-color: var(--c-burger-line-color)
-
-			transition: all 0.3s ease
-
-		&:before
-			top: rem(4)
-			+calc-size(top, 4, 8, 1920.96, 3840, rem)
-
-		&:after
-			bottom: rem(4)
-			+calc-size(bottom, 4, 8, 1920.96, 3840, rem)
-
-		&:focus-visible
-			outline: none
-			border-color: var(--c-burger-hover-focus)
-
-			&:before, &:after
-				background-color: var(--c-burger-hover-focus)
-
-			.burger__line
-				background-color: var(--c-burger-hover-focus)
-
-		&:active
-			border-color: transparent
-
-			&:before, &:after
-				background-color: var(--c-burger-active)
-
-			.burger__line
-				background-color: var(--c-burger-active)
-
-		@media ( max-width: em($breakpoint) )
-			display: flex
-			align-items: center
-			justify-content: center
-
-			z-index: 6
-
-		> *
-			pointer-events: none
-
-	.burger--active
-		&:before
-			top: 50%
-
-			transform: rotate(45deg)
-
-		&:after
-			bottom: auto
-			top: 50%
-
-			transform: rotate(-45deg)
-
-		.burger__line
-			opacity: 0
-
-	.burger__line
 		position: absolute
 		left: 0
-		top: 50%
 
 		width: 100%
 		height: rem(2)
 
 		background-color: var(--c-burger-line-color)
 
-		transform: translateY(-50%)
+		transition: all 0.3s ease
 
-		transition: all .3s ease
+	&:before
+		top: rem(4)
+		+calc-size(top, 4, 8, 1920.96, 3840, rem)
+
+	&:after
+		bottom: rem(4)
+		+calc-size(bottom, 4, 8, 1920.96, 3840, rem)
+
+	&:focus-visible
+		outline: none
+		border-color: var(--c-burger-hover-focus)
+
+		&:before, &:after
+			background-color: var(--c-burger-hover-focus)
+
+		.burger__line
+			background-color: var(--c-burger-hover-focus)
+
+	&:active
+		border-color: transparent
+
+		&:before, &:after
+			background-color: var(--c-burger-active)
+
+		.burger__line
+			background-color: var(--c-burger-active)
+
+	@media ( max-width: em($breakpoint) )
+		display: flex
+		align-items: center
+		justify-content: center
+
+		z-index: 6
+
+	> *
+		pointer-events: none
+
+.burger--active
+	&:before
+		top: 50%
+
+		transform: rotate(45deg)
+
+	&:after
+		bottom: auto
+		top: 50%
+
+		transform: rotate(-45deg)
+
+	.burger__line
+		opacity: 0
+
+.burger__line
+	position: absolute
+	left: 0
+	top: 50%
+
+	width: 100%
+	height: rem(2)
+
+	background-color: var(--c-burger-line-color)
+
+	transform: translateY(-50%)
+
+	transition: all .3s ease
