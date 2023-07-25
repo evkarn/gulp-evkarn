@@ -1,0 +1,27 @@
+@use 'sass:math';
+@use 'sass:list';
+@use 'sass:map';
+
+// Responsive value
+@mixin calc-size($propName, $minSize, $maxSize, $minWidth, $maxWidth, $units) {
+	@if $units==rem {
+		#{$propName}: calc(#{math.div($minSize, $fz-text) + #{$units}} + (#{$maxSize} - #{$minSize}) * ((100vw - #{$minWidth+px}) / (#{$maxWidth} - #{$minWidth})));
+	}
+	@else {
+		#{$propName}: calc(#{$minSize + #{$units}} + (#{$maxSize} - #{$minSize}) * ((100vw - #{$minWidth + #{$units}}) / (#{$maxWidth} - #{$minWidth})));
+	}
+}
+
+@mixin calc-size-media($propName, $minSize, $maxSize, $minWidth, $maxWidth, $units) {
+	@if $units==rem {
+		@media ( min-width: #{math.div($minWidth, $fz-text) + em} ) and ( max-width: #{math.div($maxWidth, $fz-text) + em} ) {
+			#{$propName}: calc(#{math.div($minSize, $fz-text) + #{$units}} + (#{$maxSize} - #{$minSize}) * ((100vw - #{$minWidth+px}) / (#{$maxWidth} - #{$minWidth})));
+		}
+	}
+	@else {
+		@media ( min-width: #{math.div($minWidth, $fz-text) + em} ) and ( max-width: #{math.div($maxWidth, $fz-text) + em} ) {
+			#{$propName}: calc(#{$minSize + #{$units}} + (#{$maxSize} - #{$minSize}) * ((100vw - #{$minWidth + #{$units}}) / (#{$maxWidth} - #{$minWidth})));
+		}
+	}
+}
+// End. Responsive value

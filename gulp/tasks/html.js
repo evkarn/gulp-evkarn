@@ -1,14 +1,14 @@
 // Добавление в файлы строк
 import fileInclude from 'gulp-file-include';
 
+// Обработка текстов типографом
+import typograf from 'gulp-typograf';
+
 // Проверка версий файлов
 import versionNumber from 'gulp-version-number';
 
 // Замена img на picture с webp компонентом
 import webpHtmlNoSVG from 'gulp-webp-html-nosvg';
-
-// Обработка текстов типографом
-import typograf from 'gulp-typograf';
 
 export const html = () => {
 	// Находим все .html в папке исходников
@@ -28,9 +28,24 @@ export const html = () => {
 		basepath: '@file'
 	}))
 
-	.pipe(typograf({
-		locale: ['ru', 'en-US']
-	}))
+	// Добавляем атрибут версии для стилей и скриптов
+	.pipe(app.plugins.if(
+		app.isBuild,(typograf({
+			locale: ['ru', 'en-US'],
+
+			htmlEntity: { type: 'name' },
+
+			safeTags: [
+				['<\\?php', '\\?>'],
+				['<no-typography>', '</no-typography>'],
+				['<head>', '</head>'],
+				['---', '---'],
+				['<script>', '</script>'],
+				['<iframe>', '</iframe>'],
+				['<img>'],
+			],
+		}))
+	))
 
 	// Заменяем @img на assets/images/dist
 	.pipe(app.plugins.replace(/@img\//g, 'assets/images/dist/'))

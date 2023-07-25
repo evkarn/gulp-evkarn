@@ -202,6 +202,7 @@
 		"description": "Article link"
 	},
 	// End. Article
+	
 
 	// Header
 	"Header with logo link": {
@@ -534,4 +535,16 @@
 		"description": "Video html tag jekyll"
 	},
 	// End. Video
+
+
+	// Background
+	"Background inline style": {
+		"prefix": "bgin",
+		"scope": "html, php",
+		"body": [
+			"style=\"background-color: $1; background-image: url('@img/$2'); background-repeat: no-repeat; background-position: center center; background-size: cover;\""
+		],
+		"description": "Background inline style"
+	},
+	// End. Background
 }

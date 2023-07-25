@@ -1,4 +1,4 @@
-// Color variable
+// Root variable
 \:root
 	--c-accent: #ff9c07
 	--c-accent-light: #ffb03a
@@ -28,13 +28,21 @@
 	--c-nav-link: #f2f2f2
 	--c-nav-link-hover-focus: #ff9c07
 	--c-nav-link-active: #d74532
-// End. Color variable
+// End. Root variable
+
+$border-width: 1
+
+$border-radius: 4
+
+$outline-width: 2
+
+$outline-offset: 2
 
 $index: calc(1vh + 1vw)
 
 // Fonts
 $fz-text: 16
-$fz-text-x2: 16*2
+$fz-text-x2: $fz-text*2
 $fz: $fz-text+px
 $lh: 1.5
 
@@ -52,20 +60,14 @@ $ff-body: $font-name-body
 // End. Fonts
 
 // Grid gutter
-$gutter-number: 20
-$gutter: $gutter-number+px
+$gutter: 30
 // End. Grid gutter
 
 // Greed system
-$screen-min-width: 320px
-$screen-max-width: 1920px
-$design-width: 1440
-$content-width: 1376
-$content-width-px: $content-width+px
+$screen-min-width: 320
+$screen-max-width: 1920
+
 $container-offset: 12
-$container-offset-x2: $container-offset*2
-$container-offset-px: $container-offset+px
-$container-width: calc($content-width-px + ($container-offset-px * 2))
-$container-calc-width: $content-width+($container-offset*2)
-$container-calc-width-x2: $container-calc-width*2
+
+$container-width: 1254 + $container-offset*2
 // End. Greed system

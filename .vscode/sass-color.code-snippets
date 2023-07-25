@@ -1,0 +1,29 @@
+{
+	"color: var()": {
+		"prefix": "clv",
+		"scope": "css, sass, scss, less",
+		"body": ["color: var($1)"],
+		"description": "color: var()"
+	},
+
+	"color: var(--c-text)": {
+		"prefix": "clvt",
+		"scope": "css, sass, scss, less",
+		"body": ["color: var(--c-text)"],
+		"description": "color: var(--c-text)"
+	},
+
+	"color: var(--c-accent)": {
+		"prefix": "clva",
+		"scope": "css, sass, scss, less",
+		"body": ["color: var(--c-accent)"],
+		"description": "color: var(--c-accent)"
+	},
+
+	"color: var(--c-lighten)": {
+		"prefix": "clvl",
+		"scope": "css, sass, scss, less",
+		"body": ["color: var(--c-lighten)"],
+		"description": "color: var(--c-lighten)"
+	},
+}

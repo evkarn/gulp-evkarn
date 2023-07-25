@@ -65,7 +65,7 @@ export const path = {
 
 		sass: `${srcFolder}/assets/styles/**.sass`,
 
-		svgSprite: `${srcFolder}/assets/images/_src/sprite/*.svg`,
+		svgSprite: `${srcFolder}/assets/images/_src/sprite-svg/*.svg`,
 	},
 
 	// Отслеживание изменений в файлах

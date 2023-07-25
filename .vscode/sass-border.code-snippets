@@ -1,24 +1,39 @@
 {
-	"Border-radius var": {
-		"prefix": "bradv",
-		"body": [
-			"border-radius: var(--border-radius)",
-			"",
-			"@media ( min-width: em(2880.96) )",
-			"\tborder-radius: calc(var(--border-radius) * 2)"
-		],
-		"description": "Border-radius var"
+	"border-color: transparent": {
+		"prefix": "borct",
+		"scope": "sass",
+		"body": ["border-color: transparent"],
+		"description": "border-color: transparent"
 	},
 
-	"Border-radius": {
-		"prefix": "brad",
+	"border-color: var($1)": {
+		"prefix": "borcv",
+		"scope": "sass",
+		"body": ["border-color: var($1)"],
+		"description": "border-color: var($1)"
+	},
+
+	"border-color: rgba($1border-color, $2)": {
+		"prefix": "borcrgba",
+		"scope": "sass",
+		"body": ["border-color: rgba($1border-color, $2)"],
+		"description": "border-color: rgba($1border-color, $2)"
+	},
+
+	"border-radius: $1border-radius": {
+		"prefix": "borr$",
+		"scope": "sass",
+		"body": ["border-radius: $1border-radius"],
+		"description": "border-radius: $1border-radius"
+	},
+
+	"Border all": {
+		"prefix": "borall",
 		"body": [
-			"border-radius: $1",
-			"+calc-size(border-radius, $1, $2, 1920.96, 3840, px)",
-			"",
-			"@media ( min-width: em(3840.96) )",
-			"\tborder-radius: $2"
+			"border-width: $1border-width",
+			"border-style: solid",
+			"border-color: var($2)",
 		],
-		"description": "Border-radius"
+		"description": "Border all"
 	},
 }

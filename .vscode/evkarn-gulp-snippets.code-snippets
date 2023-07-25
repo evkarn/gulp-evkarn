@@ -27,72 +27,13 @@
 
 
 
-	"Width rem": {
-		"prefix": "wrem",
-		"scope": "css, sass, scss, less",
-		"body": ["width: rem($1)"],
-		"description": "Width rem"
-	},
-
-	"Height rem": {
-		"prefix": "hrem",
-		"scope": "css, sass, scss, less",
-		"body": ["height: rem($1)"],
-		"description": "Height rem"
-	},
-
-	"Fill var()": {
-		"prefix": "fvar",
-		"scope": "css, sass, scss, less",
-		"body": ["fill: var($1)"],
-		"description": "Fill var()"
-	},
 
 
 
-	// Overflow
-	"overflow: hidden": {
-		"prefix": "ofh",
-		"scope": "css, sass, scss, less",
-		"body": ["overflow: hidden"],
-		"description": "overflow: hidden"
-	},
 
-	"overflow: visible": {
-		"prefix": "ofv",
-		"scope": "css, sass, scss, less",
-		"body": ["overflow: visible"],
-		"description": "overflow: visible"
-	},
 
-	"overflow-x: hidden": {
-		"prefix": "ofxh",
-		"scope": "css, sass, scss, less",
-		"body": ["overflow-x: hidden"],
-		"description": "overflow-x: hidden"
-	},
 
-	"overflow-y: hidden": {
-		"prefix": "ofyh",
-		"scope": "css, sass, scss, less",
-		"body": ["overflow-y: hidden"],
-		"description": "overflow-y: hidden"
-	},
 
-	"overflow-x: visible": {
-		"prefix": "ofxv",
-		"scope": "css, sass, scss, less",
-		"body": ["overflow-x: visible"],
-		"description": "overflow-x: visible"
-	},
-
-	"overflow-y: visible": {
-		"prefix": "ofyv",
-		"scope": "css, sass, scss, less",
-		"body": ["overflow-y: visible"],
-		"description": "overflow-y: visible"
-	},
-	// End.Overflow
 
 	// Object-fit
 	"object-fit: cover": {
@@ -127,14 +68,6 @@
 	},
 	// End. Clip
 
-	// Position
-	"position: static": {
-		"prefix": "posst",
-		"scope": "css, sass, scss, less",
-		"body": ["position: static"],
-		"description": "position: static"
-	},
-	// End. Position
 
 	"image-responsive-position-absolute": {
 		"prefix": "img-resp",
@@ -154,169 +87,13 @@
 		"description": "image-responsive-position-absolute"
 	},
 
-	// White space
-	"white-space: normal": {
-		"prefix": "wsn",
-		"scope": "css, sass, scss, less",
-		"body": ["white-space: normal"],
-		"description": "white-space: normal"
-	},
 
-	"white-space: nowrap": {
-		"prefix": "wsnw",
-		"scope": "css, sass, scss, less",
-		"body": ["white-space: nowrap"],
-		"description": "white-space: nowrap"
-	},
-	// End. White space
 
-	// Color
-	"color: var()": {
-		"prefix": "clv",
-		"scope": "css, sass, scss, less",
-		"body": ["color: var($1)"],
-		"description": "color: var()"
-	},
 
-	"color: var(--c-text)": {
-		"prefix": "clvt",
-		"scope": "css, sass, scss, less",
-		"body": ["color: var(--c-text)"],
-		"description": "color: var(--c-text)"
-	},
 
-	"color: var(--c-accent)": {
-		"prefix": "clva",
-		"scope": "css, sass, scss, less",
-		"body": ["color: var(--c-accent)"],
-		"description": "color: var(--c-accent)"
-	},
 
-	"color: var(--c-lighten)": {
-		"prefix": "clvl",
-		"scope": "css, sass, scss, less",
-		"body": ["color: var(--c-lighten)"],
-		"description": "color: var(--c-lighten)"
-	},
-	// End. Color
 
-	// Background
-	"Background inline style": {
-		"prefix": "bgin",
-		"scope": "html, php",
-		"body": [
-			"style=\"background-color: $1; background-image: url('@img/$2'); background-repeat: no-repeat; background-position: center center; background-size: cover;\""
-		],
-		"description": "Background inline style"
-	},
 
-	"background-color: var()": {
-		"prefix": "bgcv",
-		"scope": "css, sass, scss, less",
-		"body": ["background-color: var($1)"],
-		"description": "background-color: var()"
-	},
-
-	"background-color: var(--c-accent)": {
-		"prefix": "bgcva",
-		"scope": "css, sass, scss, less",
-		"body": ["background-color: var(--c-accent)"],
-		"description": "background-color: var(--c-accent)"
-	},
-
-	"background-color: transparent": {
-		"prefix": "bgctr",
-		"scope": "css, sass, scss, less",
-		"body": ["background-color: transparent"],
-		"description": "background-color: transparent"
-	},
-
-	"border-color: transparent": {
-		"prefix": "bct",
-		"scope": "css, sass, scss, less",
-		"body": ["border-color: transparent"],
-		"description": "border-color: transparent"
-	},
-
-	"position: fixed width:100%": {
-		"prefix": "posfwf",
-		"scope": "css, sass, scss, less",
-		"body": [
-			"position: fixed",
-			"top: 0",
-			"right: 0",
-			"bottom: 0",
-			"left: 0",
-			"",
-			"width: 100%",
-			"height: 100%",
-			"",
-			"object-fit: cover"
-		],
-		"description": "position: fixed width:100%"
-	},
-
-	"position: absolute width:100%": {
-		"prefix": "posawf",
-		"scope": "css, sass, scss, less",
-		"body": [
-			"position: absolute",
-			"top: 0",
-			"right: 0",
-			"bottom: 0",
-			"left: 0",
-			"",
-			"width: 100%",
-			"height: 100%",
-			"",
-			"object-fit: cover"
-		],
-		"description": "position: absolute width:100%"
-	},
-
-	// Transform
-	"Transform-translate-y": {
-		"prefix": "tfty",
-		"scope": "css, sass, scss, less",
-		"body": ["transform: translateY($1)"],
-		"description": "Transform-translate-y"
-	},
-
-	"Transform-translate-x": {
-		"prefix": "tftx",
-		"scope": "css, sass, scss, less",
-		"body": ["transform: translateX($1)"],
-		"description": "Transform-translate-x"
-	},
-
-	"Transform-translate-3d": {
-		"prefix": "tft3d",
-		"scope": "css, sass, scss, less",
-		"body": ["transform: translate3d($1, $2, $3)"],
-		"description": "Transform-translate-3d"
-	},
-
-	"transform: rotate($1deg)": {
-		"prefix": "tfrot",
-		"scope": "css, sass, scss, less",
-		"body": ["transform: rotate($1deg)"],
-		"description": "transform: rotate($1deg)"
-	},
-
-	"transform: scale(0)": {
-		"prefix": "tfsc0",
-		"scope": "css, sass, scss, less",
-		"body": ["transform: scale(0)"],
-		"description": "transform: scale(0)"
-	},
-
-	"transform: scale(1)": {
-		"prefix": "tfsc1",
-		"scope": "css, sass, scss, less",
-		"body": ["transform: scale(1)"],
-		"description": "transform: scale(1)"
-	},
-	// End. Transform
 
 	// Flex
 	"Display flex center": {
@@ -329,22 +106,16 @@
 	"Flex: 1 1 auto": {
 		"prefix": "f11a",
 		"scope": "css, sass, scss, less",
-		"body": ["flex-shrink: 1", "flex-grow: 1", "flex-basis: auto"],
+		"body": [
+			"flex-shrink: 1",
+			"flex-grow: 1",
+			"flex-basis: auto"
+		],
 		"description": "Flex: 1 1 auto"
 	},
 	// End. Flex
 
-	"Position absolute centering": {
-		"prefix": "abc",
-		"scope": "css, sass, scss, less",
-		"body": [
-			"position: absolute",
-			"top: 50%",
-			"left: 50%",
-			"transform: translate(-50%, -50%)"
-		],
-		"description": "Position absolute centering"
-	},
+
 
 	"Hide element": {
 		"prefix": "hid",
@@ -370,19 +141,7 @@
 		"description": "Position absolute centering top"
 	},
 
-	"Font size rem": {
-		"prefix": "fzr",
-		"scope": "css, sass, scss, less",
-		"body": ["font-size: rem($1)"],
-		"description": "Font size rem"
-	},
 
-	"Font size em": {
-		"prefix": "fze",
-		"scope": "css, sass, scss, less",
-		"body": ["font-size: em($1)", "$2"],
-		"description": "Font size em"
-	},
 
 	"color: var": {
 		"prefix": "cv",
@@ -391,109 +150,6 @@
 		"description": "color: var"
 	},
 
-	// Размеры
-	"height: rem": {
-		"prefix": "hrm",
-		"scope": "css, sass, scss, less",
-		"body": ["height: rem($1)"],
-		"description": "height: rem"
-	},
-	// Конец. Размеры
-
-	// Margin
-	"Margin all": {
-		"prefix": "ma",
-		"scope": "css, sass, scss, less",
-		"body": ["margin: $1 $2 $3 $4"],
-		"description": "Margin all"
-	},
-
-	"Margin all rem": {
-		"prefix": "mar",
-		"scope": "css, sass, scss, less",
-		"body": ["margin: rem($1) rem($2) rem($3) rem($4)"],
-		"description": "Margin all rem"
-	},
-
-	"Margin-top: rem": {
-		"prefix": "mtr",
-		"scope": "css, sass, scss, less",
-		"body": ["margin-top: rem($1)"],
-		"description": "Margin-top: rem"
-	},
-
-	"Margin-right: rem": {
-		"prefix": "mrr",
-		"scope": "css, sass, scss, less",
-		"body": ["margin-right: rem($1)"],
-		"description": "Margin-right: rem"
-	},
-
-	"Margin-bottom: rem": {
-		"prefix": "mbr",
-		"scope": "css, sass, scss, less",
-		"body": ["margin-bottom: rem($1)"],
-		"description": "Margin-bottom: rem"
-	},
-
-	"Margin-left: rem": {
-		"prefix": "mlr",
-		"scope": "css, sass, scss, less",
-		"body": ["margin-left: rem($1)"],
-		"description": "Margin-left: rem"
-	},
-	// End. Margin
-
-	// Padding
-	"Padding all": {
-		"prefix": "pa",
-		"scope": "css, sass, scss, less",
-		"body": ["padding: $1 $2 $3 $4"],
-		"description": "Padding all"
-	},
-
-	"Padding rem": {
-		"prefix": "padr",
-		"scope": "css, sass, scss, less",
-		"body": ["padding: rem($1)"],
-		"description": "Padding rem"
-	},
-
-	"Padding all: rem": {
-		"prefix": "par",
-		"scope": "css, sass, scss, less",
-		"body": ["padding: rem($1) rem($2) rem($3) rem($4)"],
-		"description": "Padding all: rem"
-	},
-
-	"padding-top: rem": {
-		"prefix": "ptr",
-		"scope": "css, sass, scss, less",
-		"body": ["padding-top: rem($1)"],
-		"description": "padding-top: rem"
-	},
-
-	"padding-right: rem": {
-		"prefix": "prr",
-		"scope": "css, sass, scss, less",
-		"body": ["padding-right: rem($1)"],
-		"description": "padding-right: rem"
-	},
-
-	"padding-bottom: rem": {
-		"prefix": "pbr",
-		"scope": "css, sass, scss, less",
-		"body": ["padding-bottom: rem($1)"],
-		"description": "padding-bottom: rem"
-	},
-
-	"padding-left: rem": {
-		"prefix": "plr",
-		"scope": "css, sass, scss, less",
-		"body": ["padding-left: rem($1)"],
-		"description": "padding-left: rem"
-	},
-	// End. Padding
 
 	"Link rel nofollow": {
 		"prefix": "relno",
@@ -543,56 +199,7 @@
 	},
 	// End. Overlay
 
-	// Transition
-	"Transition": {
-		"prefix": "trs",
-		"scope": "css, sass, scss, less",
-		"body": ["transition: $1 .3s ease"],
-		"description": "Transition"
-	},
 
-	"transition: color .3s ease": {
-		"prefix": "trsc",
-		"scope": "css, sass, scss, less",
-		"body": ["transition: color .3s ease"],
-		"description": "transition: color .3s ease"
-	},
-
-	"transition: fill .3s ease": {
-		"prefix": "trsf",
-		"scope": "css, sass, scss, less",
-		"body": ["transition: fill .3s ease"],
-		"description": "transition: fill .3s ease"
-	},
-
-	"transition: opacity .3s ease": {
-		"prefix": "trsop",
-		"scope": "css, sass, scss, less",
-		"body": ["transition: opacity .3s ease"],
-		"description": "transition: opacity .3s ease"
-	},
-
-	"transition: background-color .3s ease": {
-		"prefix": "trsbg",
-		"scope": "css, sass, scss, less",
-		"body": ["transition: background-color .3s ease"],
-		"description": "transition: background-color .3s ease"
-	},
-
-	"transition: color .3s ease, background-color .3s ease": {
-		"prefix": "trscbg",
-		"scope": "css, sass, scss, less",
-		"body": ["transition: color .3s ease, background-color .3s ease"],
-		"description": "transition: color .3s ease, background-color .3s ease"
-	},
-
-	"transition: transform .3s ease": {
-		"prefix": "trstf",
-		"scope": "css, sass, scss, less",
-		"body": ["transition: transform .3s ease"],
-		"description": "transition: transform .3s ease"
-	},
-	// End. Transition
 
 	// Rub symbol
 	"Rub symbol": {
@@ -610,211 +217,5 @@
 	},
 	// End. Rub symbol
 
-	// Font-size
-	"Font-size rem": {
-		"prefix": "fzr",
-		"scope": "css, sass, scss, less",
-		"body": ["font-size: rem($1)"],
-		"description": "Font-size rem"
-	},
 
-	"Font-size em": {
-		"prefix": "fze",
-		"scope": "css, sass, scss, less",
-		"body": ["font-size: em($1)"],
-		"description": "Font-size em"
-	},
-	// End. Font-size
-
-	// JavaScript
-	"Console log": {
-		"prefix": "clg",
-		"scope": "javascript, typescript",
-		"body": ["console.log( $1 );"],
-		"description": "Console log"
-	},
-
-	"export function()": {
-		"prefix": "exfunc",
-		"scope": "javascript, typescript",
-		"body": ["export function $1() {", "\t'use strict';", "\t", "\t$2", "}"],
-		"description": "export function()"
-	},
-
-	"export var nameFunction = () => {}": {
-		"prefix": "exvfunc",
-		"scope": "javascript, typescript",
-		"body": ["export $1 = () => {", "\t'use strict';", "\t", "\t$2", "}"],
-		"description": "export var nameFunction = () => {}"
-	},
-
-	"export const () => {}": {
-		"prefix": "excfunc",
-		"scope": "javascript, typescript",
-		"body": [
-			"export const $1 = () => {",
-			"\t'use strict';",
-			"\t",
-			"\t$2",
-			"};"
-		],
-		"description": "export const () => {}"
-	},
-
-	"const () => {}": {
-		"prefix": "cfunc",
-		"scope": "javascript, typescript",
-		"body": ["const $1 = (e) => {", "\t'use strict';", "\t", "\t$2", "};"],
-		"description": "const () => {}"
-	},
-
-	"var () => {}": {
-		"prefix": "vfunc",
-		"scope": "javascript, typescript",
-		"body": ["var $1 = () => {", "\t'use strict';", "\t", "\t$2", "};"],
-		"description": "var () => {}"
-	},
-
-	"function $1() {}": {
-		"prefix": "func",
-		"scope": "javascript, typescript",
-		"body": ["function $1() {", "\t'use strict';", "\t", "\t$2", "};"],
-		"description": "function $1() {}"
-	},
-
-	"var = document.querySelector('')": {
-		"prefix": "varqs",
-		"scope": "javascript, typescript",
-		"body": ["var $1 = document?.querySelector('$2');"],
-		"description": "var = document.querySelector('')"
-	},
-
-	"const = document.querySelector('')": {
-		"prefix": "constqs",
-		"scope": "javascript, typescript",
-		"body": ["const $1 = document?.querySelector('$2');"],
-		"description": "const  = document.querySelector('')"
-	},
-
-	"let = document.querySelector('')": {
-		"prefix": "letqs",
-		"scope": "javascript, typescript",
-		"body": ["let $1 = document?.querySelector('$2');"],
-		"description": "let = document.querySelector('')"
-	},
-
-	"var $1 = document?.querySelector( '$2' )": {
-		"prefix": "vartrel",
-		"scope": "javascript, typescript",
-		"body": ["var $1 = evTarget.querySelector( '$2' );"],
-		"description": "var $1 = evTarget.querySelector( '$2' )"
-	},
-
-	"const $1 = document?.querySelector( '$2' )": {
-		"prefix": "consttrel",
-		"scope": "javascript, typescript",
-		"body": ["const $1 = e.target.querySelector( '$2' );"],
-		"description": "const $1 = evTarget.querySelector( '$2' )"
-	},
-
-	"let $1 = document?.querySelector( '$2' )": {
-		"prefix": "lettrel",
-		"scope": "javascript, typescript",
-		"body": ["let $1 = evTarget.querySelector( '$2' );"],
-		"description": "let $1 = evTarget.querySelector( '$2' )"
-	},
-
-	"var = document.querySelectorAll('')": {
-		"prefix": "varqsa",
-		"scope": "javascript, typescript",
-		"body": ["var $1 = document?.querySelectorAll('$2');"],
-		"description": "var = document.querySelectorAll('')"
-	},
-
-	"const = document.querySelectorAll('')": {
-		"prefix": "constqsa",
-		"scope": "javascript, typescript",
-		"body": ["const $1 = document?.querySelectorAll('$2');"],
-		"description": "const = document.querySelectorAll('')"
-	},
-
-	"let = document.querySelectorAll('')": {
-		"prefix": "letqsa",
-		"scope": "javascript, typescript",
-		"body": ["let $1 = document?.querySelectorAll('$2');"],
-		"description": "let = document.querySelectorAll('')"
-	},
-
-	"if () {}": {
-		"prefix": "if",
-		"scope": "javascript, typescript",
-		"body": ["if ( $1 ) {", "\t$2", "}"],
-		"description": "if () {}"
-	},
-
-	"forEach": {
-		"prefix": "fech",
-		"scope": "javascript, typescript",
-		"body": ["$1.forEach($2 => {", "\t$2.$3", "});"],
-		"description": "forEach"
-	},
-
-	"for": {
-		"prefix": "for",
-		"scope": "javascript, typescript",
-		"body": ["for (let i = 0; i < 3; i++) {", "\t$2", "}"],
-		"description": "for"
-	},
-
-	"Array.from($1)": {
-		"prefix": "arr",
-		"scope": "javascript, typescript",
-		"body": ["Array.from($1);"],
-		"description": "Array.from($1)"
-	},
-
-	"addEventListener('$1', (e) => {});": {
-		"prefix": "ael",
-		"scope": "javascript, typescript",
-		"body": ["addEventListener('$1', (e) => {", "\t$2", "});"],
-		"description": "addEventListener('$1', (e) => {});"
-	},
-
-	"var evTarget = event.target;": {
-		"prefix": "varevtr",
-		"scope": "javascript, typescript",
-		"body": ["var evTarget = event.target;"],
-		"description": "var evTarget = event.target;"
-	},
-
-	"let evTarget = event.target;": {
-		"prefix": "letevtr",
-		"scope": "javascript, typescript",
-		"body": ["let evTarget = event.target;"],
-		"description": "let evTarget = event.target;"
-	},
-
-	"const evTarget = event.target;": {
-		"prefix": "constevtr",
-		"scope": "javascript, typescript",
-		"body": ["const evTarget = event.target;"],
-		"description": "const evTarget = event.target;"
-	},
-
-	"import": {
-		"prefix": "imp",
-		"scope": "javascript, typescript",
-		"body": ["import {$1} from './$2/$3.js';"],
-		"description": "import"
-	},
-	// JavaScript
-
-	// Markdown
-	"Description link category": {
-		"prefix": "catlink",
-		"scope": "html, php",
-		"body": ["<a href=\"blog/finansovaya-gramotnost/\"></a>"],
-		"description": "Description link category"
-	}
-	// End. Markdown
 }

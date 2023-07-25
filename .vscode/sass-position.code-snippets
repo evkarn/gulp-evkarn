@@ -1,0 +1,56 @@
+{
+	"position: fixed width:100%": {
+		"prefix": "posfwf",
+		"scope": "css, sass, scss, less",
+		"body": [
+			"position: fixed",
+			"top: 0",
+			"right: 0",
+			"bottom: 0",
+			"left: 0",
+			"",
+			"width: 100%",
+			"height: 100%",
+			"",
+			"object-fit: cover"
+		],
+		"description": "position: fixed width:100%"
+	},
+
+	"position: absolute width:100%": {
+		"prefix": "posawf",
+		"scope": "css, sass, scss, less",
+		"body": [
+			"position: absolute",
+			"top: 0",
+			"right: 0",
+			"bottom: 0",
+			"left: 0",
+			"",
+			"width: 100%",
+			"height: 100%",
+			"",
+			"object-fit: cover"
+		],
+		"description": "position: absolute width:100%"
+	},
+
+	"Position absolute centering": {
+		"prefix": "posac",
+		"scope": "sass",
+		"body": [
+			"position: absolute",
+			"top: 50%",
+			"left: 50%",
+			"transform: translate(-50%, -50%)"
+		],
+		"description": "Position absolute centering"
+	},
+
+	"position: static": {
+		"prefix": "posst",
+		"scope": "sass",
+		"body": ["position: static"],
+		"description": "position: static"
+	},
+}

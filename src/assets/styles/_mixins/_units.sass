@@ -1,6 +1,6 @@
 // Px to %
-// Use follow percent(16, 24)
-@function percent($pxOne, $pxTwo)
+// Use follow percent(24, 16)
+@function percent($pxTwo, $pxOne)
 	$result: math.div($pxTwo, $pxOne) * 100%
 	@return $result
 // End. Px to %
