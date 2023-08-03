@@ -1,4 +1,4 @@
-export const getHeaderHeight = () => {
+export const headerHeight = () => {
   let headerHeight = document?.querySelector('.header').offsetHeight;
 
 	const rootVars = document.querySelector(':root');

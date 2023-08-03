@@ -1,0 +1,38 @@
+{
+	// Flex
+	"Display flex center": {
+		"prefix": "dfc",
+		"scope": "sass",
+		"body": ["display: flex", "align-items: center", "justify-content: center"],
+		"description": "Display flex center"
+	},
+
+	"Flex: 1 1 auto": {
+		"prefix": "f11a",
+		"scope": "sass",
+		"body": ["flex-shrink: 1", "flex-grow: 1", "flex-basis: auto"],
+		"description": "Flex: 1 1 auto"
+	},
+
+	"flex-grow: 1, flex-shrink: 1, flex-basis: auto": {
+		"prefix": "fxgsb",
+		"scope": "sass",
+		"body": [
+			"flex-grow: 1",
+			"flex-shrink: 1",
+			"flex-basis: auto"
+		],
+		"description": "flex-grow: 1, flex-shrink: 1, flex-basis: auto"
+	},
+
+	"display: flex, flex-direction: column": {
+		"prefix": "dfcolumn",
+		"scope": "sass",
+		"body": [
+			"display: flex",
+			"flex-direction: column"
+		],
+		"description": "display: flex, flex-direction: column"
+	}
+	// End. Flex
+}

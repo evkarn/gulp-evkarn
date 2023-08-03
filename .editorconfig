@@ -4,16 +4,23 @@
 root = true
 
 
-
 [*]
 charset = utf-8
+
+# Стиль табов (пробелы или табы)
 indent_style = tab
+
+# Размер каждого таба в пробелах (2 - 2 пробела)
 indent_size = 2
 
 # Переводы строк в стиле Unix с пустой строкой в конце файла
 end_of_line = lf
-insert_final_newline = true
 
+# Добавление пустой линии в конце файла
+insert_final_newline = false
+
+# Убираем пробелы в конце строк
+trim_trailing_whitespace = true
 
 
 [*.md]
@@ -21,38 +28,9 @@ insert_final_newline = true
 trim_trailing_whitespace = false
 
 
-
-[*.html]
-# Убираем пробелы в конце строк
-trim_trailing_whitespace = true
-
-# Убираем пустую строку в конце файла
-insert_final_newline = false
-
-
-
-[*.sass]
-# Убираем пробелы в конце строк
-trim_trailing_whitespace = true
-
-# Убираем пустую строку в конце файла
-insert_final_newline = false
-
-
-
-[*.scss]
-# Убираем пробелы в конце строк
-trim_trailing_whitespace = true
-
-# Убираем пустую строку в конце файла
-insert_final_newline = false
-
-
-
 [*.js]
-# Убираем пробелы в конце строк
-trim_trailing_whitespace = true
-
+# Добавление пустой линии в конце файла
+insert_final_newline = true
 
 
 # Но не переформатируем минифицированные JS и CSS файлы.
@@ -60,4 +38,3 @@ trim_trailing_whitespace = true
 indent_style = ignore
 trim_trailing_whitespace = false
 insert_final_newline = ignore
-

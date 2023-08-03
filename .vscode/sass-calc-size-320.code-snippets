@@ -268,6 +268,13 @@
 		"description": "Calc size grid-gap"
 	},
 
+	"Calc size grid-gap px": {
+		"prefix": "csggpx-sm",
+		"scope": " sass",
+		"body": ["+calc-size(grid-gap, $1, $2, 320, 1920, px)"],
+		"description": "Calc size grid-gap px"
+	},
+
 	"Calc size grid-row-gap": {
 		"prefix": "csgrg-sm",
 		"scope": " sass",
@@ -318,7 +325,7 @@
 	},
 
 
-	// Border calc-size	
+	// Border calc-size
 	"Calc size border-radius": {
 		"prefix": "csborr-sm",
 		"scope": "sass",

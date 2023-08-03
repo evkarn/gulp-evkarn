@@ -32,7 +32,7 @@ export const path = {
 
 		pinterestImg: `${buildFolder}/assets/images/pinterest/`,
 
-		spriteIcons: `${buildFolder}/assets/images/dist/sprite/`,
+		spriteIcons: `${buildFolder}/assets/images/dist/sprite-svg/`,
 
 		js: `${buildFolder}/assets/js/`,
 	},
@@ -61,11 +61,11 @@ export const path = {
 
 		imgAvifWebp: `${srcFolder}/assets/images/_src/**/*.{jpg,jpeg,png}`,
 
-		imgMin: [`${srcFolder}/assets/images/_src/**/*.*`, `!${srcFolder}/assets/images/_src/sprite/**/*.*`],
+		imgMin: [`${srcFolder}/assets/images/_src/**/*.*`, `!${srcFolder}/assets/images/_src/sprite-svg/**/*.*`],
 
 		sass: `${srcFolder}/assets/styles/**.sass`,
 
-		svgSprite: `${srcFolder}/assets/images/_src/sprite-svg/*.svg`,
+		svgSprite: `${srcFolder}/assets/images/_src/sprite-svg/**/*.svg`,
 	},
 
 	// Отслеживание изменений в файлах
@@ -74,17 +74,17 @@ export const path = {
 
 		html: `${srcFolder}/**/*.html`,
 
-		img: [`${srcFolder}/assets/images/_src/**/*.*`, `!${srcFolder}/assets/images/_src/sprite/*.*`],
+		img: [`${srcFolder}/assets/images/_src/**/*.*`, `!${srcFolder}/assets/images/_src/sprite-svg/**/*.*`],
 
-		ogImg: `${srcFolder}/assets/og-images/*.*`,
+		ogImg: `${srcFolder}/assets/images/og-images/*.*`,
 
-		pinterestImg: `${srcFolder}/assets/images/pinterest/*.*`,
+		pinterestImg: `${srcFolder}/assets/images/pinterest-images/*.*`,
 
 		js: `${srcFolder}/assets/js/**/*.js`,
 
 		sass: `${srcFolder}/assets/styles/**/*.sass`,
 
-		svgSprite: `${srcFolder}/assets/images/_src/sprite/*.svg`,
+		svgSprite: `${srcFolder}/assets/images/_src/sprite-svg/**/*.svg`,
 	},
 
 	clean: buildFolder,

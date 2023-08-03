@@ -1,9 +1,9 @@
 {
-	// Place your Рабочая область gulp-evkarn snippets here. Each snippet is defined under a snippet name and has a scope, prefix, body and 
-	// description. Add comma separated ids of the languages where the snippet is applicable in the scope field. If scope 
-	// is left empty or omitted, the snippet gets applied to all languages. The prefix is what is 
-	// used to trigger the snippet and the body will be expanded and inserted. Possible variables are: 
-	// $1, $2 for tab stops, $0 for the final cursor position, and ${1:label}, ${2:another} for placeholders. 
+	// Place your Рабочая область gulp-evkarn snippets here. Each snippet is defined under a snippet name and has a scope, prefix, body and
+	// description. Add comma separated ids of the languages where the snippet is applicable in the scope field. If scope
+	// is left empty or omitted, the snippet gets applied to all languages. The prefix is what is
+	// used to trigger the snippet and the body will be expanded and inserted. Possible variables are:
+	// $1, $2 for tab stops, $0 for the final cursor position, and ${1:label}, ${2:another} for placeholders.
 	// Placeholders with the same ids are connected.
 	// Example:
 	// "Print to console": {
@@ -202,7 +202,7 @@
 		"description": "Article link"
 	},
 	// End. Article
-	
+
 
 	// Header
 	"Header with logo link": {
@@ -322,7 +322,7 @@
 		],
 		"description": "Nav"
 	},
-	
+
 
 	// Images and Picture
 	"Image with src": {
@@ -339,7 +339,7 @@
 		"scope": "html, php",
 		"body": [
 			"<svg>",
-			"\t<use xlink:href=\"/assets/svg-sprite-icons/sprite.svg#$1\"></use>",
+			"\t<use xlink:href=\"/assets/images/dist/sprite-svg/sprite.svg#$1\"></use>",
 			"</svg>"
 		],
 		"description": "SVG sprite icon"
@@ -352,7 +352,7 @@
 			"<svg role=\"img\" aria-labelledby=\"$2\">",
 			"\t<title id=\"$2\">$3</title>",
 			"",
-			"\t<use xlink:href=\"/assets/svg-sprite-icons/sprite.svg#$1\"></use>",
+			"\t<use xlink:href=\"/assets/images/dist/sprite-svg/sprite.svg#$1\"></use>",
 			"</svg>"
 		],
 		"description": "SVG sprite icon with title"
@@ -363,7 +363,7 @@
 		"scope": "html, php",
 		"body": [
 			"<svg aria-hidden=\"true\">",
-			"\t<use xlink:href=\"/assets/svg-sprite-icons/sprite.svg#$1\"></use>",
+			"\t<use xlink:href=\"/assets/images/dist/sprite-svg/sprite.svg#$1\"></use>",
 			"</svg>"
 		],
 		"description": "SVG sprite icon hidden"
@@ -547,4 +547,46 @@
 		"description": "Background inline style"
 	},
 	// End. Background
+
+
+	// Hgroup section
+	"Section header hgroup with link": {
+		"prefix": "hgseclink",
+		"scope": "html, php",
+		"body": [
+			"<hgroup class=\"section__header section-header\">",
+			"\t<h2 class=\"section__title h2\">",
+			"\t\t$1",
+			"\t</h2>",
+			"",
+			"\t<a class=\"section-header__link\" href=\"#\">",
+			"\t\t$2",
+			"\t/a>",
+			"</hgroup>",
+		],
+		"description": "Section header hgroup with link"
+	},
+
+
+	"Section header hgroup with description": {
+		"prefix": "hgsecdesc",
+		"scope": "html, php",
+		"body": [
+			"<hgroup class=\"section__header section-header\">",
+			"\t<h2 class=\"section__title h2\">",
+			"\t\t$1",
+			"\t</h2>",
+			"",
+			"\t<a class=\"section-header__link\" href=\"#\">",
+			"\t\t$2",
+			"\t/a>",
+			"</hgroup>",
+		],
+		"description": "Section header hgroup with description"
+	},
+	// End. Hgroup section
+
+
+
+
 }

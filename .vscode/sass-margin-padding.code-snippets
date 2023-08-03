@@ -41,8 +41,36 @@
 		"body": ["margin-left: rem($1)"],
 		"description": "Margin-left: rem"
 	},
+
+	"Margin-top: px": {
+		"prefix": "mtpx",
+		"scope": "css, sass, scss, less",
+		"body": ["margin-top: $1px"],
+		"description": "Margin-top: px"
+	},
+
+	"Margin-right: px": {
+		"prefix": "mrpx",
+		"scope": "css, sass, scss, less",
+		"body": ["margin-right: $1px"],
+		"description": "Margin-right: px"
+	},
+
+	"Margin-bottom: px": {
+		"prefix": "mbpx",
+		"scope": "css, sass, scss, less",
+		"body": ["margin-bottom: $1px"],
+		"description": "Margin-bottom: px"
+	},
+
+	"Margin-left: px": {
+		"prefix": "mlpx",
+		"scope": "css, sass, scss, less",
+		"body": ["margin-left: $1px"],
+		"description": "Margin-left: px"
+	},
 	// End. Margin
-	
+
 
 	// Padding
 	"Padding all": {

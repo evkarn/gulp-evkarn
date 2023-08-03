@@ -2,7 +2,7 @@ import { disableScroll } from '../disable-scroll/disable-scroll-func.js';
 
 import { enableScroll } from '../enable-scroll/enable-scroll-func.js';
 
-(function burger() {
+export function burger() {
 	'use strict';
 
 	const nav = document?.querySelector('[data-nav]');
@@ -59,4 +59,4 @@ import { enableScroll } from '../enable-scroll/enable-scroll-func.js';
 
     enableScroll();
   });
-})();
+}

@@ -11,7 +11,7 @@ export const imgAvif = () => {
 		))
 
 		.pipe(
-			app.plugins.newer(app.path.build.img)
+			app.plugins.newer(app.path.src.imgAvifWebp)
 		)
 
 		.pipe(

@@ -1860,6 +1860,104 @@
 
 
 	// Media min-width px
+	"Media Screen min-width-3840px": {
+		"prefix": "@min3840px",
+		"scope": "css, sass, scss, less",
+		"body": ["@media ( min-width: 3840.96px )", "\t$1"],
+		"description": "Media Screen min-width-3840px"
+	},
+
+	"Media Screen min-width-3824px": {
+		"prefix": "@min3824px",
+		"scope": "css, sass, scss, less",
+		"body": ["@media ( min-width: 3824.96px )", "\t$1"],
+		"description": "Media Screen min-width-3824px"
+	},
+
+	"Media Screen min-width-3552px": {
+		"prefix": "@min3552px",
+		"scope": "css, sass, scss, less",
+		"body": ["@media ( min-width: 3552.96px )", "\t$1"],
+		"description": "Media Screen min-width-3552px"
+	},
+
+	"Media Screen min-width-3280px": {
+		"prefix": "@min3280px",
+		"scope": "css, sass, scss, less",
+		"body": ["@media ( min-width: 3280.96px )", "\t$1"],
+		"description": "Media Screen min-width-3280px"
+	},
+
+	"Media Screen min-width-3008px": {
+		"prefix": "@min3008px",
+		"scope": "css, sass, scss, less",
+		"body": ["@media ( min-width: 3008.96px )", "\t$1"],
+		"description": "Media Screen min-width-3008px"
+	},
+
+	"Media Screen min-width-2880px": {
+		"prefix": "@min2880px",
+		"scope": "css, sass, scss, less",
+		"body": ["@media ( min-width: 2880.96px )", "\t$1"],
+		"description": "Media Screen min-width-2880px"
+	},
+
+	"Media Screen min-width-2736px": {
+		"prefix": "@min2736px",
+		"scope": "css, sass, scss, less",
+		"body": ["@media ( min-width: 2736.96px )", "\t$1"],
+		"description": "Media Screen min-width-2736px"
+	},
+
+	"Media Screen min-width-2464px": {
+		"prefix": "@min2464px",
+		"scope": "css, sass, scss, less",
+		"body": ["@media ( min-width: 2464.96px )", "\t$1"],
+		"description": "Media Screen min-width-2464px"
+	},
+
+	"Media Screen min-width-2192px": {
+		"prefix": "@min2192px",
+		"scope": "css, sass, scss, less",
+		"body": ["@media ( min-width: 2192.96px )", "\t$1"],
+		"description": "Media Screen min-width-2192px"
+	},
+
+	"Media Screen min-width-1984px": {
+		"prefix": "@min1984px",
+		"scope": "css, sass, scss, less",
+		"body": ["@media ( min-width: 1984.96px )", "\t$1"],
+		"description": "Media Screen min-width-1984px"
+	},
+
+	"Media Screen min-width-1968px": {
+		"prefix": "@min1968px",
+		"scope": "css, sass, scss, less",
+		"body": ["@media ( min-width: 1968.96px )", "\t$1"],
+		"description": "Media Screen min-width-1968px"
+	},
+
+	"Media Screen min-width-1952px": {
+		"prefix": "@min1952px",
+		"scope": "css, sass, scss, less",
+		"body": ["@media ( min-width: 1952.96px )", "\t$1"],
+		"description": "Media Screen min-width-1952px"
+	},
+
+	"Media Screen min-width-1936px": {
+		"prefix": "@min1936px",
+		"scope": "css, sass, scss, less",
+		"body": ["@media ( min-width: 1936.96px )", "\t$1"],
+		"description": "Media Screen min-width-1936px"
+	},
+
+	"Media Screen min-width-1920px": {
+		"prefix": "@min1920px",
+		"scope": "css, sass, scss, less",
+		"body": ["@media ( min-width: 1920.96px )", "\t$1"],
+		"description": "Media Screen min-width-1920px"
+	},
+
 	"Media Screen (px) min-width-1600": {
 		"prefix": "@min1600px",
 		"scope": "css, sass, scss, less",

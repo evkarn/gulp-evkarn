@@ -265,6 +265,13 @@
 		"description": "Calc size grid-gap"
 	},
 
+	"Calc size grid-gap px": {
+		"prefix": "csggpx-xl",
+		"scope": " sass",
+		"body": ["+calc-size(grid-gap, $1, $2, 1920, 3840, px)"],
+		"description": "Calc size grid-gap px"
+	},
+
 	"Calc size grid-row-gap": {
 		"prefix": "csgrg-xl",
 		"scope": " sass",

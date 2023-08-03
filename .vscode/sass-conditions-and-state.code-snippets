@@ -2,7 +2,10 @@
 	"Hover": {
 		"prefix": "hov",
 		"scope": "css, sass, scss, less",
-		"body": ["&:hover", "\t$1"],
+		"body": [
+			"@media ( any-hover: hover )",
+			"\t&:hover",
+			"\t\t$1"],
 		"description": "Hover"
 	},
 
@@ -45,13 +48,14 @@
 		"prefix": "state",
 		"scope": "css, sass, scss, less",
 		"body": [
-			"&:focus",
-			"\t$1",
+			"@media ( any-hover: hover )",
+			"\t&:hover",
+			"\t\t$1",
 			"",
-			"&:focus-visible",
+			"&:focus",
 			"\t$2",
 			"",
-			"&:hover",
+			"&:focus-visible",
 			"\t$3",
 			"",
 			"&:active",
@@ -61,20 +65,22 @@
 	},
 
 	"State link": {
-		"prefix": "st-link",
+		"prefix": "state-link",
 		"scope": "css, sass, scss, less",
 		"body": [
 			"&:visited",
 			"\t$1",
 			"",
-			"&:focus",
-			"\t$2",
+			"@media ( any-hover: hover )",
+			"\t&:hover",
+			"\t\t$2",
 			"",
-			"&:focus-visible",
+			"&:focus",
 			"\t$3",
 			"",
-			"&:hover",
+			"&:focus-visible",
 			"\t$4",
+			"",
 			"&:active",
 			"\t$5"
 		],

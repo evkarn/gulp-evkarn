@@ -8,7 +8,7 @@ export const ogImgMin = () => {
 		))
 
 		.pipe(
-			app.plugins.newer(app.path.build.pinterestImg)
+			app.plugins.newer(app.path.build.ogImg)
 		)
 
 		.pipe(
