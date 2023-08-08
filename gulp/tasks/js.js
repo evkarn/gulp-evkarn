@@ -1,8 +1,7 @@
-// Добавление в файлы строк
-import fileInclude from 'gulp-file-include';
-
 // Обработка файлов js
 import webpack from 'webpack-stream';
+
+import terser from 'terser-webpack-plugin'
 
 export const js = () => {
 	// Находим js файлы в папке исходников
@@ -21,14 +20,42 @@ export const js = () => {
 		mode: app.isBuild ? 'production' : 'development',
 
 		entry: {
-			app: './src/assets/js/app.js',
+			app: './assets/js/app.js'
+		},
+
+		module: {
+			rules: [{
+				test: /\.m?js$/,
+				exclude: /(node_modules|bower_components)/,
+				use: {
+					loader: 'babel-loader',
+					options: {
+						presets: [
+							['@babel/preset-env', {
+								targets: "defaults"
+							}]
+						]
+					}
+				}
+			}]
+		},
+
+		optimization: {
+			minimize: true,
+
+			minimizer: [
+				new terser({
+					terserOptions: { format: { comments: false } },
+					extractComments: false
+				})
+			]
 		},
 
 		output: {
 			filename: '[name].min.js',
 		},
 
-		devtool: 'source-map'
+		devtool: app.isBuild ? 'source-map' : false
 	}))
 
 	// Выгрузка файл в папку проекта
