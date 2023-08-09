@@ -87,7 +87,7 @@ export const path = {
 		svgSprite: `${srcFolder}/assets/images/_src/sprite-svg/**/*.svg`,
 	},
 
-	clean: buildFolder,
+	clean: [`${buildFolder}/*.{html,ico,svg,png}`, `${buildFolder}/assets/*`, `!${buildFolder}/assets/images/`],
 
 	buildFolder: buildFolder,
 

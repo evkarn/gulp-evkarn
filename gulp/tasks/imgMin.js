@@ -8,7 +8,7 @@ export const imgMin = () => {
 		))
 
 		.pipe(
-			app.plugins.newer(app.path.src.img)
+			app.plugins.newer(app.path.build.img)
 		)
 
 		.pipe(
