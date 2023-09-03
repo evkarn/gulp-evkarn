@@ -10,17 +10,14 @@ import versionNumber from 'gulp-version-number';
 // Замена img на picture с webp компонентом
 import webpHtmlNoSVG from 'gulp-webp-html-nosvg';
 
+import plumberInit from './plumber.js'
+
 export const html = () => {
 	// Находим все .html в папке исходников
 	return app.gulp.src(app.path.src.html)
 
 	// Вывод сообщения об ошибке, если появляется ошибка
-	.pipe(app.plugins.plumber(
-		app.plugins.notify.onError({
-			title: "HTML",
-			message: "Error: <%= error.message %>"
-		})
-	))
+	.pipe(app.plugins.plumber(plumberInit('HTML')))
 
 	// Вставляем заданные @include
 	.pipe(fileInclude({

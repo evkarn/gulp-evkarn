@@ -1,0 +1,14 @@
+::placeholder
+	color: #666
+
+::selection
+	background-color: var(--c-accent)
+	color: #fff
+
+input[class],
+textarea[class]
+	&:focus:required:invalid
+		border-color: red
+
+	&:required:valid
+		border-color: green

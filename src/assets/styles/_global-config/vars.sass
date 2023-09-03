@@ -1,5 +1,16 @@
 // Root variable
 \:root
+	--c-body-bg: #f2f2f2
+
+	--c-header-bg: #244150
+	--c-header-text: #f2f2f2
+
+	--c-burger-line-color: #f2f2f2
+	--c-burger-hover-focus: var(--c-accent)
+	--c-burger-active: #d74532
+
+	--c-section-dark-bg: #343a40
+
 	--c-accent: #ff9c07
 	--c-accent-light: #ffb03a
 
@@ -9,21 +20,10 @@
 	--c-dark: #10171b
 	--c-light: #f2f2f2
 
-	--c-body-bg: #f2f2f2
-
 	--c-text: #333
 
 	--c-title-dark: #244150
 	--c-title-light: #f2f2f2
-
-	--c-section-dark-bg: #343a40
-
-	--c-header-bg: #244150
-	--c-header-text: #f2f2f2
-
-	--c-burger-line-color: #f2f2f2
-	--c-burger-hover-focus: var(--c-accent)
-	--c-burger-active: #d74532
 
 	--c-nav-link: #f2f2f2
 	--c-nav-link-hover-focus: #ff9c07
@@ -60,14 +60,22 @@ $ff-body: $font-name-body
 // End. Fonts
 
 // Grid gutter
-$gutter: 30
+$gutter-num: 30
+$gutter: $gutter-num+px
 // End. Grid gutter
 
 // Greed system
 $screen-min-width: 320
-$screen-max-width: 1920
 
 $container-offset: 12
 
+$container-offset-x2: $container-offset*2
+
 $container-width: 1254 + $container-offset*2
+
+$container-width-px: $container-width+px
+
+$container-offset-x2-px: $container-offset*2+px
+
+$container-width-px: $container-width+px
 // End. Greed system

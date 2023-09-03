@@ -1,11 +1,8 @@
+import plumberInit from './plumber.js'
+
 export const imgMin = () => {
 	return app.gulp.src(app.path.src.imgMin)
-		.pipe(app.plugins.plumber(
-			app.plugins.notify.onError({
-				title: "IMAGES-MINIMIZE",
-				message: "Error: <%= error.message %>"
-			})
-		))
+		.pipe(app.plugins.plumber(plumberInit('IMAGES-MINIMIZE')))
 
 		.pipe(
 			app.plugins.newer(app.path.build.img)

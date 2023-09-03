@@ -7,6 +7,8 @@ import webpcss from 'gulp-webpcss';
 // Группировка медиа запросов
 import groupCssMediaQueries from 'gulp-group-css-media-queries';
 
+import plumberInit from './plumber.js'
+
 const sassUse = gulpSass(sass);
 
 export const sassStyle = () => {
@@ -14,12 +16,7 @@ export const sassStyle = () => {
 	return app.gulp.src(app.path.src.sass, { sourcemaps: app.isDev })
 
 	// Вывод сообщения об ошибке, если появляется ошибка
-	.pipe(app.plugins.plumber(
-		app.plugins.notify.onError({
-			title: "SASS",
-			message: "Error: <%= error.message %>"
-		})
-	))
+	.pipe(app.plugins.plumber(plumberInit('SASS')))
 
 	// Преобразование специальной вставки в адрес
 	.pipe(app.plugins.replace(/@img\//g, '../images/dist'))

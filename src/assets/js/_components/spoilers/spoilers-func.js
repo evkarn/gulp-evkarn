@@ -20,7 +20,7 @@
 
 // END. INIT ADAPTIVE-SPOILERS
 
-export function spoilers(durationSpeed) {
+function spoilers(durationSpeed) {
 	'use strict';
 
 	// Собираем все элементы с атрибутом data-spoilers
@@ -301,3 +301,5 @@ export function spoilers(durationSpeed) {
 		}
 	};
 }
+
+export default spoilers

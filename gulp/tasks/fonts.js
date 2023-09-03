@@ -2,18 +2,15 @@ import fs from 'fs';
 
 import ttf2woff2 from 'gulp-ttf2woff2';
 
+import plumberInit from './plumber.js'
+
 export const ttfToWoff = () => {
 	// Ищем файлы шрифтов .ttf
 	return app.gulp.src(`${app.path.src.fonts}`, {})
 
 	// Выдаём сообщение об ошибке, если она есть
-	.pipe(app.plugins.plumber(
-		app.plugins.notify.onError({
-			title: "FONTS",
-			message: "Error: <%= error.message %>"
-		})
-	))
-	
+	.pipe(app.plugins.plumber(plumberInit('FONTS')))
+
 	// Конвертируем .ttf в .woff2
 	.pipe(ttf2woff2())
 
@@ -35,7 +32,7 @@ export const fontsStyle = () => {
 				fs.writeFile(fileFonts, '', cb);
 
 				let newFileOnly;
-				
+
 				for (var i = 0; i < fontsFiles.length; i++) {
 
 					// Записываем подключения шрифтов в файл стилей
@@ -84,7 +81,7 @@ export const fontsStyle = () => {
 						// Формирование кода подключения шрифта
 						fs.appendFile(fileFonts,
 							`@font-face \n\tfont-family: ${fontName}-font\n\t${fontDisplay}\n\tfont-weight: ${fontWeight}\n\tfont-style: ${fontStyle}\n\tsrc: url("../fonts/${fontFileName}.woff2") ${fontFormat}\n\r\n`, cb);
-							
+
 						newFileOnly = fontFileName;
 					}
 				}

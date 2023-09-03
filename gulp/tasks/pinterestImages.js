@@ -1,11 +1,8 @@
+import plumberInit from './plumber.js'
+
 export const pinterestImgMin = () => {
 	return app.gulp.src(app.path.src.pinterestImg)
-		.pipe(app.plugins.plumber(
-			app.plugins.notify.onError({
-				title: "OG-IMAGES-MINIMIZE",
-				message: "Error: <%= error.message %>"
-			})
-		))
+		.pipe(app.plugins.plumber(plumberInit('PINTEREST-IMAGES')))
 
 		.pipe(
 			app.plugins.newer(app.path.build.pinterestImg)

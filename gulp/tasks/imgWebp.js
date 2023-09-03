@@ -1,14 +1,11 @@
 // Преобразование картинок .png, .jpg в формат .webp
 import webp from 'gulp-webp';
 
+import plumberInit from './plumber.js'
+
 export const imgWebp = () => {
 	return app.gulp.src(app.path.src.imgAvifWebp)
-		.pipe(app.plugins.plumber(
-			app.plugins.notify.onError({
-				title: "IMAGES-WEBP",
-				message: "Error: <%= error.message %>"
-			})
-		))
+		.pipe(app.plugins.plumber(plumberInit('WEBP')))
 
 		.pipe(
 			app.plugins.newer(app.path.build.img)

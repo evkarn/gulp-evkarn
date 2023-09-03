@@ -334,41 +334,6 @@
 		"description": "Image with src"
 	},
 
-	"SVG sprite icon": {
-		"prefix": "spr",
-		"scope": "html, php",
-		"body": [
-			"<svg>",
-			"\t<use xlink:href=\"/assets/images/dist/sprite-svg/sprite.svg#$1\"></use>",
-			"</svg>"
-		],
-		"description": "SVG sprite icon"
-	},
-
-	"SVG sprite icon with title": {
-		"prefix": "sprt",
-		"scope": "html, php",
-		"body": [
-			"<svg role=\"img\" aria-labelledby=\"$2\">",
-			"\t<title id=\"$2\">$3</title>",
-			"",
-			"\t<use xlink:href=\"/assets/images/dist/sprite-svg/sprite.svg#$1\"></use>",
-			"</svg>"
-		],
-		"description": "SVG sprite icon with title"
-	},
-
-	"SVG sprite icon hidden": {
-		"prefix": "sprh",
-		"scope": "html, php",
-		"body": [
-			"<svg aria-hidden=\"true\">",
-			"\t<use xlink:href=\"/assets/images/dist/sprite-svg/sprite.svg#$1\"></use>",
-			"</svg>"
-		],
-		"description": "SVG sprite icon hidden"
-	},
-
 	"Picture tag with .webp": {
 		"prefix": "picw",
 		"scope": "html, php",

@@ -1,0 +1,15 @@
+{
+	"Rub symbol": {
+		"prefix": "rub",
+		"scope": "sass",
+		"body": ["&::after", "\tcontent: '₽'"],
+		"description": "Rub symbol"
+	},
+
+	"Rub text": {
+		"prefix": "rubt",
+		"scope": "sass",
+		"body": ["&::after", "\tcontent: 'руб.'"],
+		"description": "Rub text"
+	}
+}

@@ -6,137 +6,20 @@
 		"description": "Console log"
 	},
 
-	"export function()": {
-		"prefix": "exfunc",
-		"scope": "javascript, typescript",
-		"body": ["export function $1() {", "\t'use strict';", "\t", "\t$2", "}"],
-		"description": "export function()"
-	},
-
-	"export var nameFunction = () => {}": {
-		"prefix": "exvfunc",
-		"scope": "javascript, typescript",
-		"body": ["export $1 = () => {", "\t'use strict';", "\t", "\t$2", "}"],
-		"description": "export var nameFunction = () => {}"
-	},
-
-	"export const () => {}": {
-		"prefix": "excfunc",
-		"scope": "javascript, typescript",
-		"body": [
-			"export const $1 = () => {",
-			"\t'use strict';",
-			"\t",
-			"\t$2",
-			"};"
-		],
-		"description": "export const () => {}"
-	},
-
-	"const () => {}": {
-		"prefix": "cfunc",
-		"scope": "javascript, typescript",
-		"body": ["const $1 = (e) => {", "\t'use strict';", "\t", "\t$2", "};"],
-		"description": "const () => {}"
-	},
-
-	"var () => {}": {
-		"prefix": "vfunc",
-		"scope": "javascript, typescript",
-		"body": ["var $1 = () => {", "\t'use strict';", "\t", "\t$2", "};"],
-		"description": "var () => {}"
-	},
-
-	"function $1() {}": {
-		"prefix": "func",
-		"scope": "javascript, typescript",
-		"body": ["function $1() {", "\t'use strict';", "\t", "\t$2", "};"],
-		"description": "function $1() {}"
-	},
-
-	"var = document.querySelector('')": {
-		"prefix": "varqs",
-		"scope": "javascript, typescript",
-		"body": ["var $1 = document?.querySelector('$2');"],
-		"description": "var = document.querySelector('')"
-	},
-
-	"const = document.querySelector('')": {
-		"prefix": "constqs",
-		"scope": "javascript, typescript",
-		"body": ["const $1 = document?.querySelector('$2');"],
-		"description": "const  = document.querySelector('')"
-	},
-
-	"let = document.querySelector('')": {
-		"prefix": "letqs",
-		"scope": "javascript, typescript",
-		"body": ["let $1 = document?.querySelector('$2');"],
-		"description": "let = document.querySelector('')"
-	},
-
-	"var $1 = document?.querySelector( '$2' )": {
-		"prefix": "vartrel",
-		"scope": "javascript, typescript",
-		"body": ["var $1 = evTarget.querySelector( '$2' );"],
-		"description": "var $1 = evTarget.querySelector( '$2' )"
-	},
-
-	"const $1 = document?.querySelector( '$2' )": {
-		"prefix": "consttrel",
-		"scope": "javascript, typescript",
-		"body": ["const $1 = e.target.querySelector( '$2' );"],
-		"description": "const $1 = evTarget.querySelector( '$2' )"
-	},
-
-	"let $1 = document?.querySelector( '$2' )": {
-		"prefix": "lettrel",
-		"scope": "javascript, typescript",
-		"body": ["let $1 = evTarget.querySelector( '$2' );"],
-		"description": "let $1 = evTarget.querySelector( '$2' )"
-	},
-
-	"var = document.querySelectorAll('')": {
-		"prefix": "varqsa",
-		"scope": "javascript, typescript",
-		"body": ["var $1 = document?.querySelectorAll('$2');"],
-		"description": "var = document.querySelectorAll('')"
-	},
-
-	"const = document.querySelectorAll('')": {
-		"prefix": "constqsa",
-		"scope": "javascript, typescript",
-		"body": ["const $1 = document?.querySelectorAll('$2');"],
-		"description": "const = document.querySelectorAll('')"
-	},
-
-	"let = document.querySelectorAll('')": {
-		"prefix": "letqsa",
-		"scope": "javascript, typescript",
-		"body": ["let $1 = document?.querySelectorAll('$2');"],
-		"description": "let = document.querySelectorAll('')"
-	},
-
 	"if () {}": {
 		"prefix": "if",
 		"scope": "javascript, typescript",
-		"body": ["if ( $1 ) {", "\t$2", "}"],
+		"body": [
+			"if ( $1 ) {",
+			"\t$2",
+			"}"
+		],
 		"description": "if () {}"
 	},
 
-	"forEach": {
-		"prefix": "fech",
-		"scope": "javascript, typescript",
-		"body": ["$1.forEach($2 => {", "\t$2.$3", "});"],
-		"description": "forEach"
-	},
 
-	"for": {
-		"prefix": "for",
-		"scope": "javascript, typescript",
-		"body": ["for (let i = 0; i < 3; i++) {", "\t$2", "}"],
-		"description": "for"
-	},
+
+
 
 	"Array.from($1)": {
 		"prefix": "arr",

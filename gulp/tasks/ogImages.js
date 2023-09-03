@@ -1,11 +1,8 @@
+import plumberInit from './plumber.js'
+
 export const ogImgMin = () => {
 	return app.gulp.src(app.path.src.ogImg)
-		.pipe(app.plugins.plumber(
-			app.plugins.notify.onError({
-				title: "OG-IMAGES-MINIMIZE",
-				message: "Error: <%= error.message %>"
-			})
-		))
+		.pipe(app.plugins.plumber(plumberInit('OG-IMAGES')))
 
 		.pipe(
 			app.plugins.newer(app.path.build.ogImg)

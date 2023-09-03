@@ -1,0 +1,17 @@
+.body
+	position: relative
+
+	min-width: $screen-min-width+px
+
+	font-family: $ff-body
+	font-style: normal
+	font-size: $fz-text+px
+	font-weight: 400
+	line-height: $lh
+
+	background-color: var(--c-body-bg)
+	color: var(--c-text)
+	overflow-x: hidden
+
+	@media ( min-width: em(1920.96) )
+		+calc-size(font-size, $fz-text, $fz-text*2, 1920, 3840, px)

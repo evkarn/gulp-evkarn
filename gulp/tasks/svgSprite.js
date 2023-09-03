@@ -2,15 +2,12 @@ import cheerio from 'gulp-cheerio';
 
 import svgSprite from 'gulp-svg-sprite';
 
+import plumberInit from './plumber.js'
+
 export const svgSpriteIcons = () => {
 	return app.gulp.src(`${app.path.src.svgSprite}`, {})
 
-	.pipe(app.plugins.plumber(
-		app.plugins.notify.onError({
-			title: "SVG-SPRITE",
-			message: "Error: <%= error.message %>"
-		})
-	))
+	.pipe(app.plugins.plumber(plumberInit('SVG-SPRITE')))
 
 	// Оптимизируем файлы
 	.pipe(app.plugins.svgoMin())

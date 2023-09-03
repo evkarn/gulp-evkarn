@@ -1,34 +1,34 @@
 {
 	"background-color: var()": {
-		"prefix": "bgcv",
+		"prefix": "bgc-var",
 		"scope": "sass",
 		"body": ["background-color: var($1)"],
 		"description": "background-color: var()"
 	},
 
 	"background-color: var(--c-accent)": {
-		"prefix": "bgcva",
+		"prefix": "bgc-var-accent",
 		"scope": "sass",
 		"body": ["background-color: var(--c-accent)"],
 		"description": "background-color: var(--c-accent)"
 	},
 
 	"background-color: transparent": {
-		"prefix": "bgctr",
+		"prefix": "bgc-transparent",
 		"scope": "sass",
 		"body": ["background-color: transparent"],
 		"description": "background-color: transparent"
 	},
 
 	"background inline": {
-		"prefix": "bginline",
+		"prefix": "bg-inline",
 		"scope": "sass",
 		"body": ["style=\"background-color: $1; background-image: url('$2'); background-position: center; background-repeat: no-repeat; background-size: cover\""],
 		"description": "background inline"
 	},
 
 	"background all": {
-		"prefix": "bgall",
+		"prefix": "bg-all",
 		"scope": "sass",
 		"body": [
 			"background-attachment: scroll",
