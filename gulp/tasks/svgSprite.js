@@ -4,13 +4,19 @@ import svgSprite from 'gulp-svg-sprite';
 
 import plumberInit from './plumber.js'
 
+import svgoMin from 'gulp-svgo';
+
 export const svgSpriteIcons = () => {
 	return app.gulp.src(`${app.path.src.svgSprite}`, {})
 
 	.pipe(app.plugins.plumber(plumberInit('SVG-SPRITE')))
 
 	// Оптимизируем файлы
-	.pipe(app.plugins.svgoMin())
+	.pipe(svgoMin({
+		js2svg: {
+			pretty: true,
+		},
+	}))
 
 	.pipe(
 		cheerio({

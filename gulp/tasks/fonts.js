@@ -46,23 +46,32 @@ export const fontsStyle = () => {
 
 						if (fontWeight.toLowerCase() === 'thin') {
 							fontWeight = 100;
-						} else if (fontWeight.toLowerCase() === 'extralight') {
+						}
+						else if (fontWeight.toLowerCase() === 'extralight') {
 							fontWeight = 200;
-						} else if (fontWeight.toLowerCase() === 'light' || fontWeight.toLowerCase() === 'book' || fontWeight.toLowerCase() === 'demi') {
+						}
+						else if (fontWeight.toLowerCase() === 'light' || fontWeight.toLowerCase() === 'book' || fontWeight.toLowerCase() === 'demi') {
 							fontWeight = 300;
-						} else if (fontWeight.toLowerCase() === 'regular' || fontWeight.toLowerCase() === 'normal') {
+						}
+						else if (fontWeight.toLowerCase() === 'regular' || fontWeight.toLowerCase() === 'normal') {
 							fontWeight = 400;
-						} else if (fontWeight.toLowerCase() === 'medium') {
+						}
+						else if (fontWeight.toLowerCase() === 'medium') {
 							fontWeight = 500;
-						} else if (fontWeight.toLowerCase() === 'semibold' || fontWeight.toLowerCase() === 'demibold') {
+						}
+						else if (fontWeight.toLowerCase() === 'semibold' || fontWeight.toLowerCase() === 'demibold') {
 							fontWeight = 600;
-						} else if (fontWeight.toLowerCase() === 'bold') {
+						}
+						else if (fontWeight.toLowerCase() === 'bold') {
 							fontWeight = 700;
-						} else if (fontWeight.toLowerCase() === 'extrabold' || fontWeight.toLowerCase() === 'heavy') {
+						}
+						else if (fontWeight.toLowerCase() === 'extrabold' || fontWeight.toLowerCase() === 'heavy') {
 							fontWeight = 800;
-						} else if (fontWeight.toLowerCase() === 'black' || fontWeight.toLowerCase() === 'ultrablack' || fontWeight.toLowerCase() === 'fat') {
+						}
+						else if (fontWeight.toLowerCase() === 'black' || fontWeight.toLowerCase() === 'ultrablack' || fontWeight.toLowerCase() === 'fat') {
 							fontWeight = 900;
-						} else {
+						}
+						else {
 							fontWeight = 400;
 						}
 
@@ -85,7 +94,8 @@ export const fontsStyle = () => {
 						newFileOnly = fontFileName;
 					}
 				}
-			} else {
+			}
+			else {
 				// Если файл есть, выводим сообщение
 				console.log("Файл assets/styles/_fonts/fonts.sass уже существует. Для обновления файла нужно его удалить!");
 			}

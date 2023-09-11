@@ -2,8 +2,12 @@
 @use 'sass:math'
 // END. МОДУЛЬ MATH ДЛЯ SASS
 
+// Reset styles
+@import './_reset-styles/reset'
+// End. Reset styles
+
 // Vars
-@import './_global-config/vars'
+@import './_variables/vars'
 // End. Vars
 
 // Fonts
@@ -16,9 +20,7 @@
 
 
 // Global
-@import './_global-config/reset'
-
-@import './_global-config/config'
+@import './_global-config/*.sass'
 // END. Global
 
 

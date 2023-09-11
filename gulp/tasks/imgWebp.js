@@ -5,19 +5,22 @@ import plumberInit from './plumber.js'
 
 export const imgWebp = () => {
 	return app.gulp.src(app.path.src.imgAvifWebp)
-		.pipe(app.plugins.plumber(plumberInit('WEBP')))
 
-		.pipe(
-			app.plugins.newer(app.path.build.img)
-		)
+	.pipe(app.plugins.plumber(plumberInit('WEBP')))
 
-		.pipe(
-			webp({ quality: 75 })
-		)
+	// Проверяем менялись ли изображения
+	.pipe(
+		app.plugins.changed(app.path.build.img)
+	)
 
-		.pipe(
-			app.gulp.dest(app.path.build.img)
-		)
+	.pipe(app.plugins.if(
+		app.isBuild,
+		webp()
+	))
 
-		.pipe(app.plugins.browsersync.stream());
+	.pipe(
+		app.gulp.dest(app.path.build.img)
+	)
+
+	.pipe(app.plugins.browsersync.stream());
 };

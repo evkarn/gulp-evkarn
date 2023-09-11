@@ -5,7 +5,7 @@ export const pinterestImgMin = () => {
 		.pipe(app.plugins.plumber(plumberInit('PINTEREST-IMAGES')))
 
 		.pipe(
-			app.plugins.newer(app.path.build.pinterestImg)
+			app.plugins.changed(app.path.build.pinterestImg)
 		)
 
 		.pipe(

@@ -1,13 +1,25 @@
+// Добавление вендерных префиксов для кросс-браузерной вёрстки
+import autoprefixer from 'gulp-autoprefixer';
+
+// Сжатие CSS файла
+import cleanCss from 'gulp-clean-css';
+
 import * as sass from 'sass';
 
 import gulpSass from 'gulp-sass';
 
-import webpcss from 'gulp-webpcss';
+import webpAvifCss from 'gulp-web-images-css';
 
 // Группировка медиа запросов
 import groupCssMediaQueries from 'gulp-group-css-media-queries';
 
 import plumberInit from './plumber.js'
+
+import changed from "gulp-changed";
+
+import sourceMaps from 'gulp-sourcemaps'
+
+import sassGlob from 'gulp-sass-glob';
 
 const sassUse = gulpSass(sass);
 
@@ -17,6 +29,16 @@ export const sassStyle = () => {
 
 	// Вывод сообщения об ошибке, если появляется ошибка
 	.pipe(app.plugins.plumber(plumberInit('SASS')))
+
+	.pipe(
+		app.plugins.changed(
+			app.path.build.css, {hasChanged: changed.compareContents}
+		)
+	)
+
+	.pipe(sourceMaps.init())
+
+	.pipe(sassGlob())
 
 	// Преобразование специальной вставки в адрес
 	.pipe(app.plugins.replace(/@img\//g, '../images/dist'))
@@ -32,18 +54,18 @@ export const sassStyle = () => {
 
 	.pipe(app.plugins.if(
 		app.isBuild,
-		webpcss({
-			webpClass: '.webp',
-			noWebpClass: '.no-webp'
+		webpAvifCss({
+			extensions: ['.jpg','.jpeg', '.png'],
+			mode: 'all'
 		})
 	))
 
 	.pipe(app.plugins.if(
 		app.isBuild,
-		app.plugins.autoprefixer({
+		autoprefixer({
 			grid: true,
 			overrideBrowsersList: ["last 5 versions"],
-			cascade: true
+			cascade: false
 		})
 	))
 
@@ -56,13 +78,15 @@ export const sassStyle = () => {
 	// Если в режиме продакшена сжимаем файл стилей
 	.pipe(app.plugins.if(
 		app.isBuild,
-		app.plugins.cleanCss()
+		cleanCss()
 	))
 
 	// Переименовываем итоговый файл стилей
 	.pipe(app.plugins.rename({
 		extname: '.min.css'
 	}))
+
+	.pipe(sourceMaps.write())
 
 	// Выгружаем файл стилей в папку проекта
 	.pipe(app.gulp.dest(app.path.build.css))

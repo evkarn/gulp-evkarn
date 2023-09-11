@@ -5,7 +5,7 @@ export const ogImgMin = () => {
 		.pipe(app.plugins.plumber(plumberInit('OG-IMAGES')))
 
 		.pipe(
-			app.plugins.newer(app.path.build.ogImg)
+			app.plugins.changed(app.path.build.ogImg)
 		)
 
 		.pipe(

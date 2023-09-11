@@ -1,11 +1,5 @@
-// Добавление вендерных префиксов для кросс-браузерной поддержки
-import autoprefixer from 'gulp-autoprefixer';
-
 // Локальный сервер
 import browsersync from "browser-sync";
-
-// Сжатие CSS файла
-import cleanCss from 'gulp-clean-css';
 
 // Условное ветвление
 import ifPlugin from "gulp-if";
@@ -16,8 +10,7 @@ import imagemin from 'gulp-imagemin';
 // Сообщения (подсказки)
 import notify from "gulp-notify";
 
-// Проверка обновлений
-import newer from "gulp-newer";
+import changed from "gulp-changed";
 
 // Обработка ошибок
 import plumber from "gulp-plumber";
@@ -28,21 +21,15 @@ import rename from 'gulp-rename';
 // Поиск и замена
 import replace from "gulp-replace";
 
-// Обработка SVG
-import svgoMin from 'gulp-svgo';
-
 
 // Экспортируемые объекты
 export const plugins = {
-	autoprefixer: autoprefixer,
 	browsersync: browsersync,
-	cleanCss: cleanCss,
 	if: ifPlugin,
 	imagemin: imagemin,
 	notify: notify,
-	newer: newer,
+	changed: changed,
 	plumber: plumber,
 	rename: rename,
 	replace: replace,
-	svgoMin: svgoMin,
 };

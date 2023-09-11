@@ -4,6 +4,8 @@ import terser from 'terser-webpack-plugin'
 
 import webpack from 'webpack-stream';
 
+import changed from "gulp-changed";
+
 export const js = () => {
 	// Находим js файлы в папке исходников
 	return app.gulp.src(app.path.src.js, { source: app.isDev })
@@ -11,12 +13,18 @@ export const js = () => {
 	// Вывод сообщения об ошибке, если появляется ошибка
 	.pipe(app.plugins.plumber(plumberInit('JS')))
 
+	.pipe(
+		app.plugins.changed(
+			app.path.build.js, {hasChanged: changed.compareContents}
+		)
+	)
+
 	// Обработка файлов js
 	.pipe(webpack({
 		mode: app.isBuild ? 'production' : 'development',
 
 		entry: {
-			app: './src/assets/js/app.js',
+			index: './src/assets/js/index.js',
 		},
 
 		module: {

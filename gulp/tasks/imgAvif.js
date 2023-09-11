@@ -7,13 +7,18 @@ export const imgAvif = () => {
 	return app.gulp.src(app.path.src.imgAvifWebp)
 		.pipe(app.plugins.plumber(plumberInit('AVIF')))
 
+		// Проверяем менялись ли изображения
 		.pipe(
-			app.plugins.newer(app.path.build.img)
+			app.plugins.changed(app.path.build.img)
 		)
 
-		.pipe(
-			avif({ quality: 75 })
-		)
+		// Если режим продакшена создаём дополнительные изображения формата .webp
+		.pipe(app.plugins.if(
+			app.isBuild,
+			avif({
+				quality: 75
+			})
+		))
 
 		.pipe(
 			app.gulp.dest(app.path.build.img)
