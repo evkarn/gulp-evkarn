@@ -1,0 +1,20 @@
+@mixin state-link-opacity()
+	@media ( any-hover: hover )
+		&:hover
+			opacity: 0.7
+			cursor: pointer
+
+	&:focus-visible
+		outline-width: $outline-width+px
+		outline-style: dashed
+		outline-color: var(--c-accent)
+		outline-offset: $outline-offset+px
+
+		@media ( min-width: em(1920.96) )
+			+calc-size(outline-width, $outline-width, $outline-width*2, 1920, 3840, px)
+			+calc-size(outline-offset, $outline-offset, $outline-offset*2, 1920, 3840, px)
+
+	&:active
+		outline: none
+		opacity: 1
+	@content

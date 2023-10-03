@@ -1,8 +1,0 @@
-{
-	"Fill": {
-		"prefix": "fillv",
-		"scope": "sass",
-		"body": ["fill: $1"],
-		"description": "Fill"
-	},
-}

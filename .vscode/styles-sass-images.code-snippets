@@ -1,0 +1,41 @@
+{
+	"Aspect-ratio image": {
+		"prefix": "aspectRatio",
+		"scope": "html, php",
+		"body": ["aspect-ratio: $1 / $2"],
+		"description": "Aspect-ratio image"
+	},
+
+	"Image responsive": {
+		"prefix": "imageRespoinsive",
+		"scope": "html, php",
+		"body": [
+			"display: block",
+			"",
+			"max-width: 100%",
+			"width: 100%",
+			"height: auto"
+		],
+		"description": "Image responsive"
+	},
+
+	"Inner image responsive": {
+		"prefix": "imageInnerResp",
+		"scope": "html, php",
+		"body": [
+			".image-wrap",
+			"\tposition: relative",
+			"",
+			"\tpadding-bottom: calc($1)",
+			"",
+			"\toverflow: hidden",
+			"",
+			"\t\t.image-bg",
+			"\t\t\tposition: absolute",
+			"\t\t\tinset: 0",
+			"",
+			"\t\t\tobject-fit: cover"
+		],
+		"description": "Inner image responsive"
+	},
+}

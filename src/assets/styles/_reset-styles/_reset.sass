@@ -75,5 +75,15 @@ textarea
 
 	outline: none
 
+	&:focus:required:invalid
+		border-color: red
+
+	&:required:valid
+		border-color: green
+
+::selection
+	background-color: var(--c-accent)
+	color: #fff
+
 svg
 	fill: currentColor

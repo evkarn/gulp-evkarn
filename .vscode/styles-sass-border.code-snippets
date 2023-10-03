@@ -1,0 +1,39 @@
+{
+	"border-color: transparent": {
+		"prefix": "borct",
+		"scope": "css, sass, scss, less",
+		"body": ["border-color: transparent"],
+		"description": "border-color: transparent"
+	},
+
+	"border-color: var($1)": {
+		"prefix": "borcv",
+		"scope": "css, sass, scss, less",
+		"body": ["border-color: var($1)"],
+		"description": "border-color: var($1)"
+	},
+
+	"border-color: rgba($1border-color, $2)": {
+		"prefix": "borcrgba",
+		"scope": "css, sass, scss, less",
+		"body": ["border-color: rgba($1border-color, $2)"],
+		"description": "border-color: rgba($1border-color, $2)"
+	},
+
+	"border-radius: $1border-radius": {
+		"prefix": "borr$",
+		"scope": "css, sass, scss, less",
+		"body": ["border-radius: $1border-radius"],
+		"description": "border-radius: $1border-radius"
+	},
+
+	"Border all": {
+		"prefix": "borall",
+		"body": [
+			"border-width: $1border-width",
+			"border-style: solid",
+			"border-color: var($2)"
+		],
+		"description": "Border all"
+	}
+}

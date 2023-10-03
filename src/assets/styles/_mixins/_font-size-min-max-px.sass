@@ -1,0 +1,5 @@
+@mixin fz-min-max($min, $max)
+	+calc-size(font-size, $min, $max, 320, 1920, px)
+
+	@media ( min-width: em(1920.96) )
+		+calc-size(font-size, $max, $max*2, 1920, 3840, px)

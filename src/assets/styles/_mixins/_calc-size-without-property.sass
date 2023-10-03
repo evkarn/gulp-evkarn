@@ -1,0 +1,13 @@
+@use 'sass:math'
+@use 'sass:list'
+@use 'sass:map'
+
+// Responsive value
+@function calc-size-without-property($minSize, $maxSize, $minWidth, $maxWidth, $units)
+	@if $units==rem
+		$result: calc(#{math.div($minSize, $fz-text) + #{$units}} + (#{$maxSize} - #{$minSize}) * ((100vw - #{$minWidth+px}) / (#{$maxWidth} - #{$minWidth})))
+		@return $result
+	@else
+		$result: calc(#{$minSize + #{$units}} + (#{$maxSize} - #{$minSize}) * ((100vw - #{$minWidth + #{$units}}) / (#{$maxWidth} - #{$minWidth})))
+		@return $result
+// End. Responsive value

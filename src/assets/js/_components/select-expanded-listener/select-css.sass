@@ -1,0 +1,70 @@
+.select-wrap
+	position: relative
+
+	&:after
+		content: ''
+
+		position: absolute
+		top: 11.5px
+		right: 16px
+
+		display: block
+
+		width: 16px
+		height: 16px
+
+		background-image: url("assets/images/dist/sprite-svg/sprite.svg#select-arrow")
+		background-repeat: no-repeat
+		background-position: center
+		background-size: cover
+
+		pointer-events: none
+
+		@media ( min-width: em(1920.96) )
+			+calc-size(width, 16, 32, 1920, 3840, px)
+			+calc-size(height, 16, 32, 1920, 3840, px)
+
+.select-wrap.is-active
+	&:after
+		transform: rotate(180deg)
+
+.select-css
+	display: inline-block
+
+	max-width: 100%
+	width: 100%
+
+	height: 37px
+
+	margin: 0
+
+	-moz-appearance: none
+	-webkit-appearance: none
+	appearance: none
+
+	background-color: var(--c-light)
+	border: 1px solid var(--kingly-cloud)
+	border-radius: 0
+	color: var(--c-darken)
+
+	transition: border-color .3s ease
+
+	@media ( min-width: em(1920.96) )
+		+calc-size(font-size, 14, 28, 1920, 3840, px)
+
+.select-css::-ms-expand
+	display: none
+
+.select-css:hover
+	border-color: var(--c-accent)
+
+.select-css:focus
+	border-color: var(--c-accent)
+	outline: none
+
+.select-css option
+	font-weight: normal
+
+*[dir="rtl"] .select-css, :root:lang(ar) .select-css, :root:lang(iw) .select-css
+	background-position: left .7em top 50%, 0 0
+	padding: .6em .8em .5em 1.4em

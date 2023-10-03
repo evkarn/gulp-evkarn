@@ -1,0 +1,15 @@
+{
+	// Header
+	"Header with logo link": {
+		"prefix": "printArResult",
+		"scope": "html, php",
+		"body": [
+			"<?",
+			"\techo '<pre>';",
+			"\tprint_r(\\$arResult);",
+			"\techo '</pre>';",
+			"?>",
+		],
+		"description": "Header with logo link"
+	}
+}

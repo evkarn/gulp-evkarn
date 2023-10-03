@@ -24,7 +24,7 @@ export const js = () => {
 		mode: app.isBuild ? 'production' : 'development',
 
 		entry: {
-			index: './src/assets/js/index.js',
+			scripts: './src/assets/js/scripts.js',
 		},
 
 		module: {
