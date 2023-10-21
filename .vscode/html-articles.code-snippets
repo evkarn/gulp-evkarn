@@ -1,7 +1,7 @@
 {
 	// Article
 	"Article block": {
-		"prefix": "artb",
+		"prefix": "article-block",
 		"scope": "html, php",
 		"body": [
 			"<article class=\"section-main__article article\" itemscope=\"itemscope\" itemtype=\"http://schema.org/Article\">",
@@ -67,7 +67,7 @@
 	},
 
 	"Article block jekyll": {
-		"prefix": "artbj",
+		"prefix": "articleJekyll",
 		"scope": "html, php",
 		"body": [
 			"<article class=\"section-main__article article\" itemscope=\"itemscope\" itemtype=\"http://schema.org/Article\">",
@@ -133,7 +133,7 @@
 	},
 
 	"Article link": {
-		"prefix": "artl",
+		"prefix": "articleLink",
 		"scope": "html, php",
 		"body": [
 			"<article class=\"page__article article\" itemscope=\"itemscope\" itemtype=\"http://schema.org/NewsArticle\">",

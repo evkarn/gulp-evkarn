@@ -12,7 +12,7 @@
 	},
 
 	"Video html tag jekyll": {
-		"prefix": "videoJekyll",
+		"prefix": "video-Jekyll",
 		"scope": "html, php",
 		"body": [
 			"<video class=\"video__player\" src=\"assets/videos/{{ page.video }}.mp4\" poster=\"assets/images/dist/posters/{{ page.video }}.svg\" preload=\"metadata\" loop=\"\" muted=\"\" autoplay=\"\" playsinline=\"\" controls=\"\">",

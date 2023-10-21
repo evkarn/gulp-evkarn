@@ -47,6 +47,8 @@ export const html = () => {
 				['<\\?php', '\\?>'],
 				['<no-typography>', '</no-typography>'],
 				['<head>', '</head>'],
+				['<code>', '</code>'],
+				['<pre>', '</pre>'],
 				['---', '---'],
 				['<script>', '</script>'],
 				['<iframe>', '</iframe>'],
@@ -87,6 +89,11 @@ export const html = () => {
 	// 	app.isBuild,
 	// 	htmlClean()
 	// ))
+
+	// Переименовываем итоговый файл
+	.pipe(app.plugins.rename({
+		extname: '.html'
+	}))
 
 	// Выгружаем файлы в папку готовой вёрстки
 	.pipe(app.gulp.dest(app.path.build.html))

@@ -1,5 +1,3 @@
-// window.addEventListener('load', digitalCounters(1000));
-
 export function digitalCounters(timeDuration) {
 	'use strict';
 

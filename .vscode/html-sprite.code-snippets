@@ -11,7 +11,7 @@
 	},
 
 	"SVG sprite icon with title": {
-		"prefix": "sprt",
+		"prefix": "spr-title",
 		"scope": "html, php",
 		"body": [
 			"<svg class=\"$1__svg\" role=\"img\" aria-labelledby=\"$2\">",
@@ -24,7 +24,7 @@
 	},
 
 	"SVG sprite icon hidden": {
-		"prefix": "sprh",
+		"prefix": "spr-hidden",
 		"scope": "html, php",
 		"body": [
 			"<svg class=\"$1__svg\" aria-hidden=\"true\">",

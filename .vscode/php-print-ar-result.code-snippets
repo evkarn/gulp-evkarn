@@ -1,7 +1,7 @@
 {
 	// Header
 	"Header with logo link": {
-		"prefix": "printArResult",
+		"prefix": "print-ar-result",
 		"scope": "html, php",
 		"body": [
 			"<?",

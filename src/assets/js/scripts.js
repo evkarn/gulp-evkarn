@@ -1,7 +1,5 @@
-import getElementHeight from './_components/get-element-height/get-element-height-func.js';
+import getFullYear from './_components/get-full-year/get-full-year-func.js';
 
 document.addEventListener('DOMContentLoaded', (e) => {
-	getElementHeight('.section', '--section-height');
-
-	getElementHeight('.section-2', '--section-two-height');
+	getFullYear('.footer__year');
 });

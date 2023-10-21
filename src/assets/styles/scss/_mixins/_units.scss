@@ -1,0 +1,20 @@
+// Px to %
+// Use follow percent(24, 16)
+@function percent($pxTwo, $pxOne)
+	$result: math.div($pxTwo, $pxOne) * 100%
+	@return $result
+// End. Px to %
+
+// Px to rem
+// Use follow rem(16)
+@function rem($px)
+	$result: calc($px / 16) + rem
+	@return $result
+// End. Px to rem
+
+// Px to em
+// Use follow em(16)
+@function em($px)
+	$result: calc($px / 16) + em
+	@return $result
+// End. Px to em

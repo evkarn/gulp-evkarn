@@ -1,0 +1,126 @@
+// Custom-tabs
+// @import './_components/customTabs'
+// End. Custom-tabs
+.tabs 
+	position: relative
+
+.tabs__list
+	display: flex
+	align-items: center
+	gap: rem(12) rem(16)
+
+	padding: 0
+	margin: 0
+
+	list-style-type: none
+
+.tabs__btn
+	font-weight: 500
+	font-size: rem(20)
+	line-height: 1.2
+
+	border: none
+	color: var(--c-light)
+	cursor: pointer
+
+	transition: color 0.3s ease
+
+.tabs__btn:hover
+	color: var(--c-accent)
+
+.tabs__btn--active
+	color: var(--c-dark)
+
+	transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out
+	
+	pointer-events: none
+
+.tabs__content 
+	display: none
+	background-color: #fff
+
+.tabs__content--active 
+	display: block
+
+.tabs-content 
+	padding: 40px 60px
+	width: 796px
+
+.tabs-content__title 
+	margin: 0
+	margin-bottom: 20px
+	font-family: 'Roboto', sans-serif
+	font-weight: 700
+	font-size: 24px
+	line-height: 28px
+	color: var(--color-dark)
+
+.tabs-content__descr
+	margin: 0
+	margin-bottom: 59px
+	font-weight: 400
+	font-size: 14px
+	line-height: 20px
+	color: var(--color-dark)
+
+.tabs-content__list
+	margin: 0
+	padding: 0
+	list-style-type: none
+	width: 100%
+	display: flex
+	align-items: center
+	justify-tabs-content: space-between
+
+.tabs-content__link
+	padding: 14px
+	width: 200px
+	height: 120px
+	display: inline-block
+	border-radius: 4px
+	background-color: #ebecf3
+	background-repeat: no-repeat
+	background-position: right bottom
+
+.tabs-content__text
+	font-family: 'Roboto', sans-serif
+	font-weight: 500
+	font-size: 14px
+	line-height: 16px
+	color: #a2a6c0
+
+.tabs__arrow
+	position: absolute
+	top: 50%
+	transform: translateY(-50%)
+	width: 60px
+	height: 60px
+	padding: 0
+	border: none
+	background-color: var(--c-accent)
+	border-radius: 100%
+	display: flex
+	align-items: center
+	justify-tabs-content: center
+	cursor: pointer
+	transition: background-color 0.3s ease-in-out
+
+	> *
+		pointer-events: none
+
+.tabs__arrow svg
+	pointer-events: none
+	fill: #999
+	transition: fill 0.3s ease-in-out
+
+.tabs__arrow:hover
+	background-color: #333
+
+.tabs__arrow:hover svg 
+	fill: var(--c-accent)
+
+.tabs__arrow--next
+	right: 50px
+
+.tabs__arrow--prev
+	left: 50px

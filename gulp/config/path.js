@@ -10,6 +10,9 @@ const buildFolder = `./dist`;
 // Путь к папке с рабочими файлами
 const srcFolder = `./src`;
 
+// Выбор формата файлов препроцессора sass или scss
+const preprocessor = 'sass';
+
 export const path = {
 	build: {
 		allFiles: `${buildFolder}/**/*.*`,
@@ -28,9 +31,7 @@ export const path = {
 
 		img: `${buildFolder}/assets/images/dist/`,
 
-		ogImg: `${buildFolder}/assets/images/og-images/`,
-
-		pinterestImg: `${buildFolder}/assets/images/pinterest/`,
+		socialImages: `${buildFolder}/assets/images/social-images/`,
 
 		spriteIcons: `${buildFolder}/assets/images/dist/sprite-svg/`,
 
@@ -55,15 +56,13 @@ export const path = {
 
 		imgSrc: `${srcFolder}/assets/images/_src/`,
 
-		ogImg: `${srcFolder}/assets/images/og-images/*.*`,
-
-		pinterestImg: `${srcFolder}/assets/images/pinterest/*.*`,
+		socialImages: `${srcFolder}/assets/images/_src-social-images/**/*.*`,
 
 		imgAvifWebp: `${srcFolder}/assets/images/_src/**/*.{jpg,jpeg,png}`,
 
 		imgMin: [`${srcFolder}/assets/images/_src/**/*.*`, `!${srcFolder}/assets/images/_src/sprite-svg/**/*.*`],
 
-		sass: `${srcFolder}/assets/styles/**.sass`,
+		styles: [`${srcFolder}/assets/styles/${preprocessor}/*.${preprocessor}`, `!${srcFolder}/assets/styles/${preprocessor}/_*.${preprocessor}`],
 
 		svgSprite: `${srcFolder}/assets/images/_src/sprite-svg/**/*.svg`,
 	},
@@ -76,13 +75,11 @@ export const path = {
 
 		img: [`${srcFolder}/assets/images/_src/**/*.*`, `!${srcFolder}/assets/images/_src/sprite-svg/**/*.*`],
 
-		ogImg: `${srcFolder}/assets/images/og-images/*.*`,
-
-		pinterestImg: `${srcFolder}/assets/images/pinterest-images/*.*`,
+		socialImages: `${srcFolder}/assets/images/_src-social-images/**/*.*`,
 
 		js: `${srcFolder}/assets/js/**/*.js`,
 
-		sass: `${srcFolder}/assets/styles/**/*.sass`,
+		styles: `${srcFolder}/assets/styles/${preprocessor}/**/*.${preprocessor}`,
 
 		svgSprite: `${srcFolder}/assets/images/_src/sprite-svg/**/*.svg`,
 	},

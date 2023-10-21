@@ -1,0 +1,20 @@
+@mixin state-buttons()
+	@media ( any-hover: hover )
+		&:hover
+			background-color: var(--c-accent-dark)
+			cursor: pointer
+
+	&:focus-visible
+		outline-width: $outline-width+px
+		outline-style: dashed
+		outline-color: var(--c-accent-dark)
+		outline-offset: $outline-offset+px
+
+		@media ( min-width: em(1920.96) )
+			+calc-size(outline-width, $outline-width, $outline-width*2, 1920, 3840, px)
+			+calc-size(outline-offset, $outline-offset, $outline-offset*2, 1920, 3840, px)
+
+	&:active
+		background-color: var(--c-accent-darken)
+		outline: none
+	@content

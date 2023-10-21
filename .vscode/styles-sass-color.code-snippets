@@ -1,6 +1,6 @@
 {
 	"color: var()": {
-		"prefix": "clv",
+		"prefix": "colorVar",
 		"scope": "css, sass, scss, less",
 		"body": ["color: var($1)"],
 		"description": "color: var()"
@@ -14,23 +14,30 @@
 	},
 
 	"color: var(--c-text)": {
-		"prefix": "clvt",
+		"prefix": "colorVarText",
 		"scope": "css, sass, scss, less",
 		"body": ["color: var(--c-text)"],
 		"description": "color: var(--c-text)"
 	},
 
 	"color: var(--c-accent)": {
-		"prefix": "clva",
+		"prefix": "colorVarAccent",
 		"scope": "css, sass, scss, less",
 		"body": ["color: var(--c-accent)"],
 		"description": "color: var(--c-accent)"
 	},
 
 	"color: var(--c-lighten)": {
-		"prefix": "clvl",
+		"prefix": "colorVarLighten",
 		"scope": "css, sass, scss, less",
 		"body": ["color: var(--c-lighten)"],
 		"description": "color: var(--c-lighten)"
+	},
+
+	"color: var(--c-light)": {
+		"prefix": "colorVarLight",
+		"scope": "css, sass, scss, less",
+		"body": ["color: var(--c-light)"],
+		"description": "color: var(--c-light)"
 	},
 }

@@ -1,0 +1,64 @@
+.radio-label
+	display: inline-flex
+	align-items: center
+	gap: rem(10)
+
+	position: relative
+
+	cursor: pointer
+	overflow: hidden
+
+	.radio-input
+		width: 1px
+		height: 1px
+
+		margin: -1px
+		padding: 0
+
+		position: absolute
+
+		overflow: hidden
+		border: 0		
+		clip: rect(0 0 0 0)
+		clip-path: inset(50%)
+		white-space: nowrap
+
+	.radio-input:checked ~
+		.radio-fake
+			border-color: #3366ff
+
+			&:after
+				transform: scale(1)
+
+	.radio-fake 
+		display: flex
+		align-items: center
+		justify-content: center
+		flex-basis: auto
+		min-width: 20px
+		min-height: 20px
+
+		border: 2px solid #a5a7ab
+		border-radius: 50%
+		cursor: pointer
+
+		transition: all .3s ease
+
+		&:hover, &:focus
+			border-color: #1c1b1f
+
+		&:after
+			content: ""
+			display: block
+			width: 10px
+			height: 10px
+
+			border-radius: 50%
+			background-color: #3366ff
+
+			transform: scale(0)
+
+			transition: all .3s ease
+
+	.checkbox-text
+		color: #000

@@ -15,7 +15,7 @@ export const js = () => {
 
 	.pipe(
 		app.plugins.changed(
-			app.path.build.js, {hasChanged: changed.compareContents}
+			app.path.src.js, {hasChanged: changed.compareContents}
 		)
 	)
 
@@ -40,12 +40,15 @@ export const js = () => {
 						options: {
 							presets: [
 								[
-									'@babel/preset-env',
-									{
+									'@babel/preset-env', {
 										targets: 'defaults',
 									},
 								],
 							],
+
+							plugins: [
+								'babel-plugin-root-import'
+							]
 						},
 					},
 				},

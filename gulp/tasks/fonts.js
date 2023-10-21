@@ -9,7 +9,7 @@ export const ttfToWoff = () => {
 	return app.gulp.src(`${app.path.src.fonts}`, {})
 
 	// Выдаём сообщение об ошибке, если она есть
-	.pipe(app.plugins.plumber(plumberInit('FONTS')))
+	.pipe(app.plugins.plumber(plumberInit('TTF TO WOFF2')))
 
 	// Конвертируем .ttf в .woff2
 	.pipe(ttf2woff2())

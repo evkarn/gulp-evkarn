@@ -37,15 +37,13 @@ import { imgMin } from './gulp/tasks/imgMin.js';
 
 import { imgWebp } from './gulp/tasks/imgWebp.js';
 
-import { ogImgMin } from './gulp/tasks/ogImages.js';
-
-import { pinterestImgMin } from './gulp/tasks/pinterestImages.js';
+import { socialImagesMin } from './gulp/tasks/socialImages.js';
 
 import { js } from './gulp/tasks/js.js';
 
 import { reset } from './gulp/tasks/reset.js';
 
-import { sassStyle } from './gulp/tasks/sass.js';
+import { styles } from './gulp/tasks/styles.js';
 
 import { server } from './gulp/tasks/server.js';
 
@@ -62,15 +60,13 @@ function watcher() {
 
 	gulp.watch(path.watch.html, html);
 
-	gulp.watch(path.watch.sass, sassStyle);
+	gulp.watch(path.watch.styles, styles);
 
 	gulp.watch(path.watch.js, js);
 
 	gulp.watch(path.watch.img, gulp.parallel(imgAvif, imgWebp, imgMin));
 
-	gulp.watch(path.watch.ogImg, ogImgMin);
-
-	gulp.watch(path.watch.pinterestImg, pinterestImgMin);
+	gulp.watch(path.watch.socialImages, socialImagesMin);
 
 	gulp.watch(path.watch.svgSprite, gulp.parallel(svgSpriteIcons));
 }
@@ -81,7 +77,21 @@ const fonts = gulp.series(ttfToWoff, fontsStyle);
 
 
 // Основные задачи
-const mainTasks = gulp.series(fonts, gulp.parallel(copyFiles, html, copyConfigFiles, sassStyle, js, imgAvif, imgWebp, imgMin, ogImgMin, pinterestImgMin, svgSpriteIcons));
+const mainTasks = gulp.series(
+	fonts,
+	gulp.parallel(
+		copyFiles,
+		html,
+		copyConfigFiles,
+		styles,
+		js,
+		imgAvif,
+		imgWebp,
+		imgMin,
+		socialImagesMin,
+		svgSpriteIcons,
+	),
+);
 
 
 // Построение сценариев выполнения задач

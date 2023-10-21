@@ -1,0 +1,11 @@
+.logo
+	z-index: 3
+
+.logo__image
+	max-width: rem(166)
+	width: 100%
+	height: auto
+	+calc-size(max-width, 166, 332, 1920.96, 3840, rem)
+
+	@media ( min-width: em(3840.96) )
+		max-width: rem(332)

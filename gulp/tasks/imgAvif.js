@@ -5,24 +5,26 @@ import plumberInit from './plumber.js'
 
 export const imgAvif = () => {
 	return app.gulp.src(app.path.src.imgAvifWebp)
-		.pipe(app.plugins.plumber(plumberInit('AVIF')))
 
-		// Проверяем менялись ли изображения
-		.pipe(
-			app.plugins.changed(app.path.build.img)
-		)
+	// Выдаём сообщение об ошибке, если она есть
+	.pipe(app.plugins.plumber(plumberInit('AVIF')))
 
-		// Если режим продакшена создаём дополнительные изображения формата .webp
-		.pipe(app.plugins.if(
-			app.isBuild,
-			avif({
-				quality: 75
-			})
-		))
+	// Проверяем менялись ли изображения
+	.pipe(
+		app.plugins.changed(app.path.build.img)
+	)
 
-		.pipe(
-			app.gulp.dest(app.path.build.img)
-		)
+	// Если режим продакшена создаём дополнительные изображения формата .webp
+	.pipe(app.plugins.if(
+		app.isBuild,
+		avif({
+			quality: 75
+		})
+	))
 
-		.pipe(app.plugins.browsersync.stream());
+	.pipe(
+		app.gulp.dest(app.path.build.img)
+	)
+
+	.pipe(app.plugins.browsersync.stream());
 };
