@@ -46,25 +46,25 @@ export const path = {
 
 		fonts: `${srcFolder}/assets/fonts/*.ttf`,
 
-		fontsStyle: `${srcFolder}/assets/styles/_fonts/fonts.sass`,
+		fontsStyle: `${srcFolder}/assets/styles/${preprocessor}/fonts/fonts.sass`,
 
 		html: `${srcFolder}/*.{html,php,htm}`,
 
 		js: `${srcFolder}/assets/js/*.js`,
 
-		img: `${srcFolder}/assets/images/_src/**/*.{jpg,jpeg,png,gif,webp,heic,heif,raw,avif}`,
+		img: `${srcFolder}/assets/images/src/**/*.{jpg,jpeg,png,gif,webp,heic,heif,raw,avif}`,
 
-		imgSrc: `${srcFolder}/assets/images/_src/`,
+		imgSrc: `${srcFolder}/assets/images/src/`,
 
-		socialImages: `${srcFolder}/assets/images/_src-social-images/**/*.*`,
+		socialImages: `${srcFolder}/assets/images/social-images/**/*.*`,
 
-		imgAvifWebp: `${srcFolder}/assets/images/_src/**/*.{jpg,jpeg,png}`,
+		imgAvifWebp: `${srcFolder}/assets/images/src/**/*.{jpg,jpeg,png}`,
 
-		imgMin: [`${srcFolder}/assets/images/_src/**/*.*`, `!${srcFolder}/assets/images/_src/sprite-svg/**/*.*`],
+		imgMin: [`${srcFolder}/assets/images/src/**/*.*`, `!${srcFolder}/assets/images/src/sprite-svg/**/*.*`],
 
 		styles: [`${srcFolder}/assets/styles/${preprocessor}/*.${preprocessor}`, `!${srcFolder}/assets/styles/${preprocessor}/_*.${preprocessor}`],
 
-		svgSprite: `${srcFolder}/assets/images/_src/sprite-svg/**/*.svg`,
+		svgSprite: `${srcFolder}/assets/images/src/sprite-svg/**/*.svg`,
 	},
 
 	// Отслеживание изменений в файлах
@@ -73,15 +73,15 @@ export const path = {
 
 		html: `${srcFolder}/**/*.html`,
 
-		img: [`${srcFolder}/assets/images/_src/**/*.*`, `!${srcFolder}/assets/images/_src/sprite-svg/**/*.*`],
+		img: [`${srcFolder}/assets/images/src/**/*.*`, `!${srcFolder}/assets/images/src/sprite-svg/**/*.*`],
 
-		socialImages: `${srcFolder}/assets/images/_src-social-images/**/*.*`,
+		socialImages: `${srcFolder}/assets/images/social-images/**/*.*`,
 
 		js: `${srcFolder}/assets/js/**/*.js`,
 
 		styles: `${srcFolder}/assets/styles/${preprocessor}/**/*.${preprocessor}`,
 
-		svgSprite: `${srcFolder}/assets/images/_src/sprite-svg/**/*.svg`,
+		svgSprite: `${srcFolder}/assets/images/src/sprite-svg/**/*.svg`,
 	},
 
 	clean: [`${buildFolder}/*.{html,ico,svg,png}`, `${buildFolder}/assets/*`, `!${buildFolder}/assets/images/`],

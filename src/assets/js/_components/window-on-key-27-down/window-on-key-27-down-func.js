@@ -1,4 +1,4 @@
-import { enableScroll } from '../enable-scroll/enable-scroll-func.js';
+import enableScroll from '../enable-scroll/enable-scroll-func.js';
 
 export function windowOnKey27Down() {
 	'use strict';

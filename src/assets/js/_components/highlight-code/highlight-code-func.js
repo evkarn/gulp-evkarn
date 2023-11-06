@@ -8,10 +8,12 @@ hljs.registerLanguage('javascript', javascript);
 hljs.registerLanguage('css', css);
 hljs.registerLanguage('xml', xml);
 
-export function highlightCode() {
-  const preCodeElements = document?.querySelectorAll('.hljs');
+function highlightCode() {
+	const preCodeElements = document?.querySelectorAll('.hljs');
 
 	preCodeElements.forEach((el) => {
-    hljs.highlightElement(el);
-  });
+		hljs.highlightElement(el);
+	});
 }
+
+export default highlightCode;

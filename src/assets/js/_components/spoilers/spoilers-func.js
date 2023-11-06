@@ -1,15 +1,15 @@
 // INIT ADAPTIVE-SPOILERS
 /*
-		Для родителя спойлеров пишем атрибут data-spoilers
+		Для родителя спойлеров пишем атрибут data-spoilers-list
 
 		Для заголовков спойлеров пишем атрибут data-spoiler
 
 		Если нужно включить/выключить работу спойлеров на разных размерах экранов пишем параметры ширины и типа брейкпоинта.
 
 		Например:
-			data-spoilers="992,max" — спойлеры будут работать только на экранах меньше или равно 992px
+			data-spoilers-list="992,max" — спойлеры будут работать только на экранах меньше или равно 992px
 
-			data-spoilers="768,min" — спойлеры будут работать только на экранах больше или равно 768px
+			data-spoilers-list="768,min" — спойлеры будут работать только на экранах больше или равно 768px
 
 			Если нужно чтобы в блоке открывался только один спойлер добавляем родителю атрибут data-one-spoiler
 
@@ -23,8 +23,8 @@
 function spoilers(durationSpeed) {
 	'use strict';
 
-	// Собираем все элементы с атрибутом data-spoilers
-	const spoilersArray = document.querySelectorAll('[data-spoilers]');
+	// Собираем все элементы с атрибутом data-spoilers-list
+	const spoilersArray = document.querySelectorAll('[data-spoilers-list]');
 
 	// Проверяем есть ли они
 	if (spoilersArray.length > 0) {
@@ -159,7 +159,7 @@ function spoilers(durationSpeed) {
 		if (el.hasAttribute('data-spoiler-title') || el.closest('[data-spoiler-title]')) {
 			const spoilerTitle = el.hasAttribute('data-spoiler-title') ? el : el.closest('[data-spoiler-title]');
 
-			const spoilersBlock = spoilerTitle.closest('[data-spoilers]');
+			const spoilersBlock = spoilerTitle.closest('[data-spoilers-list]');
 
 			const oneSpoiler = spoilersBlock.hasAttribute('data-one-spoiler') ? true : false;
 

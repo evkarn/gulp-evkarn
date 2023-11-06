@@ -19,15 +19,17 @@ export function stepper() {
 	};
 
 	if (steppers.length > 0) {
-		steppers.forEach(stepper => {
-			stepper.addEventListener('click', e => {
+		steppers.forEach((stepper) => {
+			stepper.addEventListener('click', (e) => {
 				const parentTarget = e.target.closest('[data-stepper]');
 
 				const stepperInput = parentTarget.querySelector('input');
 
 				const stepperButtonUp = parentTarget.querySelector('.stepper__btn--up');
 
-				const stepperButtonDown = parentTarget.querySelector('.stepper__btn--down');
+				const stepperButtonDown = parentTarget.querySelector(
+					'.stepper__btn--down',
+				);
 
 				let count = stepperInput.value;
 
@@ -38,7 +40,7 @@ export function stepper() {
 					return true;
 				};
 
-				stepperInput.addEventListener('keyup', e => {
+				stepperInput.addEventListener('keyup', (e) => {
 					let self = e.currentTarget;
 
 					if (self.value == '0') {
@@ -50,11 +52,11 @@ export function stepper() {
 					buttonDisabled();
 				});
 
-				stepperInput.addEventListener('keypress', e => {
+				stepperInput.addEventListener('keypress', (e) => {
 					allowNumbersOnly(e);
 				});
 
-				stepperInput.addEventListener('change', e => {
+				stepperInput.addEventListener('change', (e) => {
 					let self = e.currentTarget;
 
 					if (!self.value) {
@@ -66,7 +68,7 @@ export function stepper() {
 					buttonDisabled();
 				});
 
-				stepperButtonUp.addEventListener('click', e => {
+				stepperButtonUp.addEventListener('click', (e) => {
 					e.preventDefault();
 
 					count++;
@@ -76,7 +78,7 @@ export function stepper() {
 					stepperInput.value = count;
 				});
 
-				stepperButtonDown.addEventListener('click', e => {
+				stepperButtonDown.addEventListener('click', (e) => {
 					e.preventDefault();
 
 					count--;

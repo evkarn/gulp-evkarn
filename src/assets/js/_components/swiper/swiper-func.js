@@ -1,4 +1,6 @@
-import Swiper, { Navigation } from 'swiper';
+import Swiper from 'swiper';
+
+import { Navigation, Pagination } from 'swiper/modules';
 
 export const swipersFunction = () => {
 	'use strict';

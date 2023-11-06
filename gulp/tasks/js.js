@@ -1,23 +1,28 @@
+// Обработка ошибок
 import plumberInit from './plumber.js'
 
+// Минимизация файлов
 import terser from 'terser-webpack-plugin'
 
+// Обработка скриптов
 import webpack from 'webpack-stream';
 
+// Отслеживание изменений в файлах
 import changed from "gulp-changed";
 
 export const js = () => {
 	// Находим js файлы в папке исходников
 	return app.gulp.src(app.path.src.js, { source: app.isDev })
 
+
 	// Вывод сообщения об ошибке, если появляется ошибка
 	.pipe(app.plugins.plumber(plumberInit('JS')))
 
-	.pipe(
-		app.plugins.changed(
-			app.path.src.js, {hasChanged: changed.compareContents}
-		)
-	)
+
+	// Проверяем были ли изменения в файлах
+	.pipe(app.plugins.changed(
+		app.path.src.js, {hasChanged: changed.compareContents}
+	))
 
 	// Обработка файлов js
 	.pipe(webpack({
@@ -85,9 +90,11 @@ export const js = () => {
 		devtool: app.isBuild ? 'source-map' : false
 	}))
 
+
 	// Выгрузка файл в папку проекта
 	.pipe(app.gulp.dest(app.path.build.js))
 
-	// При обновлении файла перезагружаем сайт
+
+	// При обновлении файла перезагружаем страницу
 	.pipe(app.plugins.browsersync.stream());
 };

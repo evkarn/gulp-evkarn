@@ -1,0 +1,9 @@
+.scheme-switcher__radio--dark
+	background-image: url(../images/dist/scheme-dark-moon.svg)
+
+	&:checked
+		~ .scheme-switcher__status
+			background-position: right rem(2) center
+
+			@media ( min-width: em(2880.96) )
+				background-position: right calc-size-without-property(2, 4, 1920, 3840, rem) center

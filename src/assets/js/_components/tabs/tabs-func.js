@@ -1,11 +1,11 @@
-export const tabs = () => {
+function tabs () {
 	'use strict';
 
 	const tabsParents = document?.querySelectorAll('[data-tabs-parent]');
 
 	if (tabsParents.length > 0) {
-		tabsParents.forEach(el => {
-			el.addEventListener('click', e => {
+		tabsParents.forEach((el) => {
+			el.addEventListener('click', (e) => {
 				const parent = e.target.closest('[data-tabs-parent]');
 
 				const tabsButtons = parent?.querySelectorAll('[data-tabs-path]');
@@ -13,11 +13,13 @@ export const tabs = () => {
 				if (e.target.closest('[data-tabs-path]')) {
 					const tabsPath = e.target.closest('[data-tabs-path]').dataset.tabsPath;
 
-					tabsButtons.forEach(el => {
+					tabsButtons.forEach((el) => {
 						el.classList.remove('tabs__btn--active');
 					});
 
-					const targetButton = parent.querySelector(`[data-tabs-path="${tabsPath}"]`);
+					const targetButton = parent.querySelector(
+						`[data-tabs-path="${tabsPath}"]`,
+					);
 
 					targetButton.classList.add('tabs__btn--active');
 
@@ -34,7 +36,7 @@ export const tabs = () => {
 					if (previousParent) {
 						let prevActive = previousParent.querySelector('[data-tabs-path]');
 
-						tabsButtons.forEach(el => {
+						tabsButtons.forEach((el) => {
 							el.classList.remove('tabs__btn--active');
 						});
 
@@ -56,7 +58,7 @@ export const tabs = () => {
 					if (nextParent) {
 						let nextActive = nextParent.querySelector('[data-tabs-path]');
 
-						tabsButtons.forEach(el => {
+						tabsButtons.forEach((el) => {
 							el.classList.remove('tabs__btn--active');
 						});
 
@@ -74,12 +76,14 @@ export const tabs = () => {
 	const tabsHandler = (path, parent) => {
 		const tabsContents = parent?.querySelectorAll('[data-tabs-target]');
 
-		tabsContents.forEach(el => {
+		tabsContents.forEach((el) => {
 			el.classList.remove('tabs__content--active');
 		});
 
-		const targetContent = parent.querySelector(`[data-tabs-target="${path}"]`);
+		const target = parent?.querySelector(`[data-tabs-target="${path}"]`);
 
-		targetContent.classList.add('tabs__content--active');
+		target.classList.add('tabs__content--active');
 	};
 };
+
+export default tabs;

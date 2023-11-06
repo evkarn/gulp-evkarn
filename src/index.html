@@ -6,38 +6,102 @@
 	itemtype="http://schema.org/WebSite"
 >
 
-@include('_includes/head.html', {
-	"title": "Заголовок страницы",
-	"siteUrl": "https://site.ru",
-	"description": "Описание страницы",
-	"keywords": "Ключ1, Ключ2",
-	"ogImage": "home",
-	"css": "styles"
+@include('includes/head.html', {
+"title": "Заголовок страницы",
+"siteUrl": "https://site.ru",
+"description": "Описание страницы",
+"keywords": "Ключ1, Ключ2",
+"ogImage": "home",
+"css": "styles"
 })
 
-<body class="body" itemscope itemtype="http://schema.org/WebPage">
+<body
+	class="body"
+	itemscope
+	itemtype="http://schema.org/WebPage"
+>
 	<div class="page page-home">
-		@include('_includes/header.html')
+		@include('includes/header.html')
 
 		<main class="main">
-			<section class="section" style="background: rgb(43, 43, 73); padding: 60px 0;">
-				<div class="container-right">
-					<h1 style="color: white">
-						title
-					</h1>
-				</div>
+			<section
+				class="section"
+				style="margin-top: 300px; padding: 0 50px"
+			>
+				<div
+					class="tabs"
+					data-tabs-parent
+					role="tablist"
+				>
+					<ul
+						class="tabs__list"
+						data-tabs-buttons-list
+					>
+						<li
+							class="tabs__item"
+							data-tabs-button-item
+						>
+							<button
+								class="tabs__btn tabs__btn--active"
+								data-tabs-path="main"
+								role="tab"
+							>
+								Главная
+							</button>
+						</li>
 
-				<div class="container">
-					<h1 style="color: white">
-						title2
-					</h1>
+						<li
+							class="tabs__item"
+							data-tabs-button-item
+						>
+							<button
+								class="tabs__btn"
+								data-tabs-path="archive"
+								role="tab"
+							>
+								Архив
+							</button>
+						</li>
+					</ul>
+
+					<div
+						class="tabs__content tabs-content tabs__content--active"
+						data-tabs-target="main"
+						role="tabpanel"
+						tabindex="0"
+					>
+						<h2 class="tabs-content__title">Главная</h2>
+					</div>
+
+					<div
+						class="tabs__content tabs-content"
+						data-tabs-target="archive"
+						role="tabpanel"
+						tabindex="0"
+					>
+						<h2 class="tabs-content__title">Архив</h2>
+					</div>
+
+					<button
+						class="tabs__arrow tabs__arrow--prev"
+						aria-label="Назад"
+						data-tabs-button-prev
+					>
+						◄
+					</button>
+
+					<button
+						class="tabs__arrow tabs__arrow--next"
+						aria-label="Вперед"
+						data-tabs-button-next
+					>
+						►
+					</button>
 				</div>
 			</section>
-
-			<div class="section-2" style="height: 200px;"></div>
 		</main>
 
-		@include('_includes/footer.html')
+		@include('includes/footer.html')
 	</div>
 
 	<script src="assets/js/scripts.min.js"></script>

@@ -1,17 +1,23 @@
-export const disableScroll = function () {
+function disableScroll() {
+	const html = document.documentElement;
+
 	const body = document.body;
-	
+
+	const documentRoot = document.querySelector(':root');
+
 	const scrollWidth = window.innerWidth - document.body.offsetWidth;
 
-	document.querySelector(':root').style.setProperty('--scroll-width', `${scrollWidth}px`);
-
 	let pagePosition = window.scrollY;
+
+	documentRoot.style.setProperty('--scroll-width', `${scrollWidth}px`);
 
 	body.classList.add('stop-scroll');
 
 	body.dataset.position = pagePosition;
 
-	document.querySelector(':root').style.setProperty('--top-position', `-${pagePosition}px`);
+	documentRoot.style.setProperty('--top-position', `-${pagePosition}px`);
 
-	document.documentElement.style.scrollBehavior = 'unset';
+	html.style.scrollBehavior = 'unset';
 };
+
+export default disableScroll;

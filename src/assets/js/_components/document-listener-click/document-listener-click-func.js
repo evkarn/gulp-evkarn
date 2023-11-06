@@ -1,6 +1,6 @@
 function documentListenerClick () {
-	document.addEventListener('click', (e) => {
-		const target = e.target;
+	document.addEventListener('click', (event) => {
+		const target = event.target;
 
 		if (target.closest('')) {
 

@@ -1,0 +1,61 @@
+.checkbox-input
+	position: relative
+
+	display: flex
+	align-items: center
+	justify-content: center
+
+	appearance: none
+
+	background-color: #fff
+
+	width: rem(24)
+	height: rem(24)
+
+	border: rem($border-width) solid #415674
+
+	border-radius: rem(4)
+
+	@media ( min-width: em(1920.96) )
+		+calc-size(border-width, $border-width, $border-width*2, 1920, 3840, rem)
+
+		+calc-size(border-radius, 4, 8, 1920, 3840, rem)
+
+	&:focus
+		outline-width: rem(1)
+		outline-style: dashed
+		outline-color: currentColor
+		outline-offset: rem($outline-offset)
+
+		@media ( min-width: em(1920.96) )
+			+calc-size(outline-width, 1, 2, 1920, 3840, rem)
+			+calc-size(outline-offset, $outline-offset, $outline-offset*2, 1920, 3840, rem)
+
+	&::before
+		content: ""
+
+		position: absolute
+		inset: 0
+
+		margin: auto
+
+		overflow: hidden
+
+		opacity: 0
+
+		transition: opacity .3s ease, background-color .3s ease, scale .3s ease
+
+	&:checked
+		&::before
+			content: "✔"
+
+			display: flex
+			align-items: center
+			justify-content: center
+
+			width: 100%
+			height: 100%
+
+			opacity: 1
+
+			color: #4b83fc

@@ -1,8 +1,8 @@
-import { disableScroll } from '../disable-scroll/disable-scroll-func.js';
+import disableScroll from '../disable-scroll/disable-scroll-func.js';
 
-import { enableScroll } from '../enable-scroll/enable-scroll-func.js';
+import enableScroll from '../enable-scroll/enable-scroll-func.js';
 
-export function burger() {
+function burger() {
 	'use strict';
 
 	const nav = document?.querySelector('[data-nav]');
@@ -13,50 +13,51 @@ export function burger() {
 
 	const overlay = document?.querySelector('[data-nav-overlay]');
 
-  burger?.addEventListener('click', () => {
-    burger?.classList.toggle('burger--active');
+	burger?.addEventListener('click', () => {
+		burger?.classList.toggle('burger--active');
 
-    nav?.classList.toggle('nav--is-active');
+		nav?.classList.toggle('nav--is-active');
 
-    if (nav?.classList.contains('nav--is-active')) {
-      burger?.setAttribute('aria-expanded', 'true');
+		if (nav?.classList.contains('nav--is-active')) {
+			burger?.setAttribute('aria-expanded', 'true');
 
-      burger?.setAttribute('aria-label', 'Закрыть меню');
+			burger?.setAttribute('aria-label', 'Закрыть меню');
 
-      disableScroll();
-    }
-		else {
-      burger?.setAttribute('aria-expanded', 'false');
+			disableScroll();
+		} else {
+			burger?.setAttribute('aria-expanded', 'false');
 
-      burger?.setAttribute('aria-label', 'Открыть меню');
+			burger?.setAttribute('aria-label', 'Открыть меню');
 
-      enableScroll();
-    }
-  });
+			enableScroll();
+		}
+	});
 
-	navItems?.forEach(el => {
-    el.addEventListener('click', () => {
-      burger?.setAttribute('aria-expanded', 'false');
+	navItems?.forEach((el) => {
+		el.addEventListener('click', () => {
+			enableScroll();
 
-      burger?.setAttribute('aria-label', 'Открыть меню');
+			burger?.setAttribute('aria-expanded', 'false');
 
-      burger.classList.remove('burger--active');
+			burger?.setAttribute('aria-label', 'Открыть меню');
 
-      menu.classList.remove('nav--is-active');
+			burger.classList.remove('burger--active');
 
-      enableScroll();
-    });
-  });
+			menu.classList.remove('nav--is-active');
+		});
+	});
 
 	overlay?.addEventListener('click', () => {
-    burger?.setAttribute('aria-expanded', 'false');
+		burger?.setAttribute('aria-expanded', 'false');
 
-    burger?.setAttribute('aria-label', 'Открыть меню');
+		burger?.setAttribute('aria-label', 'Открыть меню');
 
-    burger.classList.remove('burger--active');
+		burger.classList.remove('burger--active');
 
-    menu.classList.remove('nav--is-active');
+		menu.classList.remove('nav--is-active');
 
-    enableScroll();
-  });
+		enableScroll();
+	});
 }
+
+export default burger;

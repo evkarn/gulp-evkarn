@@ -1,6 +1,6 @@
 import inputmask from 'inputmask';
 
-export function inputMask(parent, selector, maskText) {
+function inputMask(parent, selector, maskText) {
 	'use strict';
 
 	const inputMaskParent = document.querySelector(`${parent}`);
@@ -13,3 +13,5 @@ export function inputMask(parent, selector, maskText) {
 		}
 	}
 }
+
+export default inputMask;

@@ -1,13 +1,19 @@
+// Передача обновлённых файлов через ssh
 import rsync from 'gulp-rsync';
 
+// Обработка ошибок
 import plumberInit from './plumber.js'
 
 export const ssh = () => {
+	// Берём все файлы
 	return app.gulp.src(`${app.path.rootFolder}/**/*.*`, {})
+
 
 	// Выдаём сообщение об ошибке, если она есть
 	.pipe(app.plugins.plumber(plumberInit('SSH')))
 
+
+	// Передаём файлы на сервер
 	.pipe(rsync({
 		root: './dist/',
 
@@ -24,7 +30,7 @@ export const ssh = () => {
 		archive: true,
 
 		silent: false,
-		
+
 		compress: true
 	}));
 };

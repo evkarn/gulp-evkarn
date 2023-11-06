@@ -1,0 +1,24 @@
+.tooltip__btn
+	padding: 0
+
+	border: none
+	border-bottom: rem($border-width) dashed currentColor
+
+	background-color: transparent
+
+	color: #000
+
+	cursor: pointer
+
+	@media ( min-width: em(1920.96) )
+		+calc-size(border-width, $border-width, $border-width*2, 1920, 3840, rem)
+
+.tooltip__btn
+	&:hover,
+	&:focus
+		+ .tooltip__txt
+			opacity: 1
+
+			visibility: visible
+
+			transform: translateY(0)

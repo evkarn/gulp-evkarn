@@ -1,4 +1,4 @@
-export const filters = function () {
+function filters() {
 	'use strict';
 
 	const filters = document?.querySelectorAll('[data-filter-body]');
@@ -6,25 +6,30 @@ export const filters = function () {
 	const buttonsShowMore = document?.querySelectorAll('[data-filter-show-more]');
 
 	if (buttonsShowMore.length > 0) {
-		buttonsShowMore.forEach(buttonShowMore => {
-			buttonShowMore.addEventListener('click', e => {
+		buttonsShowMore.forEach((buttonShowMore) => {
+			buttonShowMore.addEventListener('click', (e) => {
 				const targetParent = e.target.closest('[data-filter-body]');
 
-				const path = targetParent.querySelector('[data-filter-button].is-active').dataset
-					.filterButton;
+				const path = targetParent.querySelector(
+					'[data-filter-button].is-active',
+				).dataset.filterButton;
 
-				const filterTargets = targetParent.querySelectorAll('[data-filter-target]');
+				const filterTargets = targetParent.querySelectorAll(
+					'[data-filter-target]',
+				);
 
 				if (path != 'all') {
-					const targetItems = targetParent.querySelectorAll(`[data-filter-target="${path}"]`);
+					const targetItems = targetParent.querySelectorAll(
+						`[data-filter-target="${path}"]`,
+					);
 
-					targetItems.forEach(el => {
+					targetItems.forEach((el) => {
 						el.classList.add('is-visible-more');
 
 						buttonShowMore.style.display = 'none';
 					});
 				} else {
-					filterTargets.forEach(el => {
+					filterTargets.forEach((el) => {
 						el.classList.add('is-visible-more');
 
 						buttonShowMore.style.display = 'none';
@@ -35,19 +40,27 @@ export const filters = function () {
 	}
 
 	if (filters.length > 0) {
-		filters.forEach(filterBlock => {
-			filterBlock.addEventListener('click', e => {
+		filters.forEach((filterBlock) => {
+			filterBlock.addEventListener('click', (e) => {
 				const targetParent = e.target.closest('[data-filter-body]');
 
-				const itemsActiveAmount = Number(targetParent.dataset.activeItemsAmount);
+				const itemsActiveAmount = Number(
+					targetParent.dataset.activeItemsAmount,
+				);
 
-				const filterButtons = targetParent.querySelectorAll('[data-filter-button]');
+				const filterButtons = targetParent.querySelectorAll(
+					'[data-filter-button]',
+				);
 
-				const filterTargets = targetParent.querySelectorAll('[data-filter-target]');
+				const filterTargets = targetParent.querySelectorAll(
+					'[data-filter-target]',
+				);
 
-				const buttonShowMore = targetParent.querySelector('[data-filter-show-more]');
+				const buttonShowMore = targetParent.querySelector(
+					'[data-filter-show-more]',
+				);
 
-				const isButtonShowMoreNeeded = selector => {
+				const isButtonShowMoreNeeded = (selector) => {
 					if (selector.length <= itemsActiveAmount && buttonShowMore) {
 						buttonShowMore.style.display = 'none';
 					} else if (buttonShowMore) {
@@ -55,13 +68,13 @@ export const filters = function () {
 					}
 				};
 
-				const hideMoreItems = selector => {
+				const hideMoreItems = (selector) => {
 					if (selector.length > itemsActiveAmount) {
 						const arr = Array.from(selector);
 
 						const hiddenItems = arr.slice(itemsActiveAmount, selector.length);
 
-						hiddenItems.forEach(el => {
+						hiddenItems.forEach((el) => {
 							el.classList.remove('is-visible');
 
 							el.classList.remove('is-visible-more');
@@ -69,31 +82,31 @@ export const filters = function () {
 					}
 				};
 
-				targetParent.addEventListener('click', e => {
+				targetParent.addEventListener('click', (e) => {
 					const target = e.target;
 
 					if (target.closest('[data-filter-button]')) {
 						const dataText = target.dataset.filterButton;
 
 						const targetsWithDataText = targetParent.querySelectorAll(
-							`[data-filter-target="${dataText}"]`
+							`[data-filter-target="${dataText}"]`,
 						);
 
 						const itemsVisible = targetParent.querySelectorAll('.is-visible');
 
-						filterButtons.forEach(el => {
+						filterButtons.forEach((el) => {
 							el.classList.remove('is-active');
 						});
 
 						target.classList.add('is-active');
 
-						filterTargets.forEach(el => {
+						filterTargets.forEach((el) => {
 							el.classList.remove('is-visible');
 
 							el.classList.remove('is-visible-more');
 						});
 
-						targetsWithDataText.forEach(el => {
+						targetsWithDataText.forEach((el) => {
 							el.classList.add('is-visible');
 						});
 
@@ -102,7 +115,7 @@ export const filters = function () {
 						hideMoreItems(targetsWithDataText);
 
 						if (dataText == 'all') {
-							filterTargets.forEach(el => {
+							filterTargets.forEach((el) => {
 								el.classList.add('is-visible');
 							});
 
@@ -118,3 +131,5 @@ export const filters = function () {
 		});
 	}
 };
+
+export default filters;

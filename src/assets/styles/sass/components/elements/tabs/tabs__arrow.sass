@@ -1,0 +1,29 @@
+.tabs__arrow
+	position: absolute
+	top: 50%
+
+	display: flex
+	align-items: center
+	justify-tabs-content: center
+
+	width: rem(60)
+	height: rem(60)
+
+	padding: 0
+
+	border: none
+	border-radius: 100%
+
+	background-color: var(--c-accent)
+	cursor: pointer
+
+	transform: translateY(-50%)
+
+	transition: background-color 0.3s ease
+
+	@media ( min-width: em(1920.96) )
+		+calc-size(width, 60, 120, 1920, 3840, rem)
+		+calc-size(height, 60, 120, 1920, 3840, rem)
+
+	> *
+		pointer-events: none

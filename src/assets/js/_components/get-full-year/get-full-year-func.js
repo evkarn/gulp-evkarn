@@ -1,4 +1,4 @@
-function getFullYear (selector) {
+function getFullYear(selector) {
 	'use strict';
 
 	const currentYear = new Date().getFullYear();
@@ -14,6 +14,6 @@ function getFullYear (selector) {
 	if (metaYear) {
 		metaYear.setAttribute('content', currentYear);
 	}
-};
+}
 
 export default getFullYear;

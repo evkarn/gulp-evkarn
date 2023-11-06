@@ -6,19 +6,21 @@
  * @property {string} breakpoint
  * @property {string} order
  * @property {number} index
-*/
+ */
 
 /**
  * @typedef {Object} dMediaQuery
  * @property {string} query
  * @property {number} breakpoint
-*/
+ */
 
 /**
  * @param {'min' | 'max'} type
-*/
-export function dynamicAdapt(type = 'max') {
+ */
+
+function dynamicAdapt(type = 'max') {
 	const className = '_dynamic_adapt_';
+
 	const attrName = 'data-da';
 
 	/** @type {dNode[]} */
@@ -27,10 +29,12 @@ export function dynamicAdapt(type = 'max') {
 	/** @type {dMediaQuery[]} */
 	const dMediaQueries = getDMediaQueries(dNodes);
 
-	dMediaQueries.forEach(dMediaQuery => {
+	dMediaQueries.forEach((dMediaQuery) => {
 		const matchMedia = window.matchMedia(dMediaQuery.query);
 		// массив объектов с подходящим брейкпоинтом
-		const filteredDNodes = dNodes.filter(({ breakpoint }) => breakpoint === dMediaQuery.breakpoint);
+		const filteredDNodes = dNodes.filter(
+			({ breakpoint }) => breakpoint === dMediaQuery.breakpoint,
+		);
 		const mediaHandler = getMediaHandler(matchMedia, filteredDNodes);
 		matchMedia.addEventListener('change', mediaHandler);
 
@@ -39,11 +43,15 @@ export function dynamicAdapt(type = 'max') {
 
 	function getDNodes() {
 		const result = [];
+
 		const elements = [...document.querySelectorAll(`[${attrName}]`)];
 
-		elements.forEach(element => {
+		elements.forEach((element) => {
 			const attr = element.getAttribute(attrName);
-			const [toSelector, breakpoint, order] = attr.split(',').map(val => val.trim());
+			
+			const [toSelector, breakpoint, order] = attr
+				.split(',')
+				.map((val) => val.trim());
 
 			const to = document.querySelector(toSelector);
 
@@ -53,8 +61,13 @@ export function dynamicAdapt(type = 'max') {
 					element,
 					to,
 					breakpoint: breakpoint ?? '767',
-					order: order !== undefined ? (isNumber(order) ? Number(order) : order) : 'last',
-					index: -1
+					order:
+						order !== undefined
+							? isNumber(order)
+								? Number(order)
+								: order
+							: 'last',
+					index: -1,
 				});
 			}
 		});
@@ -68,10 +81,14 @@ export function dynamicAdapt(type = 'max') {
 	 */
 	function getDMediaQueries(items) {
 		const uniqItems = [
-			...new Set(items.map(({ breakpoint }) => `(${type}-width: ${breakpoint}px),${breakpoint}`))
+			...new Set(
+				items.map(
+					({ breakpoint }) => `(${type}-width: ${breakpoint}px),${breakpoint}`,
+				),
+			),
 		];
 
-		return uniqItems.map(item => {
+		return uniqItems.map((item) => {
 			const [query, breakpoint] = item.split(',');
 
 			return { query, breakpoint };
@@ -85,13 +102,13 @@ export function dynamicAdapt(type = 'max') {
 	function getMediaHandler(matchMedia, items) {
 		return function mediaHandler() {
 			if (matchMedia.matches) {
-				items.forEach(item => {
+				items.forEach((item) => {
 					moveTo(item);
 				});
 
 				items.reverse();
 			} else {
-				items.forEach(item => {
+				items.forEach((item) => {
 					if (item.element.classList.contains(className)) {
 						moveBack(item);
 					}
@@ -182,3 +199,5 @@ export function dynamicAdapt(type = 'max') {
 		return !isNaN(value);
 	}
 }
+
+export default dynamicAdapt;

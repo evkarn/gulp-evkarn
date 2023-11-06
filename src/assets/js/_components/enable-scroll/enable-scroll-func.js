@@ -1,15 +1,25 @@
-export const enableScroll = function () {
+function enableScroll() {
+	const html = document.documentElement;
+
 	const body = document.body;
-	
-	let pagePosition = parseInt(document.body.dataset.position, 10);
+
+	const documentRoot = document.querySelector(':root');
+
+	let pagePosition = parseInt(body.dataset.position, 10);
 
 	body.classList.remove('stop-scroll');
 
-	window.scroll({ top: pagePosition, left: 0 });
+	window.scroll({
+		top: pagePosition,
+
+		left: 0
+	});
 
 	body.removeAttribute('data-position');
 
-	document.querySelector(':root').style.setProperty('--top-position', 'auto');
+	documentRoot.style.setProperty('--top-position', 'auto');
 
-	document.documentElement.style.scrollBehavior = '';
+	html.style.scrollBehavior = '';
 };
+
+export default enableScroll;

@@ -1,11 +1,13 @@
-export function inputPasswordShowHide() {
+function inputPasswordShowHide() {
 	'use strict';
 
-	const buttonsShowHidePass = document?.querySelectorAll('[data-show-hide-password]');
+	const buttonsShowHidePass = document?.querySelectorAll(
+		'[data-show-hide-password]',
+	);
 
 	if (buttonsShowHidePass.length > 0) {
-		buttonsShowHidePass.forEach(el => {
-			el.addEventListener('click', e => {
+		buttonsShowHidePass.forEach((el) => {
+			el.addEventListener('click', (e) => {
 				e.target.classList.toggle('view-password');
 
 				const targetParent = target.parentNode;
@@ -21,3 +23,5 @@ export function inputPasswordShowHide() {
 		});
 	}
 }
+
+export default inputPasswordShowHide;

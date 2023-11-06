@@ -1,7 +1,9 @@
 import likely from "ilyabirman-likely";
 
-export const likelyFunction = () => {
+function likelyInit() {
 	'use strict';
 
 	likely.initiate();
 };
+
+export default likelyInit;
