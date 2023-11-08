@@ -1,0 +1,59 @@
+.switch-input
+	position: relative
+
+	appearance: none
+
+	width: rem(50)
+	height: rem(26)
+
+	border: rem(1) solid #3366ff
+
+	border-radius: rem(25)
+
+	cursor: pointer
+
+	@media ( min-width: em(1920.96) )
+		+calc-size(width, 50, 100, 1920, 3840, rem)
+		+calc-size(height, 26, 52, 1920, 3840, rem)
+
+		+calc-size(border-width, 1, 2, 1920, 3840, rem)
+
+		+calc-size(border-radius, 25, 50, 1920, 3840, rem)
+
+	&:after
+		content: ''
+
+		position: absolute
+
+		top: 50%
+		left: rem(2)
+
+		transform: translateY(-50%)
+
+		display: block
+
+		width: rem(22)
+		height: rem(22)
+
+		border: none
+
+		border-radius: 100%
+
+		background-color: #3366ff
+
+		cursor: pointer
+
+		transition: all .3s ease
+
+		@media ( min-width: em(1920.96) )
+			+calc-size(left, 2, 4, 1920, 3840, rem)
+
+			+calc-size(width, 22, 44, 1920, 3840, rem)
+			+calc-size(height, 22, 44, 1920, 3840, rem)
+
+	&:checked
+		&:after
+			left: rem(24)
+
+			@media ( min-width: em(1920.96) )
+				+calc-size(left, 24, 48, 1920, 3840, rem)

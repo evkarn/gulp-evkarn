@@ -1,0 +1,32 @@
+.modal__container
+	box-sizing: border-box
+
+	max-width: rem(500)
+	max-height: 100vh
+
+	padding: rem(30)
+
+	background-color: #fff
+
+	border-radius: rem($border-radius)
+
+	overflow-y: auto
+
+	@media ( min-width: em(1920.96) )
+		+calc-size(max-width, 500, 1000, 1920, 3840, rem)
+
+		+calc-size(padding, 30, 60, 1920, 3840, rem)
+
+		+calc-size(border-radius, $border-radius, $border-radius*2, 1920, 3840, rem)
+
+.micromodal-slide[aria-hidden="false"]
+	.modal__container
+		animation: microModalSlideIn 0.3s cubic-bezier(0, 0, 0.2, 1)
+
+.micromodal-slide[aria-hidden="true"]
+	.modal__container
+		animation: microModalSlideOut 0.3s cubic-bezier(0, 0, 0.2, 1)
+
+.micromodal-slide
+	.modal__container
+		will-change: transform
