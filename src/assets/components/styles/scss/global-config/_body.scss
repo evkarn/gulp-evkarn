@@ -1,0 +1,19 @@
+.body {
+	position: relative;
+
+	min-width: 320px;
+
+	font-family: $ff-body;
+	font-style: normal;
+	font-size: rem(18);
+	font-weight: 400;
+	line-height: 1.5;
+
+	background-color: var(--c-body-bg);
+	color: var(--c-text-dark);
+	overflow-x: hidden;
+
+	@media ( min-width: em(1920.96) ) {
+		@include calc-size(font-size, 18, 36, 1920, 3840, rem);
+	}
+}

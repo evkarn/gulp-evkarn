@@ -29,7 +29,7 @@ export const js = () => {
 		mode: app.isBuild ? 'production' : 'development',
 
 		entry: {
-			scripts: './src/assets/js/scripts.js',
+			scripts: './src/assets/components/js/scripts.js',
 		},
 
 		module: {

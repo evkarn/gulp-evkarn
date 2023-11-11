@@ -1,0 +1,9 @@
+.phone-search__search-form .search-form__btn {
+	@include calc-size(width, 137, 198, 320, 1920, rem);
+	@include calc-size(height, 45, 70, 320, 1920, rem);
+
+	@media ( min-width: em(1920.96) ) {
+		@include calc-size(width, 198, 396, 1920, 3840, rem);
+		@include calc-size(height, 70, 140, 1920, 3840, rem);
+	}
+}

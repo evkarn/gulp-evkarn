@@ -1,0 +1,46 @@
+.header .search-form__btn {
+	flex-shrink: 0;
+
+	@include calc-size(height, 45, 70, 320, 1920, rem);
+
+	font-weight: 700;
+
+	@include calc-size(padding-top, 13, 22, 320, 1920, rem);
+	@include calc-size(padding-bottom, 13, 22, 320, 1920, rem);
+	@include calc-size(padding-right, 20, 60, 320, 1920, rem);
+	@include calc-size(padding-left, 20, 60, 320, 1920, rem);
+
+	background-color: var(--c-accent-dark);
+
+	@media ( min-width: em(1920.96) ) {
+		@include calc-size(height, 70, 140, 1920, 3840, rem);
+
+		@include calc-size(padding-top, 22, 44, 1920, 3840, rem);
+		@include calc-size(padding-bottom, 22, 44, 1920, 3840, rem);
+		@include calc-size(padding-right, 60, 120, 1920, 3840, rem);
+		@include calc-size(padding-left, 60, 120, 1920, 3840, rem);
+	}
+
+	@media ( any-hover: hover ) {
+		&:hover {
+			background-color: var(--c-accent);
+		}
+	}
+
+	&:focus-visible {
+		outline-width: rem($outline-width);
+		outline-style: dashed;
+		outline-color: currentColor;
+		outline-offset: rem($outline-offset);
+
+		@media ( min-width: em(1920.96) ) {
+			@include calc-size(outline-width, $outline-width, $outline-width*2, 1920, 3840, rem);
+			@include calc-size(outline-offset, $outline-offset, $outline-offset*2, 1920, 3840, rem);
+		}
+	}
+
+
+	&:active {
+		background-color: var(--c-accent-dark);
+	}
+}

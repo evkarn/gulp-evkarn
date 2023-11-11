@@ -1,0 +1,13 @@
+.intro .info {
+	display: flex;
+	flex-direction: column;
+	row-gap: rem(20);
+
+	@include calc-size(font-size, 16, 18, 320, 1920, rem);
+
+	@media ( min-width: em(1920.96) ) {
+		@include calc-size(row-gap, 20, 40, 1920, 3840, rem);
+
+		@include calc-size(font-size, 18, 36, 1920, 3840, rem);
+	}
+}

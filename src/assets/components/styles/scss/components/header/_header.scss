@@ -1,0 +1,21 @@
+.header {
+	@include calc-size(padding-top, 10, 24, 320, 1920, rem);
+	@include calc-size(padding-bottom, 10, 24, 320, 1920, rem);
+
+	background-color: var(--c-accent);
+	background-image: url('../images/dist/header/header-bg.svg');
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+
+	color: var(--c-text-light);
+
+	@media ( min-width: em(1920.96) ) {
+		@include calc-size(padding-top, 24, 48, 1920, 3840, rem);
+		@include calc-size(padding-bottom, 24, 48, 1920, 3840, rem);
+	}
+
+	@media ( max-width: em(576) ) {
+		background-image: url('../images/dist/header/header-mobile-bg.svg');
+	}
+}

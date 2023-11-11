@@ -1,0 +1,57 @@
+.btn {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+
+	padding: rem(12) rem(18);
+
+	@include calc-size(font-size, 16, 20, 320, 1920, rem);
+
+	border: none;
+	border-radius: rem($border-radius);
+
+	background-color: var(--c-accent);
+
+	color: var(--c-light);
+
+	white-space: nowrap;
+
+	cursor: pointer;
+
+	transition: background-color .3s ease;
+
+	@media ( min-width: em(1920.96) ) {
+		@include calc-size(padding-top, 12, 24, 1920, 3840, rem);
+		@include calc-size(padding-bottom, 12, 24, 1920, 3840, rem);
+		@include calc-size(padding-right, 18, 36, 1920, 3840, rem);
+		@include calc-size(padding-left, 18, 36, 1920, 3840, rem);
+
+		@include calc-size(font-size, 20, 40, 1920, 3840, rem);
+
+		@include calc-size(border-radius, $border-radius, $border-radius*2, 1920, 3840, rem);
+	}
+
+	@media ( any-hover: hover ) {
+		&:hover {
+			background-color: var(--c-accent-dark);
+		}
+	}
+
+	&:focus-visible {
+		outline-width: rem($outline-width);
+		outline-style: dashed;
+		outline-color: currentColor;
+		outline-offset: rem($outline-offset);
+
+		@media ( min-width: em(1920.96) ) {
+			@include calc-size(outline-width, $outline-width, $outline-width*2, 1920, 3840, rem);
+			@include calc-size(outline-offset, $outline-offset, $outline-offset*2, 1920, 3840, rem);
+		}
+	}
+
+
+	&:active {
+		background-color: var(--c-accent);
+	}
+
+}

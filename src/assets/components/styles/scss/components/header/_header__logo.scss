@@ -1,0 +1,12 @@
+.header__logo {
+	flex-shrink: 0;
+	font-weight: 700;
+	@include calc-size(font-size, 20, 30, 320, 1920, rem);
+	line-height: 1;
+
+	white-space: nowrap;
+
+	@media (min-width: em(1920.96)) {
+		@include calc-size(font-size, 30, 60, 1920, 3840, rem);
+	}
+}

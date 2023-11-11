@@ -1,0 +1,31 @@
+.statistics .statistics__body {
+	--point-radius: 20;
+	--point-hover-radius: 25;
+	--font-size: 18;
+
+	height: rem(250);
+
+	@media ( min-width: em(1920.96) ) {
+		@include calc-size(height, 250, 500, 1920, 3840, rem);
+	}
+
+	@media ( min-width: em(2880.96) ) {
+		--point-radius: 40;
+		--point-hover-radius: 50;
+		--font-size: 36;
+	}
+
+	@media ( min-width: em(5760.96) ) {
+		--point-radius: 60;
+		--point-hover-radius: 80;
+		--font-size: 70;
+	}
+
+	@media ( max-width: em(768) ) {
+		height: rem(180);
+
+		--point-radius: 6;
+		--point-hover-radius: 8;
+		--font-size: 10;
+	}
+}

@@ -1,0 +1,25 @@
+.intro .info__text {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	padding: rem(8) rem(16);
+
+	border: rem($border-width) solid #f5f5f5;
+	border-radius: rem(5);
+
+	box-shadow: 0 0 rem(1) 0 rgba(0, 0, 0, 0.25);
+
+	@media ( min-width: em(1920.96) ) {
+		@include calc-size(padding-top, 8, 16, 1920, 3840, rem);
+		@include calc-size(padding-bottom, 8, 16, 1920, 3840, rem);
+		@include calc-size(padding-right, 16, 32, 1920, 3840, rem);
+		@include calc-size(padding-left, 16, 32, 1920, 3840, rem);
+
+		@include calc-size(border-width, $border-width, $border-width*2, 1920, 3840, rem);
+
+		@include calc-size(border-radius, 5, 10, 1920, 3840, rem);
+
+		box-shadow: 0 0 calc-size-without-property(1, 2, 1920, 3840, rem) 0 rgba(0, 0, 0, 0.25);
+	}
+}

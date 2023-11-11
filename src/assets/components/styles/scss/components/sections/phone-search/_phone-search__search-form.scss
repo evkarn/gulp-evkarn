@@ -1,0 +1,11 @@
+.phone-search__search-form {
+	flex-shrink: 1;
+	flex-grow: 1;
+	flex-basis: auto;
+
+	@media (max-width: em(400)) {
+		flex-direction: column;
+		align-items: flex-start;
+		row-gap: rem(10)
+	}
+}

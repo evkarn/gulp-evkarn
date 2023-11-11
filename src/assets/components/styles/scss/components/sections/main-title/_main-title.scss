@@ -1,0 +1,8 @@
+.main-title {
+	padding: rem(25) 0;
+
+	@media ( min-width: em(1920.96) ) {
+		@include calc-size(padding-top, 25, 50, 1920, 3840, rem);
+		@include calc-size(padding-bottom, 25, 50, 1920, 3840, rem);
+	}
+}

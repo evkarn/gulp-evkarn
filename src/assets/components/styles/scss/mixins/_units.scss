@@ -1,0 +1,16 @@
+// Удаляем единицы измерения
+@function stripUnit($value) {
+	@return math.div($value, $value * 0 + 1);
+}
+
+@function rem($pxValue) {
+	@return #{math.div(stripUnit($pxValue), stripUnit(16px))}rem;
+}
+
+@function em($pxValue) {
+	@return #{math.div(stripUnit($pxValue), stripUnit(16px))}em;
+}
+
+@function px($pxValue) {
+	@return #{math.div(stripUnit($pxValue), stripUnit(1px))}px;
+}

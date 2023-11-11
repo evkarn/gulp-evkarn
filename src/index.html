@@ -7,98 +7,26 @@
 >
 
 @include('includes/head.html', {
-"title": "Заголовок страницы",
-"siteUrl": "https://site.ru",
-"description": "Описание страницы",
-"keywords": "Ключ1, Ключ2",
-"ogImage": "home",
-"css": "styles"
+	"title": "Заголовок страницы",
+	"siteUrl": "https://site.ru",
+	"description": "Описание страницы",
+	"keywords": "Ключ1, Ключ2",
+	"ogImage": "home",
+	"css": "styles"
 })
 
 <body
-	class="body"
+	class="body body--home"
 	itemscope
 	itemtype="http://schema.org/WebPage"
 >
-	<div class="page page-home">
+	@include('includes/counters.html')
+
+	<div class="page">
 		@include('includes/header.html')
 
 		<main class="main">
-			<section
-				class="section"
-				style="margin-top: 300px; padding: 0 50px"
-			>
-				<div
-					class="tabs"
-					data-tabs-parent
-					role="tablist"
-				>
-					<ul
-						class="tabs__list"
-						data-tabs-buttons-list
-					>
-						<li
-							class="tabs__item"
-							data-tabs-button-item
-						>
-							<button
-								class="tabs__btn tabs__btn--active"
-								data-tabs-path="main"
-								role="tab"
-							>
-								Главная
-							</button>
-						</li>
 
-						<li
-							class="tabs__item"
-							data-tabs-button-item
-						>
-							<button
-								class="tabs__btn"
-								data-tabs-path="archive"
-								role="tab"
-							>
-								Архив
-							</button>
-						</li>
-					</ul>
-
-					<div
-						class="tabs__content tabs-content tabs__content--active"
-						data-tabs-target="main"
-						role="tabpanel"
-						tabindex="0"
-					>
-						<h2 class="tabs-content__title">Главная</h2>
-					</div>
-
-					<div
-						class="tabs__content tabs-content"
-						data-tabs-target="archive"
-						role="tabpanel"
-						tabindex="0"
-					>
-						<h2 class="tabs-content__title">Архив</h2>
-					</div>
-
-					<button
-						class="tabs__arrow tabs__arrow--prev"
-						aria-label="Назад"
-						data-tabs-button-prev
-					>
-						◄
-					</button>
-
-					<button
-						class="tabs__arrow tabs__arrow--next"
-						aria-label="Вперед"
-						data-tabs-button-next
-					>
-						►
-					</button>
-				</div>
-			</section>
 		</main>
 
 		@include('includes/footer.html')

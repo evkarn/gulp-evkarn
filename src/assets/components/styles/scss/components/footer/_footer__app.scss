@@ -1,0 +1,7 @@
+.footer__app {
+	flex-shrink: 0;
+
+	@media ( max-width: em(352) ) {
+		flex-shrink: 1;
+	}
+}

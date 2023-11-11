@@ -1,0 +1,54 @@
+// МОДУЛЬ MATH ДЛЯ SASS
+@use 'sass:math';
+// END. МОДУЛЬ MATH ДЛЯ SASS
+
+
+// Reset styles
+@import './reset-styles/reset';
+// End. Reset styles
+
+
+// Variables
+@import 'variables/index';
+// End. Variables
+
+
+// Fonts
+@import 'fonts/fonts';
+// END. Fonts
+
+
+// Mixins
+@import 'mixins/index';
+// END. Mixins
+
+
+// Global
+@import 'global-config/index';
+// END. Global
+
+
+// Swiper
+@import 'node_modules/swiper/swiper';
+@import 'node_modules/swiper/modules/navigation';
+// End. Swiper
+
+
+// Header
+@import './components/header/index';
+// End. Header
+
+
+// Footer
+@import './components/footer/index';
+// End. Footer
+
+
+// Elements
+@import './components/elements/index';
+// End. Elements
+
+
+// Sections
+@import './components/sections/index';
+// End. Sections

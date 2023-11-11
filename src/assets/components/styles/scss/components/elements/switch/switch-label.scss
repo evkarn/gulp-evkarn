@@ -1,0 +1,17 @@
+.switch-label {
+	position: relative;
+
+	display: inline-flex;
+	align-items: center;
+	gap: rem(10);
+
+	color: var(--c-text-dark);
+
+	cursor: pointer;
+
+	overflow: hidden;
+
+	@media (min-width: em(1920.96)) {
+		@include calc-size(gap, 10, 20, 1920, 3840, rem);
+	}
+}

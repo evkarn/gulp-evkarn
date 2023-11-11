@@ -1,0 +1,14 @@
+.leave-feedback .section__body {
+	display: flex;
+	align-items: center;
+
+	@include calc-size(gap, 10, 20, 320, 1920, rem);
+
+	@media ( min-width: em(1920.96) ) {
+		@include calc-size(gap, 20, 40, 1920, 3840, rem);
+	}
+
+	@media ( max-width: em(400) ) {
+		flex-wrap: wrap;
+	}
+}

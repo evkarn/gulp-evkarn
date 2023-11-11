@@ -1,0 +1,18 @@
+.container {
+	max-width: rem($container-width);
+	width: 100%;
+	margin: 0 auto;
+	padding: 0 rem(10);
+
+	@media (min-width: em(1920.96)) {
+		@include calc-size(max-width, 1320, 1320 * 2, 1920, 3840, rem);
+
+		@include calc-size(padding-right, 10, 10 * 2, 1920, 3840, rem);
+		@include calc-size(padding-left, 10, 10 * 2, 1920, 3840, rem);
+	}
+
+	@media (max-width: em(768)) {
+		max-width: 100%;
+		padding: 0 rem(10);
+	}
+}
