@@ -1,0 +1,36 @@
+{
+	"SVG sprite icon": {
+		"prefix": "spr",
+		"scope": "html, php",
+		"body": [
+			"<svg class=\"$1__svg\">",
+			"\t<use xlink:href=\"/assets/images/dist/sprite-svg/sprite.svg#$2\"></use>",
+			"</svg>"
+		],
+		"description": "SVG sprite icon"
+	},
+
+	"SVG sprite icon with title": {
+		"prefix": "spr-title",
+		"scope": "html, php",
+		"body": [
+			"<svg class=\"$1__svg\" role=\"img\" aria-labelledby=\"$2\">",
+			"\t<title id=\"$2\">$3</title>",
+			"",
+			"\t<use xlink:href=\"/assets/images/dist/sprite-svg/sprite.svg#$4\"></use>",
+			"</svg>"
+		],
+		"description": "SVG sprite icon with title"
+	},
+
+	"SVG sprite icon hidden": {
+		"prefix": "spr-hidden",
+		"scope": "html, php",
+		"body": [
+			"<svg class=\"$1__svg\" aria-hidden=\"true\">",
+			"\t<use xlink:href=\"/assets/images/dist/sprite-svg/sprite.svg#$2\"></use>",
+			"</svg>"
+		],
+		"description": "SVG sprite icon hidden"
+	},
+}

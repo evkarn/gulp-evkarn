@@ -1,0 +1,17 @@
+{
+	// Object-fit
+	"object-fit: cover": {
+		"prefix": "obfcov",
+		"scope": "css, sass, scss, less",
+		"body": ["object-fit: cover"],
+		"description": "object-fit: cover"
+	},
+
+	"object-fit: contain": {
+		"prefix": "obfcon",
+		"scope": "css, sass, scss, less",
+		"body": ["object-fit: contain"],
+		"description": "object-fit: contain"
+	},
+	// End. Object-fit
+}

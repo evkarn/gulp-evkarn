@@ -1,0 +1,15 @@
+{
+	"Width rem": {
+		"prefix": "wrm",
+		"scope": "css, sass, scss, less",
+		"body": ["width: rem($1)"],
+		"description": "Width rem"
+	},
+
+	"height: rem": {
+		"prefix": "hrm",
+		"scope": "css, sass, scss, less",
+		"body": ["height: rem($1)"],
+		"description": "height: rem"
+	},
+}
