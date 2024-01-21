@@ -6,4 +6,13 @@ document.addEventListener('DOMContentLoaded', (e) => {
 	getFullYear('.footer__year');
 
 	tabs();
+
+	class $1 {
+		constructor($2) {
+			$3
+		}
+	}
+
+
+
 });

@@ -1,0 +1,37 @@
+{
+	// Flex
+	"Display flex center": {
+		"prefix": "flex-center",
+		"scope": "css, sass, less",
+		"body": ["display: flex", "align-items: center", "justify-content: center"],
+		"description": "Display flex center"
+	},
+
+	"Flex: 1 1 auto": {
+		"prefix": "flex-1-1-auto",
+		"scope": "css, sass, less",
+		"body": ["flex-shrink: 1", "flex-grow: 1", "flex-basis: auto"],
+		"description": "Flex: 1 1 auto"
+	},
+
+	"flex-grow: 1, flex-shrink: 1, flex-basis: auto": {
+		"prefix": "flex-grid-shr-bas",
+		"scope": "css, sass, less",
+		"body": [
+			"flex-grow: 1",
+			"flex-shrink: 1",
+			"flex-basis: auto"],
+		"description": "flex-grow: 1, flex-shrink: 1, flex-basis: auto"
+	},
+
+	"display: flex, flex-direction: column": {
+		"prefix": "flex-column",
+		"scope": "css, sass, less",
+		"body": [
+			"display: flex",
+			"flex-direction: column"
+		],
+		"description": "display: flex, flex-direction: column"
+	}
+	// End. Flex
+}

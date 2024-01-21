@@ -1,0 +1,21 @@
+{
+// Overlay
+	"Overlay": {
+		"prefix": "over",
+		"scope": "css, sass, less",
+		"body": [
+			"&:after",
+			"\tcontent: ''",
+			"",
+			"\tposition: absolute",
+			"\tinset: 0",
+			"",
+			"\tdisplay: block",
+			"",
+			"\tbackground-color: var($1)",
+			"\topacity: $1"
+		],
+		"description": "Overlay"
+	}
+	// End. Overlay
+}

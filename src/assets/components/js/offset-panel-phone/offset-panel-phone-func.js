@@ -1,15 +1,15 @@
 export function offsetPanelPhone() {
 	'use strict';
 
-	const changeHeight = () => {
-		let vh = window.innerHeight * 0.01;
+	const calcHeight = () => {
+		let verticalHeight = window.innerHeight;
 
-		document.documentElement.style.setProperty('--vh', `${vh}px`);
+		document.documentElement.style.setProperty('--verticalHeight', `${verticalHeight}px`);
 	};
 
-	changeHeight();
+	calcHeight();
 
 	window.addEventListener('resize', () => {
-		changeHeight();
+		calcHeight();
 	});
 }

@@ -1,0 +1,21 @@
+{
+	// Pointer-events
+	"Pointer-events: none": {
+		"prefix": "pointer-ev-none",
+		"scope": "css, sass, scss, less",
+		"body": [
+			"pointer-events: none";
+		],
+		"description": "Pointer-events: none"
+	},
+
+	"Pointer-events: auto": {
+		"prefix": "pointer-ev-auto",
+		"scope": "css, sass, scss, less",
+		"body": [
+			"pointer-events: auto";
+		],
+		"description": "Pointer-events: auto"
+	},
+	// Pointer-events
+}

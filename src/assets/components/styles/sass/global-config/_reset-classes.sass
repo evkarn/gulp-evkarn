@@ -19,12 +19,28 @@
 	margin: 0
 	padding: 0
 
+.address-reset
+	font-style: normal
+
 .input-reset
-	-webkit-appearance: none
 	appearance: none
+
+	font: inherit
+
 	border: none
 	border-radius: 0
+
 	background-color: #fff
+
+	color: inherit
+
+	outline: none
+
+	&:focus:required:invalid
+		border-color: red
+
+	&:required:valid
+		border-color: green
 
 	&::-webkit-search-decoration,
 	&::-webkit-search-cancel-button,

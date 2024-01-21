@@ -1,18 +1,61 @@
-.container {
-	max-width: rem($container-width);
-	width: 100%;
-	margin: 0 auto;
-	padding: 0 rem(10);
+*[class*="__container"] {
+  max-width: rem($container-width);
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 rem($container-offset);
 
-	@media (min-width: em(1920.96)) {
-		@include calc-size(max-width, 1320, 1320 * 2, 1920, 3840, rem);
+  @media (min-width: em(1920.96)) {
+    @include calc-size(max-width, $container-width, $container-width * 2, 1920, 3840, rem);
 
-		@include calc-size(padding-right, 10, 10 * 2, 1920, 3840, rem);
-		@include calc-size(padding-left, 10, 10 * 2, 1920, 3840, rem);
-	}
+    @include calc-size(padding-right, $container-offset, $container-offset * 2, 1920, 3840, rem);
+    @include calc-size(padding-left, $container-offset, $container-offset * 2, 1920, 3840, rem);
+  }
 
-	@media (max-width: em(768)) {
-		max-width: 100%;
-		padding: 0 rem(10);
-	}
+  @media (max-width: em(768)) {
+    max-width: 100%;
+    padding: 0 rem(10);
+  }
+}
+
+*[class*="__container-fluid"] {
+  max-width: 100%;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 rem($container-offset);
+
+  @media (min-width: em(1920.96)) {
+    @include calc-size(padding, $container-offset, $container-offset * 2, 1920, 3840, rem);
+  }
+
+  @media (max-width: em(768)) {
+    padding: 0 rem(10);
+  }
+}
+
+*[class*="__container-right"] {
+  max-width: 100%;
+  width: 100%;
+  padding-left: calc((100% - $content-width-units) / 2);
+
+  @media (max-width: em($container-width)) {
+    padding: 0 rem($container-offset);
+  }
+
+  @media (max-width: em(768)) {
+    padding: 0 rem(10);
+  }
+}
+
+*[class*="__container-left"] {
+  max-width: 100%;
+  width: 100%;
+  padding-right: calc((100% - $content-width-units) / 2);
+
+  @media (max-width: em($container-width)) {
+    padding: 0 rem($container-offset);
+  }
+
+  @media (max-width: em(768)) {
+    padding: 0 rem(10);
+  }
 }
