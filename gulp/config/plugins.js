@@ -1,6 +1,9 @@
 // Локальный сервер
 import browsersync from "browser-sync";
 
+// Отслеживание изменений в файлах
+import changed from "gulp-changed";
+
 // Условное ветвление
 import ifPlugin from "gulp-if";
 
@@ -9,8 +12,6 @@ import imagemin from 'gulp-imagemin';
 
 // Сообщения (подсказки)
 import notify from "gulp-notify";
-
-import changed from "gulp-changed";
 
 // Обработка ошибок
 import plumber from "gulp-plumber";
@@ -25,10 +26,10 @@ import replace from "gulp-replace";
 // Экспортируемые объекты
 export const plugins = {
 	browsersync: browsersync,
+	changed: changed,
 	if: ifPlugin,
 	imagemin: imagemin,
 	notify: notify,
-	changed: changed,
 	plumber: plumber,
 	rename: rename,
 	replace: replace,

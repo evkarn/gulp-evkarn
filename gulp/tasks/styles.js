@@ -21,6 +21,7 @@ import plumberInit from './plumber.js'
 
 // Отслеживание изменений в файлах
 import changed from "gulp-changed";
+import {compareContents} from 'gulp-changed';
 
 // Создание карты источников
 import sourceMaps from 'gulp-sourcemaps'
@@ -37,8 +38,8 @@ export const styles = () => {
 
 
 	// Отслеживание и обработка только изменившихся файлов
-	.pipe(app.plugins.changed(
-		app.path.build.css, {hasChanged: changed.compareContents}
+	.pipe(changed(
+		app.path.build.css, {hasChanged: compareContents}
 	))
 
 

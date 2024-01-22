@@ -12,6 +12,7 @@ import plumberInit from './plumber.js';
 
 // Отслеживание изменений в файлах
 import changed from "gulp-changed";
+import {compareContents} from 'gulp-changed';
 
 // Плагин для минимизации html файлов
 import htmlClean from "gulp-htmlclean";
@@ -25,8 +26,8 @@ export const html = () => {
 
 
 	// Смотрим менялись ли файлы и обрабатываем только изменённые
-	.pipe(app.plugins.changed(
-		app.path.build.html, {hasChanged: changed.compareContents}
+	.pipe(changed(
+		app.path.build.html, {hasChanged: compareContents}
 	))
 
 
@@ -73,7 +74,7 @@ export const html = () => {
 			'file': 'gulp/version.json'
 		}
 	})))
-	
+
 
 	// Если режим продакшена минимизируем html файлы
 	.pipe(app.plugins.if(app.isBuild,	htmlClean()))

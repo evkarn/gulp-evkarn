@@ -9,6 +9,7 @@ import webpack from 'webpack-stream';
 
 // Отслеживание изменений в файлах
 import changed from "gulp-changed";
+import {compareContents} from 'gulp-changed';
 
 export const js = () => {
 	// Находим js файлы в папке исходников
@@ -20,8 +21,8 @@ export const js = () => {
 
 
 	// Проверяем были ли изменения в файлах
-	.pipe(app.plugins.changed(
-		app.path.src.js, {hasChanged: changed.compareContents}
+	.pipe(changed(
+		app.path.src.js, {hasChanged: compareContents}
 	))
 
 	// Обработка файлов js
