@@ -340,7 +340,7 @@
 	// Border calc-size
 	"Calc size border-radius": {
 		"prefix": "csborr-sm",
-		"scope": "css, css, scss, sass, lessscss, less",
+		"scope": "css, scss, sass, less",
 		"body": [
 			"@include calc-size(border-radius, \\$border-radius, \\$border-radius*2, 320, 1920, rem);"
 		],
@@ -349,7 +349,7 @@
 
 	"Calc size border-radius px": {
 		"prefix": "csborrpx-sm",
-		"scope": "css, css, scss, sass, lessscss, less",
+		"scope": "css, scss, sass, less",
 		"body": [
 			"@include calc-size(border-radius, \\$border-radius, \\$border-radius*2, 320, 1920, px);"
 		],
@@ -376,7 +376,7 @@
 	// Outline calc-size
 	"Calc size outline-width outline-offset": {
 		"prefix": "cs-outl-wid-off-sm",
-		"scope": "css, css, scss, sass, lessscss, less",
+		"scope": "css, scss, sass, less",
 		"body": [
 			"@include calc-size(outline-width, \\$outline-width, \\$outline-width*2, 320, 1920, rem);",
 			"@include calc-size(outline-offset, \\$outline-offset, \\$outline-offset*2, 320, 1920, rem);"
@@ -386,7 +386,7 @@
 
 	"Calc size outline-width outline-offset px": {
 		"prefix": "cs-outl-wid-off-px-sm",
-		"scope": "css, css, scss, sass, lessscss, less",
+		"scope": "css, scss, sass, less",
 		"body": [
 			"@include calc-size(outline-width, \\$outline-width, \\$outline-width*2, 320, 1920, px);",
 			"@include calc-size(outline-offset, \\$outline-offset, \\$outline-offset*2, 320, 1920, px);"
@@ -396,7 +396,7 @@
 
 	"Calc size outline-offset": {
 		"prefix": "cs-outl-off-sm",
-		"scope": "css, css, scss, sass, lessscss, less",
+		"scope": "css, scss, sass, less",
 		"body": [
 			"@include calc-size(outline-offset, \\$outline-offset, \\$outline-offset*2, 320, 1920, rem);"
 		],
@@ -405,7 +405,7 @@
 
 	"Calc size outline-offset px": {
 		"prefix": "cs-outl-off-px-sm",
-		"scope": "css, css, scss, sass, lessscss, less",
+		"scope": "css, scss, sass, less",
 		"body": [
 			"@include calc-size(outline-offset, \\$outline-offset, \\$outline-offset*2, 320, 1920, px);"
 		],

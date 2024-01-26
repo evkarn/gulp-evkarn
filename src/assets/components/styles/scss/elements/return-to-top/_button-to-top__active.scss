@@ -1,0 +1,20 @@
+.button-to-top.button-to-top__active {
+	pointer-events: auto;
+	user-select: auto;
+
+	opacity: 0.6;
+
+	@media (any-hover: hover) {
+		&:hover {
+			opacity: 1;
+
+			background-color: var(--c-accent);
+
+			color: #fff;
+		}
+	}
+
+	&:active {
+		background-color: var(--c-accent-dark);
+	}
+}

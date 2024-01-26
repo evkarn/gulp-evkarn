@@ -29,16 +29,408 @@
 	},
 
 	"Media any-hover": {
-		"prefix": "hah",
+		"prefix": "hover-any-hover",
 		"scope": "css, sass, less",
-		"body": [
-			"@media ( any-hover: hover )",
-			"\t&:hover",
-			"\t\t$1"],
+		"body": ["@media ( any-hover: hover )", "\t&:hover", "\t\t$1"],
 		"description": "Media any-hover"
 	},
 	// End. General
 
+	// Media var names desktop-first
+	"Media max-mobile-em": {
+		"prefix": "@max-mobile-em",
+		"scope": "css, sass, scss, less",
+		"body": ["+max-mobile-em", "\t$1"],
+		"description": "Media max-mobile-em"
+	},
+
+	"Media max-mobile-px": {
+		"prefix": "@max-mobile-px",
+		"scope": "css, sass, scss, less",
+		"body": ["+max-mobile-px", "\t$1"],
+		"description": "Media max-mobile-px"
+	},
+
+	"Media max-mobile-plus-em": {
+		"prefix": "@max-mobile-plus-em",
+		"scope": "css, sass, scss, less",
+		"body": ["+max-mobile-plus-em", "\t$1"],
+		"description": "Media max-mobile-plus-em"
+	},
+
+	"Media max-mobile-plus-px": {
+		"prefix": "@max-mobile-plus-px",
+		"scope": "css, sass, scss, less",
+		"body": ["+max-mobile-plus-px", "\t$1"],
+		"description": "Media max-mobile-plus-px"
+	},
+
+	"Media max-mobile-wga-em": {
+		"prefix": "@max-mobile-wga-em",
+		"scope": "css, sass, scss, less",
+		"body": ["+max-mobile-wga-em", "\t$1"],
+		"description": "Media max-mobile-wga-em"
+	},
+
+	"Media max-mobile-wga-px": {
+		"prefix": "@max-mobile-wga-px",
+		"scope": "css, sass, scss, less",
+		"body": ["+max-mobile-wga-px", "\t$1"],
+		"description": "Media max-mobile-wga-px"
+	},
+
+	"Media max-tablet-em": {
+		"prefix": "@max-tablet-em",
+		"scope": "css, sass, scss, less",
+		"body": ["+max-tablet-em", "\t$1"],
+		"description": "Media max-tablet-em"
+	},
+
+	"Media max-tablet-px": {
+		"prefix": "@max-tablet-px",
+		"scope": "css, sass, scss, less",
+		"body": ["+max-tablet-px", "\t$1"],
+		"description": "Media max-tablet-px"
+	},
+
+	"Media max-tablet-portrait-em": {
+		"prefix": "@max-tablet-portrait-em",
+		"scope": "css, sass, scss, less",
+		"body": ["+max-tablet-portrait-em", "\t$1"],
+		"description": "Media max-tablet-portrait-em"
+	},
+
+	"Media max-tablet-portrait-px": {
+		"prefix": "@max-tablet-portrait-px",
+		"scope": "css, sass, scss, less",
+		"body": ["+max-tablet-portrait-px", "\t$1"],
+		"description": "Media max-tablet-portrait-px"
+	},
+
+	"Media max-tablet-full-em": {
+		"prefix": "@max-tablet-full-em",
+		"scope": "css, sass, scss, less",
+		"body": ["+max-tablet-full-em", "\t$1"],
+		"description": "Media max-tablet-full-em"
+	},
+
+	"Media max-tablet-full-px": {
+		"prefix": "@max-tablet-full-px",
+		"scope": "css, sass, scss, less",
+		"body": ["+max-tablet-full-px", "\t$1"],
+		"description": "Media max-tablet-full-px"
+	},
+
+	"Media max-desktop-em": {
+		"prefix": "@max-desktop-em",
+		"scope": "css, sass, scss, less",
+		"body": ["+max-desktop-em", "\t$1"],
+		"description": "Media max-desktop-em"
+	},
+
+	"Media max-desktop-px": {
+		"prefix": "@max-desktop-px",
+		"scope": "css, sass, scss, less",
+		"body": ["+max-desktop-px", "\t$1"],
+		"description": "Media max-desktop-px"
+	},
+
+	"Media max-desktop-wide-em": {
+		"prefix": "@max-desktop-wide-em",
+		"scope": "css, sass, scss, less",
+		"body": ["+max-desktop-wide-em", "\t$1"],
+		"description": "Media max-desktop-wide-em"
+	},
+
+	"Media max-desktop-wide-px": {
+		"prefix": "@max-desktop-wide-px",
+		"scope": "css, sass, scss, less",
+		"body": ["+max-desktop-wide-px", "\t$1"],
+		"description": "Media max-desktop-wide-px"
+	},
+
+	"Media max-desktop-hd-em": {
+		"prefix": "@max-desktop-hd-em",
+		"scope": "css, sass, scss, less",
+		"body": ["+max-desktop-hd-em", "\t$1"],
+		"description": "Media max-desktop-hd-em"
+	},
+
+	"Media max-desktop-hd-px": {
+		"prefix": "@max-desktop-hd-px",
+		"scope": "css, sass, scss, less",
+		"body": ["+max-desktop-hd-px", "\t$1"],
+		"description": "Media max-desktop-hd-px"
+	},
+
+	"Media max-desktop-wide-plus-em": {
+		"prefix": "@max-desktop-wide-plus-em",
+		"scope": "css, sass, scss, less",
+		"body": ["+max-desktop-wide-plus-em", "\t$1"],
+		"description": "Media max-desktop-wide-plus-em"
+	},
+
+	"Media max-desktop-wide-plus-px": {
+		"prefix": "@max-desktop-wide-plus-px",
+		"scope": "css, sass, scss, less",
+		"body": ["+max-desktop-wide-plus-px", "\t$1"],
+		"description": "Media max-desktop-wide-plus-px"
+	},
+
+	"Media max-desktop-hd-plus-em": {
+		"prefix": "@max-desktop-hd-plus-em",
+		"scope": "css, sass, scss, less",
+		"body": ["+max-desktop-hd-plus-em", "\t$1"],
+		"description": "Media max-desktop-hd-plus-em"
+	},
+
+	"Media max-desktop-hd-plus-px": {
+		"prefix": "@max-desktop-hd-plus-px",
+		"scope": "css, sass, scss, less",
+		"body": ["+max-desktop-hd-plus-px", "\t$1"],
+		"description": "Media max-desktop-hd-plus-px"
+	},
+
+	"Media max-full-hd-em": {
+		"prefix": "@max-full-hd-em",
+		"scope": "css, sass, scss, less",
+		"body": ["+max-full-hd-em", "\t$1"],
+		"description": "Media max-full-hd-em"
+	},
+
+	"Media max-full-hd-px": {
+		"prefix": "@max-full-hd-px",
+		"scope": "css, sass, scss, less",
+		"body": ["+max-full-hd-px", "\t$1"],
+		"description": "Media max-full-hd-px"
+	},
+
+	"Media max-quad-hd-em": {
+		"prefix": "@max-quad-hd-em",
+		"scope": "css, sass, scss, less",
+		"body": ["+max-quad-hd-em", "\t$1"],
+		"description": "Media max-quad-hd-em"
+	},
+
+	"Media max-quad-hd-px": {
+		"prefix": "@max-quad-hd-px",
+		"scope": "css, sass, scss, less",
+		"body": ["+max-quad-hd-px", "\t$1"],
+		"description": "Media max-quad-hd-px"
+	},
+
+	"Media max-ultra-hd-em": {
+		"prefix": "@max-ultra-hd-em",
+		"scope": "css, sass, scss, less",
+		"body": ["+max-ultra-hd-em", "\t$1"],
+		"description": "Media max-ultra-hd-em"
+	},
+
+	"Media max-ultra-hd-px": {
+		"prefix": "@max-ultra-hd-px",
+		"scope": "css, sass, scss, less",
+		"body": ["+max-ultra-hd-px", "\t$1"],
+		"description": "Media max-ultra-hd-px"
+	},
+	// End. Media var names desktop-first
+
+	// Media var names mobile-first
+	"Media min-mobile-em": {
+		"prefix": "@min-mobile-em",
+		"scope": "css, sass, scss, less",
+		"body": ["+min-mobile-em", "\t$1"],
+		"description": "Media min-mobile-em"
+	},
+
+	"Media min-mobile-px": {
+		"prefix": "@min-mobile-px",
+		"scope": "css, sass, scss, less",
+		"body": ["+min-mobile-px", "\t$1"],
+		"description": "Media min-mobile-px"
+	},
+
+	"Media min-mobile-plus-em": {
+		"prefix": "@min-mobile-plus-em",
+		"scope": "css, sass, scss, less",
+		"body": ["+min-mobile-plus-em", "\t$1"],
+		"description": "Media min-mobile-plus-em"
+	},
+
+	"Media min-mobile-plus-px": {
+		"prefix": "@min-mobile-plus-px",
+		"scope": "css, sass, scss, less",
+		"body": ["+min-mobile-plus-px", "\t$1"],
+		"description": "Media min-mobile-plus-px"
+	},
+
+	"Media min-mobile-wga-em": {
+		"prefix": "@min-mobile-wga-em",
+		"scope": "css, sass, scss, less",
+		"body": ["+min-mobile-wga-em", "\t$1"],
+		"description": "Media min-mobile-wga-em"
+	},
+
+	"Media min-mobile-wga-px": {
+		"prefix": "@min-mobile-wga-px",
+		"scope": "css, sass, scss, less",
+		"body": ["+min-mobile-wga-px", "\t$1"],
+		"description": "Media min-mobile-wga-px"
+	},
+
+	"Media min-tablet-em": {
+		"prefix": "@min-tablet-em",
+		"scope": "css, sass, scss, less",
+		"body": ["+min-tablet-em", "\t$1"],
+		"description": "Media min-tablet-em"
+	},
+
+	"Media min-tablet-px": {
+		"prefix": "@min-tablet-px",
+		"scope": "css, sass, scss, less",
+		"body": ["+min-tablet-px", "\t$1"],
+		"description": "Media min-tablet-px"
+	},
+
+	"Media min-tablet-portrait-em": {
+		"prefix": "@min-tablet-portrait-em",
+		"scope": "css, sass, scss, less",
+		"body": ["+min-tablet-portrait-em", "\t$1"],
+		"description": "Media min-tablet-portrait-em"
+	},
+
+	"Media min-tablet-portrait-px": {
+		"prefix": "@min-tablet-portrait-px",
+		"scope": "css, sass, scss, less",
+		"body": ["+min-tablet-portrait-px", "\t$1"],
+		"description": "Media min-tablet-portrait-px"
+	},
+
+	"Media min-tablet-full-em": {
+		"prefix": "@min-tablet-full-em",
+		"scope": "css, sass, scss, less",
+		"body": ["+min-tablet-full-em", "\t$1"],
+		"description": "Media min-tablet-full-em"
+	},
+
+	"Media min-tablet-full-px": {
+		"prefix": "@min-tablet-full-px",
+		"scope": "css, sass, scss, less",
+		"body": ["+min-tablet-full-px", "\t$1"],
+		"description": "Media min-tablet-full-px"
+	},
+
+	"Media min-desktop-em": {
+		"prefix": "@min-desktop-em",
+		"scope": "css, sass, scss, less",
+		"body": ["+min-desktop-em", "\t$1"],
+		"description": "Media min-desktop-em"
+	},
+
+	"Media min-desktop-px": {
+		"prefix": "@min-desktop-px",
+		"scope": "css, sass, scss, less",
+		"body": ["+min-desktop-px", "\t$1"],
+		"description": "Media min-desktop-px"
+	},
+
+	"Media min-desktop-wide-em": {
+		"prefix": "@min-desktop-wide-em",
+		"scope": "css, sass, scss, less",
+		"body": ["+min-desktop-wide-em", "\t$1"],
+		"description": "Media min-desktop-wide-em"
+	},
+
+	"Media min-desktop-wide-px": {
+		"prefix": "@min-desktop-wide-px",
+		"scope": "css, sass, scss, less",
+		"body": ["+min-desktop-wide-px", "\t$1"],
+		"description": "Media min-desktop-wide-px"
+	},
+
+	"Media min-desktop-hd-em": {
+		"prefix": "@min-desktop-hd-em",
+		"scope": "css, sass, scss, less",
+		"body": ["+min-desktop-hd-em", "\t$1"],
+		"description": "Media min-desktop-hd-em"
+	},
+
+	"Media min-desktop-hd-px": {
+		"prefix": "@min-desktop-hd-px",
+		"scope": "css, sass, scss, less",
+		"body": ["+min-desktop-hd-px", "\t$1"],
+		"description": "Media min-desktop-hd-px"
+	},
+
+	"Media min-desktop-wide-plus-em": {
+		"prefix": "@min-desktop-wide-plus-em",
+		"scope": "css, sass, scss, less",
+		"body": ["+min-desktop-wide-plus-em", "\t$1"],
+		"description": "Media min-desktop-wide-plus-em"
+	},
+
+	"Media min-desktop-wide-plus-px": {
+		"prefix": "@min-desktop-wide-plus-px",
+		"scope": "css, sass, scss, less",
+		"body": ["+min-desktop-wide-plus-px", "\t$1"],
+		"description": "Media min-desktop-wide-plus-px"
+	},
+
+	"Media min-desktop-hd-plus-em": {
+		"prefix": "@min-desktop-hd-plus-em",
+		"scope": "css, sass, scss, less",
+		"body": ["+min-desktop-hd-plus-em", "\t$1"],
+		"description": "Media min-desktop-hd-plus-em"
+	},
+
+	"Media min-desktop-hd-plus-px": {
+		"prefix": "@min-desktop-hd-plus-px",
+		"scope": "css, sass, scss, less",
+		"body": ["+min-desktop-hd-plus-px", "\t$1"],
+		"description": "Media min-desktop-hd-plus-px"
+	},
+
+	"Media min-full-hd-em": {
+		"prefix": "@min-full-hd-em",
+		"scope": "css, sass, scss, less",
+		"body": ["+min-full-hd-em", "\t$1"],
+		"description": "Media min-full-hd-em"
+	},
+
+	"Media min-full-hd-px": {
+		"prefix": "@min-full-hd-px",
+		"scope": "css, sass, scss, less",
+		"body": ["+min-full-hd-px", "\t$1"],
+		"description": "Media min-full-hd-px"
+	},
+
+	"Media min-quad-hd-em": {
+		"prefix": "@min-quad-hd-em",
+		"scope": "css, sass, scss, less",
+		"body": ["+min-quad-hd-em", "\t$1"],
+		"description": "Media min-quad-hd-em"
+	},
+
+	"Media min-quad-hd-px": {
+		"prefix": "@min-quad-hd-px",
+		"scope": "css, sass, scss, less",
+		"body": ["+min-quad-hd-px", "\t$1"],
+		"description": "Media min-quad-hd-px"
+	},
+
+	"Media min-ultra-hd-em": {
+		"prefix": "@min-ultra-hd-em",
+		"scope": "css, sass, scss, less",
+		"body": ["+min-ultra-hd-em", "\t$1"],
+		"description": "Media min-ultra-hd-em"
+	},
+
+	"Media min-ultra-hd-px": {
+		"prefix": "@min-ultra-hd-px",
+		"scope": "css, sass, scss, less",
+		"body": ["+min-ultra-hd-px", "\t$1"],
+		"description": "Media min-ultra-hd-px"
+	},
+	// End. Media var names mobile-first
 
 	// Media max-width em
 	"Media Screen max-width-3824": {
@@ -651,7 +1043,6 @@
 	},
 	// End. Media max-width em
 
-
 	// Media max-width px
 	"Media Screen max-width-1600px": {
 		"prefix": "@max1600px ",
@@ -1206,7 +1597,6 @@
 		"description": "Media Screen max-width-352px"
 	},
 	// End. Media max-width px
-
 
 	// Media min-width em
 	"Media Screen min-width-3840": {
@@ -1861,7 +2251,6 @@
 	},
 	// End. Media min-width em
 
-
 	// Media min-width px
 	"Media Screen min-width-3840px": {
 		"prefix": "@min3840px",
@@ -2512,6 +2901,6 @@
 		"scope": "css, sass, less",
 		"body": ["@media ( min-width: 352.96px )", "\t$1"],
 		"description": "Media Screen (px) min-width-352"
-	},
+	}
 	// End. Media min-width px
 }

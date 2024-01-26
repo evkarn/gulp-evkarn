@@ -77,7 +77,7 @@ export const html = () => {
 
 
 	// Если режим продакшена минимизируем html файлы
-	.pipe(app.plugins.if(app.isBuild,	htmlClean()))
+	// .pipe(app.plugins.if(app.isBuild,	htmlClean()))
 
 
 	// Переименовываем итоговый файл

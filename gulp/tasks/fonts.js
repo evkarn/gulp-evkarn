@@ -79,7 +79,8 @@ export const fontsStyle = () => {
 
 						if(fontStyle.toLowerCase() === 'italic' || fontStyle.toLowerCase() === 'Italic') {
 							fontStyle = 'italic';
-						} else {
+						}
+						else {
 							fontStyle = 'normal';
 						}
 
@@ -88,8 +89,29 @@ export const fontsStyle = () => {
 						const fontFormat = 'format("woff2")';
 
 						// Формирование кода подключения шрифта
-						fs.appendFile(fileFonts,
-							`@font-face \n\tfont-family: ${fontName}-font\n\t${fontDisplay}\n\tfont-weight: ${fontWeight}\n\tfont-style: ${fontStyle}\n\tsrc: url("../fonts/${fontFileName}.woff2") ${fontFormat}\n\r\n`, cb);
+						if (`${app.path.preprocessor}` == 'sass') {
+							fs.appendFile(
+								fileFonts,
+								`@font-face \n
+								\tfont-family: ${fontName}\n
+								\t${fontDisplay}\n
+								\tfont-weight: ${fontWeight}\n
+								\tfont-style: ${fontStyle}\n
+								\tsrc: url("../fonts/${fontFileName}.woff2") ${fontFormat}\n
+								\r\n`, cb
+							);
+						}
+						else {
+							fs.appendFile(
+								fileFonts,
+								`@font-face {\n
+								\tfont-family: ${fontName};\n
+								\t${fontDisplay};\n
+								\tfont-weight: ${fontWeight};\n
+								\tfont-style: ${fontStyle};\n
+								\tsrc: url("../fonts/${fontFileName}.woff2") ${fontFormat};\n}\r\n`, cb
+							);
+						}
 
 						newFileOnly = fontFileName;
 					}

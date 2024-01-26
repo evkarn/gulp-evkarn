@@ -1,0 +1,12 @@
+.checkbox__label {
+	position: relative;
+	display: flex;
+	align-items: center;
+	column-gap: rem(6);
+	
+	cursor: pointer;
+
+	@media (min-width: em(1920.96)) {
+		@include calc-size(column-gap, 6, 12, 1920, 3840, rem);
+	}
+}

@@ -1,19 +1,14 @@
 *[class*="__container"] {
-  max-width: rem($container-width);
+  max-width: $container-width+px;
   width: 100%;
   margin: 0 auto;
-  padding: 0 rem($container-offset);
+  padding: 0 $container-offset+px;
 
   @media (min-width: em(1920.96)) {
-    @include calc-size(max-width, $container-width, $container-width * 2, 1920, 3840, rem);
+    @include calc-size(max-width, $container-width, $container-width*2, 1920, 3840, px);
 
-    @include calc-size(padding-right, $container-offset, $container-offset * 2, 1920, 3840, rem);
-    @include calc-size(padding-left, $container-offset, $container-offset * 2, 1920, 3840, rem);
-  }
-
-  @media (max-width: em(768)) {
-    max-width: 100%;
-    padding: 0 rem(10);
+    @include calc-size(padding-right, $container-offset, $container-offset*2, 1920, 3840, px);
+    @include calc-size(padding-left, $container-offset, $container-offset*2, 1920, 3840, px);
   }
 }
 
@@ -35,7 +30,7 @@
 *[class*="__container-right"] {
   max-width: 100%;
   width: 100%;
-  padding-left: calc((100% - $content-width-units) / 2);
+  padding-left: calc((100% - #{$container-width+px}) / 2);
 
   @media (max-width: em($container-width)) {
     padding: 0 rem($container-offset);
@@ -49,7 +44,7 @@
 *[class*="__container-left"] {
   max-width: 100%;
   width: 100%;
-  padding-right: calc((100% - $content-width-units) / 2);
+  padding-right: calc((100% - #{$container-width+px}) / 2);
 
   @media (max-width: em($container-width)) {
     padding: 0 rem($container-offset);

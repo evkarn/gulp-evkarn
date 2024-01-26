@@ -11,7 +11,7 @@ const buildFolder = `./dist`;
 const srcFolder = `./src`;
 
 // Выбор формата файлов препроцессора sass или scss
-const preprocessor = 'sass';
+const preprocessor = 'scss';
 
 export const path = {
 	build: {
@@ -40,7 +40,7 @@ export const path = {
 
 	// Пути к исходникам файлов
 	src: {
-		configFiles: `${srcFolder}/*.{htaccess,txt,xml,ico,png,svg}`,
+		configFiles: `${srcFolder}/*.{php,htaccess,txt,xml,ico,png,svg}`,
 
 		files: `${srcFolder}/assets/files/**/*.*`,
 
@@ -48,7 +48,7 @@ export const path = {
 
 		fontsStyle: `${srcFolder}/assets/components/styles/${preprocessor}/fonts/_index.${preprocessor}`,
 
-		html: `${srcFolder}/*.{html,php,htm}`,
+		html: `${srcFolder}/*.{html,htm}`,
 
 		js: `${srcFolder}/assets/components/js/*.js`,
 
