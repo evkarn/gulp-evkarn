@@ -1,0 +1,111 @@
+{
+	"&:not(:first-child)": {
+		"prefix": "not-first-child",
+		"scope": "css, sass, scss, less",
+		"body": [
+			"&:not(:first-child) {",
+			"\t$1;",
+			"}"
+		],
+		"description": "&:not(:first-child)"
+	},
+
+	"&:not(:first-of-type)": {
+		"prefix": "notFirstOfType",
+		"scope": "css, sass, scss, less",
+		"body": [
+			"&:not(:first-of-type) {",
+			"\t$1;",
+			"}"
+		],
+		"description": "&:not(:first-of-type)"
+	},
+
+	"&:not(:last-child)": {
+		"prefix": "notLastChild",
+		"scope": "css, sass, scss, less",
+		"body": [
+			"&:not(:last-child) {",
+			"\t$1;",
+			"}"
+		],
+		"description": "&:not(:last-child)"
+	},
+
+	"&:not(:last-of-type)": {
+		"prefix": "notLastOfType",
+		"scope": "css, sass, scss, less",
+		"body": [
+			"&:not(:last-of-type) {",
+			"\t$1;",
+			"}"
+		],
+		"description": "&:not(:last-of-type)"
+	},
+
+	"&:first-child": {
+		"prefix": "firstChild",
+		"scope": "css, sass, scss, less",
+		"body": [
+			"&:first-child {",
+			"\t$1;",
+			"}"
+		],
+		"description": "&:first-child"
+	},
+
+	"&:first-of-type": {
+		"prefix": "firstOfType",
+		"scope": "css, sass, scss, less",
+		"body": [
+			"&:first-of-type {",
+			"\t$1;",
+			"}"
+		],
+		"description": "&:first-of-type"
+	},
+
+	"&:last-child": {
+		"prefix": "lastChild",
+		"scope": "css, sass, scss, less",
+		"body": [
+			"&:last-child {",
+			"\t$1;",
+			"}"
+		],
+		"description": "&:last-child"
+	},
+
+	"&:last-of-type": {
+		"prefix": "lastOfType",
+		"scope": "css, sass, scss, less",
+		"body": [
+			"&:last-of-type {",
+			"\t$1;",
+			"}"
+		],
+		"description": "&:last-of-type"
+	},
+
+	"&:nth-child()": {
+		"prefix": "nthChild",
+		"scope": "css, sass, scss, less",
+		"body": [
+			"&:nth-child($1) {",
+			"\t$2;",
+			"}"
+		],
+		"description": "&:nth-child()"
+	},
+
+	"&:nth-of-type()": {
+		"prefix": "nthOfType",
+		"scope": "css, sass, scss, less",
+		"body": [
+			"&:nth-of-type($1) {",
+			"\t$2;",
+			"}"
+		],
+		"description": "&:nth-of-type()"
+	},
+}

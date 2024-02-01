@@ -25,6 +25,7 @@
 		"bootstrap": "latest",
 		"browser-sync": "latest",
 		"css-loader": "latest",
+		"custom-select": "latest",
 		"del": "latest",
 		"fs": "latest",
 		"fslightbox": "latest",

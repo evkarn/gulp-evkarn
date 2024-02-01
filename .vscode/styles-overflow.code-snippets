@@ -1,0 +1,55 @@
+{
+	"overflow: hidden": {
+		"prefix": "overflow-hidden",
+		"scope": "css, sass, scss, less",
+		"body": [
+			"overflow: hidden;"
+		],
+		"description": "overflow: hidden"
+	},
+
+	"overflow: visible": {
+		"prefix": "overflow-visible",
+		"scope": "css, sass, scss, less",
+		"body": [
+			"overflow: visible;"
+		],
+		"description": "overflow: visible"
+	},
+
+	"overflow-x: hidden": {
+		"prefix": "overflow-x-hidden",
+		"scope": "css, sass, scss, less",
+		"body": [
+			"overflow-x: hidden;"
+		],
+		"description": "overflow-x: hidden"
+	},
+
+	"overflow-x: visible": {
+		"prefix": "overflow-x-visible",
+		"scope": "css, sass, scss, less",
+		"body": [
+			"overflow-x: visible;"
+		],
+		"description": "overflow-x: visible"
+	},
+
+	"overflow-y: hidden": {
+		"prefix": "overflow-y-hidden",
+		"scope": "css, sass, scss, less",
+		"body": [
+			"overflow-y: hidden;"
+		],
+		"description": "overflow-y: hidden"
+	},
+
+	"overflow-y: visible": {
+		"prefix": "overflow-y-visible",
+		"scope": "css, sass, scss, less",
+		"body": [
+			"overflow-y: visible;"
+		],
+		"description": "overflow-y: visible"
+	},
+}

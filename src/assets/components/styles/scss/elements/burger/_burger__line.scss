@@ -1,0 +1,25 @@
+.burger__line {
+	position: absolute;
+
+	top: 50%;
+	left: 0;
+
+	width: 100%;
+	height: rem($burger-line-height);
+
+	background-color: var(--c-burger-line);
+
+	opacity: 1;
+
+	transform: translateY(-50%);
+
+	transition: opacity 0.3s ease;
+
+	@include min-full-hd-em {
+		@include calc-size(height, $burger-line-height, $burger-line-height * 2, 1920, 3840, rem);
+	}
+}
+
+.burger--is-active .burger__line {
+	opacity: 0;
+}

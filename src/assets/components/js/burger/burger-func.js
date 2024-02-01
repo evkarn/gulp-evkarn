@@ -14,7 +14,7 @@ function burger() {
 	const overlay = document?.querySelector('[data-nav-overlay]');
 
 	burger?.addEventListener('click', () => {
-		burger?.classList.toggle('burger--active');
+		burger?.classList.toggle('burger--is-active');
 
 		nav?.classList.toggle('nav--is-active');
 
@@ -41,7 +41,7 @@ function burger() {
 
 			burger?.setAttribute('aria-label', 'Открыть меню');
 
-			burger.classList.remove('burger--active');
+			burger.classList.remove('burger--is-active');
 
 			menu.classList.remove('nav--is-active');
 		});
@@ -52,7 +52,7 @@ function burger() {
 
 		burger?.setAttribute('aria-label', 'Открыть меню');
 
-		burger.classList.remove('burger--active');
+		burger.classList.remove('burger--is-active');
 
 		menu.classList.remove('nav--is-active');
 

@@ -25,3 +25,5 @@ function slideUp (target, duration) {
 		target.style.removeProperty('border');
 	}, duration);
 };
+
+export default slideUp;

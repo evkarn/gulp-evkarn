@@ -1,16 +1,21 @@
 // Greed system
-$gutter-num: 16;
-
-$gutter-px: 16px;
+$gutter-num: 30;
+$gutter-px: $gutter-num+px;
+$gutter-rem: rem($gutter-num);
 
 $screen-min-width: 320;
 
 $content-width: 1196;
 
 $container-offset: 16;
+$container-offset-min: 10;
 
 $container-width: $content-width + $container-offset*2;
 
+$switch-point: 768;
+
+
+// Breakpoints width
 $minimal: 320;
 
 $mobile: 480;

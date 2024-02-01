@@ -1,0 +1,62 @@
+.burger {
+
+
+	position: relative;
+
+	display: inline-block;
+
+	width: rem($burger-width);
+	height: rem($burger-height);
+
+	@include min-full-hd-em {
+		@include calc-size(width, $burger-width, $burger-width*2, 1920, 3840, rem);
+		@include calc-size(height, $burger-height, $burger-height*2, 1920, 3840, rem);
+	}
+
+	&:before,
+	&:after {
+		content: "";
+
+		position: absolute;
+
+		display: block;
+
+		width: 100%;
+		height: rem($burger-line-height);
+
+		background-color: var(--c-burger-line);
+
+		transition: rotate .3s ease;
+
+		@include min-full-hd-em {
+			@include calc-size(height, $burger-line-height, $burger-line-height*2, 1920, 3840, rem);
+		}
+	}
+
+	&:before {
+		top: 0;
+	}
+
+	&:after {
+		bottom: 0;
+	}
+}
+
+.burger--is-active {
+	&:before, &:after {
+		left: 2%;
+		width: 93%;
+	}
+
+	&:before {
+		top: 50%;
+
+		rotate: 45deg;
+	}
+
+	&:after {
+		bottom: 45%;
+
+		rotate: -45deg;
+	}
+}

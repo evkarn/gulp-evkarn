@@ -1,0 +1,113 @@
+{
+	// Margin
+	"Margin all": {
+		"prefix": "margin-all",
+		"scope": "css, sass, scss, less",
+		"body": [
+			"margin: $1 $2 $3 $4;"
+		],
+		"description": "Margin all"
+	},
+
+	"Margin-top: rem": {
+		"prefix": "margin-top-rem",
+		"scope": "css, sass, scss, less",
+		"body": ["margin-top: rem($1);"],
+		"description": "Margin-top: rem"
+	},
+
+	"Margin-right: rem": {
+		"prefix": "margin-right-rem",
+		"scope": "css, sass, scss, less",
+		"body": ["margin-right: rem($1);"],
+		"description": "Margin-right: rem"
+	},
+
+	"Margin-bottom: rem": {
+		"prefix": "margin-bottom-rem",
+		"scope": "css, sass, scss, less",
+		"body": ["margin-bottom: rem($1);"],
+		"description": "Margin-bottom: rem"
+	},
+
+	"Margin-left: rem": {
+		"prefix": "margin-left-rem",
+		"scope": "css, sass, scss, less",
+		"body": ["margin-left: rem($1);"],
+		"description": "Margin-left: rem"
+	},
+
+	"Margin-top: px": {
+		"prefix": "margin-top-px",
+		"scope": "css, sass, scss, less",
+		"body": ["margin-top: $1px;"],
+		"description": "Margin-top: px"
+	},
+
+	"Margin-right: px": {
+		"prefix": "margin-right-px",
+		"scope": "css, sass, scss, less",
+		"body": ["margin-right: $1px;"],
+		"description": "Margin-right: px"
+	},
+
+	"Margin-bottom: px": {
+		"prefix": "margin-bottom-px",
+		"scope": "css, sass, scss, less",
+		"body": ["margin-bottom: $1px;"],
+		"description": "Margin-bottom: px"
+	},
+
+	"Margin-left: px": {
+		"prefix": "margin-left-px",
+		"scope": "css, sass, scss, less",
+		"body": ["margin-left: $1px;"],
+		"description": "Margin-left: px"
+	},
+	// End. Margin
+
+
+	// Padding
+	"Padding all": {
+		"prefix": "padding-all",
+		"scope": "css, sass, scss, less",
+		"body": ["padding: $1 $2 $3 $4;"],
+		"description": "Padding all"
+	},
+
+	"Padding rem": {
+		"prefix": "padding-rem",
+		"scope": "css, sass, scss, less",
+		"body": ["padding: rem($1);"],
+		"description": "Padding rem"
+	},
+
+	"padding-top: rem": {
+		"prefix": "padding-top-rem",
+		"scope": "css, sass, scss, less",
+		"body": ["padding-top: rem($1);"],
+		"description": "padding-top: rem"
+	},
+
+	"padding-right: rem": {
+		"prefix": "padding-right-rem",
+		"scope": "css, sass, scss, less",
+		"body": ["padding-right: rem($1);"],
+		"description": "padding-right: rem"
+	},
+
+	"padding-bottom: rem": {
+		"prefix": "padding-bottom-rem",
+		"scope": "css, sass, scss, less",
+		"body": ["padding-bottom: rem($1);"],
+		"description": "padding-bottom: rem"
+	},
+
+	"padding-left: rem": {
+		"prefix": "padding-left-rem",
+		"scope": "css, sass, scss, less",
+		"body": ["padding-left: rem($1);"],
+		"description": "padding-left: rem"
+	},
+	// End. Padding
+}

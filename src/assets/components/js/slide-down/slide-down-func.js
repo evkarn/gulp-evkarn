@@ -55,3 +55,5 @@ function slideDown (target, duration) {
 		target.style.removeProperty('border');
 	}, duration);
 };
+
+export default slideDown;
