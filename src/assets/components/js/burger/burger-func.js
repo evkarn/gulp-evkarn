@@ -24,7 +24,8 @@ function burger() {
 			burger?.setAttribute('aria-label', 'Закрыть меню');
 
 			disableScroll();
-		} else {
+		}
+		else {
 			burger?.setAttribute('aria-expanded', 'false');
 
 			burger?.setAttribute('aria-label', 'Открыть меню');
