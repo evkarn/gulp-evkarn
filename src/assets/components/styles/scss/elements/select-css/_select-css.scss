@@ -1,0 +1,55 @@
+.select-css {
+	display: inline-flex;
+
+	max-width: 100%;
+	width: 100%;
+
+	padding: 4px 26px 4px 4px;
+
+	@include calc-size(font-size, 18, 26, 320, 1920, px);
+
+	appearance: none;
+
+	background-color: transparent;
+
+	border: none;
+
+	color: var(--c-darken);
+
+	cursor: pointer;
+
+	@include min-full-hd-px {
+		@include calc-size(padding-top, 4, 8, 1920, 3840, px);
+		@include calc-size(padding-bottom, 4, 8, 1920, 3840, px);
+		@include calc-size(padding-right, 26, 52, 1920, 3840, px);
+		@include calc-size(padding-left, 4, 8, 1920, 3840, px);
+
+		@include calc-size(font-size, 26, 52, 1920, 3840, px);
+	}
+}
+
+.select-css::-ms-expand {
+	display: none;
+}
+
+.select-css:hover {
+	border-color: var(--c-accent);
+}
+
+.select-css:focus {
+	border-color: var(--c-accent);
+	outline: none;
+}
+
+.select-css option {
+	font-weight: normal;
+}
+
+*[dir="rtl"] .select-css,
+:root:lang(ar) .select-css,
+:root:lang(iw) .select-css {
+	background-position:
+		left 0.7em top 50%,
+		0 0;
+	padding: 0.6em 0.8em 0.5em 1.4em;
+}

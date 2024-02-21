@@ -30,7 +30,7 @@
 		"prefix": "bor-rad-px",
 		"scope": "css, scss, sass, less",
 		"body": [
-			"border-radius: px(\\$border-radius);"
+			"border-radius: $1px;"
 		],
 		"description": "border-radius: border-radius-px"
 	},
@@ -47,7 +47,7 @@
 	"Border all px": {
 		"prefix": "bor-px",
 		"body": [
-			"border: px(\\$border-width) solid var(--c-border-color);",
+			"border: $1px solid var($2);",
 		],
 		"description": "Border all px"
 	},
@@ -55,7 +55,7 @@
 	"Border all rem": {
 		"prefix": "bor-rem",
 		"body": [
-			"border: rem(\\$border-width) solid var(--c-border-color);",
+			"border: rem(\\$border-width) solid var($1);",
 		],
 		"description": "Border all rem"
 	}

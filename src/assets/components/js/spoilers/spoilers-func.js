@@ -20,18 +20,24 @@
 
 // END. INIT ADAPTIVE-SPOILERS
 
+import slideUp from '../slide-up/slide-up-func.js';
+
+import slideToggle from '../slide-toggle/slide-toggle-func.js';
+
 function spoilers(durationSpeed) {
 	'use strict';
 
 	// Собираем все элементы с атрибутом data-spoilers-list
-	const spoilersArray = document.querySelectorAll('[data-spoilers-list]');
+	const spoilersArray = document?.querySelectorAll('[data-spoilers-list]');
 
 	// Проверяем есть ли они
 	if (spoilersArray.length > 0) {
 		// Получение обычных спойлеров
-		const spoilersRegular = Array.from(spoilersArray).filter(function (item, index, self) {
-			return !item.dataset.spoilers.split(',')[0];
-		});
+		const spoilersRegular = Array.from(spoilersArray).filter(
+			function (item, index, self) {
+				return !item.dataset.spoilersList.split(',')[0];
+			},
+		);
 
 		// Инициализация обычных спойлеров
 		if (spoilersRegular.length > 0) {
@@ -39,9 +45,11 @@ function spoilers(durationSpeed) {
 		}
 
 		// Получение спойлеров с медиазапросами
-		const spoilersMedia = Array.from(spoilersArray).filter(function (item, index, self) {
-			return item.dataset.spoilers.split(',')[0];
-		});
+		const spoilersMedia = Array.from(spoilersArray).filter(
+			function (item, index, self) {
+				return item.dataset.spoilersList.split(',')[0];
+			},
+		);
 
 		// Инициализация спойлеров с медиазапросами
 		if (spoilersMedia.length > 0) {
@@ -65,7 +73,16 @@ function spoilers(durationSpeed) {
 
 			// Получаем уникальные брейкпоинты
 			let mediaQueries = breakpointsArray.map(function (item) {
-				return '(' + item.type + '-width: ' + item.value + 'px),' + item.value + ',' + item.type;
+				return (
+					'(' +
+					item.type +
+					'-width: ' +
+					item.value +
+					'px),' +
+					item.value +
+					',' +
+					item.type
+				);
 			});
 
 			mediaQueries = mediaQueries.filter(function (item, index, self) {
@@ -122,7 +139,9 @@ function spoilers(durationSpeed) {
 
 	// Работа с контентом
 	function initSpoilerBody(spoilersBlock, hideSpoilerBody = true) {
-		const spoilerTitles = spoilersBlock.querySelectorAll('[data-spoiler-title]');
+		const spoilerTitles = spoilersBlock.querySelectorAll(
+			'[data-spoiler-title]',
+		);
 
 		if (spoilerTitles.length > 0) {
 			spoilerTitles.forEach((spoilerTitle) => {
@@ -133,7 +152,9 @@ function spoilers(durationSpeed) {
 						const spoilerTitleParent = spoilerTitle?.closest('[data-spoiler]');
 
 						if (spoilerTitleParent) {
-							const targetContent = spoilerTitleParent.querySelector('[data-spoiler-content]');
+							const targetContent = spoilerTitleParent.querySelector(
+								'[data-spoiler-content]',
+							);
 
 							targetContent.hidden = true;
 						}
@@ -144,7 +165,9 @@ function spoilers(durationSpeed) {
 					const spoilerTitleParent = spoilerTitle?.closest('[data-spoiler]');
 
 					if (spoilerTitleParent) {
-						const targetContent = spoilerTitleParent.querySelector('[data-spoiler-content]');
+						const targetContent = spoilerTitleParent.querySelector(
+							'[data-spoiler-content]',
+						);
 
 						targetContent.hidden = false;
 					}
@@ -156,12 +179,19 @@ function spoilers(durationSpeed) {
 	function setSpoilerAction(e) {
 		const el = e.target;
 
-		if (el.hasAttribute('data-spoiler-title') || el.closest('[data-spoiler-title]')) {
-			const spoilerTitle = el.hasAttribute('data-spoiler-title') ? el : el.closest('[data-spoiler-title]');
+		if (
+			el.hasAttribute('data-spoiler-title') ||
+			el.closest('[data-spoiler-title]')
+		) {
+			const spoilerTitle = el.hasAttribute('data-spoiler-title')
+				? el
+				: el.closest('[data-spoiler-title]');
 
 			const spoilersBlock = spoilerTitle.closest('[data-spoilers-list]');
 
-			const oneSpoiler = spoilersBlock.hasAttribute('data-one-spoiler') ? true : false;
+			const oneSpoiler = spoilersBlock.hasAttribute('data-one-spoiler')
+				? true
+				: false;
 
 			if (!spoilersBlock.querySelectorAll('.slide').length) {
 				if (oneSpoiler && !spoilerTitle.classList.contains('active')) {
@@ -172,7 +202,9 @@ function spoilers(durationSpeed) {
 
 				const spoilerTitleParent = spoilerTitle.closest('[data-spoiler]');
 
-				const targetContent = spoilerTitleParent.querySelector('[data-spoiler-content]');
+				const targetContent = spoilerTitleParent.querySelector(
+					'[data-spoiler-content]',
+				);
 
 				slideToggle(targetContent, durationSpeed);
 			}
@@ -181,11 +213,15 @@ function spoilers(durationSpeed) {
 	}
 
 	function hideSpoilersBody(spoilersBlock) {
-		const spoilerActiveTitle = spoilersBlock.querySelector('[data-spoiler-title].active');
+		const spoilerActiveTitle = spoilersBlock.querySelector(
+			'[data-spoiler-title].active',
+		);
 
 		const activeTitleParent = spoilerActiveTitle.closest('[data-spoiler]');
 
-		const targetContent = activeTitleParent.querySelector('[data-spoiler-content]');
+		const targetContent = activeTitleParent.querySelector(
+			'[data-spoiler-content]',
+		);
 
 		if (spoilerActiveTitle) {
 			spoilerActiveTitle.classList.remove('active');
@@ -193,113 +229,6 @@ function spoilers(durationSpeed) {
 			slideUp(targetContent, durationSpeed);
 		}
 	}
-
-	let slideUp = (target, duration = durationSpeed) => {
-		if (!target.classList.contains('slide')) {
-			target.classList.add('slide');
-
-			target.style.transitionProperty = 'height, margin, padding';
-
-			target.style.transitionDuration = duration + 'ms';
-
-			target.style.height = target.offsetHeight + 'px';
-
-			target.offsetHeight;
-
-			target.style.overflow = 'hidden';
-
-			target.style.height = 0;
-
-			target.style.paddingTop = 0;
-
-			target.style.paddingBottom = 0;
-
-			target.style.marginTop = 0;
-
-			target.style.marginBottom = 0;
-
-			window.setTimeout(() => {
-				target.hidden = true;
-
-				target.style.removeProperty('height');
-
-				target.style.removeProperty('padding-top');
-
-				target.style.removeProperty('padding-bottom');
-
-				target.style.removeProperty('margin-top');
-
-				target.style.removeProperty('margin-bottom');
-
-				target.style.removeProperty('overflow');
-
-				target.style.removeProperty('transition-property');
-
-				target.style.removeProperty('transition-duration');
-
-				target.classList.remove('slide');
-			}, duration);
-		}
-	};
-
-	let slideDown = (target, duration = durationSpeed) => {
-		if (!target.classList.contains('slide')) {
-			target.classList.add('slide');
-			if (target.hidden) {
-				target.hidden = false;
-			}
-		}
-
-		let height = target.offsetHeight;
-
-		target.style.overflow = 'hidden';
-
-		target.style.height = 0;
-
-		target.style.paddingTop = 0;
-
-		target.style.paddingBottom = 0;
-
-		target.style.marginTop = 0;
-
-		target.style.marginBottom = 0;
-
-		target.offsetHeight;
-
-		target.style.transitionProperty = 'height, margin, padding';
-
-		target.style.transitionDuration = duration + 'ms';
-
-		target.style.height = height + 'px';
-
-		target.style.removeProperty('padding-top');
-
-		target.style.removeProperty('padding-bottom');
-
-		target.style.removeProperty('margin-top');
-
-		target.style.removeProperty('margin-bottom');
-
-		window.setTimeout(() => {
-			target.style.removeProperty('height');
-
-			target.style.removeProperty('overflow');
-
-			target.style.removeProperty('transition-property');
-
-			target.style.removeProperty('transition-duration');
-
-			target.classList.remove('slide');
-		}, duration);
-	};
-
-	let slideToggle = (target, duration = durationSpeed) => {
-		if (target.hidden) {
-			return slideDown(target, duration);
-		} else {
-			return slideUp(target, duration);
-		}
-	};
 }
 
-export default spoilers
+export default spoilers;

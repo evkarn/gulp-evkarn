@@ -1,0 +1,39 @@
+.select-wrap {
+	position: relative;
+
+	display: inline;
+
+	&:after {
+		content: "";
+
+		position: absolute;
+		top: 50%;
+		right: 3%;
+
+		display: block;
+
+		@include calc-size(width, 12, 15, 320, 1920, px);
+		@include calc-size(height, 7, 9, 320, 1920, px);
+
+		background-image: url("../images/dist/icons/caret-down.svg");
+		background-repeat: no-repeat;
+		background-position: center;
+		background-size: cover;
+		pointer-events: none;
+
+		transform: translateY(-50%);
+
+		transition: rotate 0.3s ease;
+
+		@include min-full-hd-px {
+			@include calc-size(width, 15, 30, 1920, 3840, px);
+			@include calc-size(height, 9, 18, 1920, 3840, px);
+		}
+	}
+}
+
+.select-wrap.is-active {
+	&:after {
+		transform: rotate(180deg);
+	}
+}

@@ -4,7 +4,7 @@
 		"prefix": "pointer-ev-none",
 		"scope": "css, sass, scss, less",
 		"body": [
-			"pointer-events: none";
+			"pointer-events: none;"
 		],
 		"description": "Pointer-events: none"
 	},
@@ -13,7 +13,7 @@
 		"prefix": "pointer-ev-auto",
 		"scope": "css, sass, scss, less",
 		"body": [
-			"pointer-events: auto";
+			"pointer-events: auto;"
 		],
 		"description": "Pointer-events: auto"
 	},

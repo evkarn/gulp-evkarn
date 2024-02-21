@@ -1,18 +1,22 @@
+@use "sass:math";
+
 // Greed system
-$gutter-num: 30
+$gutter-num: 20;
+$gutter-px: $gutter-num + px;
 
-$gutter: $gutter-num+px
+$screen-min-width: 320;
 
-$screen-min-width: 320
+$content-width: 1684;
 
-$content-width: 1254
+$content-width-percent: math.div($content-width,1920)*100;
 
-$container-offset: 12
+$container-offset: math.div($gutter-num,2);
 
-$content-width-units: rem($content-width)
+$container-width: $content-width + $container-offset * 2;
 
-$container-width: calc($content-width + $container-offset*2)
+$switch-point: 768;
 
+// Breakpoints width
 $minimal: 320
 
 $mobile: 480
@@ -27,8 +31,8 @@ $min-mobile-wga: 640.96
 $tablet: 768
 $min-tablet: 768.96
 
-$tablet-portrait: 992
-$min-tablet-portrait: 992.96
+$tablet-plus: 992
+$min-tablet-plus: 992.96
 
 $tablet-full: 1024
 $min-tablet-full: 1024.96
