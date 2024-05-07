@@ -7,12 +7,12 @@
 >
 
 @include('includes/head.html', {
-	"title": "Заголовок страницы",
-	"siteUrl": "https://site.ru",
-	"description": "Описание страницы",
-	"keywords": "Ключ1, Ключ2",
-	"ogImage": "home",
-	"css": "styles"
+"title": "Заголовок страницы",
+"siteUrl": "https://site.ru",
+"description": "Описание страницы",
+"keywords": "Ключ1, Ключ2",
+"ogImage": "home",
+"css": "styles"
 })
 
 <body
@@ -23,14 +23,19 @@
 	<div class="page">
 		@include('includes/header.html')
 
-		<main class="main" style="margin: 40px;">
+		<main
+			class="main"
+		>
 
 		</main>
 
 		@include('includes/footer.html')
 	</div>
 
-	<script src="assets/js/scripts.min.js"></script>
+	<script
+		type="module"
+		src="assets/js/scripts.min.js"
+	></script>
 </body>
 
 </html>

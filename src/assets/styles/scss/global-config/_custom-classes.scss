@@ -11,11 +11,19 @@
 .tBold,
 .text-bold,
 .t-bold,
-.bold {
+.bold,
+.txt-bold {
 	font-weight: 700;
 }
 
-.underline, .under {
+.textAccent,
+.txt-accent,
+.text-accent,
+.accent {
+	color: var(--c-accent);
+}
+
+.underline {
 	text-decoration: underline;
 }
 

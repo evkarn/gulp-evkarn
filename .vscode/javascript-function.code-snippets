@@ -66,4 +66,30 @@
 		],
 		"description": "function $1() {}"
 	},
+
+	"async arrow function": {
+		"prefix": "async-arrow-fn",
+		"scope": "javascript, typescript",
+		"body": [
+			"const $1 = async () => {",
+			"\t'use strict';",
+			"",
+			"\t$2",
+			"};",
+		],
+		"description": "async arrow function"
+	},
+
+	"async function": {
+		"prefix": "async-fn",
+		"scope": "javascript, typescript",
+		"body": [
+			"async function $1() {",
+			"\t'use strict';",
+			"",
+			"\t$2",
+			"};",
+		],
+		"description": "async function"
+	},
 }

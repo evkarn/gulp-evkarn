@@ -10,12 +10,17 @@ import versionNumber from 'gulp-version-number';
 // Обработка ошибок
 import plumberInit from './plumber.js';
 
+// Замена img на <picture> с .webp, .avif
+import pictureHtml from 'gulp-webp-avif-html-nosvg-nogif-lazyload';
+
 // Отслеживание изменений в файлах
 import changed from "gulp-changed";
 import {compareContents} from 'gulp-changed';
 
 // Плагин для минимизации html файлов
 import htmlClean from "gulp-htmlclean";
+
+import prettier from '@bdchauvette/gulp-prettier';
 
 export const html = () => {
 	// Находим все .html в папке исходников
@@ -27,7 +32,7 @@ export const html = () => {
 
 	// Смотрим менялись ли файлы и обрабатываем только изменённые
 	.pipe(changed(
-		app.path.build.html, {hasChanged: compareContents}
+		app.path.src.html, {hasChanged: compareContents}
 	))
 
 
@@ -37,6 +42,57 @@ export const html = () => {
 		basepath: '@file'
 	}))
 
+	// удаляет лишние пробелы и переводы строк внутри тега <img>
+	.pipe(app.plugins.replace(
+		/<img(?:.|\n|\r)*?>/g, function(match) {
+			return match.replace(/\r?\n|\r/g, '').replace(/\s{2,}/g, ' ');
+		})
+	)
+
+	.pipe(app.plugins.replace(
+			/(?<=src=|href=|srcset=)(['"])(\.(\.)?\/)*(img|images|fonts|css|scss|sass|js|files|audio|video)(\/[^\/'"]+(\/))?([^'"]*)\1/gi,
+			'$1./$4$5$7$1'
+		)
+	)
+
+	.pipe(
+		typograf({
+			locale: ['ru', 'en-US'],
+			htmlEntity: { type: 'digit' },
+			safeTags: [
+				['<\\?php', '\\?>'],
+				['<no-typography>', '</no-typography>'],
+			],
+		})
+	)
+
+		// Если режим продакшена, то добавляем атрибут версии для стилей и скриптов
+	.pipe(app.plugins.if(app.isBuild,	versionNumber({
+		'value': '%DT%',
+
+		'append': {
+			'key': '_v',
+			'cover': 0,
+			'to': ['css', 'js',]
+		},
+
+		'output': {
+			'file': 'gulp/version.json'
+		}
+	})))
+
+	.pipe(app.plugins.if(
+		app.isBuild, pictureHtml({
+      primaryFormat: 'avif',
+      primaryAfter: 'assets/images/dist/',
+      primaryBefore: 'assets/images/dist/avif/',
+      secondaryFormat: 'webp',
+      secondaryAfter: 'assets/images/dist/',
+      secondaryBefore: 'assets/images/dist/webp/',
+      srcsetOutput: 0,
+      youtubeCoverWebp: true
+		})
+	))
 
 	// Добавляем атрибут версии для стилей и скриптов
 	.pipe(app.plugins.if(
@@ -74,6 +130,15 @@ export const html = () => {
 			'file': 'gulp/version.json'
 		}
 	})))
+
+	.pipe(app.plugins.if(app.isBuild, prettier({
+			tabWidth: 2,
+			useTabs: true,
+			printWidth: 182,
+			trailingComma: 'es5',
+			bracketSpacing: false,
+		})
+	))
 
 
 	// Если режим продакшена минимизируем html файлы

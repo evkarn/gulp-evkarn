@@ -6,7 +6,7 @@ import plumberInit from './plumber.js'
 
 export const ttfToWoff = () => {
 	// Ищем файлы шрифтов .ttf
-	return app.gulp.src(`${app.path.src.fonts}`, {})
+	return app.gulp.src(`${app.path.src.fonts}`, {encoding:false})
 
 	// Выдаём сообщение об ошибке, если она есть
 	.pipe(app.plugins.plumber(plumberInit('TTF TO WOFF2')))
@@ -92,24 +92,25 @@ export const fontsStyle = () => {
 						if (`${app.path.preprocessor}` == 'sass') {
 							fs.appendFile(
 								fileFonts,
-								`@font-face \n
-								\tfont-family: ${fontName}\n
-								\t${fontDisplay}\n
-								\tfont-weight: ${fontWeight}\n
-								\tfont-style: ${fontStyle}\n
-								\tsrc: url("../fonts/${fontFileName}.woff2") ${fontFormat}\n
-								\r\n`, cb
+`@font-face\r
+\tsrc: url("../fonts/${fontFileName}.woff2") ${fontFormat}\r
+\tfont-family: ${fontName}\r
+\t${fontDisplay}\r
+\tfont-weight: ${fontWeight}\r
+\tfont-style: ${fontStyle}
+\r\n`, cb
 							);
 						}
 						else {
 							fs.appendFile(
 								fileFonts,
-								`@font-face {\n
-								\tfont-family: ${fontName};\n
-								\t${fontDisplay};\n
-								\tfont-weight: ${fontWeight};\n
-								\tfont-style: ${fontStyle};\n
-								\tsrc: url("../fonts/${fontFileName}.woff2") ${fontFormat};\n}\r\n`, cb
+`@font-face {\r
+\tsrc: url("../fonts/${fontFileName}.woff2") ${fontFormat};\r
+\tfont-family: ${fontName};\r
+\t${fontDisplay};\r
+\tfont-weight: ${fontWeight};\r
+\tfont-style: ${fontStyle};
+}\r\n`, cb
 							);
 						}
 

@@ -6,7 +6,7 @@ import plumberInit from './plumber.js'
 
 export const imgAvif = () => {
 	// Находим исходники изображений
-	return app.gulp.src(app.path.src.imgAvifWebp)
+	return app.gulp.src(`${app.path.src.imgAvifWebp}`, {encoding:false})
 
 
 	// Выдаём сообщение об ошибке, если она есть

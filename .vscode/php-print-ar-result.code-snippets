@@ -1,5 +1,4 @@
 {
-	// Header
 	"Header with logo link": {
 		"prefix": "print-ar-result",
 		"scope": "html, php",
@@ -11,5 +10,27 @@
 			"?>",
 		],
 		"description": "Header with logo link"
-	}
+	},
+
+	"If !empty $arResult": {
+		"prefix": "if-!empty-arResult",
+		"scope": "html, php",
+		"body": [
+			"<?if (!empty(\\$arResult)):?>",
+			"\t$1",
+			"<?endif?>",
+		],
+		"description": "If !empty $arResult"
+	},
+
+	"Foreach $arResult as $arItem": {
+		"prefix": "foreach-result-item",
+		"scope": "html, php",
+		"body": [
+			"<?foreach(\\$arResult['ITEMS'] as \\$arItem):?>",
+			"\t$1",
+			"<?endforeach?>",
+		],
+		"description": "Foreach $arResult as $arItem"
+	},
 }

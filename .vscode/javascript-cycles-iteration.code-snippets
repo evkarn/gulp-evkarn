@@ -4,7 +4,7 @@
 		"scope": "javascript, typescript",
 		"body": [
 			"$1.forEach(item => {",
-			"\titem.$2",
+			"\t$2",
 			"});"
 		],
 		"description": "forEach function arrow"
@@ -15,7 +15,7 @@
 		"scope": "javascript, typescript",
 		"body": [
 			"$1.forEach(function(item, index, array) {",
-			"\titem.$2",
+			"\t$2",
 			"});"
 		],
 		"description": "forEach function"

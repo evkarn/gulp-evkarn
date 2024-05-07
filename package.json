@@ -12,6 +12,7 @@
 		"ssh": "gulp deploySSH --build",
 		"lint": "stylelint '**/*.s+(a|c)ss'; exit 0"
 	},
+
 	"author": "evkarn.ru",
 	"license": "ISC",
 	"devDependencies": {
@@ -20,6 +21,7 @@
 		"@babel/plugin-proposal-class-properties": "latest",
 		"@babel/preset-env": "latest",
 		"@popperjs/core": "latest",
+		"@bdchauvette/gulp-prettier": "latest",
 		"babel-loader": "latest",
 		"babel-plugin-root-import": "latest",
 		"bootstrap": "latest",
@@ -54,6 +56,7 @@
 		"gulp-util": "latest",
 		"gulp-version-number": "latest",
 		"gulp-web-images-css": "latest",
+		"gulp-webp-retina-html": "latest",
 		"gulp-webp": "latest",
 		"gulp-webp-avif-html-nosvg-nogif-lazyload": "latest",
 		"gulp-zip": "latest",
@@ -78,15 +81,13 @@
 		"simplebar": "latest",
 		"style-loader": "latest",
 		"stylelint": "latest",
+		"stylelint-config-standard": "latest",
 		"stylelint-config-standard-scss": "latest",
-		"stylelint-declaration-block-no-ignored-properties": "latest",
 		"stylelint-order": "latest",
-		"stylelint-prettier": "latest",
-		"stylelint-scss": "latest",
 		"swiper": "latest",
 		"tailwind": "latest",
+		"transfer-elements": "latest",
 		"vinyl-ftp": "latest",
-		"webp-converter": "2.2.3",
 		"webpack": "latest",
 		"webpack-stream": "latest"
 	}

@@ -1,0 +1,16 @@
+{
+	"Получение данных через promise": {
+		"prefix": "get-data-async",
+		"body": [
+			"const url = '$1';",
+			"",
+			"try {",
+			"\tconst data = await getData(url);",
+			"}",
+			"catch (error) {",
+			"\tconsole.log(error.message);",
+			"}",
+		],
+		"description": "Получение данных через promise"
+	}
+}

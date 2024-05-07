@@ -81,6 +81,14 @@ export const styles = () => {
 	.pipe(app.plugins.if(app.isBuild, cleanCss()))
 
 
+	// Убираем лишнее в адресах картинок
+	.pipe(app.plugins.replace(
+			/(['"]?)(\.\.\/)+(img|images|fonts|css|scss|sass|js|files|audio|video)(\/[^\/'"]+(\/))?([^'"]*)\1/gi,
+			'$1$2$3$4$6$1'
+		)
+	)
+
+
 	// Переименовываем итоговый файл
 	.pipe(app.plugins.rename({
 		extname: '.min.css'

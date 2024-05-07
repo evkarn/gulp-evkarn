@@ -1,0 +1,92 @@
+// МОДУЛЬ MATH ДЛЯ SASS
+@use "sass:math";
+// END. МОДУЛЬ MATH ДЛЯ SASS
+
+// Reset styles
+@import "./reset-styles/index";
+// End. Reset styles
+
+// Variables
+@import "variables/index";
+// End. Variables
+
+// Fonts
+@import "fonts/index";
+// END. Fonts
+
+// Mixins
+@import "mixins/index";
+// END. Mixins
+
+// Global
+@import "global-config/index";
+// END. Global
+
+// Swiper
+// @import 'node_modules/swiper/swiper';
+// @import 'node_modules/swiper/modules/navigation';
+// End. Swiper
+
+// Header
+// @import "./header/index";
+// End. Header
+
+// Footer
+// @import "./footer/index";
+// End. Footer
+
+// Elements
+// @import "./elements/index";
+// End. Elements
+
+// Sections
+// @import "./sections/index";
+// End. Sections
+
+.intro-banner__container {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: 20px;
+
+	max-width: 1066rem;
+}
+
+.intro-banner__link {
+	display: inline-flex;
+	padding: 28px 160px;
+
+	font-size: 26px;
+	font-weight: 700;
+
+	background-color: #F05A23;
+
+	border-radius: 20px;
+
+	box-shadow: 0 0 20px 0 rgba(black, 1);
+
+	cursor: pointer;
+
+	transition: color .3s ease, background-color .3s ease, box-shadow .3s ease;
+
+	@media ( any-hover: hover ) {
+		&:hover {
+			background-color: #EE8D66;
+			box-shadow: 0 0 20px 0 rgba(#F05A23, 1);
+		}
+	}
+
+	&:focus-visible {
+		outline-width: $outline-width+px;
+		outline-style: dashed;
+		outline-color: currentColor;
+		outline-offset: $outline-offset+px;
+	}
+}
+
+.intro-banner__img {
+	width: 100%;
+	height: auto;
+}
+
+
+

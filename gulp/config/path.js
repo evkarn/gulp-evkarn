@@ -30,6 +30,8 @@ export const path = {
 		html: `${buildFolder}/`,
 
 		img: `${buildFolder}/assets/images/dist/`,
+		imgAvif: `${buildFolder}/assets/images/dist/avif/`,
+		imgWebp: `${buildFolder}/assets/images/dist/webp/`,
 
 		socialImages: `${buildFolder}/assets/images/social-images/`,
 
@@ -46,11 +48,11 @@ export const path = {
 
 		fonts: `${srcFolder}/assets/fonts/*.ttf`,
 
-		fontsStyle: `${srcFolder}/assets/components/styles/${preprocessor}/fonts/_index.${preprocessor}`,
+		fontsStyle: `${srcFolder}/assets/styles/${preprocessor}/fonts/_index.${preprocessor}`,
 
 		html: `${srcFolder}/*.{html,htm}`,
 
-		js: `${srcFolder}/assets/components/js/*.js`,
+		js: `${srcFolder}/assets/js/*.{js,mjs}`,
 
 		img: `${srcFolder}/assets/images/src/**/*.{jpg,jpeg,png,gif,webp,heic,heif,raw,avif}`,
 
@@ -62,7 +64,7 @@ export const path = {
 
 		imgMin: [`${srcFolder}/assets/images/src/**/*.*`, `!${srcFolder}/assets/images/src/sprite-svg/**/*.*`],
 
-		styles: [`${srcFolder}/assets/components/styles/${preprocessor}/*.${preprocessor}`, `!${srcFolder}/assets/components/styles/${preprocessor}/_*.${preprocessor}`],
+		styles: [`${srcFolder}/assets/styles/${preprocessor}/*.${preprocessor}`, `!${srcFolder}/assets/styles/${preprocessor}/_*.${preprocessor}`],
 
 		svgSprite: `${srcFolder}/assets/images/src/sprite-svg/**/*.svg`,
 	},
@@ -77,9 +79,9 @@ export const path = {
 
 		socialImages: `${srcFolder}/assets/images/social-images/**/*.*`,
 
-		js: `${srcFolder}/assets/components/js/**/*.js`,
+		js: `${srcFolder}/assets/js/**/*.js`,
 
-		styles: `${srcFolder}/assets/components/styles/${preprocessor}/**/*.${preprocessor}`,
+		styles: `${srcFolder}/assets/styles/${preprocessor}/**/*.${preprocessor}`,
 
 		svgSprite: `${srcFolder}/assets/images/src/sprite-svg/**/*.svg`,
 	},

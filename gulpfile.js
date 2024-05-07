@@ -17,7 +17,7 @@ global.app = {
 
 	gulp: gulp,
 
-	plugins: plugins
+	plugins: plugins,
 };
 
 // Импорт созданных задач из папки tasks
@@ -53,9 +53,8 @@ import { svgSpriteIcons } from './gulp/tasks/svgSprite.js';
 
 import { zip } from './gulp/tasks/zip.js';
 
-
 // Наблюдение за изменениями в файлах
-function watcher() {
+function watcher(done) {
 	gulp.watch(path.watch.files, copyFiles);
 
 	gulp.watch(path.watch.html, html);
@@ -69,42 +68,37 @@ function watcher() {
 	gulp.watch(path.watch.socialImages, socialImagesMin);
 
 	gulp.watch(path.watch.svgSprite, gulp.parallel(svgSpriteIcons));
-}
 
+	done();
+}
 
 // Последовательность обработки шрифтов
 const fonts = gulp.series(ttfToWoff, fontsStyle);
 
-
 // Основные задачи
-const mainTasks = gulp.series(
-	fonts,
-	gulp.parallel(
-		copyFiles,
-		html,
-		copyConfigFiles,
-		styles,
-		js,
-		imgAvif,
-		imgWebp,
-		imgMin,
-		socialImagesMin,
-		svgSpriteIcons,
-	),
+const mainTasks = gulp.parallel(
+	copyFiles,
+	html,
+	copyConfigFiles,
+	styles,
+	js,
+	imgAvif,
+	imgWebp,
+	imgMin,
+	socialImagesMin,
+	svgSpriteIcons,
 );
 
-
 // Построение сценариев выполнения задач
-const dev = gulp.series(reset, mainTasks, gulp.parallel(watcher, server));
+const dev = gulp.series(reset, fonts, mainTasks, watcher, server);
 
-const build = gulp.series(reset, mainTasks);
+const build = gulp.series(reset, fonts, mainTasks);
 
 const deployZip = gulp.series(reset, zip);
 
 const deployFTP = gulp.series(reset, ftp);
 
 const deploySSH = gulp.series(reset, ssh);
-
 
 // Экспорт сценариев
 export { dev };
@@ -118,7 +112,6 @@ export { deployFTP };
 export { deploySSH };
 
 export { svgSpriteIcons };
-
 
 // Выполнение сценариев по-умолчанию
 gulp.task('default', dev);

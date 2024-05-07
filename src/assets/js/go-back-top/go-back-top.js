@@ -1,25 +1,25 @@
-export function returnToTopButton(offsetViewButton) {
+export function goBackTop(offsetViewButton) {
 	'use strict';
 
 	// Получаем кнопку в переменную
-	const buttonTop = document?.querySelector('[data-button-to-top]');
+	const btn = document?.querySelector('[data-go-back-top]');
 
-	function buttonTopActive() {
+	function btnActive() {
 		// Сколько нужно проскролить, чтобы появилась кнопка
 		const breakpoint = offsetViewButton;
 
 		// Если прокрутили на значение breakpoint, задаём кнопке указанный класс
 		if (window.pageYOffset >= breakpoint) {
-			buttonTop.classList.add('button-to-top__active');
+			btn.classList.add('go-back-top__is-active');
 		} else {
-			buttonTop.classList.remove('button-to-top__active');
+			btn.classList.remove('go-back-top__is-active');
 		}
 	}
 
-	if (buttonTop) {
-		window.addEventListener('scroll', buttonTopActive);
+	if (btn) {
+		window.addEventListener('scroll', btnActive);
 
-		buttonTop.addEventListener('click', function () {
+		btn.addEventListener('click', function () {
 			window.scrollTo({
 				top: 0,
 				left: 0,
