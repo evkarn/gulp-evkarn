@@ -11,6 +11,9 @@ export const ttfToWoff = () => {
 	// Выдаём сообщение об ошибке, если она есть
 	.pipe(app.plugins.plumber(plumberInit('TTF TO WOFF2')))
 
+	// Проверяем менялись ли файлы
+	.pipe(app.plugins.changed(app.path.build.fonts))
+
 	// Конвертируем .ttf в .woff2
 	.pipe(ttf2woff2())
 

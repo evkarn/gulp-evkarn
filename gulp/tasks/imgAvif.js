@@ -6,7 +6,7 @@ import plumberInit from './plumber.js'
 
 export const imgAvif = () => {
 	// Находим исходники изображений
-	return app.gulp.src(`${app.path.src.imgAvifWebp}`, {encoding:false})
+	return app.gulp.src(app.path.src.imgAvifWebp, {encoding:false})
 
 
 	// Выдаём сообщение об ошибке, если она есть
@@ -14,15 +14,15 @@ export const imgAvif = () => {
 
 
 	// Проверяем менялись ли изображения
-	.pipe(app.plugins.changed(app.path.build.img))
+	.pipe(app.plugins.changed(app.path.build.imgAvif))
 
 
 	// Создаём дополнительные изображения формата .avif
 	.pipe(avif({ quality: 75 }))
 
 
-	// Помещаем изображения в папку dist/assets/images/dist
-	.pipe(app.gulp.dest(app.path.build.img))
+	// Помещаем изображения в папку dist/assets/images
+	.pipe(app.gulp.dest(app.path.build.imgAvif))
 
 
 	// Перезагружаем страницу

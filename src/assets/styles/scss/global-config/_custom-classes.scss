@@ -1,14 +1,9 @@
-.fullWidth,
 .full-width,
-.fWidth,
 .f-width,
-.fullW,
 .full-w {
 	width: 100%;
 }
 
-.textBold,
-.tBold,
 .text-bold,
 .t-bold,
 .bold,
@@ -16,7 +11,6 @@
 	font-weight: 700;
 }
 
-.textAccent,
 .txt-accent,
 .text-accent,
 .accent {
@@ -39,17 +33,20 @@
 	object-fit: cover;
 }
 
-.image-wrap, .image-wrapper {
+.image-wrap, .image-wrapper, .img-wrap, .img-wrapper {
 	position: relative;
 	max-width: 100%;
 	width: 100%;
 	padding-bottom: 56.25%;
 
 	.image,
+	.img,
 	.photo,
 	.avatar,
 	.picture,
-	.user-photo {
+	.pic,
+	.user-photo,
+	img {
 		position: absolute;
 		inset: 0;
 		width: 100%;
@@ -82,8 +79,6 @@
 .d-none,
 .d-n,
 .dn,
-.disNone,
-.dNone,
 .display-none,
 .none {
 	display: none !important;
@@ -107,14 +102,13 @@
 	height: auto;
 
 	.video__iframe,
-	.video__player {
+	.video__player,
+	iframe,
+	video {
 		width: 100%;
 		height: 100%;
 		position: absolute;
-		top: 0;
-		right: 0;
-		bottom: 0;
-		left: 0;
+		inset: 0;
 		border: none;
 		object-fit: cover;
 	}

@@ -6,7 +6,7 @@ import plumberInit from './plumber.js'
 
 export const imgWebp = () => {
 	// Находим исходники изображений
-	return app.gulp.src(app.path.src.imgAvifWebp)
+	return app.gulp.src(app.path.src.imgAvifWebp, {encoding:false})
 
 
 	// Выдаём сообщение об ошибке, если она есть
@@ -14,15 +14,15 @@ export const imgWebp = () => {
 
 
 	// Проверяем менялись ли изображения
-	.pipe(app.plugins.changed(app.path.build.img))
+	.pipe(app.plugins.changed(app.path.build.imgWebp))
 
 
 	// Создаём дополнительные изображения формата .webp
 	.pipe(webp())
 
 
-	// Помещаем изображения в папку dist/assets/images/dist
-	.pipe(app.gulp.dest(app.path.build.img))
+	// Помещаем изображения в папку dist/assets/images
+	.pipe(app.gulp.dest(app.path.build.imgWebp))
 
 
 	// Перезагружаем страницу

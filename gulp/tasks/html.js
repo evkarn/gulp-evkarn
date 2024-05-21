@@ -55,17 +55,6 @@ export const html = () => {
 		)
 	)
 
-	.pipe(
-		typograf({
-			locale: ['ru', 'en-US'],
-			htmlEntity: { type: 'digit' },
-			safeTags: [
-				['<\\?php', '\\?>'],
-				['<no-typography>', '</no-typography>'],
-			],
-		})
-	)
-
 		// Если режим продакшена, то добавляем атрибут версии для стилей и скриптов
 	.pipe(app.plugins.if(app.isBuild,	versionNumber({
 		'value': '%DT%',
@@ -81,18 +70,18 @@ export const html = () => {
 		}
 	})))
 
-	.pipe(app.plugins.if(
-		app.isBuild, pictureHtml({
-      primaryFormat: 'avif',
-      primaryAfter: 'assets/images/dist/',
-      primaryBefore: 'assets/images/dist/avif/',
-      secondaryFormat: 'webp',
-      secondaryAfter: 'assets/images/dist/',
-      secondaryBefore: 'assets/images/dist/webp/',
-      srcsetOutput: 0,
-      youtubeCoverWebp: true
-		})
-	))
+	// .pipe(app.plugins.if(
+	// 	app.isBuild, pictureHtml({
+  //     primaryFormat: 'avif',
+  //     primaryAfter: 'assets/images/',
+  //     primaryBefore: 'assets/images/avif/',
+  //     secondaryFormat: 'webp',
+  //     secondaryAfter: 'assets/images/',
+  //     secondaryBefore: 'assets/images/webp/',
+  //     srcsetOutput: 0,
+  //     youtubeCoverWebp: true
+	// 	})
+	// ))
 
 	// Добавляем атрибут версии для стилей и скриптов
 	.pipe(app.plugins.if(
@@ -114,7 +103,6 @@ export const html = () => {
 			],
 		})
 	))
-
 
 	// Если режим продакшена, то добавляем атрибут версии для стилей и скриптов
 	.pipe(app.plugins.if(app.isBuild,	versionNumber({

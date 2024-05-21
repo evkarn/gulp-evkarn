@@ -29,13 +29,15 @@ export const path = {
 
 		html: `${buildFolder}/`,
 
-		img: `${buildFolder}/assets/images/dist/`,
-		imgAvif: `${buildFolder}/assets/images/dist/avif/`,
-		imgWebp: `${buildFolder}/assets/images/dist/webp/`,
+		img: `${buildFolder}/assets/images/`,
+
+		imgAvif: `${buildFolder}/assets/images/avif/`,
+
+		imgWebp: `${buildFolder}/assets/images/webp/`,
 
 		socialImages: `${buildFolder}/assets/images/social-images/`,
 
-		spriteIcons: `${buildFolder}/assets/images/dist/sprite-svg/`,
+		spriteIcons: `${buildFolder}/assets/images/sprite-svg/`,
 
 		js: `${buildFolder}/assets/js/`,
 	},
@@ -62,11 +64,12 @@ export const path = {
 
 		imgAvifWebp: `${srcFolder}/assets/images/src/**/*.{jpg,jpeg,png}`,
 
-		imgMin: [`${srcFolder}/assets/images/src/**/*.*`, `!${srcFolder}/assets/images/src/sprite-svg/**/*.*`],
+		imgMin: `${srcFolder}/assets/images/src/**/*.*`,
+
+		svgSprite: `${srcFolder}/assets/images/sprite-svg/**/*.svg`,
 
 		styles: [`${srcFolder}/assets/styles/${preprocessor}/*.${preprocessor}`, `!${srcFolder}/assets/styles/${preprocessor}/_*.${preprocessor}`],
 
-		svgSprite: `${srcFolder}/assets/images/src/sprite-svg/**/*.svg`,
 	},
 
 	// Отслеживание изменений в файлах
@@ -75,7 +78,7 @@ export const path = {
 
 		html: `${srcFolder}/**/*.html`,
 
-		img: [`${srcFolder}/assets/images/src/**/*.*`, `!${srcFolder}/assets/images/src/sprite-svg/**/*.*`],
+		img: `${srcFolder}/assets/images/src/**/*.*`,
 
 		socialImages: `${srcFolder}/assets/images/social-images/**/*.*`,
 
@@ -83,10 +86,10 @@ export const path = {
 
 		styles: `${srcFolder}/assets/styles/${preprocessor}/**/*.${preprocessor}`,
 
-		svgSprite: `${srcFolder}/assets/images/src/sprite-svg/**/*.svg`,
+		svgSprite: `${srcFolder}/assets/images/sprite-svg/**/*.*`,
 	},
 
-	clean: [`${buildFolder}/*.{html,ico,svg,png}`, `${buildFolder}/assets/*`, `!${buildFolder}/assets/images/`],
+	clean: [`${buildFolder}/*.{html,ico,svg,png}`, `${buildFolder}/assets/*`, `!${buildFolder}/assets/images/`, `!${buildFolder}/assets/fonts/`],
 
 	buildFolder: buildFolder,
 

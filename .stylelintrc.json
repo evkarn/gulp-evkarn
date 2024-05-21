@@ -2,7 +2,7 @@
 	"extends": ["stylelint-config-standard", "stylelint-config-standard-scss"],
 
 	"rules": {
-
+		"custom-property-empty-line-before": "never"
 	},
 	"defaultSeverity": "warning"
 }

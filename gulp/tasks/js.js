@@ -8,7 +8,6 @@ import terser from 'terser-webpack-plugin'
 import webpack from 'webpack-stream';
 
 // Отслеживание изменений в файлах
-import changed from "gulp-changed";
 import {compareContents} from 'gulp-changed';
 
 export const js = () => {
@@ -37,7 +36,8 @@ export const js = () => {
 			mode: 'production',
 
 			entry: {
-				scripts: './src/assets/components/js/scripts.js',
+				scripts: './src/assets/js/scripts.js',
+				main: './src/assets/js/main.js',
 			},
 
 			module: {

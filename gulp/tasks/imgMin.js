@@ -3,7 +3,7 @@ import plumberInit from './plumber.js'
 
 export const imgMin = () => {
 	// Находим исходники изображений
-	return app.gulp.src(app.path.src.imgMin)
+	return app.gulp.src(app.path.src.imgMin, {encoding:false})
 
 
 	// Выдаём сообщение об ошибке, если она есть
@@ -28,7 +28,7 @@ export const imgMin = () => {
 	))
 
 
-	// Выгружаем изображения в папку dist/assets/images/dist
+	// Выгружаем изображения в папку assets/images
 	.pipe(app.gulp.dest(app.path.build.img))
 
 
