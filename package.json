@@ -1,6 +1,6 @@
 {
 	"name": "gulp-evkarn",
-	"version": "1.1.0",
+	"version": "1.1.1",
 	"description": "",
 	"main": "gulpfile.js",
 	"type": "module",
@@ -12,7 +12,6 @@
 		"ssh": "gulp deploySSH --build",
 		"lint": "stylelint '**/*.s+(a|c)ss'; exit 0"
 	},
-
 	"author": "evkarn.ru",
 	"license": "ISC",
 	"devDependencies": {
