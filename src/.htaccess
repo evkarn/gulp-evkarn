@@ -38,7 +38,7 @@ ErrorDocument 404 /404.html
 
 	ExpiresActive On
 	ExpiresDefault  "access plus 1 year"
-	
+
 
 	# CSS
 	ExpiresByType text/css                              "access plus 1 year"
@@ -113,6 +113,7 @@ ErrorDocument 404 /404.html
 
 	# Other
 	ExpiresByType text/x-cross-domain-policy            "access plus 1 year"
+
 
 	# Close indexation
 	SetEnvIfNoCase User-Agent "^Googlebot" search_bot

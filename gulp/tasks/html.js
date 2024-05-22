@@ -14,7 +14,6 @@ import plumberInit from './plumber.js';
 import pictureHtml from 'gulp-webp-avif-html-nosvg-nogif-lazyload';
 
 // Отслеживание изменений в файлах
-import changed from "gulp-changed";
 import {compareContents} from 'gulp-changed';
 
 // Плагин для минимизации html файлов
@@ -31,7 +30,7 @@ export const html = () => {
 
 
 	// Смотрим менялись ли файлы и обрабатываем только изменённые
-	.pipe(changed(
+	.pipe(app.plugins.changed(
 		app.path.src.html, {hasChanged: compareContents}
 	))
 
@@ -55,7 +54,7 @@ export const html = () => {
 		)
 	)
 
-		// Если режим продакшена, то добавляем атрибут версии для стилей и скриптов
+	// Если режим продакшена, то добавляем атрибут версии для стилей и скриптов
 	.pipe(app.plugins.if(app.isBuild,	versionNumber({
 		'value': '%DT%',
 
@@ -130,13 +129,11 @@ export const html = () => {
 
 
 	// Если режим продакшена минимизируем html файлы
-	// .pipe(app.plugins.if(app.isBuild,	htmlClean()))
+	// .pipe(app.plugins.if(app.isBuild, htmlClean()))
 
 
 	// Переименовываем итоговый файл
-	.pipe(app.plugins.rename({
-		extname: '.html'
-	}))
+	.pipe(app.plugins.rename({extname: '.html'}))
 
 
 	// Выгружаем файлы в папку готовой вёрстки

@@ -18,7 +18,9 @@ export const imgAvif = () => {
 
 
 	// Создаём дополнительные изображения формата .avif
-	.pipe(avif({ quality: 75 }))
+	.pipe(avif({
+		quality: 75
+	}))
 
 
 	// Помещаем изображения в папку dist/assets/images

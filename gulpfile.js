@@ -57,7 +57,7 @@ import { zip } from './gulp/tasks/zip.js';
 
 
 // Наблюдение за изменениями в файлах
-function watcher() {
+function watcher(done) {
 	gulp.watch(path.watch.files, copyFiles);
 
 	gulp.watch(path.watch.html, html);
@@ -66,11 +66,13 @@ function watcher() {
 
 	gulp.watch(path.watch.js, js);
 
-	gulp.watch(path.watch.img, gulp.parallel(imgAvif, imgWebp, imgMin, imgCopy));
+	gulp.watch(path.watch.img, gulp.parallel(imgAvif, imgWebp, imgMin));
 
 	gulp.watch(path.watch.socialImages, socialImagesMin);
 
-	gulp.watch(path.watch.svgSprite, gulp.parallel(svgSpriteIcons));
+	gulp.watch(path.watch.svgSprite, svgSpriteIcons);
+
+	done();
 }
 
 

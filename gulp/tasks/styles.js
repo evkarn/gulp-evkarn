@@ -20,7 +20,6 @@ import groupCssMediaQueries from 'gulp-group-css-media-queries';
 import plumberInit from './plumber.js'
 
 // Отслеживание изменений в файлах
-import changed from "gulp-changed";
 import {compareContents} from 'gulp-changed';
 
 // Создание карты источников
@@ -38,7 +37,7 @@ export const styles = () => {
 
 
 	// Отслеживание и обработка только изменившихся файлов
-	.pipe(changed(
+	.pipe(app.plugins.changed(
 		app.path.build.css, {hasChanged: compareContents}
 	))
 
@@ -57,17 +56,17 @@ export const styles = () => {
 
 	// Если в режиме продакшена создаём дополнительные выражения с классами .webp и .avif и соответствующим расширением для изображений.
 	.pipe(app.plugins.if(app.isBuild,	webpAvifCss({
-		extensions: ['.jpg','.jpeg', '.png'],
+		extensions: ['.jpg', '.jpeg', '.png'],
 
 		mode: 'all'
 	})))
 
 
 	// Если в режиме продакшена добавляем вендерные префиксы для совместимости стилей
-	.pipe(app.plugins.if(app.isBuild,	autoprefixer({
+	.pipe(app.plugins.if(app.isBuild, autoprefixer({
 		grid: true,
 
-		overrideBrowsersList: ["last 7 versions"],
+		overrideBrowsersList: ["last 5 versions"],
 
 		cascade: false
 	})))

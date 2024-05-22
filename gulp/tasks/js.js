@@ -32,12 +32,10 @@ export const js = () => {
 
 		// Обработка файлов js в режиме production
 		.pipe(app.plugins.if(app.isBuild, webpack({
-			// mode: app.isBuild ? 'production' : 'development',
-			mode: 'production',
+			mode: app.isBuild ? 'production' : 'development',
 
 			entry: {
 				scripts: './src/assets/js/scripts.js',
-				main: './src/assets/js/main.js',
 			},
 
 			module: {
