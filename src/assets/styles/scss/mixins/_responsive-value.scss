@@ -4,22 +4,20 @@
 
 // Responsive value
 @mixin calc-size($propName, $minSize, $maxSize, $minWidth, $maxWidth, $units) {
-	@if $units==rem {
-		#{$propName}: calc(#{math.div($minSize, $fz-text) + #{$units}} + (#{$maxSize} - #{$minSize}) * ((100vw - #{math.div($minWidth, $fz-text) + #{$units}}) / (#{$maxWidth} - #{$minWidth})));
-	}
-	@else {
+	@if $units == rem {
+		#{$propName}: calc(#{math.div($minSize, $font-size) + #{$units}} + (#{$maxSize} - #{$minSize}) * ((100vw - #{math.div($minWidth, $font-size) + #{$units}}) / (#{$maxWidth} - #{$minWidth})));
+	} @else {
 		#{$propName}: calc(#{$minSize + #{$units}} + (#{$maxSize} - #{$minSize}) * ((100vw - #{$minWidth + #{$units}}) / (#{$maxWidth} - #{$minWidth})));
 	}
 }
 
 @mixin calc-size-media($propName, $minSize, $maxSize, $minWidth, $maxWidth, $units) {
-	@if $units==rem {
-		@media ( min-width: #{math.div($minWidth, $fz-text) + em} ) and ( max-width: #{math.div($maxWidth, $fz-text) + em} ) {
-			#{$propName}: calc(#{math.div($minSize, $fz-text) + #{$units}} + (#{$maxSize} - #{$minSize}) * ((100vw - #{math.div($minWidth, $fz-text) + #{$units}}) / (#{$maxWidth} - #{$minWidth})));
+	@if $units == rem {
+		@media ( min-width: #{math.div($minWidth, $font-size) + em} ) and ( max-width: #{math.div($maxWidth, $font-size) + em} ) {
+			#{$propName}: calc(#{math.div($minSize, $font-size) + #{$units}} + (#{$maxSize} - #{$minSize}) * ((100vw - #{math.div($minWidth, $font-size) + #{$units}}) / (#{$maxWidth} - #{$minWidth})));
 		}
-	}
-	@else {
-		@media ( min-width: #{math.div($minWidth, $fz-text) + em} ) and ( max-width: #{math.div($maxWidth, $fz-text) + em} ) {
+	} @else {
+		@media ( min-width: #{math.div($minWidth, $font-size) + em} ) and ( max-width: #{math.div($maxWidth, $font-size) + em} ) {
 			#{$propName}: calc(#{$minSize + #{$units}} + (#{$maxSize} - #{$minSize}) * ((100vw - #{$minWidth + #{$units}}) / (#{$maxWidth} - #{$minWidth})));
 		}
 	}
@@ -27,12 +25,11 @@
 
 
 @function calc-size-without-property($minSize, $maxSize, $minWidth, $maxWidth, $units) {
-	@if $units==rem {
-		$result: calc(#{math.div($minSize, $fz-text) + #{$units}} + (#{$maxSize} - #{$minSize}) * ((100vw - #{math.div($minWidth, $fz-text) + #{$units}}) / (#{$maxWidth} - #{$minWidth})));
-		
+	@if $units == rem {
+		$result: calc(#{math.div($minSize, $font-size) + #{$units}} + (#{$maxSize} - #{$minSize}) * ((100vw - #{math.div($minWidth, $font-size) + #{$units}}) / (#{$maxWidth} - #{$minWidth})));
+
 		@return $result;
-	}
-	@else {
+	} @else {
 		$result: calc(#{$minSize + #{$units}} + (#{$maxSize} - #{$minSize}) * ((100vw - #{$minWidth + #{$units}}) / (#{$maxWidth} - #{$minWidth})));
 
 		@return $result;

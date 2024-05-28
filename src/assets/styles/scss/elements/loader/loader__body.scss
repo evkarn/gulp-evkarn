@@ -1,0 +1,14 @@
+.loader__body {
+	width: 100%;
+	height: rem(4);
+	position: relative;
+	overflow: hidden;
+	border-radius: rem(4);
+	background-color: #e5e8ed;
+
+	@include min-full-hd-em {
+		@include calc-size(height, 4, 8, 1920, 3840, rem);
+
+		@include calc-size(border-radius, 4, 8, 1920, 3840, rem);
+	}
+}

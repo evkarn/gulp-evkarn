@@ -3,7 +3,7 @@
 
 	min-width: 320px;
 
-	font-family: $ff-body;
+	font-family: var(--ff-body);
 	font-style: normal;
 	font-size: rem(18);
 	font-weight: 400;
@@ -13,7 +13,7 @@
 	color: var(--c-text-dark);
 	overflow-x: hidden;
 
-	@media ( min-width: em(1920.96) ) {
-		@include calc-size(font-size, 18, 36, 1920, 3840, rem);
+	@include min-full-hd-px {
+		@include calc-size(font-size, $font-size, $font-size * 2, 1920, 3840, px);
 	}
 }

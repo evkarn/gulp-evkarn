@@ -1,0 +1,21 @@
+// Overlay
+@mixin overlay($opacity, $color) {
+	&:after {
+		content: "";
+
+		position: absolute;
+		inset: 0;
+
+		display: block;
+
+		height: 100%;
+		width: 100%;
+
+		opacity: $opacity;
+
+		background-color: $color;
+		
+		@content;
+	}
+}
+// End. Overlay

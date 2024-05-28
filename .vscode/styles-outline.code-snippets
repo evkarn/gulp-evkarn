@@ -27,7 +27,7 @@
 			"outline-width: \\$outline-width+px;",
 			"outline-style: dashed;",
 			"outline-color: currentColor;",
-			"outline-offset: \\$outline-offset+px;"
+			"outline-offset: \\$outline-offset + px;"
 		],
 		"description": "outline all"
 	}

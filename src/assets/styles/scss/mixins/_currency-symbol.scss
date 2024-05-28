@@ -1,0 +1,7 @@
+@mixin rub() {
+	&:after {
+		content: "₽";
+
+		@content;
+	}
+}

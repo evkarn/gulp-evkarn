@@ -1,11 +1,28 @@
 :root {
+	--fz-text: 16;
+
+	--ff-title: "Inter-font", sans-serif;
+
+	--ff-text: "Inter-font", sans-serif;
+
+	--ff-body: "Inter-font", sans-serif;
+
 	--c-body-bg: #fff;
+
 	--c-accent: #2664ff;
 	--c-accent-light: #ffb03a;
 	--c-accent-dark: #003898;
+
 	--c-border-color: #b5b5b5;
+
 	--c-light: #fff;
+
 	--c-text-dark: #28306d;
 	--c-text-light: #fff;
+
 	--c-burger-line: #fff;
+
+	--index: calc(1vh + 1vw);
+
+	--gap: 30px;
 }

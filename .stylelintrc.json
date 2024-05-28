@@ -2,7 +2,18 @@
 	"extends": ["stylelint-config-standard", "stylelint-config-standard-scss"],
 
 	"rules": {
-		"custom-property-empty-line-before": "never"
+		"custom-property-empty-line-before": null,
+		"at-rule-empty-line-before": null,
+		"declaration-empty-line-before": null,
+		"scss/dollar-variable-empty-line-before": null,
+		"scss/at-function-pattern": null,
+		"scss/double-slash-comment-empty-line-before": null,
+		"declaration-block-no-redundant-longhand-properties": null,
+		"selector-class-pattern": null,
+		"value-keyword-case": null,
+		"selector-pseudo-element-colon-notation": "single",
+		"scss/at-mixin-pattern": null
 	},
+
 	"defaultSeverity": "warning"
 }

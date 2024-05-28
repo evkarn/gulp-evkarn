@@ -62,7 +62,7 @@
 
 	border-radius: 20px;
 
-	box-shadow: 0 0 20px 0 rgba(black, 1);
+	box-shadow: 0 0 20px 0 rgba(0 0 0 / 100%);
 
 	cursor: pointer;
 
@@ -76,10 +76,10 @@
 	}
 
 	&:focus-visible {
-		outline-width: $outline-width+px;
+		outline-width: var(--outline-width) + px;
 		outline-style: dashed;
 		outline-color: currentColor;
-		outline-offset: $outline-offset+px;
+		outline-offset: var(--outline-offset) + px;
 	}
 }
 
@@ -87,6 +87,3 @@
 	width: 100%;
 	height: auto;
 }
-
-
-

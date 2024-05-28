@@ -1,0 +1,29 @@
+@mixin state-link {
+  @media (any-hover: hover) {
+    &:hover {
+      color: var(--c-accent);
+
+      cursor: pointer;
+    }
+  }
+
+  &:focus-visible {
+    outline-width: $outline-width + px;
+    outline-style: dashed;
+    outline-color: currentColor;
+    outline-offset: $outline-offset + px;
+
+		@include min-full-hd-em {
+			@include calc-size(outline-width, $outline-width, $outline-width * 2, 1920, 3840, px);
+			@include calc-size(outline-offset, $outline-offset, $outline-offset * 2, 1920, 3840, px);
+		}
+  }
+
+  &:active {
+    color: var(--c-accent-dark);
+		
+    outline: none;
+  }
+
+  @content;
+}

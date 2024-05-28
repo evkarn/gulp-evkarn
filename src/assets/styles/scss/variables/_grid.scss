@@ -1,9 +1,9 @@
 @import '../mixins/units';
 
 // Greed system
-$gutter-num: 30;
-$gutter-px: $gutter-num + px;
-$gutter-rem: rem($gutter-num);
+$gap-num: 30;
+$gap-px: $gap-num + px;
+$gap-rem: rem($gap-num);
 
 $screen-min-width: 320;
 

@@ -2,7 +2,7 @@
 .h2,
 .h3,
 .h4 {
-	font-family: $ff-title;
+	font-family: var(--ff-title);
 	font-weight: 500;
 	line-height: 1.25;
 }

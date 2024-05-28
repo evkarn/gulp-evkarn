@@ -1,0 +1,36 @@
+@mixin flex {
+  display: flex;
+
+	@content;
+}
+
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+	@content;
+}
+
+@mixin flex-v-center {
+  display: flex;
+  align-items: center;
+
+	@content;
+}
+
+
+@mixin flex-h-center {
+  display: flex;
+  justify-content: center;
+
+	@content;
+}
+
+@mixin flex-all-sb {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+	@content;
+}
