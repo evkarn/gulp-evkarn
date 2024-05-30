@@ -13,6 +13,8 @@
 	justify-content: center;
 }
 
-.flex-1-1-a {
-	flex: 1 1 auto;
+.flex-sb {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }

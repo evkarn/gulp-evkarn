@@ -43,7 +43,14 @@
 		"prefix": "bg-img-set",
 		"scope": "css, scss, sass, less",
 		"body": [
-			"background-image: image-set(url("$1.webp") type("image/webp") 1x, url("$1@2x.webp") type("image/webp") 2x, url("$1.avif") type("image/avif") 1x, url("$1@2x.avif") type("image/avif") 2x, url("$1.jpg") type("image/jpg") 1x, url("$1@2x.jpg") type("image/jpg") 2x;",
+			"background-image: image-set(",
+			"\turl(\"../images/webp/$1.webp\") type(\"image/webp\") 1x,",
+			"\turl(\"../images/webp/$1@2x.webp\") type(\"image/webp\") 2x,",
+			"\turl(\"../images/avif/$1.avif\") type(\"image/avif\") 1x,",
+			"\turl(\"../images/avif/$1@2x.avif\") type(\"image/avif\") 2x,",
+			"\turl(\"../images/$1.jpg\") type(\"image/jpg\") 1x,",
+			"\turl(\"../images/$1@2x.jpg\") type(\"image/jpg\") 2x",
+			");"
 		],
 		"description": "background image-set"
 	}

@@ -19,14 +19,22 @@
 	padding: 0;
 }
 
-.input-reset, .textarea-reset {
-	font-family: inherit;
+.input-reset,
+.textarea-reset {
+	appearance: none;
+	border: none;
+	border-radius: 0;
+	background-color: #fff;
 
-	border-width: 1px;
-
-	background-color: transparent;
+	&::-webkit-search-decoration,
+	&::-webkit-search-cancel-button,
+	&::-webkit-search-results-button,
+	&::-webkit-search-results-decoration {
+		display: none;
+	}
 }
 
-.radio-reset, .checkbox-reset {
+.radio-reset,
+.checkbox-reset {
 	margin: 0;
 }

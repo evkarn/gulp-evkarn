@@ -39,6 +39,29 @@
 			"flex-direction: column;"
 		],
 		"description": "display: flex, flex-direction: column"
+	},
+
+	"Flex product list": {
+		"prefix": "flex-cards",
+		"scope": "css, sass, scss, less",
+		"body": [
+			"--num-elements: $1;",
+			"--gap: $2px;",
+			"",
+			"display: flex;",
+			"flex-wrap: wrap;",
+			"gap: var(--gap);"
+		],
+		"description": "Flex product list"
+	},
+
+	"Flex width items": {
+		"prefix": "flex-item-width",
+		"scope": "css, sass, scss, less",
+		"body": [
+			"width: calc((100% - ((var(--num-elements) - 1) * var(--gap))) / (var(--num-elements)));"
+		],
+		"description": "Flex width items"
 	}
 	// End. Flex
 }

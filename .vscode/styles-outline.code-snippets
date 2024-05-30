@@ -16,7 +16,7 @@
 	"outline-color: rgba($1outline-color, $2)": {
 		"prefix": "outl-color-rgba",
 		"scope": "css, sass, scss, less",
-		"body": ["outline-color: rgba($1outline-color, $2);"],
+		"body": ["outline-color: rgba($1 / $2);"],
 		"description": "outline-color: rgba($1outline-color, $2)"
 	},
 
@@ -24,7 +24,7 @@
 		"prefix": "outl-all",
 		"scope": "css, sass, scss, less",
 		"body": [
-			"outline-width: \\$outline-width+px;",
+			"outline-width: \\$outline-width + px;",
 			"outline-style: dashed;",
 			"outline-color: currentColor;",
 			"outline-offset: \\$outline-offset + px;"

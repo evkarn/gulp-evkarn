@@ -21,7 +21,7 @@ export const path = {
 
 		configFiles: `${buildFolder}/`,
 
-		faviconImages: `${buildFolder}/`,
+		faviconImages: `${buildFolder}/assets/favicon/`,
 
 		files: `${buildFolder}/assets/files/`,
 
@@ -49,6 +49,8 @@ export const path = {
 		files: `${srcFolder}/assets/files/**/*.*`,
 
 		fonts: `${srcFolder}/assets/fonts/*.ttf`,
+
+		faviconImages: `${srcFolder}/assets/favicon/*.*`,
 
 		fontsStyle: `${srcFolder}/assets/styles/${preprocessor}/fonts/_index.${preprocessor}`,
 
