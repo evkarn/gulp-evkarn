@@ -351,7 +351,7 @@
 		"prefix": "csborrpx-xl",
 		"scope": "css, css, scss, sass, less, scss, less",
 		"body": [
-			"@include calc-size(border-radius, \\$border-radius, \\$border-radius * 2, 1920, 3840, px)"
+			"@include calc-size(border-radius, \\$border-radius, \\$border-radius * 2, 1920, 3840, px);"
 		],
 		"description": "Calc size border-radius px"
 	},
@@ -367,7 +367,7 @@
 	"Calc-size border-width px": {
 		"prefix": "csborwpx-xl",
 		"body": [
-			"@include calc-size(border-width, \\$border-width, \\$border-width*2, 1920, 3840, px)"
+			"@include calc-size(border-width, \\$border-width, \\$border-width * 2, 1920, 3840, px);"
 		],
 		"description": "Border-width calc-size px"
 	},
@@ -380,6 +380,7 @@
 		"scope": "css, css, scss, sass, less, scss, less",
 		"body": [
 			"@include calc-size(outline-width, \\$outline-width, \\$outline-width * 2, 1920, 3840, rem);",
+			"",
 			"@include calc-size(outline-offset, \\$outline-offset, \\$outline-offset * 2, 1920, 3840, rem);"
 		],
 		"description": "Calc size outline-width outline-offset"
@@ -390,6 +391,7 @@
 		"scope": "css, css, scss, sass, less, scss, less",
 		"body": [
 			"@include calc-size(outline-width, \\$outline-width, \\$outline-width * 2, 1920, 3840, px);",
+			"",
 			"@include calc-size(outline-offset, \\$outline-offset, \\$outline-offset * 2, 1920, 3840, px);"
 		],
 		"description": "Calc size outline-width outline-offset px"

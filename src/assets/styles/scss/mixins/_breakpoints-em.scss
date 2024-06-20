@@ -1,4 +1,10 @@
 // Units - em
+@mixin max-minimal-em {
+	@media (max-width: em($minimal)) {
+		@content;
+	}
+}
+
 @mixin max-mobile-em {
 	@media (max-width: em($mobile)) {
 		@content;

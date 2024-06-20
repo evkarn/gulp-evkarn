@@ -19,8 +19,6 @@ import {compareContents} from 'gulp-changed';
 // Плагин для минимизации html файлов
 import htmlClean from "gulp-htmlclean";
 
-import prettier from '@bdchauvette/gulp-prettier';
-
 export const html = () => {
 	// Находим все .html в папке исходников
 	return app.gulp.src(app.path.src.html)
@@ -117,15 +115,6 @@ export const html = () => {
 			'file': 'gulp/version.json'
 		}
 	})))
-
-	.pipe(app.plugins.if(app.isBuild, prettier({
-			tabWidth: 2,
-			useTabs: true,
-			printWidth: 182,
-			trailingComma: 'es5',
-			bracketSpacing: false,
-		})
-	))
 
 
 	// Если режим продакшена минимизируем html файлы

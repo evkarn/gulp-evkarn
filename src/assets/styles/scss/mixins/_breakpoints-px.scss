@@ -1,4 +1,10 @@
 // Units - px
+@mixin max-minimal-px {
+	@media (max-width: #{$minimal + px}) {
+		@content;
+	}
+}
+
 @mixin max-mobile-px {
 	@media (max-width: #{$mobile + px}) {
 		@content;

@@ -2,7 +2,7 @@ import plumberInit from './plumber.js'
 
 export const copyFavicon = () => {
 	// Находим указанные файлы
-	return app.gulp.src(app.path.src.faviconImages)
+	return app.gulp.src(app.path.src.faviconImages, {encoding:false})
 
 
 	// Выдаём сообщение об ошибке, если она есть

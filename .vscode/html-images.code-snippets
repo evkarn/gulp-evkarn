@@ -4,7 +4,7 @@
 		"prefix": "img",
 		"scope": "html, php",
 		"body": [
-			"<img class=\"$1\" src=\"assets/images/dist/$2.jpg\" width=\"$3\" height=\"$4\" alt=\"$5\" loading=\"lazy\" decoding=\"auto\">"
+			"<img class=\"$1\" src=\"assets/images/$2.jpg\" width=\"$3\" height=\"$4\" alt=\"$5\" loading=\"lazy\" decoding=\"auto\">"
 		],
 		"description": "Image"
 	},
@@ -13,7 +13,7 @@
 		"prefix": "img@2x",
 		"scope": "html, php",
 		"body": [
-			"<img class=\"$1\" src=\"assets/images/dist/$2.jpg\" srcset=\"assets/images/dist/$2@2x.jpg 2x\" width=\"$3\" height=\"$4\" alt=\"$5\" loading=\"lazy\" decoding=\"auto\">"
+			"<img class=\"$1\" src=\"assets/images/$2.jpg\" srcset=\"assets/images/$2@2x.jpg 2x\" width=\"$3\" height=\"$4\" alt=\"$5\" loading=\"lazy\" decoding=\"auto\">"
 		],
 		"description": "Image@2x"
 	},
@@ -32,9 +32,9 @@
 		"scope": "html, php",
 		"body": [
 			"<picture>",
-			"\t<source srcset=\"assets/images/dist/$1.webp\" type=\"image/webp\">",
+			"\t<source srcset=\"assets/images/$1.webp\" type=\"image/webp\">",
 			"",
-			"\t<img class=\"$2\" src=\"assets/images/dist/$1.jpg\" width=\"$3\" height=\"$4\" alt=\"$5\" loading=\"lazy\" decoding=\"auto\">",
+			"\t<img class=\"$2\" src=\"assets/images/$1.jpg\" width=\"$3\" height=\"$4\" alt=\"$5\" loading=\"lazy\" decoding=\"auto\">",
 			"</picture>"
 		],
 		"description": "Picture tag with .webp"
@@ -45,9 +45,9 @@
 		"scope": "html, php",
 		"body": [
 			"<picture>",
-			"\t<source srcset=\"assets/images/dist/$1.webp, assets/images/dist/$1@2x.webp 2x\" type=\"image/webp\">",
+			"\t<source srcset=\"assets/images/$1.webp, assets/images/$1@2x.webp 2x\" type=\"image/webp\">",
 			"",
-			"\t<img class=\"$2\" src=\"assets/images/dist/$1.jpg\" srcset=\"assets/images/dist/$1@2x.jpg 2x\" width=\"$3\" height=\"$4\" alt=\"$5\" loading=\"lazy\" decoding=\"auto\">",
+			"\t<img class=\"$2\" src=\"assets/images/$1.jpg\" srcset=\"assets/images/$1@2x.jpg 2x\" width=\"$3\" height=\"$4\" alt=\"$5\" loading=\"lazy\" decoding=\"auto\">",
 			"</picture>"
 		],
 		"description": "Picture @2x tag with .webp"
@@ -58,11 +58,11 @@
 		"scope": "html, php",
 		"body": [
 			"<picture>",
-			"\t<source srcset=\"assets/images/dist/$1.webp\" type=\"image/webp\">",
+			"\t<source srcset=\"assets/images/$1.webp\" type=\"image/webp\">",
 			"",
-			"\t<source srcset=\"assets/images/dist/$1.avif\" type=\"image/avif\">",
+			"\t<source srcset=\"assets/images/$1.avif\" type=\"image/avif\">",
 			"",
-			"\t<img class=\"$2\" src=\"assets/images/dist/$1.jpg\" width=\"$3\" height=\"$4\" alt=\"$6\" loading=\"lazy\" decoding=\"auto\">",
+			"\t<img class=\"$2\" src=\"assets/images/$1.jpg\" width=\"$3\" height=\"$4\" alt=\"$6\" loading=\"lazy\" decoding=\"auto\">",
 			"</picture>"
 		],
 		"description": "Picture tag with .avif + .webp"
@@ -73,11 +73,11 @@
 		"scope": "html, php",
 		"body": [
 			"<picture>",
-			"\t<source srcset=\"assets/images/dist/$1.webp, assets/images/dist/$1@2x.webp 2x\" type=\"image/webp\">",
+			"\t<source srcset=\"assets/images/$1.webp, assets/images/$1@2x.webp 2x\" type=\"image/webp\">",
 			"",
-			"\t<source srcset=\"assets/images/dist/$1.avif, assets/images/dist/$1@2x.avif 2x\" type=\"image/avif\">",
+			"\t<source srcset=\"assets/images/$1.avif, assets/images/$1@2x.avif 2x\" type=\"image/avif\">",
 			"",
-			"\t<img class=\"$2\" src=\"assets/images/dist/$1.jpg\" srcset=\"assets/images/dist/$1@2x.jpg 2x\" width=\"$3\" height=\"$4\" alt=\"$5\" loading=\"lazy\" decoding=\"auto\">",
+			"\t<img class=\"$2\" src=\"assets/images/$1.jpg\" srcset=\"assets/images/$1@2x.jpg 2x\" width=\"$3\" height=\"$4\" alt=\"$5\" loading=\"lazy\" decoding=\"auto\">",
 			"</picture>"
 		],
 		"description": "Picture tag with .avif + .webp @2x"
@@ -87,7 +87,7 @@
 		"prefix": "imgBlogSvg",
 		"scope": "html, php",
 		"body": [
-			"<img class=\"$1\" itemprop=\"image\" src=\"assets/images/dist/blog/{{ page.imageFolder }}/$2.svg\" width=\"826\" height=\"465\" alt=\"$3\" loading=\"lazy\" decoding=\"auto\">"
+			"<img class=\"$1\" itemprop=\"image\" src=\"assets/images/blog/{{ page.imageFolder }}/$2.svg\" width=\"826\" height=\"465\" alt=\"$3\" loading=\"lazy\" decoding=\"auto\">"
 		],
 		"description": "Image blog svg"
 	},

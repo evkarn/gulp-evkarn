@@ -5,8 +5,6 @@ $gap-num: 30;
 $gap-px: $gap-num + px;
 $gap-rem: rem($gap-num);
 
-$screen-min-width: 320;
-
 $content-width: 1196;
 
 $container-offset: 16;
@@ -17,7 +15,7 @@ $container-width: $content-width + $container-offset * 2;
 $switch-point: 768;
 
 // Breakpoints width
-$minimal: 320;
+$minimal: 360;
 
 $mobile: 480;
 $min-mobile: 480.96;

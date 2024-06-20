@@ -14,93 +14,90 @@ export const js = () => {
 	// Находим js файлы в папке исходников
 	return app.gulp.src(app.path.src.js, { source: app.isDev })
 
-		// Вывод сообщения об ошибке, если появляется ошибка
-		.pipe(app.plugins.plumber(plumberInit('JS')))
+	// Вывод сообщения об ошибке, если появляется ошибка
+	.pipe(app.plugins.plumber(plumberInit('JS')))
 
 
-		// Проверяем были ли изменения в файлах
-		.pipe(app.plugins.changed(
-			app.path.src.js, {hasChanged: compareContents}
-		))
+	// Проверяем были ли изменения в файлах
+	.pipe(app.plugins.changed(
+		app.path.src.js, {hasChanged: compareContents}
+	))
 
 
-		// Переименовываем итоговый файл
-		.pipe(app.plugins.if(app.isDev, app.plugins.rename({
-			extname: '.min.js'
-		})))
+	// Обработка файлов js в режиме production
+	.pipe(webpack({
+		mode: app.isBuild ? 'production' : 'development',
 
+		entry: {
+			'scripts': './src/assets/js/scripts.js',
+			'scripts.min': './src/assets/js/scripts.js',
+		},
 
-		// Обработка файлов js в режиме production
-		.pipe(app.plugins.if(app.isBuild, webpack({
-			mode: app.isBuild ? 'production' : 'development',
+		output: {
+			filename: '[name].js',
+		},
 
-			entry: {
-				scripts: './src/assets/js/scripts.js',
-			},
+		devtool: app.isBuild ? 'source-map' : false,
 
-			module: {
-				rules: [
-					{
-						test: /\.m?js$/,
+		module: {
+			rules: [
+				{
+					test: /\.m?js$/,
 
-						exclude: /(node_modules|bower_components)/,
+					exclude: /(node_modules|bower_components)/,
 
-						use: {
-							loader: 'babel-loader',
+					use: {
+						loader: 'babel-loader',
 
-							options: {
-								presets: [
-									[
-										'@babel/preset-env', {
-											targets: 'defaults',
-										},
-									],
+						options: {
+							presets: [
+								[
+									'@babel/preset-env', {
+										targets: 'defaults',
+									},
 								],
+							],
 
-								plugins: [
-									'babel-plugin-root-import'
-								]
-							},
+							plugins: [
+								'babel-plugin-root-import'
+							]
 						},
 					},
+				},
 
-					{
-						test: /\.(scss|sass|css)$/,
+				{
+					test: /\.(scss|sass|css)$/,
 
-						use: [
-							'style-loader',
-							'css-loader',
-							'postcss-loader',
-							'sass-loader',
-						],
-					},
-				],
-			},
+					use: [
+						'style-loader',
+						'css-loader',
+						'postcss-loader',
+						'sass-loader',
+					],
+				},
+			],
+		},
 
-			optimization: {
-				minimize: true,
+		optimization: {
+			minimize: true,
 
-				minimizer: [
-					new terser({
-						terserOptions: { format: { comments: false } },
+			minimizer: [
+				new terser({
+					include: /\.min\.js$/,
 
-						extractComments: false
-					})
-				]
-			},
+					terserOptions: { format: { comments: false } },
 
-			output: {
-				filename: '[name].min.js',
-			},
-
-			devtool: app.isBuild ? 'source-map' : false
-		})))
+					extractComments: false
+				})
+			]
+		},
+	}))
 
 
-		// Выгрузка файл в папку проекта
-		.pipe(app.gulp.dest(app.path.build.js))
+	// Выгрузка файл в папку проекта
+	.pipe(app.gulp.dest(app.path.build.js))
 
 
-		// При обновлении файла перезагружаем страницу
-		.pipe(app.plugins.browsersync.stream());
+	// При обновлении файла перезагружаем страницу
+	.pipe(app.plugins.browsersync.stream());
 };

@@ -43,6 +43,20 @@
 	// End. General
 
 	// Media var names desktop-first
+	"Media max-minimal-em": {
+		"prefix": "@max-minimal-em",
+		"scope": "css, sass, scss, less",
+		"body": ["@include max-minimal-em {", "\t$1", "}"],
+		"description": "Media max-minimal-em",
+	},
+
+	"Media max-minimal-px": {
+		"prefix": "@max-minimal-px",
+		"scope": "css, sass, scss, less",
+		"body": ["@include max-minimal-px {", "\t$1", "}"],
+		"description": "Media max-minimal-px",
+	},
+
 	"Media max-mobile-em": {
 		"prefix": "@max-mobile-em",
 		"scope": "css, sass, scss, less",

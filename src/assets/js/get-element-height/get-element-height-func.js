@@ -1,15 +1,21 @@
 function getElementHeight(selector, varHeightName) {
-	let elementName = document?.querySelector(selector).offsetHeight;
+	function heightDetermination() {
+		const element = document?.querySelector(selector);
 
-	const documentRoot = document.querySelector(':root');
+		if (element) {
+			const elementHeight = element.offsetHeight;
 
-	documentRoot.style.setProperty(varHeightName, `${elementName}px`);
+			const documentRoot = document.querySelector(':root');
+
+			documentRoot.style.setProperty(varHeightName, `${elementHeight}px`);
+		}
+	}
+
+	heightDetermination();
 
 	window.addEventListener('resize', () => {
-		elementName = document?.querySelector(selector).offsetHeight;
-
-		documentRoot.style.setProperty(varHeightName, `${elementName}px`);
+		heightDetermination();
 	});
-};
+}
 
 export default getElementHeight;
