@@ -2,7 +2,7 @@
 	// Article
 	"Article block": {
 		"prefix": "article-block",
-		"scope": "html, php",
+		"scope": "html, php, njk, md",
 		"body": [
 			"<article class=\"section-main__article article\" itemscope=\"itemscope\" itemtype=\"http://schema.org/Article\">",
 			"\t<div class=\"article__author hidden\" itemprop=\"author\" itemscope=\"\" itemtype=\"http://schema.org/Person\">",
@@ -68,7 +68,7 @@
 
 	"Article block jekyll": {
 		"prefix": "articleJekyll",
-		"scope": "html, php",
+		"scope": "html, php, njk, md",
 		"body": [
 			"<article class=\"section-main__article article\" itemscope=\"itemscope\" itemtype=\"http://schema.org/Article\">",
 			"\t<div class=\"article__author hidden\" itemprop=\"author\" itemscope=\"\" itemtype=\"http://schema.org/Person\">",
@@ -134,7 +134,7 @@
 
 	"Article link": {
 		"prefix": "articleLink",
-		"scope": "html, php",
+		"scope": "html, php, njk, md",
 		"body": [
 			"<article class=\"page__article article\" itemscope=\"itemscope\" itemtype=\"http://schema.org/NewsArticle\">",
 			"\t<a href=\"$1\" itemprop=\"url\">",

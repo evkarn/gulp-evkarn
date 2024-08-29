@@ -27,7 +27,7 @@ import sourceMaps from 'gulp-sourcemaps'
 
 const sassUse = gulpSass(sass);
 
-export const styles = () => {
+export const styles = (done) => {
 	// Находим файлы sass в папке исходников
 	return app.gulp.src(app.path.src.styles, { sourcemaps: app.isDev })
 

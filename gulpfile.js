@@ -42,6 +42,7 @@ function watcher(done) {
 	gulp.watch(path.watch.styles, styles);
 	gulp.watch(path.watch.js, js);
 	gulp.watch(path.watch.img, gulp.parallel(imgAvif, imgWebp, imgMin));
+	gulp.watch(path.watch.imgSvg, gulp.parallel(imgMin));
 	gulp.watch(path.watch.socialImages, socialImagesMin);
 	gulp.watch(path.watch.svgSprite, svgSpriteIcons);
 	done();

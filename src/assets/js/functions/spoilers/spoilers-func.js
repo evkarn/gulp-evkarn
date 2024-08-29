@@ -94,7 +94,7 @@ function spoilers(durationSpeed) {
 				});
 
 				// Событие
-				matchMedia.addListener(function () {
+				matchMedia.addEventListener('change', function() {
 					initSpoilers(spoilersArray, matchMedia);
 				});
 

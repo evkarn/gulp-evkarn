@@ -20,8 +20,8 @@
 		"description": "outline-color: rgba($1outline-color, $2)"
 	},
 
-	"outline all": {
-		"prefix": "outl-all",
+	"outline all px": {
+		"prefix": "outl-all-px",
 		"scope": "css, sass, scss, less",
 		"body": [
 			"outline-width: \\$outline-width + px;",
@@ -29,6 +29,17 @@
 			"outline-color: currentColor;",
 			"outline-offset: \\$outline-offset + px;"
 		],
-		"description": "outline all"
+		"description": "outline all px"
+	},
+	"outline all-rem": {
+		"prefix": "outl-all-rem",
+		"scope": "css, sass, scss, less",
+		"body": [
+			"outline-width: rem(\\$outline-width);",
+			"outline-style: dashed;",
+			"outline-color: currentColor;",
+			"outline-offset: rem(\\$outline-offset);"
+		],
+		"description": "outline all-rem"
 	}
 }

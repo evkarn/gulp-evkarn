@@ -1,7 +1,7 @@
 {
 	"Fonts preload": {
 		"prefix": "fpr",
-		"scope": "html, php",
+		"scope": "html, php, njk, md",
 		"body": [
 			"<link rel=\"preload\" href=\"$1\" as=\"font\" type=\"font/woff2\" crossorigin>"
 		],
@@ -10,7 +10,7 @@
 
 	"Section": {
 		"prefix": "sec",
-		"scope": "html, php",
+		"scope": "html, php, njk, md",
 		"body": [
 			"<section class=\"section $1\">",
 			"\t<div class=\"container $1__container\">",
@@ -23,7 +23,7 @@
 
 	"Nav": {
 		"prefix": "nav",
-		"scope": "html, php",
+		"scope": "html, php, njk, md",
 		"body": [
 			"<nav class=\"nav\">",
 			"\t<ul class=\"nav__list\">",
@@ -51,7 +51,7 @@
 
 	"Swiper HTML Layout": {
 		"prefix": "swiper",
-		"scope": "html, php",
+		"scope": "html, php, njk, md",
 		"body": [
 			"<div class=\"$1 swiper\">",
 			"\t<div class=\"swiper-wrapper\">",
@@ -71,7 +71,7 @@
 
 	"Section bootstrap": {
 		"prefix": "secbs",
-		"scope": "html, php",
+		"scope": "html, php, njk, md",
 		"body": [
 			"<div class=\"section $1\">",
 			"\t<div class=\"container $1__container\">",

@@ -2,7 +2,7 @@
 	// Header
 	"Navigation": {
 		"prefix": "nav",
-		"scope": "html, php",
+		"scope": "html, php, njk, md",
 		"body": [
 			"<nav class=\"header__nav nav\" data-nav>",
 			"\t<ul class=\"nav__list\" data-nav-listitemscope itemtype=\"http: //schema.org/SiteNavigationElement\">",

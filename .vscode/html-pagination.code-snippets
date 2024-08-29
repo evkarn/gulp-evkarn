@@ -1,7 +1,7 @@
 {
 	"Section pagination": {
 		"prefix": "pagination",
-		"scope": "html, php",
+		"scope": "html, php, njk, md",
 		"body": [
 			"<section class=\"pagination\">",
 			"\t<h2 class=\"pagination__title visually-hidden\">",

@@ -2,7 +2,7 @@
 	itemscope
 	itemtype="http://schema.org/WPHeader"
 >
-	<title>@title</title>
+	<title itemprop="name">@title</title>
 
 	<meta charset="utf-8">
 
@@ -19,15 +19,16 @@
 	>
 
 	<meta
+		itemprop="description"
 		name="description"
 		content="@description"
 	>
 
 	<meta
+		itemprop="keywords"
 		name="keywords"
 		content="@keywords"
 	>
-
 
 	<!-- Template Basic Images Start -->
 	<link
@@ -84,7 +85,6 @@
 		content="#e8b217"
 	>
 	<!-- /Template Basic Images End -->
-
 
 	<!--Open Graph-->
 	<meta
@@ -148,7 +148,6 @@
 	>
 	<!--/Open Graph-->
 
-
 	<!-- Schema-org -->
 	<meta
 		itemprop="name"
@@ -164,10 +163,25 @@
 		itemprop="image"
 		content="assets/images/social-images/og-images/@ogImage.jpg"
 	>
+
+	<div
+		itemscope
+		itemtype="https://schema.org/ImageObject"
+	>
+
+		<a
+			href="https://ics-media.ru/"
+			rel="home"
+		>
+			<img
+				itemprop="url image"
+				src="https://ics-media.ru/images/logo.png"
+				alt="Логотип Increase Sales"
+			>
+		</a>
+	</div>
 	<!-- /Schema-org -->
 
-
-	<!-- Fonts preload -->
 	<link
 		rel="preload"
 		href="assets/fonts/Roboto.woff2"
@@ -175,30 +189,10 @@
 		type="font/woff2"
 		crossorigin
 	>
-	<!-- /Fonts preload -->
-
-
-	<!-- Color schemes -->
-	<!-- <meta name="color-scheme" content="light dark">
-
-				<script>
-					if (matchMedia('(prefers-color-scheme: dark)').media === 'not all') {
-						document.documentElement.style.display = 'none';
-
-						document.head.insertAdjacentHTML(
-							'beforeend',
-							'<link rel="stylesheet" href="assets/css/scheme-light.min.css" onload="document.documentElement.style.display=\'\'">'
-						)
-					}
-				</script> -->
-	<!-- End. Color schemes -->
 
 	<link
+		itemprop="cssSelector"
 		rel="stylesheet"
 		href="assets/css/@css.min.css"
 	>
-
-	<!-- <link rel="stylesheet" href="assets/css/scheme-light.min.css" media="(prefers-color-scheme: light)">
-
-				<link rel="stylesheet" href="assets/css/scheme-dark.min.css" media="(prefers-color-scheme: dark)"> -->
 </head>

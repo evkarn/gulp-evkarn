@@ -1,7 +1,7 @@
 {
 	"SVG sprite icon": {
 		"prefix": "spr",
-		"scope": "html, php",
+		"scope": "html, php, njk, md",
 		"body": [
 			"<svg class=\"sprite-svg\">",
 			"\t<use xlink:href=\"assets/images/sprite-svg/sprite.svg#$1\"></use>",
@@ -12,7 +12,7 @@
 
 	"SVG sprite icon with title": {
 		"prefix": "spr-title",
-		"scope": "html, php",
+		"scope": "html, php, njk, md",
 		"body": [
 			"<svg class=\"sprite-svg\" role=\"img\" aria-labelledby=\"$1\">",
 			"\t<title id=\"$1\">$2</title>",
@@ -25,7 +25,7 @@
 
 	"SVG sprite icon hidden": {
 		"prefix": "spr-hidden",
-		"scope": "html, php",
+		"scope": "html, php, njk, md",
 		"body": [
 			"<svg class=\"sprite-svg\" aria-hidden=\"true\">",
 			"\t<use xlink:href=\"assets/images/sprite-svg/sprite.svg#$1\"></use>",

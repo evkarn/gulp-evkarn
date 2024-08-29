@@ -1,6 +1,6 @@
 {
 	"color: var()": {
-		"prefix": "colorVar",
+		"prefix": "color-var",
 		"scope": "css, sass, scss, less",
 		"body": [
 			"color: var($1);"
@@ -9,7 +9,7 @@
 	},
 
 	"color: currentColor": {
-		"prefix": "colorCurrent",
+		"prefix": "color-current",
 		"scope": "css, sass, scss, less",
 		"body": [
 			"color: currentColor;"
@@ -18,7 +18,7 @@
 	},
 
 	"color: var(--c-text)": {
-		"prefix": "colorVarText",
+		"prefix": "color-var-text",
 		"scope": "css, sass, scss, less",
 		"body": [
 			"color: var(--c-text);"
@@ -27,7 +27,7 @@
 	},
 
 	"color: var(--c-accent)": {
-		"prefix": "colorVarAccent",
+		"prefix": "color-var-accent",
 		"scope": "css, sass, scss, less",
 		"body": [
 			"color: var(--c-accent);"
@@ -36,7 +36,7 @@
 	},
 
 	"color: var(--c-accent-dark)": {
-		"prefix": "colorVarAccentDark",
+		"prefix": "color-var-accent-dar",
 		"scope": "css, sass, scss, less",
 		"body": [
 			"color: var(--c-accent-dark);"
@@ -45,7 +45,7 @@
 	},
 
 	"color: var(--c-lighten)": {
-		"prefix": "colorVarLighten",
+		"prefix": "color-var-lighten",
 		"scope": "css, sass, scss, less",
 		"body": [
 			"color: var(--c-lighten);"
@@ -54,11 +54,65 @@
 	},
 
 	"color: var(--c-light)": {
-		"prefix": "colorVarLight",
+		"prefix": "color-var-light",
 		"scope": "css, sass, scss, less",
 		"body": [
 			"color: var(--c-light);"
 		],
 		"description": "color: var(--c-light)"
+	},
+
+	"rgb($1 $2 $3)": {
+		"prefix": "rgb",
+		"scope": "css, sass, scss, less",
+		"body": [
+			"rgb($1 $2 $3);"
+		],
+		"description": "rgb($1 $2 $3)"
+	},
+
+	"rgba($1 $2 $3 / $4)": {
+		"prefix": "rgba",
+		"scope": "css, sass, scss, less",
+		"body": [
+			"rgba($1 $2 $3 / $4);"
+		],
+		"description": "rgba($1 $2 $3 / $4)"
+	},
+
+	"color: rgb($1 $2 $3)": {
+		"prefix": "color-rgb",
+		"scope": "css, sass, scss, less",
+		"body": [
+			"color: rgb($1 $2 $3);"
+		],
+		"description": "color: rgb($1 $2 $3)"
+	},
+
+	"color: rgba($1 $2 $3 / $4)": {
+		"prefix": "color-rgba",
+		"scope": "css, sass, scss, less",
+		"body": [
+			"color: rgba($1 $2 $3 / $4);"
+		],
+		"description": "color: rgba($1 $2 $3 / $4)"
+	},
+
+	"background-color: rgb($1 $2 $3)": {
+		"prefix": "bg-color-rgb",
+		"scope": "css, sass, scss, less",
+		"body": [
+			"background-color: rgb($1 $2 $3);"
+		],
+		"description": "background-color: rgb($1 $2 $3)"
+	},
+
+	"background-color: rgba($1 $2 $3 / $4)": {
+		"prefix": "bg-color-rgba",
+		"scope": "css, sass, scss, less",
+		"body": [
+			"background-color: rgba($1 $2 $3 / $4);"
+		],
+		"description": "background-color: rgba($1 $2 $3 / $4)"
 	},
 }

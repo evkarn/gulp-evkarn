@@ -2,7 +2,7 @@
 	// Header
 	"Header with logo link": {
 		"prefix": "header",
-		"scope": "html, php",
+		"scope": "html, php, njk, md",
 		"body": [
 			"<header class=\"header\">",
 			"\t<div class=\"header__container container\">",
@@ -31,7 +31,7 @@
 
 	"Header no link logo": {
 		"prefix": "headerWithoutLogoLink",
-		"scope": "html, php",
+		"scope": "html, php, njk, md",
 		"body": [
 			"<header class=\"header\">",
 			"\t<div class=\"header__container container\">",

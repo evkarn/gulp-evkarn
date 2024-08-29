@@ -80,7 +80,9 @@ export const path = {
 
 		html: `${srcFolder}/**/*.html`,
 
-		img: `${srcFolder}/assets/images/src/**/*.*`,
+		img: [`${srcFolder}/assets/images/src/**/*.*`, `!${srcFolder}/assets/images/src/**/*.svg`],
+
+		imgSvg: `${srcFolder}/assets/images/src/**/*.svg`,
 
 		socialImages: `${srcFolder}/assets/images/social-images/**/*.*`,
 

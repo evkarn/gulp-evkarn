@@ -1,7 +1,7 @@
 {
 	"Logo": {
 		"prefix": "logo",
-		"scope": "html, php",
+		"scope": "html, php, njk, md",
 		"body": [
 			"<a",
 			"\tclass=\"header__logo logo\"",

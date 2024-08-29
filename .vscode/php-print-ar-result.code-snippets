@@ -1,7 +1,7 @@
 {
 	"Header with logo link": {
 		"prefix": "print-ar-result",
-		"scope": "html, php",
+		"scope": "html, php, njk, md",
 		"body": [
 			"<?",
 			"\techo '<pre>';",
@@ -14,7 +14,7 @@
 
 	"If !empty $arResult": {
 		"prefix": "if-!empty-arResult",
-		"scope": "html, php",
+		"scope": "html, php, njk, md",
 		"body": [
 			"<?if (!empty(\\$arResult)):?>",
 			"\t$1",
@@ -25,7 +25,7 @@
 
 	"Foreach $arResult as $arItem": {
 		"prefix": "foreach-result-item",
-		"scope": "html, php",
+		"scope": "html, php, njk, md",
 		"body": [
 			"<?foreach(\\$arResult['ITEMS'] as \\$arItem):?>",
 			"\t$1",
