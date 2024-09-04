@@ -27,10 +27,15 @@
 			"outline-width: \\$outline-width + px;",
 			"outline-style: dashed;",
 			"outline-color: currentColor;",
-			"outline-offset: \\$outline-offset + px;"
+			"outline-offset: \\$outline-offset + px;",
+			"",
+			"@media ( min-width: 1920.96px ) {",
+			"\t@include calc-size(outline-width, \\$outline-width, \\$outline-width * 2, 1920, 3840, px);",
+			"\t@include calc-size(outline-offset, \\$outline-offset, \\$outline-offset * 2, 1920, 3840, px);"
 		],
 		"description": "outline all px"
 	},
+
 	"outline all-rem": {
 		"prefix": "outl-all-rem",
 		"scope": "css, sass, scss, less",
@@ -38,7 +43,11 @@
 			"outline-width: rem(\\$outline-width);",
 			"outline-style: dashed;",
 			"outline-color: currentColor;",
-			"outline-offset: rem(\\$outline-offset);"
+			"outline-offset: rem(\\$outline-offset);",
+			"",
+			"@media ( min-width: em(1920.96) ) {",
+			"\t@include calc-size(outline-width, \\$outline-width, \\$outline-width * 2, 1920, 3840, rem);",
+			"\t@include calc-size(outline-offset, \\$outline-offset, \\$outline-offset * 2, 1920, 3840, rem);"
 		],
 		"description": "outline all-rem"
 	}

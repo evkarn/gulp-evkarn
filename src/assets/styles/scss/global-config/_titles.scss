@@ -3,22 +3,27 @@
 .h3,
 .h4 {
 	font-family: var(--ff-title);
-	font-weight: 500;
-	line-height: 1.25;
+	line-height: 1;
 }
 
 .h1 {
-	@include calc-size(font-size, 24, 36, 320, 1920, rem);
+	font-weight: 700;
+	@include calc-size(font-size, 44, 80, 320, 1920, px);
 
-	@media ( min-width: em(1920.96) ) {
-		@include calc-size(font-size, 36, 72, 1920, 3840, rem);
+	@media (min-width: em(1920.96)) {
+		@include calc-size(font-size, 80, 160, 1920, 3840, px);
 	}
 }
 
 .h2 {
-	@include calc-size(font-size, 20, 32, 320, 1920, rem);
+	font-weight: 700;
+	@include calc-size(font-size, 32, 70, 320, 1920, px);
 
-	@media ( min-width: em(1920.96) ) {
-		@include calc-size(font-size, 32, 64, 1920, 3840, rem);
+	text-transform: uppercase;
+
+	color: var(--deep-breath);
+
+	@media (min-width: em(1920.96)) {
+		@include calc-size(font-size, 70, 140, 1920, 3840, rem);
 	}
 }

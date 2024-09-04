@@ -12,7 +12,7 @@
 		"prefix": "bg-color-var-accent",
 		"scope": "css, scss, sass, less",
 		"body": [
-			"background-color: var(--c-accent);"
+			"background-color: var(--accent);"
 		],
 		"description": "background-color: var(--c-accent)"
 	},
@@ -37,7 +37,7 @@
 			"background-size: cover;"
 		],
 		"description": "background all"
-	}
+	},
 
 	"background image-set": {
 		"prefix": "bg-img-set",

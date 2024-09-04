@@ -1,4 +1,4 @@
-export function goBackTop(offsetViewButton) {
+function goBackTop(offsetViewButton) {
 	'use strict';
 
 	// Получаем кнопку в переменную
@@ -9,7 +9,7 @@ export function goBackTop(offsetViewButton) {
 		const breakpoint = offsetViewButton;
 
 		// Если прокрутили на значение breakpoint, задаём кнопке указанный класс
-		if (window.pageYOffset >= breakpoint) {
+		if (window.scrollY >= breakpoint) {
 			btn.classList.add('go-back-top__is-active');
 		} else {
 			btn.classList.remove('go-back-top__is-active');
@@ -28,3 +28,5 @@ export function goBackTop(offsetViewButton) {
 		});
 	}
 }
+
+export default goBackTop;

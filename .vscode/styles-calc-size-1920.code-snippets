@@ -23,35 +23,35 @@
 	},
 
 	"Calc size px": {
-		"prefix": "cspx-xl",
+		"prefix": "cs-px-xl",
 		"scope": " css, scss, sass, less",
 		"body": ["@include calc-size($1, $2, $3, 1920, 3840, px);"],
 		"description": "Calc size px"
 	},
 
 	"Calc size font-size": {
-		"prefix": "csfz-xl",
+		"prefix": "cs-fz-xl",
 		"scope": " css, scss, sass, less",
 		"body": ["@include calc-size(font-size, $1, $2, 1920, 3840, rem);"],
 		"description": "Calc size font-size"
 	},
 
 	"Calc size font-size px": {
-		"prefix": "csfzpx-xl",
+		"prefix": "cs-fz-px-xl",
 		"scope": " css, scss, sass, less",
 		"body": ["@include calc-size(font-size, $1, $2, 1920, 3840, px);"],
 		"description": "Calc size font-size px"
 	},
 
 	"Calc size padding": {
-		"prefix": "csp-xl",
+		"prefix": "cs-p-xl",
 		"scope": " css, scss, sass, less",
 		"body": ["@include calc-size(padding, $1, $2, 1920, 3840, rem);"],
 		"description": "Calc size padding"
 	},
 
 	"Calc size padding px": {
-		"prefix": "csppx-xl",
+		"prefix": "cs-p-px-xl",
 		"scope": " css, scss, sass, less",
 		"body": ["@include calc-size(padding, $1, $2, 1920, 3840, px);"],
 		"description": "Calc size padding px"
@@ -65,273 +65,245 @@
 	},
 
 	"Calc size padding-top px": {
-		"prefix": "csptpx-xl",
+		"prefix": "cs-pt-px-xl",
 		"scope": " css, scss, sass, less",
 		"body": ["@include calc-size(padding-top, $1, $2, 1920, 3840, px);"],
 		"description": "Calc size padding-top px"
 	},
 
 	"Calc size padding-bottom": {
-		"prefix": "cspb-xl",
+		"prefix": "cs-pb-xl",
 		"scope": " css, scss, sass, less",
 		"body": ["@include calc-size(padding-bottom, $1, $2, 1920, 3840, rem);"],
 		"description": "Calc size padding-bottom"
 	},
 
 	"Calc size padding-bottom px": {
-		"prefix": "cspbpx-xl",
+		"prefix": "cs-pb-px-xl",
 		"scope": " css, scss, sass, less",
 		"body": ["@include calc-size(padding-bottom, $1, $2, 1920, 3840, px);"],
 		"description": "Calc size padding-bottom px"
 	},
 
 	"Calc size padding-right": {
-		"prefix": "cspr-xl",
+		"prefix": "cs-pr-xl",
 		"scope": " css, scss, sass, less",
 		"body": ["@include calc-size(padding-right, $1, $2, 1920, 3840, rem);"],
 		"description": "Calc size padding-right"
 	},
 
 	"Calc size padding-right px": {
-		"prefix": "csprpx-xl",
+		"prefix": "cs-pr-px-xl",
 		"scope": " css, scss, sass, less",
 		"body": ["@include calc-size(padding-right, $1, $2, 1920, 3840, px);"],
 		"description": "Calc size padding-right px"
 	},
 
 	"Calc size padding-left": {
-		"prefix": "cspl-xl",
+		"prefix": "cs-pl-xl",
 		"scope": " css, scss, sass, less",
 		"body": ["@include calc-size(padding-left, $1, $2, 1920, 3840, rem);"],
 		"description": "Calc size padding-left"
 	},
 
 	"Calc size padding-left px": {
-		"prefix": "csplpx-xl",
+		"prefix": "cs-pl-px-xl",
 		"scope": " css, scss, sass, less",
 		"body": ["@include calc-size(padding-left, $1, $2, 1920, 3840, px);"],
 		"description": "Calc size padding-left px"
 	},
 
 	"Calc size margin": {
-		"prefix": "csm-xl",
+		"prefix": "cs-m-xl",
 		"scope": " css, scss, sass, less",
 		"body": ["@include calc-size(margin, $1, $2, 1920, 3840, rem);"],
 		"description": "Calc size margin"
 	},
 
 	"Calc size margin px": {
-		"prefix": "csmpx-xl",
+		"prefix": "cs-mp-x-xl",
 		"scope": " css, scss, sass, less",
 		"body": ["@include calc-size(margin, $1, $2, 1920, 3840, px);"],
 		"description": "Calc size margin px"
 	},
 
 	"Calc size margin-top": {
-		"prefix": "csmt-xl",
+		"prefix": "cs-mt-xl",
 		"scope": " css, scss, sass, less",
 		"body": ["@include calc-size(margin-top, $1, $2, 1920, 3840, rem);"],
 		"description": "Calc size margin-top"
 	},
 
 	"Calc size margin-top px": {
-		"prefix": "csmtpx-xl",
+		"prefix": "cs-mt-px-xl",
 		"scope": " css, scss, sass, less",
 		"body": ["@include calc-size(margin-top, $1, $2, 1920, 3840, px);"],
 		"description": "Calc size margin-top px"
 	},
 
 	"Calc size margin-bottom": {
-		"prefix": "csmb-xl",
+		"prefix": "cs-mb-xl",
 		"scope": " css, scss, sass, less",
 		"body": ["@include calc-size(margin-bottom, $1, $2, 1920, 3840, rem);"],
 		"description": "Calc size margin-bottom"
 	},
 
 	"Calc size margin-bottom px": {
-		"prefix": "csmbpx-xl",
+		"prefix": "cs-mb-px-xl",
 		"scope": " css, scss, sass, less",
 		"body": ["@include calc-size(margin-bottom, $1, $2, 1920, 3840, px);"],
 		"description": "Calc size margin-bottom px"
 	},
 
 	"Calc size margin-right": {
-		"prefix": "csmr-xl",
+		"prefix": "cs-mr-xl",
 		"scope": " css, scss, sass, less",
 		"body": ["@include calc-size(margin-right, $1, $2, 1920, 3840, rem);"],
 		"description": "Calc size margin-right"
 	},
 
 	"Calc size margin-right px": {
-		"prefix": "csmrpx-xl",
+		"prefix": "cs-mr-px-xl",
 		"scope": " css, scss, sass, less",
 		"body": ["@include calc-size(margin-right, $1, $2, 1920, 3840, px);"],
 		"description": "Calc size margin-right px"
 	},
 
 	"Calc size margin-left": {
-		"prefix": "csml-xl",
+		"prefix": "cs-ml-xl",
 		"scope": " css, scss, sass, less",
 		"body": ["@include calc-size(margin-left, $1, $2, 1920, 3840, rem);"],
 		"description": "Calc size margin-left"
 	},
 
 	"Calc size margin-left px": {
-		"prefix": "csmlpx-xl",
+		"prefix": "cs-ml-px-xl",
 		"scope": " css, scss, sass, less",
 		"body": ["@include calc-size(margin-left, $1, $2, 1920, 3840, px);"],
 		"description": "Calc size margin-left px"
 	},
 
 	"Calc size max-width": {
-		"prefix": "csmaw-xl",
+		"prefix": "cs-ma-w-xl",
 		"scope": " css, scss, sass, less",
 		"body": ["@include calc-size(max-width, $1, $2, 1920, 3840, rem);"],
 		"description": "Calc size max-width"
 	},
 
 	"Calc size max-width px": {
-		"prefix": "csmawpx-xl",
+		"prefix": "cs-ma-w-px-xl",
 		"scope": " css, scss, sass, less",
 		"body": ["@include calc-size(max-width, $1, $2, 1920, 3840, px);"],
 		"description": "Calc size max-width px"
 	},
 
 	"Calc size min-width": {
-		"prefix": "csmiw-xl",
+		"prefix": "cs-mi-w-xl",
 		"scope": " css, scss, sass, less",
 		"body": ["@include calc-size(min-width, $1, $2, 1920, 3840, rem);"],
 		"description": "Calc size min-width"
 	},
 
 	"Calc size min-width px": {
-		"prefix": "csmiwpx-xl",
+		"prefix": "cs-mi-w-px-xl",
 		"scope": " css, scss, sass, less",
 		"body": ["@include calc-size(min-width, $1, $2, 1920, 3840, px);"],
 		"description": "Calc size min-width px"
 	},
 
 	"Calc size min-height": {
-		"prefix": "csmih-xl",
+		"prefix": "cs-mi-h-xl",
 		"scope": " css, scss, sass, less",
 		"body": ["@include calc-size(min-height, $1, $2, 1920, 3840, rem);"],
 		"description": "Calc size min-height"
 	},
 
 	"Calc size min-height px": {
-		"prefix": "csmihpx-xl",
+		"prefix": "cs-mi-h-px-xl",
 		"scope": " css, scss, sass, less",
 		"body": ["@include calc-size(min-height, $1, $2, 1920, 3840, px);"],
 		"description": "Calc size min-height px"
 	},
 
 	"Calc size max-height": {
-		"prefix": "csmah-xl",
+		"prefix": "cs-ma-h-xl",
 		"scope": " css, scss, sass, less",
 		"body": ["@include calc-size(max-height, $1, $2, 1920, 3840, rem);"],
 		"description": "Calc size max-height"
 	},
 
 	"Calc size max-height px": {
-		"prefix": "csmahpx-xl",
+		"prefix": "cs-ma-h-px-xl",
 		"scope": " css, scss, sass, less",
 		"body": ["@include calc-size(max-height, $1, $2, 1920, 3840, px);"],
 		"description": "Calc size max-height px"
 	},
 
 	"Calc size width": {
-		"prefix": "csw-xl",
+		"prefix": "cs-w-xl",
 		"scope": " css, scss, sass, less",
 		"body": ["@include calc-size(width, $1, $2, 1920, 3840, rem);"],
 		"description": "Calc size width"
 	},
 
 	"Calc size width px": {
-		"prefix": "cswpx-xl",
+		"prefix": "cs-w-px-xl",
 		"scope": " css, scss, sass, less",
 		"body": ["@include calc-size(width, $1, $2, 1920, 3840, px);"],
 		"description": "Calc size width px"
 	},
 
 	"Calc size height": {
-		"prefix": "csh-xl",
+		"prefix": "cs-h-xl",
 		"scope": " css, scss, sass, less",
 		"body": ["@include calc-size(height, $1, $2, 1920, 3840, rem);"],
 		"description": "Calc size width"
 	},
 
 	"Calc size height px": {
-		"prefix": "cshpx-xl",
+		"prefix": "cs-h-px-xl",
 		"scope": " css, scss, sass, less",
 		"body": ["@include calc-size(height, $1, $2, 1920, 3840, px);"],
 		"description": "Calc size height px"
 	},
 
 	"Calc size gap": {
-		"prefix": "csg-xl",
+		"prefix": "cs-g-xl",
 		"scope": " css, scss, sass, less",
 		"body": ["@include calc-size(gap, $1, $2, 1920, 3840, rem);"],
 		"description": "Calc size gap"
 	},
 
-	"Calc size grid-gap": {
-		"prefix": "csgg-xl",
-		"scope": " css, scss, sass, less",
-		"body": ["@include calc-size(grid-gap, $1, $2, 1920, 3840, rem);"],
-		"description": "Calc size grid-gap"
-	},
-
-	"Calc size grid-gap px": {
-		"prefix": "csggpx-xl",
-		"scope": " css, scss, sass, less",
-		"body": ["@include calc-size(grid-gap, $1, $2, 1920, 3840, px);"],
-		"description": "Calc size grid-gap px"
-	},
-
-	"Calc size grid-row-gap": {
-		"prefix": "csgrg-xl",
-		"scope": " css, scss, sass, less",
-		"body": ["@include calc-size(grid-row-gap, $1, $2, 1920, 3840, rem);"],
-		"description": "Calc size grid-row-gap"
-	},
-
-	"Calc size grid-column-gap": {
-		"prefix": "csgcg-xl",
-		"scope": " css, scss, sass, less",
-		"body": ["@include calc-size(grid-column-gap, $1, $2, 1920, 3840, rem);"],
-		"description": "Calc size grid-column-gap"
-	},
-
 	"Calc size column-gap": {
-		"prefix": "cscg-xl",
+		"prefix": "cs-cg-xl",
 		"scope": " css, scss, sass, less",
 		"body": ["@include calc-size(column-gap, $1, $2, 1920, 3840, rem);"],
 		"description": "Calc size column-gap"
 	},
 
 	"Calc size row-gap": {
-		"prefix": "csrg-xl",
+		"prefix": "cs-rg-xl",
 		"scope": " css, scss, sass, less",
 		"body": ["@include calc-size(row-gap, $1, $2, 1920, 3840, rem);"],
 		"description": "Calc size row-gap"
 	},
 
 	"Calc size gap px": {
-		"prefix": "csgpx-xl",
+		"prefix": "cs-g-px-xl",
 		"scope": " css, scss, sass, less",
 		"body": ["@include calc-size(gap, $1, $2, 1920, 3840, px);"],
 		"description": "Calc size gap px"
 	},
 
 	"Calc size column-gap px": {
-		"prefix": "cscgpx-xl",
+		"prefix": "cs-cg-px-xl",
 		"scope": " css, scss, sass, less",
 		"body": ["@include calc-size(column-gap, $1, $2, 1920, 3840, px);"],
 		"description": "Calc size column-gap px"
 	},
 
 	"Calc size row-gap px": {
-		"prefix": "csrgpx-xl",
+		"prefix": "cs-rg-px-xl",
 		"scope": " css, scss, sass, less",
 		"body": ["@include calc-size(row-gap, $1, $2, 1920, 3840, px);"],
 		"description": "Calc size row-gap px"
@@ -339,7 +311,7 @@
 
 	// Border calc-size
 	"Calc size border-radius": {
-		"prefix": "csborr-xl",
+		"prefix": "cs-bor-r-xl",
 		"scope": "css, css, scss, sass, less, scss, less",
 		"body": [
 			"@include calc-size(border-radius, \\$border-radius, \\$border-radius * 2, 1920, 3840, rem);"
@@ -348,7 +320,7 @@
 	},
 
 	"Calc size border-radius px": {
-		"prefix": "csborrpx-xl",
+		"prefix": "cs-bor-r-px-xl",
 		"scope": "css, css, scss, sass, less, scss, less",
 		"body": [
 			"@include calc-size(border-radius, \\$border-radius, \\$border-radius * 2, 1920, 3840, px);"
@@ -357,7 +329,7 @@
 	},
 
 	"Calc-size border-width rem": {
-		"prefix": "csborw-xl",
+		"prefix": "cs-bor-w-xl",
 		"body": [
 			"@include calc-size(border-width, \\$border-width, \\$border-width * 2, 1920, 3840, rem);"
 		],
@@ -365,7 +337,7 @@
 	},
 
 	"Calc-size border-width px": {
-		"prefix": "csborwpx-xl",
+		"prefix": "cs-bor-w-px-xl",
 		"body": [
 			"@include calc-size(border-width, \\$border-width, \\$border-width * 2, 1920, 3840, px);"
 		],

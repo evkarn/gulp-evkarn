@@ -27,8 +27,12 @@
 	width: 100%;
 	padding-left: calc((100% - #{$container-width + px}) / 2);
 
+	@media ( min-width: 1920.96px ) {
+		padding-left: 17%;
+	}
+
 	@media (max-width: #{$container-width + px}) {
-		padding: 0 $container-offset + px;
+		padding-left: $container-offset + px;
 	}
 }
 

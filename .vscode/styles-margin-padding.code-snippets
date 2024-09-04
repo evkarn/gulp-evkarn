@@ -8,6 +8,34 @@
 		],
 		"description": "Margin all"
 	},
+	"Margin not-last-child-rem": {
+		"prefix": "mar-not-last-ch-rem",
+		"scope": "css, sass, scss, less",
+		"body": [
+			"&:not(:last-child) {",
+			"\tmargin-bottom: rem(16);",
+			"",
+			"\t@media ( min-width: 1920.96px ) {",
+			"\t\t@include calc-size(margin-bottom, 16, 32, 1920, 3840, rem);",
+			"\t}",
+			"}",
+		],
+		"description": "Margin not-last-child-rem"
+	},
+	"Margin not-last-child-px": {
+		"prefix": "mar-not-last-ch-px",
+		"scope": "css, sass, scss, less",
+		"body": [
+			"&:not(:last-child) {",
+			"\tmargin-bottom: 16px;",
+			"",
+			"\t@media ( min-width: 1920.96px ) {",
+			"\t\t@include calc-size(margin-bottom, 16, 32, 1920, 3840, px);",
+			"\t}",
+			"}",
+		],
+		"description": "Margin not-last-child-px"
+	},
 
 	"Margin-top: rem": {
 		"prefix": "margin-top-rem",

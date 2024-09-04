@@ -114,18 +114,29 @@
 	}
 }
 
-.ahriman-blue {
-	background-color: var(--ahriman-blue);
-}
+.link {
+	transition: color .3s ease;
 
-.vitalize {
-	background-color: var(--vitalize);
-}
+	@media ( any-hover: hover ) {
+		&:hover {
+			color: var(--accent);
+		}
+	}
 
-.marigold {
-	background-color: var(--marigold);
-}
+	&:focus-visible {
+		outline-width: $outline-width + px;
+		outline-style: dashed;
+		outline-color: currentColor;
+		outline-offset: $outline-offset + px;
 
-.cruel-ruby {
-	background-color: var(--cruel-ruby);
+		@media ( min-width: em(1920.96) ) {
+			@include calc-size(outline-width, $outline-width, $outline-width * 2, 1920, 3840, px);
+
+			@include calc-size(outline-offset, $outline-offset, $outline-offset * 2, 1920, 3840, px);
+		}
+	}
+
+	&:active {
+		color: var(--accent-dark);
+	}
 }

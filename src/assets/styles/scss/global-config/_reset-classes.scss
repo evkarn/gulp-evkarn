@@ -1,6 +1,12 @@
-.title-reset, .txt-reset, .text-reset {
+.title-res,
+.txt-res,
+.text-res {
 	margin: 0;
 	padding: 0;
+}
+
+.address-res {
+	font-style: normal;
 }
 
 .btn-reset {
@@ -18,7 +24,7 @@
 	text-decoration: none;
 }
 
-.list-reset {
+.list-res {
 	list-style: none;
 	margin: 0;
 	padding: 0;
@@ -41,5 +47,19 @@
 
 .radio-reset,
 .checkbox-reset {
+	margin: 0;
+}
+
+.hr-res {
+	margin: 0 !important;
+	margin-block-start: 0;
+	margin-block-end: 0;
+	margin-inline-start: 0;
+	margin-inline-end: 0;
+
+	border: none;
+}
+
+.figure-res {
 	margin: 0;
 }
