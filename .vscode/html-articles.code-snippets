@@ -4,8 +4,8 @@
 		"prefix": "article-block",
 		"scope": "html, php, njk, md",
 		"body": [
-			"<article class=\"section-main__article article\" itemscope=\"itemscope\" itemtype=\"http://schema.org/Article\">",
-			"\t<div class=\"article__author hidden\" itemprop=\"author\" itemscope=\"\" itemtype=\"http://schema.org/Person\">",
+			"<article class=\"section-main__article article\" itemscope=\"itemscope\" itemtype=\"https://schema.org/Article\">",
+			"\t<div class=\"article__author hidden\" itemprop=\"author\" itemscope=\"\" itemtype=\"https://schema.org/Person\">",
 			"",
 			"\t\t<link itemprop=\"sameAs\" href=\"//intellektfinance.ru/\" />",
 			"",
@@ -70,8 +70,8 @@
 		"prefix": "articleJekyll",
 		"scope": "html, php, njk, md",
 		"body": [
-			"<article class=\"section-main__article article\" itemscope=\"itemscope\" itemtype=\"http://schema.org/Article\">",
-			"\t<div class=\"article__author hidden\" itemprop=\"author\" itemscope=\"\" itemtype=\"http://schema.org/Person\">",
+			"<article class=\"section-main__article article\" itemscope=\"itemscope\" itemtype=\"https://schema.org/Article\">",
+			"\t<div class=\"article__author hidden\" itemprop=\"author\" itemscope=\"\" itemtype=\"https://schema.org/Person\">",
 			"",
 			"\t\t<link itemprop=\"sameAs\" href=\"{{ site.url }}\" />",
 			"",
@@ -136,7 +136,7 @@
 		"prefix": "articleLink",
 		"scope": "html, php, njk, md",
 		"body": [
-			"<article class=\"page__article article\" itemscope=\"itemscope\" itemtype=\"http://schema.org/NewsArticle\">",
+			"<article class=\"page__article article\" itemscope=\"itemscope\" itemtype=\"https://schema.org/NewsArticle\">",
 			"\t<a href=\"$1\" itemprop=\"url\">",
 			"\t\t<div class=\"article__author hidden\">",
 			"\t\t\t<span>Автор:</span>",

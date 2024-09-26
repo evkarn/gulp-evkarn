@@ -57,7 +57,7 @@ Context:
   $vars[context]
 Browser: $_SERVER[HTTP_USER_AGENT]
 
-Sent bypassing the web-interface http://orphus.ru.
+Sent bypassing the web-interface https://orphus.ru.
 
 This message was automatically generated. Please do not respond to it.
 TEXT;

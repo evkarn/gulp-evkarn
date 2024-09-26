@@ -28,12 +28,8 @@
 // End. Swiper
 
 // Header
-// @import "./header/index";
+@import "./header/index";
 // End. Header
-
-// Footer
-// @import "./footer/index";
-// End. Footer
 
 // Elements
 // @import "./elements/index";
@@ -43,49 +39,6 @@
 // @import "./sections/index";
 // End. Sections
 
-.intro-banner__container {
-	display: grid;
-	grid-template-columns: 1fr 1fr;
-	gap: 20px;
-
-	max-width: 1066rem;
-}
-
-.intro-banner__link {
-	display: inline-flex;
-	padding: 28px 160px;
-
-	font-size: 26px;
-	font-weight: 700;
-
-	background-color: #F05A23;
-
-	border-radius: 20px;
-
-	box-shadow: 0 0 20px 0 rgba(0 0 0 / 100%);
-
-	cursor: pointer;
-
-	transition: color .3s ease, background-color .3s ease, box-shadow .3s ease;
-
-	@media ( any-hover: hover ) {
-		&:hover {
-			background-color: #EE8D66;
-			box-shadow: 0 0 20px 0 rgba(#F05A23, 1);
-		}
-	}
-
-	&:focus-visible {
-		outline-width: var(--outline-width) + px;
-		outline-style: dashed;
-		outline-color: currentColor;
-		outline-offset: var(--outline-offset) + px;
-
-		color: oklch(70% 0.1 84 / 80.09%);
-	}
-}
-
-.intro-banner__img {
-	width: 100%;
-	height: auto;
-}
+// Footer
+@import "./footer/index";
+// End. Footer

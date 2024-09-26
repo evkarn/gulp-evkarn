@@ -48,7 +48,7 @@
 		"gulp-sass": "latest",
 		"gulp-sourcemaps": "latest",
 		"gulp-svg-sprite": "latest",
-		"gulp-svgo": "latest",
+		"gulp-svgmin": "^4.1.0",
 		"gulp-ttf2woff2": "latest",
 		"gulp-typograf": "latest",
 		"gulp-util": "latest",

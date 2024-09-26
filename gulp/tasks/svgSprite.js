@@ -1,14 +1,8 @@
-// Обработка XML, SVG файлов
-import cheerio from 'gulp-cheerio';
-
-// Берём множество SVG-файлов, оптимизирует их и создаём SVG-спрайт
-import svgSprite from 'gulp-svg-sprite';
-
 // Обработка ошибок
 import plumberInit from './plumber.js'
-
-// Оптимизация файлов svg
-import svgoMin from 'gulp-svgo';
+import svgSprite from 'gulp-svg-sprite';
+import cheerio from 'gulp-cheerio';
+import svgMin from 'gulp-svgmin';
 
 export const svgSpriteIcons = () => {
 	// Находим файлы svg в папке исходников
@@ -20,20 +14,16 @@ export const svgSpriteIcons = () => {
 
 
 	// Оптимизируем файлы
-	.pipe(svgoMin({
+	.pipe(svgMin({
 		js2svg: {
-			indent: 2,
 			pretty: true,
 		},
 
 		plugins: [
 			{
-				name: 'preset-default',
-				params: {
-					overrides: {
-						removeViewBox: false
-					},
-				},
+				name: 'removeViewBox',
+				// Disable a plugin by setting active to false.
+				active: false,
 			},
 		],
 	}))
@@ -44,9 +34,7 @@ export const svgSpriteIcons = () => {
 		cheerio({
 			run: function ($) {
 				$('[fill]').removeAttr('fill'); // убираем цвета заливки
-
 				$('[stroke]').removeAttr('stroke'); // Убираем stroke
-
 				$('[style]').removeAttr('style'); // Удаляем стили
 			},
 
@@ -56,10 +44,8 @@ export const svgSpriteIcons = () => {
 		})
 	)
 
-
 	// Замена неправильных символов закрытия тегов
 	.pipe(app.plugins.replace('&gt;', '>'))
-
 
 	// Создаём спрайт
 	.pipe(svgSprite({

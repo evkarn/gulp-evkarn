@@ -13,6 +13,8 @@ const srcFolder = `./src`;
 // Выбор формата файлов препроцессора sass или scss
 const preprocessor = 'scss';
 
+const 
+
 export const path = {
 	build: {
 		allFiles: `${buildFolder}/**/*.*`,
