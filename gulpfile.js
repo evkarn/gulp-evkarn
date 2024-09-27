@@ -4,6 +4,9 @@ import gulp from 'gulp';
 // Импорт путей к файлам и папкам
 import { path } from './gulp/config/path.js';
 
+// Импорт настроек для шрифтов
+import { fontsVars } from './gulp/config/fonts.js';
+
 // Импорт плагинов
 import { plugins } from './gulp/config/plugins.js';
 
@@ -12,6 +15,7 @@ global.app = {
 	isBuild: process.argv.includes('--build'),
 	isDev: !process.argv.includes('--build'),
 	path: path,
+	fontsVars: fontsVars,
 	gulp: gulp,
 	plugins: plugins
 };

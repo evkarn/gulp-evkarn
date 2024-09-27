@@ -1,6 +1,6 @@
 {
 	"Calc size without property px": {
-		"prefix": "cs-not-prop-px-sm",
+		"prefix": "cs-no-mixin-px-sm",
 		"scope": "css, scss, sass, less",
 		"body": [
 			"calc($1px + ($2 - $1) * ((100vw - 320px) / (1920 - 320)))"
@@ -9,7 +9,7 @@
 	},
 
 	"Calc size without property rem": {
-		"prefix": "cs-not-prop-rem-sm",
+		"prefix": "cs-no-mixin-rem-sm",
 		"scope": "css, scss, sass, less",
 		"body": ["calc(rem($1) + ($2 - $1) * ((100vw - rem(320)) / (1920 - 320)))"],
 		"description": "Calc size without property rem"
