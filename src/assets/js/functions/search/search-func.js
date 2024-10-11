@@ -1,11 +1,11 @@
-export const search = function () {
+export const search = function() {
 	'use strict';
 
 	const searchButton = document?.querySelector('[data-search-button]');
 
 	const searchBlock = document?.querySelector('[data-search-block]');
 
-	searchButton?.addEventListener('click', function () {
+	searchButton?.addEventListener('click', function() {
 		searchBlock?.classList.toggle('search-block--visible');
 
 		searchButton?.classList.toggle('search-button--is-active');
@@ -14,17 +14,18 @@ export const search = function () {
 			searchButton?.setAttribute('aria-expanded', 'true');
 
 			searchButton?.setAttribute('aria-label', 'Закрыть поиск');
-		}
-		else {
+		} else {
 			searchButton?.setAttribute('aria-expanded', 'false');
 
 			searchButton?.setAttribute('aria-label', 'Открыть поиск');
 		}
 	});
 
-
-	document.addEventListener('keydown', function (e) {
-		if (e.code == 'Escape' && searchBlock.classList.contains('search-block--visible')) {
+	document.addEventListener('keydown', function(e) {
+		if (
+			e.code == 'Escape' &&
+			searchBlock.classList.contains('search-block--visible')
+		) {
 			searchBlock.classList.remove('search-block--visible');
 
 			searchButton?.setAttribute('aria-expanded', 'false');
@@ -33,8 +34,11 @@ export const search = function () {
 		}
 	});
 
-	window.addEventListener('click', e => {
-		if (!e.target.closest('.search-block') && !e.target.closest('.header')) {
+	window.addEventListener('click', (e) => {
+		if (
+			!e.target.closest('.search-block') &&
+			!e.target.closest('.site-header')
+		) {
 			searchBlock.classList.remove('search-block--visible');
 
 			searchButton?.setAttribute('aria-expanded', 'false');

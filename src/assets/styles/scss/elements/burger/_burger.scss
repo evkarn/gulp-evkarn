@@ -1,6 +1,4 @@
 .burger {
-
-
 	position: relative;
 
 	display: inline-block;
@@ -8,8 +6,9 @@
 	width: rem($burger-width);
 	height: rem($burger-height);
 
-	@include min-full-hd-em {
+	@media ( min-width: 1920.96px ) {
 		@include calc-size(width, $burger-width, $burger-width*2, 1920, 3840, rem);
+		
 		@include calc-size(height, $burger-height, $burger-height*2, 1920, 3840, rem);
 	}
 

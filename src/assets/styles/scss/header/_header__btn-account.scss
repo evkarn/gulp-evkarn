@@ -1,0 +1,12 @@
+.site-header__btn-account {
+	z-index: 4;
+
+	padding: 8px 16px;
+
+	@media (min-width: 1920.96px) {
+		@include calc-size(padding-top, 8, 16, 1920, 3840, px);
+		@include calc-size(padding-bottom, 8, 16, 1920, 3840, px);
+		@include calc-size(padding-right, 16, 32, 1920, 3840, px);
+		@include calc-size(padding-left, 16, 32, 1920, 3840, px);
+	}
+}

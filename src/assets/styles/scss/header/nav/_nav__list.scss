@@ -1,0 +1,21 @@
+.site-header__nav .nav__list {
+	flex-wrap: wrap;
+	@include calc-size(column-gap, 20, $gap-num, 320, 1920, px);
+	row-gap: 4px;
+
+	font-weight: 600;
+	font-size: 14px;
+	line-height: 1;
+
+	@media (min-width: 1920.96px) {
+		@include calc-size(column-gap, $gap-num, $gap-num * 2, 1920, 3840, px);
+		@include calc-size(row-gap, 4, 8, 1920, 3840, px);
+	}
+
+	@media (max-width: $switch-point + px) {
+		flex-direction: column;
+		row-gap: 40px;
+
+		font-size: 20px;
+	}
+}

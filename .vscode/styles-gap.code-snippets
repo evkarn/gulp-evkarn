@@ -5,6 +5,12 @@
 		"body": ["gap: rem($1);"],
 		"description": "gap: rem()"
 	},
+	"gap-num rem": {
+		"prefix": "gap-num-rem",
+		"scope": "css, sass, scss, less",
+		"body": ["gap: rem(\\$gap-num);"],
+		"description": "gap-num rem"
+	},
 
 	"row-gap: rem()": {
 		"prefix": "row-gap-rem",
@@ -25,6 +31,12 @@
 		"scope": "css, sass, scss, less",
 		"body": ["gap: $1px;"],
 		"description": "gap: px"
+	},
+	"gap num px": {
+		"prefix": "gap-num-px",
+		"scope": "css, sass, scss, less",
+		"body": ["gap: \\$gap-num + px;"],
+		"description": "gap num px"
 	},
 
 	"row-gap: px": {

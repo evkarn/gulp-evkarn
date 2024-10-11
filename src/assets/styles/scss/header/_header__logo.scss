@@ -1,9 +1,12 @@
-.header__logo {
+.site-header__logo {
 	flex-shrink: 0;
 
-	// font-weight: 700;
-	// font-size: rem(20);
-	// line-height: 1;
+	@media (min-width: 1920.96px) {
+		@include calc-size(min-width, 96, 192, 1920, 3840, px);
+		@include calc-size(min-height, 22, 44, 1920, 3840, px);
+	}
 
-	// white-space: nowrap;
+	@media (max-width: $switch-point + px) {
+		z-index: 4;
+	}
 }

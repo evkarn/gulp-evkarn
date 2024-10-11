@@ -274,6 +274,20 @@
 		"description": "Calc size gap"
 	},
 
+	"Calc size gap-num": {
+		"prefix": "cs-g-num-xl",
+		"scope": "css, scss, sass, less",
+		"body": ["@include calc-size(gap, \\$gap-num, \\$gap-num * 2, 1920, 3840, rem);"],
+		"description": "Calc size gap-num"
+	},
+
+		"Calc size gap-num px": {
+		"prefix": "cs-g-num-xl-px",
+		"scope": "css, scss, sass, less",
+		"body": ["@include calc-size(gap, \\$gap-num, \\$gap-num * 2, 1920, 3840, px);"],
+		"description": "Calc size gap-num px"
+	},
+
 	"Calc size column-gap": {
 		"prefix": "cs-cg-xl",
 		"scope": " css, scss, sass, less",

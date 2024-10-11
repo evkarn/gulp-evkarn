@@ -275,9 +275,22 @@
 		"body": ["@include calc-size(gap, $1, $2, 320, 1920, rem);"],
 		"description": "Calc size gap"
 	},
+	"Calc size gap-num": {
+		"prefix": "cs-g-num-sm",
+		"scope": "css, scss, sass, less",
+		"body": ["@include calc-size(gap, \\$gap-num, \\$gap-num * 2, 320, 1920, rem);"],
+		"description": "Calc size gap-num"
+	},
+
+		"Calc size gap-num px": {
+		"prefix": "cs-g-num-sm-px",
+		"scope": "css, scss, sass, less",
+		"body": ["@include calc-size(gap, \\$gap-num, \\$gap-num * 2, 320, 1920, px);"],
+		"description": "Calc size gap-num px"
+	},
 
 	"Calc size column-gap": {
-		"prefix": "cs-cg-sm",
+		"prefix": "cs-cg-sm-rem",
 		"scope": "css, scss, sass, less",
 		"body": ["@include calc-size(column-gap, $1, $2, 320, 1920, rem);"],
 		"description": "Calc size column-gap"

@@ -10,9 +10,9 @@ function goBackTop(offsetViewButton) {
 
 		// Если прокрутили на значение breakpoint, задаём кнопке указанный класс
 		if (window.scrollY >= breakpoint) {
-			btn.classList.add('go-back-top__is-active');
+			btn.classList.add('is-active');
 		} else {
-			btn.classList.remove('go-back-top__is-active');
+			btn.classList.remove('is-active');
 		}
 	}
 

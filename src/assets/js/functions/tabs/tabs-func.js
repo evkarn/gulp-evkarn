@@ -8,17 +8,17 @@ function tabs () {
 			el.addEventListener('click', (e) => {
 				const parent = e.target.closest('[data-tabs-parent]');
 
-				const tabsButtons = parent?.querySelectorAll('[data-tabs-path]');
+				const tabsButtons = parent?.querySelectorAll('[data-tabs-btn]');
 
-				if (e.target.closest('[data-tabs-path]')) {
-					const tabsPath = e.target.closest('[data-tabs-path]').dataset.tabsPath;
+				if (e.target.closest('[data-tabs-btn]')) {
+					const tabsPath = e.target.closest('[data-tabs-btn]').dataset.tabsPath;
 
 					tabsButtons.forEach((el) => {
 						el.classList.remove('tabs__btn--active');
 					});
 
 					const targetButton = parent.querySelector(
-						`[data-tabs-path="${tabsPath}"]`,
+						`[data-tabs-btn="${tabsPath}"]`,
 					);
 
 					targetButton.classList.add('tabs__btn--active');
@@ -26,7 +26,7 @@ function tabs () {
 					tabsHandler(tabsPath, parent);
 				}
 
-				if (e.target.closest('[data-tabs-button-prev]')) {
+				if (e.target.closest('[data-tabs-prev]')) {
 					let activeBtn = parent?.querySelector('.tabs__btn--active');
 
 					let activeParent = activeBtn.closest('[data-tabs-button-item]');
@@ -34,7 +34,7 @@ function tabs () {
 					let previousParent = activeParent.previousElementSibling;
 
 					if (previousParent) {
-						let prevActive = previousParent.querySelector('[data-tabs-path]');
+						let prevActive = previousParent.querySelector('[data-tabs-btn]');
 
 						tabsButtons.forEach((el) => {
 							el.classList.remove('tabs__btn--active');
@@ -48,7 +48,7 @@ function tabs () {
 					}
 				}
 
-				if (e.target.closest('[data-tabs-button-next]')) {
+				if (e.target.closest('[data-tabs-next]')) {
 					let activeBtn = parent?.querySelector('.tabs__btn--active');
 
 					let activeParent = activeBtn.closest('[data-tabs-button-item]');
@@ -56,7 +56,7 @@ function tabs () {
 					let nextParent = activeParent.nextElementSibling;
 
 					if (nextParent) {
-						let nextActive = nextParent.querySelector('[data-tabs-path]');
+						let nextActive = nextParent.querySelector('[data-tabs-btn]');
 
 						tabsButtons.forEach((el) => {
 							el.classList.remove('tabs__btn--active');
@@ -82,7 +82,9 @@ function tabs () {
 
 		const target = parent?.querySelector(`[data-tabs-target="${path}"]`);
 
-		target.classList.add('tabs__content--active');
+		if (target) {
+			target.classList.add('tabs__content--active');
+		}
 	};
 };
 

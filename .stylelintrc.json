@@ -12,7 +12,9 @@
 		"selector-class-pattern": null,
 		"value-keyword-case": null,
 		"selector-pseudo-element-colon-notation": "single",
-		"scss/at-mixin-pattern": null
+		"scss/at-mixin-pattern": null,
+		"media-feature-range-notation": null,
+		"keyframes-name-pattern": null
 	},
 
 	"defaultSeverity": "warning"

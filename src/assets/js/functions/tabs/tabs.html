@@ -9,7 +9,7 @@
 	>
 		<button
 			class="tabs__btn tabs__btn--active"
-			data-tabs-path="main"
+			data-tabs-btn="main"
 			role="tab"
 		>
 			Главная
@@ -17,37 +17,50 @@
 
 		<button
 			class="tabs__btn"
-			data-tabs-path="archive"
+			data-tabs-btn="archive"
 			role="tab"
 		>
 			Архив
 		</button>
 	</div>
 
-	<div class="tabs__contents">
+	<div
+		class="tabs__contents"
+		data-tabs-contents
+	>
 		<div
 			class="tabs__content tabs-content tabs__content--active"
-			data-tabs-target="main"
+			data-tabs-content="main"
 			role="tabpanel"
 			tabindex="0"
 		>
-			<h2 class="tabs-content__title">Главная</h2>
+			<div
+				class="tabs-content__body"
+				data-tabs-content-body
+			>
+				<h2 class="tabs-content__title">Главная</h2>
+			</div>
 		</div>
 
 		<div
 			class="tabs__content tabs-content"
-			data-tabs-target="archive"
+			data-tabs-content="archive"
 			role="tabpanel"
 			tabindex="0"
 		>
-			<h2 class="tabs-content__title">Архив</h2>
+			<div
+				class="tabs-content__body"
+				data-tabs-content-body
+			>
+				<h2 class="tabs-content__title">Архив</h2>
+			</div>
 		</div>
 	</div>
 
 	<button
 		class="tabs__arrow tabs__arrow--prev"
 		aria-label="Назад"
-		data-tabs-button-prev
+		data-tabs-prev
 	>
 		<svg
 			width="21"
@@ -65,7 +78,7 @@
 	<button
 		class="tabs__arrow tabs__arrow--next"
 		aria-label="Вперед"
-		data-tabs-button-next
+		data-tabs-next
 	>
 		<svg
 			width="21"
