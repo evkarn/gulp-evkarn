@@ -47,7 +47,10 @@ export const styles = (done) => {
 
 
 	// Выбор вида сжатия конечного файла
-	.pipe(sassUse({ outputStyle: 'compressed' }))
+	.pipe(sassUse({
+		outputStyle: 'compressed',
+		silenceDeprecations: ['legacy-js-api'],
+	}))
 
 
 	// Если в режиме продакшена группируем медиа-запросы
