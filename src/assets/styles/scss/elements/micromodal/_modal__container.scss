@@ -1,18 +1,24 @@
 .modal__container {
 	box-sizing: border-box;
-	max-width: rem(500);
+
+	max-width: 560px;
 	max-height: 100vh;
-	padding: rem(30);
+	width: 100%;
+
 	background-color: #fff;
-	border-radius: rem($border-radius);
+
+	border-radius: 20px;
+
 	overflow-y: auto;
 
-	@media (min-width: em(1920.96)) {
-		@include calc-size(max-width, 500, 1000, 1920, 3840, rem);
+	@media (min-width: 1920.96px) {
+		@include calc-size(max-width, 560, 1120, 1920, 3840, px);
 
-		@include calc-size(padding, 30, 60, 1920, 3840, rem);
+		@include calc-size(border-radius, 20, 40, 1920, 3840, px);
+	}
 
-		@include calc-size(border-radius, $border-radius, $border-radius * 2, 1920, 3840, rem);
+	@media ( max-width: 768px ) {
+		margin: 10px;
 	}
 }
 

@@ -19,8 +19,8 @@
 		"@babel/core": "latest",
 		"@babel/plugin-proposal-class-properties": "latest",
 		"@babel/preset-env": "latest",
-		"@popperjs/core": "latest",
 		"@bdchauvette/gulp-prettier": "latest",
+		"@popperjs/core": "latest",
 		"babel-loader": "latest",
 		"babel-plugin-root-import": "latest",
 		"browser-sync": "latest",
@@ -54,9 +54,9 @@
 		"gulp-util": "latest",
 		"gulp-version-number": "latest",
 		"gulp-web-images-css": "latest",
-		"gulp-webp-retina-html": "latest",
 		"gulp-webp": "latest",
 		"gulp-webp-avif-html-nosvg-nogif-lazyload": "latest",
+		"gulp-webp-retina-html": "latest",
 		"gulp-zip": "latest",
 		"ilyabirman-likely": "latest",
 		"inputmask": "latest",
@@ -84,5 +84,8 @@
 		"vinyl-ftp": "latest",
 		"webpack": "latest",
 		"webpack-stream": "latest"
+	},
+	"dependencies": {
+		"photoswipe": "^5.4.4"
 	}
 }

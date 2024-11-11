@@ -1,0 +1,53 @@
+.state-accent {
+	transition: color .3s ease;
+
+	@media ( any-hover: hover ) {
+		&:hover {
+			color: var(--accent);
+		}
+	}
+
+	&:focus-visible {
+		outline-width: $outline-width + px;
+		outline-style: dashed;
+		outline-color: currentColor;
+		outline-offset: $outline-offset + px;
+
+		@media ( min-width: em(1920.96) ) {
+			@include calc-size(outline-width, $outline-width, $outline-width * 2, 1920, 3840, px);
+
+			@include calc-size(outline-offset, $outline-offset, $outline-offset * 2, 1920, 3840, px);
+		}
+	}
+
+	&:active {
+		color: var(--accent-dark);
+	}
+}
+
+.state-opacity {
+	transition: opacity .3s ease;
+
+	@media ( any-hover: hover ) {
+		&:hover {
+			opacity: 0.6;
+		}
+	}
+
+	&:focus-visible {
+		outline-width: $outline-width + px;
+		outline-style: dashed;
+		outline-color: currentColor;
+		outline-offset: $outline-offset + px;
+
+		@media ( min-width: em(1920.96) ) {
+			@include calc-size(outline-width, $outline-width, $outline-width * 2, 1920, 3840, px);
+
+			@include calc-size(outline-offset, $outline-offset, $outline-offset * 2, 1920, 3840, px);
+		}
+	}
+
+	&:active {
+		opacity: 1;
+	}
+}

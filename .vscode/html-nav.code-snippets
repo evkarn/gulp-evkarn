@@ -5,7 +5,7 @@
 		"scope": "html, php, njk, md",
 		"body": [
 			"<nav class=\"header__nav nav\" data-nav>",
-			"\t<ul class=\"nav__list\" data-nav-list itemscope itemtype=\"http: //schema.org/SiteNavigationElement\">",
+			"\t<ul class=\"nav__list\" data-nav-list itemscope itemtype=\"https://schema.org/SiteNavigationElement\">",
 			"\t\t<li class=\"nav__item\" data-nav-item>",
 			"\t\t\t<a class=\"nav__link\" href=\"#\" data-nav-link itemprop=\"url\">",
 			"\t\t\t\tПункт 1",

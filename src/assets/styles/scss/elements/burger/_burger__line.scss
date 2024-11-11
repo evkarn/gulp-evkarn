@@ -5,9 +5,9 @@
 	left: 0;
 
 	width: 100%;
-	height: rem($burger-line-height);
+	height: $burger-line-height + px;
 
-	background-color: var(--c-burger-line);
+	background-color: var(--burger-line);
 
 	opacity: 1;
 
@@ -16,7 +16,7 @@
 	transition: opacity 0.3s ease;
 
 	@include min-full-hd-em {
-		@include calc-size(height, $burger-line-height, $burger-line-height * 2, 1920, 3840, rem);
+		@include calc-size(height, $burger-line-height, $burger-line-height * 2, 1920, 3840, px);
 	}
 }
 

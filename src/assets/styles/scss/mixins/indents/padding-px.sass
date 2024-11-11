@@ -1,0 +1,5 @@
+@mixin padding($size)
+	padding: $size+px
+
+	@media ( min-width: em(1920.96) )
+		+calc-size(padding, $size, $size*2, 1920, 3840, px)

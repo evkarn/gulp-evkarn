@@ -1,3 +1,5 @@
+import getScrollWidth from '../get-scroll-width/get-scroll-width-func.js';
+
 function disableScroll() {
 	const html = document.documentElement;
 
@@ -5,11 +7,7 @@ function disableScroll() {
 
 	const documentRoot = document.querySelector(':root');
 
-	const scrollWidth = window.innerWidth - document.body.offsetWidth;
-
 	let pagePosition = window.scrollY;
-
-	documentRoot.style.setProperty('--scroll-width', `${scrollWidth}px`);
 
 	body.classList.add('stop-scroll');
 

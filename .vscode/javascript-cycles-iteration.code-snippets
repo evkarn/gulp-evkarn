@@ -3,7 +3,7 @@
 		"prefix": "forEachArrow",
 		"scope": "javascript, typescript",
 		"body": [
-			"$1.forEach(item => {",
+			"$1.forEach(el => {",
 			"\t$2",
 			"});"
 		],
@@ -14,7 +14,7 @@
 		"prefix": "forEach",
 		"scope": "javascript, typescript",
 		"body": [
-			"$1.forEach(function(item, index, array) {",
+			"$1.forEach(function(el, index, array) {",
 			"\t$2",
 			"});"
 		],
@@ -26,7 +26,7 @@
 		"scope": "javascript, typescript",
 		"body": [
 			"for (let i = 0; i < 3; i++) {",
-			"\t$2",
+			"\t$1",
 			"}"
 		],
 		"description": "for"

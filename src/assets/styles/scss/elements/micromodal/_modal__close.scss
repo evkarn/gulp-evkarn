@@ -1,8 +1,66 @@
 .modal__close {
-  background: transparent;
-  border: 0;
+	position: absolute;
+	top: 30px;
+	right: 30px;
 
-  &:before {
-    content: "✕";
-  }
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	width: 24px;
+	height: 24px;
+
+	background: transparent;
+
+	border: 0;
+
+	cursor: pointer;
+
+	transition: color 0.3s ease;
+
+	@media (min-width: 1920.96px) {
+		@include calc-size(top, 30, 60, 1920, 3840, px);
+		@include calc-size(right, 30, 60, 1920, 3840, px);
+
+		@include calc-size(width, 24, 48, 1920, 3840, px);
+		@include calc-size(height, 24, 48, 1920, 3840, px);
+	}
+
+	@media (max-width: 768px) {
+		top: 10px;
+		right: 10px;
+	}
+
+	&:before {
+		content: "✕";
+
+		font-weight: 800;
+		font-size: 22px;
+
+		@media (min-width: 1920.96px) {
+			@include calc-size(font-size, 22, 44, 1920, 3840, px);
+		}
+	}
+
+	@media (any-hover: hover) {
+		&:hover {
+			color: var(--accent);
+		}
+	}
+
+	&:focus-visible {
+		outline-width: $outline-width + px;
+		outline-style: dashed;
+		outline-color: currentColor;
+		outline-offset: $outline-offset + px;
+
+		@media (min-width: 1920.96px) {
+			@include calc-size(outline-width, $outline-width, $outline-width * 2, 1920, 3840, px);
+			@include calc-size(outline-offset, $outline-offset, $outline-offset * 2, 1920, 3840, px);
+		}
+	}
+
+	&:active {
+		color: var(--accent-light);
+	}
 }

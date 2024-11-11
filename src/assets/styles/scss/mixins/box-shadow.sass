@@ -1,0 +1,15 @@
+@mixin bxs-px($x, $y, $blur, $radius, $color, $opacity)
+	box-shadow: $x+px $y+px $blur+px $radius+px rgba($color, $opacity)
+	@content
+
+@mixin bxs-rem($x, $y, $blur, $radius, $color, $opacity)
+	box-shadow: math.div($x, $fz-text)+px math.div($y, $fz-text)+px math.div($blur, $fz-text)+px math.div($radius, $fz-text)+px rgba($color, $opacity)
+	@content
+
+@mixin bxs-inset-px($x, $y, $blur, $radius, $color, $opacity)
+	box-shadow: $x+px $y+px $blur+px $radius+px inset rgba($color, $opacity)
+	@content
+
+@mixin bxs-inset-rem($x, $y, $blur, $radius, $color, $opacity)
+	box-shadow: math.div($x, $fz-text)+px math.div($y, $fz-text)+px math.div($blur, $fz-text)+px math.div($radius, $fz-text)+px inset rgba($color, $opacity)
+	@content

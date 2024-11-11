@@ -1,17 +1,28 @@
 {
-	// White space
-	"white-space: normal": {
-		"prefix": "white-sp-norm",
+	"text-wrap": {
+		"prefix": "txt-wrap",
 		"scope": "css, sass, scss, less",
-		"body": ["white-space: normal;"],
-		"description": "white-space: normal"
+		"body": [
+			"> * {",
+			"\tmargin: 0;",
+			"",
+			"\t&:not(:last-child) {",
+			"\t\tmargin-bottom: $1;",
+			"",
+			"\t\t@media ( min-width: 1920.96px ) {",
+			"\t\t\t@include calc-size(margin-bottom, $1, $1 * 2, 1920, 3840, px);",
+			"\t\t}",
+			"\t}",
+			"}",
+		],
+		"description": "text-wrap"
 	},
-
-	"white-space: nowrap": {
-		"prefix": "white-sp-no-wr",
+	"text-wrap mixon": {
+		"prefix": "txt-wrap-mixin",
 		"scope": "css, sass, scss, less",
-		"body": ["white-space: nowrap;"],
-		"description": "white-space: nowrap"
+		"body": [
+			"@include txt-wrap($1, $2);",
+		],
+		"description": "text-wrap mixon"
 	},
-	// End. White space
 }

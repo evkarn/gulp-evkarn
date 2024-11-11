@@ -1,15 +1,23 @@
+$burger-line-height: 2;
+
 .burger {
 	position: relative;
+	z-index: 4;
 
-	display: inline-block;
+	flex-shrink: 0;
 
-	width: rem($burger-width);
-	height: rem($burger-height);
+	display: none;
+
+	width: 38px;
+	height: 26px;
 
 	@media ( min-width: 1920.96px ) {
-		@include calc-size(width, $burger-width, $burger-width*2, 1920, 3840, rem);
-		
-		@include calc-size(height, $burger-height, $burger-height*2, 1920, 3840, rem);
+		@include calc-size(width, 38, 76, 1920, 3840, px);
+		@include calc-size(height, 26, 52, 1920, 3840, px);
+	}
+
+	@media ( max-width: $switch-point + px )  {
+		display: inline-block;
 	}
 
 	&:before,
@@ -21,14 +29,18 @@
 		display: block;
 
 		width: 100%;
-		height: rem($burger-line-height);
+		height: $burger-line-height + px;
 
-		background-color: var(--c-burger-line);
+		background-color: var(--burger-line);
+
+		border-radius: 2px;
 
 		transition: rotate .3s ease;
 
 		@include min-full-hd-em {
-			@include calc-size(height, $burger-line-height, $burger-line-height*2, 1920, 3840, rem);
+			@include calc-size(height, $burger-line-height, $burger-line-height * 2, 1920, 3840, px);
+
+			@include calc-size(border-radius, 2, 4, 1920, 3840, px);
 		}
 	}
 

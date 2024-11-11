@@ -56,7 +56,7 @@
 	},
 
 	"Flex width items": {
-		"prefix": "flex-item-width",
+		"prefix": "flex-cards-item",
 		"scope": "css, sass, scss, less",
 		"body": [
 			"width: calc((100% - ((var(--num-elements) - 1) * var(--gap))) / (var(--num-elements)));"

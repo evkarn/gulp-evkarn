@@ -19,7 +19,7 @@ function micromodal() {
 
 			enableScroll();
 
-			const iFrames = document?.querySelectorAll('.modal .video__iframe');
+			const iFrames = document?.querySelectorAll('.modal iframe');
 
 			if (iFrames.length > 0) {
 				iFrames.forEach((item) => {

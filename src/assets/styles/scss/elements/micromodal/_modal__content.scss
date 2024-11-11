@@ -1,6 +1,9 @@
 .modal__content {
-  margin-top: 2rem;
-  margin-bottom: 2rem;
-  line-height: 1.5;
-  color: rgba(0, 0, 0, 0.8);
+	line-height: 1.5;
+
+	@include calc-size(padding, 30, 80, 320, 1920, px);
+
+	@media (min-width: 1920.96px) {
+		@include calc-size(padding, 80, 160, 1920, 3840, px);
+	}
 }
