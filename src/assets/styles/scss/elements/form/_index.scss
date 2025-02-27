@@ -1,9 +1,9 @@
-@import 'input';
+@use "input";
 
-@import 'fieldset';
+@use "fieldset";
 
-@import 'textarea';
+@use "textarea";
 
-@import 'fieldset__header';
+@use "fieldset__header";
 
-@import 'form__button';
+@use "form__button";

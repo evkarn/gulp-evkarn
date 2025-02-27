@@ -1,38 +1,44 @@
 {
 	"Hover": {
 		"prefix": "hoverAnyHover",
-		"scope": "css, sass, less",
+		"scope": "css, sass, scss, less",
 		"body": [
 			"@media ( any-hover: hover )",
 			"\t&:hover",
-			"\t\t$1"],
-		"description": "Hover"
+			"\t\t$1"
+		],
+		"description": "Hover",
 	},
-
 	"Hover + Focus": {
 		"prefix": "hoverFocus",
-		"scope": "css, sass, less",
-		"body": ["&:hover, &:focus", "\t$1"],
-		"description": "Hover + Focus"
+		"scope": "css, sass, scss, less",
+		"body": [
+			"&:hover, &:focus",
+			"\t$1"
+		],
+		"description": "Hover + Focus",
 	},
-
 	"Focus + Active": {
 		"prefix": "focusActive",
-		"scope": "css, sass, less",
-		"body": ["&:focus, &:active", "\t$1"],
-		"description": "Focus + Active"
+		"scope": "css, sass, scss, less",
+		"body": [
+			"&:focus, &:active",
+			"\t$1"
+		],
+		"description": "Focus + Active",
 	},
-
 	"Active + Focus": {
 		"prefix": "activeFocus",
-		"scope": "css, sass, less",
-		"body": ["&:active, &:focus", "\t$1"],
-		"description": "Active + Focus"
+		"scope": "css, sass, scss, less",
+		"body": [
+			"&:active, &:focus",
+			"\t$1"
+		],
+		"description": "Active + Focus",
 	},
-
 	"State element": {
 		"prefix": "state",
-		"scope": "css, sass, less",
+		"scope": "css, sass, scss, less",
 		"body": [
 			"@media ( any-hover: hover )",
 			"\t&:hover",
@@ -45,14 +51,13 @@
 			"\t$3",
 			"",
 			"&:active",
-			"\t$4"
+			"\t$4",
 		],
-		"description": "State element"
+		"description": "State element",
 	},
-
 	"State link": {
 		"prefix": "state-link",
-		"scope": "css, sass, less",
+		"scope": "css, sass, scss, less",
 		"body": [
 			"&:visited",
 			"\t$1",
@@ -68,8 +73,8 @@
 			"\t$4",
 			"",
 			"&:active",
-			"\t$5"
+			"\t$5",
 		],
-		"description": "State link"
+		"description": "State link",
 	},
 }

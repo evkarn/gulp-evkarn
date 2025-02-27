@@ -1,4 +1,4 @@
-import plumberInit from './plumber.js'
+import {plumberInit} from './plumber.js'
 
 export const copyFiles = () => {
 	// Находим указанные файлы

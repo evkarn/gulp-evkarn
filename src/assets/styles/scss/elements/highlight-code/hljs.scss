@@ -26,6 +26,13 @@
 	color: var(--c-text);
 
 	@media (min-width: em(1920.96)) {
-		@include calc-size(border-radius, $border-radius, $border-radius * 2, 1920, 3840, rem);
+		@include calc-size(
+			border-radius,
+			$border-radius,
+			$border-radius * 2,
+			1920,
+			3840,
+			rem
+		);
 	}
 }

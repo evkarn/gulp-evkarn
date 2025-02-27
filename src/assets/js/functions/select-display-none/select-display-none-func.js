@@ -7,9 +7,11 @@ export function selectDisplayNone() {
 	// Проверяем есть ли они
 	if (selects.length > 0) {
 		// Получение селектов
-		const selectsElement = Array.from(selects).filter(function (item, index, self) {
-			return !item.dataset.selects.split(',')[0];
-		});
+		const selectsElement = Array.from(selects).filter(
+			function (item, index, self) {
+				return !item.dataset.selects.split(',')[0];
+			},
+		);
 
 		document.addEventListener('click', function (e) {
 			const target = e.target;
@@ -20,7 +22,9 @@ export function selectDisplayNone() {
 
 				const targetBody = target.closest('[data-select-body]');
 
-				const targetSelectTitle = targetBody.querySelector('[data-select-title]');
+				const targetSelectTitle = targetBody.querySelector(
+					'[data-select-title]',
+				);
 
 				targetSelectTitle.classList.add('is-active-title');
 
@@ -34,15 +38,19 @@ export function selectDisplayNone() {
 
 			// Закрытие select при клике вне его
 			if (!target.closest('[data-selects]')) {
-				const selectActiveTitles = document?.querySelectorAll('[data-select-title].active');
+				const selectActiveTitles = document?.querySelectorAll(
+					'[data-select-title].active',
+				);
 
-				const selectActiveOptions = document?.querySelectorAll('[data-select-options].active');
+				const selectActiveOptions = document?.querySelectorAll(
+					'[data-select-options].active',
+				);
 
-				selectActiveTitles.forEach(title => {
+				selectActiveTitles.forEach((title) => {
 					title.classList.remove('active');
 				});
 
-				selectActiveOptions.forEach(options => {
+				selectActiveOptions.forEach((options) => {
 					options.classList.remove('active');
 				});
 			}
@@ -53,11 +61,11 @@ export function selectDisplayNone() {
 				const targetDataSelectWrapper = target.closest('[data-select-body]');
 
 				const targetSelectActiveTitle = targetDataSelectWrapper.querySelector(
-					'[data-select-title].active'
+					'[data-select-title].active',
 				);
 
 				const targetSelectActiveOptions = targetDataSelectWrapper.querySelector(
-					'[data-select-options].active'
+					'[data-select-options].active',
 				);
 
 				if (targetSelectActiveTitle) {
@@ -75,22 +83,31 @@ export function selectDisplayNone() {
 	// Раскрытие и закрытие селекта
 	function selectWork() {
 		if (selects.length > 0) {
-			const selectsElement = Array.from(selects).filter(function (item, index, self) {
-				return !item.dataset.selects.split(',')[0];
-			});
+			const selectsElement = Array.from(selects).filter(
+				function (item, index, self) {
+					return !item.dataset.selects.split(',')[0];
+				},
+			);
 
-			selectsElement.forEach(selectsBlock => {
-				selectsBlock.addEventListener('click', e => {
+			selectsElement.forEach((selectsBlock) => {
+				selectsBlock.addEventListener('click', (e) => {
 					if (e.target.closest('[data-select-title]')) {
 						e.target.classList.toggle('active');
 
-						const buttonHeight = e.target.closest('[data-select-title]').offsetHeight;
+						const buttonHeight = e.target.closest(
+							'[data-select-title]',
+						).offsetHeight;
 
 						const rootElement = document.querySelector(':root');
 
-						rootElement.style.setProperty('--select-button-height', `${buttonHeight}px`);
+						rootElement.style.setProperty(
+							'--select-button-height',
+							`${buttonHeight}px`,
+						);
 
-						e.target.closest('[data-select-title]').nextElementSibling.classList.toggle('active');
+						e.target
+							.closest('[data-select-title]')
+							.nextElementSibling.classList.toggle('active');
 					}
 				});
 			});

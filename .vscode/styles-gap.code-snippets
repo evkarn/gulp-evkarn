@@ -1,55 +1,58 @@
 {
-	"gap: rem()": {
-		"prefix": "gap-rem",
+	"gap: units.rem()": {
+		"prefix": "gr",
 		"scope": "css, sass, scss, less",
-		"body": ["gap: rem($1);"],
-		"description": "gap: rem()"
+		"body": [
+			"gap: units.rem($1);"
+		]
 	},
 	"gap-num rem": {
-		"prefix": "gap-num-rem",
+		"prefix": "gnr",
 		"scope": "css, sass, scss, less",
-		"body": ["gap: rem(\\$gap-num);"],
-		"description": "gap-num rem"
+		"body": [
+			"gap: units.rem(\\$gap-num);"
+		]
 	},
-
-	"row-gap: rem()": {
-		"prefix": "row-gap-rem",
+	"row-gap: units.rem()": {
+		"prefix": "rgr",
 		"scope": "css, sass, scss, less",
-		"body": ["row-gap: rem($1);"],
-		"description": "row-gap: rem()"
+		"body": [
+			"row-gap: units.rem($1);"
+		]
 	},
-
-	"column-gap: rem()": {
-		"prefix": "column-gap-rem",
+	"column-gap: units.rem()": {
+		"prefix": "cgr",
 		"scope": "css, sass, scss, less",
-		"body": ["column-gap: rem($1);"],
-		"description": "column-gap: rem()"
+		"body": [
+			"column-gap: units.rem($1);"
+		]
 	},
-
 	"gap: px": {
-		"prefix": "gap-px",
+		"prefix": "gp",
 		"scope": "css, sass, scss, less",
-		"body": ["gap: $1px;"],
-		"description": "gap: px"
+		"body": [
+			"gap: $1px;"
+		]
 	},
 	"gap num px": {
-		"prefix": "gap-num-px",
+		"prefix": "gnp",
 		"scope": "css, sass, scss, less",
-		"body": ["gap: \\$gap-num + px;"],
-		"description": "gap num px"
+		"body": [
+			"gap: \\$gap-num + px;"
+		]
 	},
-
 	"row-gap: px": {
-		"prefix": "row-gap-px",
+		"prefix": "rgp",
 		"scope": "css, sass, scss, less",
-		"body": ["row-gap: $1px;"],
-		"description": "row-gap: px"
+		"body": [
+			"row-gap: $1px;"
+		]
 	},
-
 	"column-gap: px": {
-		"prefix": "column-gap-px",
+		"prefix": "cgp",
 		"scope": "css, sass, scss, less",
-		"body": ["column-gap: $1px;"],
-		"description": "column-gap: px"
-	}
+		"body": [
+			"column-gap: $1px;"
+		]
+	},
 }

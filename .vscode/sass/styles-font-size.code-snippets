@@ -2,16 +2,19 @@
 	// Font-size
 	"Font-size rem": {
 		"prefix": "font-size-rem",
-		"scope": "css, sass, less",
-		"body": ["font-size: rem($1)"],
-		"description": "Font-size rem"
+		"scope": "css, sass, scss, less",
+		"body": [
+			"font-size: rem($1)"
+		],
+		"description": "Font-size rem",
 	},
-
 	"Font-size em": {
 		"prefix": "font-size-em",
-		"scope": "css, sass, less",
-		"body": ["font-size: em($1)"],
-		"description": "Font-size em"
-	}
+		"scope": "css, sass, scss, less",
+		"body": [
+			"font-size: em($1)"
+		],
+		"description": "Font-size em",
+	},
 	// End. Font-size
 }

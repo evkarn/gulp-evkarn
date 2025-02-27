@@ -61,9 +61,9 @@
 			"\t\t\t<span>Читать далее</span>",
 			"\t\t</a>",
 			"\t</footer>",
-			"</article>"
+			"</article>",
 		],
-		"description": "Article block"
+		"description": "Article block",
 	},
 
 	"Article block jekyll": {
@@ -127,9 +127,9 @@
 			"\t\t\t<span>{{ site.readMoreButtonText }}</span>",
 			"\t\t</a>",
 			"\t</footer>",
-			"</article>"
+			"</article>",
 		],
-		"description": "Article block jekyll"
+		"description": "Article block jekyll",
 	},
 
 	"Article link": {
@@ -178,9 +178,9 @@
 			"\t\t\t</div>",
 			"\t\t</footer>",
 			"\t</a>",
-			"</article>"
+			"</article>",
 		],
-		"description": "Article link"
+		"description": "Article link",
 	},
 	// End. Article
 }

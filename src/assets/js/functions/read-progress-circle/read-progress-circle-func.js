@@ -20,7 +20,9 @@ export function readProgressCircle() {
 
 		let siteHeight = document.documentElement.scrollHeight;
 
-		let percentageProgress = Math.floor((scrollTop / (siteHeight - windowHeight)) * 100);
+		let percentageProgress = Math.floor(
+			(scrollTop / (siteHeight - windowHeight)) * 100,
+		);
 
 		line.style.width = `${percentageProgress}%`;
 
@@ -32,7 +34,7 @@ export function readProgressCircle() {
 
 		circle.setAttribute(
 			'stroke-dashoffset',
-			circleLength - (circleLength * percentageProgress) / 100
+			circleLength - (circleLength * percentageProgress) / 100,
 		);
 	};
 

@@ -1,21 +1,19 @@
-.site-header {
+@use "../mixins/units";
+@use '../variables/grid';
+
+.header {
 	position: fixed;
 	top: 0;
 	left: 0;
 
 	width: 100%;
 
-	@include calc-size(padding-top, 12, 24, 320, 1920, px);
-	@include calc-size(padding-bottom, 12, 24, 320, 1920, px);
+	padding-top: units.rem(10);
+	padding-bottom: units.rem(10);
 
 	background-color: var(--body-bg);
 
-	@media (min-width: 1920.96px) {
-		@include calc-size(padding-top, 24, 48, 1920, 3840, rem);
-		@include calc-size(padding-bottom, 24, 48, 1920, 3840, rem);
-	}
-
-	@media (max-width: $switch-point + px) {
+	@media (max-width: units.em(grid.$switch-point)) {
 		&:after {
 			content: "";
 

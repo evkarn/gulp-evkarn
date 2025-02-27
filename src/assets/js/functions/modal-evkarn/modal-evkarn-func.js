@@ -14,7 +14,9 @@ export function modalEvkarn() {
 
 		const scrollWidth = window.innerWidth - document.body.offsetWidth;
 
-		document.querySelector(':root').style.setProperty('--scroll-width', `${scrollWidth}px`);
+		document
+			.querySelector(':root')
+			.style.setProperty('--scroll-width', `${scrollWidth}px`);
 
 		const disableScroll = function () {
 			let pagePosition = window.scrollY;
@@ -23,7 +25,9 @@ export function modalEvkarn() {
 
 			body.dataset.position = pagePosition;
 
-			document.querySelector(':root').style.setProperty('--top-position', `-${pagePosition}px`);
+			document
+				.querySelector(':root')
+				.style.setProperty('--top-position', `-${pagePosition}px`);
 
 			document.documentElement.style.scrollBehavior = 'unset';
 		};
@@ -37,20 +41,24 @@ export function modalEvkarn() {
 
 			body.removeAttribute('data-position');
 
-			document.querySelector(':root').style.setProperty('--top-position', 'auto');
+			document
+				.querySelector(':root')
+				.style.setProperty('--top-position', 'auto');
 
 			document.documentElement.style.scrollBehavior = '';
 		};
 
-		buttons.forEach(el => {
-			el.addEventListener('click', e => {
+		buttons.forEach((el) => {
+			el.addEventListener('click', (e) => {
 				let dataModalPath = e.currentTarget.getAttribute('data-modal-path');
 
-				modals.forEach(el => {
+				modals.forEach((el) => {
 					el.classList.remove('modal--visible');
 				});
 
-				const modalTarget = document.querySelector(`[data-modal-target="${dataModalPath}"]`);
+				const modalTarget = document.querySelector(
+					`[data-modal-target="${dataModalPath}"]`,
+				);
 
 				modalTarget.classList.add('modal--visible');
 
@@ -60,11 +68,11 @@ export function modalEvkarn() {
 			});
 		});
 
-		modalsOverlay.addEventListener('click', e => {
+		modalsOverlay.addEventListener('click', (e) => {
 			if (e.target == modalsOverlay) {
 				modalsOverlay.classList.remove('modals__overlay--visible');
 
-				modals.forEach(el => {
+				modals.forEach((el) => {
 					el.classList.remove('modal--visible');
 				});
 
@@ -72,11 +80,11 @@ export function modalEvkarn() {
 			}
 		});
 
-		buttonsClose.forEach(el => {
-			el.addEventListener('click', e => {
+		buttonsClose.forEach((el) => {
+			el.addEventListener('click', (e) => {
 				modalsOverlay.classList.remove('modals__overlay--visible');
 
-				modals.forEach(el => {
+				modals.forEach((el) => {
 					el.classList.remove('modal--visible');
 				});
 

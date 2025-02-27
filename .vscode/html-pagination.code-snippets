@@ -21,8 +21,8 @@
 			"",
 			"\t\t<a href=\"#\" class=\"pagination__level pagination__level--next pagination__level--is-visible\" title=\"Следующая страница\"></a>",
 			"\t</div>",
-			"</section>"
+			"</section>",
 		],
-		"description": "Section pagination"
-	}
+		"description": "Section pagination",
+	},
 }

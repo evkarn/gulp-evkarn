@@ -1,11 +1,10 @@
-.site-header__nav a {
+@use '../../mixins/units';
+@use '../../variables/general';
+
+.header__nav a {
 	color: var(--dark-second);
 
 	transition: color 0.3s ease;
-
-	@media (min-width: 1920.96px) {
-		@include calc-size(font-size, 14, 28, 1920, 3840, px);
-	}
 
 	@media (any-hover: hover) {
 		&:hover {
@@ -14,16 +13,10 @@
 	}
 
 	&:focus-visible {
-		outline-width: $outline-width + px;
+		outline-width: units.rem(general.$outline-width);
 		outline-style: dashed;
 		outline-color: currentColor;
-		outline-offset: $outline-offset + px;
-
-		@media (min-width: em(1920.96)) {
-			@include calc-size(outline-width, $outline-width, $outline-width * 2, 1920, 3840, px);
-
-			@include calc-size(outline-offset, $outline-offset, $outline-offset * 2, 1920, 3840, px);
-		}
+		outline-offset: units.rem(general.$outline-offset);
 	}
 
 	&:active {

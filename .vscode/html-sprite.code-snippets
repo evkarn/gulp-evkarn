@@ -5,9 +5,9 @@
 		"body": [
 			"<svg class=\"sprite-svg\">",
 			"\t<use xlink:href=\"assets/images/sprite-svg/sprite.svg#$1\"></use>",
-			"</svg>"
+			"</svg>",
 		],
-		"description": "SVG sprite icon"
+		"description": "SVG sprite icon",
 	},
 
 	"SVG sprite icon with title": {
@@ -18,9 +18,9 @@
 			"\t<title id=\"$1\">$2</title>",
 			"",
 			"\t<use xlink:href=\"assets/images/sprite-svg/sprite.svg#$3\"></use>",
-			"</svg>"
+			"</svg>",
 		],
-		"description": "SVG sprite icon with title"
+		"description": "SVG sprite icon with title",
 	},
 
 	"SVG sprite icon hidden": {
@@ -29,8 +29,8 @@
 		"body": [
 			"<svg class=\"sprite-svg\" aria-hidden=\"true\">",
 			"\t<use xlink:href=\"assets/images/sprite-svg/sprite.svg#$1\"></use>",
-			"</svg>"
+			"</svg>",
 		],
-		"description": "SVG sprite icon hidden"
+		"description": "SVG sprite icon hidden",
 	},
 }

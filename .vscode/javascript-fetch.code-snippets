@@ -11,6 +11,6 @@
 			"\tconsole.log(error.message);",
 			"}",
 		],
-		"description": "Получение данных через promise"
-	}
+		"description": "Получение данных через promise",
+	},
 }

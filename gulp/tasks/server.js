@@ -6,9 +6,7 @@ export const server = () => {
 		},
 
 		notify: false,
-
 		port: 3000,
-
 		online: true, // Work offline without internet connection
 		// tunnel: 'yousutename', // Attempt to use the URL https://yousutename.loca.lt
 	});

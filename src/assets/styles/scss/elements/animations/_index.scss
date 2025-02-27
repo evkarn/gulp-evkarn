@@ -1,4 +1,4 @@
-@import './fade-in';
-@import './fade-out';
-@import './slide-in';
-@import './slide-out';
+@use "./fade-in";
+@use "./fade-out";
+@use "./slide-in";
+@use "./slide-out";

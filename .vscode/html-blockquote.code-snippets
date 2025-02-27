@@ -11,8 +11,7 @@
 			"</blockquote>",
 			"",
 			"<p>$2, <cite>$3</cite></p>",
-
 		],
-		"description": "Blockquote"
+		"description": "Blockquote",
 	},
 }

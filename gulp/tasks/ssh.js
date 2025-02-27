@@ -2,7 +2,7 @@
 import rsync from 'gulp-rsync';
 
 // Обработка ошибок
-import plumberInit from './plumber.js'
+import {plumberInit} from './plumber.js'
 
 export const ssh = () => {
 	// Берём все файлы

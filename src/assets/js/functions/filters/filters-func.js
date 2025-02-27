@@ -130,6 +130,6 @@ function filters() {
 			});
 		});
 	}
-};
+}
 
 export default filters;

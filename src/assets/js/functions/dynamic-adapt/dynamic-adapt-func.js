@@ -48,7 +48,7 @@ function dynamicAdapt(type = 'max') {
 
 		elements.forEach((element) => {
 			const attr = element.getAttribute(attrName);
-			
+
 			const [toSelector, breakpoint, order] = attr
 				.split(',')
 				.map((val) => val.trim());

@@ -45,7 +45,9 @@
 	}
 
 	.#{map.get($options, itemsClass)} {
-		width: calc((100% - ((var(--num-elements) - 1) * var(--gap))) / (var(--num-elements)));
+		width: calc(
+			(100% - ((var(--num-elements) - 1) * var(--gap))) / (var(--num-elements))
+		);
 
 		@media (max-width: map.get($options, tablet)) {
 			--gap: #{map.get($options, tabletGap)};

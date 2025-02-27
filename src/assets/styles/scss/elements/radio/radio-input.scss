@@ -17,7 +17,14 @@
 	border: rem($border-width) solid #415674;
 
 	@include min-full-hd-em {
-		@include calc-size(border-width, $border-width, $border-width * 2, 1920, 3840, rem)
+		@include calc-size(
+			border-width,
+			$border-width,
+			$border-width * 2,
+			1920,
+			3840,
+			rem
+		);
 	}
 
 	&:focus {
@@ -29,12 +36,19 @@
 		@include min-full-hd-em {
 			@include calc-size(outline-width, 1, 2, 1920, 3840, rem);
 
-			@include calc-size(outline-offset, $outline-offset, $outline-offset * 2, 1920, 3840, rem);
+			@include calc-size(
+				outline-offset,
+				$outline-offset,
+				$outline-offset * 2,
+				1920,
+				3840,
+				rem
+			);
 		}
 	}
 
 	&:before {
-		content: "";
+		content: '';
 
 		position: absolute;
 		inset: 0;
@@ -45,7 +59,10 @@
 
 		scale: 0;
 
-		transition: opacity .3s ease, background-color .3s ease, scale .3s ease;
+		transition:
+			opacity 0.3s ease,
+			background-color 0.3s ease,
+			scale 0.3s ease;
 	}
 
 	&:checked {

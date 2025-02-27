@@ -20,14 +20,15 @@ function selectExpanded() {
 
 					content.classList.toggle('is-active');
 
-					const titleHeight = e.target.closest('[data-select-title]')
-						.offsetHeight;
+					const titleHeight = e.target.closest(
+						'[data-select-title]',
+					).offsetHeight;
 
 					const rootElement = document.querySelector(':root');
 
 					rootElement.style.setProperty(
 						'--select-title-height',
-						`${titleHeight}px`
+						`${titleHeight}px`,
 					);
 
 					slideToggle(content, 300);
@@ -45,7 +46,7 @@ function selectExpanded() {
 					const parent = target?.closest('[data-select]');
 
 					const innerBtns = parent.querySelectorAll(
-						'[data-option-inner-button]'
+						'[data-option-inner-button]',
 					);
 
 					innerBtns.forEach((item) => {
@@ -70,22 +71,22 @@ function selectExpanded() {
 					content.classList.remove('is-active');
 				}
 
-				document.addEventListener('click', function(e) {
+				document.addEventListener('click', function (e) {
 					const target = e.target;
 
 					if (!target.closest('[data-select]')) {
 						const titles = document?.querySelectorAll('[data-select-title]');
 
-						titles.forEach(function(item, index, array) {
+						titles.forEach(function (item, index, array) {
 							item.classList.remove('is-active');
 							item.setAttribute('aria-expanded', false);
 						});
 
 						const contents = document?.querySelectorAll(
-							'[data-select-content]'
+							'[data-select-content]',
 						);
 
-						contents.forEach(function(item, index, array) {
+						contents.forEach(function (item, index, array) {
 							slideToggle(item, 300);
 						});
 					}

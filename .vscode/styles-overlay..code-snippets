@@ -1,5 +1,5 @@
 {
-// Overlay
+	// Overlay
 	"Overlay": {
 		"prefix": "overlay-after",
 		"scope": "css, sass, scss, less",
@@ -14,9 +14,9 @@
 			"",
 			"\tbackground-color: var($1);",
 			"\topacity: $1;",
-			"}"
+			"}",
 		],
-		"description": "Overlay"
-	}
+		"description": "Overlay",
+	},
 	// End. Overlay
 }

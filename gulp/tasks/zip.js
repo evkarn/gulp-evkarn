@@ -4,7 +4,7 @@ import {deleteAsync} from "del";
 // Создание архива
 import zipPlugin from "gulp-zip";
 
-import plumberInit from './plumber.js'
+import {plumberInit} from './plumber.js'
 
 export const zip = () => {
 	// Удаляем архив, если он уже есть

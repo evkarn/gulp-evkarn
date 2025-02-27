@@ -15,8 +15,8 @@
 			"\t\talt=\"@alt\"",
 			"\t\tdecoding=\"auto\"",
 			"\t>",
-			"</a>"
+			"</a>",
 		],
-		"description": "Logo"
-	}
+		"description": "Logo",
+	},
 }

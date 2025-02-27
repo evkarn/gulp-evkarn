@@ -17,7 +17,7 @@
 		@include calc-size(border-radius, 20, 40, 1920, 3840, px);
 	}
 
-	@media ( max-width: 768px ) {
+	@media (max-width: 768px) {
 		margin: 10px;
 	}
 }
@@ -26,13 +26,13 @@
 	will-change: transform;
 }
 
-.modal[aria-hidden="false"] {
+.modal[aria-hidden='false'] {
 	.modal__container {
 		animation: microModalSlideIn 0.3s cubic-bezier(0, 0, 0.2, 1);
 	}
 }
 
-.modal[aria-hidden="true"] {
+.modal[aria-hidden='true'] {
 	.modal__container {
 		animation: microModalSlideOut 0.3s cubic-bezier(0, 0, 0.2, 1);
 	}

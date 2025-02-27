@@ -11,4 +11,3 @@ const getScrollWidth = (e) => {
 };
 
 export default getScrollWidth;
-

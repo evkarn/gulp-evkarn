@@ -1,34 +1,34 @@
 .tabs__arrow {
-  position: absolute;
-  top: 50%;
+	position: absolute;
+	top: 50%;
 
-  display: flex;
-  align-items: center;
-  justify-content: center;
+	display: flex;
+	align-items: center;
+	justify-content: center;
 
-  width: rem(60);
-  height: rem(60);
+	width: rem(60);
+	height: rem(60);
 
-  padding: 0;
+	padding: 0;
 
-  border: none;
+	border: none;
 
-  border-radius: 100%;
+	border-radius: 100%;
 
-  background-color: var(--c-accent);
+	background-color: var(--c-accent);
 
-  cursor: pointer;
+	cursor: pointer;
 
-  transform: translateY(-50%);
+	transform: translateY(-50%);
 
-  transition: background-color 0.3s ease;
+	transition: background-color 0.3s ease;
 
 	@include min-full-hd-em {
 		@include calc-size(width, 60, 120, 1920, 3840, rem);
 		@include calc-size(height, 60, 120, 1920, 3840, rem);
 	}
 
-  > * {
-    pointer-events: none;
-  }
+	> * {
+		pointer-events: none;
+	}
 }

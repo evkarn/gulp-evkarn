@@ -1,18 +1,17 @@
-@import '../mixins/units';
-
 // Greed system
-$gap-num: 30;
-$gap-px: $gap-num + px;
-$gap-rem: rem($gap-num);
+$gap: 30;
+$gap-px: 30px;
 
 $content-width: 1196;
+$content-width-px: 1196px;
 
-$container-offset: 16;
-$container-offset-min: 10;
+$container-offset: 15;
+$container-offset-px: 15px;
 
 $container-width: $content-width + $container-offset * 2;
 
 $switch-point: 768;
+$switch-point-px: 768px;
 
 // Breakpoints width
 $minimal: 320;

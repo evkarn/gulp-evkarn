@@ -1,7 +1,7 @@
-@import './tabs';
-@import './tabs__list';
-@import './tabs__btn';
-@import './tabs-content';
-@import './tabs__arrow';
-@import './tabs__arrow--next';
-@import './tabs__arrow--prev';
+@use "./tabs";
+@use "./tabs__list";
+@use "./tabs__btn";
+@use "./tabs-content";
+@use "./tabs__arrow";
+@use "./tabs__arrow--next";
+@use "./tabs__arrow--prev";

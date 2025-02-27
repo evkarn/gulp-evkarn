@@ -1,5 +1,5 @@
 // Обработка ошибок
-import plumberInit from './plumber.js'
+import {plumberInit} from './plumber.js'
 import svgSprite from 'gulp-svg-sprite';
 import cheerio from 'gulp-cheerio';
 import svgMin from 'gulp-svgmin';

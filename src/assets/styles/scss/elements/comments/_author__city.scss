@@ -5,9 +5,16 @@
 
 	border-bottom: rem($border-width) solid currentColor;
 
-	@media ( min-width: em(1920.96) ) {
+	@media (min-width: em(1920.96)) {
 		@include calc-size(font-size, 18, 36, 1920, 38400, rem);
 
-		@include calc-size(border-width, $border-width, $border-width*2, 1920, 3840, rem);
+		@include calc-size(
+			border-width,
+			$border-width,
+			$border-width * 2,
+			1920,
+			3840,
+			rem
+		);
 	}
 }

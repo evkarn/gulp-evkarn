@@ -32,7 +32,7 @@
 	}
 
 	&:before {
-		content: "✕";
+		content: '✕';
 
 		font-weight: 800;
 		font-size: 22px;
@@ -55,8 +55,22 @@
 		outline-offset: $outline-offset + px;
 
 		@media (min-width: 1920.96px) {
-			@include calc-size(outline-width, $outline-width, $outline-width * 2, 1920, 3840, px);
-			@include calc-size(outline-offset, $outline-offset, $outline-offset * 2, 1920, 3840, px);
+			@include calc-size(
+				outline-width,
+				$outline-width,
+				$outline-width * 2,
+				1920,
+				3840,
+				px
+			);
+			@include calc-size(
+				outline-offset,
+				$outline-offset,
+				$outline-offset * 2,
+				1920,
+				3840,
+				px
+			);
 		}
 	}
 

@@ -2,7 +2,7 @@ import fs from 'fs';
 
 import ttf2woff2 from 'gulp-ttf2woff2';
 
-import plumberInit from './plumber.js';
+import {plumberInit} from './plumber.js';
 
 export const ttfToWoff = () => {
 	// Ищем файлы шрифтов .ttf
@@ -48,7 +48,7 @@ export const fontsStyle = () => {
 
 						let vFont = fontFileName.split('-')[1] ? fontFileName.split('-')[1] : fontFileName;
 
-						if (vFont === 'VariableFont' || vFont.toLowerCase() === 'variablefont') {
+						if (vFont === 'VariableFont' || vFont.toLowerCase() === 'variablefont' || vFont === 'VF' || vFont.toLowerCase() === 'vf') {
 							const fontFormatSt = "format('woff2-variations')";
 							const fontFormatVF = "format('woff2') tech('variations')";
 

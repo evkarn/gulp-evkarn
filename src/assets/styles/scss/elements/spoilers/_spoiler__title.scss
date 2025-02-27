@@ -23,9 +23,9 @@
 	}
 
 	&:after {
-		content: "+";
+		content: '+';
 
-		transition: rotate .3s ease;
+		transition: rotate 0.3s ease;
 	}
 
 	@include state-accent;

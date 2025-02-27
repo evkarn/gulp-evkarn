@@ -1,4 +1,4 @@
-function slideDown (target, duration) {
+function slideDown(target, duration) {
 	target.style.removeProperty('display');
 
 	let display = window.getComputedStyle(target).display;
@@ -54,6 +54,6 @@ function slideDown (target, duration) {
 
 		target.style.removeProperty('border');
 	}, duration);
-};
+}
 
 export default slideDown;

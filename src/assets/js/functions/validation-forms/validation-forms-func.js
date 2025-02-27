@@ -20,30 +20,30 @@ export function validationForms() {
 			.addField('.form__input--name', [
 				{
 					rule: 'minLength',
-					value: 3
+					value: 3,
 				},
 				{
 					rule: 'maxLength',
-					value: 30
-				}
+					value: 30,
+				},
 			])
 			.addField('.form__input--tel', [
 				{
 					rule: 'required',
 					value: true,
-					errorMessage: 'Телефон обязателен'
+					errorMessage: 'Телефон обязателен',
 				},
 				{
 					rule: 'function',
 
-					validator: function() {
+					validator: function () {
 						const telSelector = formSale.querySelector('.form__input--tel');
 
 						const phone = telSelector.inputmask.unmaskedvalue();
 						return phone.length === 10;
 					},
-					errorMessage: 'Введите корректный телефон'
-				}
+					errorMessage: 'Введите корректный телефон',
+				},
 			]);
 	}
 
@@ -54,32 +54,31 @@ export function validationForms() {
 			.addField('.form__input--name', [
 				{
 					rule: 'minLength',
-					value: 3
+					value: 3,
 				},
 				{
 					rule: 'maxLength',
-					value: 30
-				}
+					value: 30,
+				},
 			])
 			.addField('.form__input--tel', [
 				{
 					rule: 'required',
 					value: true,
-					errorMessage: 'Телефон обязателен'
+					errorMessage: 'Телефон обязателен',
 				},
 				{
 					rule: 'function',
 
-					validator: function() {
-						const telSelector = formCalculation.querySelector(
-							'.form__input--tel'
-						);
+					validator: function () {
+						const telSelector =
+							formCalculation.querySelector('.form__input--tel');
 
 						const phone = telSelector.inputmask.unmaskedvalue();
 						return phone.length === 10;
 					},
-					errorMessage: 'Введите корректный телефон'
-				}
+					errorMessage: 'Введите корректный телефон',
+				},
 			]);
 	}
 
@@ -90,30 +89,30 @@ export function validationForms() {
 			.addField('.form__input--name', [
 				{
 					rule: 'minLength',
-					value: 3
+					value: 3,
 				},
 				{
 					rule: 'maxLength',
-					value: 30
-				}
+					value: 30,
+				},
 			])
 			.addField('.form__input--tel', [
 				{
 					rule: 'required',
 					value: true,
-					errorMessage: 'Телефон обязателен'
+					errorMessage: 'Телефон обязателен',
 				},
 				{
 					rule: 'function',
 
-					validator: function() {
+					validator: function () {
 						const telSelector = formCallback.querySelector('.form__input--tel');
 
 						const phone = telSelector.inputmask.unmaskedvalue();
 						return phone.length === 10;
 					},
-					errorMessage: 'Введите корректный телефон'
-				}
+					errorMessage: 'Введите корректный телефон',
+				},
 			]);
 	}
 
@@ -124,13 +123,13 @@ export function validationForms() {
 			{
 				rule: 'required',
 				value: true,
-				errorMessage: 'E-mail обязателен'
+				errorMessage: 'E-mail обязателен',
 			},
 			{
 				rule: 'email',
 				value: true,
-				errorMessage: 'Введите корректный Email'
-			}
+				errorMessage: 'Введите корректный Email',
+			},
 		]);
 	}
 }

@@ -6,16 +6,15 @@
 		"body": [
 			"pointer-events: none;"
 		],
-		"description": "Pointer-events: none"
+		"description": "Pointer-events: none",
 	},
-
 	"Pointer-events: auto": {
 		"prefix": "pointer-ev-auto",
 		"scope": "css, sass, scss, less",
 		"body": [
 			"pointer-events: auto;"
 		],
-		"description": "Pointer-events: auto"
+		"description": "Pointer-events: auto",
 	},
 	// Pointer-events
 }

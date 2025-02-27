@@ -1,8 +1,8 @@
 .modal__subtitle {
-  margin-bottom: rem(16);
-  color: var(--c-dark);
+	margin-bottom: rem(16);
+	color: var(--c-dark);
 
-  @media (min-width: em(1920.96)) {
-    @include calc-size(margin-bottom, 16, 32, 1920, 3840, rem);
-  }
+	@media (min-width: em(1920.96)) {
+		@include calc-size(margin-bottom, 16, 32, 1920, 3840, rem);
+	}
 }

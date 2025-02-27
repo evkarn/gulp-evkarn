@@ -14,7 +14,7 @@ function photoSwipeInit() {
 				children: '[data-gallery-item]',
 
 				// setup PhotoSwipe Core dynamic import
-				pswpModule: () => import('/photoswipe/photoswipe.esm.js')
+				pswpModule: () => import('/photoswipe/photoswipe.esm.js'),
 			});
 
 			lightbox.init();
@@ -26,10 +26,10 @@ function photoSwipeInit() {
 			let img = new Image();
 			let url = el.getAttribute('href');
 
-			img.onload(function() {
+			img.onload(function () {
 				el.dataset.pswpWidth = this.width;
 				el.dataset.pswpHeight = this.height;
-			})
+			});
 
 			img.src = url;
 		});

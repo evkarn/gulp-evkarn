@@ -17,7 +17,7 @@ import webpAvifCss from 'gulp-web-images-css';
 import groupCssMediaQueries from 'gulp-group-css-media-queries';
 
 // Обработка ошибок
-import plumberInit from './plumber.js'
+import {plumberInit} from './plumber.js'
 
 // Отслеживание изменений в файлах
 import {compareContents} from 'gulp-changed';

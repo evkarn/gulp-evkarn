@@ -35,7 +35,7 @@ export function navActiveLink() {
 
 						let dataSectionCurrent = sectionCurrent.dataset.section;
 
-						navLinksGoto.forEach(el => {
+						navLinksGoto.forEach((el) => {
 							if (el.classList.contains('nav__link--active')) {
 								el.classList.remove('nav__link--active');
 							}
@@ -48,7 +48,7 @@ export function navActiveLink() {
 				});
 
 				if (!sectionCurrent) {
-					navLinksGoto.forEach(el => {
+					navLinksGoto.forEach((el) => {
 						if (el.classList.contains('nav__link--active')) {
 							el.classList.remove('nav__link--active');
 						}

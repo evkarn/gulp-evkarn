@@ -15,14 +15,14 @@
 			"\t}",
 			"}",
 		],
-		"description": "text-wrap"
+		"description": "text-wrap",
 	},
 	"text-wrap mixon": {
 		"prefix": "txt-wrap-mixin",
 		"scope": "css, sass, scss, less",
 		"body": [
-			"@include txt-wrap($1, $2);",
+			"@include txt-wrap($1, $2);"
 		],
-		"description": "text-wrap mixon"
+		"description": "text-wrap mixon",
 	},
 }

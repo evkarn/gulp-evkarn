@@ -13,7 +13,7 @@ export const swipersFunction = () => {
 
 			navigation: {
 				nextEl: '.swiper-button-next',
-				prevEl: '.swiper-button-prev'
+				prevEl: '.swiper-button-prev',
 			},
 
 			slidesPerView: '4',
@@ -24,23 +24,23 @@ export const swipersFunction = () => {
 				// when window width is >= 320px
 				320: {
 					slidesPerView: 1,
-					spaceBetween: 0
+					spaceBetween: 0,
 				},
 				544: {
 					slidesPerView: 2,
-					spaceBetween: 20
+					spaceBetween: 20,
 				},
 				// when window width is >= 480px
 				900: {
 					slidesPerView: 3,
-					spaceBetween: 24
+					spaceBetween: 24,
 				},
 				// when window width is >= 640px
 				1200: {
 					slidesPerView: 4,
-					spaceBetween: 24
-				}
-			}
+					spaceBetween: 24,
+				},
+			},
 		});
 	}
 };

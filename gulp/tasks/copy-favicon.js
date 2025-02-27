@@ -1,8 +1,8 @@
-import plumberInit from './plumber.js'
+import {plumberInit} from './plumber.js'
 
 export const copyFavicon = () => {
 	// Находим указанные файлы
-	return app.gulp.src(app.path.src.faviconImages, {encoding:false})
+	return app.gulp.src(app.path.src.favicon, {encoding:false})
 
 
 	// Выдаём сообщение об ошибке, если она есть
@@ -10,5 +10,5 @@ export const copyFavicon = () => {
 
 
 	// Копируем файлы в папку dist
-	.pipe(app.gulp.dest(app.path.build.faviconImages));
+	.pipe(app.gulp.dest(app.path.build.favicon));
 };

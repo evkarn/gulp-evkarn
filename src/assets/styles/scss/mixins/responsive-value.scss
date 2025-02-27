@@ -5,38 +5,85 @@
 // Responsive value
 @mixin calc-size($propName, $minSize, $maxSize, $minWidth, $maxWidth, $units) {
 	@if $units == rem {
-		#{$propName}: calc(#{math.div($minSize, $font-size) + #{$units}} + (#{$maxSize} - #{$minSize}) * ((100vw - #{math.div($minWidth, $font-size) + #{$units}}) / (#{$maxWidth} - #{$minWidth})));
+		#{$propName}: calc(
+			#{math.div($minSize, $font-size) +
+				#{$units}} +
+				(#{$maxSize} - #{$minSize}) *
+				(
+					(100vw - #{math.div($minWidth, $font-size) + #{$units}}) /
+						(#{$maxWidth} - #{$minWidth})
+				)
+		);
 	} @else {
-		#{$propName}: calc(#{$minSize + #{$units}} + (#{$maxSize} - #{$minSize}) * ((100vw - #{$minWidth + #{$units}}) / (#{$maxWidth} - #{$minWidth})));
+		#{$propName}: calc(
+			#{$minSize +
+				#{$units}} +
+				(#{$maxSize} - #{$minSize}) *
+				((100vw - #{$minWidth + #{$units}}) / (#{$maxWidth} - #{$minWidth}))
+		);
 	}
 }
 
-@mixin calc-size-media($propName, $minSize, $maxSize, $minWidth, $maxWidth, $units) {
+@mixin calc-size-media(
+	$propName,
+	$minSize,
+	$maxSize,
+	$minWidth,
+	$maxWidth,
+	$units
+) {
 	@if $units == rem {
 		@media ( min-width: #{math.div($minWidth, $font-size) + em} ) and ( max-width: #{math.div($maxWidth, $font-size) + em} ) {
-			#{$propName}: calc(#{math.div($minSize, $font-size) + #{$units}} + (#{$maxSize} - #{$minSize}) * ((100vw - #{math.div($minWidth, $font-size) + #{$units}}) / (#{$maxWidth} - #{$minWidth})));
+			#{$propName}: calc(
+				#{math.div($minSize, $font-size) + #{$units}} +
+					(#{$maxSize} - #{$minSize}) *
+					(
+						(100vw - #{math.div($minWidth, $font-size) + #{$units}}) /
+							(#{$maxWidth} - #{$minWidth})
+					)
+			);
 		}
 	} @else {
 		@media ( min-width: #{math.div($minWidth, $font-size) + em} ) and ( max-width: #{math.div($maxWidth, $font-size) + em} ) {
-			#{$propName}: calc(#{$minSize + #{$units}} + (#{$maxSize} - #{$minSize}) * ((100vw - #{$minWidth + #{$units}}) / (#{$maxWidth} - #{$minWidth})));
+			#{$propName}: calc(
+				#{$minSize + #{$units}} + (#{$maxSize} - #{$minSize}) *
+					((100vw - #{$minWidth + #{$units}}) / (#{$maxWidth} - #{$minWidth}))
+			);
 		}
 	}
 }
 
-
-@function calc-size-without-property($minSize, $maxSize, $minWidth, $maxWidth, $units) {
+@function calc-size-without-property(
+	$minSize,
+	$maxSize,
+	$minWidth,
+	$maxWidth,
+	$units
+) {
 	@if $units == rem {
-		$result: calc(#{math.div($minSize, $font-size) + #{$units}} + (#{$maxSize} - #{$minSize}) * ((100vw - #{math.div($minWidth, $font-size) + #{$units}}) / (#{$maxWidth} - #{$minWidth})));
+		$result: calc(
+			#{math.div($minSize, $font-size) +
+				#{$units}} +
+				(#{$maxSize} - #{$minSize}) *
+				(
+					(100vw - #{math.div($minWidth, $font-size) + #{$units}}) /
+						(#{$maxWidth} - #{$minWidth})
+				)
+		);
 
 		@return $result;
 	} @else {
-		$result: calc(#{$minSize + #{$units}} + (#{$maxSize} - #{$minSize}) * ((100vw - #{$minWidth + #{$units}}) / (#{$maxWidth} - #{$minWidth})));
+		$result: calc(
+			#{$minSize +
+				#{$units}} +
+				(#{$maxSize} - #{$minSize}) *
+				((100vw - #{$minWidth + #{$units}}) / (#{$maxWidth} - #{$minWidth}))
+		);
 
 		@return $result;
 	}
 }
 // End. Responsive value
-
 
 // Итак, если мы хотим, чтобы элемент был равен 25px, когда ширина браузера равна 500px, и 50px, когда ширина браузера равна 1920px, вся функция будет выглядеть следующим образом:
 

@@ -1,9 +1,9 @@
 .modal {
-  display: none;
-  position: relative;
-  z-index: 5;
+	display: none;
+	position: relative;
+	z-index: 5;
 
-  &.is-open {
-    display: block;
-  }
+	&.is-open {
+		display: block;
+	}
 }

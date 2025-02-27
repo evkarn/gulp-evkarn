@@ -1,5 +1,5 @@
 // Обработка ошибок
-import plumberInit from './plumber.js'
+import {plumberInit} from './plumber.js'
 
 // Минимизация файлов
 import terser from 'terser-webpack-plugin'

@@ -1,11 +1,20 @@
 :root {
-	--fz-text: 16;
+	--fz: 16;
+	--fz-px: 16px;
 
-	--ff-title: 'Manrope', sans-serif;
+	--border-width: 1;
+	--border-radius: 10;
 
-	--ff-text: 'Manrope', sans-serif;
+	--outline-width: 1;
+	--outline-offset: 2;
 
-	--ff-body: 'Manrope', sans-serif;
+	--burger-width: 30;
+	--burger-height: 20;
+	--burger-line-height: 1;
+
+	--ff-title: "Manrope", sans-serif;
+	--ff-text: "Manrope", sans-serif;
+	--ff-body: "Manrope", sans-serif;
 
 	--body-bg: #fff;
 

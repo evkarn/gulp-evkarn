@@ -10,12 +10,26 @@
 	border: rem($border-width) solid var(--c-border-color);
 	border-radius: rem($border-radius);
 
-	@media ( min-width: em(1920.96) ) {
+	@media (min-width: em(1920.96)) {
 		@include calc-size(row-gap, 30, 60, 1920, 3840, rem);
 
 		@include calc-size(padding, 12, 23, 1920, 3840, rem);
 
-		@include calc-size(border-width, $border-width, $border-width*2, 1920, 3840, rem);
-		@include calc-size(border-radius, $border-radius, $border-radius*2, 1920, 3840, rem);
+		@include calc-size(
+			border-width,
+			$border-width,
+			$border-width * 2,
+			1920,
+			3840,
+			rem
+		);
+		@include calc-size(
+			border-radius,
+			$border-radius,
+			$border-radius * 2,
+			1920,
+			3840,
+			rem
+		);
 	}
 }

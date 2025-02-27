@@ -57,6 +57,8 @@
 	gap: var(--gap);
 
 	> li {
-		width: calc((100% - ((var(--num-elements) - 1) * var(--gap))) / (var(--num-elements)));
+		width: calc(
+			(100% - ((var(--num-elements) - 1) * var(--gap))) / (var(--num-elements))
+		);
 	}
 }

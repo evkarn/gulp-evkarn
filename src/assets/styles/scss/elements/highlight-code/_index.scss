@@ -1,65 +1,65 @@
-@import './pre';
+@use "./pre";
 
-@import './hljs';
+@use "./hljs";
 
-@import './hljs-comment';
+@use "./hljs-comment";
 
-@import './hljs-quote';
+@use "./hljs-quote";
 
-@import './hljs-deletion';
+@use "./hljs-deletion";
 
-@import './hljs-name';
+@use "./hljs-name";
 
-@import './hljs-regexp';
+@use "./hljs-regexp";
 
-@import './hljs-selector-class';
+@use "./hljs-selector-class";
 
-@import './hljs-selector-id';
+@use "./hljs-selector-id";
 
-@import './hljs-tag';
+@use "./hljs-tag";
 
-@import './hljs-template-variable';
+@use "./hljs-template-variable";
 
-@import './hljs-variable';
+@use "./hljs-variable";
 
-@import './hljs-built_in';
+@use "./hljs-built_in";
 
-@import './hljs-link';
+@use "./hljs-link";
 
-@import './hljs-literal';
+@use "./hljs-literal";
 
-@import './hljs-meta';
+@use "./hljs-meta";
 
-@import './hljs-number';
+@use "./hljs-number";
 
-@import './hljs-params';
+@use "./hljs-params";
 
-@import './hljs-type';
+@use "./hljs-type";
 
-@import './hljs-attribute';
+@use "./hljs-attribute";
 
-@import './hljs-addition';
+@use "./hljs-addition";
 
-@import './hljs-bullet';
+@use "./hljs-bullet";
 
-@import './hljs-string';
+@use "./hljs-string";
 
-@import './hljs-addition';
+@use "./hljs-addition";
 
-@import './hljs-bullet';
+@use "./hljs-bullet";
 
-@import './hljs-string';
+@use "./hljs-string";
 
-@import './hljs-symbol';
+@use "./hljs-symbol";
 
-@import './hljs-section';
+@use "./hljs-section";
 
-@import './hljs-title';
+@use "./hljs-title";
 
-@import './hljs-keyword';
+@use "./hljs-keyword";
 
-@import './hljs-selector-tag';
+@use "./hljs-selector-tag";
 
-@import './hljs-emphasis';
+@use "./hljs-emphasis";
 
-@import './hljs-strong';
+@use "./hljs-strong";

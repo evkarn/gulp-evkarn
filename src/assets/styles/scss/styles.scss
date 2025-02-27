@@ -1,39 +1,35 @@
-// МОДУЛЬ MATH ДЛЯ SASS
-@use "sass:math";
-// END. МОДУЛЬ MATH ДЛЯ SASS
-
 // Reset styles
-@import "./reset-styles/index";
+@use './reset-styles/index-reset';
 // End. Reset styles
 
 // Variables
-@import "variables/index";
+@use 'variables/index-vars';
 // End. Variables
 
 // Fonts
-@import "fonts/index";
+@use 'fonts/font-face';
 // END. Fonts
 
 // Mixins
-@import "mixins/index";
+@use 'mixins/mixins';
 // END. Mixins
 
 // Global
-@import "global-config/index";
+@use 'global-config/config';
 // END. Global
 
 // Plugins
-// @import 'node_modules/swiper/swiper';
-// @import 'node_modules/swiper/modules/navigation';
-// @import 'node_modules/photoswipe/dist/photoswipe.css';
+// @use 'node_modules/swiper/swiper';
+// @use 'node_modules/swiper/modules/navigation';
+// @use 'node_modules/photoswipe/dist/photoswipe.css';
 // End. Plugins
 
 // Elements
-// @import "./elements/index";
+// @use "./elements/index";
 // End. Elements
 
 // Header
-@import "./header/index";
+@use './header/index-header';
 // End. Header
 
 // Sections
@@ -41,5 +37,5 @@
 // End. Sections
 
 // Footer
-@import "./footer/index";
+@use './footer/index-footer';
 // End. Footer

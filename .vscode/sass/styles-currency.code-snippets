@@ -1,21 +1,20 @@
 {
 	"Rub symbol": {
 		"prefix": "rubSymbol",
-		"scope": "css, sass, less",
+		"scope": "css, sass, scss, less",
 		"body": [
 			"&::after",
 			"\tcontent: '₽'"
 		],
-		"description": "Rub symbol"
+		"description": "Rub symbol",
 	},
-
 	"Rub text": {
 		"prefix": "rubText",
-		"scope": "css, sass, less",
+		"scope": "css, sass, scss, less",
 		"body": [
 			"&::after",
 			"\tcontent: 'руб.'"
 		],
-		"description": "Rub text"
-	}
+		"description": "Rub text",
+	},
 }

@@ -1,7 +1,10 @@
-.site-header__nav.nav {
+@use '../../mixins/units';
+@use '../../variables/grid';
+
+.header__nav.nav {
 	transition: right 0.5s ease;
 
-	@media (max-width: $switch-point + px) {
+	@media (max-width: units.em(grid.$switch-point)) {
 		position: fixed;
 		top: 0;
 		right: -100%;
@@ -12,12 +15,13 @@
 		visibility: hidden;
 		opacity: 0;
 		pointer-events: none;
+		user-select: none;
 
 		background-color: var(--body-bg);
 	}
 }
 
-.site-header__nav.nav--is-visible {
+.header__nav.nav--is-visible {
 	right: 0;
 	z-index: 3;
 

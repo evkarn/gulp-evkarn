@@ -1,9 +1,11 @@
 export function timerCountdown() {
-	const timerBlock = document?.querySelector( '[data-timer-countdown-parent]' );
+	const timerBlock = document?.querySelector('[data-timer-countdown-parent]');
 
-	const finish = document?.querySelector('[data-timer-countdown-finish]').textContent;
+	const finish = document?.querySelector(
+		'[data-timer-countdown-finish]',
+	).textContent;
 
-	if ( timerBlock ) {
+	if (timerBlock) {
 		const newYear = new Date(`${finish}`);
 
 		const daysVal = document.querySelector('[data-days-val]');
@@ -25,7 +27,11 @@ export function timerCountdown() {
 		function declOfNum(number, titles) {
 			let cases = [2, 0, 1, 1, 1, 2];
 
-			return titles[ (number%100>4 && number%100<20)? 2 : cases[(number%10<5)?number%10:5] ];
+			return titles[
+				number % 100 > 4 && number % 100 < 20
+					? 2
+					: cases[number % 10 < 5 ? number % 10 : 5]
+			];
 		}
 
 		const timeCount = () => {
@@ -43,7 +49,7 @@ export function timerCountdown() {
 
 			daysVal.textContent = days;
 
-			hoursVal.textContent =	hours;
+			hoursVal.textContent = hours;
 
 			minutesVal.textContent = minutes;
 
@@ -53,9 +59,17 @@ export function timerCountdown() {
 
 			hoursText.textContent = declOfNum(hours, ['Час', 'Часа', 'Часов']);
 
-			minutesText.textContent = declOfNum(minutes, ['Минута', 'Минуты', 'Минут']);
+			minutesText.textContent = declOfNum(minutes, [
+				'Минута',
+				'Минуты',
+				'Минут',
+			]);
 
-			secondsText.textContent = declOfNum(seconds, ['Секунда', 'Секунды', 'Секунд']);
+			secondsText.textContent = declOfNum(seconds, [
+				'Секунда',
+				'Секунды',
+				'Секунд',
+			]);
 		};
 		timeCount();
 		setInterval(timeCount, 1000);

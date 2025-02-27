@@ -1,39 +1,41 @@
 .tabs__btn {
-  font-weight: 500;
-  font-size: rem(20);
-  line-height: 1.2;
+	font-weight: 500;
+	font-size: rem(20);
+	line-height: 1.2;
 
-  border: none;
+	border: none;
 
-  color: var(--c-light);
+	color: var(--c-light);
 
-  cursor: pointer;
+	cursor: pointer;
 
-  transition: color 0.3s ease;
+	transition: color 0.3s ease;
 
 	@include min-full-hd-em {
 		@include calc-size(font-size, 20, 40, 1920, 3840, rem);
 	}
 
-  @media (any-hover: hover) {
-    &:hover {
-      color: var(--c-accent);
-    }
-  }
+	@media (any-hover: hover) {
+		&:hover {
+			color: var(--c-accent);
+		}
+	}
 
-  &:focus-visible {
-    color: var(--c-accent);
-  }
+	&:focus-visible {
+		color: var(--c-accent);
+	}
 
-  &:active {
-    color: var(--c-accent-dark);
-  }
+	&:active {
+		color: var(--c-accent-dark);
+	}
 }
 
 .tabs__btn--active {
-  color: var(--c-dark);
+	color: var(--c-dark);
 
-  pointer-events: none;
-	
-	transition: background-color 0.3s ease, color 0.3s ease;
+	pointer-events: none;
+
+	transition:
+		background-color 0.3s ease,
+		color 0.3s ease;
 }

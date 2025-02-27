@@ -1,29 +1,31 @@
 // IMPORT PORTFOLIO-TABS
-	// import { portfolioTabs } from './src/_utils/index.js';
+// import { portfolioTabs } from './src/_utils/index.js';
 // END. IMPORT PORTFOLIO-TABS
 
+// INIT PORTFOLIO-TABS
+// portfolioTabs();
+// END. INIT PORTFOLIO-TABS
 
-	// INIT PORTFOLIO-TABS
-		// portfolioTabs();
-	// END. INIT PORTFOLIO-TABS
-
-export const portfolio = function() {
+export const portfolio = function () {
 	'use strict';
 
 	const portfolioTabsNav = document.querySelector('.portfolio-tabs-nav');
 
-	const portfolioTabsBtns = document.querySelectorAll('.portfolio-tabs-nav__btn');
+	const portfolioTabsBtns = document.querySelectorAll(
+		'.portfolio-tabs-nav__btn',
+	);
 
 	const portfolioTabsItems = document.querySelectorAll('.portfolio-tabs__item');
 
-	const portfolioTabsItemsVisible = document.querySelectorAll('.portfolio-tabs__item--visible');
+	const portfolioTabsItemsVisible = document.querySelectorAll(
+		'.portfolio-tabs__item--visible',
+	);
 
 	const loadMore = document.querySelector('.portfolio-more');
 
 	const maxItems = 6;
 
 	if (portfolioTabsNav) {
-
 		// Показывает кнопку загрузить ещё, если элементов больше maxItems
 		const isLoadMoreNeeded = (selector) => {
 			if (selector.length <= maxItems) {
@@ -33,7 +35,6 @@ export const portfolio = function() {
 			}
 		};
 
-
 		// Скрываем элементы превышающие maxItem
 		const hideMoreItems = (selector) => {
 			if (selector.length > maxItems) {
@@ -41,13 +42,12 @@ export const portfolio = function() {
 
 				const hiddenItems = arr.slice(maxItems, selector.length);
 
-				hiddenItems.forEach(el => {
+				hiddenItems.forEach((el) => {
 					el.classList.remove('portfolio-tabs__item--visible');
 					el.classList.remove('portfolio-tabs__item--visible-more');
 				});
 			}
 		};
-
 
 		// Функция отработки сортировки
 		portfolioTabsNav.addEventListener('click', (e) => {
@@ -56,33 +56,41 @@ export const portfolio = function() {
 			if (target.classList.contains('portfolio-tabs-nav__btn')) {
 				const path = target.dataset.path;
 
-				portfolioTabsBtns.forEach(el => {
+				portfolioTabsBtns.forEach((el) => {
 					el.classList.remove('portfolio-tabs-nav__btn--active');
 				});
 
 				target.classList.add('portfolio-tabs-nav__btn--active');
 
-				portfolioTabsItems.forEach(el => {
+				portfolioTabsItems.forEach((el) => {
 					el.classList.remove('portfolio-tabs__item--visible');
 					el.classList.remove('portfolio-tabs__item--visible-more');
 				});
 
-				document.querySelectorAll(`[data-target="${path}"]`).forEach(el => {
-					el.closest('.portfolio-tabs__item').classList.add('portfolio-tabs__item--visible');
+				document.querySelectorAll(`[data-target="${path}"]`).forEach((el) => {
+					el.closest('.portfolio-tabs__item').classList.add(
+						'portfolio-tabs__item--visible',
+					);
 				});
 
 				isLoadMoreNeeded(document.querySelectorAll(`[data-target="${path}"]`));
 
-				hideMoreItems(document.querySelectorAll('.portfolio-tabs__item--visible'));
+				hideMoreItems(
+					document.querySelectorAll('.portfolio-tabs__item--visible'),
+				);
 
 				if (path == 'all') {
-					portfolioTabsItems.forEach(el => {
+					portfolioTabsItems.forEach((el) => {
 						el.classList.add('portfolio-tabs__item--visible');
 					});
 
-					isLoadMoreNeeded(document.querySelectorAll('.portfolio-tabs__item--visible'));
+					isLoadMoreNeeded(
+						document.querySelectorAll('.portfolio-tabs__item--visible'),
+					);
 
-					hideMoreItems(document.querySelectorAll('.portfolio-tabs__item--visible'));
+					hideMoreItems(
+						document.querySelectorAll('.portfolio-tabs__item--visible'),
+					);
 				}
 			}
 		});
@@ -92,16 +100,19 @@ export const portfolio = function() {
 		isLoadMoreNeeded(portfolioTabsItemsVisible);
 
 		loadMore.addEventListener('click', (e) => {
-			const path = document.querySelector('.portfolio-tabs-nav__btn--active').dataset.path;
+			const path = document.querySelector('.portfolio-tabs-nav__btn--active')
+				.dataset.path;
 
 			if (path == 'all') {
-				portfolioTabsItems.forEach(el => {
+				portfolioTabsItems.forEach((el) => {
 					el.classList.add('portfolio-tabs__item--visible-more');
 					loadMore.style.display = 'none';
 				});
 			} else {
-				document.querySelectorAll(`[data-target="${path}"]`).forEach(el => {
-					el.closest('.portfolio-tabs__item').classList.add('portfolio-tabs__item--visible-more');
+				document.querySelectorAll(`[data-target="${path}"]`).forEach((el) => {
+					el.closest('.portfolio-tabs__item').classList.add(
+						'portfolio-tabs__item--visible-more',
+					);
 				});
 
 				loadMore.style.display = 'none';

@@ -12,7 +12,7 @@ function enableScroll() {
 	window.scroll({
 		top: pagePosition,
 
-		left: 0
+		left: 0,
 	});
 
 	body.removeAttribute('data-position');
@@ -20,6 +20,6 @@ function enableScroll() {
 	documentRoot.style.setProperty('--top-position', 'auto');
 
 	html.style.scrollBehavior = '';
-};
+}
 
 export default enableScroll;

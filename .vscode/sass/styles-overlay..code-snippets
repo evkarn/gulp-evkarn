@@ -1,8 +1,8 @@
 {
-// Overlay
+	// Overlay
 	"Overlay": {
 		"prefix": "over",
-		"scope": "css, sass, less",
+		"scope": "css, sass, scss, less",
 		"body": [
 			"&:after",
 			"\tcontent: ''",
@@ -13,9 +13,9 @@
 			"\tdisplay: block",
 			"",
 			"\tbackground-color: var($1)",
-			"\topacity: $1"
+			"\topacity: $1",
 		],
-		"description": "Overlay"
-	}
+		"description": "Overlay",
+	},
 	// End. Overlay
 }

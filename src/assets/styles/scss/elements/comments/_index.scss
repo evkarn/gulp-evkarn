@@ -1,26 +1,25 @@
-@import 'comments';
-@import 'comment';
-@import 'comment__info';
+@use "comments";
+@use "comment";
+@use "comment__info";
 
-@import 'author';
-@import 'author__info';
-@import 'author__icon';
-@import 'author__name';
-@import 'author__city';
+@use "author";
+@use "author__info";
+@use "author__icon";
+@use "author__name";
+@use "author__city";
 
-@import 'comment__date';
+@use "comment__date";
 
-@import 'comment__text-wrap';
-@import 'comment__text';
+@use "comment__text-wrap";
+@use "comment__text";
 
-@import 'comment__bottom';
+@use "comment__bottom";
 
-@import 'comment__body';
+@use "comment__body";
 
-@import 'comments__more';
+@use "comments__more";
 
-
-@import 'review';
-@import 'review__btn';
-@import 'review__svg';
-@import 'review__quantity';
+@use "review";
+@use "review__btn";
+@use "review__svg";
+@use "review__quantity";

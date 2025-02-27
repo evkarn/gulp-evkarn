@@ -2,7 +2,7 @@
 import avif from 'gulp-avif';
 
 // Обработка ошибок
-import plumberInit from './plumber.js'
+import {plumberInit} from './plumber.js'
 
 export const imgAvif = () => {
 	// Находим исходники изображений

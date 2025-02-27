@@ -22,7 +22,6 @@ import rename from 'gulp-rename';
 // Поиск и замена
 import replace from "gulp-replace";
 
-
 // Экспортируемые объекты
 export const plugins = {
 	browsersync: browsersync,

@@ -10,7 +10,7 @@
 				width="166"
 				height="30"
 				alt="@alt"
-			>
+			/>
 		</a>
 
 		<nav
@@ -18,152 +18,62 @@
 			data-nav
 		>
 			<ul
-				class="nav__list list-reset"
+				class="menu"
+				data-menu
 				itemscope
 				itemtype="https://schema.org/SiteNavigationElement"
 			>
-				<li class="nav__item">
+				<li
+					class="menu-item"
+					data-menu-item
+				>
 					<a
-						class="nav__link"
-						href="#!"
+						class="menu-link"
+						href="#"
+						data-menu-link
+						itemprop="url"
+					>
+						Пункт 1
+					</a>
+				</li>
+
+				<li
+					class="menu-item"
+					data-menu-item
+				>
+					<a
+						class="menu-link"
+						href="#"
+						data-menu-link
 						itemprop="url"
 					>
 						Пункт 1
 					</a>
 
 					<ul
-						class="nav__sublist list-reset"
-						itemscope
-						itemtype="https://schema.org/SiteNavigationElement"
+						class="sub-menu"
+						data-sub-menu
 					>
-						<li class="nav__subitem">
+						<li
+							class="menu-item"
+							data-sub-menu-item
+						>
 							<a
-								class="nav__sublink"
-								href="#!"
+								class="menu-link"
+								href="#"
+								data-sub-menu-link
 								itemprop="url"
 							>
-								Подпункт 1
-							</a>
-						</li>
-
-						<li class="nav__subitem">
-							<a
-								class="nav__sublink"
-								href="#!"
-								itemprop="url"
-							>
-								Подпункт 2
-							</a>
-
-							<ul
-								class="nav__sublist list-reset"
-								itemscope
-								itemtype="https://schema.org/SiteNavigationElement"
-							>
-								<li class="nav__subitem">
-									<a
-										class="nav__sublink"
-										href="#!"
-										itemprop="url"
-									>
-										Подпункт 1
-									</a>
-								</li>
-
-								<li class="nav__subitem">
-									<a
-										class="nav__sublink"
-										href="#!"
-										itemprop="url"
-									>
-										Подпункт 2
-									</a>
-
-									<ul
-										class="nav__sublist list-reset"
-										itemscope
-										itemtype="https://schema.org/SiteNavigationElement"
-									>
-										<li class="nav__subitem">
-											<a
-												class="nav__sublink"
-												href="#!"
-												itemprop="url"
-											>
-												Подпункт 1 c очень длинным названием
-											</a>
-										</li>
-
-										<li class="nav__subitem">
-											<a
-												class="nav__sublink"
-												href="#!"
-												itemprop="url"
-											>
-												Подпункт 2
-											</a>
-										</li>
-
-										<li class="nav__subitem">
-											<a
-												class="nav__sublink"
-												href="#!"
-												itemprop="url"
-											>
-												Подпункт 3
-											</a>
-										</li>
-									</ul>
-								</li>
-
-								<li class="nav__subitem">
-									<a
-										class="nav__sublink"
-										href="#!"
-										itemprop="url"
-									>
-										Подпункт 3
-									</a>
-								</li>
-							</ul>
-						</li>
-
-						<li class="nav__subitem">
-							<a
-								class="nav__sublink"
-								href="#!"
-								itemprop="url"
-							>
-								Подпункт 3
+								Внутренний пункт 1
 							</a>
 						</li>
 					</ul>
-				</li>
-
-				<li class="nav__item">
-					<a
-						class="nav__link"
-						href="#!"
-						itemprop="url"
-					>
-						Пункт 2
-					</a>
-				</li>
-
-				<li class="nav__item">
-					<a
-						class="nav__link"
-						href="#!"
-						itemprop="url"
-					>
-						Пункт 3
-					</a>
 				</li>
 			</ul>
 		</nav>
 
 		<button
-			class="header__burger burger btn-reset"
+			class="burger btn-res"
 			data-burger
 			aria-label="Открыть меню"
 			aria-expanded="false"

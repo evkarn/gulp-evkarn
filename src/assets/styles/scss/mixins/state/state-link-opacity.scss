@@ -8,15 +8,10 @@
 	}
 
 	&:focus-visible {
-		outline-width: $outline-width + px;
+		outline-width: units.rem(general.$outline-width);
 		outline-style: dashed;
 		outline-color: currentColor;
-		outline-offset: $outline-offset + px;
-
-		@include min-full-hd-em {
-			@include calc-size(outline-width, $outline-width, $outline-width * 2, 1920, 3840, px);
-			@include calc-size(outline-offset, $outline-offset, $outline-offset * 2, 1920, 3840, px);
-		}
+		outline-offset: units.rem(general.$outline-offset);
 	}
 
 	&:active {

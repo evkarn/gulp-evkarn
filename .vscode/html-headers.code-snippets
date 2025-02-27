@@ -24,9 +24,9 @@
 			"\t\t\t<span class=\"burger__line\"></span>",
 			"\t\t</button>",
 			"\t</div>",
-			"</header>"
+			"</header>",
 		],
-		"description": "Header with logo link"
+		"description": "Header with logo link",
 	},
 
 	"Header no link logo": {
@@ -51,8 +51,8 @@
 			"\t\t\t<span class=\"burger__line\"></span>",
 			"\t\t</button>",
 			"\t</div>",
-			"</header>"
+			"</header>",
 		],
-		"description": "Header no link logo"
+		"description": "Header no link logo",
 	},
 }

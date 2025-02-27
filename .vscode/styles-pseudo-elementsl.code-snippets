@@ -9,9 +9,8 @@
 			"\t$1",
 			"}"
 		],
-		"description": "After"
+		"description": "After",
 	},
-
 	"After without content": {
 		"prefix": "&after",
 		"scope": "css, sass, scss, less",
@@ -20,9 +19,8 @@
 			"\t$1",
 			"}"
 		],
-		"description": "After without content"
+		"description": "After without content",
 	},
-
 	"$:before, &:after": {
 		"prefix": "before-after",
 		"scope": "css, sass, scss, less",
@@ -33,9 +31,8 @@
 			"\t$1",
 			"}"
 		],
-		"description": "$:before, &:after"
+		"description": "$:before, &:after",
 	},
-
 	"Before": {
 		"prefix": "before",
 		"scope": "css, sass, scss, less",
@@ -46,9 +43,8 @@
 			"\t$1",
 			"}"
 		],
-		"description": "Before"
+		"description": "Before",
 	},
-
 	"Before without content": {
 		"prefix": "&before",
 		"scope": "css, sass, scss, less",
@@ -58,6 +54,6 @@
 			"\t$1",
 			"}"
 		],
-		"description": "Before without content"
+		"description": "Before without content",
 	},
 }

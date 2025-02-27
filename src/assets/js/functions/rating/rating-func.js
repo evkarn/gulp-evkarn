@@ -33,7 +33,7 @@ export function rating() {
 		// Инициализация переменных
 		function initRatingVars(rating) {
 			ratingActive = rating.querySelector('.rating__active');
-			
+
 			ratingValue = rating.querySelector('.rating__value');
 		}
 
@@ -85,7 +85,7 @@ export function rating() {
 
 				// Отправить данные (value) на сервер
 				let response = await fetch('rating.json', {
-					method: 'GET'
+					method: 'GET',
 
 					// body: JSON.stringify({
 					// 	userRating: value

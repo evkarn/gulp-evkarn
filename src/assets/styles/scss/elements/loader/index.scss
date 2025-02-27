@@ -1,8 +1,8 @@
-@import './loader';
-@import './loader__list';
-@import './loader__row';
-@import './loader__header';
-@import './loader__icon';
-@import './loader__main';
-@import './loader__body';
-@import './loader__overlay';
+@use "./loader";
+@use "./loader__list";
+@use "./loader__row";
+@use "./loader__header";
+@use "./loader__icon";
+@use "./loader__main";
+@use "./loader__body";
+@use "./loader__overlay";

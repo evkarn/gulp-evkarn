@@ -20,7 +20,7 @@ export function quiz() {
 	const finishBlock = document?.querySelector('[data-quiz-finish]');
 
 	// Отменяем стандартное поведение формы, чтобы она не отправлялась
-	formQuiz.addEventListener('submit', e => e.preventDefault());
+	formQuiz.addEventListener('submit', (e) => e.preventDefault());
 
 	let formStepIndex = 0;
 
@@ -41,7 +41,7 @@ export function quiz() {
 	});
 
 	function updateFormStepIndex() {
-		stepsItems.forEach(step => {
+		stepsItems.forEach((step) => {
 			step.classList.contains('item--active');
 
 			step.classList.remove('item--active');
@@ -71,10 +71,13 @@ export function quiz() {
 			nextBtn.innerText = 'Next';
 		}
 
-		const activesProgressItems = document?.querySelectorAll('.progress__item--active');
+		const activesProgressItems = document?.querySelectorAll(
+			'.progress__item--active',
+		);
 
 		const percentProgressLine =
-			((activesProgressItems.length - 1) / (progressItems.length - 1)) * 100 + '%';
+			((activesProgressItems.length - 1) / (progressItems.length - 1)) * 100 +
+			'%';
 
 		progressLine.style.width = percentProgressLine;
 	}

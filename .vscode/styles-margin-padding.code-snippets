@@ -6,21 +6,21 @@
 		"body": [
 			"margin: $1 $2 $3 $4;"
 		],
-		"description": "Margin all"
+		"description": "Margin all",
 	},
 	"Margin not-last-child-rem": {
 		"prefix": "mar-not-last-ch-rem",
 		"scope": "css, sass, scss, less",
 		"body": [
 			"&:not(:last-child) {",
-			"\tmargin-bottom: rem(16);",
+			"\tmargin-bottom: units.rem(16);",
 			"",
 			"\t@media ( min-width: 1920.96px ) {",
 			"\t\t@include calc-size(margin-bottom, 16, 32, 1920, 3840, rem);",
 			"\t}",
 			"}",
 		],
-		"description": "Margin not-last-child-rem"
+		"description": "Margin not-last-child-rem",
 	},
 	"Margin not-last-child-px": {
 		"prefix": "mar-not-last-ch-px",
@@ -34,108 +34,121 @@
 			"\t}",
 			"}",
 		],
-		"description": "Margin not-last-child-px"
+		"description": "Margin not-last-child-px",
 	},
-
 	"Margin-top: rem": {
-		"prefix": "margin-top-rem",
+		"prefix": "mtr",
 		"scope": "css, sass, scss, less",
-		"body": ["margin-top: rem($1);"],
-		"description": "Margin-top: rem"
+		"body": [
+			"margin-top: units.rem($1);"
+		],
+		"description": "Margin-top: rem",
 	},
-
 	"Margin-right: rem": {
-		"prefix": "margin-right-rem",
+		"prefix": "mrr",
 		"scope": "css, sass, scss, less",
-		"body": ["margin-right: rem($1);"],
-		"description": "Margin-right: rem"
+		"body": [
+			"margin-right: units.rem($1);"
+		],
+		"description": "Margin-right: rem",
 	},
-
 	"Margin-bottom: rem": {
-		"prefix": "margin-bottom-rem",
+		"prefix": "mbr",
 		"scope": "css, sass, scss, less",
-		"body": ["margin-bottom: rem($1);"],
-		"description": "Margin-bottom: rem"
+		"body": [
+			"margin-bottom: units.rem($1);"
+		],
+		"description": "Margin-bottom: rem",
 	},
-
 	"Margin-left: rem": {
-		"prefix": "margin-left-rem",
+		"prefix": "mlr",
 		"scope": "css, sass, scss, less",
-		"body": ["margin-left: rem($1);"],
-		"description": "Margin-left: rem"
+		"body": [
+			"margin-left: units.rem($1);"
+		],
+		"description": "Margin-left: rem",
 	},
-
 	"Margin-top: px": {
-		"prefix": "margin-top-px",
+		"prefix": "mtp",
 		"scope": "css, sass, scss, less",
-		"body": ["margin-top: $1px;"],
-		"description": "Margin-top: px"
+		"body": [
+			"margin-top: $1px;"
+		],
+		"description": "Margin-top: px",
 	},
-
 	"Margin-right: px": {
-		"prefix": "margin-right-px",
+		"prefix": "mrp",
 		"scope": "css, sass, scss, less",
-		"body": ["margin-right: $1px;"],
-		"description": "Margin-right: px"
+		"body": [
+			"margin-right: $1px;"
+		],
+		"description": "Margin-right: px",
 	},
-
 	"Margin-bottom: px": {
-		"prefix": "margin-bottom-px",
+		"prefix": "mbp",
 		"scope": "css, sass, scss, less",
-		"body": ["margin-bottom: $1px;"],
-		"description": "Margin-bottom: px"
+		"body": [
+			"margin-bottom: $1px;"
+		],
+		"description": "Margin-bottom: px",
 	},
-
 	"Margin-left: px": {
-		"prefix": "margin-left-px",
+		"prefix": "mlp",
 		"scope": "css, sass, scss, less",
-		"body": ["margin-left: $1px;"],
-		"description": "Margin-left: px"
+		"body": [
+			"margin-left: $1px;"
+		],
+		"description": "Margin-left: px",
 	},
 	// End. Margin
-
-
 	// Padding
 	"Padding all": {
 		"prefix": "padding-all",
 		"scope": "css, sass, scss, less",
-		"body": ["padding: $1 $2 $3 $4;"],
-		"description": "Padding all"
+		"body": [
+			"padding: $1 $2 $3 $4;"
+		],
+		"description": "Padding all",
 	},
-
 	"Padding rem": {
-		"prefix": "padding-rem",
+		"prefix": "pr",
 		"scope": "css, sass, scss, less",
-		"body": ["padding: rem($1);"],
-		"description": "Padding rem"
+		"body": [
+			"padding: units.rem($1);"
+		],
+		"description": "Padding rem",
 	},
-
 	"padding-top: rem": {
-		"prefix": "padding-top-rem",
+		"prefix": "ptr",
 		"scope": "css, sass, scss, less",
-		"body": ["padding-top: rem($1);"],
-		"description": "padding-top: rem"
+		"body": [
+			"padding-top: units.rem($1);"
+		],
+		"description": "padding-top: rem",
 	},
-
 	"padding-right: rem": {
-		"prefix": "padding-right-rem",
+		"prefix": "prr",
 		"scope": "css, sass, scss, less",
-		"body": ["padding-right: rem($1);"],
-		"description": "padding-right: rem"
+		"body": [
+			"padding-right: units.rem($1);"
+		],
+		"description": "padding-right: rem",
 	},
-
 	"padding-bottom: rem": {
-		"prefix": "padding-bottom-rem",
+		"prefix": "pbr",
 		"scope": "css, sass, scss, less",
-		"body": ["padding-bottom: rem($1);"],
-		"description": "padding-bottom: rem"
+		"body": [
+			"padding-bottom: units.rem($1);"
+		],
+		"description": "padding-bottom: rem",
 	},
-
 	"padding-left: rem": {
-		"prefix": "padding-left-rem",
+		"prefix": "plr",
 		"scope": "css, sass, scss, less",
-		"body": ["padding-left: rem($1);"],
-		"description": "padding-left: rem"
+		"body": [
+			"padding-left: units.rem($1);"
+		],
+		"description": "padding-left: rem",
 	},
 	// End. Padding
 }

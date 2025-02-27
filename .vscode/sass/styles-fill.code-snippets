@@ -1,15 +1,18 @@
 {
 	"Fill": {
 		"prefix": "fillv",
-		"scope": "css, sass, less",
-		"body": ["fill: $1"],
-		"description": "Fill"
+		"scope": "css, sass, scss, less",
+		"body": [
+			"fill: $1"
+		],
+		"description": "Fill",
 	},
-
 	"fill: currentColor": {
 		"prefix": "fillCurrentColor",
-		"scope": "css, sass, less",
-		"body": ["fill: currentColor"],
-		"description": "fill: currentColor"
-	}
+		"scope": "css, sass, scss, less",
+		"body": [
+			"fill: currentColor"
+		],
+		"description": "fill: currentColor",
+	},
 }

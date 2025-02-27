@@ -4,27 +4,27 @@
 		"prefix": "img",
 		"scope": "html, php, njk, md",
 		"body": [
-			"<img class=\"$1\" src=\"assets/images/$2.jpg\" width=\"$3\" height=\"$4\" alt=\"$5\" loading=\"lazy\" decoding=\"auto\">"
+			"<img class=\"$1\" src=\"assets/images/$2.jpg\" width=\"$3\" height=\"$4\" alt=\"$5\" loading=\"lazy\" decoding=\"auto\">",
 		],
-		"description": "Image"
+		"description": "Image",
 	},
 
 	"Image @2x": {
 		"prefix": "img@2x",
 		"scope": "html, php, njk, md",
 		"body": [
-			"<img class=\"$1\" src=\"assets/images/$2.jpg\" srcset=\"assets/images/$2@2x.jpg 2x\" width=\"$3\" height=\"$4\" alt=\"$5\" loading=\"lazy\" decoding=\"auto\">"
+			"<img class=\"$1\" src=\"assets/images/$2.jpg\" srcset=\"assets/images/$2@2x.jpg 2x\" width=\"$3\" height=\"$4\" alt=\"$5\" loading=\"lazy\" decoding=\"auto\">",
 		],
-		"description": "Image@2x"
+		"description": "Image@2x",
 	},
 
 	"Image source": {
 		"prefix": "imgSource",
 		"scope": "html, php, njk, md",
 		"body": [
-			"<img src=\"logo-large.png\" srcset=\"logo-small.png 320w, logo-medium.png 480w, logo-large.png 800w\" sizes=\"(max-width: 320px) 280px, (max-width: 480px) 440px, 800px\" alt=\"Девушка в шляпке сидит у бассейна\" decoding=\"auto\">"
+			"<img src=\"logo-large.png\" srcset=\"logo-small.png 320w, logo-medium.png 480w, logo-large.png 800w\" sizes=\"(max-width: 320px) 280px, (max-width: 480px) 440px, 800px\" alt=\"Девушка в шляпке сидит у бассейна\" decoding=\"auto\">",
 		],
-		"description": "Image source"
+		"description": "Image source",
 	},
 
 	"Picture tag with .webp": {
@@ -35,9 +35,9 @@
 			"\t<source srcset=\"assets/images/webp/$1.webp\" type=\"image/webp\">",
 			"",
 			"\t<img class=\"$2\" src=\"assets/images/$1.jpg\" width=\"$3\" height=\"$4\" alt=\"$5\" loading=\"lazy\" decoding=\"auto\">",
-			"</picture>"
+			"</picture>",
 		],
-		"description": "Picture tag with .webp"
+		"description": "Picture tag with .webp",
 	},
 
 	"Picture @2x tag with .webp": {
@@ -48,9 +48,9 @@
 			"\t<source srcset=\"assets/images/webp/$1.webp, assets/images/webp/$1@2x.webp 2x\" type=\"image/webp\">",
 			"",
 			"\t<img class=\"$2\" src=\"assets/images/$1.jpg\" srcset=\"assets/images/$1@2x.jpg 2x\" width=\"$3\" height=\"$4\" alt=\"$5\" loading=\"lazy\" decoding=\"auto\">",
-			"</picture>"
+			"</picture>",
 		],
-		"description": "Picture @2x tag with .webp"
+		"description": "Picture @2x tag with .webp",
 	},
 
 	"Picture tag with .avif + .webp": {
@@ -63,9 +63,9 @@
 			"\t<source srcset=\"assets/images/avif/$1.avif\" type=\"image/avif\">",
 			"",
 			"\t<img class=\"$2\" src=\"assets/images/$1.jpg\" width=\"$3\" height=\"$4\" alt=\"$6\" loading=\"lazy\" decoding=\"auto\">",
-			"</picture>"
+			"</picture>",
 		],
-		"description": "Picture tag with .avif + .webp"
+		"description": "Picture tag with .avif + .webp",
 	},
 
 	"Picture tag with .avif + .webp @2x": {
@@ -78,18 +78,18 @@
 			"\t<source srcset=\"assets/images/avif/$1.avif, assets/images/avif/$1@2x.avif 2x\" type=\"image/avif\">",
 			"",
 			"\t<img class=\"$2\" src=\"assets/images/$1.jpg\" srcset=\"assets/images/$1@2x.jpg 2x\" width=\"$3\" height=\"$4\" alt=\"$5\" loading=\"lazy\" decoding=\"auto\">",
-			"</picture>"
+			"</picture>",
 		],
-		"description": "Picture tag with .avif + .webp @2x"
+		"description": "Picture tag with .avif + .webp @2x",
 	},
 
 	"Image blog svg": {
 		"prefix": "imgBlogSvg",
 		"scope": "html, php, njk, md",
 		"body": [
-			"<img class=\"$1\" itemprop=\"image\" src=\"assets/images/blog/{{ page.imagesFolder }}/$2.svg\" width=\"826\" height=\"465\" alt=\"$3\" loading=\"lazy\" decoding=\"auto\">"
+			"<img class=\"$1\" itemprop=\"image\" src=\"assets/images/blog/{{ page.imagesFolder }}/$2.svg\" width=\"826\" height=\"465\" alt=\"$3\" loading=\"lazy\" decoding=\"auto\">",
 		],
-		"description": "Image blog svg"
+		"description": "Image blog svg",
 	},
 
 	"Image in background": {
@@ -98,9 +98,9 @@
 		"body": [
 			"<div class=\"image-wrap\" data-image-in-background>",
 			"\t<img class\"image-bg\" src=\"@img/$1\" alt=\"$2\">",
-			"</div>"
+			"</div>",
 		],
-		"description": "Image in background"
+		"description": "Image in background",
 	},
 	// End. Images and Picture
 }

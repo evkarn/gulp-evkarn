@@ -1,21 +1,21 @@
 export const video = () => {
-  // // Load the IFrame Player API code asynchronously.
-  // var tag = document.createElement('script');
+	// // Load the IFrame Player API code asynchronously.
+	// var tag = document.createElement('script');
 
-  // tag.src = "https://www.youtube.com/player_api";
+	// tag.src = "https://www.youtube.com/player_api";
 
-  // var firstScriptTag = document.getElementsByTagName('script')[0];
-  // firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+	// var firstScriptTag = document.getElementsByTagName('script')[0];
+	// firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
 
-  // var player;
+	// var player;
 
-  // function onYouTubePlayerAPIReady() {
-  //   player = new YT.Player('ytplayer', {
-  //     height: '360',
+	// function onYouTubePlayerAPIReady() {
+	//   player = new YT.Player('ytplayer', {
+	//     height: '360',
 
-  //     width: '640',
+	//     width: '640',
 
-  //     videoId: '_N4WL5P9yEw',
+	//     videoId: '_N4WL5P9yEw',
 
 	// 		playerVars: {
 	// 			autoplay: 1,
@@ -37,17 +37,15 @@ export const video = () => {
 	// 		}
 	// 	});
 	// 	onYouTubePlayerAPIReady();
-  // }
+	// }
 
 	// function onPlayerReady(event){
 	// 	player.mute();
 	// }
 
-
-
 	var tag = document.createElement('script');
 
-	tag.src = "https://www.youtube.com/iframe_api";
+	tag.src = 'https://www.youtube.com/iframe_api';
 
 	var firstScriptTag = document.getElementsByTagName('script')[0];
 
@@ -58,8 +56,8 @@ export const video = () => {
 	function onYouTubeIframeAPIReady() {
 		player = new YT.Player('playeryt', {
 			events: {
-				'onReady': onPlayerReady
-			}
+				onReady: onPlayerReady,
+			},
 		});
 	}
 
@@ -68,7 +66,4 @@ export const video = () => {
 
 		player.mute();
 	}
-
 };
-
-

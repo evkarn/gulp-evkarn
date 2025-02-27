@@ -1,3 +1,5 @@
+@use 'sass:math';
+
 // Удаляем единицы измерения
 @function stripUnit($value) {
 	@return math.div($value, $value * 0 + 1);

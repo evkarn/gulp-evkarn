@@ -27,13 +27,14 @@ export const orphus = () => {
 				intextmsg: 'Орфографическая ошибка в этом фрагменте:',
 				ifsendmsg:
 					'Нажмите <span>«Отправить»</span>, чтобы сообщение ушло редактору сайта. Ваш браузер останется на этой же странице.',
-				gohome: 'Или, может, вы хотите посетить домашнюю страницу Orphus (в новой вкладке)?',
+				gohome:
+					'Или, может, вы хотите посетить домашнюю страницу Orphus (в новой вкладке)?',
 				author: 'Дмитрий Котеров и Proger_XP',
 				send: 'Отправить',
 				cancel: 'Отмена',
 				entercmnt: 'Ваш комментарий (необязательно):',
-				submitex: 'Проблема при отправке сообщения:'
-			}
+				submitex: 'Проблема при отправке сообщения:',
+			},
 		};
 
 		var assign = function (dest, src) {
@@ -69,7 +70,9 @@ export const orphus = () => {
 		self.addOffScreen = function (node) {
 			node.style.position = 'absolute';
 			node.style.top = '-10000px';
-			body.lastChild ? body.insertBefore(node, body.lastChild) : body.appendChild(node);
+			body.lastChild
+				? body.insertBefore(node, body.lastChild)
+				: body.appendChild(node);
 			return node;
 		};
 
@@ -101,7 +104,7 @@ export const orphus = () => {
 				c_tag1: self.opt.c_tag1,
 				c_tag2: self.opt.c_tag2,
 				charset: document.charset || document.characterSet || '',
-				comment: comment
+				comment: comment,
 			};
 
 			for (var name in query) {
@@ -150,7 +153,7 @@ export const orphus = () => {
 				width: width,
 				height: height,
 				scrollLeft: scrollLeft,
-				scrollTop: scrollTop
+				scrollTop: scrollTop,
 			};
 		};
 
@@ -171,7 +174,9 @@ export const orphus = () => {
 				self.opt.strings.intextmsg +
 				'</div>' +
 				'<div class="orphus__fragment">' +
-				context.replace(self.opt.c_tag1, '<mark>').replace(self.opt.c_tag2, '</mark>') +
+				context
+					.replace(self.opt.c_tag1, '<mark>')
+					.replace(self.opt.c_tag2, '</mark>') +
 				'</div>' +
 				'</div>' +
 				'<div class="orphus__hint">' +
@@ -310,7 +315,7 @@ export const orphus = () => {
 					pre: pre,
 					text: text,
 					suf: suf,
-					pos: pos
+					pos: pos,
 				};
 			}
 		};
@@ -330,7 +335,7 @@ export const orphus = () => {
 					'',
 					self.opt.strings.alt,
 					'',
-					self.opt.strings.gohome
+					self.opt.strings.gohome,
 				];
 
 				if (confirm(msg.join('\n'))) {
@@ -343,9 +348,11 @@ export const orphus = () => {
 			sel.pre = sel.pre
 				.substring(sel.pre.length - self.opt.contextLength, sel.pre.length)
 				.replace(/^\S{1,10}\s+/, '');
-			sel.suf = sel.suf.substring(0, self.opt.contextLength).replace(/\s+\S{1,10}$/, '');
+			sel.suf = sel.suf
+				.substring(0, self.opt.contextLength)
+				.replace(/\s+\S{1,10}$/, '');
 			var context = self.cleanString(
-				sel.pre + self.opt.c_tag1 + sel.text + self.opt.c_tag2 + sel.suf
+				sel.pre + self.opt.c_tag1 + sel.text + self.opt.c_tag2 + sel.suf,
 			);
 
 			if (context.length > self.opt.maxSelection) {

@@ -3,15 +3,18 @@
 	"white-space: normal": {
 		"prefix": "white-sp-norm",
 		"scope": "css, sass, scss, less",
-		"body": ["white-space: normal;"],
-		"description": "white-space: normal"
+		"body": [
+			"white-space: normal;"
+		],
+		"description": "white-space: normal",
 	},
-
 	"white-space: nowrap": {
 		"prefix": "white-sp-no-wr",
 		"scope": "css, sass, scss, less",
-		"body": ["white-space: nowrap;"],
-		"description": "white-space: nowrap"
+		"body": [
+			"white-space: nowrap;"
+		],
+		"description": "white-space: nowrap",
 	},
 	// End. White space
 }

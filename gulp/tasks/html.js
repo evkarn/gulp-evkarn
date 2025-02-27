@@ -8,7 +8,7 @@ import typograf from 'gulp-typograf';
 import versionNumber from 'gulp-version-number';
 
 // Обработка ошибок
-import plumberInit from './plumber.js';
+import {plumberInit} from './plumber.js';
 
 // Замена img на <picture> с .webp, .avif
 import pictureHtml from 'gulp-webp-avif-html-nosvg-nogif-lazyload';
@@ -71,10 +71,10 @@ export const html = () => {
 	// 	app.isBuild, pictureHtml({
   //     primaryFormat: 'avif',
   //     primaryAfter: 'assets/images/',
-  //     primaryBefore: 'assets/images/avif/',
+  //     primaryBefore: 'assets/images/',
   //     secondaryFormat: 'webp',
   //     secondaryAfter: 'assets/images/',
-  //     secondaryBefore: 'assets/images/webp/',
+  //     secondaryBefore: 'assets/images/',
   //     srcsetOutput: 0,
   //     youtubeCoverWebp: true
 	// 	})

@@ -33,8 +33,7 @@ function imageInBg() {
 						')';
 				}
 			}
-		}
-		else {
+		} else {
 			for (var i = 0; i < ibg.length; i++) {
 				if (ibg[i].querySelector('img')) {
 					ibg[i].style.backgroundImage =

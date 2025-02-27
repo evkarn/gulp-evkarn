@@ -15,7 +15,7 @@
 
 	color: var(--c-light);
 
-	@media ( min-width: em(1920.96) ) {
+	@media (min-width: em(1920.96)) {
 		@include calc-size(border-radius, 5, 10, 1920, 3840, rem);
 	}
 }

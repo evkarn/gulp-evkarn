@@ -1,14 +1,12 @@
-.site-header__container {
+@use "../mixins/units";
+
+.header__container {
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
-	column-gap: 20px;
+	column-gap: units.rem(20);
 
-	@include min-full-hd-em {
-		@include calc-size(column-gap, 20, 40, 1920, 3840, px);
-	}
-
-	@media (max-width: 576px) {
-		row-gap: 6px;
+	@media (max-width: units.em(576)) {
+		row-gap: units.rem(6);
 	}
 }

@@ -9,12 +9,14 @@ export const navScrollLinks = () => {
 
 	const headerHeight = header.offsetHeight;
 
-	document.querySelector(':root').style.setProperty('--header-height', `${headerHeight}px`);
+	document
+		.querySelector(':root')
+		.style.setProperty('--header-height', `${headerHeight}px`);
 
 	if (nav.hasAttribute('data-scroll-links')) {
 		if (navLinksGoto.length > 0) {
 			// Проходимся по всем ссылкам и отслеживаем клик по ним, при клике выполняем функцию onMenuLinkClick
-			navLinksGoto.forEach(link => {
+			navLinksGoto.forEach((link) => {
 				link.addEventListener('click', onMenuLinkClick);
 			});
 
@@ -28,12 +30,13 @@ export const navScrollLinks = () => {
 					const gotoBlock = document.querySelector(dataSetText);
 
 					// Рассчитываем положение этого элемента на странице минус высоту header
-					const gotoBlockValue = gotoBlock.getBoundingClientRect().top + pageYOffset - headerHeight;
-					
+					const gotoBlockValue =
+						gotoBlock.getBoundingClientRect().top + pageYOffset - headerHeight;
+
 					// Прокручиваем страницу до этого элемента
 					window.scrollTo({
 						top: gotoBlockValue,
-						behavior: 'smooth'
+						behavior: 'smooth',
 					});
 
 					e.preventDefault();

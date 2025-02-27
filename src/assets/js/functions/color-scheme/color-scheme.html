@@ -6,28 +6,53 @@
 			document.documentElement.style.display = 'none';
 			document.head.insertAdjacentHTML(
 				'beforeend',
-				'<link rel="stylesheet" href="assets/css-special/schemes/light-theme.css" onload="document.documentElement.style.display=\'\'">'
-			)
+				'<link rel="stylesheet" href="assets/css-special/schemes/light-theme.css" onload="document.documentElement.style.display=\'\'">',
+			);
 		}
 	</script>
 
-	<link rel="stylesheet" href="assets/css-special/schemes/light-scheme.css" media="(prefers-color-scheme: light)">
+	<link
+		rel="stylesheet"
+		href="assets/css-special/schemes/light-scheme.css"
+		media="(prefers-color-scheme: light)"
+	/>
 
-	<link rel="stylesheet" href="assets/css-special/schemes/dark-scheme.css" media="(prefers-color-scheme: dark)">
+	<link
+		rel="stylesheet"
+		href="assets/css-special/schemes/dark-scheme.css"
+		media="(prefers-color-scheme: dark)"
+	/>
 	<!-- /Styles -->
 </head>
 
 <div class="nav__scheme scheme">
 	<fieldset class="nav__scheme-switcher scheme-switcher">
-		<legend class="scheme-switcher__legend">
-			Цветовая схема
-		</legend>
+		<legend class="scheme-switcher__legend">Цветовая схема</legend>
 
-		<input class="scheme-switcher__radio scheme-switcher__radio--light" type="radio" name="color-scheme" value="light" aria-label="Светлая">
+		<input
+			class="scheme-switcher__radio scheme-switcher__radio--light"
+			type="radio"
+			name="color-scheme"
+			value="light"
+			aria-label="Светлая"
+		/>
 
-		<input class="scheme-switcher__radio scheme-switcher__radio--auto" type="radio" name="color-scheme" value="auto" aria-label="Системная" checked>
+		<input
+			class="scheme-switcher__radio scheme-switcher__radio--auto"
+			type="radio"
+			name="color-scheme"
+			value="auto"
+			aria-label="Системная"
+			checked
+		/>
 
-		<input class="scheme-switcher__radio scheme-switcher__radio--dark" type="radio" name="color-scheme" value="dark" aria-label="Тёмная">
+		<input
+			class="scheme-switcher__radio scheme-switcher__radio--dark"
+			type="radio"
+			name="color-scheme"
+			value="dark"
+			aria-label="Тёмная"
+		/>
 
 		<div class="scheme-switcher__status"></div>
 	</fieldset>

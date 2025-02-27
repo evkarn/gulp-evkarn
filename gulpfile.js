@@ -78,12 +78,14 @@ const deployFTP = gulp.series(reset, ftp);
 const deploySSH = gulp.series(reset, ssh);
 
 // Экспорт сценариев
-export { dev };
-export { build };
-export { deployZip };
-export { deployFTP };
-export { deploySSH };
-export { svgSpriteIcons };
+export {
+	dev,
+	build,
+	deployZip,
+	deployFTP,
+	deploySSH,
+	svgSpriteIcons
+};
 
 // Выполнение сценариев по-умолчанию
 gulp.task('default', dev);

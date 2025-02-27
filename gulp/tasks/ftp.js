@@ -4,7 +4,7 @@ import vinylFTP from 'vinyl-ftp';
 
 import util from 'gulp-util';
 
-import plumberInit from './plumber.js'
+import {plumberInit} from './plumber.js'
 
 export const ftp = () => {
 	configFTP.log = util.log;

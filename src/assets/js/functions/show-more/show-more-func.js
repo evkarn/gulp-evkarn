@@ -5,17 +5,20 @@ export function showMore() {
 
 	const showMoreList = document?.querySelector('[data-show-more-list]');
 
-	let itemsActiveAmount = +showMoreBody?.querySelector('[data-sm-items-visible]').textContent;
+	let itemsActiveAmount = +showMoreBody?.querySelector(
+		'[data-sm-items-visible]',
+	).textContent;
 
-	const itemActiveAdd = +showMoreBody?.querySelector('[data-sm-item-add]').textContent;
+	const itemActiveAdd =
+		+showMoreBody?.querySelector('[data-sm-item-add]').textContent;
 
-	const hideMoreItems = selector => {
+	const hideMoreItems = (selector) => {
 		if (selector.length > itemsActiveAmount) {
 			const arr = Array.from(selector);
 
 			const hiddenItems = arr.slice(itemsActiveAmount, selector.length);
 
-			hiddenItems.forEach(el => {
+			hiddenItems.forEach((el) => {
 				el.classList.remove('is-visible');
 			});
 		}
@@ -39,7 +42,7 @@ export function showMore() {
 		showMoreButton.addEventListener('click', () => {
 			itemsActiveAmount += itemActiveAdd;
 
-			arrayItems.forEach(el => {
+			arrayItems.forEach((el) => {
 				if (!el.classList.contains('is-visible')) {
 					el.classList.add('is-visible');
 				}
@@ -47,7 +50,9 @@ export function showMore() {
 
 			hideMoreItems(showMoreItems);
 
-			const visibleItems = document?.querySelectorAll('[data-show-more-item].is-visible');
+			const visibleItems = document?.querySelectorAll(
+				'[data-show-more-item].is-visible',
+			);
 
 			if (visibleItems.length === showMoreItems.length) {
 				showMoreButton.style.display = 'none';

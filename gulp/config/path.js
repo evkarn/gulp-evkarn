@@ -20,7 +20,7 @@ export const path = {
 
 		configFiles: `${buildFolder}/`,
 
-		faviconImages: `${buildFolder}/assets/favicon/`,
+		favicon: `${buildFolder}/assets/favicon/`,
 
 		files: `${buildFolder}/assets/files/`,
 
@@ -30,9 +30,9 @@ export const path = {
 
 		img: `${buildFolder}/assets/images/`,
 
-		imgAvif: `${buildFolder}/assets/images/avif/`,
+		imgAvif: `${buildFolder}/assets/images/`,
 
-		imgWebp: `${buildFolder}/assets/images/webp/`,
+		imgWebp: `${buildFolder}/assets/images/`,
 
 		socialImages: `${buildFolder}/assets/images/social-images/`,
 
@@ -49,9 +49,9 @@ export const path = {
 
 		fonts: `${srcFolder}/assets/fonts/*.ttf`,
 
-		faviconImages: `${srcFolder}/assets/favicon/*.*`,
+		favicon: `${srcFolder}/assets/favicon/*.*`,
 
-		fontsStyle: `${srcFolder}/assets/styles/${preprocessor}/fonts/_index.${preprocessor}`,
+		fontsStyle: `${srcFolder}/assets/styles/${preprocessor}/fonts/_font-face.${preprocessor}`,
 
 		html: `${srcFolder}/*.{html,htm}`,
 

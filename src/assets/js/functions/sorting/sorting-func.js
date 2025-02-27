@@ -13,9 +13,13 @@ export function sorting() {
 		for (let i = 0; i < elSort.children.length; i++) {
 			for (let j = i; j < elSort.children.length; j++) {
 				if (
-					+elSort.children[i].getAttribute(sortType) > +elSort.children[j].getAttribute(sortType)
+					+elSort.children[i].getAttribute(sortType) >
+					+elSort.children[j].getAttribute(sortType)
 				) {
-					var replacedNode = elSort.replaceChild(elSort.children[j], elSort.children[i]);
+					var replacedNode = elSort.replaceChild(
+						elSort.children[j],
+						elSort.children[i],
+					);
 
 					insertAfter(replacedNode, elSort.children[i]);
 				}
@@ -27,9 +31,13 @@ export function sorting() {
 		for (let i = 0; i < elSort.children.length; i++) {
 			for (let j = i; j < elSort.children.length; j++) {
 				if (
-					+elSort.children[i].getAttribute(sortType) < +elSort.children[j].getAttribute(sortType)
+					+elSort.children[i].getAttribute(sortType) <
+					+elSort.children[j].getAttribute(sortType)
 				) {
-					var replacedNode = elSort.replaceChild(elSort.children[j], elSort.children[i]);
+					var replacedNode = elSort.replaceChild(
+						elSort.children[j],
+						elSort.children[i],
+					);
 
 					insertAfter(replacedNode, elSort.children[i]);
 				}
@@ -38,8 +46,8 @@ export function sorting() {
 	}
 
 	if (productBody && filterButtons) {
-		filterButtons.forEach(el => {
-			el.addEventListener('click', e => {
+		filterButtons.forEach((el) => {
+			el.addEventListener('click', (e) => {
 				var elTarget = e.target;
 
 				const noProductBlock = document?.querySelector('[data-cat-no-product]');
@@ -50,7 +58,7 @@ export function sorting() {
 					noProductBlock.classList.remove('no-product--visible');
 
 					if (allProducts.length > 0) {
-						allProducts.forEach(el => {
+						allProducts.forEach((el) => {
 							el.classList.remove('is-product-hidden');
 						});
 					} else {
@@ -89,13 +97,13 @@ export function sorting() {
 
 					noProductBlock.classList.remove('no-product--visible');
 
-					allProducts.forEach(el => {
+					allProducts.forEach((el) => {
 						el.classList.add('is-product-hidden');
 
 						el.classList.remove('is-product-visible');
 					});
 
-					newProducts.forEach(el => {
+					newProducts.forEach((el) => {
 						if (el.dataset.sortNew === 'true') {
 							el.classList.remove('is-product-hidden');
 
@@ -107,17 +115,19 @@ export function sorting() {
 				if (elTarget.dataset.catFilterButton === 'premium') {
 					var allProducts = document?.querySelectorAll('[data-cat-product]');
 
-					var premiumProducts = document?.querySelectorAll('[data-sort-premium]');
+					var premiumProducts = document?.querySelectorAll(
+						'[data-sort-premium]',
+					);
 
 					noProductBlock.classList.remove('no-product--visible');
 
-					allProducts.forEach(el => {
+					allProducts.forEach((el) => {
 						el.classList.add('is-product-hidden');
 
 						el.classList.remove('is-product-visible');
 					});
 
-					premiumProducts.forEach(el => {
+					premiumProducts.forEach((el) => {
 						if (el.dataset.sortPremium === 'true') {
 							el.classList.remove('is-product-hidden');
 
@@ -133,13 +143,13 @@ export function sorting() {
 
 					noProductBlock.classList.remove('no-product--visible');
 
-					allProducts.forEach(el => {
+					allProducts.forEach((el) => {
 						el.classList.add('is-product-hidden');
 
 						el.classList.remove('is-product-visible');
 					});
 
-					saleProducts.forEach(el => {
+					saleProducts.forEach((el) => {
 						if (el.dataset.sortSale === 'true') {
 							el.classList.remove('is-product-hidden');
 
@@ -148,7 +158,9 @@ export function sorting() {
 					});
 				}
 
-				const productsVisible = document?.querySelectorAll('.is-product-visible');
+				const productsVisible = document?.querySelectorAll(
+					'.is-product-visible',
+				);
 
 				if (productsVisible.length < 1) {
 					noProductBlock.classList.add('no-product--visible');

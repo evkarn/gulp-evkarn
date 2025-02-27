@@ -1,7 +1,7 @@
 // Overlay
 @mixin overlay($opacity, $color) {
 	&:after {
-		content: "";
+		content: '';
 
 		position: absolute;
 		inset: 0;
@@ -14,7 +14,7 @@
 		opacity: $opacity;
 
 		background-color: $color;
-		
+
 		@content;
 	}
 }

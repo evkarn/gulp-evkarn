@@ -1,3 +1,5 @@
+@use "../mixins/units";
+
 .page {
 	// flex
 	display: flex;
@@ -19,18 +21,37 @@
 .section {
 	position: relative;
 
-	@include calc-size(padding-top, 50, 100, 320, 1920, px);
-	@include calc-size(padding-bottom, 50, 100, 320, 1920, px);
+	padding-top: units.rem(100);
+	padding-bottom: units.rem(100);
 
 	min-width: 0;
 
-	@media ( min-width: 1920.96px ) {
-		@include calc-size(padding-top, 100, 200, 1920, 3840, px);
-		@include calc-size(padding-bottom, 100, 200, 1920, 3840, px);
+	@media (max-width: units.em(1200)) {
+		padding-top: units.rem(90);
+		padding-bottom: units.rem(90);
+	}
+
+	@media (max-width: units.em(1024)) {
+		padding-top: units.rem(80);
+		padding-bottom: units.rem(80);
+	}
+
+	@media (max-width: units.em(992)) {
+		padding-top: units.rem(70);
+		padding-bottom: units.rem(70);
+	}
+
+	@media (max-width: units.em(768)) {
+		padding-top: units.rem(60);
+		padding-bottom: units.rem(60);
+	}
+
+	@media (max-width: units.em(576)) {
+		padding-top: units.rem(50);
+		padding-bottom: units.rem(50);
 	}
 }
 
 .section__title {
 	text-align: center;
 }
-

@@ -6,20 +6,18 @@
 		"body": [
 			"display: flex;",
 			"align-items: center;",
-			"justify-content: center;"
+			"justify-content: center;",
 		],
-		"description": "Display flex center"
+		"description": "Display flex center",
 	},
-
 	"Flex: 1 1 auto": {
 		"prefix": "flex-1-1-a",
 		"scope": "css, sass, scss, less",
 		"body": [
-			"flex: 1 1 auto;",
+			"flex: 1 1 auto;"
 		],
-		"description": "Flex: 1 1 auto"
+		"description": "Flex: 1 1 auto",
 	},
-
 	"flex-grow: 1, flex-shrink: 1, flex-basis: auto": {
 		"prefix": "flex-grow-shr-bas",
 		"scope": "css, sass, scss, less",
@@ -28,9 +26,8 @@
 			"flex-shrink: 1;",
 			"flex-basis: auto;"
 		],
-		"description": "flex-grow: 1, flex-shrink: 1, flex-basis: auto"
+		"description": "flex-grow: 1, flex-shrink: 1, flex-basis: auto",
 	},
-
 	"display: flex, flex-direction: column": {
 		"prefix": "flex-column",
 		"scope": "css, sass, scss, less",
@@ -38,9 +35,8 @@
 			"display: flex;",
 			"flex-direction: column;"
 		],
-		"description": "display: flex, flex-direction: column"
+		"description": "display: flex, flex-direction: column",
 	},
-
 	"Flex product list": {
 		"prefix": "flex-cards",
 		"scope": "css, sass, scss, less",
@@ -50,18 +46,17 @@
 			"",
 			"display: flex;",
 			"flex-wrap: wrap;",
-			"gap: var(--gap);"
+			"gap: var(--gap);",
 		],
-		"description": "Flex product list"
+		"description": "Flex product list",
 	},
-
 	"Flex width items": {
 		"prefix": "flex-cards-item",
 		"scope": "css, sass, scss, less",
 		"body": [
-			"width: calc((100% - ((var(--num-elements) - 1) * var(--gap))) / (var(--num-elements)));"
+			"width: calc((100% - ((var(--num-elements) - 1) * var(--gap))) / (var(--num-elements)));",
 		],
-		"description": "Flex width items"
-	}
+		"description": "Flex width items",
+	},
 	// End. Flex
 }

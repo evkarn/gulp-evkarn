@@ -39,7 +39,7 @@ const colorSchemeSwitch = (e) => {
 		});
 
 	// Включение ночного режима по кнопке
-	btnDarkMode.onclick = function() {
+	btnDarkMode.onclick = function () {
 		btnDarkMode.classList.toggle('dark-mode-btn--active');
 		const isDark = document.body.classList.toggle('dark');
 

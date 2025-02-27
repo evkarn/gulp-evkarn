@@ -2,7 +2,8 @@ html {
 	scroll-behavior: smooth;
 }
 
-html, body {
+html,
+body {
 	height: 100%;
 }
 
@@ -11,8 +12,8 @@ body {
 }
 
 *,
-*::before,
-*::after {
+*:before,
+*:after {
 	box-sizing: border-box;
 }
 
@@ -29,7 +30,8 @@ a {
 	text-decoration: none;
 }
 
-button, a {
+button,
+a {
 	font-size: inherit;
 
 	color: inherit;

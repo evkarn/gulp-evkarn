@@ -6,7 +6,7 @@
 
 	gap: rem(16);
 
-	@media ( min-width: em(1920.96) ) {
+	@media (min-width: em(1920.96)) {
 		@include calc-size(gap, 16, 32, 1920, 3840, rem);
 	}
 }

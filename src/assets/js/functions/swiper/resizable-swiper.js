@@ -1,19 +1,24 @@
 import Swiper, { Navigation } from 'swiper';
 
-export const resizableSwiper = (breakpoint, swiperClass, swiperSettings, callback) => {
+export const resizableSwiper = (
+	breakpoint,
+	swiperClass,
+	swiperSettings,
+	callback,
+) => {
 	let swiper;
 
 	breakpoint = window.matchMedia(breakpoint);
 
-	const enableSwiper = function(className, settings) {
+	const enableSwiper = function (className, settings) {
 		swiper = new Swiper(className, settings);
 
 		if (callback) {
 			callback(swiper);
 		}
-	}
+	};
 
-	const checker = function() {
+	const checker = function () {
 		if (breakpoint.matches) {
 			return enableSwiper(swiperClass, swiperSettings);
 		} else {
@@ -24,7 +29,7 @@ export const resizableSwiper = (breakpoint, swiperClass, swiperSettings, callbac
 
 	breakpoint.addEventListener('change', checker);
 	checker();
-}
+};
 
 export const someFunc = (instance) => {
 	if (instance) {
@@ -33,8 +38,6 @@ export const someFunc = (instance) => {
 		});
 	}
 };
-
-
 
 resizableSwiper(
 	'(max-width: 1280px)',

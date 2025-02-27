@@ -1,15 +1,15 @@
-@import "./scheme";
+@use "./scheme";
 
-@import "./scheme-switcher";
+@use "./scheme-switcher";
 
-@import "./scheme-switcher__legend";
+@use "./scheme-switcher__legend";
 
-@import "./scheme-switcher__radio";
+@use "./scheme-switcher__radio";
 
-@import "./scheme-switcher__radio--light";
+@use "./scheme-switcher__radio--light";
 
-@import "./scheme-switcher__radio--auto";
+@use "./scheme-switcher__radio--auto";
 
-@import "./scheme-switcher__radio--dark";
+@use "./scheme-switcher__radio--dark";
 
-@import "./scheme-switcher__status";
+@use "./scheme-switcher__status";

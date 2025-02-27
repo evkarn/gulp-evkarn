@@ -9,18 +9,14 @@
 			"\techo '</pre>';",
 			"?>",
 		],
-		"description": "Header with logo link"
+		"description": "Header with logo link",
 	},
 
 	"If !empty $arResult": {
 		"prefix": "if-!empty-arResult",
 		"scope": "html, php, njk, md",
-		"body": [
-			"<?if (!empty(\\$arResult)):?>",
-			"\t$1",
-			"<?endif?>",
-		],
-		"description": "If !empty $arResult"
+		"body": ["<?if (!empty(\\$arResult)):?>", "\t$1", "<?endif?>"],
+		"description": "If !empty $arResult",
 	},
 
 	"Foreach $arResult as $arItem": {
@@ -31,6 +27,6 @@
 			"\t$1",
 			"<?endforeach?>",
 		],
-		"description": "Foreach $arResult as $arItem"
+		"description": "Foreach $arResult as $arItem",
 	},
 }

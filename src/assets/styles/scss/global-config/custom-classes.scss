@@ -1,3 +1,6 @@
+@use '../mixins/units';
+@use '../variables/general';
+
 .full-width,
 .f-width,
 .full-w {
@@ -21,7 +24,8 @@
 	text-decoration: underline;
 }
 
-.uppercase, .upper {
+.uppercase,
+.upper {
 	text-transform: uppercase;
 }
 
@@ -33,7 +37,10 @@
 	object-fit: cover;
 }
 
-.image-wrap, .image-wrapper, .img-wrap, .img-wrapper {
+.image-wrap,
+.image-wrapper,
+.img-wrap,
+.img-wrapper {
 	position: relative;
 	max-width: 100%;
 	width: 100%;
@@ -115,25 +122,19 @@
 }
 
 .link {
-	transition: color .3s ease;
+	transition: color 0.3s ease;
 
-	@media ( any-hover: hover ) {
+	@media (any-hover: hover) {
 		&:hover {
 			color: var(--accent);
 		}
 	}
 
 	&:focus-visible {
-		outline-width: $outline-width + px;
+		outline-width: units.rem(general.$outline-width);
 		outline-style: dashed;
 		outline-color: currentColor;
-		outline-offset: $outline-offset + px;
-
-		@media ( min-width: em(1920.96) ) {
-			@include calc-size(outline-width, $outline-width, $outline-width * 2, 1920, 3840, px);
-
-			@include calc-size(outline-offset, $outline-offset, $outline-offset * 2, 1920, 3840, px);
-		}
+		outline-offset: units.rem(general.$outline-offset);
 	}
 
 	&:active {

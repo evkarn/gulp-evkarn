@@ -1,7 +1,7 @@
 export function navSubmenu() {
 	const buttonsArrow = document?.querySelectorAll('[data-btn-submenu]');
 
-	buttonsArrow?.forEach(el => {
+	buttonsArrow?.forEach((el) => {
 		el.addEventListener('click', () => {
 			el.classList.toggle('is-active');
 
@@ -15,8 +15,7 @@ export function navSubmenu() {
 				el.setAttribute('aria-expanded', 'true');
 
 				el.setAttribute('aria-label', 'Закрыть подменю');
-			}
-			else {
+			} else {
 				el.setAttribute('aria-expanded', 'false');
 
 				el.setAttribute('aria-label', 'Открыть подменю');

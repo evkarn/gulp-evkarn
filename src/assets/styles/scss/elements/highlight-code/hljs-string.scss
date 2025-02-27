@@ -1,7 +1,7 @@
 .hljs-string {
-  color: var(--hljs-string);
+	color: var(--hljs-string);
 
-  @media screen and (-ms-high-contrast: active) {
-    color: highlight;
-  }
+	@media screen and (-ms-high-contrast: active) {
+		color: highlight;
+	}
 }

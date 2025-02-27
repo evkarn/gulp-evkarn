@@ -1,7 +1,7 @@
-@import './breadcrumbs';
+@use "./breadcrumbs";
 
-@import './breadcrumbs__list';
+@use "./breadcrumbs__list";
 
-@import './breadcrumbs__item';
+@use "./breadcrumbs__item";
 
-@import './breadcrumbs__link';
+@use "./breadcrumbs__link";

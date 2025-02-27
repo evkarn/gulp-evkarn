@@ -7,7 +7,7 @@
 
 	@include calc-size(font-size, 18, 20, 320, 1920, rem);
 
-	@media ( min-width: em(1920.96) ) {
+	@media (min-width: em(1920.96)) {
 		@include calc-size(row-gap, 30, 60, 1920, 3840, rem);
 
 		@include calc-size(font-size, 20, 40, 1920, 3840, rem);

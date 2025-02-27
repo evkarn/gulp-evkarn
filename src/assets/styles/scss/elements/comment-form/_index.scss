@@ -1,5 +1,5 @@
-@import 'comment-form';
-@import 'checkbox-input';
-@import 'fieldset--category';
-@import 'fieldset--message';
-@import 'comment-form__submit';
+@use "comment-form";
+@use "checkbox-input";
+@use "fieldset--category";
+@use "fieldset--message";
+@use "comment-form__submit";

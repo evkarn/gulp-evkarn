@@ -4,20 +4,19 @@
 		"scope": "css, sass, scss, less",
 		"body": [
 			"&::after {",
-			"\tcontent: '₽';"
+			"\tcontent: '₽';",
 			"}"
 		],
-		"description": "Rub symbol"
+		"description": "Rub symbol",
 	},
-
 	"Rub text": {
 		"prefix": "rubText",
 		"scope": "css, sass, scss, less",
 		"body": [
 			"&::after {",
-			"\tcontent: 'руб.';"
+			"\tcontent: 'руб.';",
 			"}"
 		],
-		"description": "Rub text"
-	}
+		"description": "Rub text",
+	},
 }

@@ -1,31 +1,46 @@
+@use '../mixins/units';
+
 .h1,
 .h2,
 .h3,
 .h4 {
 	margin: 0;
-	
+
+	font-weight: 700;
 	font-family: var(--ff-title);
 	line-height: 1;
 }
 
 .h1 {
-	font-weight: 700;
-	@include calc-size(font-size, 44, 80, 320, 1920, px);
+	font-size: units.rem(56);
 
-	@media (min-width: em(1920.96)) {
-		@include calc-size(font-size, 80, 160, 1920, 3840, px);
+	@media ( max-width: units.em(1200) ) {
+		font-size: units.rem(46);
 	}
+
+	@media ( max-width: units.em(1024) ) {
+		font-size: units.rem(36);
+	}
+
+	@media ( max-width: units.em(768) ) {
+		font-size: units.rem(32);
+	}
+
+
 }
 
 .h2 {
-	font-weight: 700;
-	@include calc-size(font-size, 32, 70, 320, 1920, px);
+	font-size: units.rem(40);
 
 	text-transform: uppercase;
 
 	color: var(--deep-breath);
 
-	@media (min-width: em(1920.96)) {
-		@include calc-size(font-size, 70, 140, 1920, 3840, rem);
+	@media ( max-width: units.em(1024) ) {
+		font-size: units.rem(30);
+	}
+
+	@media ( max-width: units.em(768) ) {
+		font-size: units.rem(26);
 	}
 }

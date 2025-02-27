@@ -1,16 +1,12 @@
+@use '../variables/grid';
+@use '../mixins/units';
+
 .container {
-	max-width: $container-width + px;
+	max-width: units.rem(grid.$container-width);
 	width: 100%;
 
 	margin: 0 auto;
-	padding: 0 $container-offset + px;
-
-	@include min-full-hd-em {
-		@include calc-size(max-width, $container-width, $container-width * 2, 1920, 3840, px);
-
-		@include calc-size(padding-right, $container-offset, $container-offset * 2, 1920, 3840, px);
-		@include calc-size(padding-left, $container-offset, $container-offset * 2, 1920, 3840, px);
-	}
+	padding: 0 units.rem(grid.$container-offset);
 }
 
 .container-fluid {
@@ -24,35 +20,19 @@
 .container-right {
 	max-width: 100%;
 	width: 100%;
-	padding-left: calc((100% - #{$container-width + px}) / 2);
+	padding-left: calc((100% - #{units.rem(grid.$container-width)}) / 2);
 
-	@media (min-width: 1920.96px) {
-		padding-left: calc((100% - #{$container-width * 2 + px}) / 2);
-	}
-
-	@media (max-width: #{$container-width + px}) {
-		padding-left: $container-offset + px;
+	@media (max-width: #{units.em(grid.$container-width)}) {
+		padding-left: units.rem(grid.$container-offset);
 	}
 }
 
 .container-left {
 	max-width: 100%;
 	width: 100%;
-	padding-right: calc((100% - #{$container-width + px}) / 2);
+	padding-right: calc((100% - #{units.rem(grid.$container-width)}) / 2);
 
-	@media (min-width: 1920.96px) {
-		padding-right: calc((100% - #{$container-width * 2 + px}) / 2);
-	}
-
-	@media (max-width: #{$container-width + px}) {
-		padding: 0 $container-offset + px;
-	}
-}
-
-.container--narrow {
-	max-width: calc(1560 + $container-offset * 2) + px;
-
-	@media (min-width: 1920.96px) {
-		@include calc-size(max-width, 1560, 3120, 1920, 3840, px);
+	@media (max-width: #{units.em(grid.$container-width)}) {
+		padding-right: units.rem(grid.$container-offset);
 	}
 }

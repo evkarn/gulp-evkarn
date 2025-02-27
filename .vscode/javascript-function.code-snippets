@@ -2,27 +2,15 @@
 	"export function": {
 		"prefix": "exFunc",
 		"scope": "javascript, typescript",
-		"body": [
-			"export function $1($2) {",
-			"\t'use strict';",
-			"",
-			"\t$3",
-			"}"
-		],
-		"description": "export function"
+		"body": ["export function $1($2) {", "\t'use strict';", "", "\t$3", "}"],
+		"description": "export function",
 	},
 
 	"export function arrow": {
 		"prefix": "exFuncArrow",
 		"scope": "javascript, typescript",
-		"body": [
-			"export const $1 = ($2) => {",
-			"\t'use strict';",
-			"",
-			"\t$3",
-			"}"
-		],
-		"description": "export function arrow"
+		"body": ["export const $1 = ($2) => {", "\t'use strict';", "", "\t$3", "}"],
+		"description": "export function arrow",
 	},
 
 	"const () => {}": {
@@ -36,60 +24,34 @@
 			"};",
 			"$1();",
 		],
-		"description": "const () => {}"
+		"description": "const () => {}",
 	},
 
 	"var () => {}": {
 		"prefix": "funcVar",
 		"scope": "javascript, typescript",
-		"body": [
-			"var $1 = () => {",
-			"\t'use strict';",
-			"",
-			"\t$2",
-			"};",
-			"$1();",
-		],
-		"description": "var () => {}"
+		"body": ["var $1 = () => {", "\t'use strict';", "", "\t$2", "};", "$1();"],
+		"description": "var () => {}",
 	},
 
 	"function $1() {}": {
 		"prefix": "func",
 		"scope": "javascript, typescript",
-		"body": [
-			"function $1() {",
-			"\t'use strict';",
-			"",
-			"\t$2",
-			"};",
-			"$1();",
-		],
-		"description": "function $1() {}"
+		"body": ["function $1() {", "\t'use strict';", "", "\t$2", "};", "$1();"],
+		"description": "function $1() {}",
 	},
 
 	"async arrow function": {
 		"prefix": "async-arrow-fn",
 		"scope": "javascript, typescript",
-		"body": [
-			"const $1 = async () => {",
-			"\t'use strict';",
-			"",
-			"\t$2",
-			"};",
-		],
-		"description": "async arrow function"
+		"body": ["const $1 = async () => {", "\t'use strict';", "", "\t$2", "};"],
+		"description": "async arrow function",
 	},
 
 	"async function": {
 		"prefix": "async-fn",
 		"scope": "javascript, typescript",
-		"body": [
-			"async function $1() {",
-			"\t'use strict';",
-			"",
-			"\t$2",
-			"};",
-		],
-		"description": "async function"
+		"body": ["async function $1() {", "\t'use strict';", "", "\t$2", "};"],
+		"description": "async function",
 	},
 }

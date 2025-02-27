@@ -11,10 +11,10 @@
 	will-change: transform;
 }
 
-.modal[aria-hidden="false"] .modal__overlay {
+.modal[aria-hidden='false'] .modal__overlay {
 	animation: microModalFadeIn 0.3s cubic-bezier(0, 0, 0.2, 1);
 }
 
-.modal[aria-hidden="true"] .modal__overlay {
+.modal[aria-hidden='true'] .modal__overlay {
 	animation: microModalFadeOut 0.3s cubic-bezier(0, 0, 0.2, 1);
 }

@@ -3,35 +3,27 @@
 		"prefix": "log",
 		"scope": "javascript, typescript",
 		"body": ["console.log( $1 );"],
-		"description": "Console log"
+		"description": "Console log",
 	},
 
 	"Array.from($1)": {
 		"prefix": "arr",
 		"scope": "javascript, typescript",
 		"body": ["Array.from($1);"],
-		"description": "Array.from($1)"
+		"description": "Array.from($1)",
 	},
 
 	"addEventListener('$1', (e) => {});": {
 		"prefix": "ael",
 		"scope": "javascript, typescript",
-		"body": [
-			"$1.addEventListener('$2', (e) => {",
-			"$3",
-			"});"
-		],
-		"description": "addEventListener('$1', (e) => {});"
+		"body": ["$1.addEventListener('$2', (e) => {", "$3", "});"],
+		"description": "addEventListener('$1', (e) => {});",
 	},
 
 	"JSON.parse": {
 		"prefix": "json-parse",
 		"scope": "javascript, typescript",
-		"body": [
-			"const $1 = JSON.parse(JSON.stringigy($2));",
-		],
-		"description": "JSON.parse"
+		"body": ["const $1 = JSON.parse(JSON.stringigy($2));"],
+		"description": "JSON.parse",
 	},
-
-
 }

@@ -1,43 +1,50 @@
 {
 	"overflow: hidden": {
 		"prefix": "ofh",
-		"scope": "css, sass, less",
-		"body": ["overflow: hidden"],
-		"description": "overflow: hidden"
+		"scope": "css, sass, scss, less",
+		"body": [
+			"overflow: hidden"
+		],
+		"description": "overflow: hidden",
 	},
-
 	"overflow: visible": {
 		"prefix": "ofv",
-		"scope": "css, sass, less",
-		"body": ["overflow: visible"],
-		"description": "overflow: visible"
+		"scope": "css, sass, scss, less",
+		"body": [
+			"overflow: visible"
+		],
+		"description": "overflow: visible",
 	},
-
 	"overflow-x: hidden": {
 		"prefix": "ofxh",
-		"scope": "css, sass, less",
-		"body": ["overflow-x: hidden"],
-		"description": "overflow-x: hidden"
+		"scope": "css, sass, scss, less",
+		"body": [
+			"overflow-x: hidden"
+		],
+		"description": "overflow-x: hidden",
 	},
-
 	"overflow-y: hidden": {
 		"prefix": "ofyh",
-		"scope": "css, sass, less",
-		"body": ["overflow-y: hidden"],
-		"description": "overflow-y: hidden"
+		"scope": "css, sass, scss, less",
+		"body": [
+			"overflow-y: hidden"
+		],
+		"description": "overflow-y: hidden",
 	},
-
 	"overflow-x: visible": {
 		"prefix": "ofxv",
-		"scope": "css, sass, less",
-		"body": ["overflow-x: visible"],
-		"description": "overflow-x: visible"
+		"scope": "css, sass, scss, less",
+		"body": [
+			"overflow-x: visible"
+		],
+		"description": "overflow-x: visible",
 	},
-
 	"overflow-y: visible": {
 		"prefix": "ofyv",
-		"scope": "css, sass, less",
-		"body": ["overflow-y: visible"],
-		"description": "overflow-y: visible"
+		"scope": "css, sass, scss, less",
+		"body": [
+			"overflow-y: visible"
+		],
+		"description": "overflow-y: visible",
 	},
 }

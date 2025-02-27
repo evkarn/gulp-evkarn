@@ -3,9 +3,9 @@
 		"prefix": "fpr",
 		"scope": "html, php, njk, md",
 		"body": [
-			"<link rel=\"preload\" href=\"$1\" as=\"font\" type=\"font/woff2\" crossorigin>"
+			"<link rel=\"preload\" href=\"$1\" as=\"font\" type=\"font/woff2\" crossorigin>",
 		],
-		"description": "Fonts preload"
+		"description": "Fonts preload",
 	},
 
 	"Section": {
@@ -16,9 +16,9 @@
 			"\t<div class=\"container $1__container\">",
 			"\t\t$2",
 			"\t</div>",
-			"</section>"
+			"</section>",
 		],
-		"description": "Section"
+		"description": "Section",
 	},
 
 	"Swiper HTML Layout": {
@@ -36,9 +36,9 @@
 			"\t<button class=\"swiper-button-next\"></button>",
 			"",
 			"\t<div class=\"swiper-scrollbar\"></div>",
-			"</div>"
+			"</div>",
 		],
-		"description": "Swiper HTML Layout"
+		"description": "Swiper HTML Layout",
 	},
 
 	"Section bootstrap": {
@@ -53,8 +53,8 @@
 			"\t\t\t</div>",
 			"\t\t</div>",
 			"\t</div>",
-			"</div>"
+			"</div>",
 		],
-		"description": "Section bootstrap"
+		"description": "Section bootstrap",
 	},
 }

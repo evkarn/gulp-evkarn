@@ -1,4 +1,4 @@
-function slideUp (target, duration) {
+function slideUp(target, duration) {
 	target.style.transitionProperty = 'height, margin, padding';
 	target.style.transitionDuration = duration + 'ms';
 	target.style.boxSizing = 'border-box';
@@ -24,6 +24,6 @@ function slideUp (target, duration) {
 		target.style.removeProperty('transition-property');
 		target.style.removeProperty('border');
 	}, duration);
-};
+}
 
 export default slideUp;

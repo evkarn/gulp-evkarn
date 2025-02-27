@@ -1,5 +1,5 @@
-@import "./select";
-@import "./select__title";
+@use "./select";
+@use "./select__title";
 
 .select__chevron {
 	margin-left: auto;
@@ -79,7 +79,6 @@
 	padding: 6px;
 
 	border-radius: 2px;
-
 
 	> * {
 		pointer-events: none;

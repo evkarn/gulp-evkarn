@@ -1,19 +1,19 @@
-@import "./modal";
+@use "./modal";
 
-@import "./modal__overlay";
+@use "./modal__overlay";
 
-@import "./modal__container";
+@use "./modal__container";
 
-@import "./modal__header";
+@use "./modal__header";
 
-@import "./modal__title";
+@use "./modal__title";
 
-@import "./modal__subtitle";
+@use "./modal__subtitle";
 
-@import "./modal__close";
+@use "./modal__close";
 
-@import "./modal__content";
+@use "./modal__content";
 
-@import "./keyframes";
+@use "./keyframes";
 
-@import "./modal-service/index";
+@use "./modal-service/index";

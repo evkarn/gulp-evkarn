@@ -1,21 +1,25 @@
+@use '../variables/general';
+@use '../variables/grid';
+@use '../mixins/units';
+
 .body {
 	position: relative;
 
-	min-width: $minimal + px;
+	min-width: grid.$minimal + px;
 
 	margin: 0;
 
 	font-family: var(--ff-body);
 	font-style: normal;
-	font-size: $font-size + px;
+	font-size: units.rem(general.$font-size);
 	font-weight: 400;
-	line-height: 1.3;
+	line-height: 1.5;
 
 	background-color: var(--body-bg);
 	color: var(--text-dark);
 	overflow-x: hidden;
 
-	@include min-full-hd-px {
-		@include calc-size(font-size, $font-size, $font-size * 2, 1920, 3840, px);
+	@media ( min-width: units.em(1920.96) ) {
+		font-size: calc(units.rem(general.$font-size) + (general.$font-size * 2 - general.$font-size) * ((100vw - units.rem(1920)) / (3840 - 1920)));
 	}
 }

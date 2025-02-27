@@ -2,7 +2,7 @@
 import webp from 'gulp-webp';
 
 // Обработка ошибок
-import plumberInit from './plumber.js'
+import {plumberInit} from './plumber.js'
 
 export const imgWebp = () => {
 	// Находим исходники изображений

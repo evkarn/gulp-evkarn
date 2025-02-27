@@ -4,7 +4,7 @@
 	display: inline;
 
 	&:after {
-		content: "";
+		content: '›';
 
 		position: absolute;
 		top: 50%;
@@ -12,16 +12,9 @@
 
 		display: block;
 
-		@include calc-size(width, 12, 15, 320, 1920, px);
-		@include calc-size(height, 7, 9, 320, 1920, px);
-
-		background-image: url("../images/dist/icons/caret-down.svg");
-		background-repeat: no-repeat;
-		background-position: center;
-		background-size: cover;
 		pointer-events: none;
 
-		transform: translateY(-50%);
+		transform: translateY(-50%), rotate(45deg);
 
 		transition: rotate 0.3s ease;
 

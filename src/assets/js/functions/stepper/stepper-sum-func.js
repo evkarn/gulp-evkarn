@@ -7,16 +7,16 @@ export function stepperSum() {
 
 	const cartFullPrice = document?.querySelector('[data-cart-full-price]');
 
-	const priceWithoutSpaces = str => {
+	const priceWithoutSpaces = (str) => {
 		return str.replace(/\s/g, '');
 	};
 
-	const normalPrice = str => {
+	const normalPrice = (str) => {
 		return String(str).replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, '$1 ');
 	};
 
 	if (inputs.length > 0) {
-		inputs.forEach(input => {
+		inputs.forEach((input) => {
 			if (input.value > 1) {
 				const inputParent = input.closest('[data-stepper-wrapper]');
 
@@ -35,8 +35,8 @@ export function stepperSum() {
 		});
 	}
 
-	steppers.forEach(stepper => {
-		stepper.addEventListener('click', event => {
+	steppers.forEach((stepper) => {
+		stepper.addEventListener('click', (event) => {
 			const evTarget = event.target;
 
 			const parentTarget = evTarget.closest('[data-stepper-wrapper]');
@@ -44,7 +44,7 @@ export function stepperSum() {
 			const input = parentTarget.querySelector('input');
 
 			const priceOriginal = priceWithoutSpaces(
-				parentTarget.querySelector('[data-stepper-original-price]').innerText
+				parentTarget.querySelector('[data-stepper-original-price]').innerText,
 			);
 
 			let inputValue = input.value;
@@ -55,7 +55,7 @@ export function stepperSum() {
 
 			priceEl.innerText = priceNew;
 
-			input.addEventListener('input', event => {
+			input.addEventListener('input', (event) => {
 				let changeValue = input.value;
 
 				let priceNew = normalPrice(changeValue * priceOriginal);

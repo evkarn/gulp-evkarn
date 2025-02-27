@@ -16,6 +16,6 @@ function disableScroll() {
 	documentRoot.style.setProperty('--top-position', `-${pagePosition}px`);
 
 	html.style.scrollBehavior = 'unset';
-};
+}
 
 export default disableScroll;

@@ -5,7 +5,7 @@
 
 	white-space: nowrap;
 
-	@media ( min-width: em(1920.96) ) {
+	@media (min-width: em(1920.96)) {
 		@include calc-size(font-size, 18, 36, 1920, 38400, rem);
 	}
 }

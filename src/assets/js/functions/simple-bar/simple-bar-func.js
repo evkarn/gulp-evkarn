@@ -16,8 +16,6 @@ export const simpleBarArrayFunction = () => {
 	const elements = document?.querySelectorAll('[data-simple-bar-for-array]');
 
 	if (element) {
-		Array.prototype.forEach.call(elements, el => new SimpleBar({
-
-		}));
+		Array.prototype.forEach.call(elements, (el) => new SimpleBar({}));
 	}
 };

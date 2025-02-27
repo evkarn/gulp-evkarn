@@ -1,15 +1,19 @@
 function sliderSwitchImages() {
 	const cards = document.querySelectorAll('[data-slider-images-card]');
 
-	console.log( cards );
+	console.log(cards);
 
 	if (cards) {
-		cards.forEach(el => {
+		cards.forEach((el) => {
 			let currentCard = el;
 
-			const imageSwitchItems = currentCard.querySelectorAll('[data-slider-images-item]',);
+			const imageSwitchItems = currentCard.querySelectorAll(
+				'[data-slider-images-item]',
+			);
 
-			const imagesPagination = currentCard.querySelector('[data-slider-images-pagination]');
+			const imagesPagination = currentCard.querySelector(
+				'[data-slider-images-pagination]',
+			);
 
 			if (imageSwitchItems.length > 1) {
 				imageSwitchItems.forEach((el, index) => {
@@ -19,24 +23,30 @@ function sliderSwitchImages() {
 						index == 0 ? 'is-active' : ''
 					}" data-pag-index="${index}"></li>`;
 
-					el.addEventListener('mouseenter', e => {
-						const paginationItems = currentCard.querySelectorAll('.pagination-images__item');
+					el.addEventListener('mouseenter', (e) => {
+						const paginationItems = currentCard.querySelectorAll(
+							'.pagination-images__item',
+						);
 
-						paginationItems.forEach(el => {
+						paginationItems.forEach((el) => {
 							el.classList.remove('is-active');
 						});
 
-						const targetItem = currentCard.querySelector(`.pagination-images__item[data-pag-index="${e.currentTarget.dataset.index}"]`);
+						const targetItem = currentCard.querySelector(
+							`.pagination-images__item[data-pag-index="${e.currentTarget.dataset.index}"]`,
+						);
 
-						console.log( targetItem );
+						console.log(targetItem);
 
 						targetItem.classList.add('is-active');
 					});
 
-					el.addEventListener('mouseleave', e => {
-						const paginationItems = currentCard.querySelectorAll('.pagination-images__item');
+					el.addEventListener('mouseleave', (e) => {
+						const paginationItems = currentCard.querySelectorAll(
+							'.pagination-images__item',
+						);
 
-						paginationItems.forEach(el => {
+						paginationItems.forEach((el) => {
 							el.classList.remove('is-active');
 						});
 					});

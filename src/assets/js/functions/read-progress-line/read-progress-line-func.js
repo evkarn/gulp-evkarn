@@ -20,7 +20,9 @@ export function readProgressLine() {
 
 		let siteHeight = document.documentElement.scrollHeight;
 
-		let percentageProgress = Math.floor((scrollTop / (siteHeight - windowHeight)) * 100);
+		let percentageProgress = Math.floor(
+			(scrollTop / (siteHeight - windowHeight)) * 100,
+		);
 
 		line.style.width = `${percentageProgress}%`;
 	};

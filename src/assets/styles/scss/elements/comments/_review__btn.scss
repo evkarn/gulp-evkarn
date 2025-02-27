@@ -7,7 +7,7 @@
 
 	color: var(--grey-shingle);
 
-	@media ( min-width: em(1920.96) ) {
+	@media (min-width: em(1920.96)) {
 		@include calc-size(column-gap, 2, 4, 1920, 3840, rem);
 	}
 

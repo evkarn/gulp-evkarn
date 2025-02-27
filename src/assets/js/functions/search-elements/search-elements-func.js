@@ -56,6 +56,6 @@ function searchElements() {
 			}
 		};
 	});
-};
+}
 
 export default searchElements;

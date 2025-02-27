@@ -1,4 +1,4 @@
-function tabs () {
+function tabs() {
 	'use strict';
 
 	const tabsParents = document?.querySelectorAll('[data-tabs-parent]');
@@ -11,7 +11,7 @@ function tabs () {
 				const tabsButtons = parent?.querySelectorAll('[data-tabs-btn]');
 
 				if (e.target.closest('[data-tabs-btn]')) {
-					const tabsPath = e.target.closest('[data-tabs-btn]').dataset.tabsPath;
+					const tabsPath = e.target.closest('[data-tabs-btn]').dataset.tabsBtn;
 
 					tabsButtons.forEach((el) => {
 						el.classList.remove('tabs__btn--active');
@@ -74,18 +74,18 @@ function tabs () {
 	}
 
 	const tabsHandler = (path, parent) => {
-		const tabsContents = parent?.querySelectorAll('[data-tabs-target]');
+		const tabsContents = parent?.querySelectorAll('[data-tabs-content]');
 
 		tabsContents.forEach((el) => {
 			el.classList.remove('tabs__content--active');
 		});
 
-		const target = parent?.querySelector(`[data-tabs-target="${path}"]`);
+		const target = parent?.querySelector(`[data-tabs-content="${path}"]`);
 
 		if (target) {
 			target.classList.add('tabs__content--active');
 		}
 	};
-};
+}
 
 export default tabs;

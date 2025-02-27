@@ -1,7 +1,7 @@
 .hljs-attribute {
-  color: var(--hljs-attribute);
+	color: var(--hljs-attribute);
 
-  @media screen and (-ms-high-contrast: active) {
-    color: highlight;
-  }
+	@media screen and (-ms-high-contrast: active) {
+		color: highlight;
+	}
 }

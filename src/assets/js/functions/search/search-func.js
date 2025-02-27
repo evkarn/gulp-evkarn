@@ -35,10 +35,7 @@ export const search = function() {
 	});
 
 	window.addEventListener('click', (e) => {
-		if (
-			!e.target.closest('.search-block') &&
-			!e.target.closest('.site-header')
-		) {
+		if (!e.target.closest('.search-block') && !e.target.closest('.header')) {
 			searchBlock.classList.remove('search-block--visible');
 
 			searchButton?.setAttribute('aria-expanded', 'false');

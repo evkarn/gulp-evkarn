@@ -2,16 +2,19 @@
 	// Pointer-events
 	"Pointer-events: none": {
 		"prefix": "pen",
-		"scope": "css, sass, less",
-		"body": ["pointer-events: none"],
-		"description": "Pointer-events: none"
+		"scope": "css, sass, scss, less",
+		"body": [
+			"pointer-events: none"
+		],
+		"description": "Pointer-events: none",
 	},
-
 	"Pointer-events: auto": {
 		"prefix": "pea",
-		"scope": "css, sass, less",
-		"body": ["pointer-events: auto"],
-		"description": "Pointer-events: auto"
+		"scope": "css, sass, scss, less",
+		"body": [
+			"pointer-events: auto"
+		],
+		"description": "Pointer-events: auto",
 	},
 	// Pointer-events
 }
