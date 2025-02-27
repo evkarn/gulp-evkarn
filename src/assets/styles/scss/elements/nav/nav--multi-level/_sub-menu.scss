@@ -1,0 +1,27 @@
+@use '../../../mixins/units';
+
+.nav--multi-level .sub-menu {
+	transform-origin: 0 0;
+
+	transition: transform 0.3s ease;
+
+	transform: rotateX(-90deg);
+
+	will-change: transform;
+
+	&:before {
+		content: "";
+
+		position: absolute;
+		top: units.rem(-15);
+
+		display: block;
+		width: 100%;
+		height: units.rem(15);
+	}
+}
+
+.nav--multi-level .sub-menu .sub-menu {
+	top: 0;
+	left: 100%;
+}

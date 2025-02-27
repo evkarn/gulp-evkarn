@@ -1,0 +1,11 @@
+@use '../../../mixins/units';
+
+.nav--multi-level a {
+	display: inline-block;
+}
+
+.nav--multi-level .sub-menu a {
+	padding: units.rem(6);
+	background-color: darkslategray;
+	color: white;
+}
