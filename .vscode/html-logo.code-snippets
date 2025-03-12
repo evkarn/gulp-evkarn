@@ -9,7 +9,7 @@
 			">",
 			"\t<img",
 			"\t\tclass=\"logo__image\"",
-			"\t\tsrc=\"assets/images/dist/sprite-svg/sprite.svg#logo\"",
+			"\t\tsrc=\"assets/images/sprite-svg/sprite.svg#logo\"",
 			"\t\twidth=\"166\"",
 			"\t\theight=\"30\"",
 			"\t\talt=\"@alt\"",

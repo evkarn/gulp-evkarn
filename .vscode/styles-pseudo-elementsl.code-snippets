@@ -50,7 +50,6 @@
 		"scope": "css, sass, scss, less",
 		"body": [
 			"&:before {",
-			"",
 			"\t$1",
 			"}"
 		],

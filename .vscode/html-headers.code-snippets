@@ -7,7 +7,7 @@
 			"<header class=\"header\">",
 			"\t<div class=\"header__container container\">",
 			"\t\t<a href=\"#\" class=\"header__logo logo\">",
-			"\t\t\t<img class=\"logo__image logo-image\" src=\"assets/images/dist/svg/sprite.svg#logo\" alt=\"@alt\">",
+			"\t\t\t<img class=\"logo__image logo-image\" src=\"assets/images/svg/sprite.svg#logo\" alt=\"@alt\">",
 			"\t\t</a>",
 			"",
 			"\t\t<nav class=\"header__nav nav\" data-nav>",
@@ -28,14 +28,13 @@
 		],
 		"description": "Header with logo link",
 	},
-
 	"Header no link logo": {
 		"prefix": "headerWithoutLogoLink",
 		"scope": "html, php, njk, md",
 		"body": [
 			"<header class=\"header\">",
 			"\t<div class=\"header__container container\">",
-			"\t\t<img class=\"header__logo logo-image\" src=\"assets/images/dist/svg/sprite.svg#logo\" alt=\"@alt\">",
+			"\t\t<img class=\"header__logo logo-image\" src=\"assets/images/svg/sprite.svg#logo\" alt=\"@alt\">",
 			"",
 			"\t\t<nav class=\"header__nav nav\" data-nav>",
 			"\t\t\t<ul class=\"nav__list\" data-nav-listitemscope itemtype=\"http: //schema.org/SiteNavigationElement\">",

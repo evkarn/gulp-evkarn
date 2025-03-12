@@ -3,7 +3,7 @@ import {plumberInit} from './plumber.js'
 
 export const socialImagesMin = () => {
 	// Находим исходники изображений
-	return app.gulp.src(app.path.src.socialImages)
+	return app.gulp.src(app.path.src.socialImages, {encoding:false})
 
 
 	// Выдаём сообщение об ошибке, если она есть

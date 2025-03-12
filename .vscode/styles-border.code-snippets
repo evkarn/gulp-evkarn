@@ -35,7 +35,7 @@
 		"prefix": "bor-rad-rem",
 		"scope": "css, scss, sass, scss, less",
 		"body": [
-			"border-radius: rem(\\$border-radius);"
+			"border-radius: units.rem(general.\\$border-radius);"
 		],
 		"description": "border-radius: border-radius rem",
 	},

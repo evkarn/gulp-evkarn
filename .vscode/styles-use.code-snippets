@@ -1,0 +1,23 @@
+{
+	"use units": {
+		"prefix": "use-units",
+		"scope": "css, scss, sass, scss, less",
+		"body": [
+			"@use '../$1mixins/units';"
+		],
+	},
+	"use grid": {
+		"prefix": "use-grid",
+		"scope": "css, scss, sass, scss, less",
+		"body": [
+			"@use '../$1variables/grid';"
+		],
+	},
+	"use general": {
+		"prefix": "use-general",
+		"scope": "css, scss, sass, scss, less",
+		"body": [
+			"@use '../$1variables/general';"
+		],
+	},
+}

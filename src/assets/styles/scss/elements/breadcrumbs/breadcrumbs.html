@@ -1,48 +1,62 @@
-<nav class="page__breadcrumbs breadcrumbs">
+<section class="breadcrumbs">
 	<div class="container">
-		<ol
-			class="breadcrumbs__list list-reset"
-			itemscope
-			itemtype="https://schema.org/BreadcrumbList"
+		<nav
+			class="breadcrumbs__nav"
+			aria-labelledby="my-breadcrumbs"
 		>
-			<li
-				class="breadcrumbs__item"
-				itemprop="itemListElement"
+			<h2
+				class="h2 visually-hidden"
+				id="my-breadcrumbs"
+			>Ссылки хлебных крошек</h2>
+
+			<ol
+				class="breadcrumbs__list list-reset"
 				itemscope
-				itemtype="https://schema.org/ListItem"
+				itemtype="http://schema.org/BreadcrumbList"
 			>
-				<a
-					class="breadcrumbs__link"
-					href="/"
-					itemprop="item"
+				<li
+					class="breadcrumbs__item"
+					itemprop="itemListElement"
+					itemscope
+					itemtype="http://schema.org/ListItem"
 				>
-					<span itemprop="name">Главная</span>
-				</a>
+					<a
+						class="breadcrumbs__link"
+						href="/"
+						itemprop="item"
+					>
+						<span itemprop="name">Главная</span>
+					</a>
 
-				<meta
-					itemprop="position"
-					content="1"
-				/>
-			</li>
+					<meta
+						itemprop="position"
+						content="1"
+					>
+				</li>
 
-			<li
-				class="breadcrumbs__item"
-				itemprop="itemListElement"
-				itemscope
-				itemtype="https://schema.org/ListItem"
-			>
-				<span
-					class="breadcrumbs__link"
-					itemprop="item"
+				<li
+					class="breadcrumbs__item"
+					itemprop="itemListElement"
+					itemscope
+					itemtype="http://schema.org/ListItem"
 				>
-					<span itemprop="name">О нас</span>
-				</span>
+					<a
+						class="breadcrumbs__link breadcrumbs__link--current"
+						href="{{ page.url }}"
+						itemprop="item"
+						aria-current="page"
+					>
+						<span itemprop="name">
+							{{ title }}
+						</span>
+					</a>
 
-				<meta
-					itemprop="position"
-					content="2"
-				/>
-			</li>
-		</ol>
+					<meta
+						itemprop="position"
+						content="2"
+					>
+				</li>
+			</ol>
+		</nav>
 	</div>
-</nav>
+</section>

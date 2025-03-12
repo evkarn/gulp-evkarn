@@ -43,8 +43,8 @@ import { zip } from './gulp/tasks/zip.js';
 function watcher(done) {
 	gulp.watch(path.watch.html, html);
 	gulp.watch(path.watch.files, copyFiles);
-	gulp.watch(path.watch.img, gulp.parallel(imgAvif, imgWebp, imgMin));
-	gulp.watch(path.watch.imgSvg, gulp.parallel(imgMin));
+	gulp.watch(path.watch.img, gulp.series(imgAvif, imgWebp, imgMin));
+	gulp.watch(path.watch.imgSvg, imgMin);
 	gulp.watch(path.watch.js, js);
 	gulp.watch(path.watch.socialImages, socialImagesMin);
 	gulp.watch(path.watch.styles, styles);
@@ -57,17 +57,16 @@ const fonts = gulp.series(ttfToWoff, fontsStyle);
 
 // Основные задачи
 const mainTasks = gulp.parallel(
-	copyFiles,
-	copyFavicon,
-	copyConfigFiles,
 	html,
 	styles,
 	js,
-	imgAvif,
-	imgWebp,
 	imgMin,
+	gulp.series(imgAvif, imgWebp),
+	svgSpriteIcons,
 	socialImagesMin,
-	svgSpriteIcons
+	copyFiles,
+	copyFavicon,
+	copyConfigFiles,
 );
 
 // Построение сценариев выполнения задач

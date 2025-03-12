@@ -36,6 +36,20 @@
 		],
 		"description": "Margin not-last-child-px",
 	},
+	"Margin: rem": {
+		"prefix": "mr",
+		"scope": "css, sass, scss, less",
+		"body": [
+			"margin: units.rem($1);"
+		],
+	},
+	"Margin: px": {
+		"prefix": "mp",
+		"scope": "css, sass, scss, less",
+		"body": [
+			"margin: $1px;"
+		],
+	},
 	"Margin-top: rem": {
 		"prefix": "mtr",
 		"scope": "css, sass, scss, less",

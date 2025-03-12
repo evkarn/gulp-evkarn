@@ -43,7 +43,7 @@ export const styles = (done) => {
 
 
 	// Инициализация создания карты источников
-	.pipe(sourceMaps.init())
+	.pipe(app.plugins.if(app.isDev,	sourceMaps.init()))
 
 
 	// Выбор вида сжатия конечного файла
@@ -98,7 +98,7 @@ export const styles = (done) => {
 
 
 	// Создание файла карты источников
-	.pipe(sourceMaps.write())
+	.pipe(app.plugins.if(app.isDev,	sourceMaps.write()))
 
 
 	// Выгружаем файл стилей в папку проекта dist

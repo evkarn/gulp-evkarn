@@ -15,29 +15,29 @@
 		],
 		"description": "color: currentColor",
 	},
-	"color: var(--c-text)": {
+	"color: var(--text)": {
 		"prefix": "color-var-text",
 		"scope": "css, sass, scss, less",
 		"body": [
 			"color: var(--text);"
 		],
-		"description": "color: var(--c-text)",
+		"description": "color: var(--text)",
 	},
-	"color: var(--c-accent)": {
+	"color: var(--accent)": {
 		"prefix": "color-var-accent",
 		"scope": "css, sass, scss, less",
 		"body": [
 			"color: var(--accent);"
 		],
-		"description": "color: var(--c-accent)",
+		"description": "color: var(--accent)",
 	},
-	"color: var(--c-accent-dark)": {
+	"color: var(--accent-dark)": {
 		"prefix": "color-var-acc-dark",
 		"scope": "css, sass, scss, less",
 		"body": [
 			"color: var(--accent-dark);"
 		],
-		"description": "color: var(--c-accent-dark)",
+		"description": "color: var(--accent-dark)",
 	},
 	"color: var(--accent-light)": {
 		"prefix": "color-var-accent-light",
@@ -47,13 +47,13 @@
 		],
 		"description": "color: var(--accent-light)",
 	},
-	"color: var(--c-lighten)": {
+	"color: var(--lighten)": {
 		"prefix": "color-var-lighten",
 		"scope": "css, sass, scss, less",
 		"body": [
 			"color: var(--lighten);"
 		],
-		"description": "color: var(--c-lighten)",
+		"description": "color: var(--lighten)",
 	},
 	"color: var(--darken)": {
 		"prefix": "color-var-darken",
@@ -71,13 +71,13 @@
 		],
 		"description": "color: var(--dark)",
 	},
-	"color: var(--c-light)": {
+	"color: var(--light)": {
 		"prefix": "color-var-light",
 		"scope": "css, sass, scss, less",
 		"body": [
 			"color: var(--light);"
 		],
-		"description": "color: var(--c-light)",
+		"description": "color: var(--light)",
 	},
 	"rgb($1 $2 $3)": {
 		"prefix": "rgb",

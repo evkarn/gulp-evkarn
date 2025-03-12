@@ -1,0 +1,88 @@
+{
+	"Width rem": {
+		"prefix": "w-rem",
+		"scope": "css, sass, scss, less",
+		"body": [
+			"width: units.rem($1);"
+		],
+	},
+	"height: rem": {
+		"prefix": "h-rem",
+		"scope": "css, sass, scss, less",
+		"body": [
+			"height: units.rem($1);"
+		],
+	},
+	"Width px": {
+		"prefix": "w-px",
+		"scope": "css, sass, scss, less",
+		"body": [
+			"width: $1px;"
+		],
+	},
+	"height: px": {
+		"prefix": "h-px",
+		"scope": "css, sass, scss, less",
+		"body": [
+			"height: $1px;"
+		],
+	},
+
+	"min-width rem": {
+		"prefix": "miw-rem",
+		"scope": "css, sass, scss, less",
+		"body": [
+			"min-width: units.rem($1);"
+		],
+	},
+	"min-height: rem": {
+		"prefix": "mih-rem",
+		"scope": "css, sass, scss, less",
+		"body": [
+			"min-height: units.rem($1);"
+		],
+	},
+	"min-width px": {
+		"prefix": "miw-px",
+		"scope": "css, sass, scss, less",
+		"body": [
+			"min-width: $1px;"
+		],
+	},
+	"min-height: px": {
+		"prefix": "mih-px",
+		"scope": "css, sass, scss, less",
+		"body": [
+			"min-height: $1px;"
+		],
+	},
+
+	"max-width rem": {
+		"prefix": "maw-rem",
+		"scope": "css, sass, scss, less",
+		"body": [
+			"max-width: units.rem($1);"
+		],
+	},
+	"max-height: rem": {
+		"prefix": "mah-rem",
+		"scope": "css, sass, scss, less",
+		"body": [
+			"max-height: units.rem($1);"
+		],
+	},
+	"max-width px": {
+		"prefix": "maw-px",
+		"scope": "css, sass, scss, less",
+		"body": [
+			"max-width: $1px;"
+		],
+	},
+	"max-height: px": {
+		"prefix": "mah-px",
+		"scope": "css, sass, scss, less",
+		"body": [
+			"max-height: $1px;"
+		],
+	},
+}
