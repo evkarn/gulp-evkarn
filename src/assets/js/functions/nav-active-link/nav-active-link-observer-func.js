@@ -32,8 +32,8 @@ export function navActiveLink() {
 			},
 		);
 
-		sections.forEach((section) => {
-			observer.observe(section);
+		sections.forEach((el) => {
+			observer.observe(el);
 		});
 	}
 }

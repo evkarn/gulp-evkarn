@@ -1,14 +1,22 @@
 {
-	"gird-template-columns: repeat()": {
+	"grid-template-columns: ": {
 		"prefix": "grid-temp-col",
 		"scope": "css, sass, scss, less",
 		"body": [
-			"gird-template-columns: repeat($1, $2);"
+			"grid-template-columns: $1;"
 		],
-		"description": "gird-template-columns: repeat()",
+		"description": "grid-template-columns: repeat()",
+	},
+	"grid-template-columns: repeat()": {
+		"prefix": "grid-temp-col-repeat",
+		"scope": "css, sass, scss, less",
+		"body": [
+			"grid-template-columns: repeat($1, $2);"
+		],
+		"description": "grid-template-columns: repeat()",
 	},
 	"grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));": {
-		"prefix": "grid-temp-col-fit",
+		"prefix": "grid-auto-fit",
 		"scope": "css, sass, scss, less",
 		"body": [
 			"grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));"
@@ -16,35 +24,11 @@
 		"description": "grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));",
 	},
 	"grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));": {
-		"prefix": "grid-temp-col-fill",
+		"prefix": "grid-auto-fill",
 		"scope": "css, sass, scss, less",
 		"body": [
 			"grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));"
 		],
 		"description": "grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));",
-	},
-	"grid-gap: rem()": {
-		"prefix": "grid-gap",
-		"scope": "css, sass, scss, less",
-		"body": [
-			"grid-gap: rem($1);"
-		],
-		"description": "grid-gap: rem()",
-	},
-	"grid-row-gap: rem()": {
-		"prefix": "grid-row-gap",
-		"scope": "css, sass, scss, less",
-		"body": [
-			"grid-row-gap: rem($1);"
-		],
-		"description": "grid-row-gap: rem()",
-	},
-	"grid-column-gap: rem()": {
-		"prefix": "grid-column-gap",
-		"scope": "css, sass, scss, less",
-		"body": [
-			"grid-column-gap: rem($1);"
-		],
-		"description": "grid-column-gap: rem()",
 	},
 }

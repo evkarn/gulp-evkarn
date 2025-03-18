@@ -1,21 +1,11 @@
-.icon-bg-80 {
-	background-size: 80px 80px;
-	background-repeat: no-repeat;
+@use '../mixins/units';
 
-	@media (min-width: 1920.96px) {
-		background-size: calc(
-				80px + (160 - 80) * ((100vw - 1920px) / (3840 - 1920))
-			)
-			calc(80px + (160 - 80) * ((100vw - 1920px) / (3840 - 1920)));
-	}
+.icon-bg-80 {
+	background-size: units.rem(80) units.rem(80);
+	background-repeat: no-repeat;
 }
 
 .icon-bg-24 {
-	background-size: 24px 24px;
+	background-size: units.rem(24) units.rem(24);
 	background-repeat: no-repeat;
-
-	@media (min-width: 1920.96px) {
-		background-size: calc(24px + (48 - 24) * ((100vw - 1920px) / (3840 - 1920)))
-			calc(24px + (48 - 24) * ((100vw - 1920px) / (3840 - 1920)));
-	}
 }

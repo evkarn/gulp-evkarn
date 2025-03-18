@@ -1,4 +1,5 @@
-@use "../mixins/units";
+@use '../mixins/units';
+@use '../variables/general';
 
 .page {
 	// flex
@@ -21,37 +22,29 @@
 .section {
 	position: relative;
 
-	padding-top: units.rem(100);
-	padding-bottom: units.rem(100);
+	padding-top: units.rem(80);
+	padding-bottom: units.rem(80);
 
 	min-width: 0;
 
 	@media (max-width: units.em(1200)) {
-		padding-top: units.rem(90);
-		padding-bottom: units.rem(90);
-	}
-
-	@media (max-width: units.em(1024)) {
-		padding-top: units.rem(80);
-		padding-bottom: units.rem(80);
-	}
-
-	@media (max-width: units.em(992)) {
 		padding-top: units.rem(70);
 		padding-bottom: units.rem(70);
 	}
 
-	@media (max-width: units.em(768)) {
+	@media (max-width: units.em(1024)) {
 		padding-top: units.rem(60);
 		padding-bottom: units.rem(60);
 	}
 
-	@media (max-width: units.em(576)) {
+	@media (max-width: units.em(992)) {
 		padding-top: units.rem(50);
 		padding-bottom: units.rem(50);
 	}
+
+	@media (max-width: units.em(768)) {
+		padding-top: units.rem(40);
+		padding-bottom: units.rem(40);
+	}
 }
 
-.section__title {
-	text-align: center;
-}

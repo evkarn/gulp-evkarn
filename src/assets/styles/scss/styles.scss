@@ -3,16 +3,12 @@
 // End. Reset styles
 
 // Variables
-@use 'variables/index-vars';
+@use 'variables/root';
 // End. Variables
 
 // Fonts
 @use 'fonts/font-face';
 // END. Fonts
-
-// Mixins
-@use 'mixins/mixins';
-// END. Mixins
 
 // Global
 @use 'global-config/config';
@@ -33,7 +29,7 @@
 // End. Header
 
 // Sections
-
+@use './sections/intro/intro-index';
 // End. Sections
 
 // Footer

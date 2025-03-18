@@ -1,48 +1,43 @@
-@use '../mixins/units';
+@use "../mixins/units";
 
 .h1,
 .h2,
 .h3,
 .h4 {
-	margin: 0;
-
-	font-weight: 700;
 	font-family: var(--ff-title);
-	line-height: 1;
+	line-height: 120%;
+	letter-spacing: 0.03em;
+	text-transform: uppercase;
 
 	color: inherit;
 }
 
 .h1 {
-	font-size: units.rem(56);
+	font-size: units.rem(68);
 
-	@media ( max-width: units.em(1200) ) {
-		font-size: units.rem(46);
+	@media (max-width: units.em(1200)) {
+		font-size: units.rem(58);
 	}
 
-	@media ( max-width: units.em(1024) ) {
-		font-size: units.rem(36);
+	@media (max-width: units.em(1024)) {
+		font-size: units.rem(48);
 	}
 
-	@media ( max-width: units.em(768) ) {
-		font-size: units.rem(32);
+	@media (max-width: units.em(768)) {
+		font-size: units.rem(38);
 	}
-
-
 }
 
 .h2 {
-	font-size: units.rem(40);
+	font-size: 42px;
 
-	text-transform: uppercase;
+	color: var(--text-dark);
 
-	color: var(--deep-breath);
-
-	@media ( max-width: units.em(1024) ) {
+	@media (max-width: units.em(1024)) {
 		font-size: units.rem(30);
 	}
 
-	@media ( max-width: units.em(768) ) {
+	@media (max-width: units.em(768)) {
 		font-size: units.rem(26);
 	}
 }

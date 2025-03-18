@@ -19,24 +19,30 @@
 
 .pulse {
   position: relative;
-  text-align: center;
+
   padding: units.rem(20);
-  border-radius: 50%;
+
   width: units.rem(38);
   height: units.rem(38);
+
+  border-radius: 50%;
+
+  text-align: center;
 }
 
 .pulse:after,
 .pulse:before {
   content: '';
+
   position: absolute;
-  border: 2px solid var(--amnesia-blue);
-  left: -10px;
-  opacity: 0;
-  right: -10px;
-  top: -10px;
-  bottom: -10px;
+
+  inset: units.rem(-10);
+
+  border: units.rem(2) solid var(--amnesia-blue);
   border-radius: 50%;
+
+  opacity: 0;
+
   animation: pulse 2.5s linear infinite;
 }
 

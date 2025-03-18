@@ -1,7 +1,10 @@
+@use '../units';
+@use '../../variables/general';
+
 @mixin state-link {
 	@media (any-hover: hover) {
 		&:hover {
-			color: var(--c-accent);
+			color: var(--accent);
 
 			cursor: pointer;
 		}
@@ -15,7 +18,7 @@
 	}
 
 	&:active {
-		color: var(--c-accent-dark);
+		color: var(--accent-dark);
 
 		outline: none;
 	}

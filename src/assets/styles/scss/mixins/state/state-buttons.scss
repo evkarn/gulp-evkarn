@@ -1,7 +1,10 @@
+@use '../units';
+@use '../../variables/general';
+
 @mixin state-buttons {
 	@media (any-hover: hover) {
 		&:hover {
-			background-color: var(--c-accent-dark);
+			background-color: var(--accent-dark);
 
 			cursor: pointer;
 		}
@@ -15,7 +18,7 @@
 	}
 
 	&:active {
-		background-color: var(--c-accent-darken);
+		background-color: var(--accent-darken);
 		outline: none;
 	}
 

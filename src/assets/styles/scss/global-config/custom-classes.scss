@@ -17,7 +17,7 @@
 .txt-accent,
 .text-accent,
 .accent {
-	color: var(--c-accent);
+	color: var(--accent);
 }
 
 .underline {
@@ -139,5 +139,24 @@
 
 	&:active {
 		color: var(--accent-dark);
+	}
+}
+
+.focus-vis {
+	&:focus-visible {
+		outline-width: units.rem(general.$outline-width);
+		outline-style: dashed;
+		outline-color: currentColor;
+		outline-offset: units.rem(general.$outline-offset);
+	}
+}
+
+.txt-wrap, .text-wrap {
+	> * {
+		margin: 0;
+
+		&:not(:last-child) {
+			margin-bottom: units.rem(16);
+		}
 	}
 }

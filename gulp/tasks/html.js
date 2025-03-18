@@ -80,7 +80,7 @@ export const html = () => {
 	// 	})
 	// ))
 
-	// Добавляем атрибут версии для стилей и скриптов
+	// Обработка текста типографом
 	.pipe(app.plugins.if(
 		app.isBuild, typograf({
 			locale: ['ru', 'en-US'],
@@ -89,8 +89,11 @@ export const html = () => {
 
 			safeTags: [
 				['<\\?php', '\\?>'],
+				['\\{\\{', '\\}\\}'],
+				['\\{', '\\}'],
 				['<no-typography>', '</no-typography>'],
 				['<head>', '</head>'],
+				['<title>', '</title>'],
 				['<code>', '</code>'],
 				['<pre>', '</pre>'],
 				['---', '---'],

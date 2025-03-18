@@ -79,16 +79,16 @@
 }
 
 .flex-grid {
-	--gap: 30px;
-	--num-elements: 3;
-	
+	--flex-gap: units.rem(30);
+	--flex-els: 3;
+
 	display: flex;
 	flex-wrap: wrap;
-	gap: var(--gap);
+	gap: var(--flex-gap);
 
-	> li {
+	> .flex-grid__item {
 		width: calc(
-			(100% - ((var(--num-elements) - 1) * var(--gap))) / (var(--num-elements))
+			(100% - ((var(--flex-els) - 1) * var(--flex-gap))) / (var(--flex-els))
 		);
 	}
 }

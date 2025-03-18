@@ -1,6 +1,11 @@
-$burger-line-height: 2;
+@use '../../mixins/units';
 
 .burger {
+	--burger-width: units.rem(38);
+	--burger-height: units.rem(26);
+	--burger-line-height: units.rem(2);
+	--burger-color: #000;
+
 	position: relative;
 	z-index: 4;
 
@@ -8,13 +13,8 @@ $burger-line-height: 2;
 
 	display: none;
 
-	width: 38px;
-	height: 26px;
-
-	@media (min-width: 1920.96px) {
-		@include calc-size(width, 38, 76, 1920, 3840, px);
-		@include calc-size(height, 26, 52, 1920, 3840, px);
-	}
+	width: var(--burger-width);
+	height: var(--burger-height);
 
 	@media (max-width: units.em(grid.$switch-point)) {
 		display: inline-block;
@@ -29,19 +29,13 @@ $burger-line-height: 2;
 		display: block;
 
 		width: 100%;
-		height: $burger-line-height + px;
+		height: var(--burger-line-height);
 
-		background-color: var(--burger-line);
+		background-color: var(--burger-color);
 
 		border-radius: 2px;
 
 		transition: rotate 0.3s ease;
-
-		@include min-full-hd-em {
-			@include calc-size(height, $burger-line-height, $burger-line-height * 2, 1920, 3840, px);
-
-			@include calc-size(border-radius, 2, 4, 1920, 3840, px);
-		}
 	}
 
 	&:before {

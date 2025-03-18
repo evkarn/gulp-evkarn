@@ -1,3 +1,6 @@
+@use '../units';
+@use '../../variables/general';
+
 @mixin state-link-opacity {
 	@media (any-hover: hover) {
 		&:hover {

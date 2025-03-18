@@ -5,26 +5,15 @@
 	left: 0;
 
 	width: 100%;
-	height: $burger-line-height + px;
+	height: var(--burger-line-height);
 
-	background-color: var(--burger-line);
+	background-color: var(--burger-color);
 
 	opacity: 1;
 
 	transform: translateY(-50%);
 
 	transition: opacity 0.3s ease;
-
-	@include min-full-hd-em {
-		@include calc-size(
-			height,
-			$burger-line-height,
-			$burger-line-height * 2,
-			1920,
-			3840,
-			px
-		);
-	}
 }
 
 .burger--is-active .burger__line {
