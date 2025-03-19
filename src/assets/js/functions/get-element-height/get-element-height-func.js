@@ -5,9 +5,9 @@ function getElementHeight(selector, varHeightName) {
 		if (element) {
 			const elementHeight = element.offsetHeight;
 
-			const documentRoot = document.querySelector(':root');
+			const html = document.documentElement;
 
-			documentRoot.style.setProperty(varHeightName, `${elementHeight}px`);
+			html.style.setProperty(varHeightName, `${elementHeight}px`);
 		}
 	}
 

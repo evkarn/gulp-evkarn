@@ -1,0 +1,10 @@
+{
+	"Adaptive clamp text viewpor": {
+		"prefix": "ad-txt",
+		"scope": "css, sass, scss, less",
+		"body": [
+			"@include ad-txt.adaptive-text($1, $2);",
+		]
+	},
+}
+

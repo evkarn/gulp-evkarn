@@ -6,6 +6,15 @@
 			"@use '../$1mixins/units';"
 		],
 	},
+
+	"use ad-txt": {
+		"prefix": "use-ad-txt",
+		"scope": "css, scss, sass, scss, less",
+		"body": [
+			"@use '../$1mixins/ad-txt';"
+		],
+	},
+
 	"use grid": {
 		"prefix": "use-grid",
 		"scope": "css, scss, sass, scss, less",
@@ -13,11 +22,32 @@
 			"@use '../$1variables/grid';"
 		],
 	},
+
 	"use general": {
 		"prefix": "use-general",
 		"scope": "css, scss, sass, scss, less",
 		"body": [
 			"@use '../$1variables/general';"
+		],
+	},
+
+	"use general, grid, units": {
+		"prefix": "use-all",
+		"scope": "css, scss, sass, scss, less",
+		"body": [
+			"@use '../$1variables/general';",
+			"@use '../$1variables/grid';",
+			"@use '../$1mixins/units';",
+			"@use '../$1mixins/ad-txt';",
+		],
+	},
+
+	"use mixins variables forward": {
+		"prefix": "use-mixins-vars",
+		"scope": "css, scss, sass, scss, less",
+		"body": [
+			"@use '../$1variables/index-vars';",
+			"@use '../$1mixins/index-mixins';",
 		],
 	},
 }
