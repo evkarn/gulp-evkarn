@@ -10,9 +10,6 @@ import versionNumber from 'gulp-version-number';
 // Обработка ошибок
 import {plumberInit} from './plumber.js';
 
-// Замена img на <picture> с .webp, .avif
-import pictureHtml from 'gulp-webp-avif-html-nosvg-nogif-lazyload';
-
 // Отслеживание изменений в файлах
 import {compareContents} from 'gulp-changed';
 
@@ -36,7 +33,8 @@ export const html = () => {
 	// Вставляем заданные @include
 	.pipe(fileInclude({
 		prefix: '@',
-		basepath: '@file'
+		basepath: '@file',
+		maxRecursion: 100,
 	}))
 
 	// удаляет лишние пробелы и переводы строк внутри тега <img>
@@ -66,19 +64,6 @@ export const html = () => {
 			'file': 'gulp/version.json'
 		}
 	})))
-
-	// .pipe(app.plugins.if(
-	// 	app.isBuild, pictureHtml({
-  //     primaryFormat: 'avif',
-  //     primaryAfter: 'assets/images/',
-  //     primaryBefore: 'assets/images/',
-  //     secondaryFormat: 'webp',
-  //     secondaryAfter: 'assets/images/',
-  //     secondaryBefore: 'assets/images/',
-  //     srcsetOutput: 0,
-  //     youtubeCoverWebp: true
-	// 	})
-	// ))
 
 	// Обработка текста типографом
 	.pipe(app.plugins.if(

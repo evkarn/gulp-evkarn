@@ -1,0 +1,41 @@
+@use 'sass:math';
+@use '../variables/general';
+@use '../variables/grid';
+
+@mixin adaptive-value-rem($prop-name, $min, $max) {
+  $max-viewport-width: grid.$container-width;
+  $min-viewport-width: grid.$min-screen;
+
+  $max-size: math.div($max, general.$fz);
+  $min-size: math.div($min, general.$fz);
+  $max-width: math.div($max-viewport-width, general.$fz);
+  $min-width: math.div($min-viewport-width, general.$fz);
+
+  $slope: math.div(($max-size - $min-size), ($max-width - $min-width));
+  $y-axis-intersection: -$min-width * $slope + $min-size;
+
+  #{$prop-name}: clamp(
+    #{$min-size * 1rem},
+    #{$y-axis-intersection * 1rem} + #{$slope * 100vw},
+    #{$max-size * 1rem}
+  );
+}
+
+@mixin adaptive-value-px($prop-name, $min, $max) {
+  $max-viewport-width: grid.$container-width;
+  $min-viewport-width: grid.$min-screen;
+
+  $max-size: math.div($max, general.$fz);
+  $min-size: math.div($min, general.$fz);
+  $max-width: math.div($max-viewport-width, general.$fz);
+  $min-width: math.div($min-viewport-width, general.$fz);
+
+  $slope: math.div(($max-size - $min-size), ($max-width - $min-width));
+  $y-axis-intersection: -$min-width * $slope + $min-size;
+
+  #{$prop-name}: clamp(
+    #{$min-size * 1px},
+    #{$y-axis-intersection * 1px} + #{$slope * 100vw},
+    #{$max-size * 1px}
+  );
+}

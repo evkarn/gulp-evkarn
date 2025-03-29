@@ -1,17 +1,43 @@
-<div class="spoilers">
-	<ul class="spoilers__list spoilers__list--1" data-spoilers-list>
-		<li class="spoilers__item spoiler" data-spoiler>
+<div
+	class="spoilers"
+	itemscope
+	itemtype="https://schema.org/FAQPage"
+>
+	// Если нужно чтобы в блоке открывался только один спойлер добавляем родителю атрибут data-one-spoiler
+	<ul
+		class="spoilers__list spoilers__list--1"
+		data-spoilers-list
+		itemscope
+		itemtype="https://schema.org/FAQPage"
+	>
+		<li
+			class="spoilers__item spoiler"
+			data-spoiler
+			itemscope
+			itemprop="mainEntity"
+			itemtype="https://schema.org/Question"
+		>
 			<button
 				class="spoiler__title active"
 				data-spoiler-title
 				tabindex="-1"
 				type="button"
+				itemprop="name"
 			>
 				Обычный спойлер № 1
 			</button>
 
-			<div class="spoiler__content spoiler-content" data-spoiler-content>
-				<div class="spoiler-content__inner">
+			<div
+				class="spoiler__content spoiler-content"
+				data-spoiler-content
+				itemscope
+				itemprop="acceptedAnswer"
+				itemtype="https://schema.org/Answer"
+			>
+				<div
+					class="spoiler-content__inner"
+					itemprop="text"
+				>
 					Далеко-далеко за словесными горами в стране гласных и согласных живут
 					рыбные тексты. Свой вскоре семантика страну своего пор рот над запятых
 					ее?
@@ -19,18 +45,34 @@
 			</div>
 		</li>
 
-		<li class="spoilers__item spoiler" data-spoiler>
+		<li
+			class="spoilers__item spoiler"
+			data-spoiler
+			itemscope
+			itemprop="mainEntity"
+			itemtype="https://schema.org/Question"
+		>
 			<button
 				class="spoiler__title"
 				data-spoiler-title
 				tabindex="-1"
 				type="button"
+				itemprop="name"
 			>
 				Обычный спойлер № 2
 			</button>
 
-			<div class="spoiler__content spoiler-content" data-spoiler-content>
-				<div class="spoiler-content__inner">
+			<div
+				class="spoiler__content spoiler-content"
+				data-spoiler-content
+				itemscope
+				itemprop="acceptedAnswer"
+				itemtype="https://schema.org/Answer"
+			>
+				<div
+					class="spoiler-content__inner"
+					itemprop="text"
+				>
 					Далеко-далеко за словесными горами в стране гласных и согласных живут
 					рыбные тексты. Свой вскоре семантика страну своего пор рот над запятых
 					ее?
@@ -38,88 +80,13 @@
 			</div>
 		</li>
 	</ul>
-</div>
 
-<div class="spoilers">
-	<ul class="spoilers__list spoilers__list--2" data-spoilers-list="650,min">
-		<li class="spoilers__item spoiler" data-spoiler>
-			<button
-				class="spoiler__title"
-				data-spoiler-title
-				tabindex="-1"
-				type="button"
-			>
-				Работает на экранах выше 650 пикселей
-			</button>
-
-			<div class="spoiler__content spoiler-content" data-spoiler-content>
-				<div class="spoiler-content__inner">
-					Далеко-далеко за словесными горами в стране гласных и согласных живут
-					рыбные тексты. Свой вскоре семантика страну своего пор рот над запятых
-					ее?
-				</div>
-			</div>
-		</li>
-
-		<li class="spoilers__item spoiler" data-spoiler>
-			<button
-				class="spoiler__title"
-				data-spoiler-title
-				tabindex="-1"
-				type="button"
-			>
-				Работает на экранах выше 650 пикселей
-			</button>
-
-			<div class="spoiler__content spoiler-content" data-spoiler-content>
-				<div class="spoiler-content__inner">
-					Далеко-далеко за словесными горами в стране гласных и согласных живут
-					рыбные тексты. Свой вскоре семантика страну своего пор рот над запятых
-					ее?
-				</div>
-			</div>
-		</li>
+	// Сработает при ширине экрана от 650 и выше
+	<ul data-spoilers-list="650,min">
 	</ul>
-</div>
 
-<div class="spoilers">
-	<ul class="spoilers__list spoilers__list--3" data-spoilers-list="800,max">
-		<li class="spoilers__item spoiler" data-spoiler>
-			<button
-				class="spoiler__title"
-				data-spoiler-title
-				tabindex="-1"
-				type="button"
-			>
-				Работает на экранах меньше 800 пикселей
-			</button>
 
-			<div class="spoiler__content spoiler-content" data-spoiler-content>
-				<div class="spoiler-content__inner">
-					Далеко-далеко за словесными горами в стране гласных и согласных живут
-					рыбные тексты. Свой вскоре семантика страну своего пор рот над запятых
-					ее?
-				</div>
-			</div>
-		</li>
-
-		<li class="spoilers__item spoiler" data-spoiler>
-			<button
-				class="spoiler__title"
-				data-spoiler-title
-				tabindex="-1"
-				type="button"
-			>
-				Работает на экранах меньше 800 пикселей
-			</button>
-
-			<div class="spoiler__content spoiler-content" data-spoiler-content>
-				<div class="spoiler-content__inner">
-					Далеко-далеко за словесными горами в стране гласных и согласных живут
-					рыбные тексты. Свой вскоре семантика страну своего пор рот над запятых
-					ее?
-				</div>
-			</div>
-		</li>
+	// Сработает при ширине экрана менее 650
+	<ul data-spoilers-list="800,max">
 	</ul>
 </div>

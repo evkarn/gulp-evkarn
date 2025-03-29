@@ -35,3 +35,9 @@
 // Footer
 @use './footer/index-footer';
 // End. Footer
+
+// Media
+@use './@media/index-media-em';
+@use './@media/index-media-rem';
+@use './@media/index-media-px';
+// End. Media

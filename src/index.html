@@ -7,22 +7,52 @@
 >
 @include('includes/head.html', {
 "title": "Заголовок страницы",
-"siteUrl": 	"https://site.ru",
+"siteUrl": "https://site.ru",
 "description": "Описание страницы",
 "keywords": "Ключ1, Ключ2",
 "ogImage": "home",
 "css": "styles"
 })
 
-	<body class="body body--home" itemscope itemtype="https://schema.org/WebPage">
-		<div class="page">
-			@include('includes/header.html', {"alt": "Логотип"})
+<body
+	class="body body--home"
+	itemscope
+	itemtype="https://schema.org/WebPage"
+>
+	<div class="page">
+		@include('includes/header.html', {"alt": "Логотип"})
 
-			<main class="main"></main>
+		<main class="main">
 
-			@include('includes/footer.html')
-		</div>
+			<div class="text-center mt-5">
+				<div
+					data-mode="light"
+					class="cursor-pointer inline-block"
+				>
+					Light
+				</div>
 
-		<script src="assets/js/scripts.min.js"></script>
-	</body>
+				<div
+					data-mode="dark"
+					class="cursor-pointer inline-block"
+				>
+					Dark
+				</div>
+
+				<div
+					data-mode="auto"
+					class="cursor-pointer inline-block"
+				>
+					Auto
+				</div>
+			</div>
+
+		</main>
+
+		@include('includes/footer.html')
+	</div>
+
+	<script src="assets/js/scripts.min.js"></script>
+</body>
+
 </html>

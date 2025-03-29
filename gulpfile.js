@@ -30,7 +30,6 @@ import { html } from './gulp/tasks/html.js';
 import { imgAvif } from './gulp/tasks/imgAvif.js';
 import { imgMin } from './gulp/tasks/imgMin.js';
 import { imgWebp } from './gulp/tasks/imgWebp.js';
-import { socialImagesMin } from './gulp/tasks/socialImages.js';
 import { js } from './gulp/tasks/js.js';
 import { reset } from './gulp/tasks/reset.js';
 import { styles } from './gulp/tasks/styles.js';
@@ -46,7 +45,6 @@ function watcher(done) {
 	gulp.watch(path.watch.img, gulp.series(imgAvif, imgWebp, imgMin));
 	gulp.watch(path.watch.imgSvg, imgMin);
 	gulp.watch(path.watch.js, js);
-	gulp.watch(path.watch.socialImages, socialImagesMin);
 	gulp.watch(path.watch.styles, styles);
 	gulp.watch(path.watch.svgSprite, svgSpriteIcons);
 	done();
@@ -63,7 +61,6 @@ const mainTasks = gulp.parallel(
 	imgMin,
 	gulp.series(imgAvif, imgWebp),
 	svgSpriteIcons,
-	socialImagesMin,
 	copyFiles,
 	copyFavicon,
 	copyConfigFiles,

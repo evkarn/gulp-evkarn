@@ -5,13 +5,8 @@ import autoprefixer from 'gulp-autoprefixer';
 import cleanCss from 'gulp-clean-css';
 
 // Обработка стилей sass, scss
-import * as sass from 'sass';
-
-// Обработка стилей sass, scss
+import * as dartSass from 'sass';
 import gulpSass from 'gulp-sass';
-
-// Генерирует дополнительные выражения с классами .webp и .avif и соответствующим расширением.
-import webpAvifCss from 'gulp-web-images-css';
 
 // Группировка медиа запросов
 import groupCssMediaQueries from 'gulp-group-css-media-queries';
@@ -22,14 +17,11 @@ import {plumberInit} from './plumber.js'
 // Отслеживание изменений в файлах
 import {compareContents} from 'gulp-changed';
 
-// Создание карты источников
-import sourceMaps from 'gulp-sourcemaps'
-
-const sassUse = gulpSass(sass);
+const sass = gulpSass(dartSass);
 
 export const styles = (done) => {
 	// Находим файлы sass в папке исходников
-	return app.gulp.src(app.path.src.styles, { sourcemaps: app.isDev })
+	return app.gulp.src(app.path.src.styles, { sourcemaps: !app.isBuild })
 
 
 	// Вывод сообщения об ошибке, если появляется ошибка
@@ -42,45 +34,30 @@ export const styles = (done) => {
 	))
 
 
-	// Инициализация создания карты источников
-	.pipe(app.plugins.if(app.isDev,	sourceMaps.init()))
-
-
 	// Выбор вида сжатия конечного файла
-	.pipe(sassUse({
-		outputStyle: 'compressed',
-		silenceDeprecations: ['legacy-js-api'],
-	}))
+	.pipe(sass({
+		style: 'compressed',
+	}).on('error', sass.logError))
 
 
 	// Если в режиме продакшена группируем медиа-запросы
 	.pipe(app.plugins.if(app.isBuild,	groupCssMediaQueries()))
 
 
-	// Если в режиме продакшена создаём дополнительные выражения с классами .webp и .avif и соответствующим расширением для изображений.
-	.pipe(app.plugins.if(app.isBuild,	webpAvifCss({
-		extensions: ['.jpg', '.jpeg', '.png'],
-
-		mode: 'all'
-	})))
-
-
 	// Если в режиме продакшена добавляем вендерные префиксы для совместимости стилей
 	.pipe(app.plugins.if(app.isBuild, autoprefixer({
 		grid: true,
-
 		overrideBrowsersList: ["last 5 versions"],
-
 		cascade: false
 	})))
 
 
 	// Если в режиме продакшена создаём не сжатый дубль файла стилей
-	.pipe(app.plugins.if(app.isBuild,	app.gulp.dest(app.path.build.css)))
+	.pipe(app.plugins.if(app.isBuild,	app.gulp.dest(app.path.build.css, { sourcemaps: !app.isBuild })))
 
 
 	// Если в режиме продакшена сжимаем файл стилей
-	.pipe(app.plugins.if(app.isBuild, cleanCss()))
+	.pipe(app.plugins.if(app.isBuild, cleanCss({level: 2})))
 
 
 	// Убираем лишнее в адресах картинок
@@ -97,12 +74,8 @@ export const styles = (done) => {
 	}))
 
 
-	// Создание файла карты источников
-	.pipe(app.plugins.if(app.isDev,	sourceMaps.write()))
-
-
 	// Выгружаем файл стилей в папку проекта dist
-	.pipe(app.gulp.dest(app.path.build.css))
+	.pipe(app.gulp.dest(app.path.build.css, { sourcemaps: '.' }))
 
 
 	// При обновлении файла перезагружаем страницу

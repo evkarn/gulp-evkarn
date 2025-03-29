@@ -8,10 +8,10 @@
 	},
 
 	"use ad-txt": {
-		"prefix": "use-ad-txt",
+		"prefix": "use-ad-val",
 		"scope": "css, scss, sass, scss, less",
 		"body": [
-			"@use '../$1mixins/ad-txt';"
+			"@use '../$1mixins/adaptive-value';"
 		],
 	},
 
@@ -38,7 +38,7 @@
 			"@use '../$1variables/general';",
 			"@use '../$1variables/grid';",
 			"@use '../$1mixins/units';",
-			"@use '../$1mixins/ad-txt';",
+			"@use '../$1mixins/adaptive-value';",
 		],
 	},
 
