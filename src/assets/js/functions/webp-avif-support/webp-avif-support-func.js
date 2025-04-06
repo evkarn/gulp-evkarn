@@ -1,4 +1,4 @@
-export function webpAvifSupport() {
+export default function webpAvifSupport() {
 	'use strict';
 
 	// Проверка поддержки webp

@@ -1,4 +1,4 @@
-export function stepper() {
+export default function stepper() {
 	'use strict';
 
 	const steppers = document?.querySelectorAll('[data-stepper]');
@@ -10,7 +10,7 @@ export function stepper() {
 		}
 	}
 
-	const buttonDisabled = () => {
+	const buttonDisabled() {
 		if (count == 1) {
 			stepperButtonDown.disabled = true;
 		} else {
@@ -33,7 +33,7 @@ export function stepper() {
 
 				let count = stepperInput.value;
 
-				const isNotApple = () => {
+				const isNotApple() {
 					if (!/iPhone|iPad|iPod/i.test(navigator.userAgent)) {
 						return false;
 					}

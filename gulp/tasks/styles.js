@@ -12,14 +12,14 @@ import gulpSass from 'gulp-sass';
 import groupCssMediaQueries from 'gulp-group-css-media-queries';
 
 // Обработка ошибок
-import { plumberInit } from './plumber.js';
+import plumberInit from './plumber.js';
 
 // Отслеживание изменений в файлах
 import { compareContents } from 'gulp-changed';
 
 const sass = gulpSass(dartSass);
 
-export const styles = done => {
+export default function styles() {
 	// Находим файлы sass в папке исходников
 	return (
 		app.gulp
@@ -44,7 +44,6 @@ export const styles = done => {
 
 			// Если в режиме продакшена группируем медиа-запросы
 			.pipe(app.plugins.if(app.isBuild, groupCssMediaQueries()))
-				
 
 			// Если в режиме продакшена добавляем вендерные префиксы для совместимости стилей
 			.pipe(
@@ -90,4 +89,4 @@ export const styles = done => {
 			// При обновлении файла перезагружаем страницу
 			.pipe(app.plugins.browsersync.stream())
 	);
-};
+}

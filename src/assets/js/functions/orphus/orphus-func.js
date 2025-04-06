@@ -1,4 +1,4 @@
-export const orphus = () => {
+export default function orphus() {
 	(function () {
 		'use strict';
 
@@ -385,4 +385,4 @@ export const orphus = () => {
 
 		self.run();
 	})();
-};
+}

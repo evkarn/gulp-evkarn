@@ -2,7 +2,7 @@ import Swiper from 'swiper';
 
 import { Navigation, Pagination } from 'swiper/modules';
 
-export const swipersFunction = () => {
+export default function swipersFunction() {
 	'use strict';
 
 	const swiperElOne = document?.querySelector('.portfolio-slider');
@@ -43,4 +43,4 @@ export const swipersFunction = () => {
 			},
 		});
 	}
-};
+}

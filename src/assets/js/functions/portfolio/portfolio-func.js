@@ -6,7 +6,7 @@
 // portfolioTabs();
 // END. INIT PORTFOLIO-TABS
 
-export const portfolio = function () {
+export default function portfolio = function () {
 	'use strict';
 
 	const portfolioTabsNav = document.querySelector('.portfolio-tabs-nav');

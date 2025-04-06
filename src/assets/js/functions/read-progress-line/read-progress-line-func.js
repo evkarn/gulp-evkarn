@@ -1,4 +1,4 @@
-export function readProgressLine() {
+export default function readProgressLine() {
 	'use strict';
 
 	// Добавляем в body блок для линии прогресса прокрутки
@@ -13,7 +13,7 @@ export function readProgressLine() {
 	// Получаем внутренний элемент оболочки линии прогресса прокрутки
 	const line = document.querySelector('.progress-line__item');
 
-	const progressAnimation = () => {
+	const progressAnimation() {
 		let scrollTop = window.scrollY;
 
 		let windowHeight = window.innerHeight;

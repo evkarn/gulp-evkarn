@@ -1,14 +1,14 @@
 // Обработка ошибок
 import plumberInit from './plumber.js';
 
-export default function imgMin() {
+export default function svgMin() {
 	// Находим исходники изображений
 	return (
 		app.gulp
-			.src(app.path.src.img, { encoding: false })
+			.src(app.path.src.sprite, { encoding: false })
 
 			// Выдаём сообщение об ошибке, если она есть
-			.pipe(app.plugins.plumber(plumberInit('IMAGES')))
+			.pipe(app.plugins.plumber(plumberInit('SVG-MINIMIZE')))
 
 			// Проверяем менялись ли изображения
 			.pipe(app.plugins.changed(app.path.build.img))
@@ -19,14 +19,18 @@ export default function imgMin() {
 					app.isBuild,
 					app.plugins.imagemin({
 						progressive: true,
+
+						svgoPlugins: [{ removeViewBox: false }],
+
 						interlaced: true,
+
 						optimizationLevel: 3, // 0 to 7
 					}),
 				),
 			)
 
 			// Выгружаем изображения в папку assets/images
-			.pipe(app.gulp.dest(app.path.build.img))
+			.pipe(app.gulp.dest(app.path.build.svg))
 
 			// Перезагружаем страницу
 			.pipe(app.plugins.browsersync.stream())

@@ -1,4 +1,4 @@
-export function colorScheme() {
+export default function colorScheme() {
 	'use strict';
 
 	const lightStyles = document.querySelectorAll(

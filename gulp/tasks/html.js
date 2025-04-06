@@ -8,115 +8,128 @@ import typograf from 'gulp-typograf';
 import versionNumber from 'gulp-version-number';
 
 // Обработка ошибок
-import {plumberInit} from './plumber.js';
+import plumberInit from './plumber.js';
 
 // Отслеживание изменений в файлах
-import {compareContents} from 'gulp-changed';
+import { compareContents } from 'gulp-changed';
 
 // Плагин для минимизации html файлов
-import htmlClean from "gulp-htmlclean";
+import htmlClean from 'gulp-htmlclean';
 
-export const html = () => {
+export default function html() {
 	// Находим все .html в папке исходников
-	return app.gulp.src(app.path.src.html)
+	return (
+		app.gulp
+			.src(app.path.src.html)
 
-	// Вывод сообщения об ошибке, если появляется ошибка
-	.pipe(app.plugins.plumber(plumberInit('HTML')))
+			// Вывод сообщения об ошибке, если появляется ошибка
+			.pipe(app.plugins.plumber(plumberInit('HTML')))
 
+			// Смотрим менялись ли файлы и обрабатываем только изменённые
+			.pipe(
+				app.plugins.changed(app.path.src.html, { hasChanged: compareContents }),
+			)
 
-	// Смотрим менялись ли файлы и обрабатываем только изменённые
-	.pipe(app.plugins.changed(
-		app.path.src.html, {hasChanged: compareContents}
-	))
+			// Вставляем заданные @include
+			.pipe(
+				fileInclude({
+					prefix: '@',
+					basepath: '@file',
+					maxRecursion: 100,
+				}),
+			)
 
+			// удаляет лишние пробелы и переводы строк внутри тега <img>
+			.pipe(
+				app.plugins.replace(/<img(?:.|\n|\r)*?>/g, function (match) {
+					return match.replace(/\r?\n|\r/g, '').replace(/\s{2,}/g, ' ');
+				}),
+			)
 
-	// Вставляем заданные @include
-	.pipe(fileInclude({
-		prefix: '@',
-		basepath: '@file',
-		maxRecursion: 100,
-	}))
+			.pipe(
+				app.plugins.replace(
+					/(?<=src=|href=|srcset=)(['"])(\.(\.)?\/)*(img|images|fonts|css|scss|sass|js|files|audio|video)(\/[^\/'"]+(\/))?([^'"]*)\1/gi,
+					'$1./$4$5$7$1',
+				),
+			)
 
-	// удаляет лишние пробелы и переводы строк внутри тега <img>
-	.pipe(app.plugins.replace(
-		/<img(?:.|\n|\r)*?>/g, function(match) {
-			return match.replace(/\r?\n|\r/g, '').replace(/\s{2,}/g, ' ');
-		})
-	)
+			// Если режим продакшена, то добавляем атрибут версии для стилей и скриптов
+			.pipe(
+				app.plugins.if(
+					app.isBuild,
+					versionNumber({
+						value: '%DT%',
 
-	.pipe(app.plugins.replace(
-			/(?<=src=|href=|srcset=)(['"])(\.(\.)?\/)*(img|images|fonts|css|scss|sass|js|files|audio|video)(\/[^\/'"]+(\/))?([^'"]*)\1/gi,
-			'$1./$4$5$7$1'
-		)
-	)
+						append: {
+							key: '_v',
+							cover: 0,
+							to: ['css', 'js'],
+						},
 
-	// Если режим продакшена, то добавляем атрибут версии для стилей и скриптов
-	.pipe(app.plugins.if(app.isBuild,	versionNumber({
-		'value': '%DT%',
+						output: {
+							file: 'gulp/version.json',
+						},
+					}),
+				),
+			)
 
-		'append': {
-			'key': '_v',
-			'cover': 0,
-			'to': ['css', 'js',]
-		},
+			// Обработка текста типографом
+			.pipe(
+				app.plugins.if(
+					app.isBuild,
+					typograf({
+						locale: ['ru', 'en-US'],
 
-		'output': {
-			'file': 'gulp/version.json'
-		}
-	})))
+						htmlEntity: { type: 'name' },
 
-	// Обработка текста типографом
-	.pipe(app.plugins.if(
-		app.isBuild, typograf({
-			locale: ['ru', 'en-US'],
+						safeTags: [
+							['<\\?php', '\\?>'],
+							['\\{\\{', '\\}\\}'],
+							['\\{', '\\}'],
+							['<no-typography>', '</no-typography>'],
+							['<head>', '</head>'],
+							['<title>', '</title>'],
+							['<code>', '</code>'],
+							['<pre>', '</pre>'],
+							['---', '---'],
+							['<script>', '</script>'],
+							['<iframe>', '</iframe>'],
+							['<img>'],
+						],
+					}),
+				),
+			)
 
-			htmlEntity: { type: 'name' },
+			// Если режим продакшена, то добавляем атрибут версии для стилей и скриптов
+			.pipe(
+				app.plugins.if(
+					app.isBuild,
+					versionNumber({
+						value: '%DT%',
 
-			safeTags: [
-				['<\\?php', '\\?>'],
-				['\\{\\{', '\\}\\}'],
-				['\\{', '\\}'],
-				['<no-typography>', '</no-typography>'],
-				['<head>', '</head>'],
-				['<title>', '</title>'],
-				['<code>', '</code>'],
-				['<pre>', '</pre>'],
-				['---', '---'],
-				['<script>', '</script>'],
-				['<iframe>', '</iframe>'],
-				['<img>'],
-			],
-		})
-	))
+						append: {
+							key: '_v',
+							cover: 0,
+							to: ['css', 'js'],
+						},
 
-	// Если режим продакшена, то добавляем атрибут версии для стилей и скриптов
-	.pipe(app.plugins.if(app.isBuild,	versionNumber({
-		'value': '%DT%',
+						output: {
+							file: 'gulp/version.json',
+						},
+					}),
+				),
+			)
 
-		'append': {
-			'key': '_v',
-			'cover': 0,
-			'to': ['css', 'js',]
-		},
+			// Если режим продакшена минимизируем html файлы
+			// .pipe(app.plugins.if(app.isBuild, htmlClean()))
 
-		'output': {
-			'file': 'gulp/version.json'
-		}
-	})))
+			// Переименовываем итоговый файл
+			.pipe(app.plugins.rename({ extname: '.html' }))
 
+			// Выгружаем файлы в папку готовой вёрстки
+			.pipe(app.gulp.dest(app.path.build.html))
 
-	// Если режим продакшена минимизируем html файлы
-	// .pipe(app.plugins.if(app.isBuild, htmlClean()))
-
-
-	// Переименовываем итоговый файл
-	.pipe(app.plugins.rename({extname: '.html'}))
-
-
-	// Выгружаем файлы в папку готовой вёрстки
-	.pipe(app.gulp.dest(app.path.build.html))
-
-
-	// Перезагружаем страницу
-	.pipe(app.plugins.browsersync.stream());
-};
+			// Перезагружаем страницу
+			.pipe(app.plugins.browsersync.stream())
+	);
+}

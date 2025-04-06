@@ -1,4 +1,4 @@
-export function rating() {
+export default function rating() {
 	'use strict';
 
 	const ratings = document.querySelectorAll('[data-rating]');

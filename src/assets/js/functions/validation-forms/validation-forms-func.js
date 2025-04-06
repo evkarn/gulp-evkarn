@@ -1,6 +1,6 @@
 import justValidate from 'just-validate';
 
-export function validationForms() {
+export default function validationForms() {
 	'use strict';
 
 	const formCallback = document?.querySelector('.form--callback');

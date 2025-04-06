@@ -34,9 +34,9 @@ export const path = {
 
 		imgWebp: `${buildFolder}/assets/images/`,
 
-		socialImages: `${buildFolder}/assets/images/social-images/`,
+		svg: `${buildFolder}/assets/svg/`,
 
-		spriteIcons: `${buildFolder}/assets/images/sprite-svg/`,
+		sprite: `${buildFolder}/assets/svg/sprite/`,
 
 		js: `${buildFolder}/assets/js/`,
 	},
@@ -51,26 +51,27 @@ export const path = {
 
 		favicon: `${srcFolder}/assets/favicon/*.*`,
 
-		fontsStyle: `${srcFolder}/assets/styles/${preprocessor}/fonts/_fonts-faces.${preprocessor}`,
+		fontsFaces: `${srcFolder}/assets/styles/${preprocessor}/fonts/_fonts-faces.${preprocessor}`,
 
 		html: `${srcFolder}/*.{html,htm}`,
 
 		js: `${srcFolder}/assets/js/*.{js,mjs}`,
 
-		img: `${srcFolder}/assets/images/src/**/*.{jpg,jpeg,png,gif,webp,heic,heif,raw,avif}`,
-
-		imgSrc: `${srcFolder}/assets/images/src/`,
-
-		socialImages: `${srcFolder}/assets/images/social-images/**/*.*`,
-
 		imgAvifWebp: `${srcFolder}/assets/images/src/**/*.{jpg,jpeg,png}`,
 
-		imgMin: `${srcFolder}/assets/images/src/**/*.*`,
+		img: `${srcFolder}/assets/images/**/*.*`,
 
-		svgSprite: `${srcFolder}/assets/images/sprite-svg/**/*.svg`,
+		svg: [
+			`${srcFolder}/assets/svg/**/*.svg`,
+			`!${srcFolder}/assets/svg/sprite/`,
+		],
 
-		styles: [`${srcFolder}/assets/styles/${preprocessor}/*.${preprocessor}`, `!${srcFolder}/assets/styles/${preprocessor}/_*.${preprocessor}`],
+		sprite: `${srcFolder}/assets/svg/sprite/**/*.svg`,
 
+		styles: [
+			`${srcFolder}/assets/styles/${preprocessor}/*.${preprocessor}`,
+			`!${srcFolder}/assets/styles/${preprocessor}/_*.${preprocessor}`,
+		],
 	},
 
 	// Отслеживание изменений в файлах
@@ -79,20 +80,23 @@ export const path = {
 
 		html: `${srcFolder}/**/*.html`,
 
-		img: [`${srcFolder}/assets/images/src/**/*.*`, `!${srcFolder}/assets/images/src/**/*.svg`],
+		img: `${srcFolder}/assets/images/src/**/*.*`,
 
-		imgSvg: `${srcFolder}/assets/images/src/**/*.svg`,
+		svg: [`${srcFolder}/assets/svg/**/*.*`, `!${srcFolder}/assets/svg/sprite/`],
 
-		socialImages: `${srcFolder}/assets/images/social-images/**/*.*`,
+		sprite: `${srcFolder}/assets/svg/sprite/**/*.*`,
 
 		js: `${srcFolder}/assets/js/**/*.js`,
 
 		styles: `${srcFolder}/assets/styles/${preprocessor}/**/*.${preprocessor}`,
-
-		svgSprite: `${srcFolder}/assets/images/sprite-svg/**/*.*`,
 	},
 
-	clean: [`${buildFolder}/*.{html,ico,svg,png}`, `${buildFolder}/assets/*`, `!${buildFolder}/assets/images/`, `!${buildFolder}/assets/fonts/`],
+	clean: [
+		`${buildFolder}/*.{html,ico,svg,png}`,
+		`${buildFolder}/assets/*`,
+		`!${buildFolder}/assets/images/`,
+		`!${buildFolder}/assets/fonts/`,
+	],
 
 	buildFolder: buildFolder,
 
@@ -100,5 +104,5 @@ export const path = {
 
 	rootFolder: rootFolder,
 
-	ftp: `test-gulp`
+	ftp: `test-gulp`,
 };

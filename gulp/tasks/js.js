@@ -1,5 +1,5 @@
 // Обработка ошибок
-import { plumberInit } from './plumber.js';
+import plumberInit from './plumber.js';
 
 // Минимизация файлов
 import terser from 'terser-webpack-plugin';
@@ -10,7 +10,7 @@ import webpack from 'webpack-stream';
 // Отслеживание изменений в файлах
 import { compareContents } from 'gulp-changed';
 
-export const js = () => {
+export default function js() {
 	// Находим js файлы в папке исходников
 	return (
 		app.gulp
@@ -99,4 +99,4 @@ export const js = () => {
 			// При обновлении файла перезагружаем страницу
 			.pipe(app.plugins.browsersync.stream())
 	);
-};
+}

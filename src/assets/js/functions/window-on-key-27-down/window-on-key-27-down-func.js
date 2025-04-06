@@ -1,6 +1,6 @@
 import enableScroll from '../enable-scroll/enable-scroll-func.js';
 
-export function windowOnKey27Down() {
+export default function windowOnKey27Down() {
 	'use strict';
 
 	const burger = document?.querySelector('[data-burger]');

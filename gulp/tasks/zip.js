@@ -1,24 +1,27 @@
 // Удаление файлов
-import {deleteAsync} from "del";
+import { deleteAsync } from 'del';
 
 // Создание архива
-import zipPlugin from "gulp-zip";
+import zipPlugin from 'gulp-zip';
 
-import {plumberInit} from './plumber.js'
+import plumberInit from './plumber.js';
 
-export const zip = () => {
+export default function zip() {
 	// Удаляем архив, если он уже есть
 	deleteAsync(`./${app.path.rootFolder}.zip`);
 
 	// Находим все файлы в папке проекта
-	return app.gulp.src(`${app.path.buildFolder}/**/*.*`, {})
+	return (
+		app.gulp
+			.src(`${app.path.buildFolder}/**/*.*`, {})
 
-	// Выдаём сообщение об ошибке, если она есть
-	.pipe(app.plugins.plumber(plumberInit('ZIP')))
+			// Выдаём сообщение об ошибке, если она есть
+			.pipe(app.plugins.plumber(plumberInit('ZIP')))
 
-	// Создаём архив проекта
-	.pipe(zipPlugin(`${app.path.rootFolder}`))
+			// Создаём архив проекта
+			.pipe(zipPlugin(`${app.path.rootFolder}`))
 
-	// Помещаем архив в корень
-	.pipe(app.gulp.dest('./'));
-};
+			// Помещаем архив в корень
+			.pipe(app.gulp.dest('./'))
+	);
+}

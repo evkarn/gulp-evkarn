@@ -1,4 +1,4 @@
-export function modalEvkarn() {
+export default function modalEvkarn() {
 	'use strict';
 
 	const modals = document?.querySelector('[data-modals]');

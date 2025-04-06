@@ -1,4 +1,4 @@
-export function selectDisplayNone() {
+export default function selectDisplayNone() {
 	'use strict';
 
 	// Собираем все элементы с атрибутом "data-selects"

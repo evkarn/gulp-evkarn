@@ -1,4 +1,4 @@
-export function linkScrollToElement() {
+export default function linkScrollToElement() {
 	('use strict');
 
 	// Помещаем все ссылки с атрибутом data-nav-page в переменную

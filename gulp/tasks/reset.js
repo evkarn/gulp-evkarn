@@ -1,6 +1,6 @@
 // Удаление файлов
-import {deleteAsync} from 'del';
+import { deleteAsync } from 'del';
 
-export const reset = () => {
+export default function reset() {
 	return deleteAsync(app.path.clean);
-};
+}

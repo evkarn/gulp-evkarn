@@ -1,6 +1,6 @@
 import noUiSlider from 'nouislider';
 
-export const noUiSliderFunction = () => {
+export default function noUiSliderFunction() {
 	const sliderEl = document.getElementById('.element');
 
 	noUiSlider.create(sliderEl, {
@@ -13,4 +13,4 @@ export const noUiSliderFunction = () => {
 			max: 100,
 		},
 	});
-};
+}

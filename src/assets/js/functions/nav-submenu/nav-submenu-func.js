@@ -1,4 +1,4 @@
-export function navSubmenu() {
+export default function navSubmenu() {
 	const buttonsArrow = document?.querySelectorAll('[data-btn-submenu]');
 
 	buttonsArrow?.forEach((el) => {

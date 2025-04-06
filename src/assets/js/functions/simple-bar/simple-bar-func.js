@@ -1,6 +1,6 @@
 import SimpleBar from 'simplebar';
 
-export const simpleBarFunction = () => {
+export default function simpleBarFunction() {
 	'use strict';
 
 	const element = document?.querySelector('[data-simple-bar]');
@@ -10,7 +10,7 @@ export const simpleBarFunction = () => {
 	}
 };
 
-export const simpleBarArrayFunction = () => {
+export default function simpleBarArrayFunction() {
 	'use strict';
 
 	const elements = document?.querySelectorAll('[data-simple-bar-for-array]');

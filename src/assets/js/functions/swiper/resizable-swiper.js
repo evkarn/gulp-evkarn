@@ -1,6 +1,6 @@
 import Swiper, { Navigation } from 'swiper';
 
-export const resizableSwiper = (
+export default function resizableSwiper = (
 	breakpoint,
 	swiperClass,
 	swiperSettings,
@@ -31,7 +31,7 @@ export const resizableSwiper = (
 	checker();
 };
 
-export const someFunc = (instance) => {
+export default function someFunc = (instance) => {
 	if (instance) {
 		instance.on('slideChange', function (e) {
 			console.log('*** mySwiper.activeIndex', instance.activeIndex);

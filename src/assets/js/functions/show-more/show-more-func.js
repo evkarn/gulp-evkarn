@@ -1,4 +1,4 @@
-export function showMore() {
+export default function showMore() {
 	'use strict';
 
 	const showMoreBody = document?.querySelector('[data-show-more-body]');

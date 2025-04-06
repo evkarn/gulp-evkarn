@@ -1,4 +1,4 @@
-export function navActiveLink() {
+export default function navActiveLink() {
 	'use strict';
 
 	const dataActiveLink = document?.querySelector('[data-active-link]');

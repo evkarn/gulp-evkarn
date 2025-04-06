@@ -2,35 +2,38 @@
 import rsync from 'gulp-rsync';
 
 // Обработка ошибок
-import {plumberInit} from './plumber.js'
+import plumberInit from './plumber.js';
 
-export const ssh = () => {
+export default function ssh() {
 	// Берём все файлы
-	return app.gulp.src(`${app.path.rootFolder}/**/*.*`, {})
+	return (
+		app.gulp
+			.src(`${app.path.rootFolder}/**/*.*`, {})
 
+			// Выдаём сообщение об ошибке, если она есть
+			.pipe(app.plugins.plumber(plumberInit('SSH')))
 
-	// Выдаём сообщение об ошибке, если она есть
-	.pipe(app.plugins.plumber(plumberInit('SSH')))
+			// Передаём файлы на сервер
+			.pipe(
+				rsync({
+					root: './dist/',
 
+					hostname: 'intelle6@intellektfinanceru.intelle6.cp.regruhosting.ru',
 
-	// Передаём файлы на сервер
-	.pipe(rsync({
-		root: './dist/',
+					destination: '/var/www/intelle6/public_html/intellektfinance.ru',
 
-		hostname: 'intelle6@intellektfinanceru.intelle6.cp.regruhosting.ru',
+					include: ['*.htaccess'], // Included files
 
-		destination: '/var/www/intelle6/public_html/intellektfinance.ru',
+					exclude: ['**/Thumbs.db', '**/*.DS_Store'], // Excluded files
 
-		include: ['*.htaccess'], // Included files
+					recursive: true,
 
-		exclude: ['**/Thumbs.db', '**/*.DS_Store'], // Excluded files
+					archive: true,
 
-		recursive: true,
+					silent: false,
 
-		archive: true,
-
-		silent: false,
-
-		compress: true
-	}));
-};
+					compress: true,
+				}),
+			)
+	);
+}

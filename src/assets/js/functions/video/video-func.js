@@ -1,4 +1,4 @@
-export const video = () => {
+export default function video() {
 	// // Load the IFrame Player API code asynchronously.
 	// var tag = document.createElement('script');
 
@@ -66,4 +66,4 @@ export const video = () => {
 
 		player.mute();
 	}
-};
+}

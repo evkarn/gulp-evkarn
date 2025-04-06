@@ -4,7 +4,7 @@ import disableScroll from '../disable-scroll/disable-scroll-func.js';
 
 import enableScroll from '../enable-scroll/enable-scroll-func.js';
 
-export function lightbox() {
+export default function lightbox() {
 	fsLightboxInstances['portfolio'].props.onOpen = function () {
 		disableScroll();
 	};

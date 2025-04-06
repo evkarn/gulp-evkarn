@@ -1,4 +1,4 @@
-export function readProgressCircle() {
+export default function readProgressCircle() {
 	'use strict';
 
 	// Добавляем в body блок для линии прогресса прокрутки
@@ -13,7 +13,7 @@ export function readProgressCircle() {
 
 	const circle = document.querySelector('.circle-block__progress');
 
-	const progressAnimation = () => {
+	const progressAnimation() {
 		let scrollTop = window.scrollY;
 
 		let windowHeight = window.innerHeight;

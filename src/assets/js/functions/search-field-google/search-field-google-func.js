@@ -1,4 +1,4 @@
-export const searchFieldGoogle = function () {
+export default function searchFieldGoogle = function () {
 	'use strict';
 
 	const searchButton = document?.querySelector('[data-search-button]');
