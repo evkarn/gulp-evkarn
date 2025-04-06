@@ -13,7 +13,7 @@
 		right 0.5s ease,
 		opacity 0.5s ease;
 
-	@media (max-width: units.em(grid.$switch-point)) {
+	@media (max-width: units.em(grid.$max-switch-point)) {
 		position: fixed;
 		top: 0;
 		right: -100%;

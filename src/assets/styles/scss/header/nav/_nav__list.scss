@@ -6,7 +6,7 @@
 	column-gap: units.rem(grid.$gap);
 	row-gap: units.rem(4);
 
-	@media (max-width: units.em(grid.$switch-point)) {
+	@media (max-width: units.em(grid.$max-switch-point)) {
 		flex-direction: column;
 		row-gap: units.rem(grid.$gap);
 	}

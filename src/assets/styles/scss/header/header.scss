@@ -13,7 +13,7 @@
 
 	background-color: var(--body-bg);
 
-	@media (max-width: units.em(grid.$switch-point)) {
+	@media (max-width: units.em(grid.$max-switch-point)) {
 		&:after {
 			content: "";
 

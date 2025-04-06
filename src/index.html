@@ -22,30 +22,35 @@
 	<div class="page">
 		@include('includes/header.html', {"alt": "Логотип"})
 
-		<main class="main">
+		<main
+			class="main"
+			style="margin-top: 200px;"
+		>
 
-			<div class="text-center mt-5">
-				<div
-					data-mode="light"
-					class="cursor-pointer inline-block"
-				>
-					Light
-				</div>
 
-				<div
-					data-mode="dark"
-					class="cursor-pointer inline-block"
-				>
-					Dark
-				</div>
+					<div class="color-scheme inline-flex">
+						<button
+							data-theme="light"
+							class="color-scheme__btn btn-res state-accent"
+						>
+							Light
+						</button>
 
-				<div
-					data-mode="auto"
-					class="cursor-pointer inline-block"
-				>
-					Auto
-				</div>
-			</div>
+						<button
+							data-theme="dark"
+							class="color-scheme__btn btn-res state-accent"
+						>
+							Dark
+						</button>
+
+						<button
+							data-theme="auto"
+							class="color-scheme__btn btn-res state-accent"
+						>
+							Auto
+						</button>
+					</div>
+
 
 		</main>
 

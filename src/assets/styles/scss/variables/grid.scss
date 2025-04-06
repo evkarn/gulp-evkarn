@@ -7,7 +7,8 @@ $container-offset: 15;
 
 $container-width: $content-width + $container-offset * 2;
 
-$switch-point: 768;
+$max-switch-point: 768;
+$min-switch-point: 768.96;
 
 // Breakpoints width
 $min-screen: 320;

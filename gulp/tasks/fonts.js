@@ -1,4 +1,5 @@
 import fs from 'fs';
+import path from 'path';
 
 import ttf2woff2 from 'gulp-ttf2woff2';
 
@@ -44,108 +45,140 @@ export const fontsStyle = () => {
 					let fontFileName = fontsFiles[i].split('.')[0];
 
 					if (newFileOnly !== fontFileName) {
-						let fontName = fontFileName.split('-')[0] ? fontFileName.split('-')[0] : fontFileName;
+						let fontName = fontFileName.split('-')[0]
+							? fontFileName.split('-')[0]
+							: fontFileName;
 
-						let vFont = fontFileName.split('-')[1] ? fontFileName.split('-')[1] : fontFileName;
+						let vFont = fontFileName.split('-')[1]
+							? fontFileName.split('-')[1]
+							: fontFileName;
 
-						if (vFont === 'VariableFont' || vFont.toLowerCase() === 'variablefont' || vFont === 'VF' || vFont.toLowerCase() === 'vf') {
+						if (
+							vFont === 'VariableFont' ||
+							vFont.toLowerCase() === 'variablefont' ||
+							vFont === 'VF' ||
+							vFont.toLowerCase() === 'vf'
+						) {
 							const fontFormatSt = "format('woff2-variations')";
 							const fontFormatVF = "format('woff2') tech('variations')";
 
 							// Формирование кода подключения шрифта
-							if (`${app.fontsVars.vars.preprocessor}` == 'sass' && `${app.fontsVars.vars.fontStretch}` != '') {
+							if (
+								`${app.fontsVars.vars.preprocessor}` == 'sass' &&
+								`${app.fontsVars.vars.fontStretch}` != ''
+							) {
 								fs.appendFile(
 									fileFonts,
-`@font-face\r
+									`@font-face\r
 \tfont-family: ${fontName}\r
-\tsrc: url("../fonts/${fontFileName}.${fontExtension}") ${fontFormatSt}\r
-\tsrc: url("../fonts/${fontFileName}.${fontExtension}") ${fontFormatVF}\r
+\tsrc: url('../fonts/${fontFileName}.${fontExtension}') ${fontFormatSt}\r
+\tsrc: url('../fonts/${fontFileName}.${fontExtension}') ${fontFormatVF}\r
 \t${fontDisplay}\r
 \tfont-weight: ${app.fontsVars.vars.fontWeight}\r
 \tfont-stretch: ${app.fontsVars.vars.fontStretch}
-\r\n`, cb
+\r\n`,
+									cb,
 								);
-							}
-							else if (`${app.fontsVars.vars.preprocessor}` == 'sass' && `${app.fontsVars.vars.fontStretch}` == '') {
+							} else if (
+								`${app.fontsVars.vars.preprocessor}` == 'sass' &&
+								`${app.fontsVars.vars.fontStretch}` == ''
+							) {
 								fs.appendFile(
 									fileFonts,
-`@font-face\r
+									`@font-face\r
 \tfont-family: ${fontName}\r
-\tsrc: url("../fonts/${fontFileName}.${fontExtension}") ${fontFormatSt}\r
-\tsrc: url("../fonts/${fontFileName}.${fontExtension}") ${fontFormatVF}\r
+\tsrc: url('../fonts/${fontFileName}.${fontExtension}') ${fontFormatSt}\r
+\tsrc: url('../fonts/${fontFileName}.${fontExtension}') ${fontFormatVF}\r
 \t${fontDisplay}\r
 \tfont-weight: ${app.fontsVars.vars.fontWeight}
-\r\n`, cb
+\r\n`,
+									cb,
 								);
-							}
-							else if (`${app.fontsVars.vars.preprocessor}` != 'sass' && `${app.fontsVars.vars.fontStretch}` != '') {
+							} else if (
+								`${app.fontsVars.vars.preprocessor}` != 'sass' &&
+								`${app.fontsVars.vars.fontStretch}` != ''
+							) {
 								fs.appendFile(
 									fileFonts,
-`@font-face {\r
+									`@font-face {\r
 \tfont-family: ${fontName};\r
-\tsrc: url("../fonts/${fontFileName}.${fontExtension}") ${fontFormatSt};\r
-\tsrc: url("../fonts/${fontFileName}.${fontExtension}") ${fontFormatVF};\r
+\tsrc: url('../fonts/${fontFileName}.${fontExtension}') ${fontFormatSt};\r
+\tsrc: url('../fonts/${fontFileName}.${fontExtension}') ${fontFormatVF};\r
 \t${fontDisplay};\r
 \tfont-weight: ${app.fontsVars.vars.fontWeight};\r
 \tfont-stretch: ${app.fontsVars.vars.fontStretch};
-}\r\n`, cb
+}\r\n`,
+									cb,
 								);
-							}
-							else {
+							} else {
 								fs.appendFile(
 									fileFonts,
-`@font-face {\r
+									`@font-face {\r
 \tfont-family: ${fontName};\r
-\tsrc: url("../fonts/${fontFileName}.${fontExtension}") ${fontFormatSt};\r
-\tsrc: url("../fonts/${fontFileName}.${fontExtension}") ${fontFormatVF};\r
+\tsrc: url('../fonts/${fontFileName}.${fontExtension}') ${fontFormatSt};\r
+\tsrc: url('../fonts/${fontFileName}.${fontExtension}') ${fontFormatVF};\r
 \t${fontDisplay};\r
 \tfont-weight: ${app.fontsVars.vars.fontWeight};
-}\r\n`, cb
+}\r\n`,
+									cb,
 								);
 							}
 
 							newFileOnly = fontFileName;
-						}
-						else {
-							let fontWeight = fontFileName.split('-')[1] ? fontFileName.split('-')[1] : fontFileName;
+						} else {
+							let fontWeight = fontFileName.split('-')[1]
+								? fontFileName.split('-')[1]
+								: fontFileName;
 
 							if (fontWeight.toLowerCase() === 'thin') {
 								fontWeight = 100;
-							}
-							else if (fontWeight.toLowerCase() === 'extralight') {
+							} else if (fontWeight.toLowerCase() === 'extralight') {
 								fontWeight = 200;
-							}
-							else if (fontWeight.toLowerCase() === 'light' || fontWeight.toLowerCase() === 'book' || fontWeight.toLowerCase() === 'demi') {
+							} else if (
+								fontWeight.toLowerCase() === 'light' ||
+								fontWeight.toLowerCase() === 'book' ||
+								fontWeight.toLowerCase() === 'demi'
+							) {
 								fontWeight = 300;
-							}
-							else if (fontWeight.toLowerCase() === 'regular' || fontWeight.toLowerCase() === 'normal') {
+							} else if (
+								fontWeight.toLowerCase() === 'regular' ||
+								fontWeight.toLowerCase() === 'normal'
+							) {
 								fontWeight = 400;
-							}
-							else if (fontWeight.toLowerCase() === 'medium') {
+							} else if (fontWeight.toLowerCase() === 'medium') {
 								fontWeight = 500;
-							}
-							else if (fontWeight.toLowerCase() === 'semibold' || fontWeight.toLowerCase() === 'demibold') {
+							} else if (
+								fontWeight.toLowerCase() === 'semibold' ||
+								fontWeight.toLowerCase() === 'demibold'
+							) {
 								fontWeight = 600;
-							}
-							else if (fontWeight.toLowerCase() === 'bold') {
+							} else if (fontWeight.toLowerCase() === 'bold') {
 								fontWeight = 700;
-							}
-							else if (fontWeight.toLowerCase() === 'extrabold' || fontWeight.toLowerCase() === 'heavy') {
+							} else if (
+								fontWeight.toLowerCase() === 'extrabold' ||
+								fontWeight.toLowerCase() === 'heavy'
+							) {
 								fontWeight = 800;
-							}
-							else if (fontWeight.toLowerCase() === 'black' || fontWeight.toLowerCase() === 'ultrablack' || fontWeight.toLowerCase() === 'fat') {
+							} else if (
+								fontWeight.toLowerCase() === 'black' ||
+								fontWeight.toLowerCase() === 'ultrablack' ||
+								fontWeight.toLowerCase() === 'fat'
+							) {
 								fontWeight = 900;
-							}
-							else {
+							} else {
 								fontWeight = 400;
 							}
 
-							let fontStyle = fontFileName.split('-')[2] ? fontFileName.split('-')[2] : fontFileName;
+							let fontStyle = fontFileName.split('-')[2]
+								? fontFileName.split('-')[2]
+								: fontFileName;
 
-							if(fontStyle.toLowerCase() === 'italic' || fontStyle.toLowerCase() === 'Italic') {
+							if (
+								fontStyle.toLowerCase() === 'italic' ||
+								fontStyle.toLowerCase() === 'Italic'
+							) {
 								fontStyle = 'italic';
-							}
-							else {
+							} else {
 								fontStyle = 'normal';
 							}
 
@@ -153,36 +186,38 @@ export const fontsStyle = () => {
 							if (`${app.fontsVars.vars.preprocessor}` == 'sass') {
 								fs.appendFile(
 									fileFonts,
-`@font-face\r
+									`@font-face\r
 \tfont-family: ${fontName}\r
-\tsrc: url("../fonts/${fontFileName}.${fontExtension}") ${fontFormat}\r
+\tsrc: url('../fonts/${fontFileName}.${fontExtension}') ${fontFormat}\r
 \t${fontDisplay}\r
 \tfont-weight: ${fontWeight}\r
 \tfont-style: ${fontStyle}
-\r\n`, cb
+\r\n`,
+									cb,
 								);
-							}
-							else {
+							} else {
 								fs.appendFile(
 									fileFonts,
-`@font-face {\r
+									`@font-face {\r
 \tfont-family: ${fontName};\r
-\tsrc: url("../fonts/${fontFileName}.${fontExtension}") ${fontFormat};\r
+\tsrc: url('../fonts/${fontFileName}.${fontExtension}') ${fontFormat};\r
 \t${fontDisplay};\r
 \tfont-weight: ${fontWeight};\r
 \tfont-style: ${fontStyle};
-}\r\n`, cb
+}\r\n`,
+									cb,
 								);
 							}
 
 							newFileOnly = fontFileName;
-						};
+						}
 					}
 				}
-			}
-			else {
+			} else {
 				// Если файл есть, выводим сообщение
-				console.log("Файл подключения шрифтов уже существует. Для обновления файла нужно его удалить!");
+				console.log(
+					'Файл подключения шрифтов уже существует. Для обновления файла нужно его удалить!',
+				);
 			}
 		}
 	});

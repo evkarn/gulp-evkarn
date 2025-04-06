@@ -51,7 +51,7 @@ export const path = {
 
 		favicon: `${srcFolder}/assets/favicon/*.*`,
 
-		fontsStyle: `${srcFolder}/assets/styles/${preprocessor}/fonts/_font-face.${preprocessor}`,
+		fontsStyle: `${srcFolder}/assets/styles/${preprocessor}/fonts/_fonts-faces.${preprocessor}`,
 
 		html: `${srcFolder}/*.{html,htm}`,
 

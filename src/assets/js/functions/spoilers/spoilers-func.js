@@ -55,7 +55,7 @@ function spoilers(durationSpeed) {
 		if (spoilersMedia.length > 0) {
 			const breakpointsArray = [];
 
-			spoilersMedia.forEach((item) => {
+			spoilersMedia.forEach(item => {
 				const params = item.dataset.spoilersList;
 
 				const breakpoint = [];
@@ -90,7 +90,7 @@ function spoilers(durationSpeed) {
 			});
 
 			// Работаем с каждым брейкпоинтом
-			mediaQueries.forEach((breakpoint) => {
+			mediaQueries.forEach(breakpoint => {
 				const paramsArray = breakpoint.split(',');
 
 				const mediaBreakpoint = paramsArray[1];
@@ -118,7 +118,7 @@ function spoilers(durationSpeed) {
 
 	// Инициализация
 	function initSpoilers(spoilersArray, matchMedia = false) {
-		spoilersArray.forEach((spoilersBlock) => {
+		spoilersArray.forEach(spoilersBlock => {
 			spoilersBlock = matchMedia ? spoilersBlock.item : spoilersBlock;
 
 			if (matchMedia.matches || !matchMedia) {
@@ -144,7 +144,7 @@ function spoilers(durationSpeed) {
 		);
 
 		if (spoilerTitles.length > 0) {
-			spoilerTitles.forEach((spoilerTitle) => {
+			spoilerTitles.forEach(spoilerTitle => {
 				if (hideSpoilerBody) {
 					spoilerTitle.removeAttribute('tabindex');
 

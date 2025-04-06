@@ -1,4 +1,5 @@
 @use '../../mixins/units';
+@use '../../variables/grid';
 
 .burger {
 	--burger-width: units.rem(38);
@@ -16,7 +17,7 @@
 	width: var(--burger-width);
 	height: var(--burger-height);
 
-	@media (max-width: units.em(grid.$switch-point)) {
+	@media (max-width: units.rem(grid.$max-switch-point)) {
 		display: inline-block;
 	}
 

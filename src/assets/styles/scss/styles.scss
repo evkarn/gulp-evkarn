@@ -7,7 +7,7 @@
 // End. Variables
 
 // Fonts
-@use 'fonts/font-face';
+@use 'fonts/fonts-faces';
 // END. Fonts
 
 // Global
@@ -21,7 +21,8 @@
 // End. Plugins
 
 // Elements
-// @use "./elements/index";
+@use "./elements/color-scheme/index-color-scheme";
+@use "./elements/burger/index-burger";
 // End. Elements
 
 // Header
@@ -36,8 +37,7 @@
 @use './footer/index-footer';
 // End. Footer
 
+
 // Media
-@use './@media/index-media-em';
-@use './@media/index-media-rem';
-@use './@media/index-media-px';
+@use './@media/index-media';
 // End. Media
