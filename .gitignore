@@ -3,7 +3,7 @@
 /.pnp
 /_site
 /dist
-.vscode
+.git
 
 #Files:
 desktop.ini

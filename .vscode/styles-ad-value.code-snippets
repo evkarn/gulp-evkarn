@@ -1,0 +1,18 @@
+{
+	"Adaptive clamp text viewpor rem": {
+		"prefix": "ad-value-rem",
+		"scope": "css, sass, scss, less",
+		"body": [
+			"@include adaptive-value.adaptive-value-rem($1, $2, $3);",
+		]
+	},
+
+	"Adaptive clamp text viewpor px": {
+		"prefix": "ad-value-px",
+		"scope": "css, sass, scss, less",
+		"body": [
+			"@include adaptive-value.adaptive-value-px($1, $2, $3);",
+		]
+	},
+}
+

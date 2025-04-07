@@ -57,7 +57,7 @@ export const path = {
 
 		js: `${srcFolder}/assets/js/*.{js,mjs}`,
 
-		imgAvifWebp: `${srcFolder}/assets/images/src/**/*.{jpg,jpeg,png}`,
+		imgAvifWebp: `${srcFolder}/assets/images/**/*.{jpg,jpeg,png}`,
 
 		img: `${srcFolder}/assets/images/**/*.*`,
 
@@ -80,7 +80,7 @@ export const path = {
 
 		html: `${srcFolder}/**/*.html`,
 
-		img: `${srcFolder}/assets/images/src/**/*.*`,
+		img: `${srcFolder}/assets/images/**/*.*`,
 
 		svg: [`${srcFolder}/assets/svg/**/*.*`, `!${srcFolder}/assets/svg/sprite/`],
 

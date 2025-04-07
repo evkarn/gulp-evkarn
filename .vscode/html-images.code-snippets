@@ -9,6 +9,15 @@
 		"description": "Image",
 	},
 
+	"SVG": {
+		"prefix": "svg",
+		"scope": "html, php, njk, md",
+		"body": [
+			"<img class=\"$1\" src=\"assets/svg/$2.svg\" width=\"$3\" height=\"$4\" alt=\"$5\" loading=\"lazy\" decoding=\"auto\">",
+		],
+		"description": "Image",
+	},
+
 	"Image @2x": {
 		"prefix": "img@2x",
 		"scope": "html, php, njk, md",

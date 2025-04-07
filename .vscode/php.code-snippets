@@ -1,0 +1,20 @@
+{
+	// post_meta, term_meta, user_meta, comment_meta, nav_menu_item and theme_options
+	"String replace": {
+		"prefix": "php-str-replace",
+		"scope": "html, php, njk, md",
+		"body": [
+			"<?php str_replace([' ', '(', ')', '-', '—'], '', 'Какая-то строка или переменная'); ?>",
+		],
+	},
+
+	"<?php  ?>": {
+		"prefix": "php_open",
+		"scope": "html, php, njk, md",
+		"body": [
+			"<?php",
+			"\t$1",
+			"?>",
+		],
+	},
+}

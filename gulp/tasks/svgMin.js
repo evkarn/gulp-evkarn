@@ -5,13 +5,13 @@ export default function svgMin() {
 	// Находим исходники изображений
 	return (
 		app.gulp
-			.src(app.path.src.sprite, { encoding: false })
+			.src(app.path.src.svg, { encoding: false })
 
 			// Выдаём сообщение об ошибке, если она есть
 			.pipe(app.plugins.plumber(plumberInit('SVG-MINIMIZE')))
 
 			// Проверяем менялись ли изображения
-			.pipe(app.plugins.changed(app.path.build.img))
+			.pipe(app.plugins.changed(app.path.build.svg))
 
 			// Если режим продакшена оптимизируем изображения
 			.pipe(
