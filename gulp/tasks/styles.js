@@ -12,6 +12,7 @@ import gulpSass from 'gulp-sass';
 import postCss from 'gulp-postcss';
 import sortCSSmq from 'sort-css-media-queries';
 import mqPacker from 'css-mqpacker';
+import cssnano from 'cssnano';
 
 // Обработка ошибок
 import plumberInit from './plumber.js';
@@ -37,20 +38,10 @@ export default function styles() {
 				}),
 			)
 
-			// Выбор вида сжатия конечного файла
 			.pipe(
 				sass({
-					outputStyle: 'compressed',
+					// style: 'compressed',
 				}).on('error', sass.logError),
-			)
-
-			// Если в режиме продакшена группируем медиа-запросы
-			.pipe(
-				postCss([
-					mqPacker({
-						sort: sortCSSmq,
-					}),
-				]),
 			)
 
 			// Если в режиме продакшена добавляем вендерные префиксы для совместимости стилей
@@ -76,8 +67,20 @@ export default function styles() {
 			// Если в режиме продакшена создаём не сжатый дубль файла стилей
 			.pipe(app.plugins.if(app.isBuild, app.gulp.dest(app.path.build.css)))
 
-			// Если в режиме продакшена сжимаем файл стилей
-			.pipe(app.plugins.if(app.isBuild, cleanCss({ level: 2 })))
+			// Если в режиме продакшена группируем медиа-запросы и сжимаем файл стилей
+			.pipe(
+				app.plugins.if(
+					app.isBuild,
+					postCss([
+						mqPacker({
+							sort: sortCSSmq,
+						}),
+						cssnano({
+							preset: ['default'],
+						}),
+					]),
+				),
+			)
 
 			// Переименовываем итоговый файл
 			.pipe(
