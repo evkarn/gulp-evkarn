@@ -1,6 +1,6 @@
-@use '../variables/general';
-@use '../variables/grid';
-@use '../mixins/units';
+@use "../variables/general";
+@use "../variables/grid";
+@use "../mixins/units";
 
 .body {
 	position: relative;
@@ -17,4 +17,9 @@
 
 	background-color: var(--body-bg);
 	overflow-x: hidden;
+
+	&::selection {
+		color: var(--dark);
+		background-color: var(--accent);
+	}
 }

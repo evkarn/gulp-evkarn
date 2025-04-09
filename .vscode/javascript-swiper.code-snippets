@@ -1,0 +1,58 @@
+{
+	"Swiper import": {
+		"prefix": "swiper-import",
+		"scope": "javascript, typescript",
+		"body": [
+			"import Swiper from 'swiper';",
+			"import { Navigation, Pagination } from 'swiper/modules';",
+		]
+	},
+
+	"Swiper pagination": {
+		"prefix": "swiper-pagination",
+		"scope": "javascript, typescript",
+		"body": [
+			"pagination: {",
+			"\tel: '.swiper-pagination',",
+			"},",
+		]
+	},
+
+	"Swiper navigation": {
+		"prefix": "swiper-nav",
+		"scope": "javascript, typescript",
+		"body": [
+			"navigation: {",
+			"\tnextEl: '.swiper-button-next',",
+			"\tprevEl: '.swiper-button-prev',",
+			"},",
+		]
+	},
+
+	"Swiper scriollbar": {
+		"prefix": "swiper-scroll",
+		"scope": "javascript, typescript",
+		"body": [
+			"scrollbar: {",
+			"\tel: '.swiper-scrollbar',",
+			"},",
+		]
+	},
+
+	"Swiper breakpoints": {
+		"prefix": "swiper-breakpoints",
+		"scope": "javascript, typescript",
+		"body": [
+			"breakpoints: {",
+			"\t320: {",
+			"\t\tslidesPerView: 1,",
+			"\t\tspaceBetween: 0,",
+			"\t},",
+			"\t544: {",
+			"\t\tslidesPerView: 2,",
+			"\t\tspaceBetween: 20,",
+			"\t},",
+			"},",
+		]
+	},
+}

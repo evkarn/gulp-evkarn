@@ -32,7 +32,7 @@
 		"description": "color: var(--accent)",
 	},
 	"color: var(--accent-dark)": {
-		"prefix": "color-var-acc-dark",
+		"prefix": "color-var-accent-dark",
 		"scope": "css, sass, scss, less",
 		"body": [
 			"color: var(--accent-dark);"
@@ -62,6 +62,38 @@
 			"color: var(--darken);"
 		],
 		"description": "color: var(--darken)",
+	},
+	"color: var(--text-dark)": {
+		"prefix": "color-var-text-dark",
+		"scope": "css, sass, scss, less",
+		"body": [
+			"color: var(--text-dark);"
+		],
+		"description": "color: var(--dark)",
+	},
+	"color: var(--text-light)": {
+		"prefix": "color-var-text-light",
+		"scope": "css, sass, scss, less",
+		"body": [
+			"color: var(--text-light);"
+		],
+		"description": "color: var(--light)",
+	},
+	"color: var(--title-dark)": {
+		"prefix": "color-var-title-dark",
+		"scope": "css, sass, scss, less",
+		"body": [
+			"color: var(--title-dark);"
+		],
+		"description": "color: var(--dark)",
+	},
+	"color: var(--title-light)": {
+		"prefix": "color-var-title-light",
+		"scope": "css, sass, scss, less",
+		"body": [
+			"color: var(--title-light);"
+		],
+		"description": "color: var(--light)",
 	},
 	"color: var(--dark)": {
 		"prefix": "color-var-dark",

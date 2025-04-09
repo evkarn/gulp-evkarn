@@ -1,0 +1,46 @@
+@use '../../variables/general';
+@use '../../variables/grid';
+@use '../../mixins/units';
+@use '../../mixins/adaptive-value';
+
+.card__img-link {
+	position: relative;
+
+	display: block;
+	border-bottom: units.rem(2) solid var(--dark);
+
+	background: var(--card-img-bg);
+
+	overflow: hidden;
+
+	transition: border-color 0.3s ease;
+	will-change: border-color;
+
+	@media (any-hover: hover) {
+		&:hover {
+			border-color: var(--accent);
+
+			.card__img {
+				scale: 1.2;
+			}
+
+			.badge {
+				background-color: var(--accent);
+				color: var(--text-light);
+			}
+		}
+	}
+
+	&:focus-visible {
+		border-color: var(--accent);
+
+		.card__img {
+			scale: 1.2;
+		}
+
+		.badge {
+			background-color: var(--accent);
+			color: var(--text-light);
+		}
+	}
+}

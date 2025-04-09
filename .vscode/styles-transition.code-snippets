@@ -4,7 +4,8 @@
 		"prefix": "trs",
 		"scope": "css, sass, scss, less",
 		"body": [
-			"transition: $1 .3s ease;"
+			"transition: $1 .3s ease;",
+			"will-change: $1;",
 		],
 		"description": "Transition",
 	},
@@ -12,7 +13,8 @@
 		"prefix": "trs-color",
 		"scope": "css, sass, scss, less",
 		"body": [
-			"transition: color .3s ease;"
+			"transition: color .3s ease;",
+			"will-change: color;",
 		],
 		"description": "transition: color .3s ease",
 	},
@@ -20,7 +22,8 @@
 		"prefix": "trs-fill",
 		"scope": "css, sass, scss, less",
 		"body": [
-			"transition: fill .3s ease;"
+			"transition: fill .3s ease;",
+			"will-change: fill;",
 		],
 		"description": "transition: fill .3s ease",
 	},
@@ -28,7 +31,8 @@
 		"prefix": "trs-opacity",
 		"scope": "css, sass, scss, less",
 		"body": [
-			"transition: opacity .3s ease;"
+			"transition: opacity .3s ease;",
+			"will-change: opacity;"
 		],
 		"description": "transition: opacity .3s ease",
 	},
@@ -36,7 +40,8 @@
 		"prefix": "trs-bg",
 		"scope": "css, sass, scss, less",
 		"body": [
-			"transition: background-color .3s ease;"
+			"transition: background-color .3s ease;",
+			"will-change: background-color;",
 		],
 		"description": "transition: background-color .3s ease",
 	},
@@ -44,7 +49,8 @@
 		"prefix": "trs-color-bg",
 		"scope": "css, sass, scss, less",
 		"body": [
-			"transition: color .3s ease, background-color .3s ease;"
+			"transition: color .3s ease, background-color .3s ease;",
+			"will-change: color, background-color;",
 		],
 		"description": "transition: color .3s ease, background-color .3s ease",
 	},
@@ -52,7 +58,8 @@
 		"prefix": "trs-transform",
 		"scope": "css, sass, scss, less",
 		"body": [
-			"transition: transform .3s ease;"
+			"transition: transform .3s ease;",
+			"will-change: transform;",
 		],
 		"description": "transition: transform .3s ease",
 	},
@@ -60,7 +67,8 @@
 		"prefix": "trs-scale",
 		"scope": "css, sass, scss, less",
 		"body": [
-			"transition: scale .3s ease;"
+			"transition: scale .3s ease;",
+			"will-change: scale;",
 		],
 		"description": "transition: scale .3s ease",
 	},
@@ -68,7 +76,8 @@
 		"prefix": "trs-rotate",
 		"scope": "css, sass, scss, less",
 		"body": [
-			"transition: rotate .3s ease;"
+			"transition: rotate .3s ease;",
+			"will-change: rotate;",
 		],
 		"description": "transition: rotate .3s ease",
 	},

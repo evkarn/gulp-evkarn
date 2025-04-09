@@ -2,7 +2,7 @@ import slideUp from '../slide-up/slide-up-func.js';
 
 import slideDown from '../slide-down/slide-down-func.js';
 
-const slideToggle = (target, duration) => {
+function slideToggle(target, duration) {
 	if (window.getComputedStyle(target).display === 'none') {
 		return slideDown(target, duration);
 	} else {

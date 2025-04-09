@@ -1,3 +1,8 @@
+@use '../../variables/general';
+@use '../../variables/grid';
+@use '../../mixins/units';
+@use '../../mixins/adaptive-value';
+
 .burger__line {
 	position: absolute;
 
@@ -5,11 +10,11 @@
 	left: 0;
 
 	width: 100%;
-	height: var(--burger-line-height);
+	height: general.$burger-line-height;
 
 	font-size: 0;
 
-	background-color: var(--burger-color);
+	background-color: general.$burger-line-color;
 
 	opacity: 1;
 

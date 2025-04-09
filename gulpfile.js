@@ -24,7 +24,7 @@ global.app = {
 import copyConfigFiles from './gulp/tasks/copy-config-files.js';
 import copyFiles from './gulp/tasks/copy-files.js';
 import copyFavicon from './gulp/tasks/copy-favicon.js';
-import ttfToWoff from './gulp/tasks/fonts-faces.js';
+import ttfToWoff from './gulp/tasks/ttf-to-woff.js';
 import createFontsFaces from './gulp/tasks/fonts-faces.js';
 import ftp from './gulp/tasks/ftp.js';
 import html from './gulp/tasks/html.js';
@@ -69,20 +69,14 @@ const mainTasks = gulp.parallel(
 );
 
 // Построение сценариев выполнения задач
-const dev = gulp.series(reset, fonts, mainTasks, watcher, server);
-const build = gulp.series(reset, fonts, mainTasks);
+const dev = gulp.series(reset, mainTasks, watcher, server);
+const build = gulp.series(reset, mainTasks);
 const deployZip = gulp.series(reset, zip);
 const deployFTP = gulp.series(reset, ftp);
 const deploySSH = gulp.series(reset, ssh);
 
 // Экспорт сценариев
-export {
-	dev,
-	build,
-	deployZip,
-	deployFTP,
-	deploySSH
-};
+export { dev, build, deployZip, deployFTP, deploySSH, fonts };
 
 // Выполнение сценариев по-умолчанию
 gulp.task('default', dev);

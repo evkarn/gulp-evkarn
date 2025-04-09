@@ -1,5 +1,5 @@
-@use '../mixins/units';
-@use '../variables/general';
+@use "../mixins/units";
+@use "../variables/general";
 
 .full-width,
 .f-width,
@@ -70,18 +70,6 @@
 	object-fit: cover;
 }
 
-.visually-hidden {
-	position: absolute;
-	width: 1px;
-	height: 1px;
-	margin: -1px;
-	padding: 0;
-	border: 0;
-	clip-path: inset(100%);
-	clip: rect(0 0 0 0);
-	overflow: hidden;
-}
-
 .dis-none,
 .d-none,
 .d-n,
@@ -89,16 +77,6 @@
 .display-none,
 .none {
 	display: none !important;
-}
-
-.stop-scroll {
-	position: fixed;
-	top: var(--top-position);
-	left: 0;
-	height: 100vh;
-	width: 100vw;
-	padding-right: var(--scroll-width);
-	overflow: hidden;
 }
 
 .video {
@@ -121,37 +99,8 @@
 	}
 }
 
-.link {
-	transition: color 0.3s ease;
-
-	@media (any-hover: hover) {
-		&:hover {
-			color: var(--accent);
-		}
-	}
-
-	&:focus-visible {
-		outline-width: units.rem(general.$outline-width);
-		outline-style: dashed;
-		outline-color: currentColor;
-		outline-offset: units.rem(general.$outline-offset);
-	}
-
-	&:active {
-		color: var(--accent-dark);
-	}
-}
-
-.focus-vis {
-	&:focus-visible {
-		outline-width: units.rem(general.$outline-width);
-		outline-style: dashed;
-		outline-color: currentColor;
-		outline-offset: units.rem(general.$outline-offset);
-	}
-}
-
-.txt-wrap, .text-wrap {
+.txt-wrap,
+.text-wrap {
 	> * {
 		margin: 0;
 
@@ -159,4 +108,38 @@
 			margin-bottom: units.rem(16);
 		}
 	}
+}
+
+.stop-scroll {
+	position: fixed;
+	top: var(--top-position);
+	left: 0;
+	height: 100vh;
+	width: 100vw;
+	padding-right: var(--scroll-width);
+	overflow: hidden;
+}
+
+.not-leap {
+	padding-right: var(--scroll-width);
+}
+
+.visually-hidden {
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	margin: -1px;
+	padding: 0;
+	border: 0;
+	clip-path: inset(100%);
+	clip: rect(0 0 0 0);
+	overflow: hidden;
+}
+
+.sprite-svg {
+	fill: currentColor;
+
+	transition: fill .3s ease;
+
+	will-change: fill;
 }

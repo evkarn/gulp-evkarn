@@ -3,7 +3,7 @@ const getScrollWidth = (e) => {
 
 	const body = document.body;
 
-	const documentRoot = document.querySelector(':root');
+	const documentRoot = document.documentElement;
 
 	const scrollWidth = window.innerWidth - body.offsetWidth;
 

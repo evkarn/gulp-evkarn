@@ -1,0 +1,54 @@
+{
+	"Section": {
+		"prefix": "sec",
+		"scope": "html, php, njk, md",
+		"body": [
+			"<section class=\"section $1\">",
+			"\t<div class=\"container $1__container\">",
+			"\t\t$2",
+			"\t</div>",
+			"</section>",
+		]
+	},
+	"Section bootstrap": {
+		"prefix": "secbs",
+		"scope": "html, php, njk, md",
+		"body": [
+			"<div class=\"section $1\">",
+			"\t<div class=\"container $1__container\">",
+			"\t\t<div class=\"row $1__row\">",
+			"\t\t\t<div class=\"col-$2\">",
+			"\t\t\t\t$3",
+			"\t\t\t</div>",
+			"\t\t</div>",
+			"\t</div>",
+			"</div>",
+		]
+	},
+	"Section header": {
+		"prefix": "sec-with-header",
+		"scope": "html, php, njk, md",
+		"body": [
+			"<section class=\"section $1\">",
+			"\t<div class=\"container $1__container\">",
+			"\t\t<header class=\"section__header\">",
+			"\t\t\t<h2 class=\"h2 section__title $1__title\">",
+			"\t\t\t\t$2",
+			"\t\t\t</h2>",
+			"\t\t</header>",
+			"\t</div>",
+			"</section>",
+		]
+	},
+	"Section description": {
+		"prefix": "sec-descr",
+		"scope": "html, php, njk, md",
+		"body": [
+			"<div class=\"section__descr txt-wrap\">",
+			"\t<p>",
+			"\t\t$1",
+			"\t</p>",
+			"</div>",
+		]
+	},
+}

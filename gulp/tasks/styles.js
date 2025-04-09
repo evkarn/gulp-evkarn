@@ -9,7 +9,9 @@ import * as dartSass from 'sass';
 import gulpSass from 'gulp-sass';
 
 // Группировка медиа запросов
-import groupCssMediaQueries from 'gulp-group-css-media-queries';
+import postCss from 'gulp-postcss';
+import sortCSSmq from 'sort-css-media-queries';
+import mqPacker from 'css-mqpacker';
 
 // Обработка ошибок
 import plumberInit from './plumber.js';
@@ -38,12 +40,18 @@ export default function styles() {
 			// Выбор вида сжатия конечного файла
 			.pipe(
 				sass({
-					style: 'compressed',
+					outputStyle: 'compressed',
 				}).on('error', sass.logError),
 			)
 
 			// Если в режиме продакшена группируем медиа-запросы
-			.pipe(app.plugins.if(app.isBuild, groupCssMediaQueries()))
+			.pipe(
+				postCss([
+					mqPacker({
+						sort: sortCSSmq,
+					}),
+				]),
+			)
 
 			// Если в режиме продакшена добавляем вендерные префиксы для совместимости стилей
 			.pipe(
@@ -57,17 +65,6 @@ export default function styles() {
 				),
 			)
 
-			// Если в режиме продакшена создаём не сжатый дубль файла стилей
-			.pipe(
-				app.plugins.if(
-					app.isBuild,
-					app.gulp.dest(app.path.build.css, { sourcemaps: !app.isBuild }),
-				),
-			)
-
-			// Если в режиме продакшена сжимаем файл стилей
-			.pipe(app.plugins.if(app.isBuild, cleanCss({ level: 2 })))
-
 			// Убираем лишнее в адресах картинок
 			.pipe(
 				app.plugins.replace(
@@ -75,6 +72,12 @@ export default function styles() {
 					'$1$2$3$4$6$1',
 				),
 			)
+
+			// Если в режиме продакшена создаём не сжатый дубль файла стилей
+			.pipe(app.plugins.if(app.isBuild, app.gulp.dest(app.path.build.css)))
+
+			// Если в режиме продакшена сжимаем файл стилей
+			.pipe(app.plugins.if(app.isBuild, cleanCss({ level: 2 })))
 
 			// Переименовываем итоговый файл
 			.pipe(

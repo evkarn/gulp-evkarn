@@ -1,0 +1,25 @@
+{
+	"Swiper HTML Layout": {
+		"prefix": "swiper",
+		"scope": "html, php, njk, md",
+		"body": [
+			"<div class=\"$1 swiper\">",
+			"\t<div class=\"swiper-wrapper\">",
+			"\t\t<div class=\"swiper-slide\">",
+			"\t\t\t<div class=\"swiper-content\">",
+			"\t\t\t\t",
+			"\t\t\t</div>",
+			"\t\t</div>",
+			"\t</div>",
+			"",
+			"\t<div class=\"swiper-pagination\"></div>",
+			"",
+			"\t<button class=\"swiper-button-prev\"></button>",
+			"\t<button class=\"swiper-button-next\"></button>",
+			"",
+			"\t<div class=\"swiper-scrollbar\"></div>",
+			"</div>",
+		],
+		"description": "Swiper HTML Layout",
+	},
+}

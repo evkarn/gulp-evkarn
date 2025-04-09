@@ -37,8 +37,6 @@ export default function js() {
 						filename: '[name].js',
 					},
 
-					devtool: app.isBuild ? 'source-map' : false,
-
 					module: {
 						rules: [
 							{
@@ -63,17 +61,6 @@ export default function js() {
 									},
 								},
 							},
-
-							{
-								test: /\.(scss|sass|css)$/i,
-
-								use: [
-									'style-loader',
-									'css-loader',
-									'postcss-loader',
-									'sass-loader',
-								],
-							},
 						],
 					},
 
@@ -90,6 +77,8 @@ export default function js() {
 							}),
 						],
 					},
+
+					devtool: app.isBuild ? 'source-map' : false,
 				}),
 			)
 

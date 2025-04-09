@@ -1,0 +1,19 @@
+@use '../../variables/general';
+@use '../../variables/grid';
+@use '../../mixins/units';
+@use '../../mixins/adaptive-value';
+
+.card {
+	border-radius: units.rem(general.$border-radius);
+	text-align: center;
+	overflow: hidden;
+
+	line-height: 1.2;
+
+	&:focus-visible {
+		outline-width: units.rem(general.$outline-width);
+		outline-style: dashed;
+		outline-color: var(--accent);
+		outline-offset: units.rem(general.$outline-offset);
+	}
+}
