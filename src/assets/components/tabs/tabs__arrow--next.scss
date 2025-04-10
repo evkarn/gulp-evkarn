@@ -1,0 +1,8 @@
+@use '../../variables/general';
+@use '../../variables/grid';
+@use '../../mixins/units';
+@use '../../mixins/adaptive-value';
+
+.tabs__arrow--next {
+	right: units.rem(50);
+}

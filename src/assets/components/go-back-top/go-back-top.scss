@@ -1,0 +1,62 @@
+@use '../../variables/general';
+@use '../../variables/grid';
+@use '../../mixins/units';
+@use '../../mixins/adaptive-value';
+
+.go-back-top {
+	position: fixed;
+	right: units.rem(20);
+	bottom: units.rem(100);
+	z-index: 15;
+
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	min-width: units.rem(40);
+	min-height: units.rem(40);
+
+	padding-bottom: units.rem(4);
+
+	font-size: units.rem(18);
+
+	background-color: oklch(0.71 0.0045 236.53);
+
+	border: none;
+	border-radius: 50%;
+
+	cursor: pointer;
+
+	color: #000;
+
+	text-align: center;
+
+	pointer-events: none;
+	user-select: none;
+
+	opacity: 0;
+
+	transition: opacity .4s ease, background-color .4s ease, color .4s ease;
+	will-change: opacity, background-color, color;
+}
+
+.go-back-top.is-active {
+	pointer-events: auto;
+	user-select: auto;
+
+	opacity: 0.6;
+
+	@media (any-hover: hover) {
+		&:hover {
+			opacity: 1;
+
+			background-color: var(--accent);
+
+			color: oklch(1 0 0);
+		}
+	}
+
+	&:active {
+		background-color: var(--accent);
+	}
+}

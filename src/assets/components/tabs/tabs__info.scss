@@ -1,0 +1,17 @@
+@use "../../variables/general";
+@use "../../variables/grid";
+@use "../../mixins/units";
+@use "../../mixins/adaptive-value";
+
+.tabs__info {
+	position: absolute;
+	inset: 0;
+	@include adaptive-value.adaptive-value-rem(padding, 20, 56);
+	z-index: 1;
+
+	align-items: flex-start;
+	justify-content: flex-end;
+	@include adaptive-value.adaptive-value-rem(row-gap, 16, 30);
+
+	line-height: 120%;
+}

@@ -1,0 +1,15 @@
+@use '../../variables/general';
+@use '../../variables/grid';
+@use '../../mixins/units';
+@use '../../mixins/adaptive-value';
+
+.tabs__list {
+	display: flex;
+	align-items: center;
+	gap: units.rem(12) units.rem(16);
+
+	margin: 0;
+	padding: 0;
+
+	list-style-type: none;
+}

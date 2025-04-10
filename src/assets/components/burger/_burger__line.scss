@@ -1,0 +1,28 @@
+@use '../../variables/general';
+@use '../../variables/grid';
+@use '../../mixins/units';
+@use '../../mixins/adaptive-value';
+
+.burger__line {
+	position: absolute;
+
+	top: 50%;
+	left: 0;
+
+	width: 100%;
+	height: general.$burger-line-height;
+
+	font-size: 0;
+
+	background-color: general.$burger-line-color;
+
+	opacity: 1;
+
+	transform: translateY(-50%);
+
+	transition: opacity 0.3s ease;
+}
+
+.burger--is-active .burger__line {
+	opacity: 0;
+}

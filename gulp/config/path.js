@@ -59,7 +59,13 @@ export const path = {
 
 		imgAvifWebp: `${srcFolder}/assets/images/**/*.{jpg,jpeg,png}`,
 
+		imgAvifBuild: `${buildFolder}/assets/images/**/*.avif`,
+
+		imgWebpBuild: `${buildFolder}/assets/images/**/*.webp`,
+
 		img: `${srcFolder}/assets/images/**/*.*`,
+
+		imgBuild: `${buildFolder}/assets/images/**/*.{jpg,jpeg,png,gif}`,
 
 		svg: [
 			`${srcFolder}/assets/svg/**/*.svg`,

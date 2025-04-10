@@ -1,0 +1,11 @@
+@use '../../variables/general';
+@use '../../variables/grid';
+@use '../../mixins/units';
+@use '../../mixins/adaptive-value';
+
+.breadcrumbs__list {
+	display: flex;
+	align-items: center;
+	flex-wrap: wrap;
+	gap: units.rem(12);
+}

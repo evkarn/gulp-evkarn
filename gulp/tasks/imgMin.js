@@ -11,7 +11,7 @@ export default function imgMin() {
 			.pipe(app.plugins.plumber(plumberInit('IMAGES')))
 
 			// Проверяем менялись ли изображения
-			.pipe(app.plugins.changed(app.path.build.img))
+			.pipe(app.plugins.changed(app.path.src.imgBuild))
 
 			// Если режим продакшена оптимизируем изображения
 			.pipe(

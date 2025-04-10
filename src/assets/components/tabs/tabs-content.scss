@@ -1,0 +1,24 @@
+@use '../../variables/general';
+@use '../../variables/grid';
+@use '../../mixins/units';
+@use '../../mixins/adaptive-value';
+
+.tabs-content {
+	position: relative;
+
+	display: none;
+
+	border-radius: units.rem(general.$border-radius);
+
+	animation-name: fade-in;
+	animation-duration: 0.3s;
+	animation-timing-function: linear;
+}
+
+.tabs__content--active {
+	display: block;
+
+	border-radius: units.rem(general.$border-radius);
+
+	@include adaptive-value.adaptive-value-rem(margin-bottom, 20, 28);
+}

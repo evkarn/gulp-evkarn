@@ -1,0 +1,14 @@
+@use '../../variables/general';
+@use '../../variables/grid';
+@use '../../mixins/units';
+@use '../../mixins/adaptive-value';
+
+.tabs__img {
+	display: block;
+	width: 100%;
+	align-self: stretch;
+
+	border-radius: units.rem(general.$border-radius);
+
+	object-fit: cover;
+}

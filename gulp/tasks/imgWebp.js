@@ -14,7 +14,7 @@ export default function imgWebp() {
 			.pipe(app.plugins.plumber(plumberInit('WEBP')))
 
 			// Проверяем менялись ли изображения
-			.pipe(app.plugins.changed(app.path.build.imgWebp))
+			.pipe(app.plugins.changed(app.path.src.imgWebpBuild))
 
 			// Создаём дополнительные изображения формата .webp
 			.pipe(webp())

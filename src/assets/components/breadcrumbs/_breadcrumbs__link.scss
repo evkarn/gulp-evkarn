@@ -1,0 +1,28 @@
+@use '../../variables/general';
+@use '../../variables/grid';
+@use '../../mixins/units';
+@use '../../mixins/adaptive-value';
+
+.breadcrumbs__link {
+	transition: color 0.3s ease;
+
+	@media (any-hover: hover) {
+		&:hover {
+			color: var(--accent);
+
+			cursor: pointer;
+		}
+	}
+
+	&:focus-visible {
+		outline-width: units.rem(general.$outline-width);
+		outline-style: dashed;
+		outline-color: var(--c-accent);
+		outline-offset: units.rem(general.$outline-offset);
+
+		&:active {
+			color: var(--accent-light);
+			outline: none;
+		}
+	}
+}

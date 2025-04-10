@@ -1,0 +1,66 @@
+@use '../../variables/general';
+@use '../../variables/grid';
+@use '../../mixins/units';
+@use '../../mixins/adaptive-value';
+
+.burger {
+	position: relative;
+	z-index: 4;
+
+	flex-shrink: 0;
+
+	display: none;
+
+	width: general.$burger-width;
+	height: general.$burger-height;
+
+	@media (max-width: units.rem(grid.$max-switch-point)) {
+		display: inline-block;
+	}
+
+	&:before,
+	&:after {
+		content: "";
+
+		position: absolute;
+
+		display: block;
+
+		width: 100%;
+		height: general.$burger-line-height;
+
+		background-color: general.$burger-line-color;
+
+		border-radius: 2px;
+
+		transition: rotate 0.3s ease;
+	}
+
+	&:before {
+		top: 0;
+	}
+
+	&:after {
+		bottom: 0;
+	}
+}
+
+.burger--is-active {
+	&:before,
+	&:after {
+		left: 2%;
+		width: 93%;
+	}
+
+	&:before {
+		top: 50%;
+
+		rotate: 45deg;
+	}
+
+	&:after {
+		bottom: 45%;
+
+		rotate: -45deg;
+	}
+}
