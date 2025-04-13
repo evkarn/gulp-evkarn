@@ -1,4 +1,4 @@
-const getScrollWidth = (e) => {
+function getScrollWidth(e) {
 	'use strict';
 
 	const body = document.body;
@@ -8,6 +8,6 @@ const getScrollWidth = (e) => {
 	const scrollWidth = window.innerWidth - body.offsetWidth;
 
 	documentRoot.style.setProperty('--scroll-width', `${scrollWidth}px`);
-};
+}
 
 export default getScrollWidth;

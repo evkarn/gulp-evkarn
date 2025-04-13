@@ -5,7 +5,9 @@
 	--ff-title: "Oswald", sans-serif;
 	--ff-body: "Oswald", sans-serif;
 
-	--overlay: #0e0061;
+	--index: calc(1vh + 1vw);
+
+	--body-bg: #fff;
 
 	--title-light: #fff;
 	--title-dark: #0c0050;
@@ -13,20 +15,12 @@
 	--text-light: #fff;
 	--text-dark: #1d1d1d;
 
-	--border-light: #fff;
-	--border-dark: #15018e;
-
-	--arrow-bg: #1e164d;
-	--arrow-bg-hover: #3724a5;
-
 	--footer-bg: #000f59;
 
 	--accent: #01cd9c;
+	--accent-light: #00607f;
 	--accent-dark: #00607f;
 
 	--light: #fff;
-
-	--input-color: #626262;
-
-	--index: calc(1vh + 1vw);
+	--dark: #000;
 }

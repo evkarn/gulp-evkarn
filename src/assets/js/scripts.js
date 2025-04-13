@@ -1,109 +1,138 @@
-import burger from './functions/burger/burger-func.js';
-
 document.addEventListener('DOMContentLoaded', () => {
-	class ThemeManager {
-		/** Доступные темы */
-		static THEMES = {
-			LIGHT: 'light',
-			DARK: 'dark',
-			AUTO: 'auto',
-		};
+	(function getScrollWidth() {
+		'use strict';
 
-		/** Ключ для localStorage */
-		static STORAGE_KEY = 'theme-preference';
+		const body = document.body;
 
-		constructor() {
-			this.html = document.documentElement;
-			this.init();
-		}
+		const documentRoot = document.documentElement;
 
-		/** Инициализация менеджера тем */
-		init() {
-			this.setupEventListeners();
-			this.applyTheme(this.getSavedTheme());
-		}
+		const scrollWidth = window.innerWidth - body.offsetWidth;
 
-		/** Получает сохранённую тему или определяет автоматически */
-		getSavedTheme() {
-			// Проверяем, доступен ли localStorage (на сервере его нет)
-			if (typeof localStorage === 'undefined') return ThemeManager.THEMES.AUTO;
+		documentRoot.style.setProperty('--scroll-width', `${scrollWidth}px`);
+	})();
 
-			const savedTheme = localStorage.getItem(ThemeManager.STORAGE_KEY);
+	function disableScroll() {
+		const html = document.documentElement;
 
-			// Проверяем, что тема валидна
-			if (Object.values(ThemeManager.THEMES).includes(savedTheme)) {
-				return savedTheme;
-			}
+		const body = document.body;
 
-			return ThemeManager.THEMES.AUTO; // По умолчанию
-		}
+		const documentRoot = document.querySelector(':root');
 
-		/** Получает текущую системную тему */
-		getSystemTheme() {
-			return window.matchMedia('(prefers-color-scheme: dark)').matches
-				? ThemeManager.THEMES.DARK
-				: ThemeManager.THEMES.LIGHT;
-		}
+		let pagePosition = window.scrollY;
 
-		/** Применяет выбранную тему */
-		applyTheme(theme) {
-			let effectiveTheme = theme;
+		body.classList.add('stop-scroll');
 
-			// Если выбрано 'auto', используем системную тему
-			if (theme === ThemeManager.THEMES.AUTO) {
-				effectiveTheme = this.getSystemTheme();
-				this.html.style.colorScheme = 'light dark'; // Поддержка стандартных элементов
-			} else {
-				this.html.style.colorScheme = effectiveTheme;
-			}
+		body.dataset.position = pagePosition;
 
-			// Обновляем класс на <html>
-			this.html.classList.remove(
-				ThemeManager.THEMES.LIGHT,
-				ThemeManager.THEMES.DARK,
-			);
-			this.html.classList.add(effectiveTheme);
+		documentRoot.style.setProperty('--top-position', `-${pagePosition}px`);
 
-			// Сохраняем выбор пользователя
-			if (typeof localStorage !== 'undefined') {
-				localStorage.setItem(ThemeManager.STORAGE_KEY, theme);
-			}
+		html.style.scrollBehavior = 'unset';
+	}
 
-			// Обновляем активные кнопки (если есть)
-			this.updateActiveButtons(theme);
-		}
+	function enableScroll() {
+		const html = document.documentElement;
 
-		/** Обновляет активное состояние кнопок переключения темы */
-		updateActiveButtons(activeTheme) {
-			document.querySelectorAll('[data-theme]').forEach((button) => {
-				const buttonTheme = button.dataset.theme;
-				button.classList.toggle('active', buttonTheme === activeTheme);
-				button.setAttribute('aria-pressed', buttonTheme === activeTheme);
-			});
-		}
+		const body = document.body;
 
-		/** Настраивает обработчики событий */
-		setupEventListeners() {
-			// Клик по кнопкам темы
-			document.addEventListener('click', (e) => {
-				const themeButton = e.target.closest('[data-theme]');
-				if (themeButton) {
-					this.applyTheme(themeButton.dataset.theme);
-				}
-			});
+		const documentRoot = document.querySelector(':root');
 
-			// Следим за изменением системной темы (если выбрано 'auto')
-			const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
-			mediaQuery.addEventListener('change', () => {
-				if (this.getSavedTheme() === ThemeManager.THEMES.AUTO) {
-					this.applyTheme(ThemeManager.THEMES.AUTO);
+		let pagePosition = parseInt(body.dataset.position, 10);
+
+		body.classList.remove('stop-scroll');
+
+		window.scroll({
+			top: pagePosition,
+
+			left: 0,
+		});
+
+		body.removeAttribute('data-position');
+
+		documentRoot.style.setProperty('--top-position', 'auto');
+
+		html.style.scrollBehavior = '';
+	}
+
+	(function burger() {
+		'use strict';
+
+		const burger = document?.querySelector('[data-burger]');
+
+		const nav = document?.querySelector('[data-nav]');
+		const navItems = document?.querySelectorAll('[data-nav-item]');
+
+		const fixedEls = document?.querySelectorAll('[data-fixed');
+
+		if (burger && nav) {
+			burger.addEventListener('click', () => {
+				burger.classList.toggle('burger--is-active');
+
+				nav.classList.toggle('nav--is-visible');
+
+				fixedEls.forEach(function (el) {
+					el.classList.toggle('not-leap');
+				});
+
+				if (burger.getAttribute('aria-expanded') === 'false') {
+					burger.setAttribute('aria-expanded', 'true');
+
+					burger.setAttribute('aria-pressed', 'true');
+
+					burger.setAttribute('aria-label', 'Закрыть меню');
+
+					disableScroll();
+				} else {
+					burger.setAttribute('aria-expanded', 'false');
+
+					burger.setAttribute('aria-pressed', 'false');
+
+					burger.setAttribute('aria-label', 'Открыть меню');
+
+					enableScroll();
 				}
 			});
 		}
-	}
 
-	// Запуск только в браузере (не на сервере)
-	if (typeof document !== 'undefined') {
-		new ThemeManager();
-	}
+		if (navItems) {
+			navItems.forEach((el) => {
+				el.addEventListener('click', () => {
+					enableScroll();
+
+					if (burger) {
+						burger.setAttribute('aria-expanded', 'false');
+
+						burger.setAttribute('aria-pressed', 'false');
+
+						burger.setAttribute('aria-label', 'Открыть меню');
+
+						burger.classList.remove('burger--is-active');
+					}
+
+					if (nav) {
+						nav.classList.remove('nav--is-active');
+					}
+				});
+			});
+		}
+
+		if (overlay) {
+			overlay.addEventListener('click', () => {
+				if (burger) {
+					burger.setAttribute('aria-expanded', 'false');
+
+					burger.setAttribute('aria-pressed', 'false');
+
+					burger.setAttribute('aria-label', 'Открыть меню');
+
+					burger.classList.remove('burger--is-active');
+				}
+
+				if (nav) {
+					nav.classList.remove('nav--is-active');
+				}
+
+				enableScroll();
+			});
+		}
+	})();
 });
