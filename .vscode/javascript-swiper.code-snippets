@@ -55,4 +55,20 @@
 			"},",
 		]
 	},
+
+	"Swiper a11y": {
+		"prefix": "swiper-a11y",
+		"scope": "javascript, typescript",
+		"body": [
+			"a11y: {",
+			"\tenabled: true,",
+			"\tcontainerMessage: 'Контейнер слайдера',",
+			"\tcontainerRoleDescriptionMessage: 'Внешний контейнер слайдера',",
+			"\tfirstSlideMessage: 'Первый слайд',",
+			"\tlastSlideMessage: 'Последний слайд',",
+			"\tnextSlideMessage: 'Кнопка переключения на следующий слайд',",
+			"\tprevSlideMessage: 'Кнопка переключения на предыдущий слайд',",
+			"\tpaginationBulletMessage: 'Буллит переключения слайда в пагинации',",
+		]
+	},
 }

@@ -18,6 +18,15 @@ body {
 }
 
 @layer reset {
+	input,
+	textarea,
+	select {
+		font-family: inherit;
+		font-size: inherit;
+		color: inherit;
+		background-color: transparent;
+	}
+
 	img {
 		display: block;
 
@@ -68,5 +77,3 @@ body {
 		list-style-type: none;
 	}
 }
-
-

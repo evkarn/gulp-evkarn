@@ -20,7 +20,7 @@
 	itemtype="https://schema.org/WebPage"
 >
 	<div class="page">
-		@include('includes/header.html', {"alt": "Логотип"})
+		@include('./includes/header.html', {"alt": "Логотип"})
 
 		<main
 			class="main"
@@ -54,7 +54,9 @@
 
 		</main>
 
-		@include('includes/footer.html')
+		@include('./includes/footer.html')
+
+		@include('./includes/go-back-top.html.html')
 	</div>
 
 	<script src="assets/js/scripts.min.js"></script>
