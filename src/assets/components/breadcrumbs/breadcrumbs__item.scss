@@ -1,0 +1,23 @@
+@use '../../variables/general';
+@use '../../variables/grid';
+@use '../../mixins/units';
+@use '../../mixins/adaptive-value';
+
+.breadcrumbs__item {
+	display: inline-block;
+
+	&:not(:first-child) {
+		&:before {
+			content: '•';
+			
+			display: inline-block;
+			margin-right: units.rem(8);
+			
+			text-align: center;
+		}
+	}
+}
+
+.breadcrumbs__item:not(:last-child) {
+	margin-right: units.rem(8);
+}

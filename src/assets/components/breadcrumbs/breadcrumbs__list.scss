@@ -4,8 +4,5 @@
 @use '../../mixins/adaptive-value';
 
 .breadcrumbs__list {
-	display: flex;
-	align-items: center;
-	flex-wrap: wrap;
-	gap: units.rem(12);
+
 }

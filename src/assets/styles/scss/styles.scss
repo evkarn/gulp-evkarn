@@ -1,7 +1,3 @@
-// Reset styles
-@use './reset-styles/index-reset';
-// End. Reset styles
-
 // Variables
 @use 'variables/root';
 // End. Variables
@@ -9,6 +5,10 @@
 // Fonts
 @use 'fonts/fonts-faces';
 // END. Fonts
+
+// Reset styles
+@use './reset-styles/index-reset';
+// End. Reset styles
 
 // Global
 @use 'global-config/config';
