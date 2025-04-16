@@ -14,45 +14,59 @@ export default function imgMin() {
 			.pipe(app.plugins.plumber(plumberInit('IMAGES')))
 
 
-			// Проверяем менялись ли изображения
+			// Проверяем менялись ли изображения и создаём дубликаты изображений в формате .webp
 			.pipe(app.plugins.changed(app.path.build.img))
 			.pipe(
-				app.plugins.imagemin([
-					imageminWebp({
-						quality: 80,
-					}),
-				]),
+				app.plugins.imagemin(
+					[
+						imageminWebp({
+							quality: 80,
+						}),
+					],
+					{ verbose: true },
+				),
 			)
 			.pipe(app.plugins.rename({ extname: '.webp' }))
 			.pipe(app.gulp.dest(app.path.build.img))
 
-
+			
+			// Проверяем менялись ли изображения и создаём дубликаты изображений в формате .avif
 			.pipe(app.gulp.src(app.path.src.img, { encoding: false }))
+			.pipe(app.plugins.changed(app.path.build.img))
 			.pipe(
-				app.plugins.imagemin([
-					imageminAvif({
-						quality: 80,
-					}),
-				]),
+				app.plugins.imagemin(
+					[
+						imageminAvif({
+							quality: 80,
+						}),
+					],
+					{ verbose: true },
+				),
 			)
 			.pipe(app.plugins.rename({ extname: '.avif' }))
 			.pipe(app.gulp.dest(app.path.build.img))
 
 
-			.pipe(app.gulp.src(app.path.src.img, { encoding: false }))
 			// Если режим продакшена оптимизируем изображения
+			.pipe(app.gulp.src(app.path.src.img, { encoding: false }))
+			.pipe(app.plugins.changed(app.path.build.img))
 			.pipe(
 				app.plugins.if(
 					app.isBuild,
 					app.plugins.imagemin({
 						progressive: true,
 						interlaced: true,
+						quality: 80,
 						optimizationLevel: 3, // 0 to 7
+						verbose: true,
 					}),
 				),
 			)
+
+
 			// Выгружаем изображения в папку assets/images
 			.pipe(app.gulp.dest(app.path.build.img))
+
 
 			// Перезагружаем страницу
 			.pipe(app.plugins.browsersync.stream())
