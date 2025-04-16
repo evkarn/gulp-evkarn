@@ -209,4 +209,32 @@
 			"@include adaptive-value.adaptive-value-px(column-gap, $2, $3);",
 		]
 	},
+	"Adaptive value width rem": {
+		"prefix": "av-width-rem",
+		"scope": "css, sass, scss, less",
+		"body": [
+			"@include adaptive-value.adaptive-value-rem(width, $2, $3);",
+		]
+	},
+	"Adaptive value width px": {
+		"prefix": "av-width-px",
+		"scope": "css, sass, scss, less",
+		"body": [
+			"@include adaptive-value.adaptive-value-px(width, $2, $3);",
+		]
+	},
+	"Adaptive value height rem": {
+		"prefix": "av-height-rem",
+		"scope": "css, sass, scss, less",
+		"body": [
+			"@include adaptive-value.adaptive-value-rem(height, $2, $3);",
+		]
+	},
+	"Adaptive value height px": {
+		"prefix": "av-height-px",
+		"scope": "css, sass, scss, less",
+		"body": [
+			"@include adaptive-value.adaptive-value-px(height, $2, $3);",
+		]
+	},
 }

@@ -18,6 +18,14 @@
 		],
 		"description": "transition: color .3s ease",
 	},
+	"transition: border-color .3s ease": {
+		"prefix": "trs-bor-color",
+		"scope": "css, sass, scss, less",
+		"body": [
+			"transition: border-color .3s ease;",
+			"will-change: border-color;",
+		]
+	},
 	"transition: fill .3s ease": {
 		"prefix": "trs-fill",
 		"scope": "css, sass, scss, less",

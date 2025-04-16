@@ -31,8 +31,6 @@ import html from './gulp/tasks/html.js';
 import svgMin from './gulp/tasks/svgMin.js';
 import sprite from './gulp/tasks/sprite.js';
 import imgMin from './gulp/tasks/imgMin.js';
-import imgAvif from './gulp/tasks/imgAvif.js';
-import imgWebp from './gulp/tasks/imgWebp.js';
 import js from './gulp/tasks/js.js';
 import reset from './gulp/tasks/reset.js';
 import styles from './gulp/tasks/styles.js';
@@ -44,7 +42,7 @@ import zip from './gulp/tasks/zip.js';
 function watcher(done) {
 	gulp.watch(path.watch.html, html);
 	gulp.watch(path.watch.files, copyFiles);
-	gulp.watch(path.watch.img, gulp.series(imgAvif, imgWebp, imgMin));
+	gulp.watch(path.watch.img, imgMin);
 	gulp.watch(path.watch.svg, svgMin);
 	gulp.watch(path.watch.sprite, sprite);
 	gulp.watch(path.watch.js, js);
@@ -60,7 +58,7 @@ const mainTasks = gulp.parallel(
 	html,
 	styles,
 	js,
-	gulp.series(imgMin, imgAvif, imgWebp),
+	imgMin,
 	sprite,
 	svgMin,
 	copyFiles,

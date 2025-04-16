@@ -14,7 +14,7 @@ export default function imgAvif() {
 			.pipe(app.plugins.plumber(plumberInit('AVIF')))
 
 			// Проверяем менялись ли изображения
-			.pipe(app.plugins.changed(app.path.src.imgAvifBuild))
+			.pipe(app.plugins.changed(app.path.build.imgAvif))
 
 			// Создаём дополнительные изображения формата .avif
 			.pipe(

@@ -20,8 +20,9 @@
 	color: var(--accent);
 }
 
-.underline {
+.underline, .under {
 	text-decoration: underline;
+	text-underline-position: under;
 }
 
 .uppercase,
