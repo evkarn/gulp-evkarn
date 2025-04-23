@@ -49,7 +49,7 @@
 	"Border all rem": {
 		"prefix": "bor-rem",
 		"body": [
-			"border: rem(\\$border-width) solid var($1);"
+			"border: units.rem(1) solid var($1);"
 		],
 		"description": "Border all rem",
 	},

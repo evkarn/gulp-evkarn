@@ -23,6 +23,11 @@
 	flex-basis: auto;
 }
 
+&::selection {
+	color: var(--dark);
+	background-color: var(--accent);
+}
+
 .section {
 	position: relative;
 

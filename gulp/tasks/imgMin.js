@@ -29,7 +29,7 @@ export default function imgMin() {
 			.pipe(app.plugins.rename({ extname: '.webp' }))
 			.pipe(app.gulp.dest(app.path.build.img))
 
-			
+
 			// Проверяем менялись ли изображения и создаём дубликаты изображений в формате .avif
 			.pipe(app.gulp.src(app.path.src.img, { encoding: false }))
 			.pipe(app.plugins.changed(app.path.build.img))
@@ -50,18 +50,13 @@ export default function imgMin() {
 			// Если режим продакшена оптимизируем изображения
 			.pipe(app.gulp.src(app.path.src.img, { encoding: false }))
 			.pipe(app.plugins.changed(app.path.build.img))
-			.pipe(
-				app.plugins.if(
-					app.isBuild,
-					app.plugins.imagemin({
-						progressive: true,
-						interlaced: true,
-						quality: 80,
-						optimizationLevel: 3, // 0 to 7
-						verbose: true,
-					}),
-				),
-			)
+			.pipe(app.plugins.imagemin({
+				progressive: true,
+				interlaced: true,
+				quality: 80,
+				optimizationLevel: 3, // 0 to 7
+				verbose: true,
+			})))
 
 
 			// Выгружаем изображения в папку assets/images

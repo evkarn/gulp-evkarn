@@ -4,7 +4,7 @@
 .h2,
 .h3,
 .h4 {
-	font-family: var(--ff-title);
+	font-family: var(--font-title);
 	line-height: 120%;
 	letter-spacing: 0.03em;
 	text-transform: uppercase;
@@ -41,5 +41,3 @@
 		font-size: units.rem(26);
 	}
 }
-
-

@@ -47,7 +47,7 @@
 			"</div>",
 		]
 	},
-	"Section width header, title, descr": {
+	"Section width header, title, descr, main": {
 		"prefix": "sec-with-all",
 		"scope": "html, php, njk, md",
 		"body": [
@@ -60,7 +60,32 @@
 			"\t\t\t",
 			"\t\t\t<div class=\"section__descr txt-wrap\">",
 			"\t\t\t\t<p>",
-			"\t\t\t\t\t$2",
+			"\t\t\t\t\t",
+			"\t\t\t\t</p>",
+			"\t\t\t</div>",
+			"\t\t</header>",
+			"",
+			"\t\t<div class=\"$1__main\">",
+			"\t\t\t",
+			"\t\t</div>",
+			"</section>",
+		]
+	},
+
+	"Section width header, title, descr": {
+		"prefix": "sec-with-title-descr",
+		"scope": "html, php, njk, md",
+		"body": [
+			"<section class=\"section $1\">",
+			"\t<div class=\"container $1__container\">",
+			"\t\t<header class=\"section__header\">",
+			"\t\t\t<h2 class=\"h2 section__title $1__title\">",
+			"\t\t\t\t$2",
+			"\t\t\t</h2>",
+			"\t\t\t",
+			"\t\t\t<div class=\"section__descr txt-wrap\">",
+			"\t\t\t\t<p>",
+			"\t\t\t\t\t",
 			"\t\t\t\t</p>",
 			"\t\t\t</div>",
 			"\t\t</header>",

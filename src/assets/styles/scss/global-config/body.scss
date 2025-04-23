@@ -9,7 +9,7 @@
 
 	margin: 0;
 
-	font-family: var(--ff-body);
+	font-family: var(--font-text);
 	font-style: normal;
 	font-size: units.rem(general.$fz);
 	font-weight: 400;
@@ -17,9 +17,4 @@
 
 	background-color: var(--body-bg);
 	overflow-x: hidden;
-
-	&::selection {
-		color: var(--dark);
-		background-color: var(--accent);
-	}
 }
