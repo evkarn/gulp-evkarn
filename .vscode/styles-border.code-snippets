@@ -42,14 +42,14 @@
 	"Border all px": {
 		"prefix": "bor-px",
 		"body": [
-			"border: $1px solid var($2);"
+			"border: general.$border-width + px solid var($2);"
 		],
 		"description": "Border all px",
 	},
 	"Border all rem": {
 		"prefix": "bor-rem",
 		"body": [
-			"border: units.rem(1) solid var($1);"
+			"border: units.rem(\\general.$border-width) solid var($1);"
 		],
 		"description": "Border all rem",
 	},

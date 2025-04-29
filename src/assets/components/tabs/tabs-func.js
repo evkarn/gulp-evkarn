@@ -1,4 +1,4 @@
-function tabs() {
+(function tabs() {
 	'use strict';
 
 	const tabsParents = document?.querySelectorAll('[data-tabs-parent]');
@@ -15,6 +15,7 @@ function tabs() {
 
 					tabsButtons.forEach((el) => {
 						el.classList.remove('tabs__btn--active');
+						el.setAttribute('aria-selected', 'false');
 					});
 
 					const targetButton = parent.querySelector(
@@ -22,6 +23,7 @@ function tabs() {
 					);
 
 					targetButton.classList.add('tabs__btn--active');
+					targetButton.setAttribute('aria-selected', 'true');
 
 					tabsHandler(tabsPath, parent);
 				}
@@ -36,7 +38,7 @@ function tabs() {
 					const currentPath = activeBtn.dataset.tabsBtn;
 
 					const activeContent = parent.querySelector(
-						`[data-tabs-content="${currentPath}"]`,
+						`[data-tabpanel="${currentPath}"]`,
 					);
 
 					let prevContent = activeContent.previousElementSibling;
@@ -44,11 +46,13 @@ function tabs() {
 					if (prevContent) {
 						tabsButtons.forEach((el) => {
 							el.classList.remove('tabs__btn--active');
+							el.setAttribute('aria-selected', 'false');
 						});
 
 						prevBtn.classList.add('tabs__btn--active');
+						prevBtn.setAttribute('aria-selected', 'true');
 
-						let path = prevContent.dataset.tabsContent;
+						let path = prevContent.dataset.tabpanel;
 
 						tabsHandler(path, parent);
 					}
@@ -64,7 +68,7 @@ function tabs() {
 					const currentPath = activeBtn.dataset.tabsBtn;
 
 					const activeContent = parent.querySelector(
-						`[data-tabs-content="${currentPath}"]`,
+						`[data-tabpanel="${currentPath}"]`,
 					);
 
 					let nextContent = activeContent.nextElementSibling;
@@ -72,11 +76,13 @@ function tabs() {
 					if (nextContent) {
 						tabsButtons.forEach((el) => {
 							el.classList.remove('tabs__btn--active');
+							el.setAttribute('aria-selected', 'false');
 						});
 
 						nextBtn.classList.add('tabs__btn--active');
+						nextBtn.setAttribute('aria-selected', 'true');
 
-						let path = nextContent.dataset.tabsContent;
+						let path = nextContent.dataset.tabpanel;
 
 						tabsHandler(path, parent);
 					}
@@ -86,18 +92,18 @@ function tabs() {
 	}
 
 	const tabsHandler = (path, parent) => {
-		const tabsContents = parent?.querySelectorAll('[data-tabs-content]');
+		const tabPanels = parent?.querySelectorAll('[data-tabpanel]');
 
-		tabsContents.forEach((el) => {
+		tabPanels.forEach((el) => {
 			el.classList.remove('tabs__content--active');
 		});
 
-		const target = parent?.querySelector(`[data-tabs-content="${path}"]`);
+		const target = parent?.querySelector(`[data-tabpanel="${path}"]`);
 
 		if (target) {
 			target.classList.add('tabs__content--active');
 		}
 	};
-}
+})();
 
 export default tabs;

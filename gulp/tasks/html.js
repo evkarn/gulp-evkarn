@@ -46,8 +46,6 @@ export default function html() {
 				}),
 			)
 
-			.pipe(app.plugins.replace(/@img\//g, 'assets/images/dist/'))
-
 			.pipe(
 				app.plugins.replace(
 					/(?<=src=|href=|srcset=)(['"])(\.(\.)?\/)*(img|images|fonts|css|scss|sass|js|files|audio|video)(\/[^\/'"]+(\/))?([^'"]*)\1/gi,

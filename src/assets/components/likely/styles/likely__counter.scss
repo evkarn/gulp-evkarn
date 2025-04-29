@@ -1,0 +1,59 @@
+@use '../../variables/general';
+@use '../../variables/grid';
+@use '../../mixins/units';
+@use '../../mixins/adaptive-value';
+
+.likely__counter {
+	display: none;
+	position: relative;
+	padding: units.rem(1) units.rem(4);
+	text-decoration: none;
+	text-rendering: optimizeLegibility;
+	line-height: inherit;
+	cursor: inherit;
+	margin: 0;
+	outline: 0;
+	text-align: center;
+	vertical-align: top;
+	background-size: units.rem(1) units.rem(1);
+	background-repeat: repeat-y;
+	background-image: linear-gradient(
+		90deg,
+		rgb(0 0 0 / 20%) 0,
+		transparent 0.5px,
+		transparent
+	);
+}
+
+.likely_ready {
+	.likely__counter {
+		display: inline-block;
+	}
+
+	.likely__counter_empty {
+		display: none;
+	}
+}
+
+.likely-light {
+	.likely__counter {
+		background-image: linear-gradient(
+			90deg,
+			hsla(0, 0%, 100%, 0.4) 0,
+			hsla(0, 0%, 100%, 0) 0.5px,
+			hsla(0, 0%, 100%, 0)
+		);
+	}
+}
+
+.likely-big {
+	.likely__counter {
+		padding: units.rem(2) units.rem(6);
+	}
+}
+
+.likely-small {
+	.likely__counter {
+		padding: units.rem(2) units.rem(3);
+	}
+}

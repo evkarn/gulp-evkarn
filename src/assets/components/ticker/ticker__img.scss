@@ -1,0 +1,15 @@
+@use "../../variables/general";
+@use "../../variables/grid";
+@use "../../mixins/units";
+@use "../../mixins/adaptive-value";
+
+.ticker__img {
+	flex-shrink: 0;
+
+	display: block;
+
+	margin-right: units.rem(20);
+
+	width: units.rem(60);
+	height: units.rem(34);
+}

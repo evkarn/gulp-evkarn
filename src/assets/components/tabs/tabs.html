@@ -1,32 +1,72 @@
-<div class="tabs" data-tabs-parent role="tablist">
-	<div class="tabs__buttons" data-tabs-buttons>
-		<button class="tabs__btn tabs__btn--active" data-tabs-btn="main" role="tab">
+<div
+	class="tabs"
+	data-tabs-parent
+>
+	<div
+		class="tabs__buttons"
+		data-tablist
+		role="tablist"
+	>
+		<button
+			class="tabs__btn tabs__btn--active"
+			data-tabs-btn="main"
+			role="tab"
+			id="tab-btn-main"
+			aria-controls="tab-content-main"
+			aria-selected="true"
+		>
 			Главная
 		</button>
 
-		<button class="tabs__btn" data-tabs-btn="archive" role="tab">Архив</button>
+		<button
+			class="tabs__btn"
+			data-tabs-btn="archive"
+			role="tab"
+			id="tab-btn-archive"
+			aria-controls="tab-content-archive"
+			aria-selected="false"
+		>
+			Архив
+		</button>
 	</div>
 
-	<div class="tabs__contents" data-tabs-contents>
+	<div
+		class="tabs__contents"
+		data-tabpanels
+	>
 		<div
 			class="tabs__content tabs-content tabs__content--active"
-			data-tabs-content="main"
+			data-tabpanel="main"
 			role="tabpanel"
+			id="tab-content-main"
+			aria-labelledby="tab-btn-main"
 			tabindex="0"
 		>
-			<div class="tabs-content__body" data-tabs-content-body>
-				<h2 class="tabs-content__title">Главная</h2>
+			<div
+				class="tabs-content__body"
+				data-tabpanel-body
+			>
+				<h2 class="tabs-content__title">
+					Главная
+				</h2>
 			</div>
 		</div>
 
 		<div
 			class="tabs__content tabs-content"
-			data-tabs-content="archive"
+			data-tabpanel="archive"
 			role="tabpanel"
+			id="tab-content-archive"
+			aria-labelledby="tab-btn-archive"
 			tabindex="0"
 		>
-			<div class="tabs-content__body" data-tabs-content-body>
-				<h2 class="tabs-content__title">Архив</h2>
+			<div
+				class="tabs-content__body"
+				data-tabpanel-body
+			>
+				<h2 class="tabs-content__title">
+					Архив
+				</h2>
 			</div>
 		</div>
 	</div>

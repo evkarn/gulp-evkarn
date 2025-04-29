@@ -1,16 +1,14 @@
 import inputmask from 'inputmask';
 
-function inputMask(parent, selector, maskText) {
+function inputMask() {
 	'use strict';
 
-	const inputMaskParent = document.querySelector(`${parent}`);
+	const itemsTel = document?.querySelectorAll('input[type="tel"]');
 
-	if (inputMaskParent) {
-		const inputSelector = inputMaskParent?.querySelector(`${selector}`);
-
-		if (inputSelector) {
-			Inputmask({ mask: `${maskText}` }).mask(inputSelector);
-		}
+	if (itemsTel) {
+		itemsTel.forEach(function (el) {
+			Inputmask({ mask: `+7 (999) 999-99-99` }).mask(el);
+		});
 	}
 }
 

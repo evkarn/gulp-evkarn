@@ -31,4 +31,12 @@
 		],
 		"description": "grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));",
 	},
+
+	"grid-column: span ": {
+		"prefix": "g-col",
+		"scope": "css, sass, scss, less",
+		"body": [
+			"grid-column: span $1;"
+		]
+	},
 }

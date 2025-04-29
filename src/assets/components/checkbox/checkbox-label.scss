@@ -1,0 +1,13 @@
+@use '../../variables/general';
+@use '../../variables/grid';
+@use '../../mixins/units';
+@use '../../mixins/adaptive-value';
+
+.checkbox-label {
+	position: relative;
+	display: flex;
+	align-items: center;
+	column-gap: units.rem(6);
+
+	cursor: pointer;
+}

@@ -25,6 +25,7 @@ body {
 		font-size: inherit;
 		color: inherit;
 		background-color: transparent;
+		border: none;
 	}
 
 	img {
@@ -46,6 +47,8 @@ body {
 	}
 
 	button {
+		padding: 0;
+
 		background-color: transparent;
 		border: none;
 	}

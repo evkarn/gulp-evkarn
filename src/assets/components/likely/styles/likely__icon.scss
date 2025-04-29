@@ -1,0 +1,26 @@
+@use '../../variables/general';
+@use '../../variables/grid';
+@use '../../mixins/units';
+@use '../../mixins/adaptive-value';
+
+.likely__icon {
+	position: relative;
+	width: units.rem(22);
+	height: units.rem(22);
+	vertical-align: top;
+	text-align: left;
+}
+
+.likely-big {
+	.likely__icon {
+		width: units.rem(32);
+		height: units.rem(32);
+	}
+}
+
+.likely-small {
+	.likely__icon {
+		width: units.rem(18);
+		height: units.rem(18);
+	}
+}

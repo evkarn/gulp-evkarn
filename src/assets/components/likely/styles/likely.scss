@@ -1,0 +1,46 @@
+@use '../../variables/general';
+@use '../../variables/grid';
+@use '../../mixins/units';
+@use '../../mixins/adaptive-value';
+
+.likely {
+	display: flex;
+	flex-wrap: wrap;
+	gap: units.rem(10);
+	font-size: 0 !important;
+	font-weight: 400;
+	font-family:
+		"Helvetica Neue",
+		Arial,
+		sans-serif;
+	text-indent: 0 !important;
+	color: #000;
+	transition: opacity 0.2s ease;
+
+	* {
+		display: inline-block;
+	}
+
+	svg {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		width: units.rem(16);
+		height: units.rem(16);
+		transform: translate(-50%, -50%);
+	}
+}
+
+.likely-small {
+	svg {
+		width: units.rem(12);
+		height: units.rem(12);
+	}
+}
+
+.likely-big {
+	svg {
+		width: units.rem(24);
+		height: units.rem(24);
+	}
+}

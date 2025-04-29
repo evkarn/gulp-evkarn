@@ -1,8 +1,7 @@
 import Swiper from 'swiper';
-
 import { Navigation, Pagination } from 'swiper/modules';
 
-export default function swipersFunction() {
+function initSwipers() {
 	'use strict';
 
 	const swiperElOne = document?.querySelector('.portfolio-slider');
@@ -44,3 +43,5 @@ export default function swipersFunction() {
 		});
 	}
 }
+
+export default initSwipers;

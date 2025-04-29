@@ -1,0 +1,40 @@
+@use '../../variables/general';
+@use '../../variables/grid';
+@use '../../mixins/units';
+@use '../../mixins/adaptive-value';
+
+.modal__container {
+	box-sizing: border-box;
+
+	max-width: 560px;
+	max-height: 100vh;
+	width: 100%;
+
+	padding: units.rem(20);
+
+	background-color: #fff;
+
+	border-radius: units.rem(general.$border-radius);
+
+	overflow-y: auto;
+
+	@media ( max-width: units.rem(768) ) {
+		margin: units.rem(10);
+	}
+}
+
+.modal .modal__container {
+	will-change: transform;
+}
+
+.modal[aria-hidden='false'] {
+	.modal__container {
+		animation: microModalSlideIn 0.3s cubic-bezier(0, 0, 0.2, 1);
+	}
+}
+
+.modal[aria-hidden='true'] {
+	.modal__container {
+		animation: microModalSlideOut 0.3s cubic-bezier(0, 0, 0.2, 1);
+	}
+}

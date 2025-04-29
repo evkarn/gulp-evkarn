@@ -89,6 +89,7 @@ export const path = {
 		`${buildFolder}/*.{html,ico,svg,png}`,
 		`${buildFolder}/assets/*`,
 		`!${buildFolder}/assets/images/`,
+		`!${buildFolder}/assets/svg`,
 		`!${buildFolder}/assets/fonts/`,
 	],
 

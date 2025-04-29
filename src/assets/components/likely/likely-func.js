@@ -1,9 +1,9 @@
 import likely from 'ilyabirman-likely';
 
-function likelyInit() {
-	'use strict';
-
+document.addEventListener('DOMContentLoaded', () => {
 	likely.initiate();
-}
+});
+
+
 
 export default likelyInit;
