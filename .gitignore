@@ -1,15 +1,15 @@
-#Folders:
+# Папки (Folders):
 /node_modules
 /.pnp
 /_site
 /dist
 .git
 
-#Files:
+# Файлы (Files):
 desktop.ini
 
 
-# Exclusion by extension
+# Исключение по расширению (Exclusion by extension):
 .DS_Store
 .env.local
 .env.development.local
@@ -18,8 +18,9 @@ desktop.ini
 .pnp.js
 
 
-# Exception by name
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-package-lock.json
+# Исключение по имени (Exception by name), звёздочка * означает "любые символы после этой части имени":
+npm-debug*
+yarn-debug*
+yarn-error*
+
+
