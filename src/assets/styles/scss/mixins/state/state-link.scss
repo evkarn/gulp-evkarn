@@ -1,5 +1,5 @@
-@use '../units';
-@use '../../variables/general';
+@use "../units";
+@use "../../variables/general";
 
 @mixin state-link {
 	@media (any-hover: hover) {

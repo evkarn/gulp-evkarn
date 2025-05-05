@@ -19,6 +19,6 @@
 
 	white-space: nowrap;
 
-	border-radius: units.rem(general.$border-radius);
+	border-radius: units.rem(general.$bor-rad);
 	border: units.rem(1) solid var(--ticker-item-border-color);
 }

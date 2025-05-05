@@ -1,5 +1,7 @@
-@use '../mixins/units';
 @use '../variables/general';
+@use '../variables/grid';
+@use '../mixins/units';
+@use '../mixins/adaptive-value';
 
 * {
 	scrollbar-color: var(--accent) #424242;
@@ -23,7 +25,7 @@
 	flex-basis: auto;
 }
 
-&::selection {
+::selection {
 	color: var(--dark);
 	background-color: var(--accent);
 }

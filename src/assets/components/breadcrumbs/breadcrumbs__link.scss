@@ -1,7 +1,7 @@
-@use '../../variables/general';
-@use '../../variables/grid';
-@use '../../mixins/units';
-@use '../../mixins/adaptive-value';
+@use "../../variables/general";
+@use "../../variables/grid";
+@use "../../mixins/units";
+@use "../../mixins/adaptive-value";
 
 .breadcrumbs__link {
 	transition: color 0.3s ease;

@@ -1,5 +1,5 @@
-@use '../units';
-@use '../../variables/general';
+@use "../units";
+@use "../../variables/general";
 
 @mixin state-accent {
 	@media (any-hover: hover) {

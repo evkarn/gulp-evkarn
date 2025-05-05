@@ -1,7 +1,7 @@
-@use '../../variables/general';
-@use '../../variables/grid';
-@use '../../mixins/units';
-@use '../../mixins/adaptive-value';
+@use "../../variables/general";
+@use "../../variables/grid";
+@use "../../mixins/units";
+@use "../../mixins/adaptive-value";
 
 .checkbox-txt a {
 	display: inline;
@@ -9,10 +9,10 @@
 	text-decoration: underline;
 	text-underline-position: under;
 
-	transition: color .3s ease;
+	transition: color 0.3s ease;
 	will-change: color;
 
-	@media ( any-hover: hover ) {
+	@media (any-hover: hover) {
 		&:hover {
 			color: var(--accent);
 		}

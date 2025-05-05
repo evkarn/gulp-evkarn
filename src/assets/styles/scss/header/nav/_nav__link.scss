@@ -1,5 +1,5 @@
-@use '../../mixins/units';
-@use '../../variables/general';
+@use "../../mixins/units";
+@use "../../variables/general";
 
 .header__nav a {
 	color: var(--dark-second);

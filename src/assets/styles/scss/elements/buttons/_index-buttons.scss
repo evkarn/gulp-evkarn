@@ -1,7 +1,7 @@
-@use '../../variables/general';
-@use '../../variables/grid';
-@use '../../mixins/units';
-@use '../../mixins/adaptive-value';
+@use "../../variables/general";
+@use "../../variables/grid";
+@use "../../mixins/units";
+@use "../../mixins/adaptive-value";
 
 .btn {
 	display: inline-flex;
@@ -45,7 +45,7 @@
 
 .btn--fill {
 	border: none;
-	border-radius: units.rem(general.$border-radius);
+	border-radius: units.rem(general.$bor-rad);
 
 	background-color: var(--accent);
 }

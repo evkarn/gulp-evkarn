@@ -3,7 +3,7 @@
 	margin: 0;
 
 	border: none;
-	border-bottom: rem($border-width) solid currentColor;
+	border-bottom: rem($bor-width) solid currentColor;
 
 	transition:
 		color 0.3s ease,
@@ -23,22 +23,8 @@
 			outline-offset: rem($outline-offset);
 
 			@media (min-width: em(1920.96)) {
-				@include calc-size(
-					outline-width,
-					$outline-width,
-					$outline-width * 2,
-					1920,
-					3840,
-					rem
-				);
-				@include calc-size(
-					outline-offset,
-					$outline-offset,
-					$outline-offset * 2,
-					1920,
-					3840,
-					rem
-				);
+				@include calc-size(outline-width, $outline-width, $outline-width * 2, 1920, 3840, rem);
+				@include calc-size(outline-offset, $outline-offset, $outline-offset * 2, 1920, 3840, rem);
 			}
 		}
 

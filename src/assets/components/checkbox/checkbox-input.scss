@@ -1,7 +1,7 @@
-@use '../../variables/general';
-@use '../../variables/grid';
-@use '../../mixins/units';
-@use '../../mixins/adaptive-value';
+@use "../../variables/general";
+@use "../../variables/grid";
+@use "../../mixins/units";
+@use "../../mixins/adaptive-value";
 
 .checkbox-input {
 	position: relative;
@@ -10,14 +10,13 @@
 	align-items: center;
 	justify-content: center;
 
-
 	width: units.rem(16);
 	height: units.rem(16);
 
 	appearance: none;
 
 	background-color: #fff;
-	border: units.rem(general.$border-width) solid #415674;
+	border: units.rem(general.$bor-width) solid #415674;
 	border-radius: units.rem(4);
 
 	&:focus-visible {
@@ -28,7 +27,7 @@
 	}
 
 	&:before {
-		content: '';
+		content: "";
 
 		position: absolute;
 		inset: 0;
@@ -49,7 +48,7 @@
 
 	&:checked {
 		&:before {
-			content: '✔';
+			content: "✔";
 
 			display: flex;
 			align-items: center;

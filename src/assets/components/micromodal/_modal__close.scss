@@ -1,7 +1,7 @@
-@use '../../variables/general';
-@use '../../variables/grid';
-@use '../../mixins/units';
-@use '../../mixins/adaptive-value';
+@use "../../variables/general";
+@use "../../variables/grid";
+@use "../../mixins/units";
+@use "../../mixins/adaptive-value";
 
 .modal__close {
 	position: absolute;
@@ -21,16 +21,18 @@
 
 	cursor: pointer;
 
-	transition: color 0.3s ease, scale .3s ease;
+	transition:
+		color 0.3s ease,
+		scale 0.3s ease;
 	will-change: color, scale;
 
-	@media ( max-width: units.rem(768) ) {
+	@media (max-width: units.rem(768)) {
 		top: units.rem(10);
 		right: units.rem(10);
 	}
 
 	&:before {
-		content: '✕';
+		content: "✕";
 
 		font-weight: 700;
 		font-size: units.rem(22);

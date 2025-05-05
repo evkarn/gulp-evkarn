@@ -1,7 +1,7 @@
-@use '../../variables/general';
-@use '../../variables/grid';
-@use '../../mixins/units';
-@use '../../mixins/adaptive-value';
+@use "../../variables/general";
+@use "../../variables/grid";
+@use "../../mixins/units";
+@use "../../mixins/adaptive-value";
 
 .badge {
 	position: absolute;
@@ -17,7 +17,7 @@
 	font-size: units.rem(14);
 	line-height: 120%;
 	text-align: center;
-	border-radius: units.rem(general.$border-radius);
+	border-radius: units.rem(general.$bor-rad);
 
 	background-color: var(--badge-bg);
 
