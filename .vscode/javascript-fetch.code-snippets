@@ -29,7 +29,23 @@
 			")",
 		],
 	},
-
+	"Fetch try, catch": {
+		"prefix": "fetch-try-catch",
+		"body": [
+			"const URL = '$1';",
+			"",
+			"fetch(URL)",
+			"\t.then((response) => {",
+			"\t\treturn response.json();",
+			"\t}",
+			"\t.then((data) => {",
+			"\t\tconsole.log(data);",
+			"\t}",
+			"catch ((error) => {",
+			"\tconsole.log(error);",
+			"});",
+		],
+	},
 	"Fetch then": {
 		"prefix": "fetch-then",
 		"body": [

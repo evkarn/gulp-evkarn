@@ -28,6 +28,17 @@ body {
 		border: none;
 	}
 
+	input,
+	textarea {
+		&:required:valid {
+			border-color: green;
+		}
+
+		&:focus:required:invalid {
+			border-color: red;
+		}
+	}
+
 	img {
 		display: block;
 

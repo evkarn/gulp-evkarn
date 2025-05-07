@@ -61,6 +61,8 @@ document.addEventListener('DOMContentLoaded', () => {
 		const nav = document?.querySelector('[data-nav]');
 		const navItems = document?.querySelectorAll('[data-nav-item]');
 
+		const overlay = document?.querySelector('[data-nav-overlay]');
+
 		const fixedEls = document?.querySelectorAll('[data-fixed');
 
 		if (burger && nav) {

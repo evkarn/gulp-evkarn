@@ -1,17 +1,17 @@
 // Variables
-@use 'variables/root';
+@use "variables/root";
 // End. Variables
 
 // Fonts
-@use 'fonts/fonts-faces';
+@use "fonts/fonts-faces";
 // END. Fonts
 
 // Reset styles
-@use './reset-styles/index-reset';
+@use "./reset-styles/index-reset";
 // End. Reset styles
 
 // Global
-@use 'global-config/index-config';
+@use "global-config/index-config";
 // END. Global
 
 // Plugins
@@ -26,18 +26,17 @@
 // End. Elements
 
 // Header
-@use './header/index-header';
+@use "./header/index-header";
 // End. Header
 
 // Sections
-@use './sections/intro/intro-index';
+@use "./sections/intro/intro-index";
 // End. Sections
 
 // Footer
-@use './footer/index-footer';
+@use "./footer/index-footer";
 // End. Footer
 
-
 // Media
-@use './@media/index-media';
+@use "./@media/index-media";
 // End. Media
