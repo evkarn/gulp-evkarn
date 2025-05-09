@@ -4,7 +4,17 @@ function goBackTop(offsetViewButton) {
 	// Получаем кнопку в переменную
 	const btn = document?.querySelector('[data-go-back-top]');
 
-	function btnActive() {
+	function handleClick() {
+		window.scrollTo({
+			top: 0,
+			left: 0,
+			behavior: 'smooth',
+		});
+
+		btn.removeEventListener('click', handleClick());
+	}
+
+	function addRemoveActiveClass() {
 		// Сколько нужно проскролить, чтобы появилась кнопка
 		const breakpoint = offsetViewButton;
 
@@ -14,18 +24,14 @@ function goBackTop(offsetViewButton) {
 		} else {
 			btn.classList.remove('is-active');
 		}
+
+		window.removeEventListener('scroll', addRemoveActiveClass);
 	}
 
 	if (btn) {
-		window.addEventListener('scroll', btnActive);
+		window.addEventListener('scroll', addRemoveActiveClass);
 
-		btn.addEventListener('click', function () {
-			window.scrollTo({
-				top: 0,
-				left: 0,
-				behavior: 'smooth',
-			});
-		});
+		btn.addEventListener('click', handleClick());
 	}
 }
 

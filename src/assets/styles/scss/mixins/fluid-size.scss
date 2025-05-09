@@ -1,0 +1,65 @@
+// Резиновый размер между min и max значениями на основе viewport
+// @param {Number} $min - Минимальное значение (например, 16px)
+// @param {Number} $max - Максимальное значение (например, 24px)
+// @param {Number} $min-vw [320px] - Минимальная ширина viewport
+// @param {Number} $max-vw [1000px] - Максимальная ширина viewport (по умолчанию 1000px)
+
+@mixin fluid-size-px($property, $min, $max, $min-vw: 320px, $max-vw: 1000px) {
+  #{$property}: clamp(
+    #{$min},
+    calc(#{$min} + (#{$max} - #{$min}) * (100vw - #{$min-vw}) / (#{$max-vw} - #{$min-vw})),
+    #{$max}
+  );
+}
+
+// Резиновый размер в rem между min и max значениями
+// @param {String} $property - CSS-свойство (font-size, padding и т.д.)
+// @param {Number} $min - Минимальное значение (в px или rem)
+// @param {Number} $max - Максимальное значение (в px или rem)
+// @param {Number} $min-vw [320px] - Минимальная ширина viewport
+// @param {Number} $max-vw [1000px] - Максимальная ширина viewport
+// @param {Boolean} $convert-to-rem [true] - Конвертировать px в rem
+
+@mixin fluid-size-rem(
+  $property,
+  $min,
+  $max,
+  $min-vw: 320px,
+  $max-vw: 1000px,
+  $convert-to-rem: true
+) {
+  // Конвертируем px в rem (если $convert-to-rem: true)
+  @function to-rem($value) {
+    @if unit($value) == "px" and $convert-to-rem {
+      @return calc($value / 16) * 1rem;
+    }
+    @return $value;
+  }
+
+  $min-rem: to-rem($min);
+  $max-rem: to-rem($max);
+  $min-vw-rem: to-rem($min-vw);
+  $max-vw-rem: to-rem($max-vw);
+
+  #{$property}: clamp(
+    #{$min-rem},
+    calc(#{$min-rem} + (#{$max-rem} - #{$min-rem}) * (100vw - #{$min-vw-rem}) / (#{$max-vw-rem} - #{$min-vw-rem})),
+    #{$max-rem}
+  );
+
+  // Для браузеров без поддержки clamp (опционально)
+  // @supports not (font-size: clamp(1rem, 2vw, 3rem)) {
+  //   #{$property}: $min-rem;
+  // }
+}
+
+.test-text {
+  /* Автоконвертация px → rem */
+  @include fluid-size-rem(font-size, 16px, 24px);
+
+  /* Без конвертации (если передаем rem) */
+  @include fluid-size-rem(margin, 1rem, 2rem, $convert-to-rem: false);
+
+  /* С кастомными breakpoints */
+  @include fluid-size-rem(padding, 10px, 40px, 360px, 1200px);
+}

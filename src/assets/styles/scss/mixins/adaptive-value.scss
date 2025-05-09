@@ -39,3 +39,11 @@
     #{$max-size * 1px}
   );
 }
+
+.text {
+  font-size: clamp(
+    var(--min-font),
+    calc(var(--min-font) + (var(--max-font) - var(--min-font)) * (100vw - 320px) / (var(--ideal-viewport) - 320)),
+    var(--max-font)
+  );
+}
