@@ -40,3 +40,13 @@
 // Media
 @use "./@media/index-media";
 // End. Media
+
+
+@use './mixins/fluid-size';
+@use './mixins/adaptive-value';
+
+.title-main {
+	@include fluid-size.fluid-size-px(font-size, 24, 54);
+	@include adaptive-value.adaptive-value-rem(font-size, 24, 54);
+}
+

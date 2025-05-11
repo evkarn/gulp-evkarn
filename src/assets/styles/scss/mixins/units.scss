@@ -1,18 +1,18 @@
-@use 'sass:math';
+@use "sass:math";
 
 // Удаляем единицы измерения
-@function stripUnit($value) {
+@function strip-unit($value) {
 	@return math.div($value, $value * 0 + 1);
 }
 
 @function rem($pxValue) {
-	@return #{math.div(stripUnit($pxValue), stripUnit(16px))}rem;
+	@return #{math.div(strip-unit($pxValue), strip-unit(16px))}rem;
 }
 
 @function em($pxValue) {
-	@return #{math.div(stripUnit($pxValue), stripUnit(16px))}em;
+	@return #{math.div(strip-unit($pxValue), strip-unit(16px))}em;
 }
 
 @function px($pxValue) {
-	@return #{math.div(stripUnit($pxValue), stripUnit(1px))}px;
+	@return #{math.div(strip-unit($pxValue), strip-unit(1px))}px;
 }
