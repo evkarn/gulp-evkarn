@@ -12,47 +12,45 @@ function burger() {
 
 	const fixedEls = document?.querySelectorAll('[data-fixed');
 
-	if (burger && nav) {
-		burger.addEventListener('click', () => {
-			burger.classList.toggle('burger--is-active');
+	const burgerSetAttributes = (expanded, pressed, label) => {
+		burger.setAttribute('aria-expanded', expanded);
 
-			nav.classList.toggle('nav--is-visible');
+		burger.setAttribute('aria-pressed', pressed);
 
-			fixedEls.forEach(function (el) {
-				el.classList.toggle('not-leap');
-			});
+		burger.setAttribute('aria-label', label);
+	};
 
-			if (burger.getAttribute('aria-expanded') === 'false') {
-				burger.setAttribute('aria-expanded', 'true');
+	const toggleClasses = () => {
+		burger.classList.toggle('burger--is-active');
 
-				burger.setAttribute('aria-pressed', 'true');
+		header.classList.toggle('header--open-nav');
 
-				burger.setAttribute('aria-label', 'Закрыть меню');
+		nav.classList.toggle('nav--is-visible');
 
-				disableScroll();
-			} else {
-				burger.setAttribute('aria-expanded', 'false');
-
-				burger.setAttribute('aria-pressed', 'false');
-
-				burger.setAttribute('aria-label', 'Открыть меню');
-
-				enableScroll();
-			}
+		fixedEls.forEach(function (el) {
+			el.classList.toggle('not-leap');
 		});
+
+		if (burger && burger.getAttribute('aria-expanded') === 'false') {
+			burgerSetAttributes('true', 'true', 'Закрыть меню');
+
+			disableScroll();
+		} else {
+			burgerSetAttributes('false', 'false', 'Открыть меню');
+
+			enableScroll();
+		}
+	};
+
+	if (burger && nav) {
+		burger.addEventListener('click', toggleClasses);
 	}
 
 	if (navItems) {
-		navItems.forEach((el) => {
+		navItems.forEach(el => {
 			el.addEventListener('click', () => {
-				enableScroll();
-
 				if (burger) {
-					burger.setAttribute('aria-expanded', 'false');
-
-					burger.setAttribute('aria-pressed', 'false');
-
-					burger.setAttribute('aria-label', 'Открыть меню');
+					burgerSetAttributes('false', 'false', 'Открыть меню');
 
 					burger.classList.remove('burger--is-active');
 				}
@@ -60,6 +58,8 @@ function burger() {
 				if (nav) {
 					nav.classList.remove('nav--is-active');
 				}
+
+				enableScroll();
 			});
 		});
 	}
@@ -67,11 +67,7 @@ function burger() {
 	if (overlay) {
 		overlay.addEventListener('click', () => {
 			if (burger) {
-				burger.setAttribute('aria-expanded', 'false');
-
-				burger.setAttribute('aria-pressed', 'false');
-
-				burger.setAttribute('aria-label', 'Открыть меню');
+				burgerSetAttributes('false', 'false', 'Открыть меню');
 
 				burger.classList.remove('burger--is-active');
 			}

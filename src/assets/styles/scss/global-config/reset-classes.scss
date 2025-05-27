@@ -76,16 +76,3 @@
 .figure-res {
 	margin: 0;
 }
-
-input,
-textarea {
-	outline: none;
-
-	&:required:valid {
-		border-color: green;
-	}
-
-	&:focus:required:invalid {
-		border-color: red;
-	}
-}

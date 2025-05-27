@@ -5,15 +5,27 @@
 		"body": [
 			"background-color: var($1);"
 		],
-		"description": "background-color: var()",
 	},
 	"background-color: var(--accent)": {
-		"prefix": "bg-color-var-accent",
+		"prefix": "bg-color-accent",
 		"scope": "css, scss, sass, scss, less",
 		"body": [
 			"background-color: var(--accent);"
 		],
-		"description": "background-color: var(--accent)",
+	},
+	"background-color: var(--dark)": {
+		"prefix": "bg-color-dark",
+		"scope": "css, scss, sass, scss, less",
+		"body": [
+			"background-color: var(--dark);"
+		],
+	},
+	"background-color: var(--light)": {
+		"prefix": "bg-color-light",
+		"scope": "css, scss, sass, scss, less",
+		"body": [
+			"background-color: var(--light);"
+		],
 	},
 	"background-color: transparent": {
 		"prefix": "bg-color-transparent",
@@ -21,7 +33,6 @@
 		"body": [
 			"background-color: transparent;"
 		],
-		"description": "background-color: transparent",
 	},
 	"background all": {
 		"prefix": "bg-all",
@@ -33,7 +44,6 @@
 			"background-repeat: no-repeat;",
 			"background-size: cover;",
 		],
-		"description": "background all",
 	},
 	"background image-set": {
 		"prefix": "bg-img-set",
@@ -48,6 +58,5 @@
 			"\turl(\"../images/$1@2x.jpg\") type(\"image/jpg\") 2x",
 			");",
 		],
-		"description": "background image-set",
 	},
 }

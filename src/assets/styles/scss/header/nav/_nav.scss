@@ -30,12 +30,14 @@
 }
 
 .header__nav.nav--is-visible {
-	right: 0;
-	z-index: 3;
+	@media (max-width: units.em(grid.$max-switch-point)) {
+		right: 0;
+		z-index: 3;
 
-	opacity: 1;
-	pointer-events: auto;
+		opacity: 1;
+		pointer-events: auto;
 
-	padding: 10px;
-	padding-top: calc(var(--header-height) + 16px);
+		padding: 10px;
+		padding-top: calc(var(--header-height) + units.rem(16));
+	}
 }

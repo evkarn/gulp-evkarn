@@ -12,8 +12,8 @@
 	align-items: center;
 	justify-content: center;
 
-	width: units.rem(24);
-	height: units.rem(24);
+	width: var(--modal-close-width);
+	height: var(--modal-close-height);
 
 	background: transparent;
 

@@ -10,10 +10,7 @@
 // @param {Number} $min-vw [320px] - Минимальная ширина viewport
 // @param {Number} $max-vw [1000px] - Максимальная ширина viewport (по умолчанию 1000px)
 
-@mixin fluid-size-px($property, $min, $max) {
-	$min-vw-width: grid.$min-screen;
-	$max-vw-width: grid.$container-width;
-
+@mixin fluid-size-px($property, $min, $max, $min-vw-width: grid.$min-screen, $max-vw-width: grid.$container-width) {
 	$slope: math.div(($max - $min), ($max-vw-width - $min-vw-width));
 
 	$intercept: $min - $slope * $min-vw-width;
@@ -21,10 +18,7 @@
 	#{$property}: clamp(#{$min * 1px}, #{$intercept * 1px} + #{$slope * 100vw}, #{$max * 1px});
 }
 
-@mixin fluid-size-rem($property, $min, $max) {
-	$min-vw-width: grid.$min-screen;
-	$max-vw-width: grid.$container-width;
-
+@mixin fluid-size-rem($property, $min, $max, $min-vw-width: grid.$min-screen, $max-vw-width: grid.$container-width) {
 	$min-size: math.div($min, general.$fz);
 	$max-size: math.div($max, general.$fz);
 	$min-width: math.div($min-vw-width, general.$fz);

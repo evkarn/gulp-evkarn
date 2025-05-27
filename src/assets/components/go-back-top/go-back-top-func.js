@@ -10,8 +10,6 @@ function goBackTop(offsetViewButton) {
 			left: 0,
 			behavior: 'smooth',
 		});
-
-		btn.removeEventListener('click', handleClick());
 	}
 
 	function addRemoveActiveClass() {
@@ -24,14 +22,12 @@ function goBackTop(offsetViewButton) {
 		} else {
 			btn.classList.remove('is-active');
 		}
-
-		window.removeEventListener('scroll', addRemoveActiveClass);
 	}
 
 	if (btn) {
 		window.addEventListener('scroll', addRemoveActiveClass);
 
-		btn.addEventListener('click', handleClick());
+		btn.addEventListener('click', handleClick);
 	}
 }
 

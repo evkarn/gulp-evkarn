@@ -1,4 +1,12 @@
 .modal {
+	--modal-close-width: 1.5rem;
+	--modal-close-height: 1.5rem;
+
+	--modal-container-margin: 0.625rem;
+	--modal-container-padding: 1.24rem;
+
+	--modal-container-bor-radius: 1rem;
+
 	display: none;
 	position: relative;
 	z-index: 5;

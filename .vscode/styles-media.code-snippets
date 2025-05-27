@@ -4,41 +4,37 @@
 		"prefix": "@max-switch-em",
 		"scope": "css, sass, scss, less",
 		"body": [
-			"@media ( max-width: units.em(grid.\\$switch-point) ) {",
+			"@media ( max-width: units.em(grid.\\$max-switch-point) ) {",
 			"\t$2",
 			"}"
 		],
-		"description": "Media Screen max-width switch-point em",
 	},
 	"Media Screen max-width switch-point px": {
 		"prefix": "@max-switch-px",
 		"scope": "css, sass, scss, less",
 		"body": [
-			"@media ( max-width: grid.\\$switch-point-px ) {",
+			"@media ( max-width: grid.\\$max-switch-point + px ) {",
 			"\t$2",
 			"}"
 		],
-		"description": "Media Screen max-width switch-point px",
 	},
 	"Media Screen min-width switch-point em": {
 		"prefix": "@min-switch-em",
 		"scope": "css, sass, scss, less",
 		"body": [
-			"@media ( min-width: units.em(grid.\\$switch-point) ) {",
+			"@media ( min-width: units.em(grid.\\$min-switch-point) ) {",
 			"\t$2",
 			"}"
 		],
-		"description": "Media Screen max-width switch-point em",
 	},
 	"Media Screen min-width switch-point px": {
 		"prefix": "@min-switch-px",
 		"scope": "css, sass, scss, less",
 		"body": [
-			"@media ( min-width: grid.\\$switch-point-px )  {",
+			"@media ( min-width: grid.\\$min-switch-point + px )  {",
 			"\t$2",
 			"}"
 		],
-		"description": "Media Screen max-width switch-point px",
 	},
 	"Media Screen max-width": {
 		"prefix": "@mmax",

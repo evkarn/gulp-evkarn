@@ -127,15 +127,14 @@
 	display: none !important;
 }
 
-.video {
+.video-wrap {
 	position: relative;
 	padding-bottom: 56.25%;
 	max-width: 100%;
 	width: 100%;
 	height: auto;
 
-	.video__iframe,
-	.video__player,
+	.video,
 	iframe,
 	video {
 		width: 100%;

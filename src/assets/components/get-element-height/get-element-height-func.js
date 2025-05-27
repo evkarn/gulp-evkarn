@@ -1,5 +1,5 @@
 function getElementHeight(selector, varHeightName) {
-	function heightDetermination() {
+	const heightDetermination = () => {
 		const element = document?.querySelector(selector);
 
 		if (element) {
@@ -9,13 +9,14 @@ function getElementHeight(selector, varHeightName) {
 
 			html.style.setProperty(varHeightName, `${elementHeight}px`);
 		}
+
+		window.removeEventListener('resize', heightDetermination);
 	}
 
-	heightDetermination();
 
-	window.addEventListener('resize', () => {
-		heightDetermination();
-	});
+	window.addEventListener('resize', heightDetermination);
+
+	heightDetermination();
 }
 
 export default getElementHeight;

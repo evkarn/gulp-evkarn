@@ -2,7 +2,7 @@ import MicroModal from 'micromodal';
 import disableScroll from '../disable-scroll/disable-scroll-func.js';
 import enableScroll from '../enable-scroll/enable-scroll-func.js';
 
-function micromodal() {
+function initMicromodal() {
 	'use strict';
 
 	const modals = document?.querySelectorAll('.modal');
@@ -46,4 +46,4 @@ function micromodal() {
 	}
 }
 
-export default micromodal;
+export default initMicromodal;
