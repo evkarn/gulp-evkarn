@@ -39,7 +39,7 @@ export const path = {
 
 	// Пути к исходникам файлов
 	src: {
-		configFiles: `${srcFolder}/*.{php,htaccess,txt,xml,ico,png,svg}`,
+		configFiles: `${srcFolder}/config/*.{php,htaccess,txt,xml,ico,png,svg}`,
 
 		files: `${srcFolder}/assets/files/**/*.*`,
 
@@ -49,7 +49,7 @@ export const path = {
 
 		fontsFaces: `${srcFolder}/assets/styles/${preprocessor}/fonts/_fonts-faces.${preprocessor}`,
 
-		html: `${srcFolder}/*.{html,htm}`,
+		html: `${srcFolder}/html/**/*.{html,htm}`,
 
 		js: `${srcFolder}/assets/js/*.{js,mjs}`,
 
@@ -89,7 +89,6 @@ export const path = {
 		`${buildFolder}/*.{html,ico,svg,png}`,
 		`${buildFolder}/assets/*`,
 		`!${buildFolder}/assets/images/`,
-		`!${buildFolder}/assets/svg`,
 		`!${buildFolder}/assets/fonts/`,
 	],
 

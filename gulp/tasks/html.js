@@ -88,6 +88,7 @@ export default function html() {
 							['\\{', '\\}'],
 							['<no-typography>', '</no-typography>'],
 							['<head>', '</head>'],
+							['<title itemprop="headline">', '</title>'],
 							['<title>', '</title>'],
 							['<code>', '</code>'],
 							['<pre>', '</pre>'],
