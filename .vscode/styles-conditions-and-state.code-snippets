@@ -10,6 +10,15 @@
 			"}",
 		]
 	},
+	"Hover any hover: none": {
+		"prefix": "hoverAnyHoverNone",
+		"scope": "css, sass, scss, less",
+		"body": [
+			"@media ( any-hover: hover ) {",
+			"\t$1",
+			"}",
+		]
+	},
 	"Hover + Focus": {
 		"prefix": "hoverFocus",
 		"scope": "css, sass, scss, less",

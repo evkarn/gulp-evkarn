@@ -1,0 +1,22 @@
+@use "../../variables/general";
+@use "../../variables/grid";
+@use "../../mixins/units";
+@use "../../mixins/fluid-size";
+
+.select-expanded__content {
+	position: absolute;
+	top: calc(var(--select-expanded-title-height) + units.rem(8));
+	left: 0;
+	z-index: 4;
+
+	display: none;
+
+	width: 100%;
+
+	padding: units.rem(10);
+
+	border: units.rem(1) solid var(--pinball);
+	border-radius: units.rem(8);
+
+	background-color: var(--athens-gray);
+}

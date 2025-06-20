@@ -37,7 +37,7 @@
 	opacity: 0;
 
 	transition: opacity .4s ease, background-color .4s ease, color .4s ease;
-	will-change: opacity, background-color, color;
+	will-change: opacity;
 }
 
 .go-back-top.is-active {

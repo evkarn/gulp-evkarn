@@ -1,33 +1,38 @@
 import slideToggle from '../slide-toggle/slide-toggle-func.js';
 
 function selectExpanded() {
-	'use strict';
+	('use strict');
 
-	// Собираем все элементы с атрибутом "data-selects"
-	const selects = document?.querySelectorAll('[data-select]');
+	const selects = document?.querySelectorAll('[data-select-expanded]');
+
+	if (!selects) {
+		return;
+	}
 
 	if (selects) {
-		selects.forEach((item) => {
-			item.addEventListener('click', (e) => {
+		selects.forEach(item => {
+			item.addEventListener('click', e => {
 				const target = e.target;
 
-				if (target.closest('[data-select-title]')) {
-					const parent = target?.closest('[data-select]');
+				if (target.closest('[data-select-expanded-title]')) {
+					const parent = target?.closest('[data-select-expanded]');
 
 					target.classList.toggle('is-active');
 
-					const content = parent?.querySelector('[data-select-content]');
+					const content = parent?.querySelector(
+						'[data-select-expanded-content]',
+					);
 
 					content.classList.toggle('is-active');
 
 					const titleHeight = e.target.closest(
-						'[data-select-title]',
+						'[data-select-expanded-title]',
 					).offsetHeight;
 
-					const rootElement = document.querySelector(':root');
+					const rootElement = document.documentElement;
 
 					rootElement.style.setProperty(
-						'--select-title-height',
+						'--select-expanded-title-height',
 						`${titleHeight}px`,
 					);
 
@@ -43,13 +48,13 @@ function selectExpanded() {
 				}
 
 				if (target.closest('[data-option-inner-button]')) {
-					const parent = target?.closest('[data-select]');
+					const parent = target?.closest('[data-select-expanded]');
 
 					const innerBtns = parent.querySelectorAll(
 						'[data-option-inner-button]',
 					);
 
-					innerBtns.forEach((item) => {
+					innerBtns.forEach(item => {
 						item.classList.remove('is-active');
 					});
 
@@ -57,9 +62,11 @@ function selectExpanded() {
 
 					const innerInfo = target.innerHTML;
 
-					const title = parent.querySelector('[data-select-title]');
+					const title = parent.querySelector('[data-select-expanded-title]');
 
-					const content = parent.querySelector('[data-select-content]');
+					const content = parent.querySelector(
+						'[data-select-expanded-content]',
+					);
 
 					title.innerHTML = innerInfo;
 
@@ -74,8 +81,10 @@ function selectExpanded() {
 				document.addEventListener('click', function (e) {
 					const target = e.target;
 
-					if (!target.closest('[data-select]')) {
-						const titles = document?.querySelectorAll('[data-select-title]');
+					if (!target.closest('[data-select-expanded]')) {
+						const titles = document?.querySelectorAll(
+							'[data-select-expanded-title]',
+						);
 
 						titles.forEach(function (item, index, array) {
 							item.classList.remove('is-active');
@@ -83,7 +92,7 @@ function selectExpanded() {
 						});
 
 						const contents = document?.querySelectorAll(
-							'[data-select-content]',
+							'[data-select-expanded-content]',
 						);
 
 						contents.forEach(function (item, index, array) {

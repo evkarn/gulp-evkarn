@@ -2,12 +2,9 @@ html {
 	scroll-behavior: smooth;
 }
 
-html,
 body {
 	height: 100%;
-}
 
-body {
 	margin: 0;
 }
 
@@ -99,5 +96,9 @@ body {
 		margin: 0;
 		padding: 0;
 		border: none;
+	}
+
+	figure {
+		margin: 0;
 	}
 }

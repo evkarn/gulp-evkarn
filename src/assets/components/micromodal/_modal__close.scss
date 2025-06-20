@@ -24,7 +24,7 @@
 	transition:
 		color 0.3s ease,
 		scale 0.3s ease;
-	will-change: color, scale;
+	will-change: scale;
 
 	@media (max-width: units.rem(768)) {
 		top: units.rem(10);

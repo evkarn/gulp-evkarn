@@ -14,7 +14,6 @@
 		"scope": "css, sass, scss, less",
 		"body": [
 			"transition: color .3s ease;",
-			"will-change: color;",
 		],
 		"description": "transition: color .3s ease",
 	},
@@ -23,7 +22,6 @@
 		"scope": "css, sass, scss, less",
 		"body": [
 			"transition: border-color .3s ease;",
-			"will-change: border-color;",
 		]
 	},
 	"transition: fill .3s ease": {
@@ -31,7 +29,6 @@
 		"scope": "css, sass, scss, less",
 		"body": [
 			"transition: fill .3s ease;",
-			"will-change: fill;",
 		],
 		"description": "transition: fill .3s ease",
 	},
@@ -49,7 +46,6 @@
 		"scope": "css, sass, scss, less",
 		"body": [
 			"transition: background-color .3s ease;",
-			"will-change: background-color;",
 		],
 		"description": "transition: background-color .3s ease",
 	},
@@ -58,7 +54,6 @@
 		"scope": "css, sass, scss, less",
 		"body": [
 			"transition: color .3s ease, background-color .3s ease;",
-			"will-change: color, background-color;",
 		],
 		"description": "transition: color .3s ease, background-color .3s ease",
 	},
