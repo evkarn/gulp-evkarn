@@ -1,13 +1,14 @@
-function getScrollWidth(e) {
+
+export function getScrollWidth() {
 	'use strict';
 
-	const body = document.body;
+	const docEl = document.documentElement;
 
-	const documentRoot = document.documentElement;
+	const docBody = document.body;
 
-	const scrollWidth = window.innerWidth - body.offsetWidth;
+	const scrollbarWidth = window.innerWidth - docBody.clientWidth;
 
-	documentRoot.style.setProperty('--scroll-width', `${scrollWidth}px`);
+	docEl.style.setProperty('--scroll-width', `${scrollbarWidth}px`);
+
+	return scrollbarWidth;
 }
-
-export default getScrollWidth;

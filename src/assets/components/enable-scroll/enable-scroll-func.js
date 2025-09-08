@@ -1,25 +1,32 @@
-function enableScroll() {
-	const html = document.documentElement;
+const docEl = document.documentElement;
+const docBody = document.body;
 
-	const body = document.body;
+export function enableScroll() {
+	'use strict';
 
-	const documentRoot = document.querySelector(':root');
+	// 1. Получаем сохраненную позицию с безопасным парсингом
+	const pagePosition = parseInt(docBody.dataset.position || '0', 10);
 
-	let pagePosition = parseInt(body.dataset.position, 10);
+	// 2. Удаляем класс блокировки
+	docBody.classList.remove('stop-scroll');
 
-	body.classList.remove('stop-scroll');
+	// 3. Восстанавливаем скролл (оптимизированный вариант)
+	if (pagePosition !== window.scrollY) {
+		window.scrollTo({
+			top: pagePosition,
+			left: 0,
+			behavior: 'instant', // Отключаем анимацию при восстановлении
+		});
+	}
 
-	window.scroll({
-		top: pagePosition,
+	// 4. Очищаем данные и стили
+	docBody.removeAttribute('data-position');
+	docEl.style.removeProperty('--top-position');
+	docEl.style.removeProperty('scroll-behavior');
 
-		left: 0,
-	});
-
-	body.removeAttribute('data-position');
-
-	documentRoot.style.setProperty('--top-position', 'auto');
-
-	html.style.scrollBehavior = '';
+	// 5. Особые случаи для мобильных устройств
+	if (/iPhone|iPad|iPod/i.test(navigator.userAgent)) {
+		docBody.style.removeProperty('touch-action');
+		docBody.style.removeProperty('overscroll-behavior');
+	}
 }
-
-export default enableScroll;

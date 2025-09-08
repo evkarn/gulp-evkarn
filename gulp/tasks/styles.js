@@ -1,9 +1,6 @@
 // Добавление вендерных префиксов для кросс-браузерной вёрстки
 import autoprefixer from 'gulp-autoprefixer';
 
-// Сжатие CSS файла
-import cleanCss from 'gulp-clean-css';
-
 // Обработка стилей sass, scss
 import * as dartSass from 'sass';
 import gulpSass from 'gulp-sass';
@@ -44,18 +41,6 @@ export default function styles() {
 				}).on('error', sass.logError),
 			)
 
-			// Если в режиме продакшена добавляем вендерные префиксы для совместимости стилей
-			.pipe(
-				app.plugins.if(
-					app.isBuild,
-					autoprefixer({
-						grid: true,
-						overrideBrowsersList: ['last 5 versions'],
-						cascade: false,
-					}),
-				),
-			)
-
 			// Убираем лишнее в адресах картинок
 			.pipe(
 				app.plugins.replace(
@@ -64,17 +49,21 @@ export default function styles() {
 				),
 			)
 
-			// Если в режиме продакшена создаём не сжатый дубль файла стилей
-			.pipe(app.plugins.if(app.isBuild, app.gulp.dest(app.path.build.css)))
-
 			// Если в режиме продакшена группируем медиа-запросы и сжимаем файл стилей
 			.pipe(
 				app.plugins.if(
 					app.isBuild,
 					postCss([
+						autoprefixer({
+							grid: true,
+							overrideBrowsersList: ['last 5 versions'],
+							cascade: false,
+						}),
+
 						mqPacker({
 							sort: sortCSSmq,
 						}),
+
 						cssnano({
 							preset: ['default'],
 						}),

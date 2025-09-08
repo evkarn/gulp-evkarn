@@ -71,5 +71,3 @@ function digitalCounters(timeDuration) {
 		});
 	}
 }
-
-export default digitalCounters;

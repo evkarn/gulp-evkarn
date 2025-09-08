@@ -1,6 +1,6 @@
 {
-	"Hover": {
-		"prefix": "hoverAnyHover",
+	"Hover any-hover: hover": {
+		"prefix": "hover-any-hover",
 		"scope": "css, sass, scss, less",
 		"body": [
 			"@media ( any-hover: hover ) {",
@@ -10,17 +10,17 @@
 			"}",
 		]
 	},
-	"Hover any hover: none": {
-		"prefix": "hoverAnyHoverNone",
+	"Hover any-hover: none": {
+		"prefix": "hover-any-hover-none",
 		"scope": "css, sass, scss, less",
 		"body": [
-			"@media ( any-hover: hover ) {",
+			"@media ( any-hover: none ) {",
 			"\t$1",
 			"}",
 		]
 	},
 	"Hover + Focus": {
-		"prefix": "hoverFocus",
+		"prefix": "hover-focus",
 		"scope": "css, sass, scss, less",
 		"body": [
 			"&:hover, &:focus {",
@@ -30,7 +30,7 @@
 		"description": "Hover + Focus",
 	},
 	"Focus + Active": {
-		"prefix": "focusActive",
+		"prefix": "focus-active",
 		"scope": "css, sass, scss, less",
 		"body": [
 			"&:focus, &:active {",
@@ -40,7 +40,7 @@
 		"description": "Focus + Active",
 	},
 	"Active + Focus": {
-		"prefix": "activeFocus",
+		"prefix": "active-focus",
 		"scope": "css, sass, scss, less",
 		"body": [
 			"&:active, &:focus {",

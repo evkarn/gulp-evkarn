@@ -3,7 +3,7 @@ import browsersync from 'browser-sync';
 
 // Отслеживание изменений в файлах
 import changed from 'gulp-changed';
-import newVer from 'gulp-newer';
+import newer from 'gulp-newer';
 
 // Условное ветвление
 import ifPlugin from 'gulp-if';
@@ -27,7 +27,7 @@ import replace from 'gulp-replace';
 export const plugins = {
 	browsersync: browsersync,
 	changed: changed,
-	newVer: newVer,
+	newer: newer,
 	if: ifPlugin,
 	imagemin: imagemin,
 	notify: notify,

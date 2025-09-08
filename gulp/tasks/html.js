@@ -87,6 +87,7 @@ export default function html() {
 							['\\{\\{', '\\}\\}'],
 							['\\{', '\\}'],
 							['<no-typography>', '</no-typography>'],
+							['<head itemscope itemtype="https://schema.org/WPHeader">', '</head>'],
 							['<head>', '</head>'],
 							['<title itemprop="headline">', '</title>'],
 							['<title>', '</title>'],

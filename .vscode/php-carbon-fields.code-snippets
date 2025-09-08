@@ -71,4 +71,13 @@
 			"<?php if ( \\$$1['$2'] ) { echo \\$$1['$2']; } ?>",
 		],
 	},
+	"Add tab carbon fields": {
+		"prefix": "crb-add-tab",
+		"scope": "html, php, njk, md",
+		"body": [
+			"->add_tab( __( 'Прессы для объемной штамповки' ), array(",
+			"",
+			"))",
+		],
+	},
 }

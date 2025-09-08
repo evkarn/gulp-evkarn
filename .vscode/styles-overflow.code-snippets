@@ -31,6 +31,14 @@
 		],
 		"description": "overflow-x: visible",
 	},
+	"overflow-x: auto": {
+		"prefix": "overflow-x-auto",
+		"scope": "css, sass, scss, less",
+		"body": [
+			"overflow-x: visible;"
+		],
+		"description": "overflow-x: auto",
+	},
 	"overflow-y: hidden": {
 		"prefix": "overflow-y-hidden",
 		"scope": "css, sass, scss, less",
@@ -46,5 +54,13 @@
 			"overflow-y: visible;"
 		],
 		"description": "overflow-y: visible",
+	},
+	"overflow-y: auto": {
+		"prefix": "overflow-y-auto",
+		"scope": "css, sass, scss, less",
+		"body": [
+			"overflow-y: auto;"
+		],
+		"description": "overflow-y: auto",
 	},
 }

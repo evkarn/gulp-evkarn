@@ -1,53 +1,67 @@
-function cookieNote() {
-	function setCookie(name, value, days) {
-		let expires = '';
+export function cookieNote() {
+	'use strict';
 
-		if (days) {
-			let date = new Date();
+	// Конфигурация (легко менять параметры)
+	const COOKIE_CONFIG = {
+		name: 'cookieConsent',
+		value: 'true',
+		days: 30,
+		popupSelector: '[data-cookie-popup]',
+		btnSelector: '[data-cookie-popup-btn]',
+	};
 
-			date.setTime(date.getTime() + days * 24 * 60 * 60 * 1000);
+	// Универсальные функции для работы с cookie
+	const cookie = {
+		set(name, value, days) {
+			let expires = '';
+			if (days) {
+				const date = new Date();
+				date.setTime(date.getTime() + days * 24 * 60 * 60 * 1000);
+				expires = `; expires=${date.toUTCString()}`;
+			}
+			document.cookie = `${name}=${value || ''}${expires}; path=/; SameSite=Lax`;
+		},
 
-			expires = '; expires=' + date.toUTCString();
+		get(name) {
+			return (
+				document.cookie
+					.split(';')
+					.map(c => c.trim())
+					.find(c => c.startsWith(`${name}=`))
+					?.split('=')[1] || null
+			);
+		},
+
+		exists(name) {
+			return document.cookie
+				.split(';')
+				.some(c => c.trim().startsWith(`${name}=`));
+		},
+	};
+
+	// Основная логика
+	function initCookiePopup() {
+		const popup = document.querySelector(COOKIE_CONFIG.popupSelector);
+		const btn = document.querySelector(COOKIE_CONFIG.btnSelector);
+
+		if (!popup || !btn) return;
+
+		// Если куки уже есть - скрываем popup
+		if (cookie.exists(COOKIE_CONFIG.name)) {
+			popup.style.display = 'none';
+			return;
 		}
 
-		document.cookie = name + '=' + (value || '') + expires + '; path=/';
+		// Обработчик клика по кнопке
+		const handleAccept = () => {
+			cookie.set(COOKIE_CONFIG.name, COOKIE_CONFIG.value, COOKIE_CONFIG.days);
+			popup.style.removePro perty('display');
+			btn.removeEventListener('click', handleAccept);
+		};
+
+		btn.addEventListener('click', handleAccept);
+
+		// Показываем popup, если он был скрыт в CSS
+		popup.style.display = 'block';
 	}
-
-	// Функция для получения куки
-	function getCookie(name) {
-		let nameEQ = name + '=';
-
-		const ca = document.cookie.split(';');
-
-		for (var i = 0; i < ca.length; i++) {
-			var c = ca[i];
-
-			while (c.charAt(0) === ' ') c = c.substring(1, c.length);
-
-			if (c.indexOf(nameEQ) === 0) return c.substring(nameEQ.length, c.length);
-		}
-
-		return null;
-	}
-
-	(function hiddenCookiePopup() {
-		if (getCookie('cookieConsent')) {
-			const cookieEl = document?.querySelector('[data-cookie-popup]');
-
-			cookieEl.style.display = 'none';
-		}
-	})();
-
-	(function initCookie() {
-		const cookiePopup = document?.querySelector('[data-cookie-popup]');
-		const cookieBtn = document?.querySelector('[data-cookie-popup-btn]');
-
-		cookieBtn.addEventListener('click', () => {
-			setCookie('cookieConsent', 'true', 30);
-
-			cookiePopup.style.display = 'none';
-		});
-	})();
 }
-
-export default cookieNote;

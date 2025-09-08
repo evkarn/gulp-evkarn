@@ -1,21 +1,23 @@
 import getScrollWidth from '../get-scroll-width/get-scroll-width-func.js';
 
 function disableScroll() {
-	const html = document.documentElement;
+	'use strict';
 
-	const body = document.body;
+	const docEl = document.documentElement;
+	const docBody = document.body;
 
-	const documentRoot = document.querySelector(':root');
+	// Получаем текущую позицию скролла
+	const pagePosition = window.scrollY;
 
-	let pagePosition = window.scrollY;
+	// Устанавливаем класс для блокировки скролла
+	docBody.classList.add('stop-scroll');
 
-	body.classList.add('stop-scroll');
+	// Сохраняем позицию в data-атрибут
+	docBody.dataset.position = pagePosition;
 
-	body.dataset.position = pagePosition;
+	// Устанавливаем CSS-переменную для позиции
+	docEl.style.setProperty('--top-position', `-${pagePosition}px`);
 
-	documentRoot.style.setProperty('--top-position', `-${pagePosition}px`);
-
-	html.style.scrollBehavior = 'unset';
+	// Отключаем smooth-scroll во время блокировки
+	docEl.style.scrollBehavior = 'unset';
 }
-
-export default disableScroll;

@@ -1,25 +1,24 @@
-function isMobile() {
-	if (window.innerWidth < 768) {
-		return true;
-	}
+// Оптимизированные функции определения устройства
+const deviceType = {
+	mobile: () => window.innerWidth < 768,
+	tablet: () => window.innerWidth >= 768 && window.innerWidth <= 1024,
+	desktop: () => window.innerWidth > 1024,
 
-	return false;
+	// Альтернативный вариант с единой точкой контроля
+	current: () => {
+		const width = window.innerWidth;
+		if (width < 768) return 'mobile';
+		if (width <= 1024) return 'tablet';
+		return 'desktop';
+	},
+};
+
+// Пример использования:
+if (deviceType.mobile()) {
+	// Мобильная логика
 }
 
-function isTablet() {
-	if (window.innerWidth >= 769 && window.innerWidth <= 1024) {
-		return true;
-	}
-
-	return false;
-}
-
-function isDesktop() {
-	if (window.innerWidth > 1025) {
-		return true;
-	}
-
-	return false;
-}
+// Или с единой функцией:
+const currentDevice = deviceType.current();
 
 export default { isMobile, isTablet, isDesktop };
