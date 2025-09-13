@@ -1,6 +1,8 @@
 // Локальный сервер
 import browsersync from 'browser-sync';
 
+import fs from 'fs';
+
 // Отслеживание изменений в файлах
 import changed from 'gulp-changed';
 import newer from 'gulp-newer';
@@ -27,9 +29,10 @@ import replace from 'gulp-replace';
 export const plugins = {
 	browsersync: browsersync,
 	changed: changed,
-	newer: newer,
 	if: ifPlugin,
 	imagemin: imagemin,
+	fs: fs,
+	newer: newer,
 	notify: notify,
 	plumber: plumber,
 	rename: rename,

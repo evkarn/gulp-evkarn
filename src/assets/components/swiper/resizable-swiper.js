@@ -1,11 +1,9 @@
-import Swiper, { Navigation } from 'swiper';
-
-export default function resizableSwiper = (
+export function resizableSwiper(
 	breakpoint,
 	swiperClass,
 	swiperSettings,
 	callback,
-) => {
+) {
 	let swiper;
 
 	breakpoint = window.matchMedia(breakpoint);
@@ -31,7 +29,7 @@ export default function resizableSwiper = (
 	checker();
 };
 
-export default function someFunc = (instance) => {
+export function someFunc(instance) {
 	if (instance) {
 		instance.on('slideChange', function (e) {
 			console.log('*** mySwiper.activeIndex', instance.activeIndex);

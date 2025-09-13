@@ -35,21 +35,21 @@
 		"prefix": "bor-rad-rem",
 		"scope": "css, scss, sass, scss, less",
 		"body": [
-			"border-radius: units.rem(general.\\$bor-rad);"
+			"border-radius: units.rem(general.\\$border-radius);"
 		],
 		"description": "border-radius: border-radius rem",
 	},
 	"Border all px": {
 		"prefix": "bor-px",
 		"body": [
-			"border: general.$bor-width + px solid var($2);"
+			"border: general.\\$border-width + px solid var($2);"
 		],
 		"description": "Border all px",
 	},
 	"Border all rem": {
 		"prefix": "bor-rem",
 		"body": [
-			"border: units.rem(general.\\$bor-width) solid var($1);"
+			"border: units.rem(general.\\$border-width) solid var($1);"
 		],
 		"description": "Border all rem",
 	},

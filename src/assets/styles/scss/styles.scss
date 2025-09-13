@@ -2,17 +2,21 @@
 @use "variables/root";
 // End. Variables
 
+
 // Fonts
 @use "fonts/fonts-faces";
 // END. Fonts
+
 
 // Reset styles
 @use "./reset-styles/index-reset";
 // End. Reset styles
 
+
 // Global
-@use "global-config/index-config";
+@use "settings/index-settings";
 // END. Global
+
 
 // Plugins
 // @use '../../../../node_modules/swiper/swiper';
@@ -20,33 +24,28 @@
 // @use '../../../../node_modules/photoswipe/dist/photoswipe.css';
 // End. Plugins
 
+
 // Elements
 @use "./elements/burger/index-burger";
 @use "./elements/go-back-top/index-go-back-top";
 // End. Elements
 
+
 // Header
 @use "./header/index-header";
 // End. Header
+
 
 // Sections
 @use "./sections/intro/intro-index";
 // End. Sections
 
+
 // Footer
 @use "./footer/index-footer";
 // End. Footer
 
+
 // Media
 @use "./@media/index-media";
 // End. Media
-
-
-@use './mixins/fluid-size';
-@use './mixins/adaptive-value';
-
-.title-main {
-	@include fluid-size.fluid-size-px(font-size, 24, 54);
-	@include adaptive-value.adaptive-value-rem(font-size, 24, 54);
-}
-

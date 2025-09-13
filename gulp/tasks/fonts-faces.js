@@ -1,6 +1,3 @@
-import fs from 'fs';
-import path from 'path';
-
 export default function createFontsFaces () {
 	// Файл стилей подключения шрифтов
 	let fileFonts = `${app.path.src.fontsFaces}`;
@@ -10,12 +7,12 @@ export default function createFontsFaces () {
 	const fontExtension = 'woff2';
 
 	// Проверяем существуют ли файлы шрифтов
-	fs.readdir(app.path.build.fonts, function (err, fontsFiles) {
+	app.plugins.fs.readdir(app.path.build.fonts, function (err, fontsFiles) {
 		if (fontsFiles) {
 			// Проверяем существует ли файл стилей для подключения шрифтов
-			if (!fs.existsSync(fileFonts)) {
+			if (!app.plugins.fs.existsSync(fileFonts)) {
 				// Если файла нет, создаём его
-				fs.writeFile(fileFonts, '', cb);
+				app.plugins.fs.writeFile(fileFonts, '', cb);
 
 				let newFileOnly;
 
@@ -46,7 +43,7 @@ export default function createFontsFaces () {
 								`${app.fontsVars.vars.preprocessor}` == 'sass' &&
 								`${app.fontsVars.vars.fontStretch}` != ''
 							) {
-								fs.appendFile(
+								app.plugins.fs.appendFile(
 									fileFonts,
 									`@font-face\r
 \tfont-family: ${fontName}\r
@@ -62,7 +59,7 @@ export default function createFontsFaces () {
 								`${app.fontsVars.vars.preprocessor}` == 'sass' &&
 								`${app.fontsVars.vars.fontStretch}` == ''
 							) {
-								fs.appendFile(
+								app.plugins.fs.appendFile(
 									fileFonts,
 									`@font-face\r
 \tfont-family: ${fontName}\r
@@ -77,7 +74,7 @@ export default function createFontsFaces () {
 								`${app.fontsVars.vars.preprocessor}` != 'sass' &&
 								`${app.fontsVars.vars.fontStretch}` != ''
 							) {
-								fs.appendFile(
+								app.plugins.fs.appendFile(
 									fileFonts,
 									`@font-face {\r
 \tfont-family: ${fontName};\r
@@ -90,7 +87,7 @@ export default function createFontsFaces () {
 									cb,
 								);
 							} else {
-								fs.appendFile(
+								app.plugins.fs.appendFile(
 									fileFonts,
 									`@font-face {\r
 \tfont-family: ${fontName};\r
@@ -163,7 +160,7 @@ export default function createFontsFaces () {
 
 							// Формирование кода подключения шрифта
 							if (`${app.fontsVars.vars.preprocessor}` == 'sass') {
-								fs.appendFile(
+								app.plugins.fs.appendFile(
 									fileFonts,
 									`@font-face\r
 \tfont-family: ${fontName}\r
@@ -175,7 +172,7 @@ export default function createFontsFaces () {
 									cb,
 								);
 							} else {
-								fs.appendFile(
+								app.plugins.fs.appendFile(
 									fileFonts,
 									`@font-face {\r
 \tfont-family: ${fontName};\r

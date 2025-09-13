@@ -1,4 +1,4 @@
-export default function readProgressCircle() {
+export function readProgressCircle() {
 	'use strict';
 
 	// Добавляем в body блок для линии прогресса прокрутки

@@ -5,7 +5,7 @@
 	xmlns="http://www.w3.org/1999/xhtml"
 	itemtype="https://schema.org/WebSite"
 >
-@include('includes/head.html', {
+@include('./head.html', {
 "title": "Заголовок страницы",
 "siteUrl": "https://site.ru",
 "description": "Описание страницы",
@@ -20,17 +20,17 @@
 	itemtype="https://schema.org/WebPage"
 >
 	<div class="page-wrap">
-		@include('./includes/header.html', {"alt": "Логотип"})
+		@include('./header.html', {"alt": "Логотип"})
 
 		<main class="main flex-center" style="margin-top: 150px;">
 
-			<h1 class="title-main" style="display: inline-block; margin: auto;">Заголовок</h1>
+
 
 		</main>
 
-		@include('./includes/footer.html')
+		@include('./footer.html')
 
-		@include('./includes/go-back-top.html')
+		@include('./go-back-top.html')
 	</div>
 
 	<script src="assets/js/scripts.min.js"></script>

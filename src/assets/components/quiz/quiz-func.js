@@ -1,4 +1,4 @@
-export default function quiz() {
+export function quiz() {
 	'use strict';
 
 	const progressLine = document?.querySelector('[data-progress-line]');

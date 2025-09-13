@@ -1,5 +1,4 @@
 // Добавление вендерных префиксов для кросс-браузерной вёрстки
-import autoprefixer from 'gulp-autoprefixer';
 
 // Обработка стилей sass, scss
 import * as dartSass from 'sass';
@@ -7,9 +6,11 @@ import gulpSass from 'gulp-sass';
 
 // Группировка медиа запросов
 import postCss from 'gulp-postcss';
+import autoprefixer from 'autoprefixer';
 import sortCSSmq from 'sort-css-media-queries';
 import mqPacker from 'css-mqpacker';
 import cssnano from 'cssnano';
+import pxToRem from 'postcss-pxtorem';
 
 // Обработка ошибок
 import plumberInit from './plumber.js';
@@ -62,6 +63,40 @@ export default function styles() {
 
 						mqPacker({
 							sort: sortCSSmq,
+						}),
+
+						pxToRem({
+							rootValue: 16,
+							unitPrecision: 5,
+							propList: [
+								'font',
+								'font-size',
+								'line-height',
+								'letter-spacing',
+								'margin',
+								'margin-top',
+								'margin-right',
+								'margin-bottom',
+								'margin-left',
+								'padding',
+								'padding-top',
+								'padding-right',
+								'padding-bottom',
+								'padding-left',
+								'width',
+								'max-width',
+								'min-width',
+								'height',
+								'max-height',
+								'min-height',
+								'border-radius',
+								'border-width',
+							],
+							selectorBlackList: [],
+							replace: true,
+							mediaQuery: true,
+							minPixelValue: 0,
+							exclude: /node_modules/i,
 						}),
 
 						cssnano({

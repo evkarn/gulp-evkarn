@@ -18,6 +18,15 @@
 			"?>",
 		],
 	},
+	"Get field term meta": {
+		"prefix": "crb-get-field-term-meta",
+		"scope": "html, php, njk, md",
+		"body": [
+			"<?php",
+			"\t\\$$1 = carbon_get_term_meta( '$2' );",
+			"?>",
+		],
+	},
 	"Get img id": {
 		"prefix": "crb-get-img-id",
 		"scope": "html, php, njk, md",

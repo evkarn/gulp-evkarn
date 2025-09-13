@@ -1,4 +1,4 @@
-export default function aosInit() {
+export function aosInit() {
 	const dataAos = document?.querySelector('data-aos');
 
 	if (dataAos) {

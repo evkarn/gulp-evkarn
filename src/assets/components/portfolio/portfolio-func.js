@@ -1,12 +1,4 @@
-// IMPORT PORTFOLIO-TABS
-// import { portfolioTabs } from './src/_utils/index.js';
-// END. IMPORT PORTFOLIO-TABS
-
-// INIT PORTFOLIO-TABS
-// portfolioTabs();
-// END. INIT PORTFOLIO-TABS
-
-export default function portfolio = function () {
+export function portfolio () {
 	'use strict';
 
 	const portfolioTabsNav = document.querySelector('.portfolio-tabs-nav');

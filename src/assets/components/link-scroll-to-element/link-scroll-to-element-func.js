@@ -1,5 +1,5 @@
-export default function linkScrollToElement() {
-	('use strict');
+export function linkScrollToElement() {
+	'use strict';
 
 	// Помещаем все ссылки с атрибутом data-nav-page в переменную
 	const linksScroll = document.querySelectorAll('[data-nav-page]');
@@ -36,7 +36,7 @@ export default function linkScrollToElement() {
 
 	if (linksScroll.length > 0) {
 		// Проходимся по всем ссылкам и отслеживаем клик по ним, при клике выполняем функцию onScrollLinkClick
-		linksScroll.forEach((link) => {
+		linksScroll.forEach(link => {
 			link.addEventListener('click', onScrollLinkClick);
 		});
 	}

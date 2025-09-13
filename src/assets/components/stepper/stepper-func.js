@@ -1,4 +1,4 @@
-export default function stepper() {
+export function stepper() {
 	'use strict';
 
 	const steppers = document?.querySelectorAll('[data-stepper]');

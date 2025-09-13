@@ -11,7 +11,7 @@
 
 	font-family: general.$font-text;
 	font-style: normal;
-	font-size: units.rem(general.$fz);
+	font-size: var(--fz-px);
 	font-weight: 400;
 	line-height: 1.5;
 

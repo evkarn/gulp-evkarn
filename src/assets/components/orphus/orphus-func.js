@@ -1,4 +1,4 @@
-export default function orphus() {
+export function orphus() {
 	(function () {
 		'use strict';
 

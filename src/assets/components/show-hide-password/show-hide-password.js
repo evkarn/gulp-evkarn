@@ -1,4 +1,4 @@
-export default function showHidePassword() {
+export function showHidePassword() {
 	'use strict';
 
 	const buttonsShowHidePass = document?.querySelectorAll(

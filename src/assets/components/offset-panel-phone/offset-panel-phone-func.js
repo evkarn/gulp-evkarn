@@ -1,4 +1,4 @@
-export default function offsetPanelPhone() {
+export function offsetPanelPhone() {
 	'use strict';
 
 	const calcHeight() {

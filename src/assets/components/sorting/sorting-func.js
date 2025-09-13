@@ -1,4 +1,4 @@
-export default function sorting() {
+export function sorting() {
 	'use strict';
 
 	var filterButtons = document?.querySelectorAll('[data-cat-filter-button]');

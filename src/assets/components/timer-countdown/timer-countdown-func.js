@@ -1,4 +1,4 @@
-export default function timerCountdown() {
+export function timerCountdown() {
 	const timerBlock = document?.querySelector('[data-timer-countdown-parent]');
 
 	const finish = document?.querySelector(

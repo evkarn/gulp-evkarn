@@ -1,6 +1,6 @@
 import noUiSlider from 'nouislider';
 
-export default function noUiSliderFunction() {
+export function noUiSliderFunction() {
 	const sliderEl = document.getElementById('.element');
 
 	noUiSlider.create(sliderEl, {

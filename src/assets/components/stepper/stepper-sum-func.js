@@ -1,4 +1,4 @@
-export default function stepperSum() {
+export function stepperSum() {
 	'use strict';
 
 	const steppers = document?.querySelectorAll('[data-stepper]');
