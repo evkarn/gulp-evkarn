@@ -1,11 +1,16 @@
 :root {
-	--fz: 16;
-	--fz-px: 16px;
+	--fz: 16px;
 
 	--font-title: "Oswald", sans-serif;
 	--font-text: "Oswald", sans-serif;
 
 	--index: calc(1vh + 1vw);
+
+	--border-width: 1px;
+	--border-radius: 10px;
+
+	--outline-width: 1px;
+	--outline-offset: 2px;
 
 	--body-bg: #fff;
 

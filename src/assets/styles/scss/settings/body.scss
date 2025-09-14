@@ -5,16 +5,16 @@
 .body {
 	position: relative;
 
-	min-width: units.rem(grid.$min-screen);
+	min-width: grid.$min-screen + px;
 
 	margin: 0;
 
-	font-family: general.$font-text;
+	font-family: var(--font-text);
 	font-style: normal;
-	font-size: var(--fz-px);
+	font-size: var(--fz) + px;
 	font-weight: 400;
 	line-height: 1.5;
 
-	background-color: general.$body-bg;
+	background-color: var(--body-bg);
 	overflow-x: hidden;
 }

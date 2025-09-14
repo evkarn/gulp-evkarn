@@ -7,10 +7,11 @@ import gulpSass from 'gulp-sass';
 // Группировка медиа запросов
 import postCss from 'gulp-postcss';
 import autoprefixer from 'autoprefixer';
+import postcssPresetEnv from 'postcss-preset-env';
 import sortCSSmq from 'sort-css-media-queries';
 import mqPacker from 'css-mqpacker';
-import cssnano from 'cssnano';
 import pxToRem from 'postcss-pxtorem';
+import cssnano from 'cssnano';
 
 // Обработка ошибок
 import plumberInit from './plumber.js';
@@ -61,42 +62,17 @@ export default function styles() {
 							cascade: false,
 						}),
 
+						postcssPresetEnv({}),
+
 						mqPacker({
 							sort: sortCSSmq,
 						}),
 
 						pxToRem({
-							rootValue: 16,
-							unitPrecision: 5,
-							propList: [
-								'font',
-								'font-size',
-								'line-height',
-								'letter-spacing',
-								'margin',
-								'margin-top',
-								'margin-right',
-								'margin-bottom',
-								'margin-left',
-								'padding',
-								'padding-top',
-								'padding-right',
-								'padding-bottom',
-								'padding-left',
-								'width',
-								'max-width',
-								'min-width',
-								'height',
-								'max-height',
-								'min-height',
-								'border-radius',
-								'border-width',
-							],
+							propList: ['*'],
 							selectorBlackList: [],
 							replace: true,
 							mediaQuery: true,
-							minPixelValue: 0,
-							exclude: /node_modules/i,
 						}),
 
 						cssnano({
