@@ -50,9 +50,6 @@ function watcher(done) {
 	done();
 }
 
-// Последовательность обработки шрифтов
-const fonts = gulp.series(ttfToWoff, createFontsFaces);
-
 // Основные задачи
 const mainTasks = gulp.parallel(
 	html,
@@ -67,6 +64,8 @@ const mainTasks = gulp.parallel(
 );
 
 // Построение сценариев выполнения задач
+const fonts = gulp.series(ttfToWoff, createFontsFaces);
+const files = gulp.parallel(copyConfigFiles, copyFiles, copyFavicon);
 const dev = gulp.series(reset, mainTasks, watcher, server);
 const build = gulp.series(reset, mainTasks);
 const deployZip = gulp.series(reset, zip);
@@ -74,7 +73,7 @@ const deployFTP = gulp.series(reset, ftp);
 const deploySSH = gulp.series(reset, ssh);
 
 // Экспорт сценариев
-export { dev, build, deployZip, deployFTP, deploySSH, fonts };
+export { dev, build, deployZip, deployFTP, deploySSH, fonts, files };
 
 // Выполнение сценариев по-умолчанию
 gulp.task('default', dev);

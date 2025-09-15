@@ -20,8 +20,8 @@
 
 .main {
 	// if flex
-	flex-shrink: 1;
 	flex-grow: 1;
+	flex-shrink: 1;
 	flex-basis: auto;
 }
 
@@ -86,8 +86,8 @@
 .img-wrap,
 .img-wrapper {
 	position: relative;
-	max-width: 100%;
 	width: 100%;
+	max-width: 100%;
 	padding-bottom: 56.25%;
 
 	.image,
@@ -123,20 +123,20 @@
 
 .video-wrap {
 	position: relative;
-	padding-bottom: 56.25%;
-	max-width: 100%;
 	width: 100%;
+	max-width: 100%;
 	height: auto;
+	padding-bottom: 56.25%;
 
 	.video,
 	iframe,
 	video {
-		width: 100%;
-		height: 100%;
 		position: absolute;
 		inset: 0;
-		border: none;
+		width: 100%;
+		height: 100%;
 		object-fit: cover;
+		border: none;
 	}
 }
 
@@ -155,10 +155,10 @@
 	position: fixed;
 	top: var(--top-position);
 	left: 0;
-	height: 100vh;
-	width: 100vw;
-	padding-right: var(--scroll-width);
 	overflow: hidden;
+	width: 100vw;
+	height: 100vh;
+	padding-right: var(--scroll-width);
 }
 
 .not-leap,
@@ -167,19 +167,19 @@
 }
 
 .visually-hidden {
-	position: absolute;
-	width: 1px;
-	height: 1px;
-	margin: -1px;
-	padding: 0;
-	border: 0;
-	clip-path: inset(100%);
-	clip: rect(0 0 0 0);
-	overflow: hidden;
+	position: absolute !important;
+  overflow: hidden !important;
+  width: 1px !important;
+  height: 1px !important;
+  margin: -1px !important;
+  padding: 0 !important;
+  white-space: nowrap !important;
+  border: 0 !important;
+  clip-path: inset(100%) !important;
 }
 
 .sprite-svg {
-	fill: currentColor;
-
 	transition: fill 0.3s ease;
+
+	fill: currentColor;
 }

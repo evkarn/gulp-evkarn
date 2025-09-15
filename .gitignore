@@ -1,20 +1,26 @@
 # Папки (Folders)
 node_modules/
 .pnp/
-_site/
 dist/
 .git/
+.vscode/
+.idea/
+dist/
+build/
+_site/
+.cache/
+
 
 # Файлы (Files)
 desktop.ini
 
 # Исключение по расширению (Exclusion by extension)
+*.code-workspace
 .DS_Store
-.env.local
-.env.development.local
-.env.test.local
-.env.production.local
+.env*
 .pnp.js
+*.log
+*.tmp
 
 # Исключение по имени (Exception by name), звёздочка * означает "любые символы после этой части имени"
 npm-debug.log*
