@@ -1,29 +1,29 @@
 .radio-input {
+
+	appearance: none;
 	position: relative;
 
 	display: flex;
-	align-items: center;
 	justify-content: center;
-
-	appearance: none;
-
-	background-color: #fff;
+	align-items: center;
 
 	width: rem(24);
 	height: rem(24);
 
-	border-radius: 100%;
+	background-color: #ffffff;
 
 	border: rem($bor-width) solid #415674;
+
+	border-radius: 100%;
 
 	@include min-full-hd-em {
 		@include calc-size(border-width, $bor-width, $bor-width * 2, 1920, 3840, rem);
 	}
 
 	&:focus {
-		outline-width: rem(1);
-		outline-style: dashed;
 		outline-color: currentColor;
+		outline-style: dashed;
+		outline-width: rem(1);
 		outline-offset: rem($outline-offset);
 
 		@include min-full-hd-em {
@@ -39,16 +39,16 @@
 		position: absolute;
 		inset: 0;
 
-		margin: auto;
-
 		overflow: hidden;
 
-		scale: 0;
+		margin: auto;
 
 		transition:
 			opacity 0.3s ease,
 			background-color 0.3s ease,
 			scale 0.3s ease;
+
+		scale: 0;
 	}
 
 	&:checked {

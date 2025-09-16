@@ -4,7 +4,7 @@
 @use "../../mixins/fluid-size";
 
 .select-expanded__text {
-	color: var(--c-gray);
 	text-align: left;
 	text-transform: capitalize;
+	color: var(--c-gray);
 }

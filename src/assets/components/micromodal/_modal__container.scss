@@ -4,21 +4,21 @@
 @use "../../mixins/adaptive-value";
 
 .modal__container {
+
+	overflow-y: auto;
 	box-sizing: border-box;
+	width: 100%;
 
 	max-width: 560px;
 	max-height: 90vh;
-	width: 100%;
 
 	margin: units.rem(10);
 	padding: var(--modal-container-padding);
 	padding-top: calc(var(--modal-container-padding) + var(--modal-close-height) + 1rem);
 
-	background-color: #fff;
+	background-color: #ffffff;
 
 	border-radius: var(--modal-container-bor-radius);
-
-	overflow-y: auto;
 }
 
 .modal .modal__container {

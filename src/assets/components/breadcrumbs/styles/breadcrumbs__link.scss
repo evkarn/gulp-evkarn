@@ -15,9 +15,9 @@
 	}
 
 	&:focus-visible {
-		outline-width: units.rem(general.$outline-width);
-		outline-style: dashed;
 		outline-color: var(--c-accent);
+		outline-style: dashed;
+		outline-width: units.rem(general.$outline-width);
 		outline-offset: units.rem(general.$outline-offset);
 
 		&:active {

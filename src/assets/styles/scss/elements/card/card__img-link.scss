@@ -6,12 +6,12 @@
 .card__img-link {
 	position: relative;
 
+	overflow: hidden;
+
 	display: block;
-	border-bottom: units.rem(2) solid var(--dark);
 
 	background: var(--card-img-bg);
-
-	overflow: hidden;
+	border-bottom: units.rem(2) solid var(--dark);
 
 	transition: border-color 0.3s ease;
 
@@ -24,8 +24,8 @@
 			}
 
 			.badge {
-				background-color: var(--accent);
 				color: var(--text-light);
+				background-color: var(--accent);
 			}
 		}
 	}
@@ -38,8 +38,8 @@
 		}
 
 		.badge {
-			background-color: var(--accent);
 			color: var(--text-light);
+			background-color: var(--accent);
 		}
 	}
 }

@@ -4,10 +4,10 @@
 @use '../../mixins/adaptive-value';
 
 .burger {
-	position: relative;
-	z-index: 4;
 
 	flex-shrink: 0;
+	position: relative;
+	z-index: 4;
 
 	display: none;
 

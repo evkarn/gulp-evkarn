@@ -7,14 +7,14 @@
 	display: flex;
 	flex-wrap: wrap;
 	gap: units.rem(10);
-	font-size: 0 !important;
-	font-weight: 400;
 	font-family:
 		"Helvetica Neue",
-		Arial,
+		"Arial",
 		sans-serif;
+	font-size: 0 !important;
+	font-weight: 400;
 	text-indent: 0 !important;
-	color: #000;
+	color: #000000;
 	transition: opacity 0.2s ease;
 
 	* {

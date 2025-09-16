@@ -5,15 +5,16 @@
 
 .ticker__wrapper {
 	display: inline-flex;
-	width: min-content;
 	gap: units.rem(40);
+	
+	width: min-content;
 
 	&:after {
 		content: '';
 
 		display: block;
-		height: 100%;
 		width: units.rem(40);
+		height: 100%;
 	}
 }
 

@@ -14,37 +14,37 @@
 
 	font-size: units.rem(14);
 	line-height: units.rem(20);
-	border-radius: units.rem(3);
 	white-space: nowrap;
-	vertical-align: top;
-	color: #000;
+	color: #000000;
 	background: hsla(0, 0%, 91%, 0.8);
+	border-radius: units.rem(3);
 	transition:
 		background 0.33s ease-out,
 		color 0.33s ease-out,
 		fill 0.33s ease-out;
+	vertical-align: top;
 
 	&:active,
 	&:focus-visible,
 	&:hover {
-		transition: none;
 		cursor: pointer;
+		transition: none;
 	}
 
 	@media (hover: none) {
+		cursor: unset;
 		transition:
 			background 0.33s ease-out,
 			color 0.33s ease-out,
 			fill 0.33s ease-out;
-		cursor: unset;
 	}
 }
 
 .likely-light {
 	.likely__widget {
-		color: #fff;
-		fill: #fff;
+		color: #ffffff;
 		background: rgb(237 237 237 / 16%);
+		fill: #ffffff;
 		text-shadow: rgb(0 0 0 / 20%) 0 0 0.33em;
 	}
 }

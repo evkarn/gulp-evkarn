@@ -6,10 +6,10 @@
 	--modal-container-padding: 1.24rem;
 
 	--modal-container-bor-radius: 1rem;
-
-	display: none;
 	position: relative;
 	z-index: 5;
+
+	display: none;
 
 	&.is-open {
 		display: block;

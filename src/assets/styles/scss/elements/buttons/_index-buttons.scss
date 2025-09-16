@@ -4,26 +4,26 @@
 @use "../../mixins/adaptive-value";
 
 .btn {
-	display: inline-flex;
-	align-items: center;
-	justify-content: center;
 
 	align-self: flex-start;
+	display: inline-flex;
+	justify-content: center;
+	align-items: center;
 
 	padding: units.rem(16) units.rem(24);
 
 	font-weight: 600;
-	text-align: center;
-
-	@include adaptive-value.adaptive-value-rem(font-size, 14, 16);
-
-	color: var(--text-light);
 
 	white-space: nowrap;
+	text-align: center;
+
+	color: var(--text-light);
 
 	cursor: pointer;
 
 	transition: background-color 0.3s ease;
+
+	@include adaptive-value.adaptive-value-rem(font-size, 14, 16);
 
 	@media (any-hover: hover) {
 		&:hover {
@@ -32,9 +32,9 @@
 	}
 
 	&:focus-visible {
-		outline-width: units.rem(general.$outline-width);
-		outline-style: dashed;
 		outline-color: currentColor;
+		outline-style: dashed;
+		outline-width: units.rem(general.$outline-width);
 		outline-offset: units.rem(general.$outline-offset);
 	}
 
@@ -44,8 +44,8 @@
 }
 
 .btn--fill {
-	border: none;
-	border-radius: units.rem(general.$bor-rad);
 
 	background-color: var(--accent);
+	border: none;
+	border-radius: units.rem(general.$bor-rad);
 }

@@ -1,8 +1,0 @@
-@use '../../variables/general';
-@use '../../variables/grid';
-@use '../../mixins/units';
-@use '../../mixins/adaptive-value';
-
-.tabs-content__body {
-	min-height: units.rem(360);
-}

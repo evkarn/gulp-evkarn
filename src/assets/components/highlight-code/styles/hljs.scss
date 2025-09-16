@@ -1,29 +1,29 @@
 .hljs {
+
+	overflow-x: auto;
 	display: block;
 
 	padding-left: 1em;
 	padding-right: 1em;
-
-	overflow-x: auto;
-
-	direction: ltr;
-
-	text-align: left;
+	line-height: 1.5;
 
 	white-space: pre;
 
-	word-spacing: normal;
-	word-break: normal;
-	line-height: 1.5;
-	tab-size: 2;
-
 	hyphens: none;
+
+	text-align: left;
+
+	color: var(--c-text);
 
 	background-color: var(--hljs-bg);
 
 	border-radius: rem($bor-rad);
 
-	color: var(--c-text);
+	direction: ltr;
+
+	word-spacing: normal;
+	word-break: normal;
+	tab-size: 2;
 
 	@media (min-width: em(1920.96)) {
 		@include calc-size(border-radius, $bor-rad, $bor-rad * 2, 1920, 3840, rem);

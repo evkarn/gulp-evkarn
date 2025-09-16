@@ -1,9 +1,9 @@
 @use '../../../mixins/units';
 
 .nav--multi-level .sub-menu {
-	transform-origin: 0 0;
 
 	transition: transform 0.3s ease;
+	transform-origin: 0 0;
 
 	transform: rotateX(-90deg);
 

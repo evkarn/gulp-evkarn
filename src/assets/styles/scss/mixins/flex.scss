@@ -6,8 +6,8 @@
 
 @mixin flex-center {
 	display: flex;
-	align-items: center;
 	justify-content: center;
+	align-items: center;
 
 	@content;
 }
@@ -28,8 +28,8 @@
 
 @mixin flex-all-sb {
 	display: flex;
-	align-items: center;
 	justify-content: space-between;
+	align-items: center;
 
 	@content;
 }

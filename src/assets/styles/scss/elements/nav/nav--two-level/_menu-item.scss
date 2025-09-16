@@ -4,9 +4,9 @@
 	@media (any-hover: hover) {
 		&:hover {
 			.sub-menu {
-				transform: translate3d(0, 0, 0);
 
 				opacity: 1;
+				transform: translate3d(0, 0, 0);
 				pointer-events: auto;
 				user-select: auto;
 			}

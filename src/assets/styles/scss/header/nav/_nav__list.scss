@@ -3,8 +3,8 @@
 
 .header__nav .nav__list {
 	flex-wrap: wrap;
-	column-gap: units.rem(grid.$gap);
 	row-gap: units.rem(4);
+	column-gap: units.rem(grid.$gap);
 
 	@media (max-width: units.em(grid.$max-switch-point)) {
 		flex-direction: column;

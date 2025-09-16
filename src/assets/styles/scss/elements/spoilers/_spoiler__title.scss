@@ -1,14 +1,14 @@
 .spoiler__title {
 	display: flex;
-	align-items: center;
 	justify-content: space-between;
+	align-items: center;
 
 	width: 100%;
 
 	padding: 30px 52px;
+	font-size: 40px;
 
 	font-weight: 600;
-	font-size: 40px;
 	line-height: 80%;
 
 	transition: color 0.3s ease;

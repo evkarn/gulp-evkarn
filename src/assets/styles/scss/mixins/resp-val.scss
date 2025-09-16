@@ -25,32 +25,35 @@
 }
 
 @mixin calc-size-media(
-	$propName,
-	$minSize,
-	$maxSize,
-	$minWidth,
-	$maxWidth,
-	$units
+  $propName,
+  $minSize,
+  $maxSize,
+  $minWidth,
+  $maxWidth,
+  $units: px
 ) {
-	@if $units == rem {
-		@media ( min-width: #{math.div($minWidth, $font-size) + em} ) and ( max-width: #{math.div($maxWidth, $font-size) + em} ) {
-			#{$propName}: calc(
-				#{math.div($minSize, $font-size) + #{$units}} +
-					(#{$maxSize} - #{$minSize}) *
-					(
-						(100vw - #{math.div($minWidth, $font-size) + #{$units}}) /
-							(#{$maxWidth} - #{$minWidth})
-					)
-			);
-		}
-	} @else {
-		@media ( min-width: #{math.div($minWidth, $font-size) + em} ) and ( max-width: #{math.div($maxWidth, $font-size) + em} ) {
-			#{$propName}: calc(
-				#{$minSize + #{$units}} + (#{$maxSize} - #{$minSize}) *
-					((100vw - #{$minWidth + #{$units}}) / (#{$maxWidth} - #{$minWidth}))
-			);
-		}
-	}
+  @if $units == rem {
+    $minWidth-em: math.div($minWidth, 16px) * 1em;
+    $maxWidth-em: math.div($maxWidth, 16px) * 1em;
+
+    @media (min-width: #{$minWidth-em}) and (max-width: #{$maxWidth-em}) {
+      /* stylelint-disable-next-line no-invalid-position-declaration */
+      #{$propName}: calc(
+        #{math.div($minSize, 16px)}rem +
+        (#{math.div($maxSize, 16px)} - #{math.div($minSize, 16px)}) *
+        ((100vw - #{$minWidth-em}) / (#{$maxWidth-em} - #{$minWidth-em}))
+      );
+    }
+  } @else {
+    @media (min-width: #{$minWidth}#{$units}) and (max-width: #{$maxWidth}#{$units}) {
+      /* stylelint-disable-next-line no-invalid-position-declaration */
+      #{$propName}: calc(
+        #{$minSize}#{$units} +
+        (#{$maxSize} - #{$minSize}) *
+        ((100vw - #{$minWidth}#{$units}) / (#{$maxWidth} - #{$minWidth}))
+      );
+    }
+  }
 }
 
 @function calc-size-without-property(

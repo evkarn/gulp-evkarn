@@ -4,25 +4,25 @@
 @use '../../mixins/adaptive-value';
 
 .likely__counter {
-	display: none;
 	position: relative;
-	padding: units.rem(1) units.rem(4);
-	text-decoration: none;
-	text-rendering: optimizeLegibility;
-	line-height: inherit;
-	cursor: inherit;
+	display: none;
 	margin: 0;
-	outline: 0;
+	padding: units.rem(1) units.rem(4);
+	line-height: inherit;
 	text-align: center;
-	vertical-align: top;
-	background-size: units.rem(1) units.rem(1);
-	background-repeat: repeat-y;
+	text-decoration: none;
 	background-image: linear-gradient(
 		90deg,
 		rgb(0 0 0 / 20%) 0,
 		transparent 0.5px,
 		transparent
 	);
+	background-size: units.rem(1) units.rem(1);
+	background-repeat: repeat-y;
+	outline: 0;
+	cursor: inherit;
+	text-rendering: optimizelegibility;
+	vertical-align: top;
 }
 
 .likely_ready {

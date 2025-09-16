@@ -5,10 +5,10 @@
 	--c-accent: #d93737;
 
 	--c-dark: #202020;
-	--c-darken: #000;
+	--c-darken: #000000;
 
 	--c-light: #ececec;
-	--c-lighten: #fff;
+	--c-lighten: #ffffff;
 
 	--border-radius: 4px;
 }
@@ -27,6 +27,6 @@
 	filter: invert(0);
 }
 
-.page-blog .section-header::after {
+.page-blog .section-header:after {
 	opacity: 0.3;
 }

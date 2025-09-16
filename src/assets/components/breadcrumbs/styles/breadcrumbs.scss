@@ -6,9 +6,9 @@
 .breadcrumbs {
 	padding-top: calc(units.rem(28) + var(--header-height));
 	padding-bottom: units.rem(28);
+	font-size: units.rem(20);
 
 	font-weight: 600;
-	font-size: units.rem(20);
 	line-height: 120%;
 
 	color: var(--text-dark);

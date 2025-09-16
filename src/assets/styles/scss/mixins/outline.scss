@@ -1,7 +1,7 @@
 @mixin outline($width, $offset) {
-	outline-width: $width + px;
-	outline-style: dashed;
 	outline-color: var(--c-accent);
+	outline-style: dashed;
+	outline-width: $width + px;
 	outline-offset: $offset + px;
 
 	@include min-full-hd-em {

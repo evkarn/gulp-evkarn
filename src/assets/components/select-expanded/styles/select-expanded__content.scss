@@ -5,9 +5,9 @@
 
 .select-expanded__content {
 	position: absolute;
+	z-index: 4;
 	top: calc(var(--select-expanded-title-height) + units.rem(8));
 	left: 0;
-	z-index: 4;
 
 	display: none;
 
@@ -15,8 +15,8 @@
 
 	padding: units.rem(10);
 
+	background-color: var(--athens-gray);
+
 	border: units.rem(1) solid var(--pinball);
 	border-radius: units.rem(8);
-
-	background-color: var(--athens-gray);
 }

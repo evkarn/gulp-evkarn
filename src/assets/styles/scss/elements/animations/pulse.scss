@@ -2,8 +2,8 @@
 
 @keyframes pulse {
   0% {
-    transform: scale(0.5);
     opacity: 0;
+    transform: scale(0.5);
   }
 
   50% {
@@ -11,22 +11,22 @@
   }
 
   100% {
-    transform: scale(1.2);
     opacity: 0;
+    transform: scale(1.2);
   }
 }
 
 .pulse {
   position: relative;
 
-  padding: units.rem(20);
-
   width: units.rem(38);
   height: units.rem(38);
 
-  border-radius: 50%;
+  padding: units.rem(20);
 
   text-align: center;
+
+  border-radius: 50%;
 }
 
 .pulse:after,

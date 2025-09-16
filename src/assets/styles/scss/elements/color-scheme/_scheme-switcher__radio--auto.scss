@@ -1,5 +1,5 @@
 .scheme-switcher__radio--auto {
-	background-image: url(../images/dist/scheme-auto-on.svg);
+	background-image: url("../images/dist/scheme-auto-on.svg");
 
 	&:checked {
 		~ .scheme-switcher__status {

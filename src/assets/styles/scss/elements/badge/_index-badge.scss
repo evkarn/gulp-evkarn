@@ -9,17 +9,17 @@
 	right: units.rem(15);
 
 	display: flex;
-	align-items: center;
 	justify-content: center;
+	align-items: center;
 
 	padding: units.rem(6) units.rem(10);
 
 	font-size: units.rem(14);
 	line-height: 120%;
 	text-align: center;
-	border-radius: units.rem(general.$bor-rad);
 
 	background-color: var(--badge-bg);
+	border-radius: units.rem(general.$bor-rad);
 
 	transition:
 		background-color 0.3s ease,

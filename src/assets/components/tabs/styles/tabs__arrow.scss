@@ -1,47 +1,34 @@
-@use "../../variables/general";
-@use "../../variables/grid";
-@use "../../mixins/units";
-@use "../../mixins/adaptive-value";
-
 .tabs__arrow {
-	padding: units.rem(18) units.rem(32);
+	position: absolute;
+	top: 50%;
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	width: rem(60);
+	height: rem(60);
+
+	padding: 0;
+
+	background-color: var(--c-accent);
 
 	border: none;
 
-	border-radius: units.rem(5000);
-
-	background-color: var(--light);
+	border-radius: 100%;
 
 	cursor: pointer;
 
-	transition:
-		color 0.3s ease,
-		background-color 0.3s ease;
+	transition: background-color 0.3s ease;
 
-	@media (any-hover: hover) {
-		&:hover {
-			color: var(--text-light);
-			background-color: var(--accent);
-		}
-	}
+	transform: translateY(-50%);
 
-	&:focus-visible {
-		outline-width: units.rem(general.$outline-width);
-		outline-style: dashed;
-		outline-color: currentColor;
-		outline-offset: units.rem(general.$outline-offset);
-	}
-
-	&:active {
-		background-color: var(--accent-light);
+	@include min-full-hd-em {
+		@include calc-size(width, 60, 120, 1920, 3840, rem);
+		@include calc-size(height, 60, 120, 1920, 3840, rem);
 	}
 
 	> * {
 		pointer-events: none;
-	}
-
-	svg {
-		width: units.rem(20);
-		height: units.rem(14);
 	}
 }

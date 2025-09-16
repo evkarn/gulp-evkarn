@@ -1,24 +1,16 @@
-@use "../../variables/general";
-@use "../../variables/grid";
-@use "../../mixins/units";
-@use "../../mixins/adaptive-value";
-
 .tabs-content {
-	position: relative;
-
 	display: none;
+	padding: rem(40) rem(60);
+	background-color: #ffffff;
 
-	border-radius: units.rem(general.$bor-rad);
-
-	animation-name: fade-in;
-	animation-duration: 0.3s;
-	animation-timing-function: linear;
+	@include min-full-hd-em {
+		@include calc-size(padding-top, 40, 80, 1920, 3840, rem);
+		@include calc-size(padding-bottom, 40, 80, 1920, 3840, rem);
+		@include calc-size(padding-right, 60, 120, 1920, 3840, rem);
+		@include calc-size(padding-left, 60, 120, 1920, 3840, rem);
+	}
 }
 
 .tabs__content--active {
 	display: block;
-
-	border-radius: units.rem(general.$bor-rad);
-
-	@include adaptive-value.adaptive-value-rem(margin-bottom, 20, 28);
 }

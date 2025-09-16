@@ -7,13 +7,13 @@
 		inset: 0;
 
 		display: block;
-
-		height: 100%;
 		width: 100%;
 
-		opacity: $opacity;
+		height: 100%;
 
 		background-color: $color;
+
+		opacity: $opacity;
 
 		@content;
 	}

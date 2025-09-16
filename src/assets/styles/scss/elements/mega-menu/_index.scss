@@ -1,7 +1,7 @@
 .nav ul {
-	list-style-type: none;
 	margin: 0;
 	padding: 0;
+	list-style-type: none;
 }
 
 .sub-menu a {
@@ -18,9 +18,9 @@
 			}
 
 			> .sub-menu {
-				transform: rotateX(0deg);
 				visibility: visible;
 				opacity: 1;
+				transform: rotateX(0deg);
 			}
 		}
 	}
@@ -37,12 +37,12 @@
 		content: '▽';
 
 		position: absolute;
-		right: 10px;
 		top: 50%;
+		right: 10px;
 
 		display: flex;
-		align-items: center;
 		justify-content: center;
+		align-items: center;
 
 		width: 20px;
 		height: 20px;
@@ -78,13 +78,13 @@
 
 	min-width: 200px;
 
-	transition: transform 0.5s ease-in-out;
-
-	transform: rotateX(-90deg);
-	transform-origin: 0 0;
-
 	visibility: hidden;
 	opacity: 0;
+
+	transition: transform 0.5s ease-in-out;
+	transform-origin: 0 0;
+
+	transform: rotateX(-90deg);
 
 	will-change: transform;
 }

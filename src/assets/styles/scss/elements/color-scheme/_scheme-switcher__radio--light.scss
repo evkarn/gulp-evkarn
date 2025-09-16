@@ -1,5 +1,5 @@
 .scheme-switcher__radio--light {
-	background-image: url(../images/dist/scheme-light-sun.svg);
+	background-image: url("../images/dist/scheme-light-sun.svg");
 
 	&:checked {
 		~ .scheme-switcher__status {

@@ -4,16 +4,16 @@
 @use "../../mixins/adaptive-value";
 
 .card {
-	border-radius: units.rem(general.$bor-rad);
-	text-align: center;
 	overflow: hidden;
 
 	line-height: 1.2;
+	text-align: center;
+	border-radius: units.rem(general.$bor-rad);
 
 	&:focus-visible {
-		outline-width: units.rem(general.$outline-width);
-		outline-style: dashed;
 		outline-color: var(--accent);
+		outline-style: dashed;
+		outline-width: units.rem(general.$outline-width);
 		outline-offset: units.rem(general.$outline-offset);
 	}
 }

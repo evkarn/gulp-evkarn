@@ -2,32 +2,25 @@
 	display: flex;
 	flex-wrap: wrap;
 	gap: rem(10);
+	font-family: "Helvetica Neue", "Arial", sans-serif;
 	font-size: 0 !important;
 	font-weight: 400;
-	font-family:
-		Helvetica Neue,
-		Arial,
-		sans-serif;
 	text-indent: 0 !important;
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
-	color: #000;
+	color: #000000;
 	opacity: 0;
 	transition: opacity 0.1s ease;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
 
 	@media (min-width: em(1920.96)) {
 		@include calc-size(gap, 10, 20, 1920, 3840, rem);
 	}
-}
 
-.likely {
 	* {
 		display: inline-block;
 		visibility: hidden;
 	}
-}
 
-.likely {
 	svg {
 		position: absolute;
 		top: 50%;

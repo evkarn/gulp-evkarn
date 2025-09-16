@@ -5,14 +5,14 @@
 
 .select-expanded {
 	position: relative;
-
-	max-width: units.rem(320);
 	width: 100%;
 
+	max-width: units.rem(320);
+
 	font-weight: 500;
-	@include fluid-size.fluid-size-rem(font-size, 14, 16);
 
 	color: var(--sooty);
+	@include fluid-size.fluid-size-rem(font-size, 14, 16);
 
 	@media (max-width: units.rem(400)) {
 		max-width: 100%;

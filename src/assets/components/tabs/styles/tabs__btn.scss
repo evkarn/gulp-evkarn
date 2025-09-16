@@ -1,49 +1,41 @@
-@use "../../variables/general";
-@use "../../variables/grid";
-@use "../../mixins/units";
-@use "../../mixins/adaptive-value";
-
 .tabs__btn {
-	padding: units.rem(10) units.rem(28);
+	font-size: rem(20);
+	font-weight: 500;
+	line-height: 1.2;
+
+	color: var(--c-light);
 
 	border: none;
 
-	border-radius: units.rem(5000);
-
-	background-color: var(--light);
-
-	@include adaptive-value.adaptive-value-rem(font-size, 18, 25);
-	line-height: 120%;
-	color: var(--text-dark);
-
 	cursor: pointer;
 
-	transition:
-		color 0.3s ease,
-		background-color 0.3s ease;
+	transition: color 0.3s ease;
+
+	@include min-full-hd-em {
+		@include calc-size(font-size, 20, 40, 1920, 3840, rem);
+	}
 
 	@media (any-hover: hover) {
 		&:hover {
-			color: var(--text-light);
-			background-color: var(--accent);
+			color: var(--c-accent);
 		}
 	}
 
 	&:focus-visible {
-		outline-width: units.rem(general.$outline-width);
-		outline-style: dashed;
-		outline-color: currentColor;
-		outline-offset: units.rem(general.$outline-offset);
+		color: var(--c-accent);
 	}
 
 	&:active {
-		background-color: var(--accent-light);
+		color: var(--c-accent-dark);
 	}
 }
 
 .tabs__btn--active {
-	color: var(--text-light);
-	background-color: var(--accent);
+	color: var(--c-dark);
+
+	transition:
+		background-color 0.3s ease,
+		color 0.3s ease;
 
 	pointer-events: none;
 }

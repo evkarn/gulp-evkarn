@@ -7,14 +7,14 @@
 	width: units.rem(46);
 	height: units.rem(46);
 
-	border: units.rem(general.$bor-width) solid var(--sooty);
-	border-radius: units.rem(8);
-
-	color: var(--sooty);
-
 	font-size: units.rem(20);
 
 	text-align: center;
+
+	color: var(--sooty);
+
+	border: units.rem(general.$bor-width) solid var(--sooty);
+	border-radius: units.rem(8);
 }
 
 span.pagination__element {
@@ -34,9 +34,9 @@ a.pagination__element {
 	}
 
 	&:focus-visible {
-		outline-width: units.rem(general.$outline-width);
-		outline-style: dashed;
 		outline-color: var(--accent);
+		outline-style: dashed;
+		outline-width: units.rem(general.$outline-width);
 		outline-offset: units.rem(general.$outline-offset);
 	}
 

@@ -3,9 +3,9 @@
 	width: rem(32);
 	height: rem(32);
 	margin: 0;
-	background-repeat: no-repeat;
 	background-position: center;
 	background-size: rem(26);
+	background-repeat: no-repeat;
 	transition: filter 0.2s ease;
 
 	@media (min-width: em(1920.96)) {

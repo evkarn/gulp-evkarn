@@ -12,11 +12,11 @@
 
 		display: block;
 
-		pointer-events: none;
+		transition: rotate 0.3s ease;
 
 		transform: translateY(-50%), rotate(45deg);
 
-		transition: rotate 0.3s ease;
+		pointer-events: none;
 
 		@include min-full-hd-px {
 			@include calc-size(width, 15, 30, 1920, 3840, px);

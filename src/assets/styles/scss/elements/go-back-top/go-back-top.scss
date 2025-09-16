@@ -5,13 +5,13 @@
 
 .go-back-top {
 	position: fixed;
+	z-index: 15;
 	right: units.rem(20);
 	bottom: units.rem(100);
-	z-index: 15;
 
 	display: flex;
-	align-items: center;
 	justify-content: center;
+	align-items: center;
 
 	min-width: units.rem(40);
 	min-height: units.rem(40);
@@ -20,39 +20,39 @@
 
 	font-size: units.rem(18);
 
+	text-align: center;
+
+	color: #000000;
+
 	background-color: oklch(0.71 0.0045 236.53);
 
 	border: none;
 	border-radius: 50%;
 
+	opacity: 0;
+
 	cursor: pointer;
 
-	color: #000;
-
-	text-align: center;
+	transition: opacity .4s ease, background-color .4s ease, color .4s ease;
 
 	pointer-events: none;
 	user-select: none;
-
-	opacity: 0;
-
-	transition: opacity .4s ease, background-color .4s ease, color .4s ease;
 	will-change: opacity;
 }
 
 .go-back-top.is-active {
+
+	opacity: 0.6;
 	pointer-events: auto;
 	user-select: auto;
 
-	opacity: 0.6;
-
 	@media (any-hover: hover) {
 		&:hover {
-			opacity: 1;
-
-			background-color: var(--accent);
 
 			color: oklch(1 0 0);
+
+			background-color: var(--accent);
+			opacity: 1;
 		}
 	}
 

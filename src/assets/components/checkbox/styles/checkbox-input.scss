@@ -15,27 +15,27 @@
 	--checkbox-before-bg-color: var(--light);
 	--checkbox-before-border-radius: calc((2 / 16) * 1rem);
 
+	appearance: none;
+
 
 	position: relative;
 
 	display: flex;
-	align-items: center;
 	justify-content: center;
+	align-items: center;
 
 	width: var(--checkbox-width);
 	height: var(--checkbox-height);
 	margin: 0;
-
-	appearance: none;
 
 	background-color: transparent;
 	border: var(--checkbox-border-width) solid var(--checkbox-border-color);
 	border-radius: var(--checkbox-border-radius);
 
 	&:focus-visible {
-		outline-width: units.rem(1);
-		outline-style: dashed;
 		outline-color: currentColor;
+		outline-style: dashed;
+		outline-width: units.rem(1);
 		outline-offset: units.rem(general.$outline-offset);
 	}
 
@@ -46,22 +46,22 @@
 		top: 50%;
 		left: 50%;
 
-		transform: translate(-50%, -50%);
-
 		display: block;
 		width: var(--checkbox-before-width);
 		height: var(--checkbox-before-height);
 
+		margin: auto;
+
 		background-color: var(--checkbox-before-bg-color);
 		border-radius: var(--checkbox-before-border-radius);
 
-		margin: auto;
+		opacity: 0;
 
 		cursor: pointer;
 
-		opacity: 0;
-
 		transition: opacity 0.3s ease;
+
+		transform: translate(-50%, -50%);
 
 		will-change: opacity;
 	}

@@ -4,9 +4,9 @@
 @use "../../mixins/fluid-size";
 
 .select-expanded__button {
-	padding: units.rem(10) units.rem(8);
 
 	width: 100%;
+	padding: units.rem(10) units.rem(8);
 
 	text-align: left;
 
@@ -22,9 +22,9 @@
 	}
 
 	&:focus-visible {
-		outline-width: units.rem(general.$outline-width);
-		outline-style: dashed;
 		outline-color: var(--accent);
+		outline-style: dashed;
+		outline-width: units.rem(general.$outline-width);
 		outline-offset: units.rem(general.$outline-offset);
 	}
 
@@ -34,16 +34,16 @@
 }
 
 .select-expanded__button.is-active {
+	color: var(--text-light);
 	background-color: var(--sooty);
 	border-radius: units.rem(8);
-	color: var(--text-light);
 
 	transition: background-color 0.3s ease;
 
 	@media (any-hover: hover) {
 		&:hover {
-			background-color: var(--accent);
 			color: var(--text-light);
+			background-color: var(--accent);
 		}
 	}
 }

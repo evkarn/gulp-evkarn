@@ -4,9 +4,9 @@
 @use '../../mixins/adaptive-value';
 
 .card__footer {
-	padding-right: units.rem(15);
-	padding-left: units.rem(15);
 	padding-bottom: units.rem(15);
+	padding-left: units.rem(15);
+	padding-right: units.rem(15);
 }
 
 .card--product .card__footer {

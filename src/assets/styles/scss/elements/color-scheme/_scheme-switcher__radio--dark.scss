@@ -1,5 +1,5 @@
 .scheme-switcher__radio--dark {
-	background-image: url(../images/dist/scheme-dark-moon.svg);
+	background-image: url("../images/dist/scheme-dark-moon.svg");
 
 	&:checked {
 		~ .scheme-switcher__status {

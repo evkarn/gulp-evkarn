@@ -43,6 +43,15 @@ export default {
 		'keyframes-name-pattern': null,
 		'hue-degree-notation': null,
 		'lightness-notation': null,
+		'font-family-name-quotes': 'always-unless-keyword',
+		'color-hex-length': 'long',
+		'color-function-alias-notation': null,
+		'color-function-notation': null,
+		'alpha-value-notation': null,
+		'custom-property-empty-line-before': null,
+		'custom-property-pattern': null,
+		'selector-class-pattern': null,
+
 		'order/order': ['custom-properties', 'declarations'],
 		'order/properties-order': [
 			'content',

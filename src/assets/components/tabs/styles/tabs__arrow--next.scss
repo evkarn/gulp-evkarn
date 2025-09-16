@@ -1,8 +1,7 @@
-@use '../../variables/general';
-@use '../../variables/grid';
-@use '../../mixins/units';
-@use '../../mixins/adaptive-value';
-
 .tabs__arrow--next {
-	right: units.rem(50);
+	right: rem(50);
+
+	@include min-full-hd-em {
+		@include calc-size(right, 50, 100, 1920, 3840, rem);
+	}
 }

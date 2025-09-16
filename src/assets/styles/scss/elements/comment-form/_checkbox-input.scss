@@ -1,8 +1,8 @@
 .review .checkbox-input {
 	&:checked ~ .checkbox-label {
-		outline-width: rem($outline-width);
-		outline-style: dashed;
 		outline-color: var(--c-accent);
+		outline-style: dashed;
+		outline-width: rem($outline-width);
 		outline-offset: rem($outline-offset);
 
 		@media (min-width: em(1920.96)) {

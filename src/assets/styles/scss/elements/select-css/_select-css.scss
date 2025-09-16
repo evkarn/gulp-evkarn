@@ -1,22 +1,22 @@
 .select-css {
+
+	appearance: none;
 	display: inline-flex;
+	width: 100%;
 
 	max-width: 100%;
-	width: 100%;
 
 	padding: 4px 26px 4px 4px;
 
-	@include calc-size(font-size, 18, 26, 320, 1920, px);
-
-	appearance: none;
+	color: var(--c-darken);
 
 	background-color: transparent;
 
 	border: none;
 
-	color: var(--c-darken);
-
 	cursor: pointer;
+
+	@include calc-size(font-size, 18, 26, 320, 1920, px);
 
 	@include min-full-hd-px {
 		@include calc-size(padding-top, 4, 8, 1920, 3840, px);
@@ -48,8 +48,8 @@
 *[dir='rtl'] .select-css,
 :root:lang(ar) .select-css,
 :root:lang(iw) .select-css {
+	padding: 0.6em 0.8em 0.5em 1.4em;
 	background-position:
 		left 0.7em top 50%,
 		0 0;
-	padding: 0.6em 0.8em 0.5em 1.4em;
 }
