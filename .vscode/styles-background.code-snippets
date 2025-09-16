@@ -38,11 +38,11 @@
 		"prefix": "bg-all",
 		"scope": "css, scss, sass, scss, less",
 		"body": [
-			"background-color: var($1);",
 			"background-image: url('$2');",
 			"background-position: center;",
-			"background-repeat: no-repeat;",
 			"background-size: cover;",
+			"background-repeat: no-repeat;",
+			"background-color: var($1);",
 		],
 	},
 	"background image-set": {

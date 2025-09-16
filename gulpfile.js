@@ -32,7 +32,7 @@ import svgMin from './gulp/tasks/svgMin.js';
 import sprite from './gulp/tasks/sprite.js';
 import imgMin from './gulp/tasks/imgMin.js';
 import js from './gulp/tasks/js.js';
-import reset from './gulp/tasks/reset.js';
+import clean from './gulp/tasks/clean.js';
 import styles from './gulp/tasks/styles.js';
 import server from './gulp/tasks/server.js';
 import ssh from './gulp/tasks/ssh.js';
@@ -66,11 +66,11 @@ const mainTasks = gulp.parallel(
 // Построение сценариев выполнения задач
 const fonts = gulp.series(ttfToWoff, createFontsFaces);
 const files = gulp.parallel(copyConfigFiles, copyFiles, copyFavicon);
-const dev = gulp.series(reset, mainTasks, watcher, server);
-const build = gulp.series(reset, mainTasks);
-const deployZip = gulp.series(reset, zip);
-const deployFTP = gulp.series(reset, ftp);
-const deploySSH = gulp.series(reset, ssh);
+const dev = gulp.series(clean, mainTasks, watcher, server);
+const build = gulp.series(clean, mainTasks);
+const deployZip = gulp.series(clean, zip);
+const deployFTP = gulp.series(clean, ftp);
+const deploySSH = gulp.series(clean, ssh);
 
 // Экспорт сценариев
 export { dev, build, deployZip, deployFTP, deploySSH, fonts, files };

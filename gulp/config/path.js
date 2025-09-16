@@ -90,6 +90,8 @@ export const path = {
 		`${buildFolder}/assets/*`,
 		`!${buildFolder}/assets/images/`,
 		`!${buildFolder}/assets/fonts/`,
+		`!${buildFolder}/assets/favicon/`,
+		`!${buildFolder}/assets/files/`,
 	],
 
 	buildFolder: buildFolder,

@@ -24,10 +24,10 @@
 		"prefix": "outl-all-px",
 		"scope": "css, sass, scss, less",
 		"body": [
-			"outline-width: general.\\$outline-width + px;",
+			"outline-color: var(--accent);",
 			"outline-style: dashed;",
-			"outline-color: currentColor;",
-			"outline-offset: general.\\$outline-offset + px;",
+			"outline-width: var(--outline-width);",
+			"outline-offset: var(--outline-offset);",
 		],
 	},
 	"outline all-rem": {
