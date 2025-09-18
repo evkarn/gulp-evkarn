@@ -3,7 +3,7 @@
 		"prefix": "style-bg-img",
 		"scope": "html, php, njk, md",
 		"body": [
-			"style=\"background-image: url('assets/images/$1.jpg');\"",
+			"style=\"background-image: url('assets/images/$1.webp');\"",
 		]
 	},
 
@@ -27,7 +27,7 @@
 		"prefix": "style-bg-cr-img",
 		"scope": "html, php, njk, md",
 		"body": [
-			"style=\"background-color: $1; background-image: url('assets/images/$2.jpg');\"",
+			"style=\"background-color: $1; background-image: url('assets/images/$2.webp');\"",
 		]
 	},
 

@@ -1,28 +1,26 @@
-@use '../../variables/general';
-@use '../../variables/grid';
-@use '../../mixins/units';
-@use '../../mixins/adaptive-value';
+@use "../../variables/general";
+@use "../../variables/grid";
+@use "../../mixins/units";
+@use "../../mixins/adaptive-value";
 
 .go-back-top {
 	position: fixed;
 	z-index: 15;
-	right: units.rem(20);
-	bottom: units.rem(100);
+	right: 20px;
+	bottom: 80px;
 
 	display: flex;
 	justify-content: center;
 	align-items: center;
 
-	min-width: units.rem(40);
-	min-height: units.rem(40);
+	min-width: 40px;
+	min-height: 40px;
 
-	padding-bottom: units.rem(4);
-
-	font-size: units.rem(18);
+	padding-bottom: 4px;
 
 	text-align: center;
 
-	color: #000000;
+	color: #000;
 
 	background-color: oklch(0.71 0.0045 236.53);
 
@@ -33,7 +31,10 @@
 
 	cursor: pointer;
 
-	transition: opacity .4s ease, background-color .4s ease, color .4s ease;
+	transition:
+		opacity 0.4s ease,
+		background-color 0.4s ease,
+		color 0.4s ease;
 
 	pointer-events: none;
 	user-select: none;
@@ -41,15 +42,13 @@
 }
 
 .go-back-top.is-active {
-
 	opacity: 0.6;
 	pointer-events: auto;
 	user-select: auto;
 
 	@media (any-hover: hover) {
 		&:hover {
-
-			color: oklch(1 0 0);
+			color: #fff;
 
 			background-color: var(--accent);
 			opacity: 1;
@@ -58,5 +57,9 @@
 
 	&:active {
 		background-color: var(--accent);
+	}
+
+	@media (any-hover: none) {
+		opacity: 1;
 	}
 }

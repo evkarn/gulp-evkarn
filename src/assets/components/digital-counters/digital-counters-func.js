@@ -1,37 +1,55 @@
 function digitalCounters(timeDuration) {
 	'use strict';
 
-	// Initialization counters
 	function digitalCountersInit(digitalCountersItems) {
 		let digitalCounters = digitalCountersItems
 			? digitalCountersItems
 			: document.querySelectorAll('[data-digital-counter]');
 
 		if (digitalCounters) {
-			digitalCounters.forEach((elemDC) => {
+			digitalCounters.forEach(elemDC => {
 				digitalCountersAnimate(elemDC);
 			});
 		}
 	}
 
-	// Animation counters
 	function digitalCountersAnimate(elemDC) {
 		let startTimeDefault = null;
 
-		const duration = parseInt(elemDC.dataset.digitalCounter)
-			? parseInt(elemDC.dataset.digitalCounter)
+		const duration = parseFloat(elemDC.dataset.digitalCounter)
+			? parseFloat(elemDC.dataset.digitalCounter)
 			: timeDuration;
 
-		const startValue = parseInt(elemDC.innerHTML);
-
+		// Получаем исходное значение как строку для определения формата
+		const originalValue = elemDC.innerHTML.trim();
+		const startValue = parseFloat(originalValue) || 0;
 		const startPosition = 0;
 
-		const step = (timeDefault) => {
+		// Определяем, является ли исходное число целым или десятичным
+		const isDecimal = originalValue.includes('.');
+
+		// Если десятичное, определяем количество знаков после запятой
+		let decimalPlaces = 0;
+		if (isDecimal) {
+			const decimalPart = originalValue.split('.')[1];
+			decimalPlaces = decimalPart ? decimalPart.length : 0;
+		}
+
+		const step = timeDefault => {
 			if (!startTimeDefault) startTimeDefault = timeDefault;
 
 			const progress = Math.min((timeDefault - startTimeDefault) / duration, 1);
 
-			elemDC.innerHTML = Math.floor(progress * (startPosition + startValue));
+			const currentValue = progress * (startPosition + startValue);
+
+			// Форматируем число в зависимости от типа
+			if (isDecimal && decimalPlaces > 0) {
+				// Для десятичных чисел сохраняем нули
+				elemDC.innerHTML = currentValue.toFixed(decimalPlaces);
+			} else {
+				// Для целых чисел убираем нули
+				elemDC.innerHTML = Math.round(currentValue).toString();
+			}
 
 			if (progress < 1) {
 				window.requestAnimationFrame(step);
@@ -40,16 +58,15 @@ function digitalCounters(timeDuration) {
 		window.requestAnimationFrame(step);
 	}
 
-	// Start animation counters with scroll - observer system
+	// Остальной код без изменений...
 	let options = {
 		threshold: 0.3,
 	};
 
 	let observer = new IntersectionObserver((entries, observer) => {
-		entries.forEach((entry) => {
+		entries.forEach(entry => {
 			if (entry.isIntersecting) {
 				const targetElement = entry.target;
-
 				const digitalCountersItems = targetElement.querySelectorAll(
 					'[data-digital-counter]',
 				);
@@ -58,15 +75,14 @@ function digitalCounters(timeDuration) {
 					digitalCountersInit(digitalCountersItems);
 				}
 
-				// observer.unobserve(targetElement);
+				observer.unobserve(targetElement);
 			}
 		});
 	}, options);
 
 	let sections = document.querySelectorAll('.section');
-
 	if (sections.length) {
-		sections.forEach((sec) => {
+		sections.forEach(sec => {
 			observer.observe(sec);
 		});
 	}

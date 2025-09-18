@@ -51,6 +51,7 @@ export default {
 		'custom-property-empty-line-before': null,
 		'custom-property-pattern': null,
 		'selector-class-pattern': null,
+		'color-hex-length': null,
 
 		'order/order': ['custom-properties', 'declarations'],
 		'order/properties-order': [
