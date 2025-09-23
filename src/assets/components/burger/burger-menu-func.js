@@ -2,59 +2,87 @@ import disableScroll from '../disable-scroll/disable-scroll-func.js';
 
 import enableScroll from '../enable-scroll/enable-scroll-func.js';
 
-export function burgerMenu() {
+export function burger() {
 	'use strict';
 
-	const header = document?.querySelector('[data-header]');
-	const overlay = document?.querySelector('[data-overlay]');
 	const burger = document?.querySelector('[data-burger]');
+
 	const nav = document?.querySelector('[data-nav]');
-	const navItems = nav?.querySelectorAll('[data-nav-item]');
-	const fixedElements = document?.querySelectorAll('[data-fixed]');
+	const navItems = document?.querySelectorAll('[data-nav-item]');
 
-	if (!burger || !nav || !header) return;
+	const overlay = document?.querySelector('[data-nav-overlay]');
 
-	const setBurgerAttributes = (expanded, pressed, label) => {
-		burger.setAttribute('aria-expanded', expanded);
-		burger.setAttribute('aria-pressed', pressed);
-		burger.setAttribute('aria-label', label);
-	};
+	const fixedEls = document?.querySelectorAll('[data-fixed');
 
-	const closeMenu = () => {
-		setBurgerAttributes('false', 'false', 'Открыть меню');
-		burger.classList.remove('burger--is-active');
-		nav.classList.remove('nav--is-visible');
-		header.classList.remove('header--open-nav');
-		enableScroll();
-	};
+	if (burger && nav) {
+		burger.addEventListener('click', () => {
+			burger.classList.toggle('burger--is-active');
 
-	// Переключаем классы и состояние меню
-	const toggleMenu = () => {
-		const isExpanded = burger.getAttribute('aria-expanded') === 'true';
+			nav.classList.toggle('nav--is-visible');
 
-		burger.classList.toggle('burger--is-active');
-		header.classList.toggle('header--open-nav');
-		nav.classList.toggle('nav--is-visible');
+			fixedEls.forEach(function (el) {
+				el.classList.toggle('not-leap');
+			});
 
-		// Переключаем класс для фиксированных элементов
-		fixedElements?.forEach(el => el.classList.toggle('not-leap'));
+			if (burger.getAttribute('aria-expanded') === 'false') {
+				burger.setAttribute('aria-expanded', 'true');
 
-		if (isExpanded) {
-			closeMenu();
-		} else {
-			setBurgerAttributes('true', 'true', 'Закрыть меню');
-			disableScroll();
-		}
-	};
+				burger.setAttribute('aria-pressed', 'true');
 
-	// Обработчики событий
-	burger.addEventListener('click', toggleMenu);
+				burger.setAttribute('aria-label', 'Закрыть меню');
 
-	// Закрытие при клике на пункты меню
-	navItems?.forEach(item => {
-		item.addEventListener('click', closeMenu);
-	});
+				disableScroll();
+			} else {
+				burger.setAttribute('aria-expanded', 'false');
 
-	// Закрытие при клике на оверлей
-	overlay?.addEventListener('click', closeMenu);
+				burger.setAttribute('aria-pressed', 'false');
+
+				burger.setAttribute('aria-label', 'Открыть меню');
+
+				enableScroll();
+			}
+		});
+	}
+
+	if (navItems) {
+		navItems.forEach(el => {
+			el.addEventListener('click', () => {
+				enableScroll();
+
+				if (burger) {
+					burger.setAttribute('aria-expanded', 'false');
+
+					burger.setAttribute('aria-pressed', 'false');
+
+					burger.setAttribute('aria-label', 'Открыть меню');
+
+					burger.classList.remove('burger--is-active');
+				}
+
+				if (nav) {
+					nav.classList.remove('nav--is-visible');
+				}
+			});
+		});
+	}
+
+	if (overlay) {
+		overlay.addEventListener('click', () => {
+			if (burger) {
+				burger.setAttribute('aria-expanded', 'false');
+
+				burger.setAttribute('aria-pressed', 'false');
+
+				burger.setAttribute('aria-label', 'Открыть меню');
+
+				burger.classList.remove('burger--is-active');
+			}
+
+			if (nav) {
+				nav.classList.remove('nav--is-visible');
+			}
+
+			enableScroll();
+		});
+	}
 }

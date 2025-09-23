@@ -2,11 +2,11 @@ export function linkScrollToElement() {
 	'use strict';
 
 	// Помещаем все ссылки с атрибутом data-nav-page в переменную
-	const linksScroll = document.querySelectorAll('[data-nav-page]');
+	const linksScroll = document.querySelectorAll('[data-nav-item]');
 
 	function onScrollLinkClick(event) {
 		// Помещаем в переменную ссылку по которой кликнули
-		const linkTarget = event.target.closest('[data-nav-page]');
+		const linkTarget = event.target.closest('[data-nav-item]');
 
 		// Помещаем в переменную содержание атрибута data-nav-page у ссылки по которой кликнули
 		const dataSet = linkTarget.dataset.navPage;
@@ -19,9 +19,8 @@ export function linkScrollToElement() {
 			// Рассчитываем положение этого элемента на странице минус высоту header
 			const targetElementValue =
 				targetElement.getBoundingClientRect().top +
-				pageYOffset -
-				document.querySelector('header').offsetHeight -
-				10;
+				window.scrollY -
+				document.querySelector('header').offsetHeight;
 
 			// Прокручиваем страницу до этого элемента
 			window.scrollTo({

@@ -1,19 +1,19 @@
 {
 	// General
-	"Media Screen max-width switch-point em": {
-		"prefix": "@max-switch-em",
-		"scope": "css, sass, scss, less",
-		"body": [
-			"@media ( max-width: units.em(grid.\\$max-switch-point) ) {",
-			"\t$2",
-			"}"
-		],
-	},
 	"Media Screen max-width switch-point px": {
 		"prefix": "@max-switch-px",
 		"scope": "css, sass, scss, less",
 		"body": [
 			"@media ( max-width: grid.\\$max-switch-point + px ) {",
+			"\t$2",
+			"}"
+		],
+	},
+	"Media Screen max-width switch-point em": {
+		"prefix": "@max-switch-em",
+		"scope": "css, sass, scss, less",
+		"body": [
+			"@media ( max-width: units.em(grid.\\$max-switch-point) ) {",
 			"\t$2",
 			"}"
 		],
