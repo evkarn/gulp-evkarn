@@ -9,7 +9,6 @@
 			"\t$1",
 			"}"
 		],
-		"description": "After",
 	},
 	"After without content": {
 		"prefix": "&after",
@@ -19,7 +18,6 @@
 			"\t$1",
 			"}"
 		],
-		"description": "After without content",
 	},
 	"$:before, &:after": {
 		"prefix": "before-after",
@@ -31,7 +29,6 @@
 			"\t$1",
 			"}"
 		],
-		"description": "$:before, &:after",
 	},
 	"Before": {
 		"prefix": "before",
@@ -43,7 +40,6 @@
 			"\t$1",
 			"}"
 		],
-		"description": "Before",
 	},
 	"Before without content": {
 		"prefix": "&before",
@@ -53,6 +49,5 @@
 			"\t$1",
 			"}"
 		],
-		"description": "Before without content",
 	},
 }

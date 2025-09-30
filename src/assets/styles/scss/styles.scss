@@ -14,7 +14,7 @@
 
 
 // Global
-@use "settings/index-settings";
+@use "settings/settings";
 // END. Global
 
 
@@ -44,8 +44,3 @@
 // Footer
 @use "./footer/index-footer";
 // End. Footer
-
-
-// Media
-@use "./@media/index-media";
-// End. Media

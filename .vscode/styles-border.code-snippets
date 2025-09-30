@@ -5,7 +5,6 @@
 		"body": [
 			"border-color: transparent;"
 		],
-		"description": "border-color: transparent",
 	},
 	"border-color: var($1)": {
 		"prefix": "bor-color-var",
@@ -13,15 +12,13 @@
 		"body": [
 			"border-color: var($1);"
 		],
-		"description": "border-color: var($1)",
 	},
 	"border-color: rgba($1border-color, $2)": {
 		"prefix": "bor-color-rgba",
 		"scope": "css, scss, sass, scss, less",
 		"body": [
-			"border-color: rgba(\\$border-color, $1);"
+			"border-color: rgb($1 / $2%);"
 		],
-		"description": "border-color: rgba(\\$border-color, $1)",
 	},
 	"border-radius: border-radius-px": {
 		"prefix": "bor-rad-px",
@@ -29,28 +26,11 @@
 		"body": [
 			"border-radius: $1px;"
 		],
-		"description": "border-radius: border-radius-px",
-	},
-	"border-radius: border-radius rem": {
-		"prefix": "bor-rad-rem",
-		"scope": "css, scss, sass, scss, less",
-		"body": [
-			"border-radius: units.rem(general.\\$border-radius);"
-		],
-		"description": "border-radius: border-radius rem",
 	},
 	"Border all px": {
 		"prefix": "bor-px",
 		"body": [
 			"border: general.\\$border-width + px solid var($2);"
 		],
-		"description": "Border all px",
-	},
-	"Border all rem": {
-		"prefix": "bor-rem",
-		"body": [
-			"border: units.rem(general.\\$border-width) solid var($1);"
-		],
-		"description": "Border all rem",
 	},
 }

@@ -1,0 +1,5 @@
+@use "../../../mixins/units";
+@use '../../../variables/grid';
+
+@media ( min-width: grid.$min-switch-point + px ) {
+}

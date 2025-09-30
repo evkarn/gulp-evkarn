@@ -7,7 +7,6 @@
 			"\t$1",
 			"}"
 		],
-		"description": "&:first-child"
 	},
 	"&:first-of-type": {
 		"prefix": "firstOfType",
@@ -17,7 +16,6 @@
 			"\t$1",
 			"}"
 		],
-		"description": "&:first-of-type"
 	},
 	"&:last-child": {
 		"prefix": "lastChild",
@@ -27,7 +25,6 @@
 			"\t$1",
 			"}"
 		],
-		"description": "&:last-child"
 	},
 	"&:last-of-type": {
 		"prefix": "lastOfType",
@@ -37,7 +34,6 @@
 			"\t$1",
 			"}"
 		],
-		"description": "&:last-of-type"
 	},
 	"&:nth-child()": {
 		"prefix": "nthChild",
@@ -47,7 +43,6 @@
 			"\t$2",
 			"}"
 		],
-		"description": "&:nth-child()"
 	},
 	"&:nth-of-type()": {
 		"prefix": "nthOfTypeChild",
@@ -57,7 +52,6 @@
 			"\t$2",
 			"}"
 		],
-		"description": "&:nth-of-type()"
 	},
 	"&:not(:first-child)": {
 		"prefix": "notFirstChild",
@@ -67,7 +61,6 @@
 			"\t$1",
 			"}"
 		],
-		"description": "&:not(:first-child)"
 	},
 	"&:not(:first-of-type)": {
 		"prefix": "notFirstOfType",
@@ -77,7 +70,6 @@
 			"\t$1",
 			"}"
 		],
-		"description": "&:not(:first-of-type)"
 	},
 	"&:not(:last-child)": {
 		"prefix": "notLastChild",
@@ -87,7 +79,6 @@
 			"\t$1",
 			"}"
 		],
-		"description": "&:not(:last-child)"
 	},
 	"&:not(:last-of-type)": {
 		"prefix": "notLastofType",
@@ -97,6 +88,5 @@
 			"\t$1",
 			"}"
 		],
-		"description": "&:not(:last-of-type)"
 	},
 }

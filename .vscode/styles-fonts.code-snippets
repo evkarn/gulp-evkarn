@@ -1,12 +1,12 @@
 {
-	"Font-family font": {
+	"Font-family font-title": {
 		"prefix": "ff-font-title",
 		"scope": "css, sass, scss, less",
 		"body": [
 			"font-family: var(--font-title);",
 		],
 	},
-	"Font-family font 1": {
+	"Font-family font-text": {
 		"prefix": "ff-font-text",
 		"scope": "css, sass, scss, less",
 		"body": [
@@ -25,7 +25,6 @@
 			"\tfont-style: normal;",
 			"}",
 		],
-		"description": "Font-size rem",
 	},
 	"Font-fase variables fonts": {
 		"prefix": "ff-vf",
@@ -39,23 +38,5 @@
 			"\tfont-weight: $3 $4;",
 			"}",
 		],
-		"description": "Font-size rem",
 	},
-	"Font-size rem": {
-		"prefix": "fzr",
-		"scope": "css, sass, scss, less",
-		"body": [
-			"font-size: units.rem($1);"
-		],
-		"description": "Font-size rem",
-	},
-	"Font-size em": {
-		"prefix": "fze",
-		"scope": "css, sass, scss, less",
-		"body": [
-			"font-size: units.em($1);"
-		],
-		"description": "Font-size em",
-	},
-	// End. Font-size
 }

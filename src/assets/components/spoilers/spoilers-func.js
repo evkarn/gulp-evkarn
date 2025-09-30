@@ -24,11 +24,13 @@ import slideUp from '../slide-up/slide-up-func.js';
 
 import slideToggle from '../slide-toggle/slide-toggle-func.js';
 
-function spoilers(durationSpeed) {
+function spoilers() {
 	'use strict';
 
 	// Собираем все элементы с атрибутом data-spoilers-list
 	const spoilersArray = document?.querySelectorAll('[data-spoilers-list]');
+
+	const durationSpeed = '800';
 
 	// Проверяем есть ли они
 	if (spoilersArray.length > 0) {

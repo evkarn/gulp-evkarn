@@ -1,6 +1,22 @@
 {
-	// Overlay
-	"Overlay": {
+	"Overlay before": {
+		"prefix": "overlay-before",
+		"scope": "css, sass, scss, less",
+		"body": [
+			"&:before {",
+			"\tcontent: '';",
+			"",
+			"\tposition: absolute;",
+			"\tinset: 0;",
+			"",
+			"\tdisplay: block;",
+			"",
+			"\tbackground-color: var($1);",
+			"\topacity: $1;",
+			"}",
+		],
+	},
+	"Overlay after": {
 		"prefix": "overlay-after",
 		"scope": "css, sass, scss, less",
 		"body": [
@@ -16,7 +32,5 @@
 			"\topacity: $1;",
 			"}",
 		],
-		"description": "Overlay",
 	},
-	// End. Overlay
 }

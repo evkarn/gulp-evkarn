@@ -2,21 +2,21 @@
 @use '../variables/general';
 @use '../variables/grid';
 
-@mixin adaptive-value-rem($property, $min, $max) {
-	$min-vw-width: grid.$min-screen;
-	$max-vw-width: grid.$container-width;
+// @mixin adaptive-value-rem($property, $min, $max) {
+// 	$min-vw-width: grid.$min-screen;
+// 	$max-vw-width: grid.$container-width;
 
-	$min-size: math.div($min, general.$fz);
-	$max-size: math.div($max, general.$fz);
-	$min-width: math.div($min-vw-width, general.$fz);
-	$max-width: math.div($max-vw-width, general.$fz);
+// 	$min-size: math.div($min, general.$fz);
+// 	$max-size: math.div($max, general.$fz);
+// 	$min-width: math.div($min-vw-width, general.$fz);
+// 	$max-width: math.div($max-vw-width, general.$fz);
 
-	$slope: math.div(($max-size - $min-size), ($max-width - $min-width));
+// 	$slope: math.div(($max-size - $min-size), ($max-width - $min-width));
 
-	$intercept: $min-size - $slope * $min-width;
+// 	$intercept: $min-size - $slope * $min-width;
 
-	#{$property}: clamp(#{$min-size * 1rem}, #{$intercept * 1rem} + #{$slope * 100vw}, #{$max-size * 1rem});
-}
+// 	#{$property}: clamp(#{$min-size * 1rem}, #{$intercept * 1rem} + #{$slope * 100vw}, #{$max-size * 1rem});
+// }
 
 @mixin adaptive-value-px($property, $min, $max) {
 	$min-vw-width: grid.$min-screen;

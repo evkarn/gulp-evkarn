@@ -1,55 +1,27 @@
 {
-	"gap: units.rem()": {
-		"prefix": "gr",
-		"scope": "css, sass, scss, less",
-		"body": [
-			"gap: units.rem($1);"
-		]
-	},
-	"gap-num rem": {
-		"prefix": "gnr",
-		"scope": "css, sass, scss, less",
-		"body": [
-			"gap: units.rem(\\$gap-num);"
-		]
-	},
-	"row-gap: units.rem()": {
-		"prefix": "rgr",
-		"scope": "css, sass, scss, less",
-		"body": [
-			"row-gap: units.rem($1);"
-		]
-	},
-	"column-gap: units.rem()": {
-		"prefix": "cgr",
-		"scope": "css, sass, scss, less",
-		"body": [
-			"column-gap: units.rem($1);"
-		]
-	},
 	"gap: px": {
-		"prefix": "gp",
+		"prefix": "gap",
 		"scope": "css, sass, scss, less",
 		"body": [
 			"gap: $1px;"
 		]
 	},
 	"gap num px": {
-		"prefix": "gnp",
+		"prefix": "gap-num",
 		"scope": "css, sass, scss, less",
 		"body": [
 			"gap: \\$gap-num + px;"
 		]
 	},
 	"row-gap: px": {
-		"prefix": "rgp",
+		"prefix": "row-gap",
 		"scope": "css, sass, scss, less",
 		"body": [
 			"row-gap: $1px;"
 		]
 	},
 	"column-gap: px": {
-		"prefix": "cgp",
+		"prefix": "col-gap",
 		"scope": "css, sass, scss, less",
 		"body": [
 			"column-gap: $1px;"

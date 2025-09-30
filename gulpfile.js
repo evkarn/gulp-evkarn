@@ -58,9 +58,6 @@ const mainTasks = gulp.parallel(
 	imgMin,
 	sprite,
 	svgMin,
-	copyFiles,
-	copyFavicon,
-	copyConfigFiles,
 );
 
 // Построение сценариев выполнения задач

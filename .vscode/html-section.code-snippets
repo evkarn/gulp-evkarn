@@ -10,7 +10,7 @@
 		]
 	},
 	"Section width header": {
-		"prefix": "sec-with-header",
+		"prefix": "sec-header-title",
 		"scope": "html, php, njk, md",
 		"body": [
 			"<section class=\"section $1\" id=\"$1\" aria-labelledby=\"$1-title\">",
@@ -25,7 +25,7 @@
 		]
 	},
 	"Section width header, title, descr, main": {
-		"prefix": "sec-with-all",
+		"prefix": "sec-all",
 		"scope": "html, php, njk, md",
 		"body": [
 			"<section class=\"section $1\" id=\"$1\" aria-labelledby=\"$1-title\">",
@@ -35,7 +35,7 @@
 			"\t\t\t\t$2",
 			"\t\t\t</h2>",
 			"\t\t\t",
-			"\t\t\t<div class=\"$1__descr section__descr txt-wrap\">",
+			"\t\t\t<div class=\"$1__section-descr section__descr txt-wrap\">",
 			"\t\t\t\t<p class=\"section__txt\">",
 			"\t\t\t\t\t",
 			"\t\t\t\t</p>",
@@ -45,12 +45,12 @@
 			"\t\t<div class=\"$1__main\">",
 			"\t\t\t",
 			"\t\t</div>",
+			"\t</div>",
 			"</section>",
 		]
 	},
-
 	"Section width header, title, descr": {
-		"prefix": "sec-with-title-descr",
+		"prefix": "sec-header-title-descr",
 		"scope": "html, php, njk, md",
 		"body": [
 			"<section class=\"section $1\" id=\"$1\" aria-labelledby=\"$1-title\">",
@@ -60,7 +60,7 @@
 			"\t\t\t\t$2",
 			"\t\t\t</h2>",
 			"\t\t\t",
-			"\t\t\t<div class=\"$1__descr section__descr txt-wrap\">",
+			"\t\t\t<div class=\"$1__section-descr section__descr txt-wrap\">",
 			"\t\t\t\t<p>",
 			"\t\t\t\t\t",
 			"\t\t\t\t</p>",
@@ -85,7 +85,18 @@
 		"prefix": "sec-title",
 		"scope": "html, php, njk, md",
 		"body": [
-			"<div class=\"$1__descr section__descr txt-wrap\">",
+			"<div class=\"$1__section-descr section__descr txt-wrap\">",
+			"\t<p>",
+			"\t\t$2",
+			"\t</p>",
+			"</div>",
+		]
+	},
+	"Section descr": {
+		"prefix": "sec-descr",
+		"scope": "html, php, njk, md",
+		"body": [
+			"<div class=\"$1__section-descr section__descr txt-wrap\">",
 			"\t<p>",
 			"\t\t$2",
 			"\t</p>",
