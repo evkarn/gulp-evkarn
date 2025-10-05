@@ -1,5 +1,3 @@
-// Добавление вендерных префиксов для кросс-браузерной вёрстки
-
 // Обработка стилей sass, scss
 import * as dartSass from 'sass';
 import gulpSass from 'gulp-sass';

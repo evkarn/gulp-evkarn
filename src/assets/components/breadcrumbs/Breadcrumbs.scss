@@ -1,0 +1,15 @@
+@use "./breadcrumbs";
+@use "./breadcrumbs__nav";
+@use "./breadcrumbs__item";
+@use "./breadcrumbs__link";
+
+.breadcrumbs {
+	padding-top: calc(28px + var(--header-height));
+	padding-bottom: 28px;
+	font-size: 20px;
+
+	font-weight: 600;
+	line-height: 1.2;
+
+	color: var(--text-dark);
+}
