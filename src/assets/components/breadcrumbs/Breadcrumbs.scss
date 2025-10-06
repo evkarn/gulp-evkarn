@@ -4,12 +4,17 @@
 @use "./breadcrumbs__link";
 
 .breadcrumbs {
-	padding-top: calc(28px + var(--header-height));
-	padding-bottom: 28px;
+	--padding-tb: 20px;
+	--padding-t: calc(var(--padding-tb) + var(--header-height));
+	--color: var(--text-dark);
+
+	padding-top: var(--padding-top);
+	padding-bottom: var(--padding-tb);
+
 	font-size: 20px;
 
 	font-weight: 600;
 	line-height: 1.2;
 
-	color: var(--text-dark);
+	color: var(--color);
 }

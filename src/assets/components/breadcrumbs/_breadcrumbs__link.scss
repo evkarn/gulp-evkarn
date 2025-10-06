@@ -14,21 +14,14 @@
 		}
 	}
 
-	&:focus-visible {
-		outline-color: var(--c-accent);
-		outline-style: dashed;
-		outline-width: units.rem(general.$outline-width);
-		outline-offset: units.rem(general.$outline-offset);
-
-		&:active {
-			color: var(--accent-light);
-			outline: none;
-		}
+	&:active {
+		color: var(--accent);
 	}
 }
 
 .breadcrumbs__link--current {
-	color: var(--black-space);
+	color: var(--text-dark);
 
 	pointer-events: none;
+	user-select: none;	
 }

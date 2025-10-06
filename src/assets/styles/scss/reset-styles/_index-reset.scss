@@ -106,4 +106,12 @@ body {
 	figure {
 		margin: 0;
 	}
+
+	:focus-visible {
+		border-radius: 4px;
+		outline-color: var(--accent);
+		outline-style: dashed;
+		outline-width: var(--outline-width);
+		outline-offset: var(--outline-offset);
+	}
 }

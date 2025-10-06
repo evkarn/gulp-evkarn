@@ -3,10 +3,9 @@
 		"prefix": "use-all",
 		"scope": "css, scss, sass, scss, less",
 		"body": [
-			"@use '../$1variables/general';",
-			"@use '../$1variables/grid';",
-			"@use '../$1mixins/units';",
-			"@use '../$1mixins/fluid-size';",
+			"@use '../$1variables/general' as *;",
+			"@use '../$1variables/grid' as *;",
+			"@use '../$1mixins/fluid-size' as *;",
 		],
 	},
 	"@use": {
@@ -20,36 +19,28 @@
 		"prefix": "use-units",
 		"scope": "css, scss, sass, scss, less",
 		"body": [
-			"@use '../$1mixins/units';"
+			"@use '../$1mixins/units' as *;"
 		],
 	},
 	"use ad-txt": {
-		"prefix": "use-ad-val",
+		"prefix": "use-fluid-size",
 		"scope": "css, scss, sass, scss, less",
 		"body": [
-			"@use '../$1mixins/fluid-size';"
+			"@use '../$1mixins/fluid-size' as *;"
 		],
 	},
 	"use grid": {
 		"prefix": "use-grid",
 		"scope": "css, scss, sass, scss, less",
 		"body": [
-			"@use '../$1variables/grid';"
+			"@use '../$1variables/grid' as *;"
 		],
 	},
 	"use general": {
 		"prefix": "use-general",
 		"scope": "css, scss, sass, scss, less",
 		"body": [
-			"@use '../$1variables/general';"
-		],
-	},
-	"use mixins variables forward": {
-		"prefix": "use-mixins-vars",
-		"scope": "css, scss, sass, scss, less",
-		"body": [
-			"@use '../$1variables/index-vars';",
-			"@use '../$1mixins/index-mixins';",
+			"@use '../$1variables/general' as *;"
 		],
 	},
 }
