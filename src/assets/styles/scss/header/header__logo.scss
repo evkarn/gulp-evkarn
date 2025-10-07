@@ -1,10 +1,6 @@
-@use '../mixins/units';
-@use '../variables/grid';
+@use 'settings/imports' as *;
 
 .header__logo {
 	flex-shrink: 0;
-
-	@media (max-width: units.em(grid.$max-switch-point)) {
-		z-index: 4;
-	}
+	z-index: $z-index-header + 1;
 }

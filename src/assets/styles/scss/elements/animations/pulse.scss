@@ -19,10 +19,10 @@
 .pulse {
   position: relative;
 
-  width: units.rem(38);
-  height: units.rem(38);
+  width: 38);
+  height: 38);
 
-  padding: units.rem(20);
+  padding: 20);
 
   text-align: center;
 
@@ -35,9 +35,9 @@
 
   position: absolute;
 
-  inset: units.rem(-10);
+  inset: -10);
 
-  border: units.rem(2) solid var(--amnesia-blue);
+  border: 2) solid var(--amnesia-blue);
   border-radius: 50%;
 
   opacity: 0;

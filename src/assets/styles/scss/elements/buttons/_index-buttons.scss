@@ -4,13 +4,12 @@
 @use "../../mixins/adaptive-value";
 
 .btn {
-
 	align-self: flex-start;
 	display: inline-flex;
 	justify-content: center;
 	align-items: center;
 
-	padding: units.rem(16) units.rem(24);
+	padding: 16) 24);
 
 	font-weight: 600;
 
@@ -34,8 +33,8 @@
 	&:focus-visible {
 		outline-color: currentColor;
 		outline-style: dashed;
-		outline-width: units.rem(general.$outline-width);
-		outline-offset: units.rem(general.$outline-offset);
+		outline-width: $outline-width);
+		outline-offset: $outline-offset);
 	}
 
 	&:active {
@@ -44,8 +43,7 @@
 }
 
 .btn--fill {
-
 	background-color: var(--accent);
 	border: none;
-	border-radius: units.rem(general.$bor-rad);
+	border-radius: $bor-rad);
 }

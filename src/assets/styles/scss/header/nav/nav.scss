@@ -1,9 +1,11 @@
-@use "../../mixins/units";
-@use "../../variables/grid";
+@use 'settings/imports' as *;
+
+@use "./nav__list";
+@use "./nav__link";
 
 .nav .menu {
 	display: inline-flex;
-	gap: units.rem(grid.$gap);
+	gap: $gap;
 
 	list-style: none;
 }
@@ -13,7 +15,7 @@
 		right 0.5s ease,
 		opacity 0.5s ease;
 
-	@media (max-width: units.em(grid.$max-switch-point)) {
+	@media (max-width: $max-switch-point) {
 		position: fixed;
 		top: 0;
 		right: -100%;
@@ -30,12 +32,12 @@
 }
 
 .header__nav.nav--is-visible {
-	@media (max-width: units.em(grid.$max-switch-point)) {
-		z-index: 3;
+	@media (max-width: $max-switch-point) {
+		z-index: $z-index-header;
 		right: 0;
 
-		padding: 10px;
-		padding-top: calc(var(--header-height) + units.rem(16));
+		padding: calc($container-offset * 1px);
+		padding-top: calc(var(--header-height) + calc($container-offset * 1px));
 
 		opacity: 1;
 		pointer-events: auto;

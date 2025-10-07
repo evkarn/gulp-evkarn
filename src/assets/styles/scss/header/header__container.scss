@@ -1,12 +1,10 @@
 @use "../mixins/units";
 
 .header__container {
-	display: flex;
 	justify-content: space-between;
-	align-items: center;
-	column-gap: units.rem(20);
+	column-gap: 20px;
 
-	@media (max-width: units.em(576)) {
-		row-gap: units.rem(6);
+	@media ( max-width: 576px ) {
+		row-gap: 6px;
 	}
 }

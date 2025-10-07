@@ -1,13 +1,11 @@
-@use "../variables/general";
-@use "../variables/grid";
-@use "../mixins/units";
+@use 'settings/imports' as *;
 
 .body {
 	position: relative;
 
 	overflow-x: hidden;
 
-	min-width: grid.$min-screen + px;
+	min-width: $min-screen + px;
 
 	margin: 0;
 

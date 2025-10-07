@@ -18,8 +18,8 @@
 
 	color: var(--text-light);
 
-	border: units.rem(1) solid var(--pinball);
-	border-radius: units.rem(8);
+	border: 1) solid var(--pinball);
+	border-radius: 8);
 
 	overflow: hidden;
 
@@ -46,8 +46,8 @@
 	}
 
 	svg {
-		width: units.rem(6);
-		height: units.rem(12);
+		width: 6);
+		height: 12);
 
 		fill: currentColor;
 
@@ -66,10 +66,10 @@
 	}
 
 	&:focus-visible {
-		outline-width: units.rem(general.$outline-width);
+		outline-width: $outline-width);
 		outline-style: solid;
 		outline-color: currentColor;
-		outline-offset: units.rem(general.$outline-offset);
+		outline-offset: $outline-offset);
 	}
 
 	&:active {
@@ -80,7 +80,7 @@
 .swiper-buttons .swiper-button {
 	position: relative;
 	inset: 0;
-	
+
 	margin: 0;
 }
 

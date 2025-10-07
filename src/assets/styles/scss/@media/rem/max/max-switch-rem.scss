@@ -1,5 +1,5 @@
 @use "../../../mixins/units";
-@use '../../../variables/grid';
+@use "../../../variables/grid";
 
-@media (max-width: units.rem(grid.$max-switch-point)) {
+@media (max-width: grid.$max-switch-point) ) {
 }

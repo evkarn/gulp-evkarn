@@ -1,15 +1,15 @@
-@use 'sass:math';
-@use '../variables/general';
-@use '../variables/grid';
+@use "sass:math";
+@use "../variables/general";
+@use "../variables/grid";
 
 // @mixin adaptive-value-rem($property, $min, $max) {
 // 	$min-vw-width: grid.$min-screen;
 // 	$max-vw-width: grid.$container-width;
 
-// 	$min-size: math.div($min, general.$fz);
-// 	$max-size: math.div($max, general.$fz);
-// 	$min-width: math.div($min-vw-width, general.$fz);
-// 	$max-width: math.div($max-vw-width, general.$fz);
+// 	$min-size: math.div($min, $fz);
+// 	$max-size: math.div($max, $fz);
+// 	$min-width: math.div($min-vw-width, $fz);
+// 	$max-width: math.div($max-vw-width, $fz);
 
 // 	$slope: math.div(($max-size - $min-size), ($max-width - $min-width));
 

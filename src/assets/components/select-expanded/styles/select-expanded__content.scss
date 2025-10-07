@@ -6,17 +6,17 @@
 .select-expanded__content {
 	position: absolute;
 	z-index: 4;
-	top: calc(var(--select-expanded-title-height) + units.rem(8));
+	top: calc(var(--select-expanded-title-height) + 8));
 	left: 0;
 
 	display: none;
 
 	width: 100%;
 
-	padding: units.rem(10);
+	padding: 10);
 
 	background-color: var(--athens-gray);
 
-	border: units.rem(1) solid var(--pinball);
-	border-radius: units.rem(8);
+	border: 1) solid var(--pinball);
+	border-radius: 8);
 }

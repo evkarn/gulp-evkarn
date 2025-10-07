@@ -9,15 +9,15 @@
 
 	@media (min-width: units.em(grid.$switch-point)) {
 		position: absolute;
-		top: calc(100% + units.rem(15));
+		top: calc(100% + 15));
 
-		min-width: units.rem(200);
+		min-width: 200);
 
-		padding: units.rem(10);
+		padding: 10);
 
-		border-radius: units.rem(4);
+		border-radius: 4);
 
-		box-shadow: 0 0 units.rem(8) 0 rgb(0 0 0 / 30%);
+		box-shadow: 0 0 8) 0 rgb(0 0 0 / 30%);
 
 		opacity: 0;
 		transition:
@@ -33,12 +33,12 @@
 			content: "";
 
 			position: absolute;
-			top: units.rem(-20);
+			top: -20);
 			left: 0;
 
 			display: block;
 			width: 100%;
-			height: units.rem(20);
+			height: 20);
 		}
 	}
 }

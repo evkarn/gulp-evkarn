@@ -1,6 +1,6 @@
 import MicroModal from 'micromodal';
-import disableScroll from '../disable-scroll/disable-scroll-func.js';
-import enableScroll from '../enable-scroll/enable-scroll-func.js';
+import disableScroll from '../disable-scroll/disable-scroll.js';
+import enableScroll from '../enable-scroll/enable-scroll.js';
 
 function initMicromodal() {
 	'use strict';
@@ -22,7 +22,7 @@ function initMicromodal() {
 			const iFrames = document?.querySelectorAll('.modal iframe');
 
 			if (iFrames.length > 0) {
-				iFrames.forEach((item) => {
+				iFrames.forEach(item => {
 					item.src = item.src;
 				});
 			}
@@ -30,7 +30,7 @@ function initMicromodal() {
 			const videos = document?.querySelectorAll('video');
 
 			if (videos.length > 0) {
-				videos.forEach((item) => {
+				videos.forEach(item => {
 					item.pause();
 				});
 			}

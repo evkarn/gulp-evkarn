@@ -1,5 +1,4 @@
-@use "../mixins/units";
-@use "../variables/general";
+@use 'settings/imports' as *;
 
 .state-accent {
 	transition: color 0.3s ease;
@@ -17,8 +16,8 @@
 	&:focus-visible {
 		outline-color: currentColor;
 		outline-style: dashed;
-		outline-width: general.$outline-width + px;
-		outline-offset: general.$outline-offset + px;
+		outline-width: $outline-width + px;
+		outline-offset: $outline-offset + px;
 	}
 
 	&:active {
@@ -42,8 +41,8 @@
 	&:focus-visible {
 		outline-color: currentColor;
 		outline-style: dashed;
-		outline-width: general.$outline-width + px;
-		outline-offset: general.$outline-offset + px;
+		outline-width: $outline-width + px;
+		outline-offset: $outline-offset + px;
 	}
 
 	&:active {

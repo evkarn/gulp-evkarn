@@ -1,5 +1,4 @@
-@use "../../mixins/units";
-@use "../../variables/general";
+@use 'settings/imports' as *;
 
 .header__nav a {
 	color: var(--dark-second);
@@ -13,10 +12,10 @@
 	}
 
 	&:focus-visible {
-		outline-color: currentColor;
+		outline-color: var(--accent);
 		outline-style: dashed;
-		outline-width: units.rem(general.$outline-width);
-		outline-offset: units.rem(general.$outline-offset);
+		outline-width: var(--outline-width);
+		outline-offset: var(--outline-offset)
 	}
 
 	&:active {

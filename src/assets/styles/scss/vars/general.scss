@@ -1,5 +1,5 @@
-@use '../variables/grid';
-@use '../mixins/units';
+@use 'grid' as *;
+@use 'mixins/units';
 
 // Fonts
 $fz: 16;
@@ -9,6 +9,8 @@ $font-text: "Oswald", sans-serif;
 
 $index: calc(1vh + 1vw);
 
+$z-index-header: 3;
+
 // General variables
 $border-width: 1;
 $border-radius: 10;
@@ -16,7 +18,8 @@ $border-radius: 10;
 $outline-width: 1;
 $outline-offset: 2;
 
-$burger-width: units.rem(38);
-$burger-height: units.rem(26);
-$burger-line-height: units.rem(2);
+$burger-width: 38px;
+$burger-height: 26px;
+$burger-line-height: 2px;
 $burger-line-color: #222222;
+$burger-line-radius: 2px;

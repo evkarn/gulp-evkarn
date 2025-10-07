@@ -3,9 +3,7 @@
 		"prefix": "use-all",
 		"scope": "css, scss, sass, scss, less",
 		"body": [
-			"@use '../$1variables/general' as *;",
-			"@use '../$1variables/grid' as *;",
-			"@use '../$1mixins/fluid-size' as *;",
+			"@use 'settings/imports' as *;",
 		],
 	},
 	"@use": {
@@ -19,28 +17,28 @@
 		"prefix": "use-units",
 		"scope": "css, scss, sass, scss, less",
 		"body": [
-			"@use '../$1mixins/units' as *;"
+			"@use 'mixins/units';"
 		],
 	},
 	"use ad-txt": {
 		"prefix": "use-fluid-size",
 		"scope": "css, scss, sass, scss, less",
 		"body": [
-			"@use '../$1mixins/fluid-size' as *;"
+			"@use 'mixins/fluid-size';"
 		],
 	},
 	"use grid": {
 		"prefix": "use-grid",
 		"scope": "css, scss, sass, scss, less",
 		"body": [
-			"@use '../$1variables/grid' as *;"
+			"@use 'vars/grid';"
 		],
 	},
 	"use general": {
 		"prefix": "use-general",
 		"scope": "css, scss, sass, scss, less",
 		"body": [
-			"@use '../$1variables/general' as *;"
+			"@use 'vars/general';"
 		],
 	},
 }

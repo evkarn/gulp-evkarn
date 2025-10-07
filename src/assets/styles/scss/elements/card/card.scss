@@ -8,12 +8,12 @@
 
 	line-height: 1.2;
 	text-align: center;
-	border-radius: units.rem(general.$bor-rad);
+	border-radius: $bor-rad);
 
 	&:focus-visible {
 		outline-color: var(--accent);
 		outline-style: dashed;
-		outline-width: units.rem(general.$outline-width);
-		outline-offset: units.rem(general.$outline-offset);
+		outline-width: $outline-width);
+		outline-offset: $outline-offset);
 	}
 }

@@ -3,12 +3,12 @@ $gap: 30;
 
 $content-width: 1290;
 
-$container-offset: 15;
+$container-offset: 16;
 
 $container-width: $content-width + $container-offset * 2;
 
-$max-switch-point: 768;
-$min-switch-point: 768.96;
+$max-switch-point: 768px;
+$min-switch-point: 768.96px;
 
 // Breakpoints width
 $min-screen: 320;

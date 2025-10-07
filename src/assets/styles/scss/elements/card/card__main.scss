@@ -4,9 +4,9 @@
 @use '../../mixins/adaptive-value';
 
 .card__main {
-	gap: units.rem(15);
+	gap: 15);
 
-	padding: units.rem(15);
+	padding: 15);
 }
 
 .card--product .card__main {

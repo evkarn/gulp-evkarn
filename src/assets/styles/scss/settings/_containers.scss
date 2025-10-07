@@ -1,25 +1,24 @@
-@use "../variables/grid";
-@use "../mixins/units";
+@use 'settings/imports' as *;
 
 .container {
 	width: 100%;
-	max-width: grid.$container-width + px;
+	max-width: $container-width + px;
 
 	margin: 0 auto;
-	padding: 0 grid.$container-offset + px;
+	padding: 0 $container-offset + px;
 }
 
 .container-full {
 	width: 100%;
 	max-width: 100%;
 
-	padding: 0 grid.$container-offset + px;
+	padding: 0 $container-offset + px;
 }
 
 .container-left-50 {
 	max-width: 50%;
 
-	padding: 0 grid.$container-offset + px;
+	padding: 0 $container-offset + px;
 
 	@media (max-width: 768px) {
 		max-width: 100%;
@@ -31,7 +30,7 @@
 
 	margin-left: auto;
 
-	padding: 0 grid.$container-offset + px;
+	padding: 0 $container-offset + px;
 
 	@media (max-width: 768px) {
 		max-width: 100%;
@@ -39,17 +38,17 @@
 }
 
 .container-right {
-	padding-left: calc((100% - (grid.$container-width * 1px)) / 2 + (grid.$container-offset * 1px));
+	padding-left: calc((100% - ($container-width * 1px)) / 2 + ($container-offset * 1px));
 
-	@media (max-width: calc(grid.$container-width * 1px)) {
-		padding-left: grid.$container-offset + px;
+	@media (max-width: calc($container-width * 1px)) {
+		padding-left: $container-offset + px;
 	}
 }
 
 .container-left {
-	padding-right: calc((100% - (grid.$container-width * 1px)) / 2 + (grid.$container-offset * 1px));
+	padding-right: calc((100% - ($container-width * 1px)) / 2 + ($container-offset * 1px));
 
-	@media (max-width: calc(grid.$container-width * 1px)) {
-		padding-right: grid.$container-offset + px;
+	@media (max-width: calc($container-width * 1px)) {
+		padding-right: $container-offset + px;
 	}
 }

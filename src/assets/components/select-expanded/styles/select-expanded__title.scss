@@ -6,17 +6,17 @@
 .select-expanded__title {
 	width: 100%;
 
-	padding: units.rem(18) units.rem(20);
+	padding: 18) 20);
 
-	border: units.rem(1) solid var(--pinball);
-	border-radius: units.rem(8);
+	border: 1) solid var(--pinball);
+	border-radius: 8);
 
 	transition:
 		border-color 0.3s ease,
 		color 0.3s ease;
 
-	@media (max-width: units.rem(576)) {
-		padding: units.rem(16) units.rem(20);
+	@media (max-width: 576)) {
+		padding: 16) 20);
 	}
 
 	@media (any-hover: hover) {
@@ -29,8 +29,8 @@
 	&:focus-visible {
 		outline-color: var(--accent);
 		outline-style: dashed;
-		outline-width: units.rem(general.$outline-width);
-		outline-offset: units.rem(general.$outline-offset);
+		outline-width: $outline-width);
+		outline-offset: $outline-offset);
 	}
 
 	&:active {

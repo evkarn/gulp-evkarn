@@ -1,5 +1,5 @@
 // Variables
-@use "variables/root";
+@use "vars/root";
 // End. Variables
 
 
@@ -8,9 +8,9 @@
 // END. Fonts
 
 
-// Reset styles
-@use "./reset-styles/index-reset";
-// End. Reset styles
+// Config styles
+@use "./config/config";
+// End. Config styles
 
 
 // Global
@@ -19,25 +19,25 @@
 
 
 // Plugins
-// @use '../../../../node_modules/swiper/swiper';
-// @use '../../../../node_modules/swiper/modules/navigation';
-// @use '../../../../node_modules/swiper/modules/pagination';
+// @use 'swiper/swiper';
+// @use 'swiper/modules/navigation';
+// @use 'swiper/modules/pagination';
 // End. Plugins
 
 
 // Elements
-@use "./elements/burger/index-burger";
+@use "./elements/burger/burger";
 @use "./elements/go-back-top/index-go-back-top";
 // End. Elements
 
 
 // Header
-@use "./header/index-header";
+@use "./header/header";
 // End. Header
 
 
 // Sections
-@use "./sections/intro/intro-index";
+@use "./sections/intro/intro";
 // End. Sections
 
 

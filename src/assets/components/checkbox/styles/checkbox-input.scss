@@ -17,7 +17,6 @@
 
 	appearance: none;
 
-
 	position: relative;
 
 	display: flex;
@@ -35,8 +34,8 @@
 	&:focus-visible {
 		outline-color: currentColor;
 		outline-style: dashed;
-		outline-width: units.rem(1);
-		outline-offset: units.rem(general.$outline-offset);
+		outline-width: 1);
+		outline-offset: $outline-offset);
 	}
 
 	&:before {

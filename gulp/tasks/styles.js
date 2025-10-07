@@ -17,6 +17,12 @@ import plumberInit from './plumber.js';
 // Отслеживание изменений в файлах
 import { compareContents } from 'gulp-changed';
 
+import { fileURLToPath } from 'url';
+import { dirname, resolve } from 'path';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
+
 const sass = gulpSass(dartSass);
 
 export default function styles() {
@@ -37,7 +43,15 @@ export default function styles() {
 
 			.pipe(
 				sass({
-					// style: 'compressed',
+					includePaths: [
+						resolve(__dirname, 'src'),
+						resolve(__dirname, 'src/assets'),
+						resolve(__dirname, 'src/assets/styles/scss'),
+						resolve(__dirname, 'src/assets/styles/scss/vars'),
+						resolve(__dirname, 'src/assets/components'),
+						resolve(__dirname, 'node_modules'),
+					],
+					// outputStyle: 'compressed'
 				}).on('error', sass.logError),
 			)
 

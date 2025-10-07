@@ -1,13 +1,12 @@
-@use '../../mixins/units';
-@use '../../variables/grid';
+@use 'settings/imports' as *;
 
 .header__nav .nav__list {
 	flex-wrap: wrap;
-	row-gap: units.rem(4);
-	column-gap: units.rem(grid.$gap);
+	row-gap: 4;
+	column-gap: $gap;
 
-	@media (max-width: units.em(grid.$max-switch-point)) {
+	@media (max-width: $max-switch-point) {
 		flex-direction: column;
-		row-gap: units.rem(grid.$gap);
+		row-gap: $gap;
 	}
 }

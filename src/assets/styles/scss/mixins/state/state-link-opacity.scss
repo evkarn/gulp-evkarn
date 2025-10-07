@@ -13,8 +13,8 @@
 	&:focus-visible {
 		outline-color: currentColor;
 		outline-style: dashed;
-		outline-width: units.rem(general.$outline-width);
-		outline-offset: units.rem(general.$outline-offset);
+		outline-width: $outline-width);
+		outline-offset: $outline-offset);
 	}
 
 	&:active {

@@ -6,7 +6,7 @@
 .likely {
 	display: flex;
 	flex-wrap: wrap;
-	gap: units.rem(10);
+	gap: 10);
 	font-family:
 		"Helvetica Neue",
 		"Arial",
@@ -25,22 +25,22 @@
 		position: absolute;
 		top: 50%;
 		left: 50%;
-		width: units.rem(16);
-		height: units.rem(16);
+		width: 16);
+		height: 16);
 		transform: translate(-50%, -50%);
 	}
 }
 
 .likely-small {
 	svg {
-		width: units.rem(12);
-		height: units.rem(12);
+		width: 12);
+		height: 12);
 	}
 }
 
 .likely-big {
 	svg {
-		width: units.rem(24);
-		height: units.rem(24);
+		width: 24);
+		height: 24);
 	}
 }

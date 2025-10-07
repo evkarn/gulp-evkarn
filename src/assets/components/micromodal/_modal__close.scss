@@ -5,8 +5,8 @@
 
 .modal__close {
 	position: absolute;
-	top: units.rem(20);
-	right: units.rem(20);
+	top: 20);
+	right: 20);
 
 	display: flex;
 	justify-content: center;
@@ -26,14 +26,14 @@
 		scale 0.3s ease;
 	will-change: scale;
 
-	@media (max-width: units.rem(768)) {
-		top: units.rem(10);
-		right: units.rem(10);
+	@media (max-width: 768)) {
+		top: 10);
+		right: 10);
 	}
 
 	&:before {
 		content: "✕";
-		font-size: units.rem(22);
+		font-size: 22);
 
 		font-weight: 700;
 	}
@@ -47,8 +47,8 @@
 	&:focus-visible {
 		outline-color: currentColor;
 		outline-style: dashed;
-		outline-width: units.rem(general.$outline-width);
-		outline-offset: units.rem(general.$outline-offset);
+		outline-width: $outline-width);
+		outline-offset: $outline-offset);
 	}
 
 	&:active {

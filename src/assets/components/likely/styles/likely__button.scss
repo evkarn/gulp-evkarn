@@ -1,12 +1,12 @@
-@use '../../variables/general';
-@use '../../variables/grid';
-@use '../../mixins/units';
-@use '../../mixins/adaptive-value';
+@use "../../variables/general";
+@use "../../variables/grid";
+@use "../../mixins/units";
+@use "../../mixins/adaptive-value";
 
 .likely__button {
 	position: relative;
 	margin: 0;
-	padding: units.rem(1) units.rem(4) units.rem(1) 0;
+	padding: 1) 4) 1) 0;
 	line-height: inherit;
 
 	text-decoration: none;
@@ -23,12 +23,12 @@
 
 .likely-big {
 	.likely__button {
-		padding: units.rem(2) units.rem(6) units.rem(2) 0;
+		padding: 2) 6) 2) 0;
 	}
 }
 
 .likely-small {
 	.likely__button {
-		padding: units.rem(2) units.rem(3) units.rem(2) 0;
+		padding: 2) 3) 2) 0;
 	}
 }

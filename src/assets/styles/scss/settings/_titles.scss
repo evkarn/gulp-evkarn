@@ -1,7 +1,4 @@
-@use '../variables/general';
-@use '../variables/grid';
-@use '../mixins/units';
-@use '../mixins/fluid-size';
+@use 'settings/imports' as *;
 
 .h1,
 .h2,
@@ -16,13 +13,13 @@
 }
 
 .h1 {
-	@include fluid-size.fluid-size-px(font-size, 36, 54);
+	@include fluid-size-px(font-size, 36, 54);
 }
 
 .h2 {
-	@include fluid-size.fluid-size-px(font-size, 26, 36);
+	@include fluid-size-px(font-size, 26, 36);
 }
 
 .h3 {
-	@include fluid-size.fluid-size-px(font-size, 20, 24);
+	@include fluid-size-px(font-size, 20, 24);
 }

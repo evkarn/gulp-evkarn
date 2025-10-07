@@ -11,14 +11,14 @@
 
 	width: max-content;
 
-	padding: units.rem(20);
+	padding: 20);
 
 	font-family: sans-serif;
 	font-size: 70px;
 	font-weight: 500;
 
 	white-space: nowrap;
-	border: units.rem(1) solid var(--ticker-item-border-color);
+	border: 1) solid var(--ticker-item-border-color);
 
-	border-radius: units.rem(general.$bor-rad);
+	border-radius: $bor-rad);
 }

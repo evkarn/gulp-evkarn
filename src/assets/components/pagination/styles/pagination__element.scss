@@ -1,20 +1,20 @@
-@use '../../variables/general';
-@use '../../variables/grid';
-@use '../../mixins/units';
-@use '../../mixins/fluid-size';
+@use "../../variables/general";
+@use "../../variables/grid";
+@use "../../mixins/units";
+@use "../../mixins/fluid-size";
 
 .pagination__element {
-	width: units.rem(46);
-	height: units.rem(46);
+	width: 46);
+	height: 46);
 
-	font-size: units.rem(20);
+	font-size: 20);
 
 	text-align: center;
 
 	color: var(--sooty);
 
-	border: units.rem(general.$bor-width) solid var(--sooty);
-	border-radius: units.rem(8);
+	border: $bor-width) solid var(--sooty);
+	border-radius: 8);
 }
 
 span.pagination__element {
@@ -25,9 +25,11 @@ span.pagination__element {
 a.pagination__element {
 	border-color: transparent;
 
-	transition: color .3s ease, border-color .3s ease;
+	transition:
+		color 0.3s ease,
+		border-color 0.3s ease;
 
-	@media ( any-hover: hover ) {
+	@media (any-hover: hover) {
 		&:hover {
 			color: var(--accent);
 		}
@@ -36,8 +38,8 @@ a.pagination__element {
 	&:focus-visible {
 		outline-color: var(--accent);
 		outline-style: dashed;
-		outline-width: units.rem(general.$outline-width);
-		outline-offset: units.rem(general.$outline-offset);
+		outline-width: $outline-width);
+		outline-offset: $outline-offset);
 	}
 
 	&:active {

@@ -1,44 +1,35 @@
+import vars from '@/assets/components/vars.js';
+
 document.addEventListener('DOMContentLoaded', () => {
-	(function getScrollWidth() {
+	(function getScrollbarWidth() {
 		'use strict';
 
-		const body = document.body;
+		const scrollbarWidth = window.innerWidth - vars.bodyEl.offsetWidth;
 
-		const documentRoot = document.documentElement;
+		vars.htmlEl.style.setProperty('--scroll-width', `${scrollbarWidth}px`);
 
-		const scrollWidth = window.innerWidth - body.offsetWidth;
-
-		documentRoot.style.setProperty('--scroll-width', `${scrollWidth}px`);
+		return scrollbarWidth;
 	})();
 
 	function disableScroll() {
-		const html = document.documentElement;
-
-		const body = document.body;
-
-		const documentRoot = document.querySelector(':root');
+		'use strict';
 
 		let pagePosition = window.scrollY;
 
-		body.classList.add('stop-scroll');
+		vars.bodyEl.classList.add('stop-scroll');
 
-		body.dataset.position = pagePosition;
+		vars.bodyEl.dataset.position = pagePosition;
 
-		documentRoot.style.setProperty('--top-position', `-${pagePosition}px`);
+		vars.htmlEl.style.setProperty('--top-position', `-${pagePosition}px`);
 
-		html.style.scrollBehavior = 'unset';
+		vars.htmlEl.style.scrollBehavior = 'unset';
 	}
 
 	function enableScroll() {
-		const html = document.documentElement;
+		'use strict';
+		let pagePosition = parseInt(vars.bodyEl.dataset.position, 10);
 
-		const body = document.body;
-
-		const documentRoot = document.querySelector(':root');
-
-		let pagePosition = parseInt(body.dataset.position, 10);
-
-		body.classList.remove('stop-scroll');
+		vars.bodyEl.classList.remove('stop-scroll');
 
 		window.scroll({
 			top: pagePosition,
@@ -46,95 +37,124 @@ document.addEventListener('DOMContentLoaded', () => {
 			left: 0,
 		});
 
-		body.removeAttribute('data-position');
+		vars.bodyEl.removeAttribute('data-position');
 
-		documentRoot.style.setProperty('--top-position', 'auto');
+		vars.htmlEl.style.setProperty('--top-position', 'auto');
 
-		html.style.scrollBehavior = '';
+		vars.htmlEl.style.scrollBehavior = '';
 	}
 
-	(function burger() {
+	(function burgerInit() {
 		'use strict';
 
-		const burger = document?.querySelector('[data-burger]');
+		if (vars.burger && vars.nav) {
+			vars.burger.addEventListener('click', () => {
+				vars.burger.classList.toggle('burger--is-active');
 
-		const nav = document?.querySelector('[data-nav]');
-		const navItems = document?.querySelectorAll('[data-nav-item]');
+				vars.nav.classList.toggle('nav--is-visible');
 
-		const overlay = document?.querySelector('[data-nav-overlay]');
-
-		const fixedEls = document?.querySelectorAll('[data-fixed');
-
-		if (burger && nav) {
-			burger.addEventListener('click', () => {
-				burger.classList.toggle('burger--is-active');
-
-				nav.classList.toggle('nav--is-visible');
-
-				fixedEls.forEach(function (el) {
+				vars.fixedEls.forEach(function (el) {
 					el.classList.toggle('not-leap');
 				});
 
-				if (burger.getAttribute('aria-expanded') === 'false') {
-					burger.setAttribute('aria-expanded', 'true');
+				if (vars.burger.getAttribute('aria-expanded') === 'false') {
+					vars.burger.setAttribute('aria-expanded', 'true');
 
-					burger.setAttribute('aria-pressed', 'true');
+					vars.burger.setAttribute('aria-pressed', 'true');
 
-					burger.setAttribute('aria-label', 'Закрыть меню');
+					vars.burger.setAttribute('aria-label', 'Закрыть меню');
 
 					disableScroll();
 				} else {
-					burger.setAttribute('aria-expanded', 'false');
+					vars.burger.setAttribute('aria-expanded', 'false');
 
-					burger.setAttribute('aria-pressed', 'false');
+					vars.burger.setAttribute('aria-pressed', 'false');
 
-					burger.setAttribute('aria-label', 'Открыть меню');
+					vars.burger.setAttribute('aria-label', 'Открыть меню');
 
 					enableScroll();
 				}
 			});
 		}
 
-		if (navItems) {
-			navItems.forEach((el) => {
+		if (vars.navItems) {
+			vars.navItems.forEach(el => {
 				el.addEventListener('click', () => {
 					enableScroll();
 
-					if (burger) {
-						burger.setAttribute('aria-expanded', 'false');
+					if (vars.burger) {
+						vars.burger.setAttribute('aria-expanded', 'false');
 
-						burger.setAttribute('aria-pressed', 'false');
+						vars.burger.setAttribute('aria-pressed', 'false');
 
-						burger.setAttribute('aria-label', 'Открыть меню');
+						vars.burger.setAttribute('aria-label', 'Открыть меню');
 
-						burger.classList.remove('burger--is-active');
+						vars.burger.classList.remove('burger--is-active');
 					}
 
-					if (nav) {
-						nav.classList.remove('nav--is-active');
+					if (vars.nav) {
+						vars.nav.classList.remove('nav--is-active');
 					}
 				});
 			});
 		}
 
-		if (overlay) {
-			overlay.addEventListener('click', () => {
-				if (burger) {
-					burger.setAttribute('aria-expanded', 'false');
+		if (vars.overlay) {
+			vars.overlay.addEventListener('click', () => {
+				if (vars.burger) {
+					vars.burger.setAttribute('aria-expanded', 'false');
 
-					burger.setAttribute('aria-pressed', 'false');
+					vars.burger.setAttribute('aria-pressed', 'false');
 
-					burger.setAttribute('aria-label', 'Открыть меню');
+					vars.burger.setAttribute('aria-label', 'Открыть меню');
 
-					burger.classList.remove('burger--is-active');
+					vars.burger.classList.remove('burger--is-active');
 				}
 
-				if (nav) {
-					nav.classList.remove('nav--is-active');
+				if (vars.nav) {
+					vars.nav.classList.remove('nav--is-active');
 				}
 
 				enableScroll();
 			});
 		}
 	})();
+
+	(function getFullYear(selector) {
+		'use strict';
+
+		const currentYear = new Date().getFullYear();
+
+		const yearEl = document?.querySelector(selector);
+
+		const metaYear = document?.querySelector('[itemprop="copyrightYear"]');
+
+		if (yearEl) {
+			yearEl.innerHTML = currentYear;
+		}
+
+		if (metaYear) {
+			metaYear.setAttribute('content', currentYear);
+		}
+	})();
+
+	function getElementHeight(selector, varHeightName) {
+		function heightDetermination() {
+			const element = document?.querySelector(`${selector}`);
+
+			if (element) {
+				const elementHeight = element.offsetHeight;
+
+				vars.htmlEl.style.setProperty(
+					`--${varHeightName}`,
+					`${elementHeight}px`,
+				);
+			}
+		}
+
+		heightDetermination();
+
+		window.addEventListener('resize', heightDetermination);
+	}
+	getElementHeight('.header', 'header-height');
 });

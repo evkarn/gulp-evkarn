@@ -1,20 +1,18 @@
-@use '../../variables/general';
-@use '../../variables/grid';
-@use '../../mixins/units';
-@use '../../mixins/adaptive-value';
+@use "./burger__line";
+
+@use "settings/imports" as *;
 
 .burger {
-
 	flex-shrink: 0;
 	position: relative;
-	z-index: 4;
+	z-index: $z-index-header;
 
 	display: none;
 
-	width: general.$burger-width;
-	height: general.$burger-height;
+	width: $burger-width;
+	height: $burger-height;
 
-	@media (max-width: units.rem(grid.$max-switch-point)) {
+	@media (max-width: $max-switch-point) {
 		display: inline-block;
 	}
 
@@ -27,11 +25,11 @@
 		display: block;
 
 		width: 100%;
-		height: general.$burger-line-height;
+		height: $burger-line-height;
 
-		background-color: general.$burger-line-color;
+		background-color: $burger-line-color;
 
-		border-radius: 2px;
+		border-radius: $burger-line-radius;
 
 		transition: rotate 0.3s ease;
 	}

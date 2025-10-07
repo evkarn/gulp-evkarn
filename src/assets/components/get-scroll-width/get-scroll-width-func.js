@@ -1,14 +1,13 @@
+import vars from '@components/vars.js';
 
-export function getScrollWidth() {
+function getScrollbarWidth() {
 	'use strict';
 
-	const docEl = document.documentElement;
+	const scrollbarWidth = window.innerWidth - vars.bodyEl.offsetWidth;
 
-	const docBody = document.body;
-
-	const scrollbarWidth = window.innerWidth - docBody.clientWidth;
-
-	docEl.style.setProperty('--scroll-width', `${scrollbarWidth}px`);
+	vars.htmlEl.style.setProperty('--scroll-width', `${scrollbarWidth}px`);
 
 	return scrollbarWidth;
 }
+
+export default getScrollbarWidth;

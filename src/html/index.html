@@ -5,7 +5,7 @@
 	xmlns="http://www.w3.org/1999/xhtml"
 	itemtype="https://schema.org/WebSite"
 >
-@include('./head.html', {
+@include('./layouts/head.html', {
 "title": "Заголовок страницы",
 "siteUrl": "https://site.ru",
 "description": "Описание страницы",
@@ -19,8 +19,10 @@
 	itemscope
 	itemtype="https://schema.org/WebPage"
 >
-	<div class="page-wrap">
-		@include('./header.html', {"alt": "Логотип"})
+	<div class="page-wrapper">
+		@include('./layouts/counters.html')
+
+		@include('./layouts/header.html', {"alt": "Логотип"})
 
 		<main class="main">
 
@@ -97,9 +99,9 @@
 
 		</main>
 
-		@include('./footer.html')
+		@include('./layouts/footer.html')
 
-		@include('./go-back-top.html')
+		@include('./elements/go-back-top.html')
 	</div>
 
 	<script src="assets/js/scripts.min.js"></script>

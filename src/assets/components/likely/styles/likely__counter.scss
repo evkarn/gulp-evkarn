@@ -1,23 +1,18 @@
-@use '../../variables/general';
-@use '../../variables/grid';
-@use '../../mixins/units';
-@use '../../mixins/adaptive-value';
+@use "../../variables/general";
+@use "../../variables/grid";
+@use "../../mixins/units";
+@use "../../mixins/adaptive-value";
 
 .likely__counter {
 	position: relative;
 	display: none;
 	margin: 0;
-	padding: units.rem(1) units.rem(4);
+	padding: 1) 4);
 	line-height: inherit;
 	text-align: center;
 	text-decoration: none;
-	background-image: linear-gradient(
-		90deg,
-		rgb(0 0 0 / 20%) 0,
-		transparent 0.5px,
-		transparent
-	);
-	background-size: units.rem(1) units.rem(1);
+	background-image: linear-gradient(90deg, rgb(0 0 0 / 20%) 0, transparent 0.5px, transparent);
+	background-size: 1) 1);
 	background-repeat: repeat-y;
 	outline: 0;
 	cursor: inherit;
@@ -48,12 +43,12 @@
 
 .likely-big {
 	.likely__counter {
-		padding: units.rem(2) units.rem(6);
+		padding: 2) 6);
 	}
 }
 
 .likely-small {
 	.likely__counter {
-		padding: units.rem(2) units.rem(3);
+		padding: 2) 3);
 	}
 }

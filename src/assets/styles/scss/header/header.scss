@@ -1,5 +1,9 @@
-@use "../mixins/units";
-@use '../variables/grid';
+@use 'settings/imports' as *;
+
+@use "header__container";
+@use "header__logo";
+
+@use "./nav/nav";
 
 .header {
 	position: fixed;
@@ -8,17 +12,17 @@
 
 	width: 100%;
 
-	padding-top: units.rem(10);
-	padding-bottom: units.rem(10);
+	padding-top: 10px;
+	padding-bottom: 10px;
 
 	background-color: var(--body-bg);
 
-	@media (max-width: units.em(grid.$max-switch-point)) {
-		&:after {
+	@media (max-width: $max-switch-point) {
+		&:before {
 			content: "";
 
 			position: absolute;
-			z-index: 3;
+			z-index: $z-index-header;
 
 			top: 0;
 			left: 0;
