@@ -5,7 +5,7 @@
 	xmlns="http://www.w3.org/1999/xhtml"
 	itemtype="https://schema.org/WebSite"
 >
-@include('./layouts/head.html', {
+@include('src/includes/layouts/head.html', {
 "title": "Заголовок страницы",
 "siteUrl": "https://site.ru",
 "description": "Описание страницы",
@@ -20,91 +20,20 @@
 	itemtype="https://schema.org/WebPage"
 >
 	<div class="page-wrapper">
-		@include('./layouts/counters.html')
+		@include('src/includes/layouts/counters.html')
 
-		@include('./layouts/header.html', {"alt": "Логотип"})
+		@include('src/includes/layouts/header.html', {"alt": "Логотип"})
 
 		<main class="main">
-
-			<section class="breadcrumbs">
-				<div class="container">
-					<h2 class="h2 visually-hidden">
-						Ссылки хлебных крошек
-					</h2>
-
-					<nav
-						class="breadcrumbs__nav flex"
-						aria-labelledby="my-breadcrumbs"
-					>
-						<h2
-							class="h2 visually-hidden"
-							id="my-breadcrumbs"
-						>
-							Ссылки хлебных крошек
-						</h2>
-
-						<ol
-							class="breadcrumbs__list list-reset"
-							itemscope
-							itemtype="http://schema.org/BreadcrumbList"
-						>
-							<li
-								class="breadcrumbs__item"
-								itemprop="itemListElement"
-								itemscope
-								itemtype="http://schema.org/ListItem"
-							>
-								<a
-									class="breadcrumbs__link"
-									href="/"
-									itemprop="item"
-								>
-									<span itemprop="name">
-										Главная
-									</span>
-								</a>
-
-								<meta
-									itemprop="position"
-									content="1"
-								>
-							</li>
-
-							<li
-								class="breadcrumbs__item"
-								itemprop="itemListElement"
-								itemscope
-								itemtype="http://schema.org/ListItem"
-							>
-								<a
-									class="breadcrumbs__link"
-									href="#!"
-									itemprop="item"
-									aria-current="page"
-								>
-									<span itemprop="name">
-										Заголовок страницы
-									</span>
-								</a>
-
-								<meta
-									itemprop="position"
-									content="2"
-								>
-							</li>
-						</ol>
-					</nav>
-				</div>
-			</section>
-
+			@include('src/includes/sections/intro-home.html')
 		</main>
 
-		@include('./layouts/footer.html')
+		@include('src/includes/layouts/footer.html')
 
-		@include('./elements/go-back-top.html')
+		@include('src/components/go-back-top/go-back-top.html', {"symbol": "↑",})
 	</div>
 
-	<script src="assets/js/scripts.min.js"></script>
+	<script src="js/scripts.min.js"></script>
 </body>
 
 </html>

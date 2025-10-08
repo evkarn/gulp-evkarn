@@ -1,5 +1,11 @@
 <section class="breadcrumbs">
 	<div class="container">
+		<h2
+			class="h2 visually-hidden"
+		>
+			Хлебные крошки
+		</h2>
+
 		<nav
 			class="breadcrumbs__nav flex"
 			aria-labelledby="my-breadcrumbs"
@@ -38,28 +44,7 @@
 					>
 				</li>
 
-				<li
-					class="breadcrumbs__item"
-					itemprop="itemListElement"
-					itemscope
-					itemtype="http://schema.org/ListItem"
-				>
-					<a
-						class="breadcrumbs__link"
-						href="{{ page.url }}"
-						itemprop="item"
-						aria-current="page"
-					>
-						<span itemprop="name">
-							{{ title }}
-						</span>
-					</a>
-
-					<meta
-						itemprop="position"
-						content="2"
-					>
-				</li>
+				@loop('src/components/breadcrumbs/loop-items.html', '../components/breadcrumbs/data.json')
 			</ol>
 		</nav>
 	</div>

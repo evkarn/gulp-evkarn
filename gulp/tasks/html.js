@@ -34,7 +34,7 @@ export default function html() {
 			.pipe(
 				fileInclude({
 					prefix: '@',
-					basepath: 'G:/personal-projects/gulp-evkarn/src/includes/',
+					basepath: '@root',
 					maxRecursion: 100,
 				}),
 			)

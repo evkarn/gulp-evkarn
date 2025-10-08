@@ -14,9 +14,7 @@ const preprocessor = 'scss';
 
 export const path = {
 	build: {
-		allFiles: `${buildFolder}/**/*.*`,
-
-		css: `${buildFolder}/assets/css/`,
+		css: `${buildFolder}/css/`,
 
 		configFiles: `${buildFolder}/`,
 
@@ -34,24 +32,24 @@ export const path = {
 
 		sprite: `${buildFolder}/assets/svg/sprite/`,
 
-		js: `${buildFolder}/assets/js/`,
+		js: `${buildFolder}/js/`,
 	},
 
 	// Пути к исходникам файлов
 	src: {
 		configFiles: `${srcFolder}/config/*.{php,htaccess,txt,xml,ico,png,svg}`,
 
+		favicon: `${srcFolder}/assets/favicon/*.*`,
+
 		files: `${srcFolder}/assets/files/**/*.*`,
 
 		fonts: `${srcFolder}/assets/fonts/*.ttf`,
 
-		favicon: `${srcFolder}/assets/favicon/*.*`,
-
-		fontsFaces: `${srcFolder}/assets/styles/${preprocessor}/fonts/_fonts-faces.${preprocessor}`,
+		fontsFaces: `${srcFolder}/styles/${preprocessor}/fonts/_fonts-faces.${preprocessor}`,
 
 		html: `${srcFolder}/html/**/*.{html,htm}`,
 
-		js: `${srcFolder}/assets/js/*.{js,mjs}`,
+		js: `${srcFolder}/js/*.{js,mjs}`,
 
 		img: `${srcFolder}/assets/images/**/*.*`,
 
@@ -63,8 +61,8 @@ export const path = {
 		sprite: `${srcFolder}/assets/svg/sprite/**/*.svg`,
 
 		styles: [
-			`${srcFolder}/assets/styles/${preprocessor}/*.${preprocessor}`,
-			`!${srcFolder}/assets/styles/${preprocessor}/_*.${preprocessor}`,
+			`${srcFolder}/styles/${preprocessor}/*.${preprocessor}`,
+			`!${srcFolder}/styles/${preprocessor}/_*.${preprocessor}`,
 		],
 	},
 
@@ -80,13 +78,13 @@ export const path = {
 
 		sprite: `${srcFolder}/assets/svg/sprite/**/*.*`,
 
-		js: `${srcFolder}/assets/js/**/*.js`,
+		js: `${srcFolder}/js/**/*.js`,
 
-		styles: `${srcFolder}/assets/styles/${preprocessor}/**/*.${preprocessor}`,
+		styles: `${srcFolder}/**/*.${preprocessor}`,
 	},
 
 	clean: [
-		`${buildFolder}/*.{html,ico,svg,png}`,
+		`${buildFolder}/*.*`,
 		`${buildFolder}/assets/*`,
 		`!${buildFolder}/assets/images/`,
 		`!${buildFolder}/assets/fonts/`,

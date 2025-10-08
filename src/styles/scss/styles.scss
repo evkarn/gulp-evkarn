@@ -1,0 +1,47 @@
+// Variables
+@use "root";
+// End. Variables
+
+
+// Fonts
+@use "fonts/fonts-faces";
+// END. Fonts
+
+
+// Config styles
+@use "config/config";
+// End. Config styles
+
+
+// Global
+@use "./settings/settings";
+// END. Global
+
+
+// Node-modules plugins
+@use 'swiper/swiper';
+@use 'swiper/modules/navigation';
+@use 'swiper/modules/pagination';
+// End. Node-modules plugins
+
+
+// Components
+@use "components/breadcrumbs/breadcrumbs";
+@use "components/burger/burger";
+@use "components/go-back-top/index-go-back-top";
+// End. Components
+
+
+// Header
+@use "header/header";
+// End. Header
+
+
+// Sections
+
+// End. Sections
+
+
+// Footer
+@use "footer/index-footer";
+// End. Footer

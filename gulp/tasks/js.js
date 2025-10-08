@@ -12,6 +12,8 @@ import { compareContents } from 'gulp-changed';
 
 import { resolve } from 'path';
 
+
+
 export default function js() {
 	// Находим js файлы в папке исходников
 	return (
@@ -34,14 +36,18 @@ export default function js() {
 					resolve: {
 						alias: {
 							'@': resolve(process.cwd(), 'src'),
-							'@components': resolve(process.cwd(), 'src/assets/components'),
-							'@utils': resolve(process.cwd(), 'src/assets/utils'),
-							'@styles': resolve(process.cwd(), 'src/assets/styles/scss'),
+							'@components': resolve(process.cwd(), 'src/components'),
+							'@js': resolve(process.cwd(), 'src/js'),
+							'@funcs': resolve(process.cwd(), 'src/js/functions'),
+							'@utils': resolve(process.cwd(), 'src/js/utils'),
+							'@modules': resolve(process.cwd(), 'src/js/modules'),
+							'@constants': resolve(process.cwd(), 'src/js/constants'),
+							'@styles': resolve(process.cwd(), 'src/styles/scss'),
 						},
 					},
 
 					entry: {
-						'scripts.min': './src/assets/js/scripts.js',
+						'scripts.min': '@js/scripts.js',
 					},
 
 					output: {

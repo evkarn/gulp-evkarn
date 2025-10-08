@@ -12,8 +12,7 @@
 
 .header__nav.nav {
 	transition:
-		right 0.5s ease,
-		opacity 0.5s ease;
+		right 0.5s ease, visibility .5s ease;
 
 	@media (max-width: $max-switch-point) {
 		position: fixed;
@@ -25,7 +24,7 @@
 
 		background-color: var(--body-bg);
 
-		opacity: 0;
+		visibility: none;
 		pointer-events: none;
 		user-select: none;
 	}
@@ -39,6 +38,7 @@
 		padding: calc($container-offset * 1px);
 		padding-top: calc(var(--header-height) + calc($container-offset * 1px));
 
+		visibility: visible;
 		opacity: 1;
 		pointer-events: auto;
 	}

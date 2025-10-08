@@ -1,4 +1,4 @@
-import vars from '@/assets/components/vars.js';
+import vars from '@funcs/vars.js';
 
 document.addEventListener('DOMContentLoaded', () => {
 	(function getScrollbarWidth() {

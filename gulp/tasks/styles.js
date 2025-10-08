@@ -43,13 +43,12 @@ export default function styles() {
 
 			.pipe(
 				sass({
-					includePaths: [
-						resolve(__dirname, 'src'),
-						resolve(__dirname, 'src/assets'),
-						resolve(__dirname, 'src/assets/styles/scss'),
-						resolve(__dirname, 'src/assets/styles/scss/vars'),
-						resolve(__dirname, 'src/assets/components'),
-						resolve(__dirname, 'node_modules'),
+					loadPaths: [
+						'./src',
+						'./src/components',
+						'./src/styles/scss',
+						'./src/styles/scss/vars',
+						'./node_modules',
 					],
 					// outputStyle: 'compressed'
 				}).on('error', sass.logError),
