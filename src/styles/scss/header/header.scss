@@ -3,8 +3,6 @@
 @use "header__container";
 @use "header__logo";
 
-@use "./nav/nav";
-
 .header {
 	position: fixed;
 	z-index: 1;

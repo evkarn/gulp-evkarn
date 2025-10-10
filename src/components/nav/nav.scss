@@ -3,12 +3,7 @@
 @use "./nav__list";
 @use "./nav__link";
 
-.nav .menu {
-	display: inline-flex;
-	gap: $gap;
-
-	list-style: none;
-}
+@use "./menu/menu";
 
 .header__nav.nav {
 	transition:
@@ -35,8 +30,8 @@
 		z-index: $z-index-header;
 		right: 0;
 
-		padding: calc($container-offset * 1px);
-		padding-top: calc(var(--header-height) + calc($container-offset * 1px));
+		padding: $container-offset;
+		padding-top: calc(var(--header-height) + $container-offset);
 
 		visibility: visible;
 		opacity: 1;

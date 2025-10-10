@@ -1,57 +1,8 @@
 <header class="header">
 	<div class="header__container container flex-align-center">
-		<a
-			href="/"
-			class="header__logo logo state-opacity"
-		>
-			<img
-				class="logo__image"
-				src="assets/svg/icons/logo.svg"
-				width="166"
-				height="30"
-				alt="@alt"
-			>
-		</a>
+		@include('src/components/logo/logo.html')
 
-		<nav
-			class="header__nav nav nav--two-level"
-			data-nav
-		>
-			<ul
-				class="menu"
-				data-menu
-				itemscope
-				itemtype="https://schema.org/SiteNavigationElement"
-			>
-				<li
-					class="menu-item"
-					data-menu-item
-				>
-					<a
-						class="menu-link"
-						href="#"
-						data-menu-link
-						itemprop="url"
-					>
-						Пункт 1
-					</a>
-				</li>
-
-				<li
-					class="menu-item"
-					data-menu-item
-				>
-					<a
-						class="menu-link"
-						href="#"
-						data-menu-link
-						itemprop="url"
-					>
-						Пункт 2
-					</a>
-				</li>
-			</ul>
-		</nav>
+		@include('src/components/nav/nav.html')
 
 		@include('src/components/burger/burger.html')
 	</div>
