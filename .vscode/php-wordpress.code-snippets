@@ -3,9 +3,9 @@
 		"prefix": "wp-is-home",
 		"scope": "html, php, njk, md",
 		"body": [
-			"<?phpphp if (is_front_page()): ?>",
+			"<?php if ( is_front_page() ): ?>",
 			"\tздесь писать код",
-			"<?phpphp else: ?>",
+			"<?php else: ?>",
 			"\tздесь писать код",
 			"<?phpendif;?>",
 		],
@@ -15,7 +15,7 @@
 		"prefix": "wp-body-class",
 		"scope": "html, php, njk, md",
 		"body": [
-			"<?phpphp body_class('body'); ?>",
+			"<?php body_class( 'body' ); ?>",
 		],
 	},
 
@@ -23,7 +23,7 @@
 		"prefix": "wp-home-url",
 		"scope": "html, php, njk, md",
 		"body": [
-			"<?phpphp echo esc_url(home_url('/')); ?>",
+			"<?php echo esc_url( home_url('/') ); ?>",
 		],
 	},
 
@@ -31,7 +31,7 @@
 		"prefix": "wp-site-name",
 		"scope": "html, php, njk, md",
 		"body": [
-			"<?php bloginfo('name'); ?>",
+			"<?php bloginfo( 'name' ); ?>",
 		],
 	},
 
@@ -39,7 +39,7 @@
 		"prefix": "wp-site-charset",
 		"scope": "html, php, njk, md",
 		"body": [
-			"<?phpphp bloginfo( 'charset' ); ?>",
+			"<?php bloginfo( 'charset' ); ?>",
 		],
 	},
 
@@ -47,12 +47,12 @@
 		"prefix": "wp-html-lang-attr",
 		"scope": "html, php, njk, md",
 		"body": [
-			"<?phpphp language_attributes(); ?>",
+			"<?php language_attributes(); ?>",
 		],
 	},
 
 	"Current theme path": {
-		"prefix": "wp-get-template-directory",
+		"prefix": "wp-theme-path",
 		"scope": "html, php, njk, md",
 		"body": [
 			"<?php echo get_template_directory_uri(); ?>",
@@ -63,15 +63,7 @@
 		"prefix": "wp-get-temp-part",
 		"scope": "html, php, njk, md",
 		"body": [
-			"<?php get_template_part( 'template-parts/$1' ); ?>",
-		],
-	},
-
-	"Get template sections": {
-		"prefix": "wp-get-temp-sec",
-		"scope": "html, php, njk, md",
-		"body": [
-			"<?php get_template_part( 'template-sections/$1' ); ?>",
+			"<?php get_template_part( 'template-parts/counters' ); ?>",
 		],
 	},
 
@@ -79,7 +71,7 @@
 		"prefix": "wp-convert-to-utf8",
 		"scope": "html, php, njk, md",
 		"body": [
-			"<?php idn_to_utf8($1, IDNA_DEFAULT, INTL_IDNA_VARIANT_UTS46); ?>",
+			"<?php idn_to_utf8( $1, IDNA_DEFAULT, INTL_IDNA_VARIANT_UTS46 ); ?>",
 		],
 	},
 
@@ -95,7 +87,7 @@
 		"prefix": "wp-echo-do-shortcode",
 		"scope": "html, php, njk, md",
 		"body": [
-			"<?php echo do_shortcode('$1'); ?>",
+			"<?php echo do_shortcode( '$1' ); ?>",
 		],
 	},
 
@@ -103,14 +95,14 @@
 		"prefix": "wp-filter-trailing-slash",
 		"scope": "html, php, njk, md",
 		"body": [
-			"add_filter('wp_kses_allowed_html', function(\\$tags) {",
+			"add_filter( 'wp_kses_allowed_html', function( \\$tags ) {",
 			"\tforeach (['img', 'br', 'hr', 'input', 'meta', 'link'] as \\$tag) {",
 			"\t\tif (isset(\\$tags[\\$tag])) {",
 			"\t\t\tunset(\\$tags[\\$tag]['slash']);",
 			"\t\t}",
 			"\t}",
 			"\treturn \\$tags;",
-			"});",
+			"} );",
 		],
 	},
 
@@ -121,7 +113,7 @@
 			"function my_admin_style() {",
 			"\t wp_enqueue_style('admin-styles', get_stylesheet_directory_uri().'/my-admin.css');",
 			"}",
-			"add_action('admin_enqueue_scripts', 'my_admin_style');",
+			"add_action( 'admin_enqueue_scripts', 'my_admin_style' );",
 		],
 	},
 
@@ -129,7 +121,7 @@
 		"prefix": "wp-site-url-wp-config",
 		"scope": "html, php, njk, md",
 		"body": [
-			"define('WP_SITEURL', 'https://ваш-новый-адрес.com');",
+			"define( 'WP_SITEURL', 'https://ваш-новый-адрес.com' );",
 		],
 	},
 //
@@ -138,7 +130,7 @@
 		"prefix": "wp-site-url-functions-php",
 		"scope": "html, php, njk, md",
 		"body": [
-			"update_option('siteurl', 'https://ваш-новый-адрес.com');",
+			"update_option( 'siteurl', 'https://ваш-новый-адрес.com' );",
 		],
 	},
 
@@ -146,7 +138,7 @@
 		"prefix": "wp-home-url-wp-config",
 		"scope": "html, php, njk, md",
 		"body": [
-			"define('WP_HOME', 'https://ваш-новый-адрес.com');",
+			"define( 'WP_HOME', 'https://ваш-новый-адрес.com' );",
 		],
 	},
 
@@ -155,7 +147,7 @@
 		"prefix": "wp-home-url-functions-php",
 		"scope": "html, php, njk, md",
 		"body": [
-			"update_option('siteurl', 'https://ваш-новый-адрес.com');",
+			"update_option( 'siteurl', 'https://ваш-новый-адрес.com' );",
 		],
 	},
 
@@ -167,20 +159,5 @@
 		],
 	},
 
-	"Показать название шаблона страницы": {
-		"prefix": "wp-show-template-func",
-		"scope": "html, php, njk, md",
-		"body": [
-			"add_action('wp_footer', 'show_template');",
-			"function show_template() {",
-			"\tif (current_user_can('manage_options')) {",
-			"\t\tglobal \\$template;",
-			"\t\techo '<div style=\"position:fixed; bottom: 10px; right: 10px; background:red; color:white; padding: 10px; z-index: 9999;\">';",
-			"\t\techo basename(\\$template);",
-			"\t\techo '</div>';",
-			"\t}",
-			"}",
-		],
-	},
 
 }

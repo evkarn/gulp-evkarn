@@ -17,4 +17,22 @@
 			"?>",
 		],
 	},
+
+	"<?php  ?> line": {
+		"prefix": "php_open_line",
+		"scope": "html, php, njk, md",
+		"body": [
+			"<?php $1 ?>",
+		],
+	},
+
+	"php if": {
+		"prefix": "php_if",
+		"scope": "html, php, njk, md",
+		"body": [
+			"<?php if ( !empty( \\$$1 ) ): ?>",
+			"\t<?php echo \\$$1 ?>",
+			"<?php endif; ?>",
+		],
+	},
 }
