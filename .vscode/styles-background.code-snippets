@@ -1,34 +1,41 @@
 {
 	"background-color: var()": {
-		"prefix": "bg-var",
+		"prefix": "bgc-var",
 		"scope": "css, scss, sass, scss, less",
 		"body": [
 			"background-color: var($1);"
 		],
 	},
+	"background-color: transparent": {
+		"prefix": "bgc-trt",
+		"scope": "css, scss, sass, scss, less",
+		"body": [
+			"background-color: transparent;"
+		],
+	},
 	"background-color: var(--accent)": {
-		"prefix": "bg-accent",
+		"prefix": "bgc-accent",
 		"scope": "css, scss, sass, scss, less",
 		"body": [
 			"background-color: var(--accent);"
 		],
 	},
 	"background-color: var(--dark)": {
-		"prefix": "bg-dark",
+		"prefix": "bgc-dark",
 		"scope": "css, scss, sass, scss, less",
 		"body": [
 			"background-color: var(--dark);"
 		],
 	},
 	"background-color: var(--light)": {
-		"prefix": "bg-light",
+		"prefix": "bgc-light",
 		"scope": "css, scss, sass, scss, less",
 		"body": [
 			"background-color: var(--light);"
 		],
 	},
 	"background all": {
-		"prefix": "bg-full",
+		"prefix": "bg-all",
 		"scope": "css, scss, sass, scss, less",
 		"body": [
 			"background-image: url('$1');",

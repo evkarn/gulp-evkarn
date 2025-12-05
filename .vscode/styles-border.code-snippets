@@ -1,6 +1,6 @@
 {
 	"border-color: transparent": {
-		"prefix": "bor-transparent",
+		"prefix": "bor-trt",
 		"scope": "css, scss, sass, scss, less",
 		"body": [
 			"border-color: transparent;"
@@ -30,7 +30,13 @@
 	"Border all px": {
 		"prefix": "bor-px",
 		"body": [
-			"border: general.\\$border-width + px solid var($2);"
+			"border: $1px solid var($2);"
+		],
+	},
+	"Border accent": {
+		"prefix": "bor-accent",
+		"body": [
+			"border: $1px solid var(--accent);"
 		],
 	},
 }

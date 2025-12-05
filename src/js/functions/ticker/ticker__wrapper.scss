@@ -5,17 +5,9 @@
 
 .ticker__wrapper {
 	display: inline-flex;
-	gap: 40);
+	gap: 40px;
 
 	width: min-content;
-
-	&:after {
-		content: '';
-
-		display: block;
-		width: 40);
-		height: 100%;
-	}
 }
 
 .ticker__wrapper--main {

@@ -6,8 +6,8 @@
 .ticker {
 	position: relative;
 	overflow: hidden;
-	gap: 40);
-	width: 100%;
+	gap: 40px;
+	width: max-content;
 	user-select: none;
 
 	&:before,

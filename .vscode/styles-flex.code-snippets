@@ -5,8 +5,8 @@
 		"scope": "css, sass, scss, less",
 		"body": [
 			"display: flex;",
-			"align-items: center;",
 			"justify-content: center;",
+			"align-items: center;",
 		],
 		"description": "Display flex center",
 	},
