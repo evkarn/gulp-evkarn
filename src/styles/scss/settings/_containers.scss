@@ -5,20 +5,20 @@
 	max-width: $container-width;
 
 	margin: 0 auto;
-	padding: 0 $container-offset + px;
+	padding: 0 $container-offset;
 }
 
 .container-full {
 	width: 100%;
 	max-width: 100%;
 
-	padding: 0 $container-offset + px;
+	padding: 0 $container-offset;
 }
 
 .container-left-50 {
 	max-width: 50%;
 
-	padding: 0 $container-offset + px;
+	padding: 0 $container-offset;
 
 	@media (max-width: 768px) {
 		max-width: 100%;
@@ -30,7 +30,7 @@
 
 	margin-left: auto;
 
-	padding: 0 $container-offset + px;
+	padding: 0 $container-offset;
 
 	@media (max-width: 768px) {
 		max-width: 100%;
@@ -41,7 +41,7 @@
 	padding-left: calc((100% - $container-width) / 2 + $container-offset);
 
 	@media (max-width: $container-width) {
-		padding-left: $container-offset + px;
+		padding-left: $container-offset;
 	}
 }
 
@@ -49,6 +49,6 @@
 	padding-right: calc((100% - $container-width) / 2 + $container-offset);
 
 	@media (max-width: $container-width) {
-		padding-right: $container-offset + px;
+		padding-right: $container-offset;
 	}
 }

@@ -6,7 +6,6 @@ build
 _site
 .pnp
 .git
-.vscode
 .idea
 .cache
 

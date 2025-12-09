@@ -63,8 +63,8 @@ export default function createFontsFaces () {
 									fileFonts,
 									`@font-face\r
 \tfont-family: ${fontName}\r
-\tsrc: url('./assets/fonts/${fontFileName}.${fontExtension}') ${fontFormatSt}\r
-\tsrc: url('./assets/fonts/${fontFileName}.${fontExtension}') ${fontFormatVF}\r
+\tsrc: url('../assets/fonts/${fontFileName}.${fontExtension}') ${fontFormatSt}\r
+\tsrc: url('../assets/fonts/${fontFileName}.${fontExtension}') ${fontFormatVF}\r
 \t${fontDisplay}\r
 \tfont-weight: ${app.fontsVars.vars.fontWeight}
 \r\n`,
@@ -78,8 +78,8 @@ export default function createFontsFaces () {
 									fileFonts,
 									`@font-face {\r
 \tfont-family: ${fontName};\r
-\tsrc: url('./assets/fonts/${fontFileName}.${fontExtension}') ${fontFormatSt};\r
-\tsrc: url('./assets/fonts/${fontFileName}.${fontExtension}') ${fontFormatVF};\r
+\tsrc: url('../assets/fonts/${fontFileName}.${fontExtension}') ${fontFormatSt};\r
+\tsrc: url('../assets/fonts/${fontFileName}.${fontExtension}') ${fontFormatVF};\r
 \t${fontDisplay};\r
 \tfont-weight: ${app.fontsVars.vars.fontWeight};\r
 \tfont-stretch: ${app.fontsVars.vars.fontStretch};
@@ -91,8 +91,8 @@ export default function createFontsFaces () {
 									fileFonts,
 									`@font-face {\r
 \tfont-family: ${fontName};\r
-\tsrc: url('./assets/fonts/${fontFileName}.${fontExtension}') ${fontFormatSt};\r
-\tsrc: url('./assets/fonts/${fontFileName}.${fontExtension}') ${fontFormatVF};\r
+\tsrc: url('../assets/fonts/${fontFileName}.${fontExtension}') ${fontFormatSt};\r
+\tsrc: url('../assets/fonts/${fontFileName}.${fontExtension}') ${fontFormatVF};\r
 \t${fontDisplay};\r
 \tfont-weight: ${app.fontsVars.vars.fontWeight};
 }\r\n`,
@@ -164,7 +164,7 @@ export default function createFontsFaces () {
 									fileFonts,
 									`@font-face\r
 \tfont-family: ${fontName}\r
-\tsrc: url('./assets/fonts/${fontFileName}.${fontExtension}') ${fontFormat}\r
+\tsrc: url('../assets/fonts/${fontFileName}.${fontExtension}') ${fontFormat}\r
 \t${fontDisplay}\r
 \tfont-weight: ${fontWeight}\r
 \tfont-style: ${fontStyle}
@@ -176,7 +176,7 @@ export default function createFontsFaces () {
 									fileFonts,
 									`@font-face {\r
 \tfont-family: ${fontName};\r
-\tsrc: url('./assets/fonts/${fontFileName}.${fontExtension}') ${fontFormat};\r
+\tsrc: url('../assets/fonts/${fontFileName}.${fontExtension}') ${fontFormat};\r
 \t${fontDisplay};\r
 \tfont-weight: ${fontWeight};\r
 \tfont-style: ${fontStyle};
