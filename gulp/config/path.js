@@ -37,7 +37,7 @@ export const path = {
 
 	// Пути к исходникам файлов
 	src: {
-		configFiles: `${srcFolder}/config/*.{php,htaccess,txt,xml,ico,png,svg}`,
+		configFiles: `${srcFolder}/config/*.*`,
 
 		favicon: `${srcFolder}/assets/favicon/*.*`,
 
