@@ -10,7 +10,7 @@
 		"prefix": "@use",
 		"scope": "css, scss, sass, scss, less",
 		"body": [
-			"@use '.$1';",
+			"@use './$1';",
 		],
 	},
 	"use units": {

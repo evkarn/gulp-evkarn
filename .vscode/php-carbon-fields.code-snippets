@@ -36,15 +36,31 @@
 			"?>",
 		],
 	},
-	// Url картинки выводится также как текст
+	"Echo field descr": {
+		"prefix": "crb-echo-descr",
+		"scope": "html, php, njk, md",
+		"body": [
+			"<?php if ( !empty( \\$descr ) ): ?>",
+			"\t<?php echo wp_kses_post( \\$descr ); ?>",
+			"<?php if ( !empty( \\$descr ) ) { echo wp_kses_post( \\$$1 ); } ?>",
+		],
+	},
 	"Echo field": {
 		"prefix": "crb-echo-field",
 		"scope": "html, php, njk, md",
 		"body": [
-			"<?php if ( \\$$1 ) { echo \\$$1; } ?>",
+			"<?php if ( !empty( \\$$1 ) ) { echo wp_kses_post( \\$$1 ); } ?>",
 		],
 	},
-	// thumb, thumbnail, medium, large, post-thumbnail, full
+	"Echo field many lines": {
+		"prefix": "crb-echo-field-many-lines",
+		"scope": "html, php, njk, md",
+		"body": [
+			"<?php if ( !empty( \\$$1 ) ): ?>",
+			"\t<?php echo \\$$1; ?>",
+			"<?php endif ?>",
+		],
+	},
 	"Echo post meta field img": {
 		"prefix": "crb-echo-img",
 		"scope": "html, php, njk, md",

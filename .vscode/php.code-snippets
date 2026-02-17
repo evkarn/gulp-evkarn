@@ -35,4 +35,12 @@
 			"<?php endif; ?>",
 		],
 	},
+
+	"php endif": {
+		"prefix": "php_endif",
+		"scope": "html, php, njk, md",
+		"body": [
+			"<?php endif; ?>",
+		],
+	},
 }

@@ -1,16 +1,16 @@
 {
 	"Font-family font-title": {
-		"prefix": "ff-f-text",
+		"prefix": "ff-text",
 		"scope": "css, sass, scss, less",
 		"body": [
 			"font-family: var(--font-title);",
 		],
 	},
 	"Font-family font-text": {
-		"prefix": "ff-f-title",
+		"prefix": "ff-title",
 		"scope": "css, sass, scss, less",
 		"body": [
-			"font-family: var(--font-text);",
+			"font-family: var(--font-title);",
 		],
 	},
 	"Font-fase static fonts": {

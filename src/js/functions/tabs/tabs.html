@@ -4,12 +4,12 @@
 >
 	<div
 		class="tabs__buttons"
-		data-tablist
+		data-tabs-buttons
 		role="tablist"
 	>
 		<button
 			class="tabs__btn tabs__btn--active"
-			data-tabs-btn="main"
+			data-tabs-button="main"
 			role="tab"
 			id="tab-btn-main"
 			aria-controls="tab-content-main"
@@ -20,7 +20,7 @@
 
 		<button
 			class="tabs__btn"
-			data-tabs-btn="archive"
+			data-tabs-button="archive"
 			role="tab"
 			id="tab-btn-archive"
 			aria-controls="tab-content-archive"
@@ -31,11 +31,11 @@
 	</div>
 
 	<div
-		class="tabs__contents"
+		class="tabs__tabpanels"
 		data-tabpanels
 	>
 		<div
-			class="tabs__content tabs-content tabs__content--active"
+			class="tabs__panel tabs__panel--active"
 			data-tabpanel="main"
 			role="tabpanel"
 			id="tab-content-main"
@@ -43,7 +43,7 @@
 			tabindex="0"
 		>
 			<div
-				class="tabs-content__body"
+				class="tabs__info"
 				data-tabpanel-body
 			>
 				<h2 class="tabs-content__title">
@@ -53,7 +53,7 @@
 		</div>
 
 		<div
-			class="tabs__content tabs-content"
+			class="tabs__panel"
 			data-tabpanel="archive"
 			role="tabpanel"
 			id="tab-content-archive"
@@ -61,12 +61,10 @@
 			tabindex="0"
 		>
 			<div
-				class="tabs-content__body"
+				class="tabs__info"
 				data-tabpanel-body
 			>
-				<h2 class="tabs-content__title">
-					Архив
-				</h2>
+
 			</div>
 		</div>
 	</div>
