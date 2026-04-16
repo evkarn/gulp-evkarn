@@ -24,7 +24,7 @@
 		],
 	},
 	"Picture tag with .webp": {
-		"prefix": "pictureWebp",
+		"prefix": "picWebp",
 		"scope": "html, php, njk, md",
 		"body": [
 			"<picture class=\"$1__picture\">",
@@ -36,7 +36,7 @@
 	},
 
 	"Picture @2x tag with .webp": {
-		"prefix": "picture@2xWebp",
+		"prefix": "pic@2xWebp",
 		"scope": "html, php, njk, md",
 		"body": [
 			"<picture class=\"$1__picture\">",
@@ -48,7 +48,7 @@
 	},
 
 	"Picture tag with .avif + .webp": {
-		"prefix": "pictureAvifWebp",
+		"prefix": "picAvifWebp",
 		"scope": "html, php, njk, md",
 		"body": [
 			"<picture class=\"__picture\">",
@@ -62,7 +62,7 @@
 	},
 
 	"Picture tag with .avif + .webp @2x": {
-		"prefix": "picture@2xAvifWebp",
+		"prefix": "pic@2xAvifWebp",
 		"scope": "html, php, njk, md",
 		"body": [
 			"<picture class=\"$1__picture\">",

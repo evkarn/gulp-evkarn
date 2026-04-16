@@ -2,40 +2,83 @@
 @use "../variables/general";
 @use "../variables/grid";
 
-@mixin adaptive-value-rem($prop-name, $min, $max) {
-	$max-viewport-width: grid.$container-width;
-	$min-viewport-width: grid.$min-screen;
+// Адаптивное свойство (clamp)
+@mixin adaptiveValue(
+  $property,
+  $startSize,
+  $minSize,
+  $keepSize: 0,
+  $widthFrom: $containerWidth,
+  $widthTo: $minWidth
+) {
+  @if ($startSize == 0) {
+    $startSize: 0.000001;
+  }
 
-	$max-size: math.div($max, $fz);
-	$min-size: math.div($min, $fz);
-	$max-width: math.div($max-viewport-width, $fz);
-	$min-width: math.div($min-viewport-width, $fz);
+  @if ($minSize == 0) {
+    $minSize: 0.000001;
+  }
 
-	$slope: math.div(($max-size - $min-size), ($max-width - $min-width));
-	$y-axis-intersection: -$min-width * $slope + $min-size;
+  // Для calc();
+  $addSize: math.div($startSize - $minSize, 16);
 
-	#{$prop-name}: clamp(#{$min-size * 1rem}, #{$y-axis-intersection * 1rem} + #{$slope * 100vw}, #{$max-size * 1rem});
-}
+  @if ($widthFrom == $containerWidth and $maxWidthContainer == 0) {
+    $widthFrom: $maxWidth;
+  }
 
-@mixin adaptive-value-px($prop-name, $min, $max) {
-	$max-viewport-width: grid.$container-width;
-	$min-viewport-width: grid.$min-screen;
+  // Брейк-поинты в EM
+  $widthFromMedia: em($widthFrom);
+  $widthToMedia: em($widthTo);
 
-	$max-size: $max;
-	$min-size: $min;
-	$max-width: $max-viewport-width;
-	$min-width: $min-viewport-width;
+  // Формула плавающего значения
+  // Источник: https://css-tricks.com/linearly-scale-font-size-with-css-clamp-based-on-the-viewport/
+  $slope: math.div(($startSize - $minSize), ($widthFrom - $widthTo));
 
-	$slope: math.div(($max-size - $min-size), ($max-width - $min-width));
-	$y-axis-intersection: -$min-width * $slope + $min-size;
+  $yIntersection: -$widthTo * $slope + $minSize;
 
-	#{$prop-name}: clamp(#{$min-size * 1px}, #{$y-axis-intersection * 1px} + #{$slope * 100vw}, #{$max-size * 1px});
-}
+  @if ($yIntersection==0) {
+    $yIntersection: 0.000001;
+  }
+  $flyValue: #{rem($yIntersection)}' + ' #{$slope * 100}vw;
 
-.text {
-	font-size: clamp(
-		var(--min-font),
-		calc(var(--min-font) + (var(--max-font) - var(--min-font)) * (100vw - 320px) / (var(--ideal-viewport) - 320)),
-		var(--max-font)
-	);
+  // Устанавливаем значение по умолчанию
+  $propertyValue: #{'clamp(' rem($minSize) ',' $flyValue ',' rem($startSize) ')'};
+  // Если отрицательные значения
+  @if ($minSize > $startSize) {
+    $propertyValue: #{'clamp('
+      rem($startSize)
+      ','
+      $flyValue
+      ','
+      rem($minSize)
+      ')'};
+  }
+
+  // Устанавливаем значение по умолчанию
+  @if $keepSize != 1 and $keepSize != 3 {
+    @media (min-width: $widthFromMedia) {
+      #{$property}: rem($startSize);
+    }
+  }
+  // Адаптируем размер в промежутке между указанными ширинами вьюпорта
+  @media (min-width: $widthToMedia) and (max-width: $widthFromMedia) {
+    // Если поддерживается clamp();
+    @supports (#{$property}: $propertyValue) {
+      #{$property}: $propertyValue;
+    }
+    // Если не поддерживается clamp();
+    @supports not (#{$property}: $propertyValue) {
+      #{$property}: calc(
+        #{rem($minSize)} + #{$addSize} * (100vw - #{rem($widthTo)}) / #{math.div(
+            $widthFrom,
+            16
+          ) - math.div($widthTo, 16)}
+      );
+    }
+  }
+  @if $keepSize != 1 and $keepSize != 2 {
+    @media (max-width: $widthToMedia) {
+      #{$property}: rem($minSize);
+    }
+  }
 }

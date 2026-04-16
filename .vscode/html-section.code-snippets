@@ -1,9 +1,9 @@
 {
 	"Section": {
 		"prefix": "sec",
-		"scope": "html, php, njk, md",
+		"scope": "html, php, njk, md, astro",
 		"body": [
-			"<section class=\"section $1\">",
+			"<section class=\"section $1\" id=\"$1\" aria-labelledby=\"$1-title\">",
 			"\t<div class=\"container $1__container\">",
 			"\t\t$2",
 			"\t</div>",
@@ -12,12 +12,12 @@
 	},
 	"Section width header": {
 		"prefix": "sec-with-header",
-		"scope": "html, php, njk, md",
+		"scope": "html, php, njk, md, astro",
 		"body": [
-			"<section class=\"section $1\">",
+			"<section class=\"section $1\" id=\"$1\" aria-labelledby=\"$1-title\">",
 			"\t<div class=\"container $1__container\">",
 			"\t\t<header class=\"section__header flex-column\">",
-			"\t\t\t<h2 class=\"h2 section__title $1__section-title\">",
+			"\t\t\t<h2 class=\"h2 section__title $1__section-title\" id=\"$1-title\">",
 			"\t\t\t\t$2",
 			"\t\t\t</h2>",
 			"\t\t</header>",
@@ -27,10 +27,10 @@
 	},
 	"Section header": {
 		"prefix": "sec-header",
-		"scope": "html, php, njk, md",
+		"scope": "html, php, njk, md, astro",
 		"body": [
 			"<header class=\"section__header flex-column\">",
-			"\t<h2 class=\"h2 section__title $1__section-title\">",
+			"\t<h2 class=\"h2 section__title $1__section-title\" id=\"$1-title\">",
 			"\t\t$2",
 			"\t</h2>",
 			"</header>",
@@ -38,7 +38,7 @@
 	},
 	"Section description": {
 		"prefix": "sec-descr",
-		"scope": "html, php, njk, md",
+		"scope": "html, php, njk, md, astro",
 		"body": [
 			"<div class=\"section__descr txt-wrap\">",
 			"\t<p>",
@@ -49,12 +49,12 @@
 	},
 	"Section width header, title, descr, main": {
 		"prefix": "sec-with-all",
-		"scope": "html, php, njk, md",
+		"scope": "html, php, njk, md, astro",
 		"body": [
-			"<section class=\"section $1\">",
+			"<section class=\"section $1\" id=\"$1\" aria-labelledby=\"$1-title\">",
 			"\t<div class=\"container $1__container\">",
 			"\t\t<header class=\"section__header flex-column\">",
-			"\t\t\t<h2 class=\"h2 section__title $1__section-title\">",
+			"\t\t\t<h2 class=\"h2 section__title $1__section-title\" id=\"$1-title\">",
 			"\t\t\t\t$2",
 			"\t\t\t</h2>",
 			"\t\t\t",
@@ -75,9 +75,9 @@
 
 	"Section width header, title, descr": {
 		"prefix": "sec-with-title-descr",
-		"scope": "html, php, njk, md",
+		"scope": "html, php, njk, md, astro",
 		"body": [
-			"<section class=\"section $1\">",
+			"<section class=\"section $1\" id=\"$1\" aria-labelledby=\"$1-title\">",
 			"\t<div class=\"container $1__container\">",
 			"\t\t<header class=\"section__header flex-column\">",
 			"\t\t\t<h2 class=\"h2 section__title $1__section-title\">",

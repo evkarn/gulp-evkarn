@@ -6,8 +6,7 @@ import gulpSass from 'gulp-sass';
 import postCss from 'gulp-postcss';
 import autoprefixer from 'autoprefixer';
 import postcssPresetEnv from 'postcss-preset-env';
-import sortCSSmq from 'sort-css-media-queries';
-import mqPacker from 'css-mqpacker';
+import postcssSortMediaQueries from 'postcss-sort-media-queries';
 import pxToRem from 'postcss-pxtorem';
 import cssnano from 'cssnano';
 
@@ -75,8 +74,8 @@ export default function styles() {
 
 						postcssPresetEnv({}),
 
-						mqPacker({
-							sort: sortCSSmq,
+						postcssSortMediaQueries({
+							sort: 'desktop-first',
 						}),
 
 						pxToRem({

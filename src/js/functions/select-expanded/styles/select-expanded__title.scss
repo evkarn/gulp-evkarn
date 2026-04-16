@@ -6,17 +6,17 @@
 .select-expanded__title {
 	width: 100%;
 
-	padding: 18) 20);
+	padding: 18px 20px;
 
-	border: 1) solid var(--pinball);
-	border-radius: 8);
+	border: 1px solid var(--pinball);
+	border-radius: 8px;
 
 	transition:
 		border-color 0.3s ease,
 		color 0.3s ease;
 
-	@media (max-width: 576)) {
-		padding: 16) 20);
+	@media (max-width: 576) {
+		padding: 16px 20px;
 	}
 
 	@media (any-hover: hover) {

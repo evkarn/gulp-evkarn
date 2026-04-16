@@ -1,4 +1,4 @@
-import vars from '@components/vars.js';
+import vars from '../vars.js';
 
 import disableScroll from '../disable-scroll/disable-scroll.js';
 
