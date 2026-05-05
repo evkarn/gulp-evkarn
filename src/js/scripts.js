@@ -1,12 +1,20 @@
 import vars from '@funcs/vars.js';
 
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded', function () {
+	const htmlEl = document.documentElement;
+	const bodyEl = document.body;
+	const burger = document?.querySelector('[data-burger]');
+	const nav = document?.querySelector('[data-nav]');
+	const navItems = document?.querySelectorAll('[data-nav-item]');
+	const overlay = document?.querySelector('[data-nav-overlay]');
+	const fixedEls = document?.querySelectorAll('[data-fixed');
+
 	(function getScrollbarWidth() {
 		'use strict';
 
-		const scrollbarWidth = window.innerWidth - vars.bodyEl.offsetWidth;
+		const scrollbarWidth = window.innerWidth - bodyEl.offsetWidth;
 
-		vars.htmlEl.style.setProperty('--scroll-width', `${scrollbarWidth}px`);
+		htmlEl.style.setProperty('--scroll-width', `${scrollbarWidth}px`);
 
 		return scrollbarWidth;
 	})();
@@ -16,20 +24,21 @@ document.addEventListener('DOMContentLoaded', () => {
 
 		let pagePosition = window.scrollY;
 
-		vars.bodyEl.classList.add('stop-scroll');
+		bodyEl.classList.add('stop-scroll');
 
-		vars.bodyEl.dataset.position = pagePosition;
+		bodyEl.dataset.position = pagePosition;
 
-		vars.htmlEl.style.setProperty('--top-position', `-${pagePosition}px`);
+		htmlEl.style.setProperty('--top-position', `-${pagePosition}px`);
 
-		vars.htmlEl.style.scrollBehavior = 'unset';
+		htmlEl.style.scrollBehavior = 'unset';
 	}
 
 	function enableScroll() {
 		'use strict';
-		let pagePosition = parseInt(vars.bodyEl.dataset.position, 10);
 
-		vars.bodyEl.classList.remove('stop-scroll');
+		let pagePosition = parseInt(bodyEl.dataset.position, 10);
+
+		bodyEl.classList.remove('stop-scroll');
 
 		window.scroll({
 			top: pagePosition,
@@ -37,82 +46,82 @@ document.addEventListener('DOMContentLoaded', () => {
 			left: 0,
 		});
 
-		vars.bodyEl.removeAttribute('data-position');
+		bodyEl.removeAttribute('data-position');
 
-		vars.htmlEl.style.setProperty('--top-position', 'auto');
+		htmlEl.style.setProperty('--top-position', 'auto');
 
-		vars.htmlEl.style.scrollBehavior = '';
+		htmlEl.style.scrollBehavior = '';
 	}
 
 	(function burgerInit() {
 		'use strict';
 
-		if (vars.burger && vars.nav) {
-			vars.burger.addEventListener('click', () => {
-				vars.burger.classList.toggle('burger--is-active');
+		if (burger && nav) {
+			burger.addEventListener('click', () => {
+				burger.classList.toggle('burger--is-active');
 
-				vars.nav.classList.toggle('nav--is-visible');
+				nav.classList.toggle('nav--is-visible');
 
-				vars.fixedEls.forEach(function (el) {
+				fixedEls.forEach(function (el) {
 					el.classList.toggle('not-leap');
 				});
 
-				if (vars.burger.getAttribute('aria-expanded') === 'false') {
-					vars.burger.setAttribute('aria-expanded', 'true');
+				if (burger.getAttribute('aria-expanded') === 'false') {
+					burger.setAttribute('aria-expanded', 'true');
 
-					vars.burger.setAttribute('aria-pressed', 'true');
+					burger.setAttribute('aria-pressed', 'true');
 
-					vars.burger.setAttribute('aria-label', 'Закрыть меню');
+					burger.setAttribute('aria-label', 'Закрыть меню');
 
 					disableScroll();
 				} else {
-					vars.burger.setAttribute('aria-expanded', 'false');
+					burger.setAttribute('aria-expanded', 'false');
 
-					vars.burger.setAttribute('aria-pressed', 'false');
+					burger.setAttribute('aria-pressed', 'false');
 
-					vars.burger.setAttribute('aria-label', 'Открыть меню');
+					burger.setAttribute('aria-label', 'Открыть меню');
 
 					enableScroll();
 				}
 			});
 		}
 
-		if (vars.navItems) {
-			vars.navItems.forEach(el => {
+		if (navItems) {
+			navItems.forEach(el => {
 				el.addEventListener('click', () => {
 					enableScroll();
 
-					if (vars.burger) {
-						vars.burger.setAttribute('aria-expanded', 'false');
+					if (burger) {
+						burger.setAttribute('aria-expanded', 'false');
 
-						vars.burger.setAttribute('aria-pressed', 'false');
+						burger.setAttribute('aria-pressed', 'false');
 
-						vars.burger.setAttribute('aria-label', 'Открыть меню');
+						burger.setAttribute('aria-label', 'Открыть меню');
 
-						vars.burger.classList.remove('burger--is-active');
+						burger.classList.remove('burger--is-active');
 					}
 
-					if (vars.nav) {
-						vars.nav.classList.remove('nav--is-active');
+					if (nav) {
+						nav.classList.remove('nav--is-active');
 					}
 				});
 			});
 		}
 
-		if (vars.overlay) {
-			vars.overlay.addEventListener('click', () => {
-				if (vars.burger) {
-					vars.burger.setAttribute('aria-expanded', 'false');
+		if (overlay) {
+			overlay.addEventListener('click', () => {
+				if (burger) {
+					burger.setAttribute('aria-expanded', 'false');
 
-					vars.burger.setAttribute('aria-pressed', 'false');
+					burger.setAttribute('aria-pressed', 'false');
 
-					vars.burger.setAttribute('aria-label', 'Открыть меню');
+					burger.setAttribute('aria-label', 'Открыть меню');
 
-					vars.burger.classList.remove('burger--is-active');
+					burger.classList.remove('burger--is-active');
 				}
 
-				if (vars.nav) {
-					vars.nav.classList.remove('nav--is-active');
+				if (nav) {
+					nav.classList.remove('nav--is-active');
 				}
 
 				enableScroll();
@@ -138,23 +147,54 @@ document.addEventListener('DOMContentLoaded', () => {
 		}
 	})();
 
-	function getElementHeight(selector, varHeightName) {
+	function getElementHeight(selector, varHeightName, threshold = 0.05) {
+		let lastWidth = window.innerWidth;
+		let lastHeight = window.innerHeight;
+		let timeoutId;
+
 		function heightDetermination() {
 			const element = document?.querySelector(`${selector}`);
 
 			if (element) {
 				const elementHeight = element.offsetHeight;
-
-				vars.htmlEl.style.setProperty(
-					`--${varHeightName}`,
+				document.documentElement.style.setProperty(
+					`${varHeightName}`,
 					`${elementHeight}px`,
 				);
 			}
 		}
 
+		function checkSignificantChange() {
+			const newWidth = window.innerWidth;
+			const newHeight = window.innerHeight;
+
+			// Изменение ширины больше порога или смена ориентации
+			const widthChanged =
+				Math.abs(newWidth - lastWidth) / lastWidth > threshold;
+			const orientationChanged =
+				lastWidth > lastHeight !== newWidth > newHeight;
+
+			if (widthChanged || orientationChanged) {
+				lastWidth = newWidth;
+				lastHeight = newHeight;
+
+				// Небольшая задержка для стабилизации
+				clearTimeout(timeoutId);
+				timeoutId = setTimeout(heightDetermination, 100);
+			}
+		}
+
+		// Инициализация
 		heightDetermination();
 
-		window.addEventListener('resize', heightDetermination);
+		// Отслеживаем ресайз с умом
+		window.addEventListener('resize', checkSignificantChange);
+
+		// Возвращаем функцию для очистки
+		return () => {
+			clearTimeout(timeoutId);
+			window.removeEventListener('resize', checkSignificantChange);
+		};
 	}
-	getElementHeight('.header', 'header-height');
+	getElementHeight('.header', '--header-height');
 });
