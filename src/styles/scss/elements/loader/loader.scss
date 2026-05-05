@@ -1,9 +1,0 @@
-.loader {
-	font-size: rem(14);
-
-	line-height: 1.2;
-
-	@include min-full-hd-em {
-		@include calc-size(font-size, 14, 28, 1920, 3840, rem);
-	}
-}

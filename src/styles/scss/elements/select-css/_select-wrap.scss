@@ -17,11 +17,6 @@
 		transform: translateY(-50%), rotate(45deg);
 
 		pointer-events: none;
-
-		@include min-full-hd-px {
-			@include calc-size(width, 15, 30, 1920, 3840, px);
-			@include calc-size(height, 9, 18, 1920, 3840, px);
-		}
 	}
 }
 

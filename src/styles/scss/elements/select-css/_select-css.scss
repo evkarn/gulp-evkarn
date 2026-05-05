@@ -1,12 +1,16 @@
-.select-css {
+@use "./select-wrap";
 
+.select-css {
 	appearance: none;
+
 	display: inline-flex;
 	width: 100%;
 
 	max-width: 100%;
 
 	padding: 4px 26px 4px 4px;
+
+	font-size: 18px;
 
 	color: var(--c-darken);
 
@@ -15,17 +19,6 @@
 	border: none;
 
 	cursor: pointer;
-
-	@include calc-size(font-size, 18, 26, 320, 1920, px);
-
-	@include min-full-hd-px {
-		@include calc-size(padding-top, 4, 8, 1920, 3840, px);
-		@include calc-size(padding-bottom, 4, 8, 1920, 3840, px);
-		@include calc-size(padding-right, 26, 52, 1920, 3840, px);
-		@include calc-size(padding-left, 4, 8, 1920, 3840, px);
-
-		@include calc-size(font-size, 26, 52, 1920, 3840, px);
-	}
 }
 
 .select-css::-ms-expand {

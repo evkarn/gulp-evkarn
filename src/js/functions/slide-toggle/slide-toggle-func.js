@@ -1,5 +1,4 @@
 import slideUp from '../slide-up/slide-up-func.js';
-
 import slideDown from '../slide-down/slide-down-func.js';
 
 function slideToggle(target, duration) {

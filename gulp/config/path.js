@@ -28,7 +28,7 @@ export const path = {
 
 		img: `${buildFolder}/assets/images/`,
 
-		svg: `${buildFolder}/assets/svg/`,
+		svg: `${buildFolder}/assets/svg/static/`,
 
 		sprite: `${buildFolder}/assets/svg/sprite/`,
 
@@ -54,7 +54,7 @@ export const path = {
 		img: `${srcFolder}/assets/images/**/*.*`,
 
 		svg: [
-			`${srcFolder}/assets/svg/**/*.svg`,
+			`${srcFolder}/assets/svg/static/**/*.svg`,
 			`!${srcFolder}/assets/svg/sprite/`,
 		],
 

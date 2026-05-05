@@ -10,23 +10,33 @@
 // @param {Number} $min-vw [320px] - Минимальная ширина viewport
 // @param {Number} $max-vw [1000px] - Максимальная ширина viewport (по умолчанию 1000px)
 
-@mixin fluid-size-px($property, $min, $max, $min-vw-width: math.div($min-screen, $min-screen * 0 + 1), $max-vw-width: math.div($container-width, $container-width * 0 + 1)) {
-	$slope: math.div(($max - $min), ($max-vw-width - $min-vw-width));
+@mixin fluid-size-px($property, $min, $max, $min-vw-width: $min-screen, $max-vw-width: $container-width) {
+	$min-px: if(math.is-unitless($min), $min, strip-unit($min));
+	$max-px: if(math.is-unitless($max), $max, strip-unit($max));
+	$min-vw-px: strip-unit($min-vw-width);
+	$max-vw-px: strip-unit($max-vw-width);
 
-	$intercept: $min - $slope * $min-vw-width;
+	$slope: math.div(($max-px - $min-px), ($max-vw-px - $min-vw-px));
+	$intercept: $min-px - $slope * $min-vw-px;
 
-	#{$property}: clamp(#{$min * 1px}, #{$intercept * 1px} + #{$slope * 100vw}, #{$max * 1px});
+	#{$property}: clamp(#{$min-px * 1px}, #{$intercept * 1px} + #{$slope * 100vw}, #{$max-px * 1px});
 }
 
 @mixin fluid-size-rem($property, $min, $max, $min-vw-width: $min-screen, $max-vw-width: $container-width) {
-	$min-size: math.div($min, $fz);
-	$max-size: math.div($max, $fz);
-	$min-width: math.div($min-vw-width, $fz);
-	$max-width: math.div($max-vw-width, $fz);
+	// Нормализуем значения в px (числовые)
+	$min-px: if(math.is-unitless($min), $min, strip-unit($min));
+	$max-px: if(math.is-unitless($max), $max, strip-unit($max));
+	$min-vw-px: strip-unit($min-vw-width);
+	$max-vw-px: strip-unit($max-vw-width);
 
-	$slope: math.div(($max-size - $min-size), ($max-width - $min-width));
+	// Конвертируем в rem через деление на глобальный $fz
+	$min-rem: math.div($min-px, $fz);
+	$max-rem: math.div($max-px, $fz);
+	$min-vw-rem: math.div($min-vw-px, $fz);
+	$max-vw-rem: math.div($max-vw-px, $fz);
 
-	$intercept: $min-size - $slope * $min-width;
+	$slope: math.div(($max-rem - $min-rem), ($max-vw-rem - $min-vw-rem));
+	$intercept: $min-rem - $slope * $min-vw-rem;
 
-	#{$property}: clamp(#{$min-size * 1rem}, #{$intercept * 1rem} + #{$slope * 100vw}, #{$max-size * 1rem});
+	#{$property}: clamp(#{$min-rem * 1rem}, #{$intercept * 1rem} + #{$slope * 100vw}, #{$max-rem * 1rem});
 }

@@ -1,9 +1,6 @@
 @use 'settings/imports' as *;
 
 .badge {
-	--badge-bg: transparent;
-	--border-radius: 8px;
-
 	position: absolute;
 	top: 15px;
 	right: 15px;
@@ -19,7 +16,7 @@
 	text-align: center;
 
 	background-color: var(--badge-bg);
-	border-radius: var(--border-radius);
+	border-radius: var(--bdrs);
 
 	transition:
 		background-color 0.3s ease,

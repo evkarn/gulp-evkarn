@@ -1,0 +1,28 @@
+@use '@styles/settings/imports' as *;
+
+.burger__line {
+	position: absolute;
+
+	top: 50%;
+	left: 0;
+
+	width: 100%;
+	height: calc($burger-line-height * 0.75);
+
+	font-size: 0;
+	line-height: 1;
+
+	background-color: var(--color);
+
+	border-radius: var(--radius);
+
+	opacity: 1;
+
+	transition: opacity 0.3s ease;
+
+	transform: translateY(-50%);
+}
+
+.burger--is-active .burger__line {
+	opacity: 0;
+}

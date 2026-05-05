@@ -3,11 +3,7 @@
 
 	display: flex;
 	align-items: center;
-	column-gap: rem(6);
+	column-gap: 6px;
 
 	cursor: pointer;
-
-	@include min-full-hd-em {
-		@include calc-size(column-gap, 6, 12, 1920, 3840, rem);
-	}
 }
