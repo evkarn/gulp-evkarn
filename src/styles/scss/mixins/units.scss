@@ -1,5 +1,14 @@
 @use "sass:math";
 
+@function to-number($value) {
+	@if math.is-unitless($value) {
+		@return $value;
+	}
+	@else {
+		@return strip-unit($value);
+	}
+}
+
 // Удаляем единицы измерения
 @function strip-unit($value) {
 	@return math.div($value, $value * 0 + 1);

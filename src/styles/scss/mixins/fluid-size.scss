@@ -11,8 +11,8 @@
 // @param {Number} $max-vw [1000px] - Максимальная ширина viewport (по умолчанию 1000px)
 
 @mixin fluid-size-px($property, $min, $max, $min-vw-width: $min-screen, $max-vw-width: $container-width) {
-	$min-px: if(math.is-unitless($min), $min, strip-unit($min));
-	$max-px: if(math.is-unitless($max), $max, strip-unit($max));
+	$min-px: to-number($min);
+	$max-px: to-number($max);
 	$min-vw-px: strip-unit($min-vw-width);
 	$max-vw-px: strip-unit($max-vw-width);
 
@@ -23,17 +23,18 @@
 }
 
 @mixin fluid-size-rem($property, $min, $max, $min-vw-width: $min-screen, $max-vw-width: $container-width) {
-	// Нормализуем значения в px (числовые)
-	$min-px: if(math.is-unitless($min), $min, strip-unit($min));
-	$max-px: if(math.is-unitless($max), $max, strip-unit($max));
+	$min-px: to-number($min);
+	$max-px: to-number($max);
 	$min-vw-px: strip-unit($min-vw-width);
 	$max-vw-px: strip-unit($max-vw-width);
 
-	// Конвертируем в rem через деление на глобальный $fz
-	$min-rem: math.div($min-px, $fz);
-	$max-rem: math.div($max-px, $fz);
-	$min-vw-rem: math.div($min-vw-px, $fz);
-	$max-vw-rem: math.div($max-vw-px, $fz);
+	// предполагается, что у вас где-то объявлена переменная $base-font-size: 16; (или $fz)
+	$base-font-size: 16; // или берите из любой вашей глобальной переменной
+
+	$min-rem: math.div($min-px, $base-font-size);
+	$max-rem: math.div($max-px, $base-font-size);
+	$min-vw-rem: math.div($min-vw-px, $base-font-size);
+	$max-vw-rem: math.div($max-vw-px, $base-font-size);
 
 	$slope: math.div(($max-rem - $min-rem), ($max-vw-rem - $min-vw-rem));
 	$intercept: $min-rem - $slope * $min-vw-rem;

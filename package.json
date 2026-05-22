@@ -71,6 +71,7 @@
 		"imagemin-avif": "^0.1.6",
 		"imagemin-webp": "^8.0.0",
 		"jshint": "^2.13.6",
+		"merge-stream": "^2.0.0",
 		"path": "^0.12.7",
 		"postcss": "^8.5.8",
 		"postcss-loader": "^8.2.1",

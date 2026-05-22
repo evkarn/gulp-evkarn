@@ -3,9 +3,9 @@
 @use "settings/imports" as *;
 
 .burger {
-	--line-height: 2px;
+	--line-height: 1px;
 	--color: var(--dark);
-	--radius: 2px;
+	--radius: 1px;
 
 	flex-shrink: 0;
 	position: relative;
@@ -29,7 +29,7 @@
 		display: block;
 
 		width: 100%;
-		height: $burger-line-height;
+		height: var(--line-height);
 
 		background-color: var(--color);
 

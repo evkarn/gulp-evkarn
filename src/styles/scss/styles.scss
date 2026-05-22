@@ -26,15 +26,14 @@
 
 
 // Components
-@use "components/breadcrumbs/breadcrumbs";
-@use "components/burger/burger";
-@use "components/go-back-top/index-go-back-top";
+@use "elements/breadcrumbs/breadcrumbs";
+@use "elements/burger/burger";
+@use "elements/go-back-top";
+@use "elements/nav/nav";
 // End. Components
 
 
 // Header
-@use "components/nav/nav";
-@use "components/menu/menu";
 @use "header/header";
 // End. Header
 
@@ -45,5 +44,5 @@
 
 
 // Footer
-@use "footer/index-footer";
+@use "footer/footer";
 // End. Footer
