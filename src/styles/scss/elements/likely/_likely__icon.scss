@@ -1,36 +1,21 @@
 .likely__icon {
 	position: relative;
-	width: rem(22);
-	height: rem(22);
+	width: 22px;
+	height: 22px;
 	vertical-align: top;
 	text-align: left;
-
-	@media (min-width: em(1920.96)) {
-		@include calc-size(width, 22, 44, 1920, 3840, rem);
-		@include calc-size(height, 22, 44, 1920, 3840, rem);
-	}
 }
 
 .likely-big {
 	.likely__icon {
-		width: rem(32);
-		height: rem(32);
-
-		@media (min-width: em(1920.96)) {
-			@include calc-size(width, 32, 64, 1920, 3840, rem);
-			@include calc-size(height, 32, 64, 1920, 3840, rem);
-		}
+		width: 32px;
+		height: 32px;
 	}
 }
 
 .likely-small {
 	.likely__icon {
-		width: rem(18);
-		height: rem(18);
-
-		@media (min-width: em(1920.96)) {
-			@include calc-size(width, 18, 36, 1920, 3840, rem);
-			@include calc-size(height, 18, 36, 1920, 3840, rem);
-		}
+		width: 18px;
+		height: 18px;
 	}
 }

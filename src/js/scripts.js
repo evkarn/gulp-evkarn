@@ -1,5 +1,3 @@
-import vars from '@funcs/vars.js';
-
 document.addEventListener('DOMContentLoaded', function () {
 	const htmlEl = document.documentElement;
 	const bodyEl = document.body;

@@ -1,6 +1,12 @@
 {
 	"recommendations": [
-		"christian-kohler.path-intellisense",
-		"mrmlnc.vscode-import-cost"
+		"Syler.sass-indented",
+		"stylelint.vscode-stylelint",
+		"jerryhong.autofilename",
+		"EditorConfig.EditorConfig",
+		"htmlhint.vscode-htmlhint",
+		"ritwickdey.LiveServer",
+		"dbaeumer.vscode-eslint",
+		"rebornix.project-snippets"
 	]
 }

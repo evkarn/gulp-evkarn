@@ -14,34 +14,16 @@
 	&:empty {
 		display: none;
 	}
-
-	@media (min-width: em(1920.96)) {
-		@include calc-size(padding-top, 1, 2, 1920, 3840, rem);
-		@include calc-size(padding-bottom, 1, 2, 1920, 3840, rem);
-		@include calc-size(padding-right, 4, 8, 1920, 3840, rem);
-	}
 }
 
 .likely-big {
 	.likely__button {
 		padding: 2px 6px 2px 0;
-
-		@media (min-width: em(1920.96)) {
-			@include calc-size(padding-top, 2, 4, 1920, 3840, rem);
-			@include calc-size(padding-bottom, 2, 4, 1920, 3840, rem);
-			@include calc-size(padding-right, 6, 12, 1920, 3840, rem);
-		}
 	}
 }
 
 .likely-small {
 	.likely__button {
 		padding: 2px 3px 2px 0;
-
-		@media (min-width: em(1920.96)) {
-			@include calc-size(padding-top, 2, 4, 1920, 3840, rem);
-			@include calc-size(padding-bottom, 2, 4, 1920, 3840, rem);
-			@include calc-size(padding-right, 3, 6, 1920, 3840, rem);
-		}
 	}
 }
