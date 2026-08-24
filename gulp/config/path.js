@@ -1,3 +1,11 @@
+// Центральный конфиг путей сборки.
+//
+// Здесь заданы:
+//   build — куда складывается результат (dist),
+//   src   — где лежат исходники,
+//   watch — какие маски отслеживает вотчер в режиме dev,
+//   clean — что удаляется перед сборкой.
+
 // Плагин для получения пути к проекту
 import * as nodePath from 'path';
 
@@ -55,26 +63,39 @@ export const path = {
 
 		svg: [
 			`${srcFolder}/assets/svg/static/**/*.svg`,
-			`!${srcFolder}/assets/svg/sprite/`,
+
+			// Спрайт собирается отдельным таском — исключаем его исходники
+			`!${srcFolder}/assets/svg/sprite/**`,
 		],
 
 		sprite: `${srcFolder}/assets/svg/sprite/**/*.svg`,
 
 		styles: [
 			`${srcFolder}/styles/${preprocessor}/*.${preprocessor}`,
+
+			// Партиалы (файлы «_*.scss») отдельно не собираются
 			`!${srcFolder}/styles/${preprocessor}/_*.${preprocessor}`,
 		],
 	},
 
 	// Отслеживание изменений в файлах
 	watch: {
+		configFiles: `${srcFolder}/config/**/*.*`,
+
+		favicon: `${srcFolder}/assets/favicon/**/*.*`,
+
 		files: `${srcFolder}/assets/files/**/*.*`,
 
 		html: `${srcFolder}/**/*.html`,
 
 		img: `${srcFolder}/assets/images/**/*.*`,
 
-		svg: [`${srcFolder}/assets/svg/**/*.*`, `!${srcFolder}/assets/svg/sprite/`],
+		svg: [
+			`${srcFolder}/assets/svg/static/**/*.*`,
+
+			// Спрайт обрабатывает отдельный таск
+			`!${srcFolder}/assets/svg/sprite/**`,
+		],
 
 		sprite: `${srcFolder}/assets/svg/sprite/**/*.*`,
 
@@ -83,14 +104,9 @@ export const path = {
 		styles: `${srcFolder}/**/*.${preprocessor}`,
 	},
 
-	clean: [
-		`${buildFolder}/*.*`,
-		`${buildFolder}/assets/*`,
-		`!${buildFolder}/assets/images/`,
-		`!${buildFolder}/assets/fonts/`,
-		`!${buildFolder}/assets/favicon/`,
-		`!${buildFolder}/assets/files/`,
-	],
+	// Перед каждой сборкой dist очищается целиком:
+	// mainTasks копирует туда все нужные файлы заново
+	clean: [`${buildFolder}/`],
 
 	buildFolder: buildFolder,
 
@@ -98,5 +114,6 @@ export const path = {
 
 	rootFolder: rootFolder,
 
-	ftp: `test-gulp`,
+	// Папка на FTP-сервере для выгрузки (см. .env.example)
+	ftp: process.env.FTP_REMOTE_PATH || rootFolder,
 };

@@ -12,6 +12,11 @@ _site/
 *.dll
 *.so
 *.dylib
+*.zip
+
+# Секреты (данные FTP/SSH для деплоя)
+.env
+.env.local
 
 # Кэш и временные файлы
 .cache/
@@ -28,8 +33,6 @@ tmp/
 logs/
 
 # Окружение
-.env
-.env.local
 .env.development.local
 .env.test.local
 .env.production.local
@@ -37,3 +40,4 @@ logs/
 # Операционные системы
 .DS_Store
 Thumbs.db
+desktop.ini

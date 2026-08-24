@@ -1,16 +1,21 @@
-// Удаление файлов
+// Упаковка готовой сборки из dist в zip-архив в корне проекта.
+//
+// Запуск: npm run zip (предварительно сама соберёт проект).
+// Итоговый файл: <имя-папки-проекта>.zip
+
 import { deleteAsync } from 'del';
 
-// Создание архива
 import zipPlugin from 'gulp-zip';
 
 import plumberInit from './plumber.js';
 
-export default function zip() {
-	// Удаляем архив, если он уже есть
-	deleteAsync(`./${app.path.rootFolder}.zip`);
+export default async function zip() {
+	// Удаляем старый архив, если он уже есть.
+	// await обязателен: иначе удаление может начаться
+	// параллельно с созданием нового архива
+	await deleteAsync(`./${app.path.rootFolder}.zip`);
 
-	// Находим все файлы в папке проекта
+	// Находим все файлы готовой сборки
 	return (
 		app.gulp
 			.src(`${app.path.buildFolder}/**/*.*`, {})
@@ -19,7 +24,7 @@ export default function zip() {
 			.pipe(app.plugins.plumber(plumberInit('ZIP')))
 
 			// Создаём архив проекта
-			.pipe(zipPlugin(`${app.path.rootFolder}`))
+			.pipe(zipPlugin(`${app.path.rootFolder}.zip`))
 
 			// Помещаем архив в корень
 			.pipe(app.gulp.dest('./'))

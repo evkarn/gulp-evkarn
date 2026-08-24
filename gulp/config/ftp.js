@@ -1,6 +1,15 @@
-export let configFTP = {
-	host: 'ftp.intellektfinanceru.intelle6.cp.regruhosting.ru', // Адре FTP сервера
-	user: 'intelle6', // Логин
-	password: 'eiuB6wXz_kGbLKZF9DgT', // Пароль
-	parallel: 5, // Количество одновременных потоков
+// Настройки подключения к FTP.
+//
+// Значения берутся из переменных окружения, которые загружаются
+// из файла .env в корне проекта (см. gulp/config/env.js и .env.example).
+// Так логины и пароли не попадают в репозиторий.
+
+export const configFTP = {
+	host: process.env.FTP_HOST || '',
+
+	user: process.env.FTP_USER || '',
+
+	password: process.env.FTP_PASSWORD || '',
+
+	parallel: Number(process.env.FTP_PARALLEL) || 5,
 };

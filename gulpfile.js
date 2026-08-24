@@ -1,3 +1,18 @@
+// Точка входа Gulp-сборки.
+//
+// Сценарии (см. также команды в package.json и README.md):
+//   dev       — полная сборка + локальный сервер с вотчером
+//   build     — production-сборка в dist (сжатие, типограф, версии)
+//   fonts     — конвертация .ttf → .woff2 и генерация _fonts-faces.scss
+//   files     — разовое копирование config/favicon/files в dist
+//   deployZip — сборка + архив dist в корень проекта
+//   deployFTP — сборка + выгрузка dist на FTP (нужен .env)
+//   deploySSH — сборка + выгрузка dist по SSH/rsync (нужен .env)
+
+// Загрузка .env идёт первым импортом, чтобы конфиги ниже
+// уже видели переменные окружения (FTP_HOST и т.д.)
+import './gulp/config/env.js';
+
 // Основной модуль
 import gulp from 'gulp';
 
@@ -17,7 +32,7 @@ global.app = {
 	path: path,
 	fontsVars: fontsVars,
 	gulp: gulp,
-	plugins: plugins
+	plugins: plugins,
 };
 
 // Импорт созданных задач из папки tasks
@@ -38,10 +53,14 @@ import server from './gulp/tasks/server.js';
 import ssh from './gulp/tasks/ssh.js';
 import zip from './gulp/tasks/zip.js';
 
-// Наблюдение за изменениями в файлах
+// Наблюдение за изменениями в файлах:
+// gulp.watch сам запускает нужный таск при правке файла,
+// таск каждый раз пересобирает результат целиком
 function watcher(done) {
 	gulp.watch(path.watch.html, html);
 	gulp.watch(path.watch.files, copyFiles);
+	gulp.watch(path.watch.favicon, copyFavicon);
+	gulp.watch(path.watch.configFiles, copyConfigFiles);
 	gulp.watch(path.watch.img, imgMin);
 	gulp.watch(path.watch.svg, svgMin);
 	gulp.watch(path.watch.sprite, sprite);
@@ -50,27 +69,41 @@ function watcher(done) {
 	done();
 }
 
-// Основные задачи
+// Копирование «статичных» файлов: конфиги, документы, фавиконки
+const files = gulp.parallel(copyConfigFiles, copyFiles, copyFavicon);
+
+// Конвертация шрифтов + генерация файла их подключений
+const fonts = gulp.series(ttfToWoff, createFontsFaces);
+
+// Основные задачи: всё, что должно оказаться в dist при сборке.
+// Конвертация .ttf → .woff2 тоже здесь: dist очищается целиком,
+// без этого шага шрифты не попали бы в сборку
 const mainTasks = gulp.parallel(
+	files,
 	html,
 	styles,
 	js,
+	ttfToWoff,
 	imgMin,
 	sprite,
 	svgMin,
 );
 
 // Построение сценариев выполнения задач
-const fonts = gulp.series(ttfToWoff, createFontsFaces);
-const files = gulp.parallel(copyConfigFiles, copyFiles, copyFavicon);
+
+// Разработка: очистка dist → сборка → вотчер → локальный сервер
 const dev = gulp.series(clean, mainTasks, watcher, server);
+
+// Production-сборка без сервера
 const build = gulp.series(clean, mainTasks);
-const deployZip = gulp.series(clean, zip);
-const deployFTP = gulp.series(clean, ftp);
-const deploySSH = gulp.series(clean, ssh);
+
+// Сборка + упаковка результата
+const deployZip = gulp.series(clean, mainTasks, zip);
+const deployFTP = gulp.series(clean, mainTasks, ftp);
+const deploySSH = gulp.series(clean, mainTasks, ssh);
 
 // Экспорт сценариев
 export { dev, build, deployZip, deployFTP, deploySSH, fonts, files };
 
-// Выполнение сценариев по-умолчанию
+// Выполнение сценариев по умолчанию (npm run dev)
 gulp.task('default', dev);

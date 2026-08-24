@@ -1,8 +1,19 @@
+// Сборка стилей SCSS.
+//
+// Источники: src/styles/scss/*.scss — точки входа.
+//            Файлы с префиксом «_» считаются партиалами
+//            и отдельно не собираются.
+//
+// Что происходит:
+//   dev  — компиляция dart-sass, sourcemaps рядом с файлом.
+//   build — autoprefixer, группировка медиазапросов, перевод px в rem,
+//           сжатие cssnano. Результат — dist/css/*.min.css.
+
 // Обработка стилей sass, scss
 import * as dartSass from 'sass';
 import gulpSass from 'gulp-sass';
 
-// Группировка медиа запросов
+// Группировка медиа запросов и постобработка css (только build)
 import postCss from 'gulp-postcss';
 import autoprefixer from 'autoprefixer';
 import postcssPresetEnv from 'postcss-preset-env';
@@ -12,15 +23,6 @@ import cssnano from 'cssnano';
 
 // Обработка ошибок
 import plumberInit from './plumber.js';
-
-// Отслеживание изменений в файлах
-import { compareContents } from 'gulp-changed';
-
-import { fileURLToPath } from 'url';
-import { dirname, resolve } from 'path';
-
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = dirname(__filename);
 
 const sass = gulpSass(dartSass);
 
@@ -33,15 +35,9 @@ export default function styles() {
 			// Вывод сообщения об ошибке, если появляется ошибка
 			.pipe(app.plugins.plumber(plumberInit('STYLES')))
 
-			// Отслеживание и обработка только изменившихся файлов
-			.pipe(
-				app.plugins.changed(app.path.build.css, {
-					hasChanged: compareContents,
-				}),
-			)
-
 			.pipe(
 				sass({
+					// Где искать файлы при @use/@import
 					loadPaths: [
 						'./src',
 						'./src/components',
@@ -56,12 +52,12 @@ export default function styles() {
 			// Убираем лишнее в адресах картинок
 			.pipe(
 				app.plugins.replace(
-					/(['"]?)(\.\.\/)+(img|images|fonts|css|scss|sass|js|files|audio|video)(\/[^\/'"]+(\/))?([^'"]*)\1/gi,
+					/(['"]?)(\.\.\/)+(img|images|fonts|css|scss|sass|js|files|audio|video)(\/[^/'"]+(\/))?([^'"]*)\1/gi,
 					'$1$2$3$4$6$1',
 				),
 			)
 
-			// Если в режиме продакшена группируем медиа-запросы и сжимаем файл стилей
+			// В режиме продакшена группируем медиа-запросы и сжимаем файл стилей
 			.pipe(
 				app.plugins.if(
 					app.isBuild,

@@ -2,7 +2,7 @@ import ttf2woff2 from 'gulp-ttf2woff2';
 
 import plumberInit from './plumber.js';
 
-export default function ttfToWoff () {
+export default function ttfToWoff() {
 	// Ищем файлы шрифтов .ttf
 	return (
 		app.gulp
@@ -20,4 +20,4 @@ export default function ttfToWoff () {
 			// выгружаем в папку проекта
 			.pipe(app.gulp.dest(app.path.build.fonts))
 	);
-};
+}

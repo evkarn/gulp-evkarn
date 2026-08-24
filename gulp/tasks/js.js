@@ -1,3 +1,17 @@
+// Сборка JavaScript через webpack.
+//
+// Точка входа: src/js/scripts.js
+// Результат:   dist/js/scripts.min.js
+//
+// Режимы:
+//   dev  (npm run dev)   — без минификации, inline sourcemaps:
+//                          в DevTools виден исходный код.
+//   build (npm run build) — минификация terser'ом, без карт
+//                          (исходники не утекают на сервер).
+//
+// Алиасы путей (@js, @utils и т.д.) заданы ниже в resolve.alias.
+// Те же алиасы продублированы в jsconfig.json — для подсказок редактора.
+
 // Обработка ошибок
 import plumberInit from './plumber.js';
 
@@ -7,30 +21,20 @@ import terser from 'terser-webpack-plugin';
 // Обработка скриптов
 import webpack from 'webpack-stream';
 
-// Отслеживание изменений в файлах
-import { compareContents } from 'gulp-changed';
-
 import { resolve } from 'path';
 
-
-
 export default function js() {
-	// Находим js файлы в папке исходников
+	// Находим точки входа (src/js/*.js) и отдаём их webpack'у
 	return (
 		app.gulp
-			.src(app.path.src.js, { source: app.isDev })
+			.src(app.path.src.js)
 
 			// Вывод сообщения об ошибке, если появляется ошибка
 			.pipe(app.plugins.plumber(plumberInit('JS')))
 
-			// Проверяем были ли изменения в файлах
-			.pipe(
-				app.plugins.changed(app.path.src.js, { hasChanged: compareContents }),
-			)
-
-			// Обработка файлов js в режиме production
 			.pipe(
 				webpack({
+					// production — минификация, development — читаемый код
 					mode: app.isBuild ? 'production' : 'development',
 
 					resolve: {
@@ -73,8 +77,6 @@ export default function js() {
 												},
 											],
 										],
-
-										plugins: ['babel-plugin-root-import'],
 									},
 								},
 							},
@@ -82,7 +84,8 @@ export default function js() {
 					},
 
 					optimization: {
-						minimize: true,
+						// Минимизируем только в сборке; в dev оставляем читаемый код
+						minimize: app.isBuild,
 
 						minimizer: [
 							new terser({
@@ -95,7 +98,9 @@ export default function js() {
 						],
 					},
 
-					devtool: app.isBuild ? 'source-map' : false,
+					// В dev карты зашиваются прямо в бандл (inline),
+					// в проде карты не генерируются
+					devtool: app.isBuild ? false : 'inline-source-map',
 				}),
 			)
 

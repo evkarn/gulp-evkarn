@@ -49,7 +49,7 @@
 		"prefix": "crb-echo-field",
 		"scope": "html, php, njk, md",
 		"body": [
-			"<?php if ( !empty( \\$$1 ): ?><?php echo wp_kses_post( \\$$1 ); ?><?php endif; ?>",
+			"<?php if ( !empty( \\$$1 ) ): ?><?php echo wp_kses_post( \\$$1 ); ?><?php endif; ?>",
 		],
 	},
 	"Echo field many lines": {

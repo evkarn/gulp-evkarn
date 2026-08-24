@@ -1,10 +1,16 @@
 {
-  "compilerOptions": {
-    "baseUrl": ".",
-    "paths": {
-      "@/*": ["src/*"],
-      "@components/*": ["src/assets/components/*"]
-    }
-  },
-  "include": ["src"]
+	"compilerOptions": {
+		"baseUrl": ".",
+		"paths": {
+			"@/*": ["src/*"],
+			"@components/*": ["src/components/*"],
+			"@js/*": ["src/js/*"],
+			"@funcs/*": ["src/js/functions/*"],
+			"@utils/*": ["src/js/utils/*"],
+			"@modules/*": ["src/js/modules/*"],
+			"@constants/*": ["src/js/constants/*"],
+			"@styles/*": ["src/styles/scss/*"]
+		}
+	},
+	"include": ["src"]
 }

@@ -1,4 +1,4 @@
-export default function createFontsFaces () {
+export default function createFontsFaces() {
 	// Файл стилей подключения шрифтов
 	let fileFonts = `${app.path.src.fontsFaces}`;
 
@@ -201,4 +201,4 @@ export default function createFontsFaces () {
 	return app.gulp.src(`${app.path.srcFolder}`);
 
 	function cb() {}
-};
+}

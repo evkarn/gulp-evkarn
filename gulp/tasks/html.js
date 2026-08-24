@@ -1,3 +1,16 @@
+// Сборка HTML.
+//
+// Источники: src/html/**/*.html — страницы,
+//            src/includes/**/*    — подключаемые фрагменты.
+//
+// Что происходит:
+//   1. gulp-file-include разворачивает директивы @include
+//      (подробнее в README, раздел «HTML»).
+//   2. Чистятся переносы строк внутри <img> и нормализуются пути.
+//   3. Только в build: типограф Лебедева обрабатывает текст,
+//      htmlClean минифицирует разметку, к ссылкам на css/js
+//      добавляется версия для сброса браузерного кэша.
+
 // Добавление в файлы строк
 import fileInclude from 'gulp-file-include';
 
@@ -10,10 +23,7 @@ import versionNumber from 'gulp-version-number';
 // Обработка ошибок
 import plumberInit from './plumber.js';
 
-// Отслеживание изменений в файлах
-import { compareContents } from 'gulp-changed';
-
-// Плагин для минимизации html файлов
+// Минимизация html-файлов
 import htmlClean from 'gulp-htmlclean';
 
 export default function html() {
@@ -25,11 +35,6 @@ export default function html() {
 			// Вывод сообщения об ошибке, если появляется ошибка
 			.pipe(app.plugins.plumber(plumberInit('HTML')))
 
-			// Смотрим менялись ли файлы и обрабатываем только изменённые
-			.pipe(
-				app.plugins.changed(app.path.src.html, { hasChanged: compareContents }),
-			)
-
 			// Вставляем заданные @include
 			.pipe(
 				fileInclude({
@@ -39,41 +44,22 @@ export default function html() {
 				}),
 			)
 
-			// удаляет лишние пробелы и переводы строк внутри тега <img>
+			// Удаляет лишние пробелы и переводы строк внутри тега <img>
 			.pipe(
 				app.plugins.replace(/<img(?:.|\n|\r)*?>/g, function (match) {
 					return match.replace(/\r?\n|\r/g, '').replace(/\s{2,}/g, ' ');
 				}),
 			)
 
+			// Приводим пути к статике к виду ./css/..., ./js/... и т.д.
 			.pipe(
 				app.plugins.replace(
-					/(?<=src=|href=|srcset=)(['"])(\.(\.)?\/)*(img|images|fonts|css|scss|sass|js|files|audio|video)(\/[^\/'"]+(\/))?([^'"]*)\1/gi,
+					/(?<=src=|href=|srcset=)(['"])(\.(\.)?\/)*(img|images|fonts|css|scss|sass|js|files|audio|video)(\/[^/'"]+(\/))?([^'"]*)\1/gi,
 					'$1./$4$5$7$1',
 				),
 			)
 
-			// Если режим продакшена, то добавляем атрибут версии для стилей и скриптов
-			.pipe(
-				app.plugins.if(
-					app.isBuild,
-					versionNumber({
-						value: '%DT%',
-
-						append: {
-							key: '_v',
-							cover: 0,
-							to: ['css', 'js'],
-						},
-
-						output: {
-							file: 'gulp/version.json',
-						},
-					}),
-				),
-			)
-
-			// Обработка текста типографом
+			// Обработка текста типографом (только в build)
 			.pipe(
 				app.plugins.if(
 					app.isBuild,
@@ -105,7 +91,12 @@ export default function html() {
 				),
 			)
 
-			// Если режим продакшена, то добавляем атрибут версии для стилей и скриптов
+			// Минимизируем html (только в build)
+			.pipe(app.plugins.if(app.isBuild, htmlClean()))
+
+			// Добавляем версию к ссылкам на css/js (только в build) —
+			// делаем это последним шагом, чтобы типограф и htmlClean
+			// уже не трогали готовые адреса
 			.pipe(
 				app.plugins.if(
 					app.isBuild,
@@ -124,12 +115,6 @@ export default function html() {
 					}),
 				),
 			)
-
-			// Если режим продакшена минимизируем html файлы
-			// .pipe(app.plugins.if(app.isBuild, htmlClean()))
-
-			// Переименовываем итоговый файл
-			.pipe(app.plugins.rename({ extname: '.html' }))
 
 			// Выгружаем файлы в папку готовой вёрстки
 			.pipe(app.gulp.dest(app.path.build.html))

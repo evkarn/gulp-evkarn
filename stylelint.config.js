@@ -36,7 +36,12 @@ export default {
 		'scss/double-slash-comment-empty-line-before': null,
 		'declaration-block-no-redundant-longhand-properties': null,
 		'selector-class-pattern': null,
-		'value-keyword-case': null,
+		'value-keyword-case': [
+			'lower',
+			{
+				ignoreKeywords: ['currentColor'],
+			},
+		],
 		'selector-pseudo-element-colon-notation': 'single',
 		'scss/at-mixin-pattern': null,
 		'media-feature-range-notation': null,
@@ -44,14 +49,11 @@ export default {
 		'hue-degree-notation': null,
 		'lightness-notation': null,
 		'font-family-name-quotes': 'always-unless-keyword',
-		'color-hex-length': 'long',
+		'color-hex-length': null,
 		'color-function-alias-notation': null,
 		'color-function-notation': null,
 		'alpha-value-notation': null,
-		'custom-property-empty-line-before': null,
 		'custom-property-pattern': null,
-		'selector-class-pattern': null,
-		'color-hex-length': null,
 
 		'order/order': ['custom-properties', 'declarations'],
 		'order/properties-order': [
@@ -257,18 +259,9 @@ export default {
 			preset: 'bem',
 		},
 		'no-descending-specificity': null,
-		'value-keyword-case': [
-			'lower',
-			{
-				ignoreKeywords: ['currentColor'],
-			},
-		],
 		'no-empty-source': [true, { severity: 'warning' }],
 		'scss/dollar-variable-pattern': null,
-		'scss/dollar-variable-empty-line-before': null,
 		'scss/operator-no-newline-before': null,
 		'scss/operator-no-newline-after': null,
 	},
-
-	defaultSeverity: 'warning',
 };
