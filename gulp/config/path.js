@@ -104,9 +104,19 @@ export const path = {
 		styles: `${srcFolder}/**/*.${preprocessor}`,
 	},
 
-	// Перед каждой сборкой dist очищается целиком:
-	// mainTasks копирует туда все нужные файлы заново
-	clean: [`${buildFolder}/`],
+	// Перед каждой сборкой удаляем всё в dist, кроме assets/images/:
+	// imgMin пересобирает изображения только при изменениях,
+	// поэтому хранимый кэз в images/ ускоряет повторные сборки.
+	clean: [
+		`${buildFolder}/css/`,
+		`${buildFolder}/js/`,
+		`${buildFolder}/assets/fonts/`,
+		`${buildFolder}/assets/svg/`,
+		`${buildFolder}/assets/favicon/`,
+		`${buildFolder}/assets/files/`,
+		`${buildFolder}/config/`,
+		`${buildFolder}/*.html`,
+	],
 
 	buildFolder: buildFolder,
 

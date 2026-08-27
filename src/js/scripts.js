@@ -1,94 +1,123 @@
-document.addEventListener('DOMContentLoaded', function () {
-	const htmlEl = document.documentElement;
-	const bodyEl = document.body;
-	const burger = document?.querySelector('[data-burger]');
-	const nav = document?.querySelector('[data-nav]');
-	const navItems = document?.querySelectorAll('[data-nav-item]');
-	const overlay = document?.querySelector('[data-nav-overlay]');
-	const fixedEls = document?.querySelectorAll('[data-fixed');
-
-	(function getScrollbarWidth() {
-		'use strict';
-
-		const scrollbarWidth = window.innerWidth - bodyEl.offsetWidth;
-
-		htmlEl.style.setProperty('--scroll-width', `${scrollbarWidth}px`);
-
-		return scrollbarWidth;
-	})();
-
-	function disableScroll() {
-		'use strict';
-
-		let pagePosition = window.scrollY;
-
-		bodyEl.classList.add('stop-scroll');
-
-		bodyEl.dataset.position = pagePosition;
-
-		htmlEl.style.setProperty('--top-position', `-${pagePosition}px`);
-
-		htmlEl.style.scrollBehavior = 'unset';
+(function () {
+	// Универсальная страховка на все случаи жизни
+	if (document.readyState === 'loading') {
+		// DOM еще строится (актуально для скриптов в <head> без defer)
+		document.addEventListener('DOMContentLoaded', init);
+	} else {
+		// DOM уже готов (актуально для defer, async или скриптов в конце body)
+		init();
 	}
 
-	function enableScroll() {
-		'use strict';
+	function init() {
+		const htmlEl = document.documentElement;
+		const bodyEl = document.body;
+		const burger = document?.querySelector('[data-burger]');
+		const nav = document?.querySelector('[data-nav]');
+		const navItems = document?.querySelectorAll('[data-nav-item]');
+		const overlay = document?.querySelector('[data-nav-overlay]');
+		const fixedEls = document?.querySelectorAll('[data-fixed');
 
-		let pagePosition = parseInt(bodyEl.dataset.position, 10);
+		(function getScrollbarWidth() {
+			'use strict';
 
-		bodyEl.classList.remove('stop-scroll');
+			const scrollbarWidth = window.innerWidth - bodyEl.offsetWidth;
 
-		window.scroll({
-			top: pagePosition,
+			htmlEl.style.setProperty('--scroll-width', `${scrollbarWidth}px`);
 
-			left: 0,
-		});
+			return scrollbarWidth;
+		})();
 
-		bodyEl.removeAttribute('data-position');
+		function disableScroll() {
+			'use strict';
 
-		htmlEl.style.setProperty('--top-position', 'auto');
+			let pagePosition = window.scrollY;
 
-		htmlEl.style.scrollBehavior = '';
-	}
+			bodyEl.classList.add('stop-scroll');
 
-	(function burgerInit() {
-		'use strict';
+			bodyEl.dataset.position = pagePosition;
 
-		if (burger && nav) {
-			burger.addEventListener('click', () => {
-				burger.classList.toggle('burger--is-active');
+			htmlEl.style.setProperty('--top-position', `-${pagePosition}px`);
 
-				nav.classList.toggle('nav--is-visible');
-
-				fixedEls.forEach(function (el) {
-					el.classList.toggle('not-leap');
-				});
-
-				if (burger.getAttribute('aria-expanded') === 'false') {
-					burger.setAttribute('aria-expanded', 'true');
-
-					burger.setAttribute('aria-pressed', 'true');
-
-					burger.setAttribute('aria-label', 'Закрыть меню');
-
-					disableScroll();
-				} else {
-					burger.setAttribute('aria-expanded', 'false');
-
-					burger.setAttribute('aria-pressed', 'false');
-
-					burger.setAttribute('aria-label', 'Открыть меню');
-
-					enableScroll();
-				}
-			});
+			htmlEl.style.scrollBehavior = 'unset';
 		}
 
-		if (navItems) {
-			navItems.forEach(el => {
-				el.addEventListener('click', () => {
-					enableScroll();
+		function enableScroll() {
+			'use strict';
 
+			let pagePosition = parseInt(bodyEl.dataset.position, 10);
+
+			bodyEl.classList.remove('stop-scroll');
+
+			window.scroll({
+				top: pagePosition,
+
+				left: 0,
+			});
+
+			bodyEl.removeAttribute('data-position');
+
+			htmlEl.style.setProperty('--top-position', 'auto');
+
+			htmlEl.style.scrollBehavior = '';
+		}
+
+		(function burgerInit() {
+			'use strict';
+
+			if (burger && nav) {
+				burger.addEventListener('click', () => {
+					burger.classList.toggle('burger--is-active');
+
+					nav.classList.toggle('nav--is-visible');
+
+					fixedEls.forEach(function (el) {
+						el.classList.toggle('not-leap');
+					});
+
+					if (burger.getAttribute('aria-expanded') === 'false') {
+						burger.setAttribute('aria-expanded', 'true');
+
+						burger.setAttribute('aria-pressed', 'true');
+
+						burger.setAttribute('aria-label', 'Закрыть меню');
+
+						disableScroll();
+					} else {
+						burger.setAttribute('aria-expanded', 'false');
+
+						burger.setAttribute('aria-pressed', 'false');
+
+						burger.setAttribute('aria-label', 'Открыть меню');
+
+						enableScroll();
+					}
+				});
+			}
+
+			if (navItems) {
+				navItems.forEach(el => {
+					el.addEventListener('click', () => {
+						enableScroll();
+
+						if (burger) {
+							burger.setAttribute('aria-expanded', 'false');
+
+							burger.setAttribute('aria-pressed', 'false');
+
+							burger.setAttribute('aria-label', 'Открыть меню');
+
+							burger.classList.remove('burger--is-active');
+						}
+
+						if (nav) {
+							nav.classList.remove('nav--is-active');
+						}
+					});
+				});
+			}
+
+			if (overlay) {
+				overlay.addEventListener('click', () => {
 					if (burger) {
 						burger.setAttribute('aria-expanded', 'false');
 
@@ -102,97 +131,79 @@ document.addEventListener('DOMContentLoaded', function () {
 					if (nav) {
 						nav.classList.remove('nav--is-active');
 					}
+
+					enableScroll();
 				});
-			});
-		}
-
-		if (overlay) {
-			overlay.addEventListener('click', () => {
-				if (burger) {
-					burger.setAttribute('aria-expanded', 'false');
-
-					burger.setAttribute('aria-pressed', 'false');
-
-					burger.setAttribute('aria-label', 'Открыть меню');
-
-					burger.classList.remove('burger--is-active');
-				}
-
-				if (nav) {
-					nav.classList.remove('nav--is-active');
-				}
-
-				enableScroll();
-			});
-		}
-	})();
-
-	(function getFullYear(selector) {
-		'use strict';
-
-		const currentYear = new Date().getFullYear();
-
-		const yearEl = document?.querySelector(selector);
-
-		const metaYear = document?.querySelector('[itemprop="copyrightYear"]');
-
-		if (yearEl) {
-			yearEl.innerHTML = currentYear;
-		}
-
-		if (metaYear) {
-			metaYear.setAttribute('content', currentYear);
-		}
-	})();
-
-	function getElementHeight(selector, varHeightName, threshold = 0.05) {
-		let lastWidth = window.innerWidth;
-		let lastHeight = window.innerHeight;
-		let timeoutId;
-
-		function heightDetermination() {
-			const element = document?.querySelector(`${selector}`);
-
-			if (element) {
-				const elementHeight = element.offsetHeight;
-				document.documentElement.style.setProperty(
-					`${varHeightName}`,
-					`${elementHeight}px`,
-				);
 			}
-		}
+		})();
 
-		function checkSignificantChange() {
-			const newWidth = window.innerWidth;
-			const newHeight = window.innerHeight;
+		(function getFullYear(selector) {
+			'use strict';
 
-			// Изменение ширины больше порога или смена ориентации
-			const widthChanged =
-				Math.abs(newWidth - lastWidth) / lastWidth > threshold;
-			const orientationChanged =
-				lastWidth > lastHeight !== newWidth > newHeight;
+			const currentYear = new Date().getFullYear();
 
-			if (widthChanged || orientationChanged) {
-				lastWidth = newWidth;
-				lastHeight = newHeight;
+			const yearEl = document?.querySelector(selector);
 
-				// Небольшая задержка для стабилизации
+			const metaYear = document?.querySelector('[itemprop="copyrightYear"]');
+
+			if (yearEl) {
+				yearEl.innerHTML = currentYear;
+			}
+
+			if (metaYear) {
+				metaYear.setAttribute('content', currentYear);
+			}
+		})();
+
+		function getElementHeight(selector, varHeightName, threshold = 0.05) {
+			let lastWidth = window.innerWidth;
+			let lastHeight = window.innerHeight;
+			let timeoutId;
+
+			function heightDetermination() {
+				const element = document?.querySelector(`${selector}`);
+
+				if (element) {
+					const elementHeight = element.offsetHeight;
+					document.documentElement.style.setProperty(
+						`${varHeightName}`,
+						`${elementHeight}px`,
+					);
+				}
+			}
+
+			function checkSignificantChange() {
+				const newWidth = window.innerWidth;
+				const newHeight = window.innerHeight;
+
+				// Изменение ширины больше порога или смена ориентации
+				const widthChanged =
+					Math.abs(newWidth - lastWidth) / lastWidth > threshold;
+				const orientationChanged =
+					lastWidth > lastHeight !== newWidth > newHeight;
+
+				if (widthChanged || orientationChanged) {
+					lastWidth = newWidth;
+					lastHeight = newHeight;
+
+					// Небольшая задержка для стабилизации
+					clearTimeout(timeoutId);
+					timeoutId = setTimeout(heightDetermination, 100);
+				}
+			}
+
+			// Инициализация
+			heightDetermination();
+
+			// Отслеживаем ресайз с умом
+			window.addEventListener('resize', checkSignificantChange);
+
+			// Возвращаем функцию для очистки
+			return () => {
 				clearTimeout(timeoutId);
-				timeoutId = setTimeout(heightDetermination, 100);
-			}
+				window.removeEventListener('resize', checkSignificantChange);
+			};
 		}
-
-		// Инициализация
-		heightDetermination();
-
-		// Отслеживаем ресайз с умом
-		window.addEventListener('resize', checkSignificantChange);
-
-		// Возвращаем функцию для очистки
-		return () => {
-			clearTimeout(timeoutId);
-			window.removeEventListener('resize', checkSignificantChange);
-		};
+		getElementHeight('.header', '--header-height');
 	}
-	getElementHeight('.header', '--header-height');
-});
+})();

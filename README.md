@@ -120,6 +120,136 @@ dist/                  # результат сборки (в git не храни
 - Пути к картинкам в css можно писать относительно исходника —
   таск нормализует их для dist.
 
+### Конвенции
+
+- **BEM** — stylelint проверяет через `stylelint-selector-bem-pattern`.
+  Блоки, элементы, модификаторы — строго по методологии.
+- **Порядок css-свойств** — `stylelint-order` с настройкой из
+  `stylelint.config.js`. Используйте сниппеты VS Code — они
+  генерируют блоки в правильном порядке.
+- **Переменные** — в `vars/`: сетка (`grid.scss`), цвета (`colors.scss`),
+  шрифты (`typography.scss`). Подключаются через `@use`.
+- **Миксины** — в `mixins/`: переиспользуемые конструкции. Подключаются
+  через `@use 'mixins/имя' as *` для использования без префикса.
+
+### Каталог миксинов (`styles/scss/mixins/`)
+
+#### Адаптивные значения
+
+| Миксин | Сигнатура | Описание |
+| --- | --- | --- |
+| `adaptive-value-px` | `($property, $min, $max)` | `clamp()` для любого свойства: от `$min` px на минимуме до `$max` px на максимуме сетки |
+| `fluid-size-px` | `($property, $min, $max)` | То же, но с явным указанием порогов vw (по умолчанию из сетки) |
+| `fluid-size-rem` | `($property, $min, $max)` | `clamp()` с выводом в rem |
+| `calc-size` | `($prop, $min, $max, $minW, $maxW, $units)` | Линейная интерполяция через `calc()` (без медиазапроса) |
+| `calc-size-media` | `($prop, $min, $max, $minW, $maxW, $units)` | То же, но обёрнуто в `@media (min-width ... max-width ...)` |
+| `width-height` | `($width, $height)` | Ширина и высота в px; выше 1920px масштабируются в 2x |
+
+Примеры:
+
+```scss
+.title {
+  @include adaptive-value-px(font-size, 18, 32);
+}
+
+.text {
+  @include fluid-size-px(margin-bottom, 16, 32);
+}
+
+.card {
+  @include width-height(48, 48);
+}
+```
+
+#### Брейкпоинты
+
+Два набора миксинов — в `px` и `em`. Каждый набор содержит ~30 миксинов
+для `min-width` и `max-width` по всем точкам сетки, плюс диапазонные
+(`mobile-only`, `tablet-only`, `hd-only`).
+
+| Миксин (px) | Миксин (em) | Медиазапрос |
+| --- | --- | --- |
+| `max-mobile-px` | `max-mobile-em` | `max-width` на мобильном |
+| `min-tablet-px` | `min-tablet-em` | `min-width` на планшете |
+| `max-desktop-px` | `max-desktop-em` | `max-width` на десктопе |
+| `mobile-only` | `mobile-only` | Диапазон mobile |
+| `tablet-only` | `tablet-only` | Диапазон tablet |
+
+Пример:
+
+```scss
+@include max-tablet-em {
+  .sidebar {
+    display: none;
+  }
+}
+```
+
+#### Flex-утилиты
+
+| Миксин | Что делает |
+| --- | --- |
+| `flex` | `display: flex` + `@content` |
+| `flex-center` | `display: flex` + центрирование по обеим осям |
+| `flex-v-center` | `align-items: center` |
+| `flex-h-center` | `justify-content: center` |
+| `flex-all-sb` | `space-between` + `align-items: center` |
+| `flex-grid($map)` | Респонсивная flex-сетка из карты настроек (кол-во колонок, отступы по брейкпоинтам) |
+
+#### Визуальные миксины
+
+| Миксин | Сигнатура | Описание |
+| --- | --- | --- |
+| `absoluteCenter` | `()` | Абсолютное центрирование: `position: absolute` + `top/left: 50%` + `translate(-50%, -50%)` |
+| `overlay` | `($opacity, $color)` | `::after` оверлей на всю область родителя. Родитель должен иметь `position: relative` |
+| `outline` | `($width, $offset)` | Пунктирная рамка фокуса; выше 1920px масштабируется |
+| `width-height` | `($w, $h)` | Ширина + высота с масштабированием на экранах >1920px |
+
+#### Псевдо-элементы и обёртки
+
+| Миксин | Описание |
+| --- | --- |
+| `bef()` | `&::before { content: ''; @content }` |
+| `aft()` | `&::after { content: ''; @content }` |
+| `txt-wrap($min, $max)` | Вертикальные отступы между дочерними элементами текстового блока с адаптацией |
+
+#### Переходы
+
+| Миксин | Сигнатура | Описание |
+| --- | --- | --- |
+| `tr` | `($time)` | `transition: $time ease` для всех свойств |
+| `tr-custom` | `($prop, $time)` | `transition: $prop $time ease` для конкретного свойства |
+
+#### Функции ( units.scss )
+
+| Функция | Описание |
+| --- | --- |
+| `rem($px)` | Конвертация px в rem (деление на 16) |
+| `em($px)` | Конвертация px в em (деление на 16) |
+| `px($val)` | Конвертация любого значения в px |
+| `strip-unit($val)` | Удаление единицы измерения |
+
+#### Состояния (`mixins/states/`)
+
+| Миксин | Описание |
+| --- | --- |
+| `state-link` | Hover → `color: var(--accent)`, focus-visible → пунктир, active → тёмный акцент |
+| `state-link-opacity` | Hover → `opacity: 0.7`, для кнопок-картинок |
+| `state-accent` | Hover → `color: var(--accent-dark)`, для текстовых элементов |
+| `state-buttons` | Hover → `background-color: var(--accent-dark)`, для кнопок |
+
+Пример:
+
+```scss
+a {
+  @include state-link;
+}
+
+.btn {
+  @include state-buttons;
+}
+```
+
 ## Шрифты
 
 1. Положите `.ttf` в `src/assets/fonts/`.
@@ -170,6 +300,8 @@ dist/                  # результат сборки (в git не храни
 `import`). Результат — `dist/js/scripts.min.js`, подключайте его на
 страницах обычным `<script src>`.
 
+### Алиасы
+
 Алиасы путей (работают и в js, и в подсказках редактора):
 
 | Алиас         | Путь                |
@@ -184,6 +316,137 @@ dist/                  # результат сборки (в git не храни
 | `@styles`     | `src/styles/scss/`  |
 
 Пример: `import { burgerInit } from '@funcs/burger/burger-init.js';`
+
+### Паттерн хранения сниппетов
+
+Каждая функция — отдельная папка в `src/js/functions/`:
+
+```
+functions/burger/
+├── burger-init.js      # логика (экспорт функции)
+├── burger-func.js      # альтернативный/старый вариант
+└── burger.html         # демо-страница для тестирования
+```
+
+Блок копируется целиком: берёте папку, подключаете в `scripts.js`,
+стили (если есть) — в основной SCSS-файл.
+
+### Структура `src/js/`
+
+| Директория | Назначение |
+| --- | --- |
+| `functions/` | Готовые сниппеты-решения (~75 штук), каждый в своей папке |
+| `modules/` | ES6-классы: `InputMaskCollection`, `OverlayMenu` |
+| `utils/` | Вспомогательные функции: `pxToRem`, `getIdFromTitle`, `getAttrNameFromSelector` |
+| `constants/` | Константы: `MatchMedia` (предустановленный медиазапрос mobile) |
+
+### Каталог сниппетов (`src/js/functions/`)
+
+#### UI-компоненты
+
+| Папка | Описание |
+| --- | --- |
+| `aos` | Инициализация AOS (Animation On Scroll) при наличии `[data-aos]` |
+| `burger` | Мобильное бургер-меню: toggle, scroll lock, aria, закрытие по overlay |
+| `color-scheme` | Переключатель темы: localStorage + системная / button toggle / класс ThemeManager |
+| `cookie-popup` | Cookie-уведомление с установкой на 30 дней |
+| `create-page-nav-items` | Автогенерация навигации по статье из `<h2>` тегов |
+| `digital-counters` | Анимированное увеличение чисел от 0 до целевого через IntersectionObserver |
+| `dynamic-adapt` | Респонсивный перенос элементов между контейнерами по `data-da` атрибуту |
+| `filters` | Категорийные фильтры с `data-filter-button/target`, «показать ещё» |
+| `highlight-code` | Подсветка синтаксиса через highlight.js |
+| `likely` | Кнопки соцшаринга (ilyabirman-likely) |
+| `nav-submenu` | Раскрытие/свертывание подменю с aria-expanded |
+| `orphus` | Орфографическая проверка: выделение → Ctrl+Enter → отправка |
+| `pagination` | HTML-шаблон пагинации |
+| `portfolio` | Табы-фильтры портфолио с ленивым показом и «загрузить ещё» |
+| `rating` | Система рейтинга звёздами с возможной AJAX-отправкой |
+| `search` | Toggle видимости блока поиска, закрытие по Escape |
+| `search-elements` | Клиентский поиск по тексту внутри списка элементов |
+| `search-field-google` | Google-стиль поле поиска: toggle по кнопке, закрытие по Escape |
+| `select-display-none` | Кастомный select: раскрытие/закрытие, подмена текста заголовка |
+| `select-expanded` | Кастомный select с анимацией slideToggle, aria-expanded |
+| `show-more` | Прогрессивный показ контента с настраиваемым количеством |
+| `simple-bar` | Кастомный скроллбар SimpleBar на `[data-simple-bar]` |
+| `sorting` | Сортировка каталога: по цене, скидке, рейтингу, новинкам |
+| `spoilers` | Адаптивные спойлеры/аккордеон с data-атрибутами, slideToggle |
+| `spoilers-new` | Улучшенные спойлеры: `data-min/max`, `data-mode="single"`, делегирование |
+| `stepper` | Степпер количества: кнопки +/-, валидация ввода |
+| `stepper-sum` | Степпер с пересчётом цены в реальном времени |
+| `tabs` | Табы с навигацией по клику и клавиатуре (стрелки, Enter), ARIA |
+| `ticker` | CSS-лента бегущей строки (без JS) |
+| `timer-countdown` | Обратный отсчёт до даты с русскими склонениями |
+| `tooltip` | CSS-тултипы (без JS): `role="tooltip"` |
+| `video` | Интеграция YouTube IFrame API: autoplay, loop, muted |
+| `window-on-key-27-down` | Обработчик Escape: закрытие бургера, навигации, корзины |
+| `yandex-metrika-with-cookie` | Cookie-уведомление + отслеживание целей Яндекс.Метрики |
+| `switch` | Toggle-переключатель (CSS-only, без JS) |
+| `scheme-org` | HTML-шаблоны для Schema.org разметки |
+
+#### Прокрутка
+
+| Папка | Описание |
+| --- | --- |
+| `go-back-top` | Кнопка «наверх»: появляется при скролле, плавный scrollTo(0,0) |
+| `link-scroll-to-element` | Плавный скролл к элементу по клику с компенсацией header |
+| `nav-active-link` | Подсветка активной ссылки навигации (2 варианта: scroll / IntersectionObserver) |
+| `read-progress-circle` | SVG-круг индикатора прогресса чтения (stroke-dashoffset) |
+| `read-progress-line` | Горизонтальная полоса прогресса чтения |
+| `scroll-to-element` | Плавный скролл по `data-go-to` с компенсацией header |
+| `set-class-when-scrolling` | Скрытие header при прокрутке вниз, показ при прокрутке вверх |
+
+#### Формы
+
+| Папка | Описание |
+| --- | --- |
+| `input-mask` | Маска ввода телефона +7 (999) 999-99-99 через inputmask |
+| `input-password-show-hide` | Toggle видимости пароля (переключение type password/text) |
+| `quiz` | Многошаговая форма-викторина: progress-bar, next/prev, финишный экран |
+| `show-hide-password` | Toggle видимости пароля с классом (альтернативная реализация) |
+| `validation-forms` | Валидация через just-validate: имя, телефон (inputmask), email |
+
+#### Модалки
+
+| Папка | Описание |
+| --- | --- |
+| `hystmodal` | Библиотека HystModal: accessible модалки, overlay, Esc, focus-trap |
+| `micromodal` | Интеграция MicroModal: scroll lock, сброс iframe, пауза видео |
+| `micromodal-close` | Закрытие MicroModal по `data-modal-close` |
+| `modal-evkarn` | Своя реализация модалок: `data-modal-path/target`, overlay, disableScroll |
+
+#### Слайдеры
+
+| Папка | Описание |
+| --- | --- |
+| `fs-lightbox` | FsLightbox для портфолио с блокировкой скролла |
+| `no-ui-slider` | noUiSlider (range-слайдер) с настройками по умолчанию |
+| `photo-swipe` | PhotoSwipe lightbox для галерей с `[data-gallery]` |
+| `slider-switch-images` | Переключение изображений в карточке при наведении |
+| `swiper` | Swiper с навигацией и адаптивными брейкпоинтами |
+
+#### Утилиты
+
+| Папка | Описание |
+| --- | --- |
+| `check-viewport` | Определение типа устройства (mobile/tablet/desktop) |
+| `disable-scroll` | Блокировка скролла: класс `stop-scroll` + сохранение позиции |
+| `enable-scroll` | Разблокировка скролла: удаление `stop-scroll` + восстановление |
+| `get-data` | Async-обёртка для fetch(), возвращает JSON |
+| `get-element-height` | Получение высоты элемента, запись в CSS-переменную, отслеживание resize |
+| `get-full-year` | Подстановка текущего года в элемент и meta |
+| `get-scroll-width` | Вычисление ширины скроллбара → CSS-переменная `--scroll-width` |
+| `image-in-bg` | Установка background-image из img/picture с учётом webp |
+| `normal-price` | Форматирование числа: 100000 → «100 000» |
+| `offset-panel-phone` | Установка `--verticalHeight` для мобильных панелей |
+| `open-graph` | HTML-шаблон мета-тегов Open Graph |
+| `set-element-min-height` | Выравнивание высот: установка max(высот) как min-height |
+| `set-images-orientation-classes` | Классы `img-horizontal/img-vertical/img-square` по пропорциям |
+| `set-min-height-elements` | Альтернативная реализация set-element-min-height |
+| `slide-down` | Анимация раскрытия (height 0 → auto) |
+| `slide-toggle` | Toggle между slideDown и slideUp |
+| `slide-up` | Анимация сворачивания (height auto → 0) |
+| `webp-avif-support` | Определение поддержки WebP/AVIF, классы на html/body |
+| `window-listener-resize` | Установка высоты элемента как CSS-переменной при resize |
 
 ## Деплой на FTP / SSH
 
@@ -223,6 +486,19 @@ npm run lint:fix    # автоматическое исправление
   историческому `src/` дал бы коммит на тысячи строк. Если захотите
   отформатировать исходники целиком — уберите `src/` из игнора и
   запустите `npm run format:fix`.
+
+## VS Code
+
+В папке `.vscode/` лежат готовые сниппеты и рекомендации расширений:
+
+- **Расширения** (`.vscode/extensions.json`) — рекомендуемые плагины:
+  Live Server, stylelint, ESLint, Project Snippets и др.
+- **Настройки** (`.vscode/settings.json`) — пути поиска для Sass,
+  ассоциации файлов.
+- **Сниппеты** (`.vscode/*.code-snippets`) — 70+ сниппетов для HTML, CSS,
+  JavaScript и PHP. Копируйте папку `.vscode/` в свой проект, и VS Code
+  предложит установить рекомендации. Сниппеты вызываются через
+  `rebornix.project-snippets` или стандартный менеджер сниппетов.
 
 ## Если что-то не работает
 

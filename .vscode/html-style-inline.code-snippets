@@ -10,7 +10,7 @@
 		"prefix": "style-bg-svg",
 		"scope": "html, php, njk, md",
 		"body": [
-			"style=\"background-image: url('assets/svg/$1.svg');\"",
+			"style=\"background-image: url('assets/svg/static/$1.svg');\"",
 		]
 	},
 	"Background color": {
@@ -31,7 +31,7 @@
 		"prefix": "style-bg-cr-svg",
 		"scope": "html, php, njk, md",
 		"body": [
-			"style=\"background-color: $1; background-image: url('assets/svg/$2.svg');\"",
+			"style=\"background-color: $1; background-image: url('assets/svg/static/$2.svg');\"",
 		]
 	},
 }

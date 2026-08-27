@@ -1,6 +1,6 @@
 {
 	"name": "gulp-evkarn",
-	"version": "3.1.0",
+	"version": "3.2.0",
 	"description": "Gulp-сборка для вёрстки сайтов: SCSS + webpack, спрайты, картинки WebP/AVIF, деплой на FTP/SSH",
 	"main": "gulpfile.js",
 	"type": "module",
@@ -22,7 +22,14 @@
 		"lint:fix": "npm run lint:js:fix && npm run lint:css:fix && npm run format:fix"
 	},
 	"author": "evkarn.ru",
-	"license": "ISC",
+	"license": "MIT",
+	"engines": {
+		"node": ">=20"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/evkarn/gulp-evkarn.git"
+	},
 	"devDependencies": {
 		"@babel/core": "^8.0.1",
 		"@babel/preset-env": "^8.0.2",
