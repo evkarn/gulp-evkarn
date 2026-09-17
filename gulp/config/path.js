@@ -32,7 +32,7 @@ export const path = {
 
 		fonts: `${buildFolder}/assets/fonts/`,
 
-		html: `${buildFolder}/`,
+		pages: `${buildFolder}/`,
 
 		img: `${buildFolder}/assets/images/`,
 
@@ -55,7 +55,7 @@ export const path = {
 
 		fontsFaces: `${srcFolder}/styles/${preprocessor}/fonts/_fonts-faces.${preprocessor}`,
 
-		html: `${srcFolder}/html/**/*.{html,htm}`,
+		pages: `${srcFolder}/pages/**/*.{html,htm}`,
 
 		js: `${srcFolder}/js/*.{js,mjs}`,
 
@@ -86,7 +86,7 @@ export const path = {
 
 		files: `${srcFolder}/assets/files/**/*.*`,
 
-		html: `${srcFolder}/**/*.html`,
+		pages: `${srcFolder}/**/*.html`,
 
 		img: `${srcFolder}/assets/images/**/*.*`,
 

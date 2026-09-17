@@ -6,7 +6,7 @@
 export default function server() {
 	app.plugins.browsersync.init({
 		server: {
-			baseDir: `${app.path.build.html}`,
+			baseDir: `${app.path.build.pages}`,
 		},
 
 		notify: false,

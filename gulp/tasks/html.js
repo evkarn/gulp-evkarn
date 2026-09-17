@@ -1,6 +1,6 @@
 // Сборка HTML.
 //
-// Источники: src/html/**/*.html — страницы,
+// Источники: src/pages/**/*.html — страницы,
 //            src/includes/**/*    — подключаемые фрагменты.
 //
 // Что происходит:
@@ -30,7 +30,7 @@ export default function html() {
 	// Находим все .html в папке исходников
 	return (
 		app.gulp
-			.src(app.path.src.html)
+			.src(app.path.src.pages)
 
 			// Вывод сообщения об ошибке, если появляется ошибка
 			.pipe(app.plugins.plumber(plumberInit('HTML')))
@@ -117,7 +117,7 @@ export default function html() {
 			)
 
 			// Выгружаем файлы в папку готовой вёрстки
-			.pipe(app.gulp.dest(app.path.build.html))
+			.pipe(app.gulp.dest(app.path.build.pages))
 
 			// Перезагружаем страницу
 			.pipe(app.plugins.browsersync.stream())
