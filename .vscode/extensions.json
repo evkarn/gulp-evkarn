@@ -32,5 +32,6 @@
 		"syler.sass-indented",
 		"vscode-icons-team.vscode-icons",
 		"yoavbls.pretty-ts-errors",
+		"ms-vscode-remote.remote-wsl"
 	]
 }
